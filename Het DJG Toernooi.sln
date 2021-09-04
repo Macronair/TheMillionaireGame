@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29609.76
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Het DJG Toernooi", "Het DJG Toernooi\Het DJG Toernooi.vbproj", "{2644B7DF-68AD-4B5F-B337-D8CE2D4F2839}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0FC5C737-D2EB-40B8-9F50-8687D559D0CA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FFF_Guest", "FFF_Guest\FFF_Guest.vbproj", "{F5F62F91-9833-4653-9760-60831E29D8C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millionaire", "..\Data\Bureaublad\Millionaire\Millionaire.csproj", "{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGameQEditor", "MillionaireGameQEditor\MillionaireGameQEditor.csproj", "{E03DCCF3-F14A-411B-85F8-ED3438207B1F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2644B7DF-68AD-4B5F-B337-D8CE2D4F2839}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2644B7DF-68AD-4B5F-B337-D8CE2D4F2839}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2644B7DF-68AD-4B5F-B337-D8CE2D4F2839}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2644B7DF-68AD-4B5F-B337-D8CE2D4F2839}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5F62F91-9833-4653-9760-60831E29D8C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5F62F91-9833-4653-9760-60831E29D8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5F62F91-9833-4653-9760-60831E29D8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5F62F91-9833-4653-9760-60831E29D8C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E44DD446-BCD3-4495-BFA8-24B09E2809EF}
+	EndGlobalSection
+EndGlobal
