@@ -1,6 +1,7 @@
-# TheMillionaireGame
+# The Millionaire Game
 A custom game controller software like WWTBAM.
 
+## Introduction
 This software can be used to run your own Who Wants To Be A Millionaire games. For example at home, on Discord with friends or on a Youtube video/livestream.
 There will be new features in the future to play around with. But there are a lot of elements that you can use:
 - Max. 4 lifelines.
@@ -12,3 +13,8 @@ There will be new features in the future to play around with. But there are a lo
 - Easy to use Questions editor.
 
 New features, releases, suggestions and issues will be documented in this GitHub repository.
+
+## Download Latest version
+Version 1.0.172.0 - Release Candidate 1
+
+Coming soon..
