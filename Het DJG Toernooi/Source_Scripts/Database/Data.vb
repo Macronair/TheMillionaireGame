@@ -11,6 +11,8 @@ Public Class Data
 
         Dim nameToCreate As String = "dbMillionaire"
 
+        CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
+
         If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then
             connectionString.Open()
 

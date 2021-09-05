@@ -1040,7 +1040,7 @@ Partial Class ControlPanel
         Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnUndo.Location = New System.Drawing.Point(559, 208)
         Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(62, 26)
+        Me.btnUndo.Size = New System.Drawing.Size(40, 26)
         Me.btnUndo.TabIndex = 81
         Me.btnUndo.UseVisualStyleBackColor = False
         '

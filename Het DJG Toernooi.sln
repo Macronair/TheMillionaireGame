@@ -12,8 +12,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FFF_Guest", "FFF_Guest\FFF_Guest.vbproj", "{F5F62F91-9833-4653-9760-60831E29D8C2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Millionaire", "..\Data\Bureaublad\Millionaire\Millionaire.csproj", "{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MillionaireGameQEditor", "MillionaireGameQEditor\MillionaireGameQEditor.csproj", "{E03DCCF3-F14A-411B-85F8-ED3438207B1F}"
 EndProject
 Global
@@ -30,10 +28,6 @@ Global
 		{F5F62F91-9833-4653-9760-60831E29D8C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5F62F91-9833-4653-9760-60831E29D8C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5F62F91-9833-4653-9760-60831E29D8C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{88E1E9ED-7B62-4A6B-A87F-B4335110BBA0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E03DCCF3-F14A-411B-85F8-ED3438207B1F}.Release|Any CPU.ActiveCfg = Release|Any CPU

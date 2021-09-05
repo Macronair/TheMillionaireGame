@@ -6,7 +6,7 @@ Public Class CoreConsole
 
     Private Sub CoreConsole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Version info
-        LogMsg(String.Format("The Millionaire Game [Version {0}] Beta evaluation.", Application.ProductVersion))
+        LogMsg(String.Format("The Millionaire Game [Version {0}] Release Candidate 1.", Application.ProductVersion))
         LogMsg(String.Format("Created by Marco (Maerciezz). Soon compatible with MSSQL."))
         LogMsg("")
 
@@ -20,7 +20,7 @@ Public Class CoreConsole
 
         isRunning = True
         ControlPanel.Show()
-        'Me.Hide()
+        Me.Hide()
         tmrRuntime.Start()
     End Sub
 

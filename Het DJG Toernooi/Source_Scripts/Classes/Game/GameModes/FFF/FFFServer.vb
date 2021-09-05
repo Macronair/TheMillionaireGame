@@ -650,4 +650,27 @@ Public Class FFFServer
     Private Sub btnRandomize_Click(sender As Object, e As EventArgs) Handles btnRandomize.Click
         PlayerCheck.Randomizer()
     End Sub
+
+    Private Sub chkAllVirtual_CheckedChanged(sender As Object, e As EventArgs) Handles chkAllVirtual.CheckedChanged
+        If chkAllVirtual.Checked = True Then
+            chkPL1.Checked = True
+            chkPL2.Checked = True
+            chkPL3.Checked = True
+            chkPL4.Checked = True
+            chkPL5.Checked = True
+            chkPL6.Checked = True
+            chkPL7.Checked = True
+            chkPL8.Checked = True
+        Else
+            chkPL1.Checked = False
+            chkPL2.Checked = False
+            chkPL3.Checked = False
+            chkPL4.Checked = False
+            chkPL5.Checked = False
+            chkPL6.Checked = False
+            chkPL7.Checked = False
+            chkPL8.Checked = False
+        End If
+
+    End Sub
 End Class

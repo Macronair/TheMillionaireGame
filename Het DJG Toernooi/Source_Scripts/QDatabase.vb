@@ -10,33 +10,40 @@ Public Class QDatabase
 
     Public Sub newQuestion()
 
-        Data.connectionString.Open()
+        If Data.connectionString.State = ConnectionState.Closed Then
+            Data.connectionString.Open()
+        End If
+
         Dim MaxRows As Integer
 
         If Game.level = -1 Then
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level0 ORDER BY NEWID()"
-            da = New SqlDataAdapter(sql, Data.connectionString)
-            da.Fill(ds, "qLevel0")
-            MaxRows = ds.Tables("qLevel0").Rows.Count
+            Dim sql = New SqlCommand("SELECT TOP 1 * FROM questions_Level0 ORDER BY NEWID()", Data.connectionString)
+            Dim reader As SqlDataReader = sql.ExecuteReader
+            If reader.HasRows Then
+                While reader.Read()
+                    ControlPanel.chkUsed.Checked = reader.GetBoolean(8)
 
-            ControlPanel.chkUsed.Checked = ds.Tables("qLevel0").Rows(0).Item(8)
-            If ControlPanel.chkUsed.Checked = True Then
-                newQuestion()
-            Else
-                ControlPanel.txtQuestion.Text = ds.Tables("qLevel0").Rows(0).Item(1)
-                ControlPanel.txtA.Text = ds.Tables("qLevel0").Rows(0).Item(2)
-                ControlPanel.txtB.Text = ds.Tables("qLevel0").Rows(0).Item(3)
-                ControlPanel.txtC.Text = ds.Tables("qLevel0").Rows(0).Item(4)
-                ControlPanel.txtD.Text = ds.Tables("qLevel0").Rows(0).Item(5)
-                ControlPanel.lblAnswer.Text = ds.Tables("qLevel0").Rows(0).Item(6)
-                ControlPanel.txtID.Text = ds.Tables("qLevel0").Rows(0).Item(0)
+                    If ControlPanel.chkUsed.Checked = True Then
+                        newQuestion()
+                    Else
+                        ControlPanel.txtQuestion.Text = reader.GetString(1)
+                        ControlPanel.txtA.Text = reader.GetString(2)
+                        ControlPanel.txtB.Text = reader.GetString(3)
+                        ControlPanel.txtC.Text = reader.GetString(4)
+                        ControlPanel.txtD.Text = reader.GetString(5)
+                        ControlPanel.lblAnswer.Text = reader.GetString(6)
+                        ControlPanel.txtID.Text = reader.GetInt32(0)
+                    End If
+                End While
+                reader.Close()
 
                 sqlupdate = "UPDATE questions_Level0 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                 Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
                 cmd.ExecuteNonQuery()
                 cmd.Dispose()
             End If
+
         End If
 
         'Haalt een vraag uit de database (100 - 1.000 pt)

@@ -30,6 +30,7 @@ Partial Class About
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblVersion = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -108,11 +109,23 @@ Partial Class About
         Me.lblVersion.TabIndex = 6
         Me.lblVersion.Text = "0.0.0.0"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.Navy
+        Me.Label5.Location = New System.Drawing.Point(310, 135)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(37, 16)
+        Me.Label5.TabIndex = 7
+        Me.Label5.Text = "RC1"
+        '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(414, 209)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button1)
@@ -136,4 +149,5 @@ Partial Class About
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents lblVersion As Label
+    Friend WithEvents Label5 As Label
 End Class

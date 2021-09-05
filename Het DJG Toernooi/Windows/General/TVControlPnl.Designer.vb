@@ -600,7 +600,7 @@ Partial Class TVControlPnl
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.Size = New System.Drawing.Size(328, 75)
         Me.lblAmount.TabIndex = 0
-        Me.lblAmount.Text = "€ 0"
+        Me.lblAmount.Text = "0"
         Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlFFFWinner
@@ -957,11 +957,11 @@ Partial Class TVControlPnl
         Me.Controls.Add(Me.picSwitch)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
-        Me.Controls.Add(Me.picTree)
-        Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlFFFWinner)
+        Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlQuestion)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False

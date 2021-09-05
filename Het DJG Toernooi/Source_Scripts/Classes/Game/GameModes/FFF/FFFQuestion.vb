@@ -159,10 +159,10 @@
                 TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
                 TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
                 TVControlPnl.tmrFlash.Stop()
+                FFFServer.newQ.newQuestion()
                 My.Computer.Audio.Play(My.Resources.fastest_finger_read_question, AudioPlayMode.Background)
                 FFFServer.UpdateList("/clear", True)
             Case 1
-                FFFServer.newQ.newQuestion()
                 FFFServer.correctAnswer = ControlPanel.lblAnswer.Text
 
                 HostScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text

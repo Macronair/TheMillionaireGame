@@ -22,7 +22,6 @@ namespace Millionaire
 
         public QEditor()
         {
-
             InitializeComponent();
         }
 
@@ -332,6 +331,7 @@ namespace Millionaire
 
         private void tsmenuActionsResetAllQuestions_Click(object sender, EventArgs e)
         {
+            SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
             SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
             SqlCommand cmd2 = new SqlCommand("UPDATE questions_Level2 SET Used='False'", c);
             SqlCommand cmd3 = new SqlCommand("UPDATE questions_Level3 SET Used='False'", c);
@@ -339,6 +339,7 @@ namespace Millionaire
             try
             {
                 c.Open();
+                cmd0.ExecuteNonQuery();
                 cmd1.ExecuteNonQuery();
                 cmd2.ExecuteNonQuery();
                 cmd3.ExecuteNonQuery();
