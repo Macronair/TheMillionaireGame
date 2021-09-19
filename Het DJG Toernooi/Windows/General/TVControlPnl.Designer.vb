@@ -600,7 +600,7 @@ Partial Class TVControlPnl
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.Size = New System.Drawing.Size(328, 75)
         Me.lblAmount.TabIndex = 0
-        Me.lblAmount.Text = "0"
+        Me.lblAmount.Text = "200.000"
         Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlFFFWinner

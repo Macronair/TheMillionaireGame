@@ -46,12 +46,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnClear = new System.Windows.Forms.Button();
             this.pnlFFFAnswer = new System.Windows.Forms.Panel();
+            this.lblAnswer = new System.Windows.Forms.Label();
             this.btnReset = new System.Windows.Forms.Button();
             this.btnFFFD = new System.Windows.Forms.Button();
             this.btnFFFC = new System.Windows.Forms.Button();
             this.btnFFFB = new System.Windows.Forms.Button();
             this.btnFFFA = new System.Windows.Forms.Button();
-            this.lblAnswer = new System.Windows.Forms.Label();
             this.pnlFFFAnswer.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -235,6 +235,16 @@
             this.pnlFFFAnswer.TabIndex = 17;
             this.pnlFFFAnswer.Visible = false;
             // 
+            // lblAnswer
+            // 
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Location = new System.Drawing.Point(12, 55);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(13, 16);
+            this.lblAnswer.TabIndex = 6;
+            this.lblAnswer.Text = "*";
+            // 
             // btnReset
             // 
             this.btnReset.Enabled = false;
@@ -285,16 +295,6 @@
             this.btnFFFA.Text = "A";
             this.btnFFFA.UseVisualStyleBackColor = true;
             this.btnFFFA.Click += new System.EventHandler(this.btnFFFA_Click);
-            // 
-            // lblAnswer
-            // 
-            this.lblAnswer.AutoSize = true;
-            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnswer.Location = new System.Drawing.Point(12, 55);
-            this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(13, 16);
-            this.lblAnswer.TabIndex = 6;
-            this.lblAnswer.Text = "*";
             // 
             // frmQuestionAdd
             // 
@@ -355,6 +355,6 @@
         private System.Windows.Forms.Button btnFFFC;
         private System.Windows.Forms.Button btnFFFB;
         private System.Windows.Forms.Button btnFFFA;
-        private System.Windows.Forms.Label lblAnswer;
+        public System.Windows.Forms.Label lblAnswer;
     }
 }

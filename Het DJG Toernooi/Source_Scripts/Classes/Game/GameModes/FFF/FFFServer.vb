@@ -72,9 +72,15 @@ Public Class FFFServer
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Listening = New TcpListener(IPAddress.Any, 3818)
-        Listening.Start()
+        Try
+            Listening.Start()
+            Listening.BeginAcceptTcpClient(New AsyncCallback(AddressOf AcceptClient), Listening)
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Socket already open.")
+        End Try
+
         UpdateList("Server started!", False)
-        Listening.BeginAcceptTcpClient(New AsyncCallback(AddressOf AcceptClient), Listening)
+
     End Sub
 
     Delegate Sub _cUpdate(ByVal str As String, ByVal relay As Boolean)
@@ -275,16 +281,6 @@ Public Class FFFServer
     Private Sub tmrThink_Tick(sender As Object, e As EventArgs) Handles tmrThink.Tick
         fff_think = False
         PlayerCheck.Tiebreaker()
-        'MsgBox("The smallest score is: " + Convert.ToString(fff_pointsmin) +
-        '       vbNewLine +
-        '       Convert.ToString(pl1_points) + " + " +
-        '       Convert.ToString(pl2_points) + " + " +
-        '       Convert.ToString(pl3_points) + " + " +
-        '       Convert.ToString(pl4_points) + " + " +
-        '       Convert.ToString(pl5_points) + " + " +
-        '       Convert.ToString(pl6_points) + " + " +
-        '       Convert.ToString(pl7_points) + " + " +
-        '       Convert.ToString(pl8_points))
         q = 0
         UpdateList("/lock", True)
 
@@ -672,5 +668,122 @@ Public Class FFFServer
             chkPL8.Checked = False
         End If
 
+    End Sub
+
+    Private Sub btnMeetContestants_Click(sender As Object, e As EventArgs) Handles btnMeetContestants.Click
+        PlayerCheck.MeetContestants()
+    End Sub
+
+    Public Shared totalContestants As Integer = 8
+
+    Private Sub nmrTotalContestants_ValueChanged(sender As Object, e As EventArgs) Handles nmrTotalContestants.ValueChanged
+        totalContestants = nmrTotalContestants.Value
+        Select Case nmrTotalContestants.Value
+            Case 2
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = False
+                pnlPlayer4.Visible = False
+                pnlPlayer5.Visible = False
+                pnlPlayer6.Visible = False
+                pnlPlayer7.Visible = False
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = False
+                TVControlPnl.pnlPL4.Visible = False
+                TVControlPnl.pnlPL5.Visible = False
+                TVControlPnl.pnlPL6.Visible = False
+                TVControlPnl.pnlPL7.Visible = False
+                TVControlPnl.pnlPL8.Visible = False
+            Case 3
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = False
+                pnlPlayer5.Visible = False
+                pnlPlayer6.Visible = False
+                pnlPlayer7.Visible = False
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = False
+                TVControlPnl.pnlPL5.Visible = False
+                TVControlPnl.pnlPL6.Visible = False
+                TVControlPnl.pnlPL7.Visible = False
+                TVControlPnl.pnlPL8.Visible = False
+            Case 4
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = True
+                pnlPlayer5.Visible = False
+                pnlPlayer6.Visible = False
+                pnlPlayer7.Visible = False
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = True
+                TVControlPnl.pnlPL5.Visible = False
+                TVControlPnl.pnlPL6.Visible = False
+                TVControlPnl.pnlPL7.Visible = False
+                TVControlPnl.pnlPL8.Visible = False
+            Case 5
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = True
+                pnlPlayer5.Visible = True
+                pnlPlayer6.Visible = False
+                pnlPlayer7.Visible = False
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = True
+                TVControlPnl.pnlPL5.Visible = True
+                TVControlPnl.pnlPL6.Visible = False
+                TVControlPnl.pnlPL7.Visible = False
+                TVControlPnl.pnlPL8.Visible = False
+            Case 6
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = True
+                pnlPlayer5.Visible = True
+                pnlPlayer6.Visible = True
+                pnlPlayer7.Visible = False
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = True
+                TVControlPnl.pnlPL5.Visible = True
+                TVControlPnl.pnlPL6.Visible = True
+                TVControlPnl.pnlPL7.Visible = False
+                TVControlPnl.pnlPL8.Visible = False
+            Case 7
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = True
+                pnlPlayer5.Visible = True
+                pnlPlayer6.Visible = True
+                pnlPlayer7.Visible = True
+                pnlPlayer8.Visible = False
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = True
+                TVControlPnl.pnlPL5.Visible = True
+                TVControlPnl.pnlPL6.Visible = True
+                TVControlPnl.pnlPL7.Visible = True
+                TVControlPnl.pnlPL8.Visible = False
+            Case 8
+                pnlPlayer2.Visible = True
+                pnlPlayer3.Visible = True
+                pnlPlayer4.Visible = True
+                pnlPlayer5.Visible = True
+                pnlPlayer6.Visible = True
+                pnlPlayer7.Visible = True
+                pnlPlayer8.Visible = True
+                TVControlPnl.pnlPL2.Visible = True
+                TVControlPnl.pnlPL3.Visible = True
+                TVControlPnl.pnlPL4.Visible = True
+                TVControlPnl.pnlPL5.Visible = True
+                TVControlPnl.pnlPL6.Visible = True
+                TVControlPnl.pnlPL7.Visible = True
+                TVControlPnl.pnlPL8.Visible = True
+        End Select
     End Sub
 End Class

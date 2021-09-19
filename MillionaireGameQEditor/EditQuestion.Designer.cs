@@ -46,6 +46,14 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.txtLevel = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.pnlFFFAnswer = new System.Windows.Forms.Panel();
+            this.lblAnswer = new System.Windows.Forms.Label();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnFFFD = new System.Windows.Forms.Button();
+            this.btnFFFC = new System.Windows.Forms.Button();
+            this.btnFFFB = new System.Windows.Forms.Button();
+            this.btnFFFA = new System.Windows.Forms.Button();
+            this.pnlFFFAnswer.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -147,14 +155,20 @@
             // 
             this.txtCorrect.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCorrect.FormattingEnabled = true;
+            this.txtCorrect.Items.AddRange(new object[] {
+            "A",
+            "B",
+            "C",
+            "D"});
             this.txtCorrect.Location = new System.Drawing.Point(66, 174);
+            this.txtCorrect.MaxLength = 1;
             this.txtCorrect.Name = "txtCorrect";
             this.txtCorrect.Size = new System.Drawing.Size(80, 26);
             this.txtCorrect.TabIndex = 11;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(66, 206);
+            this.txtId.Location = new System.Drawing.Point(149, 294);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(59, 20);
@@ -163,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(44, 209);
+            this.label7.Location = new System.Drawing.Point(127, 297);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 13;
@@ -172,7 +186,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(321, 176);
+            this.btnSave.Location = new System.Drawing.Point(321, 265);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 23);
             this.btnSave.TabIndex = 14;
@@ -182,7 +196,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(321, 203);
+            this.btnCancel.Location = new System.Drawing.Point(321, 292);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 23);
             this.btnCancel.TabIndex = 15;
@@ -191,26 +205,97 @@
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(185, 206);
+            this.txtLevel.Location = new System.Drawing.Point(268, 294);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.ReadOnly = true;
-            this.txtLevel.Size = new System.Drawing.Size(100, 20);
+            this.txtLevel.Size = new System.Drawing.Size(47, 20);
             this.txtLevel.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(146, 209);
+            this.label8.Location = new System.Drawing.Point(229, 297);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 17;
             this.label8.Text = "Level";
             // 
+            // pnlFFFAnswer
+            // 
+            this.pnlFFFAnswer.Controls.Add(this.lblAnswer);
+            this.pnlFFFAnswer.Controls.Add(this.btnReset);
+            this.pnlFFFAnswer.Controls.Add(this.btnFFFD);
+            this.pnlFFFAnswer.Controls.Add(this.btnFFFC);
+            this.pnlFFFAnswer.Controls.Add(this.btnFFFB);
+            this.pnlFFFAnswer.Controls.Add(this.btnFFFA);
+            this.pnlFFFAnswer.Location = new System.Drawing.Point(163, 174);
+            this.pnlFFFAnswer.Name = "pnlFFFAnswer";
+            this.pnlFFFAnswer.Size = new System.Drawing.Size(228, 85);
+            this.pnlFFFAnswer.TabIndex = 18;
+            this.pnlFFFAnswer.Visible = false;
+            // 
+            // lblAnswer
+            // 
+            this.lblAnswer.AutoSize = true;
+            this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnswer.Location = new System.Drawing.Point(12, 55);
+            this.lblAnswer.Name = "lblAnswer";
+            this.lblAnswer.Size = new System.Drawing.Size(13, 16);
+            this.lblAnswer.TabIndex = 6;
+            this.lblAnswer.Text = "*";
+            // 
+            // btnReset
+            // 
+            this.btnReset.Enabled = false;
+            this.btnReset.Location = new System.Drawing.Point(126, 52);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            // 
+            // btnFFFD
+            // 
+            this.btnFFFD.Location = new System.Drawing.Point(159, 7);
+            this.btnFFFD.Name = "btnFFFD";
+            this.btnFFFD.Size = new System.Drawing.Size(42, 43);
+            this.btnFFFD.TabIndex = 4;
+            this.btnFFFD.Text = "D";
+            this.btnFFFD.UseVisualStyleBackColor = true;
+            // 
+            // btnFFFC
+            // 
+            this.btnFFFC.Location = new System.Drawing.Point(111, 7);
+            this.btnFFFC.Name = "btnFFFC";
+            this.btnFFFC.Size = new System.Drawing.Size(42, 43);
+            this.btnFFFC.TabIndex = 3;
+            this.btnFFFC.Text = "C";
+            this.btnFFFC.UseVisualStyleBackColor = true;
+            // 
+            // btnFFFB
+            // 
+            this.btnFFFB.Location = new System.Drawing.Point(63, 7);
+            this.btnFFFB.Name = "btnFFFB";
+            this.btnFFFB.Size = new System.Drawing.Size(42, 43);
+            this.btnFFFB.TabIndex = 2;
+            this.btnFFFB.Text = "B";
+            this.btnFFFB.UseVisualStyleBackColor = true;
+            // 
+            // btnFFFA
+            // 
+            this.btnFFFA.Location = new System.Drawing.Point(15, 7);
+            this.btnFFFA.Name = "btnFFFA";
+            this.btnFFFA.Size = new System.Drawing.Size(42, 43);
+            this.btnFFFA.TabIndex = 1;
+            this.btnFFFA.Text = "A";
+            this.btnFFFA.UseVisualStyleBackColor = true;
+            // 
             // frmEditQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(435, 239);
+            this.ClientSize = new System.Drawing.Size(440, 324);
+            this.Controls.Add(this.pnlFFFAnswer);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.btnCancel);
@@ -233,6 +318,8 @@
             this.Name = "frmEditQuestion";
             this.Text = "Edit question";
             this.Load += new System.EventHandler(this.frmEditQuestion_Load);
+            this.pnlFFFAnswer.ResumeLayout(false);
+            this.pnlFFFAnswer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,5 +345,12 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox txtLevel;
+        private System.Windows.Forms.Panel pnlFFFAnswer;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnFFFD;
+        private System.Windows.Forms.Button btnFFFC;
+        private System.Windows.Forms.Button btnFFFB;
+        private System.Windows.Forms.Button btnFFFA;
+        public System.Windows.Forms.Label lblAnswer;
     }
 }

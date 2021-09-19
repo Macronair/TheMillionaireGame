@@ -1,14 +1,7 @@
 ﻿using Millionaire.Windows.Question_Editor;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Millionaire
@@ -26,46 +19,46 @@ namespace Millionaire
         }
 
         public void UpdateDB()
-        { 
-                var select1 = "SELECT * FROM questions_Level1";
-                var dataAdapter1 = new SqlDataAdapter(select1, c);
-                var commandBuilder1 = new SqlCommandBuilder(dataAdapter1);
-                var ds1 = new DataSet();
-                dataAdapter1.Fill(ds1);
-                dtLevel1.ReadOnly = true;
-                dtLevel1.DataSource = ds1.Tables[0];
+        {
+            var select1 = "SELECT * FROM questions_Level1";
+            var dataAdapter1 = new SqlDataAdapter(select1, c);
+            var commandBuilder1 = new SqlCommandBuilder(dataAdapter1);
+            var ds1 = new DataSet();
+            dataAdapter1.Fill(ds1);
+            dtLevel1.ReadOnly = true;
+            dtLevel1.DataSource = ds1.Tables[0];
 
-                var select2 = "SELECT * FROM questions_Level2";
-                var dataAdapter2 = new SqlDataAdapter(select2, c);
-                var commandBuilder2 = new SqlCommandBuilder(dataAdapter2);
-                var ds2 = new DataSet();
-                dataAdapter2.Fill(ds2);
-                dtLevel2.ReadOnly = true;
-                dtLevel2.DataSource = ds2.Tables[0];
+            var select2 = "SELECT * FROM questions_Level2";
+            var dataAdapter2 = new SqlDataAdapter(select2, c);
+            var commandBuilder2 = new SqlCommandBuilder(dataAdapter2);
+            var ds2 = new DataSet();
+            dataAdapter2.Fill(ds2);
+            dtLevel2.ReadOnly = true;
+            dtLevel2.DataSource = ds2.Tables[0];
 
-                var select3 = "SELECT * FROM questions_Level3";
-                var dataAdapter3 = new SqlDataAdapter(select3, c);
-                var commandBuilder3 = new SqlCommandBuilder(dataAdapter3);
-                var ds3 = new DataSet();
-                dataAdapter3.Fill(ds3);
-                dtLevel3.ReadOnly = true;
-                dtLevel3.DataSource = ds3.Tables[0];
+            var select3 = "SELECT * FROM questions_Level3";
+            var dataAdapter3 = new SqlDataAdapter(select3, c);
+            var commandBuilder3 = new SqlCommandBuilder(dataAdapter3);
+            var ds3 = new DataSet();
+            dataAdapter3.Fill(ds3);
+            dtLevel3.ReadOnly = true;
+            dtLevel3.DataSource = ds3.Tables[0];
 
-                var select4 = "SELECT * FROM questions_Level4";
-                var dataAdapter4 = new SqlDataAdapter(select4, c);
-                var commandBuilder4 = new SqlCommandBuilder(dataAdapter4);
-                var ds4 = new DataSet();
-                dataAdapter4.Fill(ds4);
-                dtLevel4.ReadOnly = true;
-                dtLevel4.DataSource = ds4.Tables[0];
+            var select4 = "SELECT * FROM questions_Level4";
+            var dataAdapter4 = new SqlDataAdapter(select4, c);
+            var commandBuilder4 = new SqlCommandBuilder(dataAdapter4);
+            var ds4 = new DataSet();
+            dataAdapter4.Fill(ds4);
+            dtLevel4.ReadOnly = true;
+            dtLevel4.DataSource = ds4.Tables[0];
 
-                var select0 = "SELECT * FROM questions_Level0";
-                var dataAdapter0 = new SqlDataAdapter(select0, c);
-                var commandBuilder0 = new SqlCommandBuilder(dataAdapter0);
-                var ds0 = new DataSet();
-                dataAdapter0.Fill(ds0);
-                dtLevel0.ReadOnly = true;
-                dtLevel0.DataSource = ds0.Tables[0];
+            var select0 = "SELECT * FROM questions_Level0";
+            var dataAdapter0 = new SqlDataAdapter(select0, c);
+            var commandBuilder0 = new SqlCommandBuilder(dataAdapter0);
+            var ds0 = new DataSet();
+            dataAdapter0.Fill(ds0);
+            dtLevel0.ReadOnly = true;
+            dtLevel0.DataSource = ds0.Tables[0];
         }
 
         public void EditDB()
@@ -107,7 +100,7 @@ namespace Millionaire
                     edit.txtCorrect.Text = this.dtLevel2.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
                 }
-                
+
             }
             else if (stLevel.Text == "Lvl3")
             {
@@ -126,7 +119,7 @@ namespace Millionaire
                     edit.txtCorrect.Text = this.dtLevel3.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
                 }
-                
+
             }
             else if (stLevel.Text == "Lvl4")
             {
@@ -144,6 +137,24 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel4.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel4.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
+                }
+            }
+            else if (stLevel.Text == "Lvl0")
+            {
+                if (Convert.ToInt32(dtLevel0.CurrentRow.Cells[0].Value) == 0)
+                {
+                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    edit.txtId.Text = this.dtLevel0.CurrentRow.Cells[0].Value.ToString();
+                    edit.txtQuestion.Text = this.dtLevel0.CurrentRow.Cells[1].Value.ToString();
+                    edit.txtA.Text = this.dtLevel0.CurrentRow.Cells[2].Value.ToString();
+                    edit.txtB.Text = this.dtLevel0.CurrentRow.Cells[3].Value.ToString();
+                    edit.txtC.Text = this.dtLevel0.CurrentRow.Cells[4].Value.ToString();
+                    edit.txtD.Text = this.dtLevel0.CurrentRow.Cells[5].Value.ToString();
+                    edit.lblAnswer.Text = this.dtLevel0.CurrentRow.Cells[6].Value.ToString();
+                    edit.txtLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
                 }
             }
             edit.ShowDialog();
@@ -260,7 +271,7 @@ namespace Millionaire
 
         private void tsEdit_Click(object sender, EventArgs e)
         {
-            if(stLevel.Text == "Not selected")
+            if (stLevel.Text == "Not selected")
             {
                 MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -268,7 +279,7 @@ namespace Millionaire
             {
                 EditDB();
             }
-            
+
         }
 
         private void tsRefresh_Click(object sender, EventArgs e)
@@ -276,6 +287,7 @@ namespace Millionaire
             UpdateDB();
         }
 
+        #region Selection Changed
         private void dtLevel1_SelectionChanged(object sender, EventArgs e)
         {
             if (dtLevel1.SelectedCells.Count > 0)
@@ -324,11 +336,20 @@ namespace Millionaire
             }
         }
 
-        private void dtLevel1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtLevel0_SelectionChanged(object sender, EventArgs e)
         {
-            EditDB();
+            if (dtLevel0.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel0.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel0.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
+            }
         }
+        #endregion
 
+        #region Questions Reset functions
         private void tsmenuActionsResetAllQuestions_Click(object sender, EventArgs e)
         {
             SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
@@ -344,7 +365,7 @@ namespace Millionaire
                 cmd2.ExecuteNonQuery();
                 cmd3.ExecuteNonQuery();
                 cmd4.ExecuteNonQuery();
-                MessageBox.Show("Questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("All questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -352,13 +373,152 @@ namespace Millionaire
             }
             finally
             {
-                if(c.State == ConnectionState.Open)
+                if (c.State == ConnectionState.Open)
                 {
                     c.Close();
                 }
                 UpdateDB();
             }
-            
         }
+
+        private void resetLevel1UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
+            try
+            {
+                c.Open();
+                cmd1.ExecuteNonQuery();
+                MessageBox.Show("All Level 1 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (c.State == ConnectionState.Open)
+                {
+                    c.Close();
+                }
+                UpdateDB();
+            }
+        }
+
+        private void resetLevel2UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd2 = new SqlCommand("UPDATE questions_Level2 SET Used='False'", c);
+            try
+            {
+                c.Open();
+                cmd2.ExecuteNonQuery();
+                MessageBox.Show("All Level 2 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (c.State == ConnectionState.Open)
+                {
+                    c.Close();
+                }
+                UpdateDB();
+            }
+        }
+
+        private void resetLevel3UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd3 = new SqlCommand("UPDATE questions_Level3 SET Used='False'", c);
+            try
+            {
+                c.Open();
+                cmd3.ExecuteNonQuery();
+                MessageBox.Show("All Level 3 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (c.State == ConnectionState.Open)
+                {
+                    c.Close();
+                }
+                UpdateDB();
+            }
+        }
+
+        private void resetLevel4UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd4 = new SqlCommand("UPDATE questions_Level4 SET Used='False'", c);
+            try
+            {
+                c.Open();
+                cmd4.ExecuteNonQuery();
+                MessageBox.Show("All Level 4 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (c.State == ConnectionState.Open)
+                {
+                    c.Close();
+                }
+                UpdateDB();
+            }
+        }
+
+        private void resetFastestFingerUsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
+            try
+            {
+                c.Open();
+                cmd0.ExecuteNonQuery();
+                MessageBox.Show("All Fastest Finger questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                if (c.State == ConnectionState.Open)
+                {
+                    c.Close();
+                }
+                UpdateDB();
+            }
+        }
+        #endregion
+
+        #region Double Clicks
+        private void dtLevel1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditDB();
+        }
+
+        private void dtLevel2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditDB();
+        }
+
+        private void dtLevel3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditDB();
+        }
+
+        private void dtLevel4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EditDB();
+        }
+        #endregion
+
+        
     }
 }
