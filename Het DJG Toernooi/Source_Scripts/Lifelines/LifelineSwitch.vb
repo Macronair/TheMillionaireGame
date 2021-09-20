@@ -16,6 +16,10 @@ Public Class LifelineSwitch
             HostScreen.pnlAnswer.BackColor = Color.LightGray
             act = 1
         ElseIf act = 1 Then
+            Dim cor_seq As New WMPLib.WindowsMediaPlayer
+            cor_seq.URL = "Sounds\stq_reveal_correct_answer.mp3"
+            cor_seq.controls.play()
+
             TVControlPnl.tmrFlash.Start()
             If ControlPanel.lblAnswer.Text = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green

@@ -6,8 +6,8 @@ Public Class CoreConsole
 
     Private Sub CoreConsole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Version info
-        LogMsg(String.Format("The Millionaire Game [Version {0}] Release Candidate 1.", Application.ProductVersion))
-        LogMsg(String.Format("Created by Marco (Maerciezz). Soon compatible with MSSQL."))
+        LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
+        LogMsg(String.Format("Created by Marco (Maerciezz). Compatible with Microsoft SQL!"))
         LogMsg("")
 
         Me.Enabled = True
@@ -17,6 +17,7 @@ Public Class CoreConsole
     Private Sub StartSeq()
         LogMsgDate("Checking database...")
         Data.CreateDatabase()
+        LogMsgDate("Lauching controller...")
 
         isRunning = True
         ControlPanel.Show()

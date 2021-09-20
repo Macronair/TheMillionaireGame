@@ -309,7 +309,7 @@ Partial Class FFFServer
         '
         Me.lblPL_Points.AutoSize = True
         Me.lblPL_Points.ForeColor = System.Drawing.Color.Black
-        Me.lblPL_Points.Location = New System.Drawing.Point(338, 37)
+        Me.lblPL_Points.Location = New System.Drawing.Point(338, 47)
         Me.lblPL_Points.Name = "lblPL_Points"
         Me.lblPL_Points.Size = New System.Drawing.Size(36, 13)
         Me.lblPL_Points.TabIndex = 74
@@ -364,7 +364,7 @@ Partial Class FFFServer
         Me.lblPoints.AutoSize = True
         Me.lblPoints.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPoints.ForeColor = System.Drawing.Color.Black
-        Me.lblPoints.Location = New System.Drawing.Point(27, 9)
+        Me.lblPoints.Location = New System.Drawing.Point(389, 334)
         Me.lblPoints.Name = "lblPoints"
         Me.lblPoints.Size = New System.Drawing.Size(24, 25)
         Me.lblPoints.TabIndex = 69
@@ -376,22 +376,22 @@ Partial Class FFFServer
         Me.btnShowCorrectPlayers.BackColor = System.Drawing.Color.LightGreen
         Me.btnShowCorrectPlayers.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnShowCorrectPlayers.ForeColor = System.Drawing.Color.Black
-        Me.btnShowCorrectPlayers.Location = New System.Drawing.Point(260, 304)
+        Me.btnShowCorrectPlayers.Location = New System.Drawing.Point(133, 316)
         Me.btnShowCorrectPlayers.Name = "btnShowCorrectPlayers"
-        Me.btnShowCorrectPlayers.Size = New System.Drawing.Size(95, 39)
+        Me.btnShowCorrectPlayers.Size = New System.Drawing.Size(95, 50)
         Me.btnShowCorrectPlayers.TabIndex = 68
-        Me.btnShowCorrectPlayers.Text = "Who is Correct?"
+        Me.btnShowCorrectPlayers.Text = "Who is Correct? + Fastest Sequence"
         Me.btnShowCorrectPlayers.UseVisualStyleBackColor = False
         '
         'btnReveal
         '
         Me.btnReveal.BackColor = System.Drawing.Color.Lime
         Me.btnReveal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReveal.Location = New System.Drawing.Point(159, 304)
+        Me.btnReveal.Location = New System.Drawing.Point(32, 316)
         Me.btnReveal.Name = "btnReveal"
-        Me.btnReveal.Size = New System.Drawing.Size(95, 39)
+        Me.btnReveal.Size = New System.Drawing.Size(95, 50)
         Me.btnReveal.TabIndex = 67
-        Me.btnReveal.Text = "Hide Question + Correct Order"
+        Me.btnReveal.Text = "Hide Question + Correct Order Sequence"
         Me.btnReveal.UseVisualStyleBackColor = False
         '
         'btnStartTime
@@ -399,7 +399,7 @@ Partial Class FFFServer
         Me.btnStartTime.BackColor = System.Drawing.Color.Navy
         Me.btnStartTime.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStartTime.ForeColor = System.Drawing.Color.White
-        Me.btnStartTime.Location = New System.Drawing.Point(260, 259)
+        Me.btnStartTime.Location = New System.Drawing.Point(133, 271)
         Me.btnStartTime.Name = "btnStartTime"
         Me.btnStartTime.Size = New System.Drawing.Size(95, 39)
         Me.btnStartTime.TabIndex = 66
@@ -411,7 +411,7 @@ Partial Class FFFServer
         Me.btnGenQuestion.BackColor = System.Drawing.Color.Navy
         Me.btnGenQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnGenQuestion.ForeColor = System.Drawing.Color.White
-        Me.btnGenQuestion.Location = New System.Drawing.Point(159, 259)
+        Me.btnGenQuestion.Location = New System.Drawing.Point(32, 271)
         Me.btnGenQuestion.Name = "btnGenQuestion"
         Me.btnGenQuestion.Size = New System.Drawing.Size(95, 39)
         Me.btnGenQuestion.TabIndex = 65
@@ -462,7 +462,7 @@ Partial Class FFFServer
         '
         Me.lblPL_Answer.AutoSize = True
         Me.lblPL_Answer.ForeColor = System.Drawing.Color.Black
-        Me.lblPL_Answer.Location = New System.Drawing.Point(280, 37)
+        Me.lblPL_Answer.Location = New System.Drawing.Point(280, 47)
         Me.lblPL_Answer.Name = "lblPL_Answer"
         Me.lblPL_Answer.Size = New System.Drawing.Size(42, 13)
         Me.lblPL_Answer.TabIndex = 60
@@ -472,7 +472,7 @@ Partial Class FFFServer
         '
         Me.lblPL_Player.AutoSize = True
         Me.lblPL_Player.ForeColor = System.Drawing.Color.Black
-        Me.lblPL_Player.Location = New System.Drawing.Point(29, 37)
+        Me.lblPL_Player.Location = New System.Drawing.Point(29, 47)
         Me.lblPL_Player.Name = "lblPL_Player"
         Me.lblPL_Player.Size = New System.Drawing.Size(36, 13)
         Me.lblPL_Player.TabIndex = 59
@@ -592,6 +592,8 @@ Partial Class FFFServer
         'chkPL1
         '
         Me.chkPL1.AutoSize = True
+        Me.chkPL1.Checked = True
+        Me.chkPL1.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL1.Location = New System.Drawing.Point(391, 3)
         Me.chkPL1.Name = "chkPL1"
         Me.chkPL1.Size = New System.Drawing.Size(15, 14)
@@ -601,6 +603,8 @@ Partial Class FFFServer
         'chkPL2
         '
         Me.chkPL2.AutoSize = True
+        Me.chkPL2.Checked = True
+        Me.chkPL2.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL2.Location = New System.Drawing.Point(391, 3)
         Me.chkPL2.Name = "chkPL2"
         Me.chkPL2.Size = New System.Drawing.Size(15, 14)
@@ -610,6 +614,8 @@ Partial Class FFFServer
         'chkPL3
         '
         Me.chkPL3.AutoSize = True
+        Me.chkPL3.Checked = True
+        Me.chkPL3.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL3.Location = New System.Drawing.Point(391, 3)
         Me.chkPL3.Name = "chkPL3"
         Me.chkPL3.Size = New System.Drawing.Size(15, 14)
@@ -619,6 +625,8 @@ Partial Class FFFServer
         'chkPL4
         '
         Me.chkPL4.AutoSize = True
+        Me.chkPL4.Checked = True
+        Me.chkPL4.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL4.Location = New System.Drawing.Point(391, 3)
         Me.chkPL4.Name = "chkPL4"
         Me.chkPL4.Size = New System.Drawing.Size(15, 14)
@@ -628,6 +636,8 @@ Partial Class FFFServer
         'chkPL5
         '
         Me.chkPL5.AutoSize = True
+        Me.chkPL5.Checked = True
+        Me.chkPL5.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL5.Location = New System.Drawing.Point(391, 3)
         Me.chkPL5.Name = "chkPL5"
         Me.chkPL5.Size = New System.Drawing.Size(15, 14)
@@ -637,6 +647,8 @@ Partial Class FFFServer
         'chkPL6
         '
         Me.chkPL6.AutoSize = True
+        Me.chkPL6.Checked = True
+        Me.chkPL6.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL6.Location = New System.Drawing.Point(391, 3)
         Me.chkPL6.Name = "chkPL6"
         Me.chkPL6.Size = New System.Drawing.Size(15, 14)
@@ -646,6 +658,8 @@ Partial Class FFFServer
         'chkPL7
         '
         Me.chkPL7.AutoSize = True
+        Me.chkPL7.Checked = True
+        Me.chkPL7.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL7.Location = New System.Drawing.Point(391, 3)
         Me.chkPL7.Name = "chkPL7"
         Me.chkPL7.Size = New System.Drawing.Size(15, 14)
@@ -655,6 +669,8 @@ Partial Class FFFServer
         'chkPL8
         '
         Me.chkPL8.AutoSize = True
+        Me.chkPL8.Checked = True
+        Me.chkPL8.CheckState = System.Windows.Forms.CheckState.Checked
         Me.chkPL8.Location = New System.Drawing.Point(391, 3)
         Me.chkPL8.Name = "chkPL8"
         Me.chkPL8.Size = New System.Drawing.Size(15, 14)
@@ -665,18 +681,18 @@ Partial Class FFFServer
         '
         Me.btnRandomize.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRandomize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRandomize.Location = New System.Drawing.Point(361, 264)
+        Me.btnRandomize.Location = New System.Drawing.Point(390, 292)
         Me.btnRandomize.Name = "btnRandomize"
-        Me.btnRandomize.Size = New System.Drawing.Size(70, 29)
+        Me.btnRandomize.Size = New System.Drawing.Size(70, 39)
         Me.btnRandomize.TabIndex = 99
-        Me.btnRandomize.Text = "Randomize"
+        Me.btnRandomize.Text = "Randomize Points"
         Me.btnRandomize.UseVisualStyleBackColor = False
         '
         'lblSmallestScore
         '
         Me.lblSmallestScore.AutoSize = True
         Me.lblSmallestScore.ForeColor = System.Drawing.Color.Black
-        Me.lblSmallestScore.Location = New System.Drawing.Point(57, 21)
+        Me.lblSmallestScore.Location = New System.Drawing.Point(280, 30)
         Me.lblSmallestScore.Name = "lblSmallestScore"
         Me.lblSmallestScore.Size = New System.Drawing.Size(89, 13)
         Me.lblSmallestScore.TabIndex = 100
@@ -685,36 +701,39 @@ Partial Class FFFServer
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(396, 37)
+        Me.Label1.Location = New System.Drawing.Point(387, 47)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(42, 13)
+        Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 101
-        Me.Label1.Text = "Virtual?"
+        Me.Label1.Text = "Virtual Mode"
         '
         'chkAllVirtual
         '
         Me.chkAllVirtual.AutoSize = True
-        Me.chkAllVirtual.Location = New System.Drawing.Point(399, 20)
+        Me.chkAllVirtual.Checked = True
+        Me.chkAllVirtual.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkAllVirtual.Location = New System.Drawing.Point(398, 271)
         Me.chkAllVirtual.Name = "chkAllVirtual"
-        Me.chkAllVirtual.Size = New System.Drawing.Size(15, 14)
+        Me.chkAllVirtual.Size = New System.Drawing.Size(70, 17)
         Me.chkAllVirtual.TabIndex = 102
+        Me.chkAllVirtual.Text = "Select All"
         Me.chkAllVirtual.UseVisualStyleBackColor = True
         '
         'btnMeetContestants
         '
         Me.btnMeetContestants.BackColor = System.Drawing.Color.Yellow
         Me.btnMeetContestants.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnMeetContestants.Location = New System.Drawing.Point(55, 302)
+        Me.btnMeetContestants.Location = New System.Drawing.Point(167, 11)
         Me.btnMeetContestants.Name = "btnMeetContestants"
-        Me.btnMeetContestants.Size = New System.Drawing.Size(98, 41)
+        Me.btnMeetContestants.Size = New System.Drawing.Size(93, 38)
         Me.btnMeetContestants.TabIndex = 103
-        Me.btnMeetContestants.Text = "Meet the Contestants"
+        Me.btnMeetContestants.Text = "Meet contestants"
         Me.btnMeetContestants.UseVisualStyleBackColor = False
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(4, 272)
+        Me.Label2.Location = New System.Drawing.Point(12, 24)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(93, 13)
         Me.Label2.TabIndex = 104
@@ -723,7 +742,7 @@ Partial Class FFFServer
         'nmrTotalContestants
         '
         Me.nmrTotalContestants.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmrTotalContestants.Location = New System.Drawing.Point(103, 265)
+        Me.nmrTotalContestants.Location = New System.Drawing.Point(111, 17)
         Me.nmrTotalContestants.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
         Me.nmrTotalContestants.Minimum = New Decimal(New Integer() {2, 0, 0, 0})
         Me.nmrTotalContestants.Name = "nmrTotalContestants"
@@ -738,7 +757,7 @@ Partial Class FFFServer
         Me.pnlPlayer1.Controls.Add(Me.lblPL_1)
         Me.pnlPlayer1.Controls.Add(Me.txtPL1_Points)
         Me.pnlPlayer1.Controls.Add(Me.chkPL1)
-        Me.pnlPlayer1.Location = New System.Drawing.Point(7, 53)
+        Me.pnlPlayer1.Location = New System.Drawing.Point(7, 63)
         Me.pnlPlayer1.Name = "pnlPlayer1"
         Me.pnlPlayer1.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer1.TabIndex = 106
@@ -750,7 +769,7 @@ Partial Class FFFServer
         Me.pnlPlayer2.Controls.Add(Me.lblPL_2)
         Me.pnlPlayer2.Controls.Add(Me.txtPL2_Points)
         Me.pnlPlayer2.Controls.Add(Me.chkPL2)
-        Me.pnlPlayer2.Location = New System.Drawing.Point(7, 79)
+        Me.pnlPlayer2.Location = New System.Drawing.Point(7, 89)
         Me.pnlPlayer2.Name = "pnlPlayer2"
         Me.pnlPlayer2.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer2.TabIndex = 107
@@ -762,7 +781,7 @@ Partial Class FFFServer
         Me.pnlPlayer3.Controls.Add(Me.lblPL_3)
         Me.pnlPlayer3.Controls.Add(Me.txtPL3_Points)
         Me.pnlPlayer3.Controls.Add(Me.chkPL3)
-        Me.pnlPlayer3.Location = New System.Drawing.Point(7, 105)
+        Me.pnlPlayer3.Location = New System.Drawing.Point(7, 115)
         Me.pnlPlayer3.Name = "pnlPlayer3"
         Me.pnlPlayer3.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer3.TabIndex = 107
@@ -774,7 +793,7 @@ Partial Class FFFServer
         Me.pnlPlayer4.Controls.Add(Me.lblPL_4)
         Me.pnlPlayer4.Controls.Add(Me.txtPL4_Points)
         Me.pnlPlayer4.Controls.Add(Me.chkPL4)
-        Me.pnlPlayer4.Location = New System.Drawing.Point(7, 131)
+        Me.pnlPlayer4.Location = New System.Drawing.Point(7, 141)
         Me.pnlPlayer4.Name = "pnlPlayer4"
         Me.pnlPlayer4.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer4.TabIndex = 107
@@ -786,7 +805,7 @@ Partial Class FFFServer
         Me.pnlPlayer5.Controls.Add(Me.lblPL_5)
         Me.pnlPlayer5.Controls.Add(Me.txtPL5_Points)
         Me.pnlPlayer5.Controls.Add(Me.chkPL5)
-        Me.pnlPlayer5.Location = New System.Drawing.Point(7, 157)
+        Me.pnlPlayer5.Location = New System.Drawing.Point(7, 167)
         Me.pnlPlayer5.Name = "pnlPlayer5"
         Me.pnlPlayer5.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer5.TabIndex = 107
@@ -798,7 +817,7 @@ Partial Class FFFServer
         Me.pnlPlayer6.Controls.Add(Me.lblPL_6)
         Me.pnlPlayer6.Controls.Add(Me.txtPL6_Points)
         Me.pnlPlayer6.Controls.Add(Me.chkPL6)
-        Me.pnlPlayer6.Location = New System.Drawing.Point(7, 183)
+        Me.pnlPlayer6.Location = New System.Drawing.Point(7, 193)
         Me.pnlPlayer6.Name = "pnlPlayer6"
         Me.pnlPlayer6.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer6.TabIndex = 107
@@ -810,7 +829,7 @@ Partial Class FFFServer
         Me.pnlPlayer7.Controls.Add(Me.lblPL_7)
         Me.pnlPlayer7.Controls.Add(Me.txtPL7_Points)
         Me.pnlPlayer7.Controls.Add(Me.chkPL7)
-        Me.pnlPlayer7.Location = New System.Drawing.Point(7, 209)
+        Me.pnlPlayer7.Location = New System.Drawing.Point(7, 219)
         Me.pnlPlayer7.Name = "pnlPlayer7"
         Me.pnlPlayer7.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer7.TabIndex = 107
@@ -822,7 +841,7 @@ Partial Class FFFServer
         Me.pnlPlayer8.Controls.Add(Me.lblPL_8)
         Me.pnlPlayer8.Controls.Add(Me.txtPL8_Points)
         Me.pnlPlayer8.Controls.Add(Me.chkPL8)
-        Me.pnlPlayer8.Location = New System.Drawing.Point(7, 235)
+        Me.pnlPlayer8.Location = New System.Drawing.Point(7, 245)
         Me.pnlPlayer8.Name = "pnlPlayer8"
         Me.pnlPlayer8.Size = New System.Drawing.Size(453, 20)
         Me.pnlPlayer8.TabIndex = 107
@@ -832,7 +851,7 @@ Partial Class FFFServer
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.ClientSize = New System.Drawing.Size(497, 362)
+        Me.ClientSize = New System.Drawing.Size(471, 377)
         Me.Controls.Add(Me.pnlPlayer8)
         Me.Controls.Add(Me.pnlPlayer7)
         Me.Controls.Add(Me.pnlPlayer6)
@@ -941,7 +960,6 @@ Partial Class FFFServer
     Friend WithEvents chkPL6 As CheckBox
     Friend WithEvents chkPL7 As CheckBox
     Friend WithEvents chkPL8 As CheckBox
-    Friend WithEvents btnRandomize As Button
     Friend WithEvents lblSmallestScore As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents chkAllVirtual As CheckBox
@@ -956,4 +974,5 @@ Partial Class FFFServer
     Friend WithEvents pnlPlayer6 As Panel
     Friend WithEvents pnlPlayer7 As Panel
     Friend WithEvents pnlPlayer8 As Panel
+    Friend WithEvents btnRandomize As Button
 End Class

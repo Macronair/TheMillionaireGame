@@ -118,7 +118,7 @@ Partial Class About
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(37, 16)
         Me.Label5.TabIndex = 7
-        Me.Label5.Text = "RC1"
+        Me.Label5.Text = "RC2"
         '
         'About
         '

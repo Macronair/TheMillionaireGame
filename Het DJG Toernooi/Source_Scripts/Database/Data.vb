@@ -15,7 +15,7 @@ Public Class Data
 
         If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then
             connectionString.Open()
-
+            CoreConsole.LogMsgDate("Database not found. Trying to create new file...")
             Try
                 Dim str1 As String = "DROP DATABASE " + nameToCreate
 
@@ -35,7 +35,7 @@ Public Class Data
                 Try
                     cmdRemove.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("Unable to remove database, because it probably doesn't exist. Resuming with database creation...")
+                    CoreConsole.LogMsgDate("Unable to remove database, because it probably doesn't exist. Resuming with database creation.")
                 Finally
                     cmdCreate.ExecuteNonQuery()
                     CoreConsole.LogMsgDate("Database '" + nameToCreate + "' was created successfully")
@@ -59,8 +59,7 @@ Public Class Data
                 Try
                     dropcmd.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("An error occured while dropping table Level 1: ")
-                    CoreConsole.LogMsg(ex.Message)
+                    CoreConsole.LogMsgDate("Level 1 table doesn't exist (yet).")
                 End Try
 
                 'Dropping Level 2
@@ -69,8 +68,7 @@ Public Class Data
                 Try
                     dropcmd.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("An error occured while dropping table Level 2: ")
-                    CoreConsole.LogMsg(ex.Message)
+                    CoreConsole.LogMsgDate("Level 2 table doesn't exist (yet).")
                 End Try
 
                 'Dropping Level 3
@@ -79,8 +77,7 @@ Public Class Data
                 Try
                     dropcmd.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("An error occured while dropping table Level 3: ")
-                    CoreConsole.LogMsg(ex.Message)
+                    CoreConsole.LogMsgDate("Level 3 table doesn't exist (yet).")
                 End Try
 
                 'Dropping Level 4 (Million question)
@@ -89,8 +86,7 @@ Public Class Data
                 Try
                     dropcmd.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("An error occured while dropping table Level 4: ")
-                    CoreConsole.LogMsg(ex.Message)
+                    CoreConsole.LogMsgDate("Level 4 table doesn't exist (yet).")
                 End Try
 
                 'Dropping Level 0 (FFF)
@@ -99,8 +95,7 @@ Public Class Data
                 Try
                     dropcmd.ExecuteNonQuery()
                 Catch ex As Exception
-                    CoreConsole.LogMsgDate("An error occured while dropping table Level 0: ")
-                    CoreConsole.LogMsg(ex.Message)
+                    CoreConsole.LogMsgDate("Level 0 table doesn't exist (yet).")
                 End Try
 
                 Dim tbLevel1 As String = "CREATE TABLE [dbo].[questions_Level1] (" +
@@ -179,7 +174,7 @@ Public Class Data
                 Dim cmdLevel0 As SqlCommand = New SqlCommand(tbLevel0, connectionString)
                 cmdLevel0.ExecuteNonQuery()
 
-                CoreConsole.LogMsgDate("Tables in database " + nameToCreate + " created succesfully")
+                CoreConsole.LogMsgDate("Tables in database " + nameToCreate + " created succesfully.")
 
             Catch ex As Exception
                 CoreConsole.LogMsgDate("Error when creating tables in database:")
@@ -194,7 +189,7 @@ Public Class Data
                 connectionString.Open()
                 CoreConsole.LogMsgDate("Succesfully connected to local database.")
             Catch ex As Exception
-                CoreConsole.LogMsgDate("Error when connection to database:")
+                CoreConsole.LogMsgDate("Error when connecting to database:")
                 CoreConsole.LogMsg(ex.Message)
             Finally
                 connectionString.Close()
