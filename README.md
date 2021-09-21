@@ -1,3 +1,5 @@
+![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
+
 # The Millionaire Game
 A custom game controller software like WWTBAM.
 
@@ -28,5 +30,67 @@ To use the online features of Fastest Finger First, you need to setup the follow
 4. Choose the preferred player slot (1-8).
 5. When the 'Connect' button on the client changes to 'Disconnect', then the contestant is connected.
 
-## Release notes
-Currently being worked on..
+## Lifelines
+
+### 50:50
+<img src="https://user-images.githubusercontent.com/43847273/134224389-8e6c555d-d539-421f-b2fe-2af17bab13c5.png" alt="drawing" width="100"/>
+Take out two wrong answers and leave one right & wrong answer.
+
+### Plus One / Phone-A-Friend
+<img src="https://user-images.githubusercontent.com/43847273/134224961-a43b1462-3f2b-4575-ac0d-6583f62b37bb.png" alt="drawing" width="100"/>
+Ask a friend or other person for help on a question. The contestant has 30 seconds to get an answer.
+
+### Ask The Audience
+<img src="https://user-images.githubusercontent.com/43847273/134224974-d00f79a1-d538-47be-87fe-27ef6cc720e6.png" alt="drawing" width="100"/>
+Ask the 'virtual' audience for help!
+
+### Switch the Question
+<img src="https://user-images.githubusercontent.com/43847273/134225023-037b27e8-6346-4354-aab7-8e49b6aec46c.png" alt="drawing" width="100"/>
+When the contestant doesn't like the current question, this lifeline will switch the question for another one on the same level.
+
+- This lifeline is only activated when Risk Mode is activated!
+
+## The Money Tree
+
+**15 - 1.000.000**
+
+14 - 500.000
+
+13 - 250.000
+
+12 - 125.000
+
+11 - 64.000
+
+**10 - 32.000**
+
+9 - 16.000
+
+8 - 8.000
+
+7 - 4.000
+
+6 - 2.000
+
+**5 - 1.000**
+
+4 - 750
+
+3 - 500
+
+2 - 250
+
+1 - 100
+
+## Screenshots
+### Main overview:
+![Screenshot_1](https://user-images.githubusercontent.com/43847273/134223822-951c5603-050c-4ac0-b000-b3dbf171fa77.png)
+### Questions Editor:
+![Screenshot_2](https://user-images.githubusercontent.com/43847273/134223880-4fc9cb37-6084-4744-a260-1d227abfecdf.png)
+### A virtual Fastest Finger First session:
+![Screenshot_3](https://user-images.githubusercontent.com/43847273/134223890-5ec9aff8-88d1-4bbb-afa4-15bbcdd32c25.png)
+### Rules in the middle of a game:
+![Screenshot_4](https://user-images.githubusercontent.com/43847273/134223902-15be2d30-4a35-4ec6-932a-36aa8f8b51fe.png)
+### Contestant winning 32.000:
+![Screenshot_5](https://user-images.githubusercontent.com/43847273/134223910-30d1e2ab-83e9-456f-98f1-a01d477be1b2.png)
+
