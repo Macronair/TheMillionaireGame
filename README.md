@@ -94,3 +94,7 @@ When the contestant doesn't like the current question, this lifeline will switch
 ### Contestant winning 32.000:
 ![Screenshot_5](https://user-images.githubusercontent.com/43847273/134223910-30d1e2ab-83e9-456f-98f1-a01d477be1b2.png)
 
+## Where to download it?
+You can download one of the releases: 
+[here](https://github.com/Maerciez/TheMillionaireGame/releases)
+!
