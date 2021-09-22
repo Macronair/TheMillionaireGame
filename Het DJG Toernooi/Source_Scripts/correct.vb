@@ -32,93 +32,95 @@
             GuestScreen.txtD.ForeColor = Color.Black
             ControlPanel.txtD.BackColor = Color.Green
         End If
-        If Game.level = 0 Then
-            ControlPanel.intSound += 1
+        If ControlPanel.walkaway = False Then
+            If Game.level = 0 Then
+                ControlPanel.intSound += 1
 
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(12, False, 700)
-            End With
-        End If
-        If Game.level = 1 Then
-            ControlPanel.intSound += 1
+                With ControlPanel.snd
+                    .Name = "SOUND" & ControlPanel.intSound
+                    .Play(12, False, 700)
+                End With
+            End If
+            If Game.level = 1 Then
+                ControlPanel.intSound += 1
 
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(12, False, 700)
-            End With
-        End If
-        If Game.level = 2 Then
-            ControlPanel.intSound += 1
+                With ControlPanel.snd
+                    .Name = "SOUND" & ControlPanel.intSound
+                    .Play(12, False, 700)
+                End With
+            End If
+            If Game.level = 2 Then
+                ControlPanel.intSound += 1
 
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(12, False, 700)
-            End With
-        End If
-        If Game.level = 3 Then
-            ControlPanel.intSound += 1
+                With ControlPanel.snd
+                    .Name = "SOUND" & ControlPanel.intSound
+                    .Play(12, False, 700)
+                End With
+            End If
+            If Game.level = 3 Then
+                ControlPanel.intSound += 1
 
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(12, False, 700)
-            End With
-        End If
-        If Game.level = 4 Then
-            ControlPanel.intSound += 1
+                With ControlPanel.snd
+                    .Name = "SOUND" & ControlPanel.intSound
+                    .Play(12, False, 700)
+                End With
+            End If
+            If Game.level = 4 Then
+                ControlPanel.intSound += 1
 
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(18, False, 700)
-            End With
-            ControlPanel.Timer1.Start()
-        End If
-        If Game.level = 5 Then
-            My.Computer.Audio.Play(My.Resources.q6_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 6 Then
-            My.Computer.Audio.Play(My.Resources.q7_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 7 Then
-            My.Computer.Audio.Play(My.Resources.q8_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 8 Then
-            My.Computer.Audio.Play(My.Resources.q9_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 9 Then
-            Select Case Game.gamemode
-                Case 0
-                    My.Computer.Audio.Play(My.Resources.q10_correct, AudioPlayMode.Background)
-                Case 1
-                    My.Computer.Audio.Play(My.Resources.q10_correct_2, AudioPlayMode.Background)
-            End Select
+                With ControlPanel.snd
+                    .Name = "SOUND" & ControlPanel.intSound
+                    .Play(18, False, 700)
+                End With
+                ControlPanel.Timer1.Start()
+            End If
+            If Game.level = 5 Then
+                My.Computer.Audio.Play(My.Resources.q6_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 6 Then
+                My.Computer.Audio.Play(My.Resources.q7_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 7 Then
+                My.Computer.Audio.Play(My.Resources.q8_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 8 Then
+                My.Computer.Audio.Play(My.Resources.q9_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 9 Then
+                Select Case Game.gamemode
+                    Case 0
+                        My.Computer.Audio.Play(My.Resources.q10_correct, AudioPlayMode.Background)
+                    Case 1
+                        My.Computer.Audio.Play(My.Resources.q10_correct_2, AudioPlayMode.Background)
+                End Select
 
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 10 Then
-            My.Computer.Audio.Play(My.Resources.q11_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 11 Then
-            My.Computer.Audio.Play(My.Resources.q12_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 12 Then
-            My.Computer.Audio.Play(My.Resources.q13_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 13 Then
-            My.Computer.Audio.Play(My.Resources.q14_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-        End If
-        If Game.level = 14 Then
-            My.Computer.Audio.Play(My.Resources.q15_correct, AudioPlayMode.Background)
-            ControlPanel.Timer2.Start()
-            HostScreen.txtWinnings.Text = "Total Score: " + Game.varCorrect
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 10 Then
+                My.Computer.Audio.Play(My.Resources.q11_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 11 Then
+                My.Computer.Audio.Play(My.Resources.q12_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 12 Then
+                My.Computer.Audio.Play(My.Resources.q13_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 13 Then
+                My.Computer.Audio.Play(My.Resources.q14_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+            End If
+            If Game.level = 14 Then
+                My.Computer.Audio.Play(My.Resources.q15_correct, AudioPlayMode.Background)
+                ControlPanel.Timer2.Start()
+                HostScreen.txtWinnings.Text = "Total Score: " + Game.varCorrect
+            End If
         End If
 
         TVControlPnl.grpATA.Visible = False

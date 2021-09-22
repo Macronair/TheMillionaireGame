@@ -27,22 +27,22 @@
             Dim random As New Random()
             If Game.level < 5 Then
                 If ControlPanel.lblAnswer.Text = "A" Then
-                    amountA = random.Next(40, 50)
+                    amountA = random.Next(40, 60)
                     amountB = random.Next(1, 10)
                     amountC = random.Next(1, 10)
                     amountD = random.Next(1, 10)
                 ElseIf ControlPanel.lblAnswer.Text = "B" Then
-                    amountB = random.Next(40, 50)
+                    amountB = random.Next(40, 60)
                     amountC = random.Next(1, 10)
                     amountD = random.Next(1, 10)
                     amountA = random.Next(1, 10)
                 ElseIf ControlPanel.lblAnswer.Text = "C" Then
-                    amountC = random.Next(40, 50)
+                    amountC = random.Next(40, 60)
                     amountD = random.Next(1, 10)
                     amountA = random.Next(1, 10)
                     amountB = random.Next(1, 10)
                 ElseIf ControlPanel.lblAnswer.Text = "D" Then
-                    amountD = random.Next(40, 50)
+                    amountD = random.Next(40, 60)
                     amountA = random.Next(1, 10)
                     amountB = random.Next(1, 10)
                     amountC = random.Next(1, 10)
@@ -71,26 +71,39 @@
                 End If
             ElseIf Game.level >= 10 Then
                 If ControlPanel.lblAnswer.Text = "A" Then
-                    amountA = random.Next(30, 50)
+                    amountA = random.Next(40, 55)
                     amountB = random.Next(20, 35)
                     amountC = random.Next(20, 35)
                     amountD = random.Next(20, 35)
                 ElseIf ControlPanel.lblAnswer.Text = "B" Then
-                    amountB = random.Next(30, 50)
+                    amountB = random.Next(40, 55)
                     amountC = random.Next(20, 35)
                     amountD = random.Next(20, 35)
                     amountA = random.Next(20, 35)
                 ElseIf ControlPanel.lblAnswer.Text = "C" Then
-                    amountC = random.Next(30, 50)
+                    amountC = random.Next(40, 55)
                     amountD = random.Next(20, 35)
                     amountA = random.Next(20, 35)
                     amountB = random.Next(20, 35)
                 ElseIf ControlPanel.lblAnswer.Text = "D" Then
-                    amountD = random.Next(30, 50)
+                    amountD = random.Next(40, 55)
                     amountA = random.Next(20, 35)
                     amountB = random.Next(20, 35)
                     amountC = random.Next(20, 35)
                 End If
+            End If
+
+            If ControlPanel.txtA.Text = "" Then
+                amountA = 0
+            End If
+            If ControlPanel.txtB.Text = "" Then
+                amountB = 0
+            End If
+            If ControlPanel.txtC.Text = "" Then
+                amountC = 0
+            End If
+            If ControlPanel.txtD.Text = "" Then
+                amountD = 0
             End If
 
             ControlPanel.lblATA_A.Text = amountA

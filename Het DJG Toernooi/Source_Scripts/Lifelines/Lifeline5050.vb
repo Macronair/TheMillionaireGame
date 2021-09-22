@@ -136,5 +136,22 @@ Public Class Lifeline5050
                 GuestScreen.txtA.Text = "D: " + ControlPanel.txtA.Text
             End If
         End If
+
+        If ControlPanel.txtA.BackColor = Color.Red Then
+            ControlPanel.txtA.Text = ""
+            ControlPanel.txtA.BackColor = SystemColors.Control
+        End If
+        If ControlPanel.txtB.BackColor = Color.Red Then
+            ControlPanel.txtB.Text = ""
+            ControlPanel.txtB.BackColor = SystemColors.Control
+        End If
+        If ControlPanel.txtC.BackColor = Color.Red Then
+            ControlPanel.txtC.Text = ""
+            ControlPanel.txtC.BackColor = SystemColors.Control
+        End If
+        If ControlPanel.txtD.BackColor = Color.Red Then
+            ControlPanel.txtD.Text = ""
+            ControlPanel.txtD.BackColor = SystemColors.Control
+        End If
     End Sub
 End Class

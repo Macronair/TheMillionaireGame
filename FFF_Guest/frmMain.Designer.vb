@@ -39,6 +39,7 @@ Partial Class frmMain
         Me.grpSlot = New System.Windows.Forms.GroupBox()
         Me.nmrSlot = New System.Windows.Forms.NumericUpDown()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblStatus = New System.Windows.Forms.Label()
         Me.grpAnswers.SuspendLayout()
         Me.grpSlot.SuspendLayout()
         CType(Me.nmrSlot, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -54,7 +55,8 @@ Partial Class frmMain
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(116, 47)
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(405, 19)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 1
@@ -99,27 +101,30 @@ Partial Class frmMain
         Me.grpAnswers.Controls.Add(Me.btnFinal)
         Me.grpAnswers.Controls.Add(Me.btnA)
         Me.grpAnswers.Enabled = False
-        Me.grpAnswers.Location = New System.Drawing.Point(14, 131)
+        Me.grpAnswers.Location = New System.Drawing.Point(11, 76)
         Me.grpAnswers.Name = "grpAnswers"
-        Me.grpAnswers.Size = New System.Drawing.Size(753, 285)
+        Me.grpAnswers.Size = New System.Drawing.Size(756, 329)
         Me.grpAnswers.TabIndex = 10
         Me.grpAnswers.TabStop = False
         '
         'btnClear
         '
-        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnClear.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnClear.BackgroundImage = Global.FFF_Guest.My.Resources.Resources.cross_icon
         Me.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnClear.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClear.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnClear.Location = New System.Drawing.Point(379, 181)
+        Me.btnClear.Location = New System.Drawing.Point(379, 195)
         Me.btnClear.Name = "btnClear"
-        Me.btnClear.Size = New System.Drawing.Size(132, 42)
+        Me.btnClear.Size = New System.Drawing.Size(132, 82)
         Me.btnClear.TabIndex = 17
         Me.btnClear.UseVisualStyleBackColor = False
         '
         'btnD
         '
+        Me.btnD.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnD.BackColor = System.Drawing.Color.Transparent
         Me.btnD.BackgroundImage = Global.FFF_Guest.My.Resources.Resources.Normal_Answer_Fill
         Me.btnD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -129,17 +134,19 @@ Partial Class frmMain
         Me.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnD.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnD.ForeColor = System.Drawing.Color.White
-        Me.btnD.Location = New System.Drawing.Point(379, 131)
+        Me.btnD.Location = New System.Drawing.Point(379, 138)
         Me.btnD.Name = "btnD"
-        Me.btnD.Size = New System.Drawing.Size(358, 44)
+        Me.btnD.Size = New System.Drawing.Size(361, 51)
         Me.btnD.TabIndex = 16
         Me.btnD.Text = "D"
         Me.btnD.UseVisualStyleBackColor = False
         '
         'txtAnswer
         '
+        Me.txtAnswer.BackColor = System.Drawing.Color.Black
         Me.txtAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtAnswer.Location = New System.Drawing.Point(265, 229)
+        Me.txtAnswer.ForeColor = System.Drawing.Color.Magenta
+        Me.txtAnswer.Location = New System.Drawing.Point(261, 283)
         Me.txtAnswer.MaxLength = 4
         Me.txtAnswer.Name = "txtAnswer"
         Me.txtAnswer.Size = New System.Drawing.Size(223, 40)
@@ -148,6 +155,9 @@ Partial Class frmMain
         '
         'btnC
         '
+        Me.btnC.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnC.BackColor = System.Drawing.Color.Transparent
         Me.btnC.BackgroundImage = Global.FFF_Guest.My.Resources.Resources.Normal_Answer_Fill
         Me.btnC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -157,15 +167,16 @@ Partial Class frmMain
         Me.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnC.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnC.ForeColor = System.Drawing.Color.White
-        Me.btnC.Location = New System.Drawing.Point(15, 131)
+        Me.btnC.Location = New System.Drawing.Point(15, 138)
         Me.btnC.Name = "btnC"
-        Me.btnC.Size = New System.Drawing.Size(358, 44)
+        Me.btnC.Size = New System.Drawing.Size(361, 51)
         Me.btnC.TabIndex = 15
         Me.btnC.Text = "C"
         Me.btnC.UseVisualStyleBackColor = False
         '
         'btnB
         '
+        Me.btnB.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnB.BackColor = System.Drawing.Color.Transparent
         Me.btnB.BackgroundImage = Global.FFF_Guest.My.Resources.Resources.Normal_Answer_Fill
         Me.btnB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -177,7 +188,7 @@ Partial Class frmMain
         Me.btnB.ForeColor = System.Drawing.Color.White
         Me.btnB.Location = New System.Drawing.Point(379, 81)
         Me.btnB.Name = "btnB"
-        Me.btnB.Size = New System.Drawing.Size(358, 44)
+        Me.btnB.Size = New System.Drawing.Size(361, 51)
         Me.btnB.TabIndex = 14
         Me.btnB.Text = "B"
         Me.btnB.UseVisualStyleBackColor = False
@@ -199,14 +210,17 @@ Partial Class frmMain
         Me.btnFinal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnFinal.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnFinal.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnFinal.Location = New System.Drawing.Point(241, 181)
+        Me.btnFinal.Location = New System.Drawing.Point(241, 195)
         Me.btnFinal.Name = "btnFinal"
-        Me.btnFinal.Size = New System.Drawing.Size(132, 42)
+        Me.btnFinal.Size = New System.Drawing.Size(132, 82)
         Me.btnFinal.TabIndex = 12
         Me.btnFinal.UseVisualStyleBackColor = False
         '
         'btnA
         '
+        Me.btnA.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnA.BackColor = System.Drawing.Color.Transparent
         Me.btnA.BackgroundImage = Global.FFF_Guest.My.Resources.Resources.Normal_Answer_Fill
         Me.btnA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -218,7 +232,7 @@ Partial Class frmMain
         Me.btnA.ForeColor = System.Drawing.Color.White
         Me.btnA.Location = New System.Drawing.Point(15, 81)
         Me.btnA.Name = "btnA"
-        Me.btnA.Size = New System.Drawing.Size(358, 44)
+        Me.btnA.Size = New System.Drawing.Size(361, 51)
         Me.btnA.TabIndex = 6
         Me.btnA.Text = "A"
         Me.btnA.UseVisualStyleBackColor = False
@@ -255,12 +269,24 @@ Partial Class frmMain
         Me.Label1.TabIndex = 14
         Me.Label1.Text = "<< Server IP here."
         '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblStatus.ForeColor = System.Drawing.Color.Yellow
+        Me.lblStatus.Location = New System.Drawing.Point(116, 46)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(107, 16)
+        Me.lblStatus.TabIndex = 15
+        Me.lblStatus.Text = "Disconnected!"
+        '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(781, 431)
+        Me.ClientSize = New System.Drawing.Size(775, 417)
+        Me.Controls.Add(Me.lblStatus)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.grpSlot)
         Me.Controls.Add(Me.grpAnswers)
@@ -269,9 +295,10 @@ Partial Class frmMain
         Me.Controls.Add(Me.txtReceive)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
+        Me.ForeColor = System.Drawing.Color.White
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Name = "frmMain"
-        Me.Text = "Fastest Finger First - Client Panel"
+        Me.Text = "The Millionaire Game - Fastest Finger Client"
         Me.grpAnswers.ResumeLayout(False)
         Me.grpAnswers.PerformLayout()
         Me.grpSlot.ResumeLayout(False)
@@ -298,4 +325,5 @@ Partial Class frmMain
     Friend WithEvents btnB As Button
     Friend WithEvents btnClear As Button
     Friend WithEvents Label1 As Label
+    Friend WithEvents lblStatus As Label
 End Class

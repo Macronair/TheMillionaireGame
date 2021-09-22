@@ -51,7 +51,7 @@ Public Class ControlPanel
         GuestScreen.txtA.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
-        Else
+        ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
         If walkaway = False Then
@@ -183,7 +183,7 @@ Public Class ControlPanel
         GuestScreen.txtB.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
-        Else
+        ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
         If walkaway = False Then
@@ -306,7 +306,7 @@ Public Class ControlPanel
         GuestScreen.txtC.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
-        Else
+        ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
         If walkaway = False Then
@@ -429,7 +429,7 @@ Public Class ControlPanel
         GuestScreen.txtD.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
-        Else
+        ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
         If walkaway = False Then
@@ -546,7 +546,9 @@ Public Class ControlPanel
             TVControlPnl.tmrFlash.Start()
             HostScreen.txtExplain.ForeColor = Color.White
             If HostScreen.pnlAnswer.BackColor = Color.Lime Then
-                TVControlPnl.tmrStrap.Start()
+                If walkaway = False Then
+                    TVControlPnl.tmrStrap.Start()
+                End If
                 subAnswer.correctRun()
             End If
             If HostScreen.pnlAnswer.BackColor = Color.Red Or HostScreen.pnlAnswer.BackColor = Color.LightGray Then
@@ -904,7 +906,7 @@ Public Class ControlPanel
             End With
         End If
         HostScreen.lblWalkedAway.ForeColor = Color.White
-        TVControlPnl.lblAmount.Text = "€" & Game.varCurrent
+        TVControlPnl.lblAmount.Text = "" & Game.varCurrent
         TVControlPnl.pnlQuestion.Visible = False
         'TVControlPnl.lblATAa.Visible = False
         'TVControlPnl.lblATAb.Visible = False

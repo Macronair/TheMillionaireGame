@@ -46,14 +46,18 @@ Public Class frmMain
                     client = New TcpClient(TextBox1.Text, 3818)
                     client.GetStream.BeginRead(New Byte() {0}, 0, 0, New AsyncCallback(AddressOf read), Nothing)
                     Button1.Text = "Disconnect"
+                    lblStatus.Text = "Client connected!"
                     grpSlot.Enabled = False
                 Catch ex As Exception
                     xUpdate("Can't connect to the server!")
+                    lblStatus.Text = "Error: Cannot connect to server."
                 End Try
             Case "Disconnect"
+                lblStatus.Text = "Disconnecting..."
                 client.Client.Close()
                 client = Nothing
                 Button1.Text = "Connect"
+                lblStatus.Text = "Client disconnected!"
                 grpSlot.Enabled = True
         End Select
     End Sub
