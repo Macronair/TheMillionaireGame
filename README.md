@@ -82,6 +82,10 @@ When the contestant doesn't like the current question, this lifeline will switch
 
 1 - 100
 
+## Video Demo
+
+[![The Millionaire Game Demo 2021](https://img.youtube.com/vi/hXtrJ1ECPtc/0.jpg)](https://youtu.be/hXtrJ1ECPtc)
+
 ## Screenshots
 ### Main overview:
 ![Screenshot_1](https://user-images.githubusercontent.com/43847273/134223822-951c5603-050c-4ac0-b000-b3dbf171fa77.png)
