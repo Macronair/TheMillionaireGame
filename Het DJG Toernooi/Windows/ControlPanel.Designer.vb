@@ -116,6 +116,8 @@ Partial Class ControlPanel
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
         Me.btnFFF = New System.Windows.Forms.Button()
         Me.btnUndo = New System.Windows.Forms.Button()
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ProfileEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.grpRules.SuspendLayout()
@@ -809,7 +811,7 @@ Partial Class ControlPanel
         '
         'GameToolStripMenuItem
         '
-        Me.GameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuestionsEditorToolStripMenuItem})
+        Me.GameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuestionsEditorToolStripMenuItem, Me.ToolStripMenuItem1, Me.ProfileEditorToolStripMenuItem})
         Me.GameToolStripMenuItem.Name = "GameToolStripMenuItem"
         Me.GameToolStripMenuItem.Size = New System.Drawing.Size(50, 20)
         Me.GameToolStripMenuItem.Text = "Game"
@@ -830,24 +832,24 @@ Partial Class ControlPanel
         'HostScreenToolStripMenuItem
         '
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
-        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
-        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 6)
         '
         'TVScreenToolStripMenuItem
         '
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
-        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
         '
         'OptionsToolStripMenuItem
@@ -861,7 +863,7 @@ Partial Class ControlPanel
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'grpLifelines
@@ -1044,6 +1046,17 @@ Partial Class ControlPanel
         Me.btnUndo.TabIndex = 81
         Me.btnUndo.UseVisualStyleBackColor = False
         '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        '
+        'ProfileEditorToolStripMenuItem
+        '
+        Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1209,4 +1222,6 @@ Partial Class ControlPanel
     Friend WithEvents ChangeMoneyStrapToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuestionsEditorToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
+    Friend WithEvents ProfileEditorToolStripMenuItem As ToolStripMenuItem
 End Class

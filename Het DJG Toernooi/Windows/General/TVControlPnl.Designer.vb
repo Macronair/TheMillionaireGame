@@ -641,7 +641,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFPlayers
         '
-        Me.pnlFFFPlayers.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.background
+        Me.pnlFFFPlayers.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.background1
         Me.pnlFFFPlayers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL1)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL8)

@@ -14,8 +14,15 @@ Public Class Data
         CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
 
         If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then
-            connectionString.Open()
             CoreConsole.LogMsgDate("Database not found. Trying to create new file...")
+            Try
+                connectionString.Open()
+            Catch ex As Exception
+                CoreConsole.Hide()
+                MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                CoreConsole.Close()
+            End Try
+
             Try
                 Dim str1 As String = "DROP DATABASE " + nameToCreate
 
@@ -51,7 +58,13 @@ Public Class Data
             connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
 
             Try
-                connectionString.Open()
+                Try
+                    connectionString.Open()
+                Catch ex As Exception
+                    CoreConsole.Hide()
+                    MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    CoreConsole.Close()
+                End Try
 
                 'Dropping Level 1
                 Dim drop As String = "DROP TABLE questions_Level1;"
@@ -186,7 +199,13 @@ Public Class Data
             connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
 
             Try
-                connectionString.Open()
+                Try
+                    connectionString.Open()
+                Catch ex As Exception
+                    CoreConsole.Hide()
+                    MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    CoreConsole.Close()
+                End Try
                 CoreConsole.LogMsgDate("Succesfully connected to local database.")
             Catch ex As Exception
                 CoreConsole.LogMsgDate("Error when connecting to database:")
