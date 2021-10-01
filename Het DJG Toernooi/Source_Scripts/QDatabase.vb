@@ -46,6 +46,9 @@ Public Class QDatabase
                 End If
             Catch ex As Exception
                 MessageBox.Show("Error when loading FFF question: " + Environment.NewLine + ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Question.act = 0
+                My.Computer.Audio.Stop()
+                Question.useMusic = False
             End Try
 
 
@@ -80,6 +83,9 @@ Public Class QDatabase
                 End If
             Else
                 MessageBox.Show("There are no questions available", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Question.act = 0
+                My.Computer.Audio.Stop()
+                Question.useMusic = False
             End If
         End If
 
@@ -112,6 +118,9 @@ Public Class QDatabase
                 End If
             Else
                 MessageBox.Show("There are no questions available", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Question.act = 0
+                My.Computer.Audio.Stop()
+                Question.useMusic = False
             End If
         End If
 
@@ -144,6 +153,9 @@ Public Class QDatabase
                 End If
             Else
                 MessageBox.Show("There are no questions available.", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Question.act = 0
+                My.Computer.Audio.Stop()
+                Question.useMusic = False
             End If
         End If
 
@@ -176,6 +188,9 @@ Public Class QDatabase
                 End If
             Else
                 MessageBox.Show("There are no questions available", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Question.act = 0
+                My.Computer.Audio.Stop()
+                Question.useMusic = False
             End If
         End If
 

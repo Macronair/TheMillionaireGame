@@ -5,23 +5,33 @@ Public Class CoreConsole
     Public Shared isRunning As Boolean = False
 
     Private Sub CoreConsole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub StartSeq()
+        Me.Enabled = True
         'Version info
         LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
         LogMsg(String.Format("Created by Marco (Maerciezz). Compatible with Microsoft SQL!"))
         LogMsg("")
 
-        Me.Enabled = True
-        tmrLoad.Start()
-    End Sub
-
-    Private Sub StartSeq()
+        Threading.Thread.Sleep(250)
         LogMsgDate("Checking database...")
-        Data.CreateDatabase()
+        Try
+            Data.CreateDatabase()
+        Catch ex As Exception
+            tmrRuntime.Stop()
+            tmrLoad.Stop()
+            Me.Hide()
+            MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Me.Close()
+        End Try
+
         LogMsgDate("Lauching controller...")
 
         isRunning = True
-        ControlPanel.Show()
         Me.Hide()
+        ControlPanel.Show()
         tmrRuntime.Start()
     End Sub
 
@@ -55,5 +65,9 @@ Public Class CoreConsole
             tmrRuntime.Stop()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub CoreConsole_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        StartSeq()
     End Sub
 End Class
