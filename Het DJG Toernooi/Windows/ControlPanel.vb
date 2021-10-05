@@ -984,22 +984,6 @@ Public Class ControlPanel
         End If
     End Sub
 
-    Private Sub chkBreak_CheckedChanged(sender As Object, e As EventArgs) Handles chkBreak.CheckedChanged
-        If chkBreak.Checked = True Then
-            HostScreen.lblBreak.ForeColor = Color.Orange
-        ElseIf chkBreak.Checked = False Then
-            HostScreen.lblBreak.ForeColor = Color.Black
-        End If
-    End Sub
-
-    Private Sub chkOutOfTime_CheckedChanged(sender As Object, e As EventArgs) Handles chkOutOfTime.CheckedChanged
-        If chkOutOfTime.Checked = True Then
-            HostScreen.lblOutOfTime.ForeColor = Color.Orange
-        ElseIf chkOutOfTime.Checked = False Then
-            HostScreen.lblOutOfTime.ForeColor = Color.Black
-        End If
-    End Sub
-
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         User.NewUser()
     End Sub

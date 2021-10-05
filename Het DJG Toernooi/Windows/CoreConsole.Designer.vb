@@ -31,14 +31,15 @@ Partial Class CoreConsole
         'txtConsole
         '
         Me.txtConsole.BackColor = System.Drawing.Color.Black
+        Me.txtConsole.Dock = System.Windows.Forms.DockStyle.Fill
         Me.txtConsole.Font = New System.Drawing.Font("Lucida Console", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtConsole.ForeColor = System.Drawing.Color.LightGray
-        Me.txtConsole.Location = New System.Drawing.Point(1, 1)
+        Me.txtConsole.Location = New System.Drawing.Point(0, 0)
         Me.txtConsole.Multiline = True
         Me.txtConsole.Name = "txtConsole"
         Me.txtConsole.ReadOnly = True
         Me.txtConsole.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtConsole.Size = New System.Drawing.Size(925, 442)
+        Me.txtConsole.Size = New System.Drawing.Size(955, 443)
         Me.txtConsole.TabIndex = 0
         '
         'tmrLoad
@@ -54,14 +55,13 @@ Partial Class CoreConsole
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.ClientSize = New System.Drawing.Size(927, 443)
+        Me.ClientSize = New System.Drawing.Size(955, 443)
         Me.Controls.Add(Me.txtConsole)
         Me.Enabled = False
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "CoreConsole"
         Me.ShowIcon = False
         Me.ShowInTaskbar = False
-        Me.Text = "CoreConsole"
+        Me.Text = "The Millionaire Game - Console"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

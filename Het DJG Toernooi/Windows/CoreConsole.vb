@@ -30,7 +30,7 @@ Public Class CoreConsole
         LogMsgDate("Lauching controller...")
 
         isRunning = True
-        Me.Hide()
+        'Me.Hide()
         ControlPanel.Show()
         tmrRuntime.Start()
     End Sub
@@ -49,6 +49,9 @@ Public Class CoreConsole
 
     Public Shared Sub LogMsgLine(ByVal msg As String)
         CoreConsole.txtConsole.AppendText(msg)
+    End Sub
+    Public Shared Sub LogMsgLineDate(ByVal msg As String)
+        CoreConsole.txtConsole.AppendText(DateTime.Now + " : " + msg)
     End Sub
 
     Private Sub CoreConsole_EnabledChanged(sender As Object, e As EventArgs) Handles MyBase.EnabledChanged

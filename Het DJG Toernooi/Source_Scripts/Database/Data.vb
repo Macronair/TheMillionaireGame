@@ -9,13 +9,18 @@ Public Class Data
 
         Dim dbPath As String = Application.StartupPath
 
-            Dim nameToCreate As String = "dbMillionaire"
+        Dim nameToCreate As String = "dbMillionaire"        ' Name of the database
 
-            CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
+        ' Message to the console to show the database location
+        CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
 
-        If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then
-            CoreConsole.LogMsgDate("Database not found. Trying to create new file...")
+        ' Check if database file exists
+        If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then   ' If file does not exist, then create it.
+            CoreConsole.LogMsgDate("Database not found. Trying to create new file...")      ' Letting the user know.
+
+            ' Open SQL Connection
             connectionString.Open()
+
             Try
                 Dim str1 As String = "DROP DATABASE " + nameToCreate
 
@@ -48,56 +53,189 @@ Public Class Data
                 connectionString.Close()
             End Try
 
+            ' Change the connection string to the newly created file
+            connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
+
+            connectionString.Open()
+            DropTables("questions_Level0")
+            DropTables("questions_Level1")
+            DropTables("questions_Level2")
+            DropTables("questions_Level3")
+            DropTables("questions_Level4")
+            DropTables("settings_HostMessages")
+
+            CreateTables("q_Level0")
+            CreateTables("q_Level1")
+            CreateTables("q_Level2")
+            CreateTables("q_Level3")
+            CreateTables("q_Level4")
+            CreateTables("s_HostMessages")
+
+            CheckTables()
+            connectionString.Close()
+
+        Else
             connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
 
             Try
                 connectionString.Open()
-                'Dropping Level 1
-                Dim drop As String = "DROP TABLE questions_Level1;"
-                Dim dropcmd As SqlCommand = New SqlCommand(drop, connectionString)
-                Try
-                    dropcmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    CoreConsole.LogMsgDate("Level 1 table doesn't exist (yet).")
-                End Try
+                CoreConsole.LogMsgDate("Succesfully connected to local database.")
+                CoreConsole.LogMsgDate("Starting Database table check.")
+                CheckTables()
+            Catch ex As Exception
+                CoreConsole.LogMsgDate("An error occured while loading the database:")
+                CoreConsole.LogMsg(ex.Message)
+            Finally
+                connectionString.Close()
+            End Try
+        End If
+    End Sub
 
-                'Dropping Level 2
-                drop = "DROP TABLE questions_Level2;"
-                dropcmd = New SqlCommand(drop, connectionString)
-                Try
-                    dropcmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    CoreConsole.LogMsgDate("Level 2 table doesn't exist (yet).")
-                End Try
+    Public Shared Sub CheckTables()
+        'SQL Commands for checks
+        Dim cmd_s_HostMessages As String = "SELECT * FROM sys.tables WHERE name = 'settings_HostMessages'"
+        Dim cmd_s_Profiles As String = "SELECT * FROM sys.tables WHERE name = 'settings_Profiles'"
+        Dim cmd_q_Level0 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level0'"
+        Dim cmd_q_Level1 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level1'"
+        Dim cmd_q_Level2 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level2'"
+        Dim cmd_q_Level3 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level3'"
+        Dim cmd_q_Level4 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level4'"
 
-                'Dropping Level 3
-                drop = "DROP TABLE questions_Level3;"
-                dropcmd = New SqlCommand(drop, connectionString)
-                Try
-                    dropcmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    CoreConsole.LogMsgDate("Level 3 table doesn't exist (yet).")
-                End Try
+        Dim te_s_HostMessages As Boolean
+        Dim te_s_Profiles As Boolean
+        Dim te_q_Level0 As Boolean
+        Dim te_q_Level1 As Boolean
+        Dim te_q_Level2 As Boolean
+        Dim te_q_Level3 As Boolean
+        Dim te_q_Level4 As Boolean
 
-                'Dropping Level 4 (Million question)
-                drop = "DROP TABLE questions_Level4;"
-                dropcmd = New SqlCommand(drop, connectionString)
-                Try
-                    dropcmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    CoreConsole.LogMsgDate("Level 4 table doesn't exist (yet).")
-                End Try
+        'Check the Settings tables
 
-                'Dropping Level 0 (FFF)
-                drop = "DROP TABLE questions_Level0;"
-                dropcmd = New SqlCommand(drop, connectionString)
-                Try
-                    dropcmd.ExecuteNonQuery()
-                Catch ex As Exception
-                    CoreConsole.LogMsgDate("Level 0 table doesn't exist (yet).")
-                End Try
+        'Settings
+        Try
+            CoreConsole.LogMsgDate("Checking table 'settings_HostMessages'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_s_HostMessages, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_s_HostMessages = reader.HasRows
+                End Using
+            End Using
+            If te_s_HostMessages = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_HostMessages")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking database: " + Environment.NewLine + ex.Message)
+        End Try
 
-                Dim tbLevel1 As String = "CREATE TABLE [dbo].[questions_Level1] (" +
+        'Profiles                   <-- Coming soon in future builds
+        'Using sqlCmd As SqlCommand = New SqlCommand(cmd_s_HostMessages, connectionString)
+        '    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+        '        te_s_Profiles = reader.HasRows
+        '    End Using
+        'End Using
+
+        'Check the Question tables
+        Try
+            CoreConsole.LogMsgDate("Checking table 'questions_Level0'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Level0, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_q_Level0 = reader.HasRows
+                End Using
+            End Using
+            If te_q_Level0 = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_Level0")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking table questions_Level0: " + Environment.NewLine + ex.Message)
+        End Try
+        Try
+            CoreConsole.LogMsgDate("Checking table 'questions_Level1'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Level1, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_q_Level1 = reader.HasRows
+                End Using
+            End Using
+            If te_q_Level1 = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_Level1")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking table questions_Level1: " + Environment.NewLine + ex.Message)
+        End Try
+        Try
+            CoreConsole.LogMsgDate("Checking table 'questions_Level2'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Level2, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_q_Level2 = reader.HasRows
+                End Using
+            End Using
+            If te_q_Level2 = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_Level2")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking table questions_Level2: " + Environment.NewLine + ex.Message)
+        End Try
+        Try
+            CoreConsole.LogMsgDate("Checking table 'questions_Level3'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Level3, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_q_Level3 = reader.HasRows
+                End Using
+            End Using
+            If te_q_Level3 = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_Level3")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking table questions_Level3: " + Environment.NewLine + ex.Message)
+        End Try
+        Try
+            CoreConsole.LogMsgDate("Checking table 'questions_Level4'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Level4, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_q_Level4 = reader.HasRows
+                End Using
+            End Using
+            If te_q_Level4 = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables("s_Level4")
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking table questions_Level4: " + Environment.NewLine + ex.Message)
+        End Try
+
+        CoreConsole.LogMsg("")
+        CoreConsole.LogMsgDate("=========== Check Results ===========")
+        CoreConsole.LogMsgDate("> Fastest Finger Questions = " + te_q_Level0.ToString())
+        CoreConsole.LogMsgDate("> Level 1 Questions        = " + te_q_Level1.ToString())
+        CoreConsole.LogMsgDate("> Level 2 Questions        = " + te_q_Level2.ToString())
+        CoreConsole.LogMsgDate("> Level 3 Questions        = " + te_q_Level3.ToString())
+        CoreConsole.LogMsgDate("> Level 4 Questions        = " + te_q_Level4.ToString())
+        CoreConsole.LogMsgDate("> Host Messages            = " + te_s_HostMessages.ToString())
+        CoreConsole.LogMsgDate("=====================================")
+        CoreConsole.LogMsg("")
+
+    End Sub
+
+    Public Shared Sub DropTables(ByVal tablename As String)
+        Dim drop As String = "DROP TABLE " + tablename + ";"
+        Dim dropcmd As SqlCommand = New SqlCommand(drop, connectionString)
+        Try
+            dropcmd.ExecuteNonQuery()
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Table with name " + tablename + " doesn't exist.")
+        End Try
+    End Sub
+
+    Public Shared Sub CreateTables(ByVal tablename As String)
+        Dim table As String
+
+        Select Case tablename
+            Case "q_level0"
+                CoreConsole.LogMsgLineDate("Creating table 'questions_Level0'...")
+                table = "CREATE TABLE [dbo].[questions_Level0] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
                             "[Question] TEXT NOT NULL," +
                             "[A] VARCHAR (50) NOT NULL," +
@@ -109,8 +247,17 @@ Public Class Data
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] TEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
-
-                Dim tbLevel2 As String = "CREATE TABLE [dbo].[questions_Level2] (" +
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case "q_level1"
+                CoreConsole.LogMsgLineDate("Creating table 'questions_Level1'...")
+                table = "CREATE TABLE [dbo].[questions_Level1] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
                             "[Question] TEXT NOT NULL," +
                             "[A] VARCHAR (50) NOT NULL," +
@@ -118,12 +265,21 @@ Public Class Data
                             "[C] VARCHAR (50) NOT NULL," +
                             "[D] VARCHAR (50) NOT NULL," +
                             "[CorrectAnswer] VARCHAR (50) NOT NULL," +
-                            "[Type] VARCHAR (50) DEFAULT ('Lvl2') NOT NULL," +
+                            "[Type] VARCHAR (50) DEFAULT ('Lvl1') NOT NULL," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] TEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
-
-                Dim tbLevel3 As String = "CREATE TABLE [dbo].[questions_Level3] (" +
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case "q_level2"
+                CoreConsole.LogMsgLineDate("Creating table 'questions_Level2'...")
+                table = "CREATE TABLE [dbo].[questions_Level2] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
                             "[Question] TEXT NOT NULL," +
                             "[A] VARCHAR (50) NOT NULL," +
@@ -131,12 +287,21 @@ Public Class Data
                             "[C] VARCHAR (50) NOT NULL," +
                             "[D] VARCHAR (50) NOT NULL," +
                             "[CorrectAnswer] VARCHAR (50) NOT NULL," +
-                            "[Type] VARCHAR (50) DEFAULT ('Lvl3') NOT NULL," +
+                            "[Type] VARCHAR (50) DEFAULT ('Lvl1') NOT NULL," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] TEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
-
-                Dim tbLevel4 As String = "CREATE TABLE [dbo].[questions_Level4] (" +
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case "q_level3"
+                CoreConsole.LogMsgLineDate("Creating table 'questions_Level3'...")
+                table = "CREATE TABLE [dbo].[questions_Level3] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
                             "[Question] TEXT NOT NULL," +
                             "[A] VARCHAR (50) NOT NULL," +
@@ -144,12 +309,21 @@ Public Class Data
                             "[C] VARCHAR (50) NOT NULL," +
                             "[D] VARCHAR (50) NOT NULL," +
                             "[CorrectAnswer] VARCHAR (50) NOT NULL," +
-                            "[Type] VARCHAR (50) DEFAULT ('Lvl4') NOT NULL," +
+                            "[Type] VARCHAR (50) DEFAULT ('Lvl1') NOT NULL," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] TEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
-
-                Dim tbLevel0 As String = "CREATE TABLE [dbo].[questions_Level0] (" +
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case "q_level4"
+                CoreConsole.LogMsgLineDate("Creating table 'questions_Level4'...")
+                table = "CREATE TABLE [dbo].[questions_Level4] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
                             "[Question] TEXT NOT NULL," +
                             "[A] VARCHAR (50) NOT NULL," +
@@ -157,43 +331,30 @@ Public Class Data
                             "[C] VARCHAR (50) NOT NULL," +
                             "[D] VARCHAR (50) NOT NULL," +
                             "[CorrectAnswer] VARCHAR (50) NOT NULL," +
-                            "[Type] VARCHAR (50) DEFAULT ('Lvl0') NOT NULL," +
+                            "[Type] VARCHAR (50) DEFAULT ('Lvl1') NOT NULL," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] TEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
-
-                Dim cmdLevel1 As SqlCommand = New SqlCommand(tbLevel1, connectionString)
-                cmdLevel1.ExecuteNonQuery()
-                Dim cmdLevel2 As SqlCommand = New SqlCommand(tbLevel2, connectionString)
-                cmdLevel2.ExecuteNonQuery()
-                Dim cmdLevel3 As SqlCommand = New SqlCommand(tbLevel3, connectionString)
-                cmdLevel3.ExecuteNonQuery()
-                Dim cmdLevel4 As SqlCommand = New SqlCommand(tbLevel4, connectionString)
-                cmdLevel4.ExecuteNonQuery()
-                Dim cmdLevel0 As SqlCommand = New SqlCommand(tbLevel0, connectionString)
-                cmdLevel0.ExecuteNonQuery()
-
-                CoreConsole.LogMsgDate("Tables in database " + nameToCreate + " created succesfully.")
-
-            Catch ex As Exception
-                CoreConsole.LogMsgDate("Error when creating tables in database:")
-                CoreConsole.LogMsg(ex.Message)
-            Finally
-                connectionString.Close()
-            End Try
-        Else
-            connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
-
-            Try
-                connectionString.Open()
-                CoreConsole.LogMsgDate("Succesfully connected to local database.")
-            Catch ex As Exception
-                CoreConsole.LogMsgDate("Error when connecting to database:")
-                CoreConsole.LogMsg(ex.Message)
-            Finally
-                connectionString.Close()
-            End Try
-        End If
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case "s_HostMessages"
+                CoreConsole.LogMsgLineDate("Creating table 'settings_HostMessages'...")
+                table = "CREATE TABLE [dbo].[settings_HostMessages] ([Id] INT NOT NULL PRIMARY KEY, [Message] TEXT NOT NULL)"
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+        End Select
 
 
     End Sub
