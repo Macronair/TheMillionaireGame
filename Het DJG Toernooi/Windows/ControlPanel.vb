@@ -1303,4 +1303,11 @@ Public Class ControlPanel
         txtHostMessages.Clear()
         HostScreen.lblHostMsg.Text = ""
     End Sub
+
+    Private Sub drpNextHostMessage_KeyPress(sender As Object, e As KeyPressEventArgs) Handles drpNextHostMessage.KeyPress
+        If e.KeyChar = Chr(13) Then 'Chr(13) is the Enter Key
+            'Runs the Button1_Click Event
+            btnSendToHost.PerformClick()
+        End If
+    End Sub
 End Class
