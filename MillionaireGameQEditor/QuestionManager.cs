@@ -517,8 +517,12 @@ namespace Millionaire
         {
             EditDB();
         }
+
         #endregion
 
+        private void dtLevel1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

@@ -39,8 +39,6 @@ Partial Class HostScreen
         Me.lblQLeft = New System.Windows.Forms.Label()
         Me.pnlAnswer = New System.Windows.Forms.Panel()
         Me.lblAnswer = New System.Windows.Forms.Label()
-        Me.lblBreak = New System.Windows.Forms.Label()
-        Me.lblOutOfTime = New System.Windows.Forms.Label()
         Me.lbl5050Used = New System.Windows.Forms.Label()
         Me.lblPlusOneUsed = New System.Windows.Forms.Label()
         Me.lblSwitchUsed = New System.Windows.Forms.Label()
@@ -71,7 +69,7 @@ Partial Class HostScreen
         Me.txtWinnings = New System.Windows.Forms.Label()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.txtWinningStrap = New System.Windows.Forms.Label()
-        Me.lblHostMsg = New System.Windows.Forms.Label()
+        Me.lblHostMsg = New System.Windows.Forms.TextBox()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -100,7 +98,7 @@ Partial Class HostScreen
         Me.Panel4.BackColor = System.Drawing.Color.Lime
         Me.Panel4.Controls.Add(Me.PictureBox1)
         Me.Panel4.Controls.Add(Me.lblCorrect)
-        Me.Panel4.Location = New System.Drawing.Point(14, 13)
+        Me.Panel4.Location = New System.Drawing.Point(9, 4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(191, 49)
         Me.Panel4.TabIndex = 8
@@ -131,7 +129,7 @@ Partial Class HostScreen
         Me.Panel5.BackColor = System.Drawing.Color.Red
         Me.Panel5.Controls.Add(Me.PictureBox3)
         Me.Panel5.Controls.Add(Me.lblWrong)
-        Me.Panel5.Location = New System.Drawing.Point(14, 68)
+        Me.Panel5.Location = New System.Drawing.Point(9, 59)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(191, 49)
         Me.Panel5.TabIndex = 9
@@ -162,7 +160,7 @@ Partial Class HostScreen
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.Panel6.Controls.Add(Me.PictureBox2)
         Me.Panel6.Controls.Add(Me.lblCurrent)
-        Me.Panel6.Location = New System.Drawing.Point(211, 13)
+        Me.Panel6.Location = New System.Drawing.Point(206, 4)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(191, 49)
         Me.Panel6.TabIndex = 10
@@ -192,7 +190,7 @@ Partial Class HostScreen
         '
         Me.Panel7.BackColor = System.Drawing.Color.Cyan
         Me.Panel7.Controls.Add(Me.lblDrop)
-        Me.Panel7.Location = New System.Drawing.Point(14, 123)
+        Me.Panel7.Location = New System.Drawing.Point(9, 114)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(191, 49)
         Me.Panel7.TabIndex = 9
@@ -213,7 +211,7 @@ Partial Class HostScreen
         Me.Panel8.BackColor = System.Drawing.Color.Blue
         Me.Panel8.Controls.Add(Me.PictureBox4)
         Me.Panel8.Controls.Add(Me.lblQLeft)
-        Me.Panel8.Location = New System.Drawing.Point(211, 68)
+        Me.Panel8.Location = New System.Drawing.Point(206, 59)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(191, 49)
         Me.Panel8.TabIndex = 11
@@ -259,28 +257,6 @@ Partial Class HostScreen
         Me.lblAnswer.TabIndex = 0
         Me.lblAnswer.Text = "1"
         '
-        'lblBreak
-        '
-        Me.lblBreak.AutoSize = True
-        Me.lblBreak.Font = New System.Drawing.Font("Copperplate Gothic Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblBreak.ForeColor = System.Drawing.Color.Black
-        Me.lblBreak.Location = New System.Drawing.Point(211, 120)
-        Me.lblBreak.Name = "lblBreak"
-        Me.lblBreak.Size = New System.Drawing.Size(72, 18)
-        Me.lblBreak.TabIndex = 18
-        Me.lblBreak.Text = "BREAK"
-        '
-        'lblOutOfTime
-        '
-        Me.lblOutOfTime.AutoSize = True
-        Me.lblOutOfTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOutOfTime.ForeColor = System.Drawing.Color.Black
-        Me.lblOutOfTime.Location = New System.Drawing.Point(313, 120)
-        Me.lblOutOfTime.Name = "lblOutOfTime"
-        Me.lblOutOfTime.Size = New System.Drawing.Size(123, 18)
-        Me.lblOutOfTime.TabIndex = 19
-        Me.lblOutOfTime.Text = "OUT OF TIME"
-        '
         'lbl5050Used
         '
         Me.lbl5050Used.AutoSize = True
@@ -319,7 +295,7 @@ Partial Class HostScreen
         Me.lblExplainRules.AutoSize = True
         Me.lblExplainRules.Font = New System.Drawing.Font("Copperplate Gothic Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblExplainRules.ForeColor = System.Drawing.Color.Black
-        Me.lblExplainRules.Location = New System.Drawing.Point(211, 137)
+        Me.lblExplainRules.Location = New System.Drawing.Point(400, 17)
         Me.lblExplainRules.Name = "lblExplainRules"
         Me.lblExplainRules.Size = New System.Drawing.Size(152, 18)
         Me.lblExplainRules.TabIndex = 23
@@ -330,7 +306,7 @@ Partial Class HostScreen
         Me.lblWalkedAway.AutoSize = True
         Me.lblWalkedAway.Font = New System.Drawing.Font("Copperplate Gothic Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblWalkedAway.ForeColor = System.Drawing.Color.Black
-        Me.lblWalkedAway.Location = New System.Drawing.Point(211, 155)
+        Me.lblWalkedAway.Location = New System.Drawing.Point(400, 35)
         Me.lblWalkedAway.Name = "lblWalkedAway"
         Me.lblWalkedAway.Size = New System.Drawing.Size(147, 18)
         Me.lblWalkedAway.TabIndex = 26
@@ -417,11 +393,11 @@ Partial Class HostScreen
         '
         Me.txtExplain.BackColor = System.Drawing.Color.Black
         Me.txtExplain.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtExplain.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtExplain.Font = New System.Drawing.Font("Calibri", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtExplain.ForeColor = System.Drawing.Color.White
-        Me.txtExplain.Location = New System.Drawing.Point(13, 183)
+        Me.txtExplain.Location = New System.Drawing.Point(12, 333)
         Me.txtExplain.Name = "txtExplain"
-        Me.txtExplain.Size = New System.Drawing.Size(577, 117)
+        Me.txtExplain.Size = New System.Drawing.Size(746, 114)
         Me.txtExplain.TabIndex = 61
         '
         'pnlD
@@ -598,11 +574,11 @@ Partial Class HostScreen
         '
         'txtWinnings
         '
-        Me.txtWinnings.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtWinnings.ForeColor = System.Drawing.Color.White
-        Me.txtWinnings.Location = New System.Drawing.Point(12, 401)
+        Me.txtWinnings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWinnings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtWinnings.Location = New System.Drawing.Point(206, 115)
         Me.txtWinnings.Name = "txtWinnings"
-        Me.txtWinnings.Size = New System.Drawing.Size(536, 46)
+        Me.txtWinnings.Size = New System.Drawing.Size(288, 46)
         Me.txtWinnings.TabIndex = 67
         Me.txtWinnings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
@@ -633,13 +609,16 @@ Partial Class HostScreen
         'lblHostMsg
         '
         Me.lblHostMsg.BackColor = System.Drawing.Color.Black
-        Me.lblHostMsg.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lblHostMsg.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHostMsg.ForeColor = System.Drawing.Color.Orange
-        Me.lblHostMsg.Location = New System.Drawing.Point(12, 317)
+        Me.lblHostMsg.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblHostMsg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lblHostMsg.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lblHostMsg.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHostMsg.ForeColor = System.Drawing.Color.DarkOrange
+        Me.lblHostMsg.Location = New System.Drawing.Point(12, 169)
+        Me.lblHostMsg.Multiline = True
         Me.lblHostMsg.Name = "lblHostMsg"
-        Me.lblHostMsg.Size = New System.Drawing.Size(746, 120)
-        Me.lblHostMsg.TabIndex = 69
+        Me.lblHostMsg.Size = New System.Drawing.Size(746, 161)
+        Me.lblHostMsg.TabIndex = 70
         '
         'HostScreen
         '
@@ -671,8 +650,6 @@ Partial Class HostScreen
         Me.Controls.Add(Me.lblSwitchUsed)
         Me.Controls.Add(Me.lblPlusOneUsed)
         Me.Controls.Add(Me.lbl5050Used)
-        Me.Controls.Add(Me.lblOutOfTime)
-        Me.Controls.Add(Me.lblBreak)
         Me.Controls.Add(Me.pnlAnswer)
         Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel7)
@@ -729,8 +706,6 @@ Partial Class HostScreen
     Friend WithEvents lblQLeft As Label
     Friend WithEvents pnlAnswer As Panel
     Friend WithEvents lblAnswer As Label
-    Friend WithEvents lblBreak As Label
-    Friend WithEvents lblOutOfTime As Label
     Friend WithEvents lbl5050Used As Label
     Friend WithEvents lblPlusOneUsed As Label
     Friend WithEvents lblSwitchUsed As Label
@@ -764,5 +739,5 @@ Partial Class HostScreen
     Friend WithEvents txtWinnings As Label
     Friend WithEvents pnlStrap As Panel
     Friend WithEvents txtWinningStrap As Label
-    Friend WithEvents lblHostMsg As Label
+    Friend WithEvents lblHostMsg As TextBox
 End Class

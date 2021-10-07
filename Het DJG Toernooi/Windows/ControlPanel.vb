@@ -1,4 +1,5 @@
-﻿Imports System.Drawing
+﻿Imports System.Data.SqlClient
+Imports System.Drawing
 Imports System.Media
 
 Public Class ControlPanel
@@ -22,6 +23,21 @@ Public Class ControlPanel
 
     End Sub
 
+    Public Shared Function GetHostMessages() As List(Of String)
+        Using cmd As New SqlCommand("SELECT Message FROM settings_HostMessages", Data.connectionString)
+            Dim messages As New List(Of String)
+            cmd.CommandType = CommandType.Text
+            Data.connectionString.Open()
+            Using sdr As SqlDataReader = cmd.ExecuteReader()
+                While sdr.Read()
+                    messages.Add(sdr.GetString(0))
+                End While
+            End Using
+            Data.connectionString.Close()
+            Return messages
+        End Using
+    End Function
+
     Private Sub nmrLevel_ValueChanged(sender As Object, e As EventArgs) Handles nmrLevel.ValueChanged
         Game.ChangeLevel(nmrLevel.Value)
     End Sub
@@ -33,6 +49,7 @@ Public Class ControlPanel
 
     Private Sub ControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TVControlPnl.pnlTotal.Visible = False
+        drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())
         'Me.Show()
     End Sub
 
@@ -1271,5 +1288,19 @@ Public Class ControlPanel
             CoreConsole.LogMsgDate("An error occured while opening:")
             CoreConsole.LogMsg(ex.Message())
         End Try
+    End Sub
+
+    Private Sub HostMessagesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HostMessagesToolStripMenuItem.Click
+        HostMessages.Show()
+    End Sub
+
+    Private Sub btnSendToHost_Click(sender As Object, e As EventArgs) Handles btnSendToHost.Click
+        txtHostMessages.AppendText(drpNextHostMessage.Text.ToUpper() + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + drpNextHostMessage.Text.ToUpper()
+    End Sub
+
+    Private Sub btnClearHostMessages_Click(sender As Object, e As EventArgs) Handles btnClearHostMessages.Click
+        txtHostMessages.Clear()
+        HostScreen.lblHostMsg.Text = ""
     End Sub
 End Class

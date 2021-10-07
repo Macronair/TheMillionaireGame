@@ -64,14 +64,14 @@ Public Class Data
             DropTables("questions_Level4")
             DropTables("settings_HostMessages")
 
-            CreateTables("q_Level0")
-            CreateTables("q_Level1")
-            CreateTables("q_Level2")
-            CreateTables("q_Level3")
-            CreateTables("q_Level4")
-            CreateTables("s_HostMessages")
+            CreateTables(0)
+            CreateTables(1)
+            CreateTables(2)
+            CreateTables(3)
+            CreateTables(4)
+            CreateTables(101)
 
-            CheckTables()
+            'CheckTables()
             connectionString.Close()
 
         Else
@@ -121,7 +121,7 @@ Public Class Data
             End Using
             If te_s_HostMessages = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_HostMessages")
+                CreateTables(101)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking database: " + Environment.NewLine + ex.Message)
@@ -144,7 +144,7 @@ Public Class Data
             End Using
             If te_q_Level0 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_Level0")
+                CreateTables(0)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table questions_Level0: " + Environment.NewLine + ex.Message)
@@ -158,7 +158,7 @@ Public Class Data
             End Using
             If te_q_Level1 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_Level1")
+                CreateTables(1)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table questions_Level1: " + Environment.NewLine + ex.Message)
@@ -172,7 +172,7 @@ Public Class Data
             End Using
             If te_q_Level2 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_Level2")
+                CreateTables(2)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table questions_Level2: " + Environment.NewLine + ex.Message)
@@ -186,7 +186,7 @@ Public Class Data
             End Using
             If te_q_Level3 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_Level3")
+                CreateTables(3)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table questions_Level3: " + Environment.NewLine + ex.Message)
@@ -200,7 +200,7 @@ Public Class Data
             End Using
             If te_q_Level4 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
-                CreateTables("s_Level4")
+                CreateTables(4)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table questions_Level4: " + Environment.NewLine + ex.Message)
@@ -229,11 +229,11 @@ Public Class Data
         End Try
     End Sub
 
-    Public Shared Sub CreateTables(ByVal tablename As String)
+    Public Shared Sub CreateTables(ByVal tablename As Integer)
         Dim table As String
 
         Select Case tablename
-            Case "q_level0"
+            Case 0
                 CoreConsole.LogMsgLineDate("Creating table 'questions_Level0'...")
                 table = "CREATE TABLE [dbo].[questions_Level0] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
@@ -255,7 +255,7 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-            Case "q_level1"
+            Case 1
                 CoreConsole.LogMsgLineDate("Creating table 'questions_Level1'...")
                 table = "CREATE TABLE [dbo].[questions_Level1] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
@@ -277,7 +277,7 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-            Case "q_level2"
+            Case 2
                 CoreConsole.LogMsgLineDate("Creating table 'questions_Level2'...")
                 table = "CREATE TABLE [dbo].[questions_Level2] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
@@ -299,7 +299,7 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-            Case "q_level3"
+            Case 3
                 CoreConsole.LogMsgLineDate("Creating table 'questions_Level3'...")
                 table = "CREATE TABLE [dbo].[questions_Level3] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
@@ -321,7 +321,7 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-            Case "q_level4"
+            Case 4
                 CoreConsole.LogMsgLineDate("Creating table 'questions_Level4'...")
                 table = "CREATE TABLE [dbo].[questions_Level4] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
@@ -343,9 +343,9 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-            Case "s_HostMessages"
+            Case 101
                 CoreConsole.LogMsgLineDate("Creating table 'settings_HostMessages'...")
-                table = "CREATE TABLE [dbo].[settings_HostMessages] ([Id] INT NOT NULL PRIMARY KEY, [Message] TEXT NOT NULL)"
+                table = "CREATE TABLE [dbo].[settings_HostMessages] ([Id] INT IDENTITY (1,1) NOT NULL, [Message] VARCHAR(MAX) NOT NULL, PRIMARY KEY CLUSTERED ([Id] ASC))"
                 Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
                 Try
                     cmd.ExecuteNonQuery()

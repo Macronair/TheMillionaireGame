@@ -28,7 +28,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.243.0</ApplicationVersion>
+    <ApplicationVersion>1.0.277.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -128,6 +128,7 @@
     <Compile Include="Source_Scripts\Classes\Question.vb" />
     <Compile Include="Source_Scripts\Classes\User.vb" />
     <Compile Include="Source_Scripts\Database\Data.vb" />
+    <Compile Include="Source_Scripts\Database\Message.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -205,10 +206,10 @@
     <Compile Include="Windows\General\TVControlPnl.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Options\ProfileSettings.Designer.vb">
-      <DependentUpon>ProfileSettings.vb</DependentUpon>
+    <Compile Include="Windows\Options\HostMessages.Designer.vb">
+      <DependentUpon>HostMessages.vb</DependentUpon>
     </Compile>
-    <Compile Include="Windows\Options\ProfileSettings.vb">
+    <Compile Include="Windows\Options\HostMessages.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -246,8 +247,8 @@
     <EmbeddedResource Include="Windows\General\TVControlPnl.resx">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Options\ProfileSettings.resx">
-      <DependentUpon>ProfileSettings.vb</DependentUpon>
+    <EmbeddedResource Include="Windows\Options\HostMessages.resx">
+      <DependentUpon>HostMessages.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

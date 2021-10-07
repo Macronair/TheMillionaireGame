@@ -89,6 +89,8 @@ Partial Class ControlPanel
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangeMoneyStrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HostMessagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuestionsEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -118,10 +120,8 @@ Partial Class ControlPanel
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
         Me.btnSendToHost = New System.Windows.Forms.Button()
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
+        Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
-        Me.btnNextHostMessage = New System.Windows.Forms.ComboBox()
-        Me.HostMessagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.grpRules.SuspendLayout()
@@ -231,15 +231,15 @@ Partial Class ControlPanel
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(413, 358)
+        Me.Label1.Location = New System.Drawing.Point(165, 119)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 15
-        Me.Label1.Text = "Current Level"
+        Me.Label1.Text = "Current Money Tree level"
         '
         'nmrLevel
         '
-        Me.nmrLevel.Location = New System.Drawing.Point(416, 374)
+        Me.nmrLevel.Location = New System.Drawing.Point(249, 135)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
@@ -290,10 +290,10 @@ Partial Class ControlPanel
         '
         Me.txtCorrect.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorrect.Location = New System.Drawing.Point(542, 358)
+        Me.txtCorrect.Location = New System.Drawing.Point(390, 364)
         Me.txtCorrect.Name = "txtCorrect"
         Me.txtCorrect.ReadOnly = True
-        Me.txtCorrect.Size = New System.Drawing.Size(75, 20)
+        Me.txtCorrect.Size = New System.Drawing.Size(78, 20)
         Me.txtCorrect.TabIndex = 22
         Me.txtCorrect.Text = "100"
         '
@@ -302,10 +302,10 @@ Partial Class ControlPanel
         Me.txtWrong.BackColor = System.Drawing.Color.Red
         Me.txtWrong.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWrong.ForeColor = System.Drawing.Color.White
-        Me.txtWrong.Location = New System.Drawing.Point(542, 384)
+        Me.txtWrong.Location = New System.Drawing.Point(390, 390)
         Me.txtWrong.Name = "txtWrong"
         Me.txtWrong.ReadOnly = True
-        Me.txtWrong.Size = New System.Drawing.Size(75, 20)
+        Me.txtWrong.Size = New System.Drawing.Size(78, 20)
         Me.txtWrong.TabIndex = 23
         Me.txtWrong.Text = "0"
         '
@@ -313,10 +313,10 @@ Partial Class ControlPanel
         '
         Me.txtCurrent.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrent.Location = New System.Drawing.Point(542, 410)
+        Me.txtCurrent.Location = New System.Drawing.Point(390, 416)
         Me.txtCurrent.Name = "txtCurrent"
         Me.txtCurrent.ReadOnly = True
-        Me.txtCurrent.Size = New System.Drawing.Size(75, 20)
+        Me.txtCurrent.Size = New System.Drawing.Size(78, 20)
         Me.txtCurrent.TabIndex = 24
         Me.txtCurrent.Text = "0"
         '
@@ -324,10 +324,10 @@ Partial Class ControlPanel
         '
         Me.txtDrop.BackColor = System.Drawing.Color.Aqua
         Me.txtDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDrop.Location = New System.Drawing.Point(542, 436)
+        Me.txtDrop.Location = New System.Drawing.Point(518, 364)
         Me.txtDrop.Name = "txtDrop"
         Me.txtDrop.ReadOnly = True
-        Me.txtDrop.Size = New System.Drawing.Size(75, 20)
+        Me.txtDrop.Size = New System.Drawing.Size(78, 20)
         Me.txtDrop.TabIndex = 25
         Me.txtDrop.Text = "0"
         '
@@ -336,17 +336,17 @@ Partial Class ControlPanel
         Me.txtQLeft.BackColor = System.Drawing.Color.Blue
         Me.txtQLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQLeft.ForeColor = System.Drawing.Color.White
-        Me.txtQLeft.Location = New System.Drawing.Point(542, 462)
+        Me.txtQLeft.Location = New System.Drawing.Point(518, 390)
         Me.txtQLeft.Name = "txtQLeft"
         Me.txtQLeft.ReadOnly = True
-        Me.txtQLeft.Size = New System.Drawing.Size(75, 20)
+        Me.txtQLeft.Size = New System.Drawing.Size(78, 20)
         Me.txtQLeft.TabIndex = 26
         Me.txtQLeft.Text = "15"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(506, 439)
+        Me.Label2.Location = New System.Drawing.Point(482, 367)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 27
@@ -355,7 +355,7 @@ Partial Class ControlPanel
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(506, 465)
+        Me.Label3.Location = New System.Drawing.Point(482, 393)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 13)
         Me.Label3.TabIndex = 28
@@ -364,7 +364,7 @@ Partial Class ControlPanel
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(496, 361)
+        Me.Label4.Location = New System.Drawing.Point(344, 367)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 29
@@ -373,7 +373,7 @@ Partial Class ControlPanel
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(496, 387)
+        Me.Label5.Location = New System.Drawing.Point(344, 393)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 30
@@ -382,7 +382,7 @@ Partial Class ControlPanel
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(495, 413)
+        Me.Label6.Location = New System.Drawing.Point(343, 419)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 13)
         Me.Label6.TabIndex = 31
@@ -519,9 +519,9 @@ Partial Class ControlPanel
         Me.Button2.BackColor = System.Drawing.Color.Maroon
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(9, 59)
+        Me.Button2.Location = New System.Drawing.Point(110, 62)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(78, 24)
+        Me.Button2.Size = New System.Drawing.Size(95, 24)
         Me.Button2.TabIndex = 49
         Me.Button2.Text = "New Guest"
         Me.Button2.UseVisualStyleBackColor = False
@@ -731,7 +731,7 @@ Partial Class ControlPanel
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(154, 9)
+        Me.Button1.Location = New System.Drawing.Point(6, 29)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(122, 21)
         Me.Button1.TabIndex = 58
@@ -740,20 +740,20 @@ Partial Class ControlPanel
         '
         'txtExplain
         '
-        Me.txtExplain.BackColor = System.Drawing.Color.DarkGray
+        Me.txtExplain.BackColor = System.Drawing.Color.White
         Me.txtExplain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtExplain.ForeColor = System.Drawing.Color.White
-        Me.txtExplain.Location = New System.Drawing.Point(416, 488)
+        Me.txtExplain.Location = New System.Drawing.Point(346, 471)
         Me.txtExplain.Multiline = True
         Me.txtExplain.Name = "txtExplain"
-        Me.txtExplain.Size = New System.Drawing.Size(205, 66)
+        Me.txtExplain.Size = New System.Drawing.Size(249, 66)
         Me.txtExplain.TabIndex = 60
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(413, 469)
+        Me.Label8.Location = New System.Drawing.Point(343, 453)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 13)
         Me.Label8.TabIndex = 61
@@ -793,6 +793,18 @@ Partial Class ControlPanel
         Me.ChangeMoneyStrapToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.ChangeMoneyStrapToolStripMenuItem.Text = "Change Money strap"
         '
+        'HostMessagesToolStripMenuItem
+        '
+        Me.HostMessagesToolStripMenuItem.Name = "HostMessagesToolStripMenuItem"
+        Me.HostMessagesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.HostMessagesToolStripMenuItem.Text = "Host Messages"
+        '
+        'ShowOptionsToolStripMenuItem
+        '
+        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
+        '
         'GameToolStripMenuItem
         '
         Me.GameToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.QuestionsEditorToolStripMenuItem, Me.ToolStripMenuItem1, Me.ProfileEditorToolStripMenuItem})
@@ -803,18 +815,18 @@ Partial Class ControlPanel
         'QuestionsEditorToolStripMenuItem
         '
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         '
         'ViewToolStripMenuItem
@@ -946,9 +958,9 @@ Partial Class ControlPanel
         '
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
         Me.grpTV.Controls.Add(Me.Button1)
-        Me.grpTV.Location = New System.Drawing.Point(11, 128)
+        Me.grpTV.Location = New System.Drawing.Point(11, 106)
         Me.grpTV.Name = "grpTV"
-        Me.grpTV.Size = New System.Drawing.Size(282, 35)
+        Me.grpTV.Size = New System.Drawing.Size(139, 57)
         Me.grpTV.TabIndex = 78
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
@@ -1010,9 +1022,9 @@ Partial Class ControlPanel
         '
         Me.btnFFF.BackColor = System.Drawing.Color.LightCoral
         Me.btnFFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFFF.Location = New System.Drawing.Point(93, 59)
+        Me.btnFFF.Location = New System.Drawing.Point(9, 63)
         Me.btnFFF.Name = "btnFFF"
-        Me.btnFFF.Size = New System.Drawing.Size(80, 23)
+        Me.btnFFF.Size = New System.Drawing.Size(95, 23)
         Me.btnFFF.TabIndex = 80
         Me.btnFFF.Text = "Fastest Finger"
         Me.btnFFF.UseVisualStyleBackColor = False
@@ -1038,13 +1050,13 @@ Partial Class ControlPanel
         Me.txtHostMessages.Location = New System.Drawing.Point(6, 16)
         Me.txtHostMessages.Name = "txtHostMessages"
         Me.txtHostMessages.ReadOnly = True
-        Me.txtHostMessages.Size = New System.Drawing.Size(274, 96)
+        Me.txtHostMessages.Size = New System.Drawing.Size(290, 79)
         Me.txtHostMessages.TabIndex = 83
         Me.txtHostMessages.Text = ""
         '
         'btnSendToHost
         '
-        Me.btnSendToHost.Location = New System.Drawing.Point(286, 116)
+        Me.btnSendToHost.Location = New System.Drawing.Point(6, 153)
         Me.btnSendToHost.Name = "btnSendToHost"
         Me.btnSendToHost.Size = New System.Drawing.Size(87, 23)
         Me.btnSendToHost.TabIndex = 84
@@ -1053,45 +1065,33 @@ Partial Class ControlPanel
         '
         'grpHostMessages
         '
-        Me.grpHostMessages.Controls.Add(Me.btnNextHostMessage)
+        Me.grpHostMessages.Controls.Add(Me.drpNextHostMessage)
         Me.grpHostMessages.Controls.Add(Me.btnClearHostMessages)
         Me.grpHostMessages.Controls.Add(Me.txtHostMessages)
         Me.grpHostMessages.Controls.Add(Me.btnSendToHost)
         Me.grpHostMessages.Location = New System.Drawing.Point(20, 361)
         Me.grpHostMessages.Name = "grpHostMessages"
-        Me.grpHostMessages.Size = New System.Drawing.Size(380, 146)
+        Me.grpHostMessages.Size = New System.Drawing.Size(306, 193)
         Me.grpHostMessages.TabIndex = 85
         Me.grpHostMessages.TabStop = False
         Me.grpHostMessages.Text = "Host Messages"
         '
+        'drpNextHostMessage
+        '
+        Me.drpNextHostMessage.FormattingEnabled = True
+        Me.drpNextHostMessage.Location = New System.Drawing.Point(6, 126)
+        Me.drpNextHostMessage.Name = "drpNextHostMessage"
+        Me.drpNextHostMessage.Size = New System.Drawing.Size(290, 21)
+        Me.drpNextHostMessage.TabIndex = 86
+        '
         'btnClearHostMessages
         '
-        Me.btnClearHostMessages.Location = New System.Drawing.Point(286, 75)
+        Me.btnClearHostMessages.Location = New System.Drawing.Point(6, 101)
         Me.btnClearHostMessages.Name = "btnClearHostMessages"
-        Me.btnClearHostMessages.Size = New System.Drawing.Size(87, 37)
+        Me.btnClearHostMessages.Size = New System.Drawing.Size(113, 22)
         Me.btnClearHostMessages.TabIndex = 85
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
-        '
-        'btnNextHostMessage
-        '
-        Me.btnNextHostMessage.FormattingEnabled = True
-        Me.btnNextHostMessage.Location = New System.Drawing.Point(6, 118)
-        Me.btnNextHostMessage.Name = "btnNextHostMessage"
-        Me.btnNextHostMessage.Size = New System.Drawing.Size(274, 21)
-        Me.btnNextHostMessage.TabIndex = 86
-        '
-        'HostMessagesToolStripMenuItem
-        '
-        Me.HostMessagesToolStripMenuItem.Name = "HostMessagesToolStripMenuItem"
-        Me.HostMessagesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.HostMessagesToolStripMenuItem.Text = "Host Messages"
-        '
-        'ShowOptionsToolStripMenuItem
-        '
-        Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
         '
         'ControlPanel
         '
@@ -1261,6 +1261,6 @@ Partial Class ControlPanel
     Friend WithEvents txtHostMessages As RichTextBox
     Friend WithEvents btnSendToHost As Button
     Friend WithEvents grpHostMessages As GroupBox
-    Friend WithEvents btnNextHostMessage As ComboBox
+    Friend WithEvents drpNextHostMessage As ComboBox
     Friend WithEvents btnClearHostMessages As Button
 End Class
