@@ -1,4 +1,5 @@
 ﻿using Millionaire.Windows.Question_Editor;
+using MillionaireGameQEditor;
 using System;
 using System.Data;
 using System.Data.SqlClient;
@@ -200,6 +201,100 @@ namespace Millionaire
                 return;
             }
             UpdateDB();
+        }
+
+        public void ChangeLevelDB()
+        {
+            frmChangeLevel change = new frmChangeLevel(this);
+            if (stLevel.Text == "Lvl1")
+            {
+                if (Convert.ToInt32(dtLevel1.CurrentRow.Cells[0].Value) == 0)
+                {
+                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    change.lblOldLevel.Text = "Level 1";
+                    change.cmbNewLevel.Text = "Level 1";
+                    change.QuestionID = Convert.ToInt32(this.dtLevel1.CurrentRow.Cells[0].Value);
+                    change.question = this.dtLevel1.CurrentRow.Cells[1].Value.ToString();
+                    change.A = this.dtLevel1.CurrentRow.Cells[2].Value.ToString();
+                    change.B = this.dtLevel1.CurrentRow.Cells[3].Value.ToString();
+                    change.C = this.dtLevel1.CurrentRow.Cells[4].Value.ToString();
+                    change.D = this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
+                    change.Correct = this.dtLevel1.CurrentRow.Cells[6].Value.ToString();
+                    change.Note = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
+                    change.ShowDialog();
+                }
+            }
+            else if (stLevel.Text == "Lvl2")
+            {
+                if (Convert.ToInt32(dtLevel2.CurrentRow.Cells[0].Value) == 0)
+                {
+                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    change.lblOldLevel.Text = "Level 2";
+                    change.cmbNewLevel.Text = "Level 2";
+                    change.QuestionID = Convert.ToInt32(this.dtLevel2.CurrentRow.Cells[0].Value);
+                    change.question = this.dtLevel2.CurrentRow.Cells[1].Value.ToString();
+                    change.A = this.dtLevel2.CurrentRow.Cells[2].Value.ToString();
+                    change.B = this.dtLevel2.CurrentRow.Cells[3].Value.ToString();
+                    change.C = this.dtLevel2.CurrentRow.Cells[4].Value.ToString();
+                    change.D = this.dtLevel2.CurrentRow.Cells[5].Value.ToString();
+                    change.Correct = this.dtLevel2.CurrentRow.Cells[6].Value.ToString();
+                    change.Note = this.dtLevel2.CurrentRow.Cells[9].Value.ToString();
+                    change.ShowDialog();
+                }
+            }
+            else if (stLevel.Text == "Lvl3")
+            {
+                if (Convert.ToInt32(dtLevel3.CurrentRow.Cells[0].Value) == 0)
+                {
+                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    change.lblOldLevel.Text = "Level 3";
+                    change.cmbNewLevel.Text = "Level 3";
+                    change.QuestionID = Convert.ToInt32(this.dtLevel3.CurrentRow.Cells[0].Value);
+                    change.question = this.dtLevel3.CurrentRow.Cells[1].Value.ToString();
+                    change.A = this.dtLevel3.CurrentRow.Cells[2].Value.ToString();
+                    change.B = this.dtLevel3.CurrentRow.Cells[3].Value.ToString();
+                    change.C = this.dtLevel3.CurrentRow.Cells[4].Value.ToString();
+                    change.D = this.dtLevel3.CurrentRow.Cells[5].Value.ToString();
+                    change.Correct = this.dtLevel3.CurrentRow.Cells[6].Value.ToString();
+                    change.Note = this.dtLevel3.CurrentRow.Cells[9].Value.ToString();
+                    change.ShowDialog();
+                }
+
+            }
+            else if (stLevel.Text == "Lvl4")
+            {
+                if (Convert.ToInt32(dtLevel4.CurrentRow.Cells[0].Value) == 0)
+                {
+                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    change.lblOldLevel.Text = "Level 4";
+                    change.cmbNewLevel.Text = "Level 4";
+                    change.QuestionID = Convert.ToInt32(this.dtLevel4.CurrentRow.Cells[0].Value);
+                    change.question = this.dtLevel4.CurrentRow.Cells[1].Value.ToString();
+                    change.A = this.dtLevel4.CurrentRow.Cells[2].Value.ToString();
+                    change.B = this.dtLevel4.CurrentRow.Cells[3].Value.ToString();
+                    change.C = this.dtLevel4.CurrentRow.Cells[4].Value.ToString();
+                    change.D = this.dtLevel4.CurrentRow.Cells[5].Value.ToString();
+                    change.Correct = this.dtLevel4.CurrentRow.Cells[6].Value.ToString();
+                    change.Note = this.dtLevel4.CurrentRow.Cells[9].Value.ToString();
+                    change.ShowDialog();
+                }
+            }
+            else if (stLevel.Text == "Lvl0")
+            {
+                MessageBox.Show("You cannot change the question level for a Fastest Finger question.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void QEditor_Load(object sender, EventArgs e)
@@ -523,6 +618,16 @@ namespace Millionaire
         private void dtLevel1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void tsChangeLevel_Click(object sender, EventArgs e)
+        {
+            ChangeLevelDB();
+        }
+
+        private void changeLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangeLevelDB();
         }
     }
 }

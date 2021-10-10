@@ -52,6 +52,12 @@
     <Compile Include="AddQuestion.Designer.cs">
       <DependentUpon>AddQuestion.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangeLevel!Question.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeLevel!Question.Designer.cs">
+      <DependentUpon>ChangeLevel!Question.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     <EmbeddedResource Include="AddQuestion.resx">
       <DependentUpon>AddQuestion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ChangeLevel!Question.resx">
+      <DependentUpon>ChangeLevel!Question.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditQuestion.resx">
       <DependentUpon>EditQuestion.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +95,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="QuestionManager.resx">
       <DependentUpon>QuestionManager.cs</DependentUpon>
@@ -102,6 +112,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cross icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equal icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qaway icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
