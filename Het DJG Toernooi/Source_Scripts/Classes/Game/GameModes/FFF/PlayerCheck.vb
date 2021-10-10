@@ -36,7 +36,7 @@ Public Class PlayerCheck
         Dim points As Integer
         Dim answer As Integer
 
-        If FFFServer.chkPL1.Checked = True Then
+        If FFFServer.chkPL1.Checked = True And FFFServer.chkPL1_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL1_Answer.Clear()
@@ -50,7 +50,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL2.Checked = True Then
+        If FFFServer.chkPL2.Checked = True And FFFServer.chkPL2_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL2_Answer.Clear()
@@ -64,7 +64,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL3.Checked = True And FFFServer.pnlPlayer3.Visible = True Then
+        If FFFServer.chkPL3.Checked = True And FFFServer.pnlPlayer3.Visible = True And FFFServer.chkPL3_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL3_Answer.Clear()
@@ -78,7 +78,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL4.Checked = True And FFFServer.pnlPlayer4.Visible = True Then
+        If FFFServer.chkPL4.Checked = True And FFFServer.pnlPlayer4.Visible = True And FFFServer.chkPL4_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL4_Answer.Clear()
@@ -92,7 +92,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL5.Checked = True And FFFServer.pnlPlayer5.Visible = True Then
+        If FFFServer.chkPL5.Checked = True And FFFServer.pnlPlayer5.Visible = True And FFFServer.chkPL5_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL5_Answer.Clear()
@@ -106,7 +106,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL6.Checked = True And FFFServer.pnlPlayer6.Visible = True Then
+        If FFFServer.chkPL6.Checked = True And FFFServer.pnlPlayer6.Visible = True And FFFServer.chkPL6_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL6_Answer.Clear()
@@ -120,7 +120,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL7.Checked = True And FFFServer.pnlPlayer7.Visible = True Then
+        If FFFServer.chkPL7.Checked = True And FFFServer.pnlPlayer7.Visible = True And FFFServer.chkPL7_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL7_Answer.Clear()
@@ -134,7 +134,7 @@ Public Class PlayerCheck
             End If
         End If
 
-        If FFFServer.chkPL8.Checked = True And FFFServer.pnlPlayer8.Visible = True Then
+        If FFFServer.chkPL8.Checked = True And FFFServer.pnlPlayer8.Visible = True And FFFServer.chkPL8_Active.Checked = True Then
             points = rnd.Next(400, 1190)
             answer = rnd.Next(0, 2)
             FFFServer.txtPL8_Answer.Clear()

@@ -140,7 +140,7 @@ Public Class FFFServer
             Select Case rcvList(0)
                 Case 1
                     txtPL1_Answer.Text = rcvList(1)
-                    If txtPL1_Answer.Text = correctAnswer Then
+                    If txtPL1_Answer.Text = correctAnswer And chkPL1_Active.Checked = True Then
                         pl1_points = fff_points
                         txtPL1_Points.Text = fff_points
                         If firstMan = True Then
@@ -150,7 +150,7 @@ Public Class FFFServer
                     End If
                 Case 2
                     txtPL2_Answer.Text = rcvList(1)
-                    If txtPL2_Answer.Text = correctAnswer Then
+                    If txtPL2_Answer.Text = correctAnswer And chkPL2_Active.Checked = True Then
                         pl2_points = fff_points
                         txtPL2_Points.Text = fff_points
                         If firstMan = True Then
@@ -160,7 +160,7 @@ Public Class FFFServer
                     End If
                 Case 3
                     txtPL3_Answer.Text = rcvList(1)
-                    If txtPL3_Answer.Text = correctAnswer Then
+                    If txtPL3_Answer.Text = correctAnswer And chkPL3_Active.Checked = True Then
                         pl3_points = fff_points
                         txtPL3_Points.Text = fff_points
                         If firstMan = True Then
@@ -170,7 +170,7 @@ Public Class FFFServer
                     End If
                 Case 4
                     txtPL4_Answer.Text = rcvList(1)
-                    If txtPL4_Answer.Text = correctAnswer Then
+                    If txtPL4_Answer.Text = correctAnswer And chkPL4_Active.Checked = True Then
                         pl4_points = fff_points
                         txtPL4_Points.Text = fff_points
                         If firstMan = True Then
@@ -180,7 +180,7 @@ Public Class FFFServer
                     End If
                 Case 5
                     txtPL5_Answer.Text = rcvList(1)
-                    If txtPL5_Answer.Text = correctAnswer Then
+                    If txtPL5_Answer.Text = correctAnswer And chkPL5_Active.Checked = True Then
                         pl5_points = fff_points
                         txtPL5_Points.Text = fff_points
                         If firstMan = True Then
@@ -190,7 +190,7 @@ Public Class FFFServer
                     End If
                 Case 6
                     txtPL6_Answer.Text = rcvList(1)
-                    If txtPL6_Answer.Text = correctAnswer Then
+                    If txtPL6_Answer.Text = correctAnswer And chkPL6_Active.Checked = True Then
                         pl6_points = fff_points
                         txtPL6_Points.Text = fff_points
                         If firstMan = True Then
@@ -200,7 +200,7 @@ Public Class FFFServer
                     End If
                 Case 7
                     txtPL7_Answer.Text = rcvList(1)
-                    If txtPL7_Answer.Text = correctAnswer Then
+                    If txtPL7_Answer.Text = correctAnswer And chkPL7_Active.Checked = True Then
                         pl7_points = fff_points
                         txtPL7_Points.Text = fff_points
                         If firstMan = True Then
@@ -210,7 +210,7 @@ Public Class FFFServer
                     End If
                 Case 8
                     txtPL8_Answer.Text = rcvList(1)
-                    If txtPL8_Answer.Text = correctAnswer Then
+                    If txtPL8_Answer.Text = correctAnswer And chkPL8_Active.Checked = True Then
                         pl8_points = fff_points
                         txtPL8_Points.Text = fff_points
                         If firstMan = True Then
@@ -475,6 +475,50 @@ Public Class FFFServer
             a = 4
         ElseIf a = 4 Then
             TVControlPnl.pnlFFFWinner.Visible = False
+            If chkDisableWinnerAuto.Checked = True Then
+                Select Case fff_pointsmin
+                    Case pl1_points
+                        txtPL1_Name.Text = ""
+                        txtPL1_Points.Text = ""
+                        txtPL1_Answer.Text = ""
+                        chkPL1_Active.Checked = False
+                    Case pl2_points
+                        txtPL2_Name.Text = ""
+                        txtPL2_Points.Text = ""
+                        txtPL2_Answer.Text = ""
+                        chkPL2_Active.Checked = False
+                    Case pl3_points
+                        txtPL3_Name.Text = ""
+                        txtPL3_Points.Text = ""
+                        txtPL3_Answer.Text = ""
+                        chkPL3_Active.Checked = False
+                    Case pl4_points
+                        txtPL4_Name.Text = ""
+                        txtPL4_Points.Text = ""
+                        txtPL4_Answer.Text = ""
+                        chkPL4_Active.Checked = False
+                    Case pl5_points
+                        txtPL5_Name.Text = ""
+                        txtPL5_Points.Text = ""
+                        txtPL5_Answer.Text = ""
+                        chkPL5_Active.Checked = False
+                    Case pl6_points
+                        txtPL6_Name.Text = ""
+                        txtPL6_Points.Text = ""
+                        txtPL6_Answer.Text = ""
+                        chkPL6_Active.Checked = False
+                    Case pl7_points
+                        txtPL7_Name.Text = ""
+                        txtPL7_Points.Text = ""
+                        txtPL7_Answer.Text = ""
+                        chkPL7_Active.Checked = False
+                    Case pl8_points
+                        txtPL8_Name.Text = ""
+                        txtPL8_Points.Text = ""
+                        txtPL8_Answer.Text = ""
+                        chkPL8_Active.Checked = False
+                End Select
+            End If
         End If
     End Sub
 
@@ -667,7 +711,6 @@ Public Class FFFServer
             chkPL7.Checked = False
             chkPL8.Checked = False
         End If
-
     End Sub
 
     Private Sub btnMeetContestants_Click(sender As Object, e As EventArgs) Handles btnMeetContestants.Click
@@ -694,6 +737,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = False
                 TVControlPnl.pnlPL7.Visible = False
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = False
+                chkPL4_Active.Checked = False
+                chkPL5_Active.Checked = False
+                chkPL6_Active.Checked = False
+                chkPL7_Active.Checked = False
+                chkPL8_Active.Checked = False
             Case 3
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -709,6 +759,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = False
                 TVControlPnl.pnlPL7.Visible = False
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = False
+                chkPL5_Active.Checked = False
+                chkPL6_Active.Checked = False
+                chkPL7_Active.Checked = False
+                chkPL8_Active.Checked = False
             Case 4
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -724,6 +781,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = False
                 TVControlPnl.pnlPL7.Visible = False
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = True
+                chkPL5_Active.Checked = False
+                chkPL6_Active.Checked = False
+                chkPL7_Active.Checked = False
+                chkPL8_Active.Checked = False
             Case 5
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -739,6 +803,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = False
                 TVControlPnl.pnlPL7.Visible = False
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = True
+                chkPL5_Active.Checked = True
+                chkPL6_Active.Checked = False
+                chkPL7_Active.Checked = False
+                chkPL8_Active.Checked = False
             Case 6
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -754,6 +825,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = True
                 TVControlPnl.pnlPL7.Visible = False
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = True
+                chkPL5_Active.Checked = True
+                chkPL6_Active.Checked = True
+                chkPL7_Active.Checked = False
+                chkPL8_Active.Checked = False
             Case 7
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -769,6 +847,13 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = True
                 TVControlPnl.pnlPL7.Visible = True
                 TVControlPnl.pnlPL8.Visible = False
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = True
+                chkPL5_Active.Checked = True
+                chkPL6_Active.Checked = True
+                chkPL7_Active.Checked = True
+                chkPL8_Active.Checked = False
             Case 8
                 pnlPlayer2.Visible = True
                 pnlPlayer3.Visible = True
@@ -784,6 +869,173 @@ Public Class FFFServer
                 TVControlPnl.pnlPL6.Visible = True
                 TVControlPnl.pnlPL7.Visible = True
                 TVControlPnl.pnlPL8.Visible = True
+                chkPL2_Active.Checked = True
+                chkPL3_Active.Checked = True
+                chkPL4_Active.Checked = True
+                chkPL5_Active.Checked = True
+                chkPL6_Active.Checked = True
+                chkPL7_Active.Checked = True
+                chkPL8_Active.Checked = True
         End Select
+    End Sub
+
+    Private Sub chkPL1_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL1_Active.CheckedChanged
+        If chkPL1_Active.Checked = True Then
+            TVControlPnl.txtPL1_Name.Visible = True
+            TVControlPnl.txtPL1_Points.Visible = True
+            txtPL1_Name.Visible = True
+            txtPL1_Answer.Visible = True
+            txtPL1_Points.Visible = True
+        ElseIf chkPL1_Active.Checked = False Then
+            TVControlPnl.txtPL1_Name.Visible = False
+            TVControlPnl.txtPL1_Points.Visible = False
+            txtPL1_Name.Visible = False
+            txtPL1_Answer.Visible = False
+            txtPL1_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL2_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL2_Active.CheckedChanged
+        If chkPL2_Active.Checked = True Then
+            TVControlPnl.txtPL2_Name.Visible = True
+            TVControlPnl.txtPL2_Points.Visible = True
+            txtPL2_Name.Visible = True
+            txtPL2_Answer.Visible = True
+            txtPL2_Points.Visible = True
+        ElseIf chkPL2_Active.Checked = False Then
+            TVControlPnl.txtPL2_Name.Visible = False
+            TVControlPnl.txtPL2_Points.Visible = False
+            txtPL2_Name.Visible = False
+            txtPL2_Answer.Visible = False
+            txtPL2_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL3_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL3_Active.CheckedChanged
+        If chkPL3_Active.Checked = True Then
+            TVControlPnl.txtPL3_Name.Visible = True
+            TVControlPnl.txtPL3_Points.Visible = True
+            txtPL3_Name.Visible = True
+            txtPL3_Answer.Visible = True
+            txtPL3_Points.Visible = True
+        ElseIf chkPL3_Active.Checked = False Then
+            TVControlPnl.txtPL3_Name.Visible = False
+            TVControlPnl.txtPL3_Points.Visible = False
+            txtPL3_Name.Visible = False
+            txtPL3_Answer.Visible = False
+            txtPL3_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL4_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL4_Active.CheckedChanged
+        If chkPL4_Active.Checked = True Then
+            TVControlPnl.txtPL4_Name.Visible = True
+            TVControlPnl.txtPL4_Points.Visible = True
+            txtPL4_Name.Visible = True
+            txtPL4_Answer.Visible = True
+            txtPL4_Points.Visible = True
+        ElseIf chkPL4_Active.Checked = False Then
+            TVControlPnl.txtPL4_Name.Visible = False
+            TVControlPnl.txtPL4_Points.Visible = False
+            txtPL4_Name.Visible = False
+            txtPL4_Answer.Visible = False
+            txtPL4_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL5_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL5_Active.CheckedChanged
+        If chkPL5_Active.Checked = True Then
+            TVControlPnl.txtPL5_Name.Visible = True
+            TVControlPnl.txtPL5_Points.Visible = True
+            txtPL5_Name.Visible = True
+            txtPL5_Answer.Visible = True
+            txtPL5_Points.Visible = True
+        ElseIf chkPL5_Active.Checked = False Then
+            TVControlPnl.txtPL5_Name.Visible = False
+            TVControlPnl.txtPL5_Points.Visible = False
+            txtPL5_Name.Visible = False
+            txtPL5_Answer.Visible = False
+            txtPL5_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL6_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL6_Active.CheckedChanged
+        If chkPL6_Active.Checked = True Then
+            TVControlPnl.txtPL6_Name.Visible = True
+            TVControlPnl.txtPL6_Points.Visible = True
+            txtPL6_Name.Visible = True
+            txtPL6_Answer.Visible = True
+            txtPL6_Points.Visible = True
+        ElseIf chkPL6_Active.Checked = False Then
+            TVControlPnl.txtPL6_Name.Visible = False
+            TVControlPnl.txtPL6_Points.Visible = False
+            txtPL6_Name.Visible = False
+            txtPL6_Answer.Visible = False
+            txtPL6_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL7_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL7_Active.CheckedChanged
+        If chkPL7_Active.Checked = True Then
+            TVControlPnl.txtPL7_Name.Visible = True
+            TVControlPnl.txtPL7_Points.Visible = True
+            txtPL7_Name.Visible = True
+            txtPL7_Answer.Visible = True
+            txtPL7_Points.Visible = True
+        ElseIf chkPL7_Active.Checked = False Then
+            TVControlPnl.txtPL7_Name.Visible = False
+            TVControlPnl.txtPL7_Points.Visible = False
+            txtPL7_Name.Visible = False
+            txtPL7_Answer.Visible = False
+            txtPL7_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkPL8_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL8_Active.CheckedChanged
+        If chkPL8_Active.Checked = True Then
+            TVControlPnl.txtPL8_Name.Visible = True
+            TVControlPnl.txtPL8_Points.Visible = True
+            txtPL8_Name.Visible = True
+            txtPL8_Answer.Visible = True
+            txtPL8_Points.Visible = True
+        ElseIf chkPL8_Active.Checked = False Then
+            TVControlPnl.txtPL8_Name.Visible = False
+            TVControlPnl.txtPL8_Points.Visible = False
+            txtPL8_Name.Visible = False
+            txtPL8_Answer.Visible = False
+            txtPL8_Points.Visible = False
+        End If
+    End Sub
+
+    Private Sub txtPL1_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL1_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL2_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL2_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL3_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL3_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL4_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL4_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL5_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL5_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL6_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL6_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL7_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL7_Name.TextChanged
+
+    End Sub
+
+    Private Sub txtPL8_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL8_Name.TextChanged
+
     End Sub
 End Class

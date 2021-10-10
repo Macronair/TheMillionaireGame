@@ -88,13 +88,24 @@ Partial Class FFFServer
         Me.Label2 = New System.Windows.Forms.Label()
         Me.nmrTotalContestants = New System.Windows.Forms.NumericUpDown()
         Me.pnlPlayer1 = New System.Windows.Forms.Panel()
+        Me.chkPL1_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer2 = New System.Windows.Forms.Panel()
+        Me.chkPL2_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer3 = New System.Windows.Forms.Panel()
+        Me.chkPL3_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer4 = New System.Windows.Forms.Panel()
+        Me.chkPL4_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer5 = New System.Windows.Forms.Panel()
+        Me.chkPL5_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer6 = New System.Windows.Forms.Panel()
+        Me.chkPL6_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer7 = New System.Windows.Forms.Panel()
+        Me.chkPL7_Active = New System.Windows.Forms.CheckBox()
         Me.pnlPlayer8 = New System.Windows.Forms.Panel()
+        Me.chkPL8_Active = New System.Windows.Forms.CheckBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.chkDisableWinnerAuto = New System.Windows.Forms.CheckBox()
+        Me.chkShowPointsInServerConsole = New System.Windows.Forms.CheckBox()
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPlayer1.SuspendLayout()
         Me.pnlPlayer2.SuspendLayout()
@@ -364,7 +375,7 @@ Partial Class FFFServer
         Me.lblPoints.AutoSize = True
         Me.lblPoints.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPoints.ForeColor = System.Drawing.Color.Black
-        Me.lblPoints.Location = New System.Drawing.Point(389, 334)
+        Me.lblPoints.Location = New System.Drawing.Point(277, 5)
         Me.lblPoints.Name = "lblPoints"
         Me.lblPoints.Size = New System.Drawing.Size(24, 25)
         Me.lblPoints.TabIndex = 69
@@ -681,9 +692,9 @@ Partial Class FFFServer
         '
         Me.btnRandomize.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRandomize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRandomize.Location = New System.Drawing.Point(390, 292)
+        Me.btnRandomize.Location = New System.Drawing.Point(234, 271)
         Me.btnRandomize.Name = "btnRandomize"
-        Me.btnRandomize.Size = New System.Drawing.Size(70, 39)
+        Me.btnRandomize.Size = New System.Drawing.Size(110, 27)
         Me.btnRandomize.TabIndex = 99
         Me.btnRandomize.Text = "Randomize Points"
         Me.btnRandomize.UseVisualStyleBackColor = False
@@ -752,6 +763,7 @@ Partial Class FFFServer
         '
         'pnlPlayer1
         '
+        Me.pnlPlayer1.Controls.Add(Me.chkPL1_Active)
         Me.pnlPlayer1.Controls.Add(Me.txtPL1_Name)
         Me.pnlPlayer1.Controls.Add(Me.txtPL1_Answer)
         Me.pnlPlayer1.Controls.Add(Me.lblPL_1)
@@ -759,11 +771,23 @@ Partial Class FFFServer
         Me.pnlPlayer1.Controls.Add(Me.chkPL1)
         Me.pnlPlayer1.Location = New System.Drawing.Point(7, 63)
         Me.pnlPlayer1.Name = "pnlPlayer1"
-        Me.pnlPlayer1.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer1.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer1.TabIndex = 106
+        '
+        'chkPL1_Active
+        '
+        Me.chkPL1_Active.AutoSize = True
+        Me.chkPL1_Active.Checked = True
+        Me.chkPL1_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL1_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL1_Active.Name = "chkPL1_Active"
+        Me.chkPL1_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL1_Active.TabIndex = 92
+        Me.chkPL1_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer2
         '
+        Me.pnlPlayer2.Controls.Add(Me.chkPL2_Active)
         Me.pnlPlayer2.Controls.Add(Me.txtPL2_Name)
         Me.pnlPlayer2.Controls.Add(Me.txtPL2_Answer)
         Me.pnlPlayer2.Controls.Add(Me.lblPL_2)
@@ -771,11 +795,23 @@ Partial Class FFFServer
         Me.pnlPlayer2.Controls.Add(Me.chkPL2)
         Me.pnlPlayer2.Location = New System.Drawing.Point(7, 89)
         Me.pnlPlayer2.Name = "pnlPlayer2"
-        Me.pnlPlayer2.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer2.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer2.TabIndex = 107
+        '
+        'chkPL2_Active
+        '
+        Me.chkPL2_Active.AutoSize = True
+        Me.chkPL2_Active.Checked = True
+        Me.chkPL2_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL2_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL2_Active.Name = "chkPL2_Active"
+        Me.chkPL2_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL2_Active.TabIndex = 93
+        Me.chkPL2_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer3
         '
+        Me.pnlPlayer3.Controls.Add(Me.chkPL3_Active)
         Me.pnlPlayer3.Controls.Add(Me.txtPL3_Name)
         Me.pnlPlayer3.Controls.Add(Me.txtPL3_Answer)
         Me.pnlPlayer3.Controls.Add(Me.lblPL_3)
@@ -783,11 +819,23 @@ Partial Class FFFServer
         Me.pnlPlayer3.Controls.Add(Me.chkPL3)
         Me.pnlPlayer3.Location = New System.Drawing.Point(7, 115)
         Me.pnlPlayer3.Name = "pnlPlayer3"
-        Me.pnlPlayer3.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer3.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer3.TabIndex = 107
+        '
+        'chkPL3_Active
+        '
+        Me.chkPL3_Active.AutoSize = True
+        Me.chkPL3_Active.Checked = True
+        Me.chkPL3_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL3_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL3_Active.Name = "chkPL3_Active"
+        Me.chkPL3_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL3_Active.TabIndex = 94
+        Me.chkPL3_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer4
         '
+        Me.pnlPlayer4.Controls.Add(Me.chkPL4_Active)
         Me.pnlPlayer4.Controls.Add(Me.txtPL4_Name)
         Me.pnlPlayer4.Controls.Add(Me.txtPL4_Answer)
         Me.pnlPlayer4.Controls.Add(Me.lblPL_4)
@@ -795,11 +843,23 @@ Partial Class FFFServer
         Me.pnlPlayer4.Controls.Add(Me.chkPL4)
         Me.pnlPlayer4.Location = New System.Drawing.Point(7, 141)
         Me.pnlPlayer4.Name = "pnlPlayer4"
-        Me.pnlPlayer4.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer4.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer4.TabIndex = 107
+        '
+        'chkPL4_Active
+        '
+        Me.chkPL4_Active.AutoSize = True
+        Me.chkPL4_Active.Checked = True
+        Me.chkPL4_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL4_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL4_Active.Name = "chkPL4_Active"
+        Me.chkPL4_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL4_Active.TabIndex = 95
+        Me.chkPL4_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer5
         '
+        Me.pnlPlayer5.Controls.Add(Me.chkPL5_Active)
         Me.pnlPlayer5.Controls.Add(Me.txtPL5_Name)
         Me.pnlPlayer5.Controls.Add(Me.txtPL5_Answer)
         Me.pnlPlayer5.Controls.Add(Me.lblPL_5)
@@ -807,11 +867,23 @@ Partial Class FFFServer
         Me.pnlPlayer5.Controls.Add(Me.chkPL5)
         Me.pnlPlayer5.Location = New System.Drawing.Point(7, 167)
         Me.pnlPlayer5.Name = "pnlPlayer5"
-        Me.pnlPlayer5.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer5.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer5.TabIndex = 107
+        '
+        'chkPL5_Active
+        '
+        Me.chkPL5_Active.AutoSize = True
+        Me.chkPL5_Active.Checked = True
+        Me.chkPL5_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL5_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL5_Active.Name = "chkPL5_Active"
+        Me.chkPL5_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL5_Active.TabIndex = 96
+        Me.chkPL5_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer6
         '
+        Me.pnlPlayer6.Controls.Add(Me.chkPL6_Active)
         Me.pnlPlayer6.Controls.Add(Me.txtPL6_Name)
         Me.pnlPlayer6.Controls.Add(Me.txtPL6_Answer)
         Me.pnlPlayer6.Controls.Add(Me.lblPL_6)
@@ -819,11 +891,23 @@ Partial Class FFFServer
         Me.pnlPlayer6.Controls.Add(Me.chkPL6)
         Me.pnlPlayer6.Location = New System.Drawing.Point(7, 193)
         Me.pnlPlayer6.Name = "pnlPlayer6"
-        Me.pnlPlayer6.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer6.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer6.TabIndex = 107
+        '
+        'chkPL6_Active
+        '
+        Me.chkPL6_Active.AutoSize = True
+        Me.chkPL6_Active.Checked = True
+        Me.chkPL6_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL6_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL6_Active.Name = "chkPL6_Active"
+        Me.chkPL6_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL6_Active.TabIndex = 97
+        Me.chkPL6_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer7
         '
+        Me.pnlPlayer7.Controls.Add(Me.chkPL7_Active)
         Me.pnlPlayer7.Controls.Add(Me.txtPL7_Name)
         Me.pnlPlayer7.Controls.Add(Me.txtPL7_Answer)
         Me.pnlPlayer7.Controls.Add(Me.lblPL_7)
@@ -831,11 +915,23 @@ Partial Class FFFServer
         Me.pnlPlayer7.Controls.Add(Me.chkPL7)
         Me.pnlPlayer7.Location = New System.Drawing.Point(7, 219)
         Me.pnlPlayer7.Name = "pnlPlayer7"
-        Me.pnlPlayer7.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer7.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer7.TabIndex = 107
+        '
+        'chkPL7_Active
+        '
+        Me.chkPL7_Active.AutoSize = True
+        Me.chkPL7_Active.Checked = True
+        Me.chkPL7_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL7_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL7_Active.Name = "chkPL7_Active"
+        Me.chkPL7_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL7_Active.TabIndex = 98
+        Me.chkPL7_Active.UseVisualStyleBackColor = True
         '
         'pnlPlayer8
         '
+        Me.pnlPlayer8.Controls.Add(Me.chkPL8_Active)
         Me.pnlPlayer8.Controls.Add(Me.txtPL8_Name)
         Me.pnlPlayer8.Controls.Add(Me.txtPL8_Answer)
         Me.pnlPlayer8.Controls.Add(Me.lblPL_8)
@@ -843,15 +939,62 @@ Partial Class FFFServer
         Me.pnlPlayer8.Controls.Add(Me.chkPL8)
         Me.pnlPlayer8.Location = New System.Drawing.Point(7, 245)
         Me.pnlPlayer8.Name = "pnlPlayer8"
-        Me.pnlPlayer8.Size = New System.Drawing.Size(453, 20)
+        Me.pnlPlayer8.Size = New System.Drawing.Size(504, 20)
         Me.pnlPlayer8.TabIndex = 107
+        '
+        'chkPL8_Active
+        '
+        Me.chkPL8_Active.AutoSize = True
+        Me.chkPL8_Active.Checked = True
+        Me.chkPL8_Active.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkPL8_Active.Location = New System.Drawing.Point(455, 3)
+        Me.chkPL8_Active.Name = "chkPL8_Active"
+        Me.chkPL8_Active.Size = New System.Drawing.Size(15, 14)
+        Me.chkPL8_Active.TabIndex = 99
+        Me.chkPL8_Active.UseVisualStyleBackColor = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(459, 47)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(37, 13)
+        Me.Label3.TabIndex = 108
+        Me.Label3.Text = "Active"
+        '
+        'chkDisableWinnerAuto
+        '
+        Me.chkDisableWinnerAuto.AutoSize = True
+        Me.chkDisableWinnerAuto.Checked = True
+        Me.chkDisableWinnerAuto.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkDisableWinnerAuto.Location = New System.Drawing.Point(234, 316)
+        Me.chkDisableWinnerAuto.Name = "chkDisableWinnerAuto"
+        Me.chkDisableWinnerAuto.Size = New System.Drawing.Size(199, 17)
+        Me.chkDisableWinnerAuto.TabIndex = 109
+        Me.chkDisableWinnerAuto.Text = "Disable Winning Player automatically"
+        Me.chkDisableWinnerAuto.UseVisualStyleBackColor = True
+        '
+        'chkShowPointsInServerConsole
+        '
+        Me.chkShowPointsInServerConsole.AutoSize = True
+        Me.chkShowPointsInServerConsole.Checked = True
+        Me.chkShowPointsInServerConsole.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkShowPointsInServerConsole.Location = New System.Drawing.Point(234, 334)
+        Me.chkShowPointsInServerConsole.Name = "chkShowPointsInServerConsole"
+        Me.chkShowPointsInServerConsole.Size = New System.Drawing.Size(167, 17)
+        Me.chkShowPointsInServerConsole.TabIndex = 110
+        Me.chkShowPointsInServerConsole.Text = "Show points in server console"
+        Me.chkShowPointsInServerConsole.UseVisualStyleBackColor = True
         '
         'FFFServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.ClientSize = New System.Drawing.Size(471, 377)
+        Me.ClientSize = New System.Drawing.Size(523, 377)
+        Me.Controls.Add(Me.chkShowPointsInServerConsole)
+        Me.Controls.Add(Me.chkDisableWinnerAuto)
+        Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.pnlPlayer8)
         Me.Controls.Add(Me.pnlPlayer7)
         Me.Controls.Add(Me.pnlPlayer6)
@@ -975,4 +1118,15 @@ Partial Class FFFServer
     Friend WithEvents pnlPlayer7 As Panel
     Friend WithEvents pnlPlayer8 As Panel
     Friend WithEvents btnRandomize As Button
+    Friend WithEvents chkPL1_Active As CheckBox
+    Friend WithEvents chkPL2_Active As CheckBox
+    Friend WithEvents chkPL3_Active As CheckBox
+    Friend WithEvents chkPL4_Active As CheckBox
+    Friend WithEvents chkPL5_Active As CheckBox
+    Friend WithEvents chkPL6_Active As CheckBox
+    Friend WithEvents chkPL7_Active As CheckBox
+    Friend WithEvents chkPL8_Active As CheckBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents chkDisableWinnerAuto As CheckBox
+    Friend WithEvents chkShowPointsInServerConsole As CheckBox
 End Class
