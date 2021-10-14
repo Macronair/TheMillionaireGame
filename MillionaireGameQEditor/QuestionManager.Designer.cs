@@ -41,22 +41,14 @@
             this.tbLevel0 = new System.Windows.Forms.TabPage();
             this.dtLevel0 = new System.Windows.Forms.DataGridView();
             this.tsTools = new System.Windows.Forms.ToolStrip();
-            this.tsAdd = new System.Windows.Forms.ToolStripButton();
-            this.tsRemove = new System.Windows.Forms.ToolStripButton();
-            this.tsEdit = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsRefresh = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.tsChangeLevel = new System.Windows.Forms.ToolStripButton();
             this.sts = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.stlblId = new System.Windows.Forms.ToolStripStatusLabel();
             this.stLevel = new System.Windows.Forms.ToolStripStatusLabel();
             this.tsmenuEditor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuQuestion = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmenuQuestionCreate = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmenuQuestionEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsmenuQuestionRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.changeLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuActions = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,6 +59,14 @@
             this.resetLevel4UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetFastestFingerUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControls = new System.Windows.Forms.MenuStrip();
+            this.tsAdd = new System.Windows.Forms.ToolStripButton();
+            this.tsRemove = new System.Windows.Forms.ToolStripButton();
+            this.tsEdit = new System.Windows.Forms.ToolStripButton();
+            this.tsRefresh = new System.Windows.Forms.ToolStripButton();
+            this.tsChangeLevel = new System.Windows.Forms.ToolStripButton();
+            this.tsmenuQuestionCreate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmenuQuestionEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmenuQuestionRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.tbLevel.SuspendLayout();
             this.tbLevel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtLevel1)).BeginInit();
@@ -254,61 +254,15 @@
             this.tsTools.TabIndex = 23;
             this.tsTools.Text = "toolStrip1";
             // 
-            // tsAdd
-            // 
-            this.tsAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsAdd.Image")));
-            this.tsAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsAdd.Name = "tsAdd";
-            this.tsAdd.Size = new System.Drawing.Size(49, 22);
-            this.tsAdd.Text = "Add";
-            this.tsAdd.Click += new System.EventHandler(this.tsAdd_Click);
-            // 
-            // tsRemove
-            // 
-            this.tsRemove.Image = ((System.Drawing.Image)(resources.GetObject("tsRemove.Image")));
-            this.tsRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsRemove.Name = "tsRemove";
-            this.tsRemove.Size = new System.Drawing.Size(70, 22);
-            this.tsRemove.Text = "Remove";
-            this.tsRemove.Click += new System.EventHandler(this.tsRemove_Click);
-            // 
-            // tsEdit
-            // 
-            this.tsEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsEdit.Image")));
-            this.tsEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsEdit.Name = "tsEdit";
-            this.tsEdit.Size = new System.Drawing.Size(47, 22);
-            this.tsEdit.Text = "Edit";
-            this.tsEdit.Click += new System.EventHandler(this.tsEdit_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // tsRefresh
-            // 
-            this.tsRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.tsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsRefresh.Image")));
-            this.tsRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsRefresh.Name = "tsRefresh";
-            this.tsRefresh.Size = new System.Drawing.Size(23, 22);
-            this.tsRefresh.Text = "Refresh";
-            this.tsRefresh.Click += new System.EventHandler(this.tsRefresh_Click);
-            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // tsChangeLevel
-            // 
-            this.tsChangeLevel.Image = ((System.Drawing.Image)(resources.GetObject("tsChangeLevel.Image")));
-            this.tsChangeLevel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.tsChangeLevel.Name = "tsChangeLevel";
-            this.tsChangeLevel.Size = new System.Drawing.Size(98, 22);
-            this.tsChangeLevel.Text = "Change Level";
-            this.tsChangeLevel.Click += new System.EventHandler(this.tsChangeLevel_Click);
             // 
             // sts
             // 
@@ -362,34 +316,14 @@
             this.tsmenuQuestion.Size = new System.Drawing.Size(180, 22);
             this.tsmenuQuestion.Text = "Question";
             // 
-            // tsmenuQuestionCreate
-            // 
-            this.tsmenuQuestionCreate.Image = global::MillionaireGameQEditor.Properties.Resources.add;
-            this.tsmenuQuestionCreate.Name = "tsmenuQuestionCreate";
-            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(145, 22);
-            this.tsmenuQuestionCreate.Text = "Create";
-            // 
-            // tsmenuQuestionEdit
-            // 
-            this.tsmenuQuestionEdit.Image = global::MillionaireGameQEditor.Properties.Resources.edit;
-            this.tsmenuQuestionEdit.Name = "tsmenuQuestionEdit";
-            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(145, 22);
-            this.tsmenuQuestionEdit.Text = "Edit";
-            // 
-            // tsmenuQuestionRemove
-            // 
-            this.tsmenuQuestionRemove.Image = global::MillionaireGameQEditor.Properties.Resources.remove;
-            this.tsmenuQuestionRemove.Name = "tsmenuQuestionRemove";
-            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(145, 22);
-            this.tsmenuQuestionRemove.Text = "Remove";
-            // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // changeLevelToolStripMenuItem
             // 
+            this.changeLevelToolStripMenuItem.Image = global::MillionaireGameQEditor.Properties.Resources.move_icon;
             this.changeLevelToolStripMenuItem.Name = "changeLevelToolStripMenuItem";
             this.changeLevelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.changeLevelToolStripMenuItem.Text = "Change Level";
@@ -460,6 +394,73 @@
             this.menuControls.Size = new System.Drawing.Size(1452, 24);
             this.menuControls.TabIndex = 24;
             this.menuControls.Text = "menuStrip1";
+            // 
+            // tsAdd
+            // 
+            this.tsAdd.Image = ((System.Drawing.Image)(resources.GetObject("tsAdd.Image")));
+            this.tsAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsAdd.Name = "tsAdd";
+            this.tsAdd.Size = new System.Drawing.Size(49, 22);
+            this.tsAdd.Text = "Add";
+            this.tsAdd.Click += new System.EventHandler(this.tsAdd_Click);
+            // 
+            // tsRemove
+            // 
+            this.tsRemove.Image = ((System.Drawing.Image)(resources.GetObject("tsRemove.Image")));
+            this.tsRemove.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsRemove.Name = "tsRemove";
+            this.tsRemove.Size = new System.Drawing.Size(70, 22);
+            this.tsRemove.Text = "Remove";
+            this.tsRemove.Click += new System.EventHandler(this.tsRemove_Click);
+            // 
+            // tsEdit
+            // 
+            this.tsEdit.Image = ((System.Drawing.Image)(resources.GetObject("tsEdit.Image")));
+            this.tsEdit.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsEdit.Name = "tsEdit";
+            this.tsEdit.Size = new System.Drawing.Size(47, 22);
+            this.tsEdit.Text = "Edit";
+            this.tsEdit.Click += new System.EventHandler(this.tsEdit_Click);
+            // 
+            // tsRefresh
+            // 
+            this.tsRefresh.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsRefresh.Image = ((System.Drawing.Image)(resources.GetObject("tsRefresh.Image")));
+            this.tsRefresh.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsRefresh.Name = "tsRefresh";
+            this.tsRefresh.Size = new System.Drawing.Size(23, 22);
+            this.tsRefresh.Text = "Refresh";
+            this.tsRefresh.Click += new System.EventHandler(this.tsRefresh_Click);
+            // 
+            // tsChangeLevel
+            // 
+            this.tsChangeLevel.Image = global::MillionaireGameQEditor.Properties.Resources.move_icon;
+            this.tsChangeLevel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsChangeLevel.Name = "tsChangeLevel";
+            this.tsChangeLevel.Size = new System.Drawing.Size(98, 22);
+            this.tsChangeLevel.Text = "Change Level";
+            this.tsChangeLevel.Click += new System.EventHandler(this.tsChangeLevel_Click);
+            // 
+            // tsmenuQuestionCreate
+            // 
+            this.tsmenuQuestionCreate.Image = global::MillionaireGameQEditor.Properties.Resources.add;
+            this.tsmenuQuestionCreate.Name = "tsmenuQuestionCreate";
+            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionCreate.Text = "Create";
+            // 
+            // tsmenuQuestionEdit
+            // 
+            this.tsmenuQuestionEdit.Image = global::MillionaireGameQEditor.Properties.Resources.edit;
+            this.tsmenuQuestionEdit.Name = "tsmenuQuestionEdit";
+            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionEdit.Text = "Edit";
+            // 
+            // tsmenuQuestionRemove
+            // 
+            this.tsmenuQuestionRemove.Image = global::MillionaireGameQEditor.Properties.Resources.remove;
+            this.tsmenuQuestionRemove.Name = "tsmenuQuestionRemove";
+            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionRemove.Text = "Remove";
             // 
             // QEditor
             // 
