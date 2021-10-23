@@ -28,7 +28,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.282.0</ApplicationVersion>
+    <ApplicationVersion>1.0.303.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -129,6 +129,7 @@
     <Compile Include="Source_Scripts\Classes\User.vb" />
     <Compile Include="Source_Scripts\Database\Data.vb" />
     <Compile Include="Source_Scripts\Database\Message.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -388,6 +389,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo21.ico" />
+    <None Include="Resources\lifeline_5.png" />
     <None Include="Resources\winning_strap_3.png" />
     <None Include="Resources\winning_strap_2.png" />
     <None Include="Resources\winning_strap_1.png" />

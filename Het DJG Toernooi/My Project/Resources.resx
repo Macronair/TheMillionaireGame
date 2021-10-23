@@ -169,9 +169,6 @@
   <data name="_0_tree_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="state_strap_red" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\state_strap_red.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="q10_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q10_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -207,9 +204,6 @@
   </data>
   <data name="game_resume" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\game_resume.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_tree_14" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,9 +373,6 @@
   <data name="_0_tree_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="state_strap" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\state_strap.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="paf_countdown" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\paf_countdown.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -405,9 +396,6 @@
   </data>
   <data name="Correct_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Correct_Answer_Fill_r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Normal_Answer_Fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Normal_Answer_Fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="q11_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q11_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -453,5 +441,8 @@
   </data>
   <data name="winning_strap_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\winning_strap_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lifeline_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lifeline_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

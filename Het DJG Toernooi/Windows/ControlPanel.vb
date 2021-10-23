@@ -71,118 +71,122 @@ Public Class ControlPanel
         ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
-        If walkaway = False Then
-            If Game.level = 5 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 6 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 7 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 8 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 9 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 10 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 11 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 12 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 13 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 14 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Question.useMusic = False
-                Timer1.Start()
-                blanksub()
-            End If
+        If LifeLineDouble.active = True Then
+            LifeLineDouble.FinalAnswer()
         Else
+            If walkaway = False Then
+                If Game.level = 5 Then
+                    intSound += 1
 
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 6 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 7 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 8 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 9 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 10 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 11 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 12 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 13 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 14 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+            Else
+
+            End If
         End If
     End Sub
 
@@ -203,109 +207,121 @@ Public Class ControlPanel
         ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
-        If walkaway = False Then
-            If Game.level = 5 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 6 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 7 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 8 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 9 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 10 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 11 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 12 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 13 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 14 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
+        If LifeLineDouble.active = True Then
+            LifeLineDouble.FinalAnswer()
         Else
+            If walkaway = False Then
+                If Game.level = 5 Then
+                    intSound += 1
 
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 6 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 7 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 8 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 9 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 10 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 11 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 12 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 13 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 14 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+            Else
+            End If
         End If
     End Sub
 
@@ -326,109 +342,121 @@ Public Class ControlPanel
         ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
-        If walkaway = False Then
-            If Game.level = 5 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 6 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 7 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 8 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 9 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 10 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 11 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 12 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 13 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 14 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
+        If LifeLineDouble.active = True Then
+            LifeLineDouble.FinalAnswer()
         Else
+            If walkaway = False Then
+                If Game.level = 5 Then
+                    intSound += 1
 
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 6 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 7 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 8 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 9 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 10 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 11 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 12 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 13 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 14 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+            Else
+            End If
         End If
     End Sub
 
@@ -449,109 +477,121 @@ Public Class ControlPanel
         ElseIf answer IsNot lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Red
         End If
-        If walkaway = False Then
-            If Game.level = 5 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 6 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 7 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 8 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 9 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 10 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(13, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 11 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(14, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 12 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(15, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 13 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(16, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
-            If Game.level = 14 Then
-                intSound += 1
-
-                With snd
-                    .Name = "SOUND" & intSound
-                    .Play(17, False, 1000)
-                End With
-                Timer1.Start()
-                blanksub()
-            End If
+        If LifeLineDouble.active = True Then
+            LifeLineDouble.FinalAnswer()
         Else
+            If walkaway = False Then
+                If Game.level = 5 Then
+                    intSound += 1
 
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 6 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 7 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 8 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 9 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 10 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(13, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 11 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(14, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 12 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(15, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 13 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(16, False, 1000)
+                    End With
+                    Timer1.Start()
+                    blanksub()
+                End If
+                If Game.level = 14 Then
+                    intSound += 1
+
+                    With snd
+                        .Name = "SOUND" & intSound
+                        .Play(17, False, 1000)
+                    End With
+                    Question.useMusic = False
+                    Timer1.Start()
+                    blanksub()
+                End If
+            Else
+            End If
         End If
     End Sub
 
@@ -560,7 +600,6 @@ Public Class ControlPanel
 
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
         If i = 0 Then
-            TVControlPnl.tmrFlash.Start()
             HostScreen.txtExplain.ForeColor = Color.White
             If HostScreen.pnlAnswer.BackColor = Color.Lime Then
                 If walkaway = False Then
@@ -1309,5 +1348,9 @@ Public Class ControlPanel
             'Runs the Button1_Click Event
             btnSendToHost.PerformClick()
         End If
+    End Sub
+
+    Private Sub btnTestLifeline_Click(sender As Object, e As EventArgs) Handles btnTestLifeline.Click
+        LifeLineDouble.LifelineUse1()
     End Sub
 End Class

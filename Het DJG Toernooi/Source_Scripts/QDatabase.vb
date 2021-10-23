@@ -18,7 +18,7 @@ Public Class QDatabase
         If Game.level = -1 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            Dim sql = New SqlCommand("SELECT TOP 1 * FROM questions_Level0 ORDER BY NEWID()", Data.connectionString)
+            Dim sql = New SqlCommand("SELECT TOP 1 * FROM questions_Level0 Used = 'False' ORDER BY NEWID()", Data.connectionString)
             Try
                 Dim reader As SqlDataReader = sql.ExecuteReader
                 If reader.HasRows Then
@@ -47,6 +47,7 @@ Public Class QDatabase
             Catch ex As Exception
                 MessageBox.Show("Error when loading FFF question: " + Environment.NewLine + ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Question.act = 0
+                ControlPanel.i = 0
                 My.Computer.Audio.Stop()
                 Question.useMusic = False
             End Try
@@ -58,7 +59,7 @@ Public Class QDatabase
         If Game.level >= 0 And Game.level < 5 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level1 ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level1 WHERE Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel1")
             MaxRows = ds.Tables("qLevel1").Rows.Count
@@ -93,7 +94,7 @@ Public Class QDatabase
         If Game.level >= 5 And Game.level < 10 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level2 ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level2 Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel2")
             MaxRows = ds.Tables("qLevel2").Rows.Count
@@ -128,7 +129,7 @@ Public Class QDatabase
         If Game.level >= 10 And Game.level < 15 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level3 ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level3 Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel3")
             MaxRows = ds.Tables("qLevel3").Rows.Count
@@ -163,7 +164,7 @@ Public Class QDatabase
         If Game.level = 15 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level4 ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level4 Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel4")
             MaxRows = ds.Tables("qLevel4").Rows.Count

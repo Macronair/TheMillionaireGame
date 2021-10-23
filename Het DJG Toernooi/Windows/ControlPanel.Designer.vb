@@ -116,12 +116,13 @@ Partial Class ControlPanel
         Me.lblATA_A = New System.Windows.Forms.Label()
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
         Me.btnFFF = New System.Windows.Forms.Button()
-        Me.btnUndo = New System.Windows.Forms.Button()
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
         Me.btnSendToHost = New System.Windows.Forms.Button()
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
+        Me.btnTestLifeline = New System.Windows.Forms.Button()
+        Me.btnUndo = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.grpRules.SuspendLayout()
@@ -804,6 +805,7 @@ Partial Class ControlPanel
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
         Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
+        Me.ShowOptionsToolStripMenuItem.Visible = False
         '
         'GameToolStripMenuItem
         '
@@ -815,19 +817,21 @@ Partial Class ControlPanel
         'QuestionsEditorToolStripMenuItem
         '
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
+        Me.ProfileEditorToolStripMenuItem.Visible = False
         '
         'ViewToolStripMenuItem
         '
@@ -839,24 +843,24 @@ Partial Class ControlPanel
         'HostScreenToolStripMenuItem
         '
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
-        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
-        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(177, 6)
         '
         'TVScreenToolStripMenuItem
         '
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
-        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
         '
         'OptionsToolStripMenuItem
@@ -870,7 +874,7 @@ Partial Class ControlPanel
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'grpLifelines
@@ -892,31 +896,29 @@ Partial Class ControlPanel
         '
         'btn5050
         '
-        Me.btn5050.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btn5050.BackColor = System.Drawing.Color.Transparent
         Me.btn5050.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_1
         Me.btn5050.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn5050.Location = New System.Drawing.Point(150, 19)
         Me.btn5050.Name = "btn5050"
         Me.btn5050.Size = New System.Drawing.Size(65, 42)
         Me.btn5050.TabIndex = 42
-        Me.btn5050.Text = "50 / 50"
         Me.btn5050.UseVisualStyleBackColor = False
         '
         'btnPlusOne
         '
-        Me.btnPlusOne.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btnPlusOne.BackColor = System.Drawing.Color.Transparent
         Me.btnPlusOne.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_3
         Me.btnPlusOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPlusOne.Location = New System.Drawing.Point(80, 19)
         Me.btnPlusOne.Name = "btnPlusOne"
         Me.btnPlusOne.Size = New System.Drawing.Size(65, 42)
         Me.btnPlusOne.TabIndex = 44
-        Me.btnPlusOne.Text = "+1"
         Me.btnPlusOne.UseVisualStyleBackColor = False
         '
         'btnVote
         '
-        Me.btnVote.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btnVote.BackColor = System.Drawing.Color.Transparent
         Me.btnVote.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_4
         Me.btnVote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVote.Location = New System.Drawing.Point(10, 19)
@@ -927,7 +929,7 @@ Partial Class ControlPanel
         '
         'btnSwitch
         '
-        Me.btnSwitch.BackColor = System.Drawing.Color.RoyalBlue
+        Me.btnSwitch.BackColor = System.Drawing.Color.Transparent
         Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_2
         Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSwitch.Enabled = False
@@ -935,7 +937,6 @@ Partial Class ControlPanel
         Me.btnSwitch.Name = "btnSwitch"
         Me.btnSwitch.Size = New System.Drawing.Size(65, 42)
         Me.btnSwitch.TabIndex = 43
-        Me.btnSwitch.Text = "Switch"
         Me.btnSwitch.UseVisualStyleBackColor = False
         '
         'grpMain
@@ -958,7 +959,7 @@ Partial Class ControlPanel
         '
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
         Me.grpTV.Controls.Add(Me.Button1)
-        Me.grpTV.Location = New System.Drawing.Point(11, 106)
+        Me.grpTV.Location = New System.Drawing.Point(9, 92)
         Me.grpTV.Name = "grpTV"
         Me.grpTV.Size = New System.Drawing.Size(139, 57)
         Me.grpTV.TabIndex = 78
@@ -1029,19 +1030,6 @@ Partial Class ControlPanel
         Me.btnFFF.Text = "Fastest Finger"
         Me.btnFFF.UseVisualStyleBackColor = False
         '
-        'btnUndo
-        '
-        Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnUndo.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._36973
-        Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(577, 208)
-        Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(40, 26)
-        Me.btnUndo.TabIndex = 81
-        Me.btnUndo.UseVisualStyleBackColor = False
-        '
         'txtHostMessages
         '
         Me.txtHostMessages.BackColor = System.Drawing.Color.White
@@ -1093,12 +1081,34 @@ Partial Class ControlPanel
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
+        'btnTestLifeline
+        '
+        Me.btnTestLifeline.Location = New System.Drawing.Point(487, 208)
+        Me.btnTestLifeline.Name = "btnTestLifeline"
+        Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
+        Me.btnTestLifeline.TabIndex = 86
+        Me.btnTestLifeline.UseVisualStyleBackColor = True
+        Me.btnTestLifeline.Visible = False
+        '
+        'btnUndo
+        '
+        Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnUndo.Location = New System.Drawing.Point(577, 208)
+        Me.btnUndo.Name = "btnUndo"
+        Me.btnUndo.Size = New System.Drawing.Size(40, 26)
+        Me.btnUndo.TabIndex = 81
+        Me.btnUndo.UseVisualStyleBackColor = False
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 564)
+        Me.Controls.Add(Me.btnTestLifeline)
         Me.Controls.Add(Me.grpHostMessages)
         Me.Controls.Add(Me.btnUndo)
         Me.Controls.Add(Me.btnFFF)
@@ -1263,4 +1273,5 @@ Partial Class ControlPanel
     Friend WithEvents grpHostMessages As GroupBox
     Friend WithEvents drpNextHostMessage As ComboBox
     Friend WithEvents btnClearHostMessages As Button
+    Friend WithEvents btnTestLifeline As Button
 End Class

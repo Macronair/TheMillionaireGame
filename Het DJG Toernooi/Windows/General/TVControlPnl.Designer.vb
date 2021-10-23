@@ -63,7 +63,7 @@ Partial Class TVControlPnl
         Me.picPO = New System.Windows.Forms.PictureBox()
         Me.picSW = New System.Windows.Forms.PictureBox()
         Me.pic50 = New System.Windows.Forms.PictureBox()
-        Me.picSwitch = New System.Windows.Forms.PictureBox()
+        Me.picLifelineUse = New System.Windows.Forms.PictureBox()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.pnlFFFWinner = New System.Windows.Forms.Panel()
@@ -114,7 +114,7 @@ Partial Class TVControlPnl
         CType(Me.picPO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic50, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picSwitch, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
         Me.pnlFFFWinner.SuspendLayout()
         Me.pnlFFFPlayers.SuspendLayout()
@@ -232,7 +232,7 @@ Partial Class TVControlPnl
         'pnlTotal
         '
         Me.pnlTotal.Controls.Add(Me.Label1)
-        Me.pnlTotal.Location = New System.Drawing.Point(1, 479)
+        Me.pnlTotal.Location = New System.Drawing.Point(-9, 479)
         Me.pnlTotal.Name = "pnlTotal"
         Me.pnlTotal.Size = New System.Drawing.Size(1283, 62)
         Me.pnlTotal.TabIndex = 31
@@ -439,9 +439,9 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlFFFOrder4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder4.Controls.Add(Me.txtFFFOrder4)
-        Me.pnlFFFOrder4.Location = New System.Drawing.Point(737, 571)
+        Me.pnlFFFOrder4.Location = New System.Drawing.Point(689, 571)
         Me.pnlFFFOrder4.Name = "pnlFFFOrder4"
-        Me.pnlFFFOrder4.Size = New System.Drawing.Size(532, 48)
+        Me.pnlFFFOrder4.Size = New System.Drawing.Size(580, 48)
         Me.pnlFFFOrder4.TabIndex = 6
         Me.pnlFFFOrder4.Visible = False
         '
@@ -451,7 +451,7 @@ Partial Class TVControlPnl
         Me.txtFFFOrder4.ForeColor = System.Drawing.Color.White
         Me.txtFFFOrder4.Location = New System.Drawing.Point(33, 0)
         Me.txtFFFOrder4.Name = "txtFFFOrder4"
-        Me.txtFFFOrder4.Size = New System.Drawing.Size(390, 48)
+        Me.txtFFFOrder4.Size = New System.Drawing.Size(438, 48)
         Me.txtFFFOrder4.TabIndex = 3
         Me.txtFFFOrder4.Text = "D:"
         Me.txtFFFOrder4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -461,9 +461,9 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlFFFOrder3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder3.Controls.Add(Me.txtFFFOrder3)
-        Me.pnlFFFOrder3.Location = New System.Drawing.Point(737, 517)
+        Me.pnlFFFOrder3.Location = New System.Drawing.Point(689, 517)
         Me.pnlFFFOrder3.Name = "pnlFFFOrder3"
-        Me.pnlFFFOrder3.Size = New System.Drawing.Size(532, 48)
+        Me.pnlFFFOrder3.Size = New System.Drawing.Size(580, 48)
         Me.pnlFFFOrder3.TabIndex = 5
         Me.pnlFFFOrder3.Visible = False
         '
@@ -473,7 +473,7 @@ Partial Class TVControlPnl
         Me.txtFFFOrder3.ForeColor = System.Drawing.Color.White
         Me.txtFFFOrder3.Location = New System.Drawing.Point(33, 0)
         Me.txtFFFOrder3.Name = "txtFFFOrder3"
-        Me.txtFFFOrder3.Size = New System.Drawing.Size(390, 48)
+        Me.txtFFFOrder3.Size = New System.Drawing.Size(438, 48)
         Me.txtFFFOrder3.TabIndex = 2
         Me.txtFFFOrder3.Text = "C:"
         Me.txtFFFOrder3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -483,9 +483,9 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlFFFOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder2.Controls.Add(Me.txtFFFOrder2)
-        Me.pnlFFFOrder2.Location = New System.Drawing.Point(737, 463)
+        Me.pnlFFFOrder2.Location = New System.Drawing.Point(689, 463)
         Me.pnlFFFOrder2.Name = "pnlFFFOrder2"
-        Me.pnlFFFOrder2.Size = New System.Drawing.Size(532, 48)
+        Me.pnlFFFOrder2.Size = New System.Drawing.Size(580, 48)
         Me.pnlFFFOrder2.TabIndex = 5
         Me.pnlFFFOrder2.Visible = False
         '
@@ -495,7 +495,7 @@ Partial Class TVControlPnl
         Me.txtFFFOrder2.ForeColor = System.Drawing.Color.White
         Me.txtFFFOrder2.Location = New System.Drawing.Point(33, 0)
         Me.txtFFFOrder2.Name = "txtFFFOrder2"
-        Me.txtFFFOrder2.Size = New System.Drawing.Size(390, 48)
+        Me.txtFFFOrder2.Size = New System.Drawing.Size(438, 48)
         Me.txtFFFOrder2.TabIndex = 1
         Me.txtFFFOrder2.Text = "B:"
         Me.txtFFFOrder2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -505,9 +505,9 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlFFFOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder1.Controls.Add(Me.txtFFFOrder1)
-        Me.pnlFFFOrder1.Location = New System.Drawing.Point(737, 409)
+        Me.pnlFFFOrder1.Location = New System.Drawing.Point(689, 409)
         Me.pnlFFFOrder1.Name = "pnlFFFOrder1"
-        Me.pnlFFFOrder1.Size = New System.Drawing.Size(532, 48)
+        Me.pnlFFFOrder1.Size = New System.Drawing.Size(580, 48)
         Me.pnlFFFOrder1.TabIndex = 4
         Me.pnlFFFOrder1.Visible = False
         '
@@ -517,7 +517,7 @@ Partial Class TVControlPnl
         Me.txtFFFOrder1.ForeColor = System.Drawing.Color.White
         Me.txtFFFOrder1.Location = New System.Drawing.Point(33, 0)
         Me.txtFFFOrder1.Name = "txtFFFOrder1"
-        Me.txtFFFOrder1.Size = New System.Drawing.Size(390, 48)
+        Me.txtFFFOrder1.Size = New System.Drawing.Size(438, 48)
         Me.txtFFFOrder1.TabIndex = 0
         Me.txtFFFOrder1.Text = "A:"
         Me.txtFFFOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -567,17 +567,17 @@ Partial Class TVControlPnl
         Me.pic50.TabIndex = 0
         Me.pic50.TabStop = False
         '
-        'picSwitch
+        'picLifelineUse
         '
-        Me.picSwitch.BackColor = System.Drawing.Color.Transparent
-        Me.picSwitch.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSwitch.Location = New System.Drawing.Point(599, 368)
-        Me.picSwitch.Name = "picSwitch"
-        Me.picSwitch.Size = New System.Drawing.Size(68, 48)
-        Me.picSwitch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picSwitch.TabIndex = 8
-        Me.picSwitch.TabStop = False
-        Me.picSwitch.Visible = False
+        Me.picLifelineUse.BackColor = System.Drawing.Color.Transparent
+        Me.picLifelineUse.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.picLifelineUse.Location = New System.Drawing.Point(599, 372)
+        Me.picLifelineUse.Name = "picLifelineUse"
+        Me.picLifelineUse.Size = New System.Drawing.Size(68, 48)
+        Me.picLifelineUse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifelineUse.TabIndex = 8
+        Me.picLifelineUse.TabStop = False
+        Me.picLifelineUse.Visible = False
         '
         'pnlStrap
         '
@@ -585,7 +585,7 @@ Partial Class TVControlPnl
         Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlStrap.Controls.Add(Me.lblAmount)
-        Me.pnlStrap.Location = New System.Drawing.Point(-8, 546)
+        Me.pnlStrap.Location = New System.Drawing.Point(-9, 546)
         Me.pnlStrap.Name = "pnlStrap"
         Me.pnlStrap.Size = New System.Drawing.Size(1282, 83)
         Me.pnlStrap.TabIndex = 28
@@ -665,7 +665,7 @@ Partial Class TVControlPnl
         Me.pnlPL1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL1.Controls.Add(Me.txtPL1_Points)
         Me.pnlPL1.Controls.Add(Me.txtPL1_Name)
-        Me.pnlPL1.Location = New System.Drawing.Point(8, 152)
+        Me.pnlPL1.Location = New System.Drawing.Point(8, 154)
         Me.pnlPL1.Name = "pnlPL1"
         Me.pnlPL1.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL1.TabIndex = 7
@@ -701,7 +701,7 @@ Partial Class TVControlPnl
         Me.pnlPL8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL8.Controls.Add(Me.txtPL8_Points)
         Me.pnlPL8.Controls.Add(Me.txtPL8_Name)
-        Me.pnlPL8.Location = New System.Drawing.Point(8, 519)
+        Me.pnlPL8.Location = New System.Drawing.Point(8, 521)
         Me.pnlPL8.Name = "pnlPL8"
         Me.pnlPL8.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL8.TabIndex = 6
@@ -737,7 +737,7 @@ Partial Class TVControlPnl
         Me.pnlPL7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL7.Controls.Add(Me.txtPL7_Points)
         Me.pnlPL7.Controls.Add(Me.txtPL7_Name)
-        Me.pnlPL7.Location = New System.Drawing.Point(8, 466)
+        Me.pnlPL7.Location = New System.Drawing.Point(8, 468)
         Me.pnlPL7.Name = "pnlPL7"
         Me.pnlPL7.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL7.TabIndex = 5
@@ -773,7 +773,7 @@ Partial Class TVControlPnl
         Me.pnlPL2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL2.Controls.Add(Me.txtPL2_Points)
         Me.pnlPL2.Controls.Add(Me.txtPL2_Name)
-        Me.pnlPL2.Location = New System.Drawing.Point(8, 203)
+        Me.pnlPL2.Location = New System.Drawing.Point(8, 205)
         Me.pnlPL2.Name = "pnlPL2"
         Me.pnlPL2.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL2.TabIndex = 4
@@ -809,7 +809,7 @@ Partial Class TVControlPnl
         Me.pnlPL3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL3.Controls.Add(Me.txtPL3_Points)
         Me.pnlPL3.Controls.Add(Me.txtPL3_Name)
-        Me.pnlPL3.Location = New System.Drawing.Point(8, 255)
+        Me.pnlPL3.Location = New System.Drawing.Point(8, 257)
         Me.pnlPL3.Name = "pnlPL3"
         Me.pnlPL3.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL3.TabIndex = 3
@@ -845,7 +845,7 @@ Partial Class TVControlPnl
         Me.pnlPL6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL6.Controls.Add(Me.txtPL6_Points)
         Me.pnlPL6.Controls.Add(Me.txtPL6_Name)
-        Me.pnlPL6.Location = New System.Drawing.Point(8, 413)
+        Me.pnlPL6.Location = New System.Drawing.Point(8, 415)
         Me.pnlPL6.Name = "pnlPL6"
         Me.pnlPL6.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL6.TabIndex = 4
@@ -881,7 +881,7 @@ Partial Class TVControlPnl
         Me.pnlPL5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL5.Controls.Add(Me.txtPL5_Points)
         Me.pnlPL5.Controls.Add(Me.txtPL5_Name)
-        Me.pnlPL5.Location = New System.Drawing.Point(8, 360)
+        Me.pnlPL5.Location = New System.Drawing.Point(8, 362)
         Me.pnlPL5.Name = "pnlPL5"
         Me.pnlPL5.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL5.TabIndex = 3
@@ -917,7 +917,7 @@ Partial Class TVControlPnl
         Me.pnlPL4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlPL4.Controls.Add(Me.txtPL4_Points)
         Me.pnlPL4.Controls.Add(Me.txtPL4_Name)
-        Me.pnlPL4.Location = New System.Drawing.Point(8, 307)
+        Me.pnlPL4.Location = New System.Drawing.Point(8, 309)
         Me.pnlPL4.Name = "pnlPL4"
         Me.pnlPL4.Size = New System.Drawing.Size(1264, 50)
         Me.pnlPL4.TabIndex = 2
@@ -954,14 +954,14 @@ Partial Class TVControlPnl
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1264, 681)
         Me.Controls.Add(Me.pnlFFFPlayers)
-        Me.Controls.Add(Me.picSwitch)
+        Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
-        Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.pnlTotal)
-        Me.Controls.Add(Me.pnlFFFWinner)
-        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlQuestion)
+        Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlTotal)
+        Me.Controls.Add(Me.pnlStrap)
+        Me.Controls.Add(Me.pnlFFFWinner)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
@@ -989,7 +989,7 @@ Partial Class TVControlPnl
         CType(Me.picPO, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picSW, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic50, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picSwitch, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
         Me.pnlFFFWinner.ResumeLayout(False)
         Me.pnlFFFWinner.PerformLayout()
@@ -1026,7 +1026,7 @@ Partial Class TVControlPnl
     Friend WithEvents pic50 As PictureBox
     Friend WithEvents picPO As PictureBox
     Friend WithEvents picSW As PictureBox
-    Friend WithEvents picSwitch As PictureBox
+    Friend WithEvents picLifelineUse As PictureBox
     Friend WithEvents txtQuestion As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents pnlTotal As Panel

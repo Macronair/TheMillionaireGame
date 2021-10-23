@@ -67,6 +67,7 @@
             act = 2
         End If
         If act = 0 Then
+            act = 1
             newQ.newQuestion()
             HostScreen.pnlAnswer.BackColor = Color.Black
             HostScreen.lbl5050Used.ForeColor = Color.Black
@@ -134,7 +135,6 @@
             GuestScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text
             HostScreen.lblAnswer.Text = ControlPanel.lblAnswer.Text
             HostScreen.txtExplain.Text = ControlPanel.txtExplain.Text
-            act = 1
         End If
     End Sub
 
@@ -199,65 +199,7 @@
         If music = True Then
             PlayCue()
         End If
-        'If useMusic = False Then
-        '    useMusic = True
-        '    If Game.level = 0 Then
-        '        My.Computer.Audio.Play(My.Resources.q1_to_q5_bed, AudioPlayMode.BackgroundLoop)
-        '    End If
-        '    If Game.level = 1 Then
-        '        My.Computer.Audio.Play(My.Resources.q1_to_q5_bed, AudioPlayMode.BackgroundLoop)
-        '    End If
-        '    If Game.level = 2 Then
-        '        My.Computer.Audio.Play(My.Resources.q1_to_q5_bed, AudioPlayMode.BackgroundLoop)
-        '    End If
-        '    If Game.level = 3 Then
-        '        My.Computer.Audio.Play(My.Resources.q1_to_q5_bed, AudioPlayMode.BackgroundLoop)
-        '    End If
-        '    If Game.level = 4 Then
-        '        My.Computer.Audio.Play(My.Resources.q1_to_q5_bed, AudioPlayMode.BackgroundLoop)
-        '    End If
-        '    If Game.level = 5 Then
-        '        My.Computer.Audio.Play(My.Resources.q6_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 6 Then
-        '        My.Computer.Audio.Play(My.Resources.q7_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 7 Then
-        '        My.Computer.Audio.Play(My.Resources.q8_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 8 Then
-        '        My.Computer.Audio.Play(My.Resources.q9_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 9 Then
-        '        My.Computer.Audio.Play(My.Resources.q10_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 10 Then
-        '        My.Computer.Audio.Play(My.Resources.q11_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 11 Then
-        '        My.Computer.Audio.Play(My.Resources.q12_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 12 Then
-        '        My.Computer.Audio.Play(My.Resources.q13_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 13 Then
-        '        My.Computer.Audio.Play(My.Resources.q14_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        '    If Game.level = 14 Then
-        '        My.Computer.Audio.Play(My.Resources.q15_bed, AudioPlayMode.BackgroundLoop)
-        '        ControlPanel.Timer2.Start()
-        '    End If
-        'End If
-
+        ControlPanel.i = 0
         ControlPanel.txtA.BackColor = Color.Silver
         ControlPanel.txtB.BackColor = Color.Silver
         ControlPanel.txtC.BackColor = Color.Silver

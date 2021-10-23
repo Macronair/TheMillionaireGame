@@ -420,16 +420,6 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property background() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("background", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
         Friend ReadOnly Property background1() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("background1", resourceCulture)
@@ -695,9 +685,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property Normal_Answer_Fill() As System.Drawing.Bitmap
+        Friend ReadOnly Property lifeline_5() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("Normal_Answer_Fill", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("lifeline_5", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1034,26 +1024,6 @@ Namespace My.Resources
         Friend ReadOnly Property q9_lose() As System.IO.UnmanagedMemoryStream
             Get
                 Return ResourceManager.GetStream("q9_lose", resourceCulture)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property state_strap() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("state_strap", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property state_strap_red() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("state_strap_red", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
         

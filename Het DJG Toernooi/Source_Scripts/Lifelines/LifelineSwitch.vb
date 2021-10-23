@@ -4,7 +4,7 @@ Public Class LifelineSwitch
     Dim act As Integer = 0
     Public Sub LifelineUse1()
         If act = 0 Then
-            TVControlPnl.picSwitch.Visible = True
+            TVControlPnl.picLifelineUse.Visible = True
             TVControlPnl.grpATA.Visible = False
             ControlPanel.intSound += 1
 
@@ -91,7 +91,7 @@ Public Class LifelineSwitch
     End Sub
 
     Public Sub reset()
-        TVControlPnl.picSwitch.Visible = False
+        TVControlPnl.picLifelineUse.Visible = False
         act = 0
         HostScreen.picSW.Image = My.Resources.lifeline_2_used
         GuestScreen.picSW.Image = My.Resources.lifeline_2_used
