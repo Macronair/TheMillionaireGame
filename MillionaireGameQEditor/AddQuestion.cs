@@ -25,7 +25,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 levelType = "Lvl1";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level1 (Question, A, B, C, D, CorrectAnswer, Type) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type)");
+                string str = String.Format(@"INSERT INTO questions_Level1 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -34,6 +34,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
@@ -41,7 +42,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 levelType = "Lvl2";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level2 (Question, A, B, C, D, CorrectAnswer, Type) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type)");
+                string str = String.Format(@"INSERT INTO questions_Level2 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -50,6 +51,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
@@ -57,7 +59,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 levelType = "Lvl3";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level3 (Question, A, B, C, D, CorrectAnswer, Type) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type)");
+                string str = String.Format(@"INSERT INTO questions_Level3 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -66,6 +68,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
@@ -73,7 +76,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 levelType = "Lvl4";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level4 (Question, A, B, C, D, CorrectAnswer, Type) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type)");
+                string str = String.Format(@"INSERT INTO questions_Level4 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -82,6 +85,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
@@ -89,7 +93,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 levelType = "Lvl0";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level0 (Question, A, B, C, D, CorrectAnswer, Type) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type)");
+                string str = String.Format(@"INSERT INTO questions_Level0 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -98,6 +102,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
                 cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }

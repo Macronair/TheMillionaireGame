@@ -18,7 +18,7 @@ Public Class QDatabase
         If Game.level = -1 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            Dim sql = New SqlCommand("SELECT TOP 1 * FROM questions_Level0 Used = 'False' ORDER BY NEWID()", Data.connectionString)
+            Dim sql = New SqlCommand("SELECT TOP 1 * FROM questions_Level0 WHERE Used = 'False' ORDER BY NEWID()", Data.connectionString)
             Try
                 Dim reader As SqlDataReader = sql.ExecuteReader
                 If reader.HasRows Then
@@ -35,6 +35,7 @@ Public Class QDatabase
                             ControlPanel.txtD.Text = reader.GetString(5)
                             ControlPanel.lblAnswer.Text = reader.GetString(6)
                             ControlPanel.txtID.Text = reader.GetInt32(0)
+                            ControlPanel.txtExplain.Text = reader.GetString(9)
                         End If
                     End While
                     reader.Close()
@@ -76,6 +77,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel1").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel1").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel1").Rows(0).Item(0)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel1").Rows(0).Item(9)
 
                     sqlupdate = "UPDATE questions_Level1 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -94,7 +96,7 @@ Public Class QDatabase
         If Game.level >= 5 And Game.level < 10 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level2 Used = 'False' ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level2 WHERE Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel2")
             MaxRows = ds.Tables("qLevel2").Rows.Count
@@ -111,6 +113,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel2").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel2").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel2").Rows(0).Item(0)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel2").Rows(0).Item(9)
 
                     sqlupdate = "UPDATE questions_Level2 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -126,10 +129,10 @@ Public Class QDatabase
         End If
 
         'Haalt een vraag uit de database (64.000 - 500.000 pt)
-        If Game.level >= 10 And Game.level < 15 Then
+        If Game.level >= 10 And Game.level < 14 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level3 Used = 'False' ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level3 WHERE Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel3")
             MaxRows = ds.Tables("qLevel3").Rows.Count
@@ -146,6 +149,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel3").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel3").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel3").Rows(0).Item(0)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel3").Rows(0).Item(9)
 
                     sqlupdate = "UPDATE questions_Level3 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -161,10 +165,10 @@ Public Class QDatabase
         End If
 
         'Haalt een vraag uit de database (1.000.000 pt)
-        If Game.level = 15 Then
+        If Game.level = 14 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = "SELECT TOP 1 * FROM questions_Level4 Used = 'False' ORDER BY NEWID()"
+            sql = "SELECT TOP 1 * FROM questions_Level4 WHERE Used = 'False' ORDER BY NEWID()"
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "qLevel4")
             MaxRows = ds.Tables("qLevel4").Rows.Count
@@ -181,6 +185,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel4").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel4").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel4").Rows(0).Item(0)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel4").Rows(0).Item(9)
 
                     sqlupdate = "UPDATE questions_Level4 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)

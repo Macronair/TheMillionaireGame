@@ -48,6 +48,7 @@ Public Class frmMain
                     Button1.Text = "Disconnect"
                     lblStatus.Text = "Client connected!"
                     grpSlot.Enabled = False
+                    TextBox1.Enabled = False
                 Catch ex As Exception
                     xUpdate("Can't connect to the server!")
                     lblStatus.Text = "Error: Cannot connect to server."
@@ -59,6 +60,7 @@ Public Class frmMain
                 Button1.Text = "Connect"
                 lblStatus.Text = "Client disconnected!"
                 grpSlot.Enabled = True
+                TextBox1.Enabled = True
         End Select
     End Sub
     Private Sub TextBox4_KeyDown(sender As Object, e As KeyEventArgs) Handles TextBox4.KeyDown
@@ -86,11 +88,13 @@ Public Class frmMain
 
         If cmd = "/unlock" Then
             grpAnswers.Enabled = True
+            Button1.Enabled = False
             btnA.Text = "A"
             btnB.Text = "B"
             btnC.Text = "C"
             btnD.Text = "D"
         ElseIf cmd = "/lock" Then
+            Button1.Enabled = True
             grpAnswers.Enabled = False
         ElseIf cmd = "/clear" Then
             btnA.Text = "A"

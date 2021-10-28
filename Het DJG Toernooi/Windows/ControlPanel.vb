@@ -632,6 +632,7 @@ Public Class ControlPanel
         ElseIf i = 2 Then
             HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
+            HostScreen.pnlAnswer.BackColor = Color.Black
             HostScreen.txtQuestion.Text = ""
             HostScreen.txtA.Text = ""
             HostScreen.txtB.Text = ""

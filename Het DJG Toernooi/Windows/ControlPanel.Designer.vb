@@ -747,6 +747,7 @@ Partial Class ControlPanel
         Me.txtExplain.Location = New System.Drawing.Point(346, 471)
         Me.txtExplain.Multiline = True
         Me.txtExplain.Name = "txtExplain"
+        Me.txtExplain.ReadOnly = True
         Me.txtExplain.Size = New System.Drawing.Size(249, 66)
         Me.txtExplain.TabIndex = 60
         '
@@ -817,19 +818,19 @@ Partial Class ControlPanel
         'QuestionsEditorToolStripMenuItem
         '
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
         Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         Me.ProfileEditorToolStripMenuItem.Visible = False
         '
@@ -843,24 +844,24 @@ Partial Class ControlPanel
         'HostScreenToolStripMenuItem
         '
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
-        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
-        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 6)
         '
         'TVScreenToolStripMenuItem
         '
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
-        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
         '
         'OptionsToolStripMenuItem
@@ -874,7 +875,7 @@ Partial Class ControlPanel
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'grpLifelines
@@ -1093,12 +1094,13 @@ Partial Class ControlPanel
         'btnUndo
         '
         Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnUndo.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._36973
         Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(577, 208)
+        Me.btnUndo.Location = New System.Drawing.Point(568, 208)
         Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(40, 26)
+        Me.btnUndo.Size = New System.Drawing.Size(49, 26)
         Me.btnUndo.TabIndex = 81
         Me.btnUndo.UseVisualStyleBackColor = False
         '

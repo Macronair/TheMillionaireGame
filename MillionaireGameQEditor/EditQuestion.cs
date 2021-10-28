@@ -23,7 +23,7 @@ namespace Millionaire.Windows.Question_Editor
             QEditor.c.Open();
             if (txtLevel.Text == "Lvl1")
             {
-                cmd = new SqlCommand("UPDATE questions_Level1 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions_Level1 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
@@ -31,12 +31,13 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (txtLevel.Text == "Lvl2")
             {
-                cmd = new SqlCommand("UPDATE questions_Level2 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions_Level2 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
@@ -44,12 +45,13 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (txtLevel.Text == "Lvl3")
             {
-                cmd = new SqlCommand("UPDATE questions_Level3 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions_Level3 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
@@ -57,12 +59,13 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (txtLevel.Text == "Lvl4")
             {
-                cmd = new SqlCommand("UPDATE questions_Level4 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions_Level4 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
@@ -70,12 +73,13 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (txtLevel.Text == "Lvl0")
             {
-                cmd = new SqlCommand("UPDATE questions_Level0 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions_Level0 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
@@ -83,6 +87,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
                 cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
             }
