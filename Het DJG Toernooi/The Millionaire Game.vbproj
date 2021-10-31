@@ -156,15 +156,15 @@
     <Compile Include="Windows\Database Settings\Database.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source_Scripts\Classes\Game\GameModes\FFF\ClientClass.vb" />
-    <Compile Include="Source_Scripts\Classes\Game\GameModes\FFF\FFFQuestion.vb" />
-    <Compile Include="Source_Scripts\Classes\Game\GameModes\FFF\FFFServer.Designer.vb">
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\ClientClass.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\FFFQuestion.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\FFFServer.Designer.vb">
       <DependentUpon>FFFServer.vb</DependentUpon>
     </Compile>
-    <Compile Include="Source_Scripts\Classes\Game\GameModes\FFF\FFFServer.vb">
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\FFFServer.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source_Scripts\Classes\Game\GameModes\FFF\PlayerCheck.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\PlayerCheck.vb" />
     <Compile Include="Windows\General\GuestScreen.Designer.vb">
       <DependentUpon>GuestScreen.vb</DependentUpon>
     </Compile>
@@ -227,7 +227,7 @@
     <EmbeddedResource Include="Windows\Database Settings\Database.resx">
       <DependentUpon>Database.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Source_Scripts\Classes\Game\GameModes\FFF\FFFServer.resx">
+    <EmbeddedResource Include="Source_Scripts\Classes\Game\FastestFinger\FFFServer.resx">
       <DependentUpon>FFFServer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\GuestScreen.resx">

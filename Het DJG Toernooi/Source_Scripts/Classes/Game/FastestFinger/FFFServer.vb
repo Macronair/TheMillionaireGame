@@ -32,49 +32,49 @@ Public Class FFFServer
     Public Shared firstMan As Boolean = True    'Checks if the person with the right answer is the first one. If so, this will be set from True to False.
 
     'Player 1 Info
-    Dim pl1_active As Boolean       'Active?
+    Dim pl1_online As Boolean       'Online?
     Dim pl1_name As String          'Name
     Dim pl1_answer As String        'Answer
     Public Shared pl1_points As Integer = 9999
 
     'Player 2 Info
-    Dim pl2_active As Boolean       'Active?
+    Dim pl2_online As Boolean       'Online?
     Dim pl2_name As String          'Name
     Dim pl2_answer As String        'Answer
     Public Shared pl2_points As Integer = 9999
 
     'Player 3 Info
-    Dim pl3_active As Boolean       'Active?
+    Dim pl3_online As Boolean       'Online?
     Dim pl3_name As String          'Name
     Dim pl3_answer As String        'Answer
     Public Shared pl3_points As Integer = 9999
 
     'Player 4 Info
-    Dim pl4_active As Boolean       'Active?
+    Dim pl4_online As Boolean       'Online?
     Dim pl4_name As String          'Name
     Dim pl4_answer As String        'Answer
     Public Shared pl4_points As Integer = 9999
 
     'Player 5 Info
-    Dim pl5_active As Boolean       'Active?
+    Dim pl5_online As Boolean       'Online?
     Dim pl5_name As String          'Name
     Dim pl5_answer As String        'Answer
     Public Shared pl5_points As Integer = 9999
 
     'Player 6 Info
-    Dim pl6_active As Boolean       'Active?
+    Dim pl6_online As Boolean       'Online?
     Dim pl6_name As String          'Name
     Dim pl6_answer As String        'Answer
     Public Shared pl6_points As Integer = 9999
 
     'Player 7 Info
-    Dim pl7_active As Boolean       'Active?
+    Dim pl7_online As Boolean       'Online?
     Dim pl7_name As String          'Name
     Dim pl7_answer As String        'Answer
     Public Shared pl7_points As Integer = 9999
 
     'Player 8 Info
-    Dim pl8_active As Boolean       'Active?
+    Dim pl8_online As Boolean       'Online?
     Dim pl8_name As String          'Name
     Dim pl8_answer As String        'Answer
     Public Shared pl8_points As Integer = 9999
@@ -147,10 +147,11 @@ Public Class FFFServer
             Dim rcv As String = txtReceive.Text
             Dim rcvList() As String = rcv.Split("-")
             Select Case rcvList(0)
-                Case 1
-                    txtPL1_Answer.Text = rcvList(1)
-                    If txtPL1_Answer.Text = correctAnswer And chkPL1_Active.Checked = True Then
-
+                Case 1                                          ' Checks Player 1 answer + score
+                    If chkPL1_Active.Checked = True Then
+                        txtPL1_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL1_Answer.Text = correctAnswer Then
                         pl1_points = fff_points
                         txtPL1_Points.Text = fff_points
                         If firstMan = True Then
@@ -158,10 +159,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 2
-                    txtPL2_Answer.Text = rcvList(1)
-                    If txtPL2_Answer.Text = correctAnswer And chkPL2_Active.Checked = True Then
-
+                Case 2                                          ' Checks Player 2 answer + score
+                    If chkPL2_Active.Checked = True Then
+                        txtPL2_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL2_Answer.Text = correctAnswer Then
                         pl2_points = fff_points
                         txtPL2_Points.Text = fff_points
                         If firstMan = True Then
@@ -169,10 +171,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 3
-                    txtPL3_Answer.Text = rcvList(1)
-                    If txtPL3_Answer.Text = correctAnswer And chkPL3_Active.Checked = True Then
-
+                Case 3                                          ' Checks Player 3 answer + score
+                    If chkPL3_Active.Checked = True Then
+                        txtPL3_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL3_Answer.Text = correctAnswer Then
                         pl3_points = fff_points
                         txtPL3_Points.Text = fff_points
                         If firstMan = True Then
@@ -180,10 +183,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 4
-                    txtPL4_Answer.Text = rcvList(1)
-                    If txtPL4_Answer.Text = correctAnswer And chkPL4_Active.Checked = True Then
-
+                Case 4                                          ' Checks Player 4 answer + score
+                    If chkPL4_Active.Checked = True Then
+                        txtPL4_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL4_Answer.Text = correctAnswer Then
                         pl4_points = fff_points
                         txtPL4_Points.Text = fff_points
                         If firstMan = True Then
@@ -191,10 +195,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 5
-                    txtPL5_Answer.Text = rcvList(1)
-                    If txtPL5_Answer.Text = correctAnswer And chkPL5_Active.Checked = True Then
-
+                Case 5                                          ' Checks Player 5 answer + score
+                    If chkPL5_Active.Checked = True Then
+                        txtPL5_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL5_Answer.Text = correctAnswer Then
                         pl5_points = fff_points
                         txtPL5_Points.Text = fff_points
                         If firstMan = True Then
@@ -202,10 +207,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 6
-                    txtPL6_Answer.Text = rcvList(1)
-                    If txtPL6_Answer.Text = correctAnswer And chkPL6_Active.Checked = True Then
-
+                Case 6                                          ' Checks Player 6 answer + score
+                    If chkPL6_Active.Checked = True Then
+                        txtPL6_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL6_Answer.Text = correctAnswer Then
                         pl6_points = fff_points
                         txtPL6_Points.Text = fff_points
                         If firstMan = True Then
@@ -213,10 +219,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 7
-                    txtPL7_Answer.Text = rcvList(1)
-                    If txtPL7_Answer.Text = correctAnswer And chkPL7_Active.Checked = True Then
-
+                Case 7                                          ' Checks Player 7 answer + score
+                    If chkPL7_Active.Checked = True Then
+                        txtPL7_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL7_Answer.Text = correctAnswer Then
                         pl7_points = fff_points
                         txtPL7_Points.Text = fff_points
                         If firstMan = True Then
@@ -224,10 +231,11 @@ Public Class FFFServer
                             firstMan = False
                         End If
                     End If
-                Case 8
-                    txtPL8_Answer.Text = rcvList(1)
-                    If txtPL8_Answer.Text = correctAnswer And chkPL8_Active.Checked = True Then
-
+                Case 8                                          ' Checks Player 8 answer + score
+                    If chkPL8_Active.Checked = True Then
+                        txtPL8_Answer.Text = rcvList(1)
+                    End If
+                    If txtPL8_Answer.Text = correctAnswer Then
                         pl8_points = fff_points
                         txtPL8_Points.Text = fff_points
                         If firstMan = True Then
