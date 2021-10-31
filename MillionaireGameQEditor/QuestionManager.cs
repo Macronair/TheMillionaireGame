@@ -445,7 +445,7 @@ namespace Millionaire
         #endregion
 
         #region Questions Reset functions
-        private void tsmenuActionsResetAllQuestions_Click(object sender, EventArgs e)
+        private void tsmenuActionsResetAllQuestions_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
             SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
@@ -476,7 +476,7 @@ namespace Millionaire
             }
         }
 
-        private void resetLevel1UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetLevel1UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
             try
@@ -499,7 +499,7 @@ namespace Millionaire
             }
         }
 
-        private void resetLevel2UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetLevel2UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd2 = new SqlCommand("UPDATE questions_Level2 SET Used='False'", c);
             try
@@ -522,7 +522,7 @@ namespace Millionaire
             }
         }
 
-        private void resetLevel3UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetLevel3UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd3 = new SqlCommand("UPDATE questions_Level3 SET Used='False'", c);
             try
@@ -545,7 +545,7 @@ namespace Millionaire
             }
         }
 
-        private void resetLevel4UsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetLevel4UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd4 = new SqlCommand("UPDATE questions_Level4 SET Used='False'", c);
             try
@@ -568,7 +568,7 @@ namespace Millionaire
             }
         }
 
-        private void resetFastestFingerUsedQuestionsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void resetFastestFingerUsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
             try
@@ -615,11 +615,6 @@ namespace Millionaire
 
         #endregion
 
-        private void dtLevel1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void tsChangeLevel_Click(object sender, EventArgs e)
         {
             ChangeLevelDB();
@@ -629,5 +624,6 @@ namespace Millionaire
         {
             ChangeLevelDB();
         }
+
     }
 }

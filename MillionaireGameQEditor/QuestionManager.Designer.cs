@@ -60,15 +60,15 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.changeLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuActions = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuControls = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.resetUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel4UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel3UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel2UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel1UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuActionsResetAllQuestions = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLevel1UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLevel2UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLevel3UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetLevel4UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.menuControls = new System.Windows.Forms.MenuStrip();
             this.tbLevel.SuspendLayout();
             this.tbLevel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtLevel1)).BeginInit();
@@ -126,7 +126,6 @@
             this.dtLevel1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel1.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel1.TabIndex = 14;
-            this.dtLevel1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellContentClick);
             this.dtLevel1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellDoubleClick);
             this.dtLevel1.SelectionChanged += new System.EventHandler(this.dtLevel1_SelectionChanged);
             // 
@@ -368,33 +367,33 @@
             // 
             this.tsmenuQuestionCreate.Image = global::MillionaireGameQEditor.Properties.Resources.add;
             this.tsmenuQuestionCreate.Name = "tsmenuQuestionCreate";
-            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(145, 22);
             this.tsmenuQuestionCreate.Text = "Create";
             // 
             // tsmenuQuestionEdit
             // 
             this.tsmenuQuestionEdit.Image = global::MillionaireGameQEditor.Properties.Resources.edit;
             this.tsmenuQuestionEdit.Name = "tsmenuQuestionEdit";
-            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(145, 22);
             this.tsmenuQuestionEdit.Text = "Edit";
             // 
             // tsmenuQuestionRemove
             // 
             this.tsmenuQuestionRemove.Image = global::MillionaireGameQEditor.Properties.Resources.remove;
             this.tsmenuQuestionRemove.Name = "tsmenuQuestionRemove";
-            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(145, 22);
             this.tsmenuQuestionRemove.Text = "Remove";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(142, 6);
             // 
             // changeLevelToolStripMenuItem
             // 
             this.changeLevelToolStripMenuItem.Image = global::MillionaireGameQEditor.Properties.Resources.move_icon;
             this.changeLevelToolStripMenuItem.Name = "changeLevelToolStripMenuItem";
-            this.changeLevelToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeLevelToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.changeLevelToolStripMenuItem.Text = "Change Level";
             this.changeLevelToolStripMenuItem.Click += new System.EventHandler(this.changeLevelToolStripMenuItem_Click);
             // 
@@ -407,22 +406,6 @@
             this.tsmenuActions.Size = new System.Drawing.Size(59, 20);
             this.tsmenuActions.Text = "Actions";
             // 
-            // menuControls
-            // 
-            this.menuControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmenuEditor,
-            this.tsmenuActions});
-            this.menuControls.Location = new System.Drawing.Point(0, 0);
-            this.menuControls.Name = "menuControls";
-            this.menuControls.Size = new System.Drawing.Size(1452, 24);
-            this.menuControls.TabIndex = 24;
-            this.menuControls.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(196, 6);
-            // 
             // resetUsedQuestionsToolStripMenuItem
             // 
             this.resetUsedQuestionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -433,44 +416,66 @@
             this.resetLevel4UsedQuestionsToolStripMenuItem,
             this.resetFastestFingerUsedQuestionsToolStripMenuItem});
             this.resetUsedQuestionsToolStripMenuItem.Name = "resetUsedQuestionsToolStripMenuItem";
-            this.resetUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.resetUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.resetUsedQuestionsToolStripMenuItem.Text = "Reset Used Questions";
-            // 
-            // resetFastestFingerUsedQuestionsToolStripMenuItem
-            // 
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Name = "resetFastestFingerUsedQuestionsToolStripMenuItem";
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Text = "Fastest Finger only";
-            // 
-            // resetLevel4UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Name = "resetLevel4UsedQuestionsToolStripMenuItem";
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Text = "Level 4 only";
-            // 
-            // resetLevel3UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Name = "resetLevel3UsedQuestionsToolStripMenuItem";
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Text = "Level 3 only";
-            // 
-            // resetLevel2UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Name = "resetLevel2UsedQuestionsToolStripMenuItem";
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Text = "Level 2 only";
-            // 
-            // resetLevel1UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Name = "resetLevel1UsedQuestionsToolStripMenuItem";
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Text = "Level 1 only";
             // 
             // tsmenuActionsResetAllQuestions
             // 
             this.tsmenuActionsResetAllQuestions.Name = "tsmenuActionsResetAllQuestions";
             this.tsmenuActionsResetAllQuestions.Size = new System.Drawing.Size(180, 22);
             this.tsmenuActionsResetAllQuestions.Text = "All";
+            this.tsmenuActionsResetAllQuestions.Click += new System.EventHandler(this.tsmenuActionsResetAllQuestions_Click_1);
+            // 
+            // resetLevel1UsedQuestionsToolStripMenuItem
+            // 
+            this.resetLevel1UsedQuestionsToolStripMenuItem.Name = "resetLevel1UsedQuestionsToolStripMenuItem";
+            this.resetLevel1UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel1UsedQuestionsToolStripMenuItem.Text = "Level 1 only";
+            this.resetLevel1UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel1UsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // resetLevel2UsedQuestionsToolStripMenuItem
+            // 
+            this.resetLevel2UsedQuestionsToolStripMenuItem.Name = "resetLevel2UsedQuestionsToolStripMenuItem";
+            this.resetLevel2UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel2UsedQuestionsToolStripMenuItem.Text = "Level 2 only";
+            this.resetLevel2UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel2UsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // resetLevel3UsedQuestionsToolStripMenuItem
+            // 
+            this.resetLevel3UsedQuestionsToolStripMenuItem.Name = "resetLevel3UsedQuestionsToolStripMenuItem";
+            this.resetLevel3UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel3UsedQuestionsToolStripMenuItem.Text = "Level 3 only";
+            this.resetLevel3UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel3UsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // resetLevel4UsedQuestionsToolStripMenuItem
+            // 
+            this.resetLevel4UsedQuestionsToolStripMenuItem.Name = "resetLevel4UsedQuestionsToolStripMenuItem";
+            this.resetLevel4UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel4UsedQuestionsToolStripMenuItem.Text = "Level 4 only";
+            this.resetLevel4UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel4UsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // resetFastestFingerUsedQuestionsToolStripMenuItem
+            // 
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Name = "resetFastestFingerUsedQuestionsToolStripMenuItem";
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Text = "Fastest Finger only";
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetFastestFingerUsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(184, 6);
+            // 
+            // menuControls
+            // 
+            this.menuControls.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmenuEditor,
+            this.tsmenuActions});
+            this.menuControls.Location = new System.Drawing.Point(0, 0);
+            this.menuControls.Name = "menuControls";
+            this.menuControls.Size = new System.Drawing.Size(1452, 24);
+            this.menuControls.TabIndex = 24;
+            this.menuControls.Text = "menuStrip1";
             // 
             // QEditor
             // 

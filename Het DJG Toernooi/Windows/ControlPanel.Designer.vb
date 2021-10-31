@@ -1088,8 +1088,8 @@ Partial Class ControlPanel
         Me.btnTestLifeline.Name = "btnTestLifeline"
         Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
         Me.btnTestLifeline.TabIndex = 86
+        Me.btnTestLifeline.Text = "2x"
         Me.btnTestLifeline.UseVisualStyleBackColor = True
-        Me.btnTestLifeline.Visible = False
         '
         'btnUndo
         '

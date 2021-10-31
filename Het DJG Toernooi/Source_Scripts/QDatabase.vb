@@ -35,7 +35,6 @@ Public Class QDatabase
                             ControlPanel.txtD.Text = reader.GetString(5)
                             ControlPanel.lblAnswer.Text = reader.GetString(6)
                             ControlPanel.txtID.Text = reader.GetInt32(0)
-                            ControlPanel.txtExplain.Text = reader.GetString(9)
                         End If
                     End While
                     reader.Close()
@@ -77,7 +76,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel1").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel1").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel1").Rows(0).Item(0)
-                    ControlPanel.txtExplain.Text = ds.Tables("qLevel1").Rows(0).Item(9)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel1").Rows(0).Item(9).ToString()
 
                     sqlupdate = "UPDATE questions_Level1 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -113,7 +112,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel2").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel2").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel2").Rows(0).Item(0)
-                    ControlPanel.txtExplain.Text = ds.Tables("qLevel2").Rows(0).Item(9)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel2").Rows(0).Item(9).ToString()
 
                     sqlupdate = "UPDATE questions_Level2 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -149,7 +148,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel3").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel3").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel3").Rows(0).Item(0)
-                    ControlPanel.txtExplain.Text = ds.Tables("qLevel3").Rows(0).Item(9)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel3").Rows(0).Item(9).ToString()
 
                     sqlupdate = "UPDATE questions_Level3 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)
@@ -185,7 +184,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("qLevel4").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("qLevel4").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("qLevel4").Rows(0).Item(0)
-                    ControlPanel.txtExplain.Text = ds.Tables("qLevel4").Rows(0).Item(9)
+                    ControlPanel.txtExplain.Text = ds.Tables("qLevel4").Rows(0).Item(9).ToString()
 
                     sqlupdate = "UPDATE questions_Level4 SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)

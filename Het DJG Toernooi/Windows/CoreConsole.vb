@@ -30,7 +30,7 @@ Public Class CoreConsole
         LogMsgDate("Lauching controller...")
 
         isRunning = True
-        'Me.Hide()
+        Me.Hide()
         ControlPanel.Show()
         tmrRuntime.Start()
     End Sub

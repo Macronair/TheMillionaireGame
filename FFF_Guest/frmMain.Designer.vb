@@ -47,7 +47,6 @@ Partial Class frmMain
         '
         'TextBox1
         '
-        Me.TextBox1.Enabled = False
         Me.TextBox1.Location = New System.Drawing.Point(116, 21)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(170, 20)
@@ -56,7 +55,6 @@ Partial Class frmMain
         '
         'Button1
         '
-        Me.Button1.Enabled = False
         Me.Button1.ForeColor = System.Drawing.Color.Black
         Me.Button1.Location = New System.Drawing.Point(405, 19)
         Me.Button1.Name = "Button1"
@@ -252,7 +250,6 @@ Partial Class frmMain
         '
         'nmrSlot
         '
-        Me.nmrSlot.Enabled = False
         Me.nmrSlot.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.nmrSlot.Location = New System.Drawing.Point(18, 20)
         Me.nmrSlot.Maximum = New Decimal(New Integer() {8, 0, 0, 0})
