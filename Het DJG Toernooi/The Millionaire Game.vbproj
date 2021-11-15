@@ -28,7 +28,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.319.0</ApplicationVersion>
+    <ApplicationVersion>1.0.342.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -389,6 +389,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo21.ico" />
+    <None Include="Resources\fff_idle_new.png" />
+    <None Include="Resources\fff_fastest_new.png" />
+    <None Include="Resources\fff_correct_new.png" />
     <None Include="Resources\lifeline_5.png" />
     <None Include="Resources\winning_strap_3.png" />
     <None Include="Resources\winning_strap_2.png" />

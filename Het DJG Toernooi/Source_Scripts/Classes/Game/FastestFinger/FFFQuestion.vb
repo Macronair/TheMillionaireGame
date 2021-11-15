@@ -104,56 +104,52 @@
 
                 TVControlPnl.txtPL1_Name.Text = FFFServer.txtPL1_Name.Text
                 TVControlPnl.txtPL1_Points.Text = ""
-                TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL1_Name.ForeColor = Color.White
                 TVControlPnl.txtPL1_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL2_Name.Text = FFFServer.txtPL2_Name.Text
                 TVControlPnl.txtPL2_Points.Text = ""
-                TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL2_Name.ForeColor = Color.White
                 TVControlPnl.txtPL2_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL3_Name.Text = FFFServer.txtPL3_Name.Text
                 TVControlPnl.txtPL3_Points.Text = ""
-                TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL3_Name.ForeColor = Color.White
                 TVControlPnl.txtPL3_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL4_Name.Text = FFFServer.txtPL4_Name.Text
                 TVControlPnl.txtPL4_Points.Text = ""
-                TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL4_Name.ForeColor = Color.White
                 TVControlPnl.txtPL4_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL5_Name.Text = FFFServer.txtPL5_Name.Text
                 TVControlPnl.txtPL5_Points.Text = ""
-                TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL5_Name.ForeColor = Color.White
                 TVControlPnl.txtPL5_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL6_Name.Text = FFFServer.txtPL6_Name.Text
                 TVControlPnl.txtPL6_Points.Text = ""
-                TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL6_Name.ForeColor = Color.White
                 TVControlPnl.txtPL6_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL7_Name.Text = FFFServer.txtPL7_Name.Text
-                TVControlPnl.txtPL7_Points.Text = ""
-                TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.txtPL6_Points.Text = ""
+                TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL7_Name.ForeColor = Color.White
-                TVControlPnl.txtPL7_Points.ForeColor = Color.White
+                TVControlPnl.txtPL6_Points.ForeColor = Color.White
 
                 TVControlPnl.txtPL8_Name.Text = FFFServer.txtPL8_Name.Text
                 TVControlPnl.txtPL8_Points.Text = ""
-                TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_idle
+                TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_idle_new
                 TVControlPnl.txtPL8_Name.ForeColor = Color.White
                 TVControlPnl.txtPL8_Points.ForeColor = Color.White
 
-                'TVControlPnl.txtA.Visible = False
-                'TVControlPnl.txtB.Visible = False
-                'TVControlPnl.txtC.Visible = False
-                'TVControlPnl.txtD.Visible = False
                 TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
                 TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
                 TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l

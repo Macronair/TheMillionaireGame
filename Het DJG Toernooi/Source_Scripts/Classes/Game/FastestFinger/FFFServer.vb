@@ -22,6 +22,8 @@ Public Class FFFServer
     Dim fff_pointsmax As Integer = Integer.MaxValue             'The max value of points that somebody reached
     Public Shared fff_pointsmin As Integer = Integer.MinValue   'The min value of points that somebody reached
     Public correctAnswer As String                              'The correct answer on the current question
+    Dim time As New Timer With {.Interval = 10}
+    Dim stopwatch As New Stopwatch
 
     ' Game state variables (not relevant for the FFF results
     Public act As Integer
@@ -35,48 +37,56 @@ Public Class FFFServer
     Dim pl1_online As Boolean       'Online?
     Dim pl1_name As String          'Name
     Dim pl1_answer As String        'Answer
+    Dim pl1_time As String          'Time
     Public Shared pl1_points As Integer = 9999
 
     'Player 2 Info
     Dim pl2_online As Boolean       'Online?
     Dim pl2_name As String          'Name
     Dim pl2_answer As String        'Answer
+    Dim pl2_time As String          'Time
     Public Shared pl2_points As Integer = 9999
 
     'Player 3 Info
     Dim pl3_online As Boolean       'Online?
     Dim pl3_name As String          'Name
     Dim pl3_answer As String        'Answer
+    Dim pl3_time As String          'Time
     Public Shared pl3_points As Integer = 9999
 
     'Player 4 Info
     Dim pl4_online As Boolean       'Online?
     Dim pl4_name As String          'Name
     Dim pl4_answer As String        'Answer
+    Dim pl4_time As String          'Time
     Public Shared pl4_points As Integer = 9999
 
     'Player 5 Info
     Dim pl5_online As Boolean       'Online?
     Dim pl5_name As String          'Name
     Dim pl5_answer As String        'Answer
+    Dim pl5_time As String          'Time
     Public Shared pl5_points As Integer = 9999
 
     'Player 6 Info
     Dim pl6_online As Boolean       'Online?
     Dim pl6_name As String          'Name
     Dim pl6_answer As String        'Answer
+    Dim pl6_time As String          'Time
     Public Shared pl6_points As Integer = 9999
 
     'Player 7 Info
     Dim pl7_online As Boolean       'Online?
     Dim pl7_name As String          'Name
     Dim pl7_answer As String        'Answer
+    Dim pl7_time As String          'Time
     Public Shared pl7_points As Integer = 9999
 
     'Player 8 Info
     Dim pl8_online As Boolean       'Online?
     Dim pl8_name As String          'Name
     Dim pl8_answer As String        'Answer
+    Dim pl8_time As String          'Time
     Public Shared pl8_points As Integer = 9999
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -296,6 +306,11 @@ Public Class FFFServer
 
         UpdateList("/unlock", True)
         tmrPoints.Start()
+
+        time.Tag = DateTime.Now
+        AddHandler time.Tick, AddressOf time_Tick
+        time.Start()
+        stopwatch.Start()
     End Sub
 
     Private Sub tmrStopSnd1_Tick(sender As Object, e As EventArgs) Handles tmrStopSnd1.Tick
@@ -310,12 +325,22 @@ Public Class FFFServer
         UpdateList("/lock", True)
 
         tmrThink.Stop()
+        time.Stop()
+        stopwatch.Stop()
+        stopwatch.Reset()
         tmrPoints.Stop()
+
+        lblTimeElapsed.Text = 0
     End Sub
 
     Private Sub tmrPoints_Tick(sender As Object, e As EventArgs) Handles tmrPoints.Tick
         fff_points += 1
         lblPoints.Text = fff_points
+    End Sub
+
+    Private Sub time_Tick(ByVal sender As Object, ByVal e As EventArgs)
+        Dim elapsed As TimeSpan = stopwatch.Elapsed
+        lblTimeElapsed.Text = String.Format("{0:00},{1:00}", elapsed.Seconds, elapsed.Milliseconds)
     End Sub
 
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
@@ -552,59 +577,59 @@ Public Class FFFServer
         Select Case act
             Case 0
                 If txtPL1_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL1_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL1_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL1_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL1_Points.Text = txtPL1_Points.Text
-                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 1
                 If txtPL2_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL2_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL2_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL2_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL2_Points.Text = txtPL2_Points.Text
-                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 2
                 If txtPL3_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL3_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL3_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL3_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL3_Points.Text = txtPL3_Points.Text
-                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 3
                 If txtPL4_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL4_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL4_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL4_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL4_Points.Text = txtPL4_Points.Text
-                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 4
                 If txtPL5_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL5_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL5_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL5_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL5_Points.Text = txtPL5_Points.Text
-                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 5
                 If txtPL6_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL6_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL6_Points.Text = txtPL6_Points.Text
-                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 6
                 If txtPL7_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL7_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL7_Points.ForeColor = Color.White
-                    TVControlPnl.txtPL7_Points.Text = txtPL7_Points.Text
-                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.Text = txtPL7_Points.Text
+                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 7
                 If txtPL8_Answer.Text = ControlPanel.lblAnswer.Text Then
-                    TVControlPnl.txtPL8_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL8_Points.ForeColor = Color.White
+                    TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL8_Points.ForeColor = Color.Black
                     TVControlPnl.txtPL8_Points.Text = txtPL8_Points.Text
-                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct
+                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 8
                 If fff_pointsmin < 9999 Then
@@ -621,86 +646,86 @@ Public Class FFFServer
         Select Case flash
             Case 0
                 If pl1_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL1_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL1_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL1_Points.ForeColor = Color.Black
                 End If
                 If pl2_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL2_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL2_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL2_Points.ForeColor = Color.Black
                 End If
                 If pl3_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL3_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL3_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL3_Points.ForeColor = Color.Black
                 End If
                 If pl4_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL4_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL4_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL4_Points.ForeColor = Color.Black
                 End If
                 If pl5_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL5_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL5_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL5_Points.ForeColor = Color.Black
                 End If
                 If pl6_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL6_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
                 If pl7_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL7_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL7_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
                 If pl8_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_idle
-                    TVControlPnl.txtPL8_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL8_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_fastest_new
+                    TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL8_Points.ForeColor = Color.Black
                 End If
                 flash = 1
             Case 1
                 If pl1_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL1_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL1_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL1_Points.ForeColor = Color.Black
                 End If
                 If pl2_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL2_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL2_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL2_Points.ForeColor = Color.Black
                 End If
                 If pl3_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL3_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL3_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL3_Points.ForeColor = Color.Black
                 End If
                 If pl4_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL4_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL4_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL4_Points.ForeColor = Color.Black
                 End If
                 If pl5_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL5_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL5_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL5_Points.ForeColor = Color.Black
                 End If
                 If pl6_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL6_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
                 If pl7_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL7_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL7_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
                 If pl8_points = fff_pointsmin Then
-                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct
-                    TVControlPnl.txtPL8_Name.ForeColor = Color.White
-                    TVControlPnl.txtPL8_Points.ForeColor = Color.White
+                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
+                    TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                    TVControlPnl.txtPL8_Points.ForeColor = Color.Black
                 End If
                 flash = 0
         End Select
@@ -1003,13 +1028,13 @@ Public Class FFFServer
     Private Sub chkPL7_Active_CheckedChanged(sender As Object, e As EventArgs) Handles chkPL7_Active.CheckedChanged
         If chkPL7_Active.Checked = True Then
             TVControlPnl.txtPL7_Name.Visible = True
-            TVControlPnl.txtPL7_Points.Visible = True
+            TVControlPnl.txtPL6_Points.Visible = True
             txtPL7_Name.Visible = True
             txtPL7_Answer.Visible = True
             txtPL7_Points.Visible = True
         ElseIf chkPL7_Active.Checked = False Then
             TVControlPnl.txtPL7_Name.Visible = False
-            TVControlPnl.txtPL7_Points.Visible = False
+            TVControlPnl.txtPL6_Points.Visible = False
             txtPL7_Name.Visible = False
             txtPL7_Answer.Visible = False
             txtPL7_Points.Visible = False
@@ -1062,5 +1087,43 @@ Public Class FFFServer
 
     Private Sub txtPL8_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL8_Name.TextChanged
 
+    End Sub
+
+    Private Sub chkShowPointsInServerConsole_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPointsInServerConsole.CheckedChanged
+        If chkShowPointsInServerConsole.Checked = True Then
+            txtPL1_Answer.ForeColor = Color.White
+            txtPL2_Answer.ForeColor = Color.White
+            txtPL3_Answer.ForeColor = Color.White
+            txtPL4_Answer.ForeColor = Color.White
+            txtPL5_Answer.ForeColor = Color.White
+            txtPL6_Answer.ForeColor = Color.White
+            txtPL7_Answer.ForeColor = Color.White
+            txtPL8_Answer.ForeColor = Color.White
+            txtPL1_Points.ForeColor = Color.White
+            txtPL2_Points.ForeColor = Color.White
+            txtPL3_Points.ForeColor = Color.White
+            txtPL4_Points.ForeColor = Color.White
+            txtPL5_Points.ForeColor = Color.White
+            txtPL6_Points.ForeColor = Color.White
+            txtPL7_Points.ForeColor = Color.White
+            txtPL8_Points.ForeColor = Color.White
+        ElseIf chkShowPointsInServerConsole.Checked = False Then
+            txtPL1_Answer.ForeColor = Color.Black
+            txtPL2_Answer.ForeColor = Color.Black
+            txtPL3_Answer.ForeColor = Color.Black
+            txtPL4_Answer.ForeColor = Color.Black
+            txtPL5_Answer.ForeColor = Color.Black
+            txtPL6_Answer.ForeColor = Color.Black
+            txtPL7_Answer.ForeColor = Color.Black
+            txtPL8_Answer.ForeColor = Color.Black
+            txtPL1_Points.ForeColor = Color.Black
+            txtPL2_Points.ForeColor = Color.Black
+            txtPL3_Points.ForeColor = Color.Black
+            txtPL4_Points.ForeColor = Color.Black
+            txtPL5_Points.ForeColor = Color.Black
+            txtPL6_Points.ForeColor = Color.Black
+            txtPL7_Points.ForeColor = Color.Black
+            txtPL8_Points.ForeColor = Color.Black
+        End If
     End Sub
 End Class

@@ -40,8 +40,17 @@ Public Class LifeLineDouble
 
     Public Shared Sub StopCue1()
         Threading.Thread.Sleep(50)
-        dd_Start.controls.stop()
-        dd_Wrong.controls.stop()
+        Try
+            dd_Start.controls.stop()
+        Catch
+
+        End Try
+        Try
+            dd_Wrong.controls.stop()
+        Catch
+
+        End Try
+
     End Sub
 
     Public Shared Sub StopCue2()
