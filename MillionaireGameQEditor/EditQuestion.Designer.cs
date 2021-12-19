@@ -375,6 +375,6 @@
         private System.Windows.Forms.Button btnFFFA;
         public System.Windows.Forms.Label lblAnswer;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtNote;
+        public System.Windows.Forms.TextBox txtNote;
     }
 }

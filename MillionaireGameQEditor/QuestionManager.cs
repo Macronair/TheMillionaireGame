@@ -82,6 +82,7 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel1.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
+                    edit.txtNote.Text = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
                 }
             }
             else if (stLevel.Text == "Lvl2")
@@ -100,6 +101,7 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel2.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel2.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
+                    edit.txtNote.Text = this.dtLevel2.CurrentRow.Cells[9].Value.ToString();
                 }
 
             }
@@ -119,6 +121,7 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel3.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel3.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
+                    edit.txtNote.Text = this.dtLevel3.CurrentRow.Cells[9].Value.ToString();
                 }
 
             }
@@ -138,6 +141,7 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel4.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel4.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
+                    edit.txtNote.Text = this.dtLevel4.CurrentRow.Cells[9].Value.ToString();
                 }
             }
             else if (stLevel.Text == "Lvl0")
@@ -156,6 +160,7 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel0.CurrentRow.Cells[5].Value.ToString();
                     edit.lblAnswer.Text = this.dtLevel0.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
+                    edit.txtNote.Text = this.dtLevel0.CurrentRow.Cells[9].Value.ToString();
                 }
             }
             edit.ShowDialog();
