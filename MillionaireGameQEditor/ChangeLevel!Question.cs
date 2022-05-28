@@ -54,8 +54,8 @@ namespace MillionaireGameQEditor
                 cmd.Parameters.AddWithValue("@Question", question);
                 cmd.Parameters.AddWithValue("@A", A);
                 cmd.Parameters.AddWithValue("@B", B);
-                cmd.Parameters.AddWithValue("@C", B);
-                cmd.Parameters.AddWithValue("@D", C);
+                cmd.Parameters.AddWithValue("@C", C);
+                cmd.Parameters.AddWithValue("@D", D);
                 cmd.Parameters.AddWithValue("@Correct", Correct);
                 cmd.Parameters.AddWithValue("@Type", levelType);
                 cmd.Parameters.AddWithValue("@Note", Note);
@@ -70,8 +70,8 @@ namespace MillionaireGameQEditor
                 cmd.Parameters.AddWithValue("@Question", question);
                 cmd.Parameters.AddWithValue("@A", A);
                 cmd.Parameters.AddWithValue("@B", B);
-                cmd.Parameters.AddWithValue("@C", B);
-                cmd.Parameters.AddWithValue("@D", C);
+                cmd.Parameters.AddWithValue("@C", C);
+                cmd.Parameters.AddWithValue("@D", D);
                 cmd.Parameters.AddWithValue("@Correct", Correct);
                 cmd.Parameters.AddWithValue("@Type", levelType);
                 cmd.Parameters.AddWithValue("@Note", Note);
@@ -86,8 +86,8 @@ namespace MillionaireGameQEditor
                 cmd.Parameters.AddWithValue("@Question", question);
                 cmd.Parameters.AddWithValue("@A", A);
                 cmd.Parameters.AddWithValue("@B", B);
-                cmd.Parameters.AddWithValue("@C", B);
-                cmd.Parameters.AddWithValue("@D", C);
+                cmd.Parameters.AddWithValue("@C", C);
+                cmd.Parameters.AddWithValue("@D", D);
                 cmd.Parameters.AddWithValue("@Correct", Correct);
                 cmd.Parameters.AddWithValue("@Type", levelType);
                 cmd.Parameters.AddWithValue("@Note", Note);
@@ -102,8 +102,8 @@ namespace MillionaireGameQEditor
                 cmd.Parameters.AddWithValue("@Question", question);
                 cmd.Parameters.AddWithValue("@A", A);
                 cmd.Parameters.AddWithValue("@B", B);
-                cmd.Parameters.AddWithValue("@C", B);
-                cmd.Parameters.AddWithValue("@D", C);
+                cmd.Parameters.AddWithValue("@C", C);
+                cmd.Parameters.AddWithValue("@D", D);
                 cmd.Parameters.AddWithValue("@Correct", Correct);
                 cmd.Parameters.AddWithValue("@Type", levelType);
                 cmd.Parameters.AddWithValue("@Note", Note);

@@ -25,6 +25,7 @@ Public Class LifeLineDouble
             dd_Final.URL = Application.StartupPath + "\Sounds\doubledip_final1.mp3"
         ElseIf chance = 1 Then
             dd_Final.URL = Application.StartupPath + "\Sounds\doubledip_final2.mp3"
+            chance = 0
             active = False
         End If
         dd_Final.controls.play()

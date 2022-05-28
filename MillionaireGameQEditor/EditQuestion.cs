@@ -103,6 +103,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
+                btnReset.Enabled = true;
             }
             else
             {
@@ -111,52 +112,92 @@ namespace Millionaire.Windows.Question_Editor
             }
         }
 
-        private void btnFFFA_Click(object sender, EventArgs e)
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            lblAnswer.Text = "*";
+            fff_answer = 0;
+            btnFFFA.Enabled = true;
+            btnFFFB.Enabled = true;
+            btnFFFC.Enabled = true;
+            btnFFFD.Enabled = true;
+            btnSave.Enabled = false;
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnFFFA_Click_1(object sender, EventArgs e)
         {
             if (fff_answer == 0)
             {
                 lblAnswer.Text = "";
             }
+            
             lblAnswer.Text = lblAnswer.Text + "A";
             btnFFFA.Enabled = false;
             btnReset.Enabled = true;
+
             fff_answer++;
+            if (fff_answer == 4)
+            {
+                btnSave.Enabled = true;
+            }
         }
 
-        private void btnFFFB_Click(object sender, EventArgs e)
+        private void btnFFFB_Click_1(object sender, EventArgs e)
         {
             if (fff_answer == 0)
             {
                 lblAnswer.Text = "";
             }
+
             lblAnswer.Text = lblAnswer.Text + "B";
             btnFFFB.Enabled = false;
             btnReset.Enabled = true;
+
             fff_answer++;
+            if (fff_answer == 4)
+            {
+                btnSave.Enabled = true;
+            }
         }
 
-        private void btnFFFC_Click(object sender, EventArgs e)
+        private void btnFFFC_Click_1(object sender, EventArgs e)
         {
             if (fff_answer == 0)
             {
                 lblAnswer.Text = "";
             }
+
             lblAnswer.Text = lblAnswer.Text + "C";
             btnFFFC.Enabled = false;
             btnReset.Enabled = true;
+
             fff_answer++;
+            if (fff_answer == 4)
+            {
+                btnSave.Enabled = true;
+            }
         }
 
-        private void btnFFFD_Click(object sender, EventArgs e)
+        private void btnFFFD_Click_1(object sender, EventArgs e)
         {
             if (fff_answer == 0)
             {
                 lblAnswer.Text = "";
             }
+
             lblAnswer.Text = lblAnswer.Text + "D";
             btnFFFD.Enabled = false;
             btnReset.Enabled = true;
+
             fff_answer++;
+            if (fff_answer == 4)
+            {
+                btnSave.Enabled = true;
+            }
         }
     }
 }

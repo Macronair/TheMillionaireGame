@@ -100,6 +100,7 @@
             this.tbLevel.SelectedIndex = 0;
             this.tbLevel.Size = new System.Drawing.Size(1452, 689);
             this.tbLevel.TabIndex = 22;
+            this.tbLevel.SelectedIndexChanged += new System.EventHandler(this.tbLevel_SelectedIndexChanged);
             // 
             // tbLevel1
             // 
@@ -126,6 +127,7 @@
             this.dtLevel1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel1.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel1.TabIndex = 14;
+            this.dtLevel1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellClick);
             this.dtLevel1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellDoubleClick);
             this.dtLevel1.SelectionChanged += new System.EventHandler(this.dtLevel1_SelectionChanged);
             // 
@@ -154,6 +156,7 @@
             this.dtLevel2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel2.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel2.TabIndex = 15;
+            this.dtLevel2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel2_CellClick);
             this.dtLevel2.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel2_CellDoubleClick);
             this.dtLevel2.SelectionChanged += new System.EventHandler(this.dtLevel2_SelectionChanged);
             // 
@@ -182,6 +185,7 @@
             this.dtLevel3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel3.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel3.TabIndex = 15;
+            this.dtLevel3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel3_CellClick);
             this.dtLevel3.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel3_CellDoubleClick);
             this.dtLevel3.SelectionChanged += new System.EventHandler(this.dtLevel3_SelectionChanged);
             // 
@@ -210,6 +214,7 @@
             this.dtLevel4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel4.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel4.TabIndex = 15;
+            this.dtLevel4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel4_CellClick);
             this.dtLevel4.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel4_CellDoubleClick);
             this.dtLevel4.SelectionChanged += new System.EventHandler(this.dtLevel4_SelectionChanged);
             // 
@@ -237,6 +242,7 @@
             this.dtLevel0.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel0.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel0.TabIndex = 16;
+            this.dtLevel0.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel0_CellClick);
             this.dtLevel0.SelectionChanged += new System.EventHandler(this.dtLevel0_SelectionChanged);
             // 
             // tsTools
@@ -360,7 +366,7 @@
             this.toolStripMenuItem1,
             this.changeLevelToolStripMenuItem});
             this.tsmenuQuestion.Name = "tsmenuQuestion";
-            this.tsmenuQuestion.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestion.Size = new System.Drawing.Size(122, 22);
             this.tsmenuQuestion.Text = "Question";
             // 
             // tsmenuQuestionCreate
@@ -422,42 +428,42 @@
             // tsmenuActionsResetAllQuestions
             // 
             this.tsmenuActionsResetAllQuestions.Name = "tsmenuActionsResetAllQuestions";
-            this.tsmenuActionsResetAllQuestions.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuActionsResetAllQuestions.Size = new System.Drawing.Size(172, 22);
             this.tsmenuActionsResetAllQuestions.Text = "All";
             this.tsmenuActionsResetAllQuestions.Click += new System.EventHandler(this.tsmenuActionsResetAllQuestions_Click_1);
             // 
             // resetLevel1UsedQuestionsToolStripMenuItem
             // 
             this.resetLevel1UsedQuestionsToolStripMenuItem.Name = "resetLevel1UsedQuestionsToolStripMenuItem";
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel1UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.resetLevel1UsedQuestionsToolStripMenuItem.Text = "Level 1 only";
             this.resetLevel1UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel1UsedQuestionsToolStripMenuItem_Click_1);
             // 
             // resetLevel2UsedQuestionsToolStripMenuItem
             // 
             this.resetLevel2UsedQuestionsToolStripMenuItem.Name = "resetLevel2UsedQuestionsToolStripMenuItem";
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel2UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.resetLevel2UsedQuestionsToolStripMenuItem.Text = "Level 2 only";
             this.resetLevel2UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel2UsedQuestionsToolStripMenuItem_Click_1);
             // 
             // resetLevel3UsedQuestionsToolStripMenuItem
             // 
             this.resetLevel3UsedQuestionsToolStripMenuItem.Name = "resetLevel3UsedQuestionsToolStripMenuItem";
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel3UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.resetLevel3UsedQuestionsToolStripMenuItem.Text = "Level 3 only";
             this.resetLevel3UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel3UsedQuestionsToolStripMenuItem_Click_1);
             // 
             // resetLevel4UsedQuestionsToolStripMenuItem
             // 
             this.resetLevel4UsedQuestionsToolStripMenuItem.Name = "resetLevel4UsedQuestionsToolStripMenuItem";
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetLevel4UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.resetLevel4UsedQuestionsToolStripMenuItem.Text = "Level 4 only";
             this.resetLevel4UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel4UsedQuestionsToolStripMenuItem_Click_1);
             // 
             // resetFastestFingerUsedQuestionsToolStripMenuItem
             // 
             this.resetFastestFingerUsedQuestionsToolStripMenuItem.Name = "resetFastestFingerUsedQuestionsToolStripMenuItem";
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.resetFastestFingerUsedQuestionsToolStripMenuItem.Text = "Fastest Finger only";
             this.resetFastestFingerUsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetFastestFingerUsedQuestionsToolStripMenuItem_Click_1);
             // 

@@ -204,6 +204,7 @@
             this.btnCancel.TabIndex = 15;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtLevel
             // 
@@ -255,42 +256,51 @@
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // btnFFFD
             // 
+            this.btnFFFD.Enabled = false;
             this.btnFFFD.Location = new System.Drawing.Point(159, 7);
             this.btnFFFD.Name = "btnFFFD";
             this.btnFFFD.Size = new System.Drawing.Size(42, 43);
             this.btnFFFD.TabIndex = 4;
             this.btnFFFD.Text = "D";
             this.btnFFFD.UseVisualStyleBackColor = true;
+            this.btnFFFD.Click += new System.EventHandler(this.btnFFFD_Click_1);
             // 
             // btnFFFC
             // 
+            this.btnFFFC.Enabled = false;
             this.btnFFFC.Location = new System.Drawing.Point(111, 7);
             this.btnFFFC.Name = "btnFFFC";
             this.btnFFFC.Size = new System.Drawing.Size(42, 43);
             this.btnFFFC.TabIndex = 3;
             this.btnFFFC.Text = "C";
             this.btnFFFC.UseVisualStyleBackColor = true;
+            this.btnFFFC.Click += new System.EventHandler(this.btnFFFC_Click_1);
             // 
             // btnFFFB
             // 
+            this.btnFFFB.Enabled = false;
             this.btnFFFB.Location = new System.Drawing.Point(63, 7);
             this.btnFFFB.Name = "btnFFFB";
             this.btnFFFB.Size = new System.Drawing.Size(42, 43);
             this.btnFFFB.TabIndex = 2;
             this.btnFFFB.Text = "B";
             this.btnFFFB.UseVisualStyleBackColor = true;
+            this.btnFFFB.Click += new System.EventHandler(this.btnFFFB_Click_1);
             // 
             // btnFFFA
             // 
+            this.btnFFFA.Enabled = false;
             this.btnFFFA.Location = new System.Drawing.Point(15, 7);
             this.btnFFFA.Name = "btnFFFA";
             this.btnFFFA.Size = new System.Drawing.Size(42, 43);
             this.btnFFFA.TabIndex = 1;
             this.btnFFFA.Text = "A";
             this.btnFFFA.UseVisualStyleBackColor = true;
+            this.btnFFFA.Click += new System.EventHandler(this.btnFFFA_Click_1);
             // 
             // label9
             // 

@@ -168,44 +168,58 @@ namespace Millionaire
 
         public void DeleteDB()
         {
-            DialogResult remDiag = MessageBox.Show("Are you sure that you want to delete the selected question?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (remDiag == DialogResult.Yes)
+            if(stLevel.Text == "Not selected")
             {
-                int id = Convert.ToInt32(stlblId.Text);
-                if (stLevel.Text == "Lvl1")
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level1 WHERE Id='" + id + "'", c);
-                    c.Open();
-                    cmd.ExecuteNonQuery();
-                    c.Close();
-                }
-                else if (stLevel.Text == "Lvl2")
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level2 WHERE Id='" + id + "'", c);
-                    c.Open();
-                    cmd.ExecuteNonQuery();
-                    c.Close();
-                }
-                else if (stLevel.Text == "Lvl3")
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level3 WHERE Id='" + id + "'", c);
-                    c.Open();
-                    cmd.ExecuteNonQuery();
-                    c.Close();
-                }
-                else if (stLevel.Text == "Lvl4")
-                {
-                    SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level4 WHERE Id='" + id + "'", c);
-                    c.Open();
-                    cmd.ExecuteNonQuery();
-                    c.Close();
-                }
+                MessageBox.Show("Please select the question you want to remove.", "Remove question", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (remDiag == DialogResult.No)
+            else
             {
-                return;
+                DialogResult remDiag = MessageBox.Show("Are you sure that you want to delete the selected question?", "Remove question", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (remDiag == DialogResult.Yes)
+                {
+                    int id = Convert.ToInt32(stlblId.Text);
+                    if (stLevel.Text == "Lvl1")
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level1 WHERE Id='" + id + "'", c);
+                        c.Open();
+                        cmd.ExecuteNonQuery();
+                        c.Close();
+                    }
+                    else if (stLevel.Text == "Lvl2")
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level2 WHERE Id='" + id + "'", c);
+                        c.Open();
+                        cmd.ExecuteNonQuery();
+                        c.Close();
+                    }
+                    else if (stLevel.Text == "Lvl3")
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level3 WHERE Id='" + id + "'", c);
+                        c.Open();
+                        cmd.ExecuteNonQuery();
+                        c.Close();
+                    }
+                    else if (stLevel.Text == "Lvl4")
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level4 WHERE Id='" + id + "'", c);
+                        c.Open();
+                        cmd.ExecuteNonQuery();
+                        c.Close();
+                    }
+                    else if (stLevel.Text == "Lvl0")
+                    {
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level0 WHERE Id='" + id + "'", c);
+                        c.Open();
+                        cmd.ExecuteNonQuery();
+                        c.Close();
+                    }
+                }
+                else if (remDiag == DialogResult.No)
+                {
+                    return;
+                }
+                UpdateDB();
             }
-            UpdateDB();
         }
 
         public void ChangeLevelDB()
@@ -399,8 +413,30 @@ namespace Millionaire
                 stLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
             }
         }
+        private void dtLevel1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtLevel1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel1.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel1.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
+            }
+        }
 
         private void dtLevel2_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtLevel2.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel2.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel2.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
+            }
+        }
+        private void dtLevel2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtLevel2.SelectedCells.Count > 0)
             {
@@ -423,6 +459,17 @@ namespace Millionaire
                 stLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
             }
         }
+        private void dtLevel3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtLevel3.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel3.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel3.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
+            }
+        }
 
         private void dtLevel4_SelectionChanged(object sender, EventArgs e)
         {
@@ -435,8 +482,30 @@ namespace Millionaire
                 stLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
             }
         }
+        private void dtLevel4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtLevel4.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel4.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel4.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
+            }
+        }
 
         private void dtLevel0_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dtLevel0.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dtLevel0.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = dtLevel0.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
+                stlblId.Text = Convert.ToString(a);
+                stLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
+            }
+        }
+        private void dtLevel0_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dtLevel0.SelectedCells.Count > 0)
             {
@@ -630,5 +699,15 @@ namespace Millionaire
             ChangeLevelDB();
         }
 
+        private void tbLevel_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            stLevel.Text = "Not selected";
+            stlblId.Text = "0";
+            dtLevel0.ClearSelection();
+            dtLevel1.ClearSelection();
+            dtLevel2.ClearSelection();
+            dtLevel3.ClearSelection();
+            dtLevel4.ClearSelection();
+        }
     }
 }
