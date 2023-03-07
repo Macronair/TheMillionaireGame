@@ -1,5 +1,7 @@
 ![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
 
+**This project is currently suspended/discontinued because of my busy schedule. When I have some free time again, then this project will be continued. I'm sorry!**
+
 # The Millionaire Game
 A custom game controller software like WWTBAM.
 
