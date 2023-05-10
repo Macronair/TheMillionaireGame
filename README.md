@@ -1,6 +1,17 @@
 ![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
 
-**This project is currently suspended/discontinued because of my busy schedule. When I have some free time again, then this project will be continued. I'm sorry!**
+**Announcement 10th May 2023**
+> Hello dear users,
+> 
+> Good news! I'm planning to resume the developement of this project very very soon. My schedule is not so busy compared to the previous couple of months.
+> I saw a bunch of issues that are created by you goys. Some bugs and errors but also some feature requests.
+> So my plan is to fix these issues first and then start developing new features to the software. All of those fixes will be in the upcoming 1.1 version (the release notes will mention all changes and fixes in detail).
+> 
+> And of course thank you for the positive feedback and new ideas for this project. But remember, i'm only do programming as a hobby and my knowledge of coding is good (i think? ;)) but not at an expert level.
+> So if you have tips or points of improvement, let me know!
+> 
+> Greetings from the Netherlands! See you soon!
+> ~~ Marco
 
 # The Millionaire Game
 A custom game controller software like WWTBAM.
