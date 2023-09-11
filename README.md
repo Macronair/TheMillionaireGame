@@ -115,3 +115,11 @@ When the contestant doesn't like the current question, this lifeline will switch
 You can download one of the releases: 
 [here](https://github.com/Maerciez/TheMillionaireGame/releases)
 !
+
+## Other versions / forks.
+When I was inactive for a while, I noticed on Github that forks were created from this repository.
+And my support for it is 100%. So if you have any knowledge about VB.net & C# programming languages, then feel free to modify this to your own liking.
+The best forks will be highlighted in the list below (with short description of what is modified) so you can check it as well.
+
+- Version of mathieufitzgerald (https://github.com/mathieufitzgerald/TheMillionaireGame): Custom textures + 1920x1080 support
+- <maybe your fork??>
