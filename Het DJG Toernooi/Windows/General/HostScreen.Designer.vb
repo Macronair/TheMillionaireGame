@@ -23,19 +23,19 @@ Partial Class HostScreen
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HostScreen))
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pnlCorrect = New System.Windows.Forms.Panel()
+        Me.picCorrect = New System.Windows.Forms.PictureBox()
         Me.lblCorrect = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.pnlWrong = New System.Windows.Forms.Panel()
+        Me.picWrong = New System.Windows.Forms.PictureBox()
         Me.lblWrong = New System.Windows.Forms.Label()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.pnlCurrent = New System.Windows.Forms.Panel()
+        Me.picCurrent = New System.Windows.Forms.PictureBox()
         Me.lblCurrent = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.pnlDrop = New System.Windows.Forms.Panel()
         Me.lblDrop = New System.Windows.Forms.Label()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.pnlQLeft = New System.Windows.Forms.Panel()
+        Me.picQLeft = New System.Windows.Forms.PictureBox()
         Me.lblQLeft = New System.Windows.Forms.Label()
         Me.pnlAnswer = New System.Windows.Forms.Panel()
         Me.lblAnswer = New System.Windows.Forms.Label()
@@ -70,15 +70,15 @@ Partial Class HostScreen
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.txtWinningStrap = New System.Windows.Forms.Label()
         Me.lblHostMsg = New System.Windows.Forms.TextBox()
-        Me.Panel4.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel5.SuspendLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel6.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel7.SuspendLayout()
-        Me.Panel8.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlCorrect.SuspendLayout()
+        CType(Me.picCorrect, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlWrong.SuspendLayout()
+        CType(Me.picWrong, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlCurrent.SuspendLayout()
+        CType(Me.picCurrent, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlDrop.SuspendLayout()
+        Me.pnlQLeft.SuspendLayout()
+        CType(Me.picQLeft, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlAnswer.SuspendLayout()
         Me.pnlD.SuspendLayout()
         Me.pnlB.SuspendLayout()
@@ -93,25 +93,25 @@ Partial Class HostScreen
         Me.pnlStrap.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel4
+        'pnlCorrect
         '
-        Me.Panel4.BackColor = System.Drawing.Color.Lime
-        Me.Panel4.Controls.Add(Me.PictureBox1)
-        Me.Panel4.Controls.Add(Me.lblCorrect)
-        Me.Panel4.Location = New System.Drawing.Point(9, 4)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(191, 49)
-        Me.Panel4.TabIndex = 8
+        Me.pnlCorrect.BackColor = System.Drawing.Color.Lime
+        Me.pnlCorrect.Controls.Add(Me.picCorrect)
+        Me.pnlCorrect.Controls.Add(Me.lblCorrect)
+        Me.pnlCorrect.Location = New System.Drawing.Point(9, 4)
+        Me.pnlCorrect.Name = "pnlCorrect"
+        Me.pnlCorrect.Size = New System.Drawing.Size(191, 49)
+        Me.pnlCorrect.TabIndex = 8
         '
-        'PictureBox1
+        'picCorrect
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(161, 10)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(27, 31)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 17
-        Me.PictureBox1.TabStop = False
+        Me.picCorrect.Image = CType(resources.GetObject("picCorrect.Image"), System.Drawing.Image)
+        Me.picCorrect.Location = New System.Drawing.Point(154, 10)
+        Me.picCorrect.Name = "picCorrect"
+        Me.picCorrect.Size = New System.Drawing.Size(34, 31)
+        Me.picCorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCorrect.TabIndex = 17
+        Me.picCorrect.TabStop = False
         '
         'lblCorrect
         '
@@ -124,25 +124,25 @@ Partial Class HostScreen
         Me.lblCorrect.TabIndex = 16
         Me.lblCorrect.Text = "0"
         '
-        'Panel5
+        'pnlWrong
         '
-        Me.Panel5.BackColor = System.Drawing.Color.Red
-        Me.Panel5.Controls.Add(Me.PictureBox3)
-        Me.Panel5.Controls.Add(Me.lblWrong)
-        Me.Panel5.Location = New System.Drawing.Point(9, 59)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(191, 49)
-        Me.Panel5.TabIndex = 9
+        Me.pnlWrong.BackColor = System.Drawing.Color.Red
+        Me.pnlWrong.Controls.Add(Me.picWrong)
+        Me.pnlWrong.Controls.Add(Me.lblWrong)
+        Me.pnlWrong.Location = New System.Drawing.Point(9, 59)
+        Me.pnlWrong.Name = "pnlWrong"
+        Me.pnlWrong.Size = New System.Drawing.Size(191, 49)
+        Me.pnlWrong.TabIndex = 9
         '
-        'PictureBox3
+        'picWrong
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(154, 7)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(36, 38)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox3.TabIndex = 19
-        Me.PictureBox3.TabStop = False
+        Me.picWrong.Image = CType(resources.GetObject("picWrong.Image"), System.Drawing.Image)
+        Me.picWrong.Location = New System.Drawing.Point(154, 7)
+        Me.picWrong.Name = "picWrong"
+        Me.picWrong.Size = New System.Drawing.Size(36, 38)
+        Me.picWrong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picWrong.TabIndex = 19
+        Me.picWrong.TabStop = False
         '
         'lblWrong
         '
@@ -155,25 +155,25 @@ Partial Class HostScreen
         Me.lblWrong.TabIndex = 16
         Me.lblWrong.Text = "0"
         '
-        'Panel6
+        'pnlCurrent
         '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Panel6.Controls.Add(Me.PictureBox2)
-        Me.Panel6.Controls.Add(Me.lblCurrent)
-        Me.Panel6.Location = New System.Drawing.Point(206, 4)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(191, 49)
-        Me.Panel6.TabIndex = 10
+        Me.pnlCurrent.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.pnlCurrent.Controls.Add(Me.picCurrent)
+        Me.pnlCurrent.Controls.Add(Me.lblCurrent)
+        Me.pnlCurrent.Location = New System.Drawing.Point(206, 4)
+        Me.pnlCurrent.Name = "pnlCurrent"
+        Me.pnlCurrent.Size = New System.Drawing.Size(191, 49)
+        Me.pnlCurrent.TabIndex = 10
         '
-        'PictureBox2
+        'picCurrent
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(161, 10)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(27, 31)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox2.TabIndex = 18
-        Me.PictureBox2.TabStop = False
+        Me.picCurrent.Image = CType(resources.GetObject("picCurrent.Image"), System.Drawing.Image)
+        Me.picCurrent.Location = New System.Drawing.Point(161, 10)
+        Me.picCurrent.Name = "picCurrent"
+        Me.picCurrent.Size = New System.Drawing.Size(27, 31)
+        Me.picCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picCurrent.TabIndex = 18
+        Me.picCurrent.TabStop = False
         '
         'lblCurrent
         '
@@ -186,14 +186,14 @@ Partial Class HostScreen
         Me.lblCurrent.TabIndex = 0
         Me.lblCurrent.Text = "0"
         '
-        'Panel7
+        'pnlDrop
         '
-        Me.Panel7.BackColor = System.Drawing.Color.Cyan
-        Me.Panel7.Controls.Add(Me.lblDrop)
-        Me.Panel7.Location = New System.Drawing.Point(9, 114)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(191, 49)
-        Me.Panel7.TabIndex = 9
+        Me.pnlDrop.BackColor = System.Drawing.Color.Cyan
+        Me.pnlDrop.Controls.Add(Me.lblDrop)
+        Me.pnlDrop.Location = New System.Drawing.Point(9, 114)
+        Me.pnlDrop.Name = "pnlDrop"
+        Me.pnlDrop.Size = New System.Drawing.Size(191, 49)
+        Me.pnlDrop.TabIndex = 9
         '
         'lblDrop
         '
@@ -206,25 +206,25 @@ Partial Class HostScreen
         Me.lblDrop.TabIndex = 16
         Me.lblDrop.Text = "0"
         '
-        'Panel8
+        'pnlQLeft
         '
-        Me.Panel8.BackColor = System.Drawing.Color.Blue
-        Me.Panel8.Controls.Add(Me.PictureBox4)
-        Me.Panel8.Controls.Add(Me.lblQLeft)
-        Me.Panel8.Location = New System.Drawing.Point(206, 59)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(191, 49)
-        Me.Panel8.TabIndex = 11
+        Me.pnlQLeft.BackColor = System.Drawing.Color.Blue
+        Me.pnlQLeft.Controls.Add(Me.picQLeft)
+        Me.pnlQLeft.Controls.Add(Me.lblQLeft)
+        Me.pnlQLeft.Location = New System.Drawing.Point(206, 59)
+        Me.pnlQLeft.Name = "pnlQLeft"
+        Me.pnlQLeft.Size = New System.Drawing.Size(191, 49)
+        Me.pnlQLeft.TabIndex = 11
         '
-        'PictureBox4
+        'picQLeft
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(161, 9)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(27, 31)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 18
-        Me.PictureBox4.TabStop = False
+        Me.picQLeft.Image = CType(resources.GetObject("picQLeft.Image"), System.Drawing.Image)
+        Me.picQLeft.Location = New System.Drawing.Point(161, 9)
+        Me.picQLeft.Name = "picQLeft"
+        Me.picQLeft.Size = New System.Drawing.Size(27, 31)
+        Me.picQLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picQLeft.TabIndex = 18
+        Me.picQLeft.TabStop = False
         '
         'lblQLeft
         '
@@ -241,7 +241,7 @@ Partial Class HostScreen
         '
         Me.pnlAnswer.BackColor = System.Drawing.Color.Black
         Me.pnlAnswer.Controls.Add(Me.lblAnswer)
-        Me.pnlAnswer.Location = New System.Drawing.Point(911, 401)
+        Me.pnlAnswer.Location = New System.Drawing.Point(924, 442)
         Me.pnlAnswer.Name = "pnlAnswer"
         Me.pnlAnswer.Size = New System.Drawing.Size(47, 46)
         Me.pnlAnswer.TabIndex = 17
@@ -314,11 +314,10 @@ Partial Class HostScreen
         '
         'lblTime
         '
-        Me.lblTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.White
-        Me.lblTime.Location = New System.Drawing.Point(777, 243)
+        Me.lblTime.Location = New System.Drawing.Point(793, 284)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(181, 107)
         Me.lblTime.TabIndex = 27
@@ -397,16 +396,15 @@ Partial Class HostScreen
         Me.txtExplain.ForeColor = System.Drawing.Color.White
         Me.txtExplain.Location = New System.Drawing.Point(12, 333)
         Me.txtExplain.Name = "txtExplain"
-        Me.txtExplain.Size = New System.Drawing.Size(746, 114)
+        Me.txtExplain.Size = New System.Drawing.Size(746, 155)
         Me.txtExplain.TabIndex = 61
         '
         'pnlD
         '
-        Me.pnlD.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
-        Me.pnlD.Location = New System.Drawing.Point(633, 612)
+        Me.pnlD.Location = New System.Drawing.Point(640, 651)
         Me.pnlD.Name = "pnlD"
         Me.pnlD.Size = New System.Drawing.Size(641, 57)
         Me.pnlD.TabIndex = 65
@@ -425,11 +423,10 @@ Partial Class HostScreen
         '
         'pnlB
         '
-        Me.pnlB.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
         Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
-        Me.pnlB.Location = New System.Drawing.Point(633, 553)
+        Me.pnlB.Location = New System.Drawing.Point(640, 592)
         Me.pnlB.Name = "pnlB"
         Me.pnlB.Size = New System.Drawing.Size(641, 57)
         Me.pnlB.TabIndex = 64
@@ -448,11 +445,10 @@ Partial Class HostScreen
         '
         'pnlC
         '
-        Me.pnlC.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
         Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
-        Me.pnlC.Location = New System.Drawing.Point(-9, 612)
+        Me.pnlC.Location = New System.Drawing.Point(0, 651)
         Me.pnlC.Name = "pnlC"
         Me.pnlC.Size = New System.Drawing.Size(641, 57)
         Me.pnlC.TabIndex = 63
@@ -471,11 +467,10 @@ Partial Class HostScreen
         '
         'pnlA
         '
-        Me.pnlA.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
         Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
-        Me.pnlA.Location = New System.Drawing.Point(-9, 553)
+        Me.pnlA.Location = New System.Drawing.Point(0, 592)
         Me.pnlA.Name = "pnlA"
         Me.pnlA.Size = New System.Drawing.Size(641, 57)
         Me.pnlA.TabIndex = 62
@@ -494,12 +489,10 @@ Partial Class HostScreen
         '
         'picQuestion
         '
-        Me.picQuestion.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
-        Me.picQuestion.Location = New System.Drawing.Point(-9, 453)
+        Me.picQuestion.Location = New System.Drawing.Point(0, 492)
         Me.picQuestion.Name = "picQuestion"
         Me.picQuestion.Size = New System.Drawing.Size(1280, 93)
         Me.picQuestion.TabIndex = 66
@@ -517,9 +510,8 @@ Partial Class HostScreen
         '
         'picVO
         '
-        Me.picVO.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
-        Me.picVO.Location = New System.Drawing.Point(664, 9)
+        Me.picVO.Location = New System.Drawing.Point(680, 9)
         Me.picVO.Name = "picVO"
         Me.picVO.Size = New System.Drawing.Size(94, 65)
         Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -528,9 +520,8 @@ Partial Class HostScreen
         '
         'picSW
         '
-        Me.picSW.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSW.Location = New System.Drawing.Point(564, 9)
+        Me.picSW.Location = New System.Drawing.Point(580, 9)
         Me.picSW.Name = "picSW"
         Me.picSW.Size = New System.Drawing.Size(94, 65)
         Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -540,9 +531,8 @@ Partial Class HostScreen
         '
         'picPO
         '
-        Me.picPO.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
-        Me.picPO.Location = New System.Drawing.Point(764, 9)
+        Me.picPO.Location = New System.Drawing.Point(780, 9)
         Me.picPO.Name = "picPO"
         Me.picPO.Size = New System.Drawing.Size(94, 65)
         Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -551,9 +541,8 @@ Partial Class HostScreen
         '
         'pic50
         '
-        Me.pic50.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
-        Me.pic50.Location = New System.Drawing.Point(864, 9)
+        Me.pic50.Location = New System.Drawing.Point(880, 9)
         Me.pic50.Name = "pic50"
         Me.pic50.Size = New System.Drawing.Size(94, 65)
         Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -562,12 +551,10 @@ Partial Class HostScreen
         '
         'picTree
         '
-        Me.picTree.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._0_tree_0
-        Me.picTree.Location = New System.Drawing.Point(351, -51)
+        Me.picTree.Location = New System.Drawing.Point(367, -51)
         Me.picTree.Name = "picTree"
-        Me.picTree.Size = New System.Drawing.Size(921, 501)
+        Me.picTree.Size = New System.Drawing.Size(921, 540)
         Me.picTree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTree.TabIndex = 12
         Me.picTree.TabStop = False
@@ -584,14 +571,12 @@ Partial Class HostScreen
         '
         'pnlStrap
         '
-        Me.pnlStrap.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
-        Me.pnlStrap.Location = New System.Drawing.Point(-8, 453)
+        Me.pnlStrap.Location = New System.Drawing.Point(-8, 492)
         Me.pnlStrap.Name = "pnlStrap"
-        Me.pnlStrap.Size = New System.Drawing.Size(1280, 225)
+        Me.pnlStrap.Size = New System.Drawing.Size(1296, 225)
         Me.pnlStrap.TabIndex = 68
         Me.pnlStrap.Visible = False
         '
@@ -625,9 +610,8 @@ Partial Class HostScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
+        Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.lblHostMsg)
-        Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.txtWinnings)
         Me.Controls.Add(Me.pnlD)
         Me.Controls.Add(Me.pnlB)
@@ -651,31 +635,32 @@ Partial Class HostScreen
         Me.Controls.Add(Me.lblPlusOneUsed)
         Me.Controls.Add(Me.lbl5050Used)
         Me.Controls.Add(Me.pnlAnswer)
-        Me.Controls.Add(Me.Panel8)
-        Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.Panel6)
-        Me.Controls.Add(Me.Panel5)
-        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.pnlQLeft)
+        Me.Controls.Add(Me.pnlDrop)
+        Me.Controls.Add(Me.pnlCurrent)
+        Me.Controls.Add(Me.pnlWrong)
+        Me.Controls.Add(Me.pnlCorrect)
         Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlStrap)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "HostScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Host Screen"
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel5.ResumeLayout(False)
-        Me.Panel5.PerformLayout()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel6.ResumeLayout(False)
-        Me.Panel6.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel7.ResumeLayout(False)
-        Me.Panel7.PerformLayout()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlCorrect.ResumeLayout(False)
+        Me.pnlCorrect.PerformLayout()
+        CType(Me.picCorrect, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlWrong.ResumeLayout(False)
+        Me.pnlWrong.PerformLayout()
+        CType(Me.picWrong, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlCurrent.ResumeLayout(False)
+        Me.pnlCurrent.PerformLayout()
+        CType(Me.picCurrent, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlDrop.ResumeLayout(False)
+        Me.pnlDrop.PerformLayout()
+        Me.pnlQLeft.ResumeLayout(False)
+        Me.pnlQLeft.PerformLayout()
+        CType(Me.picQLeft, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlAnswer.ResumeLayout(False)
         Me.pnlAnswer.PerformLayout()
         Me.pnlD.ResumeLayout(False)
@@ -693,11 +678,11 @@ Partial Class HostScreen
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Panel5 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel8 As Panel
+    Friend WithEvents pnlCorrect As Panel
+    Friend WithEvents pnlWrong As Panel
+    Friend WithEvents pnlCurrent As Panel
+    Friend WithEvents pnlDrop As Panel
+    Friend WithEvents pnlQLeft As Panel
     Friend WithEvents picTree As PictureBox
     Friend WithEvents lblCorrect As Label
     Friend WithEvents lblWrong As Label
@@ -721,10 +706,10 @@ Partial Class HostScreen
     Friend WithEvents txtATAb As TextBox
     Friend WithEvents txtATAa As TextBox
     Friend WithEvents picVO As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
+    Friend WithEvents picCorrect As PictureBox
+    Friend WithEvents picWrong As PictureBox
+    Friend WithEvents picCurrent As PictureBox
+    Friend WithEvents picQLeft As PictureBox
     Friend WithEvents txtExplain As Label
     Friend WithEvents pnlD As Panel
     Friend WithEvents txtD As Label

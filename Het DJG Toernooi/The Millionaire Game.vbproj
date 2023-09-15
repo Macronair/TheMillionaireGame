@@ -13,6 +13,15 @@
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ShouldCreateLogs>True</ShouldCreateLogs>
+    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
+    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdatePackageVersion>False</UpdatePackageVersion>
+    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
+    <InheritWinAppVersionFrom>AssemblyVersion</InheritWinAppVersionFrom>
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -32,15 +41,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <ShouldCreateLogs>True</ShouldCreateLogs>
-    <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
-    <UpdatePackageVersion>False</UpdatePackageVersion>
-    <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
-    <InheritWinAppVersionFrom>AssemblyVersion</InheritWinAppVersionFrom>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -124,6 +124,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeNormal.vb" />
     <Compile Include="Source_Scripts\Classes\Question.vb" />
@@ -196,6 +197,12 @@
     <Compile Include="Source_Scripts\QDatabase.vb" />
     <Compile Include="Source_Scripts\Classes\Game\Game.vb" />
     <Compile Include="Source_Scripts\Sound Engine\SOUND.vb" />
+    <Compile Include="Windows\General\TVControlPnl1080.Designer.vb">
+      <DependentUpon>TVControlPnl1080.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\General\TVControlPnl1080.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\Options\ChangeMoneyStrap.Designer.vb">
       <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
     </Compile>
@@ -212,6 +219,12 @@
       <DependentUpon>HostMessages.vb</DependentUpon>
     </Compile>
     <Compile Include="Windows\Options\HostMessages.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Options\OptionsScreen.Designer.vb">
+      <DependentUpon>OptionsScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\OptionsScreen.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -243,6 +256,9 @@
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\General\TVControlPnl1080.resx">
+      <DependentUpon>TVControlPnl1080.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\ChangeMoneyStrap.resx">
       <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
     </EmbeddedResource>
@@ -251,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\OptionsScreen.resx">
+      <DependentUpon>OptionsScreen.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

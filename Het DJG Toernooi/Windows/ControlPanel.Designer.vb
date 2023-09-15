@@ -82,7 +82,6 @@ Partial Class ControlPanel
         Me.btnTreePr = New System.Windows.Forms.Button()
         Me.chkShowQuestion = New System.Windows.Forms.CheckBox()
         Me.clrBGColor = New System.Windows.Forms.ColorDialog()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.txtExplain = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.chkVote = New System.Windows.Forms.CheckBox()
@@ -100,6 +99,10 @@ Partial Class ControlPanel
         Me.GuestScreenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.TVScreenToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeBackgroundColorTVToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ChangeQuestionFontToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.X720720pToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.X10801080pToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grpLifelines = New System.Windows.Forms.GroupBox()
@@ -730,15 +733,6 @@ Partial Class ControlPanel
         Me.chkShowQuestion.Text = "Show Question (TV)"
         Me.chkShowQuestion.UseVisualStyleBackColor = True
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(6, 29)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(122, 21)
-        Me.Button1.TabIndex = 58
-        Me.Button1.Text = "Change BG Color"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'txtExplain
         '
         Me.txtExplain.BackColor = System.Drawing.Color.White
@@ -836,7 +830,7 @@ Partial Class ControlPanel
         '
         'ViewToolStripMenuItem
         '
-        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HostScreenToolStripMenuItem, Me.GuestScreenToolStripMenuItem, Me.ToolStripMenuItem2, Me.TVScreenToolStripMenuItem})
+        Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HostScreenToolStripMenuItem, Me.GuestScreenToolStripMenuItem, Me.ToolStripMenuItem2, Me.TVScreenToolStripMenuItem, Me.ChangeBackgroundColorTVToolStripMenuItem, Me.ChangeQuestionFontToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
         Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.ViewToolStripMenuItem.Text = "View"
@@ -844,25 +838,50 @@ Partial Class ControlPanel
         'HostScreenToolStripMenuItem
         '
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
-        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
-        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(139, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(233, 6)
         '
         'TVScreenToolStripMenuItem
         '
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
-        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(142, 22)
+        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
+        '
+        'ChangeBackgroundColorTVToolStripMenuItem
+        '
+        Me.ChangeBackgroundColorTVToolStripMenuItem.Name = "ChangeBackgroundColorTVToolStripMenuItem"
+        Me.ChangeBackgroundColorTVToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.ChangeBackgroundColorTVToolStripMenuItem.Text = "Change background color (TV)"
+        '
+        'ChangeQuestionFontToolStripMenuItem
+        '
+        Me.ChangeQuestionFontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.X720720pToolStripMenuItem, Me.X10801080pToolStripMenuItem})
+        Me.ChangeQuestionFontToolStripMenuItem.Name = "ChangeQuestionFontToolStripMenuItem"
+        Me.ChangeQuestionFontToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.ChangeQuestionFontToolStripMenuItem.Text = "Change resolutions"
+        '
+        'X720720pToolStripMenuItem
+        '
+        Me.X720720pToolStripMenuItem.Name = "X720720pToolStripMenuItem"
+        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X720720pToolStripMenuItem.Text = "1280 x 720 (720p)"
+        '
+        'X10801080pToolStripMenuItem
+        '
+        Me.X10801080pToolStripMenuItem.Name = "X10801080pToolStripMenuItem"
+        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X10801080pToolStripMenuItem.Text = "1920 x 1080 (1080p)"
         '
         'OptionsToolStripMenuItem
         '
@@ -959,10 +978,9 @@ Partial Class ControlPanel
         'grpTV
         '
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
-        Me.grpTV.Controls.Add(Me.Button1)
-        Me.grpTV.Location = New System.Drawing.Point(9, 92)
+        Me.grpTV.Location = New System.Drawing.Point(9, 116)
         Me.grpTV.Name = "grpTV"
-        Me.grpTV.Size = New System.Drawing.Size(139, 57)
+        Me.grpTV.Size = New System.Drawing.Size(139, 39)
         Me.grpTV.TabIndex = 78
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
@@ -1237,7 +1255,6 @@ Partial Class ControlPanel
     Friend WithEvents btnShowTree As Button
     Friend WithEvents chkShowQuestion As CheckBox
     Friend WithEvents clrBGColor As ColorDialog
-    Friend WithEvents Button1 As Button
     Friend WithEvents txtExplain As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents btnVote As Button
@@ -1277,4 +1294,8 @@ Partial Class ControlPanel
     Friend WithEvents drpNextHostMessage As ComboBox
     Friend WithEvents btnClearHostMessages As Button
     Friend WithEvents btnTestLifeline As Button
+    Friend WithEvents ChangeBackgroundColorTVToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ChangeQuestionFontToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents X720720pToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents X10801080pToolStripMenuItem As ToolStripMenuItem
 End Class

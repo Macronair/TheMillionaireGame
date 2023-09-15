@@ -185,7 +185,13 @@ Public Class PlayerCheck
             Case 0
                 Dim audio As New Thread(AddressOf MeetContestantAudioSeq)
                 audio.Start()
-                TVControlPnl.lblAmount.Font = New Font("Calibri", 26, FontStyle.Bold)
+                If GameResolution.CurrentRes = 720 Then
+                    TVControlPnl.lblAmount.Font = New Font("Calibri", 26, FontStyle.Bold)
+                ElseIf GameResolution.CurrentRes = 1080 Then
+                    TVControlPnl.lblAmount.Font = New Font("Calibri", 39, FontStyle.Bold)
+                Else
+                    TVControlPnl.lblAmount.Font = New Font("Calibri", 26, FontStyle.Bold)
+                End If
 
                 TVControlPnl.lblAmount.Text = FFFServer.txtPL1_Name.Text
                 TVControlPnl.pnlStrap.Visible = True

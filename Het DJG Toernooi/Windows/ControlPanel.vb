@@ -1234,7 +1234,7 @@ Public Class ControlPanel
         End If
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click_1(sender As Object, e As EventArgs)
         clrBGColor.ShowDialog()
         TVControlPnl.BackColor = clrBGColor.Color
     End Sub
@@ -1353,5 +1353,20 @@ Public Class ControlPanel
 
     Private Sub btnTestLifeline_Click(sender As Object, e As EventArgs) Handles btnTestLifeline.Click
         LifeLineDouble.LifelineUse1()
+    End Sub
+
+    Private Sub ChangeBackgroundColorTVToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeBackgroundColorTVToolStripMenuItem.Click
+        clrBGColor.ShowDialog()
+        TVControlPnl.BackColor = clrBGColor.Color
+    End Sub
+
+    Private Sub X10801080pToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles X10801080pToolStripMenuItem.Click
+        GameResolution.ChangeTo1080()
+        GameResolution.ChangeTo1080()
+    End Sub
+
+    Private Sub X720720pToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles X720720pToolStripMenuItem.Click
+        GameResolution.ChangeTo720()
+        GameResolution.ChangeTo720()
     End Sub
 End Class

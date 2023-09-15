@@ -59,9 +59,8 @@ Partial Class GuestScreen
         '
         'picVO
         '
-        Me.picVO.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
-        Me.picVO.Location = New System.Drawing.Point(664, 11)
+        Me.picVO.Location = New System.Drawing.Point(680, 11)
         Me.picVO.Name = "picVO"
         Me.picVO.Size = New System.Drawing.Size(94, 65)
         Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -70,9 +69,8 @@ Partial Class GuestScreen
         '
         'picSW
         '
-        Me.picSW.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSW.Location = New System.Drawing.Point(564, 11)
+        Me.picSW.Location = New System.Drawing.Point(580, 11)
         Me.picSW.Name = "picSW"
         Me.picSW.Size = New System.Drawing.Size(94, 65)
         Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -134,9 +132,8 @@ Partial Class GuestScreen
         '
         'picPO
         '
-        Me.picPO.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
-        Me.picPO.Location = New System.Drawing.Point(764, 11)
+        Me.picPO.Location = New System.Drawing.Point(780, 11)
         Me.picPO.Name = "picPO"
         Me.picPO.Size = New System.Drawing.Size(94, 65)
         Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -145,9 +142,8 @@ Partial Class GuestScreen
         '
         'pic50
         '
-        Me.pic50.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
-        Me.pic50.Location = New System.Drawing.Point(864, 11)
+        Me.pic50.Location = New System.Drawing.Point(880, 11)
         Me.pic50.Name = "pic50"
         Me.pic50.Size = New System.Drawing.Size(94, 65)
         Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -156,11 +152,10 @@ Partial Class GuestScreen
         '
         'lblTime
         '
-        Me.lblTime.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.White
-        Me.lblTime.Location = New System.Drawing.Point(777, 245)
+        Me.lblTime.Location = New System.Drawing.Point(793, 284)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(181, 107)
         Me.lblTime.TabIndex = 68
@@ -170,12 +165,10 @@ Partial Class GuestScreen
         '
         'picTree
         '
-        Me.picTree.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._0_tree_0
-        Me.picTree.Location = New System.Drawing.Point(351, -51)
+        Me.picTree.Location = New System.Drawing.Point(367, -51)
         Me.picTree.Name = "picTree"
-        Me.picTree.Size = New System.Drawing.Size(921, 501)
+        Me.picTree.Size = New System.Drawing.Size(921, 540)
         Me.picTree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTree.TabIndex = 67
         Me.picTree.TabStop = False
@@ -183,9 +176,9 @@ Partial Class GuestScreen
         'pnlD
         '
         Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
-        Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
-        Me.pnlD.Location = New System.Drawing.Point(633, 612)
+        Me.pnlD.Location = New System.Drawing.Point(640, 651)
         Me.pnlD.Name = "pnlD"
         Me.pnlD.Size = New System.Drawing.Size(641, 57)
         Me.pnlD.TabIndex = 80
@@ -205,9 +198,9 @@ Partial Class GuestScreen
         'pnlB
         '
         Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
-        Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
-        Me.pnlB.Location = New System.Drawing.Point(633, 553)
+        Me.pnlB.Location = New System.Drawing.Point(640, 592)
         Me.pnlB.Name = "pnlB"
         Me.pnlB.Size = New System.Drawing.Size(641, 57)
         Me.pnlB.TabIndex = 79
@@ -227,9 +220,9 @@ Partial Class GuestScreen
         'pnlC
         '
         Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
-        Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
-        Me.pnlC.Location = New System.Drawing.Point(-9, 612)
+        Me.pnlC.Location = New System.Drawing.Point(0, 651)
         Me.pnlC.Name = "pnlC"
         Me.pnlC.Size = New System.Drawing.Size(641, 57)
         Me.pnlC.TabIndex = 78
@@ -249,9 +242,9 @@ Partial Class GuestScreen
         'pnlA
         '
         Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
-        Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
-        Me.pnlA.Location = New System.Drawing.Point(-9, 553)
+        Me.pnlA.Location = New System.Drawing.Point(0, 592)
         Me.pnlA.Name = "pnlA"
         Me.pnlA.Size = New System.Drawing.Size(641, 57)
         Me.pnlA.TabIndex = 77
@@ -271,9 +264,9 @@ Partial Class GuestScreen
         'picQuestion
         '
         Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
-        Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
-        Me.picQuestion.Location = New System.Drawing.Point(-9, 453)
+        Me.picQuestion.Location = New System.Drawing.Point(0, 492)
         Me.picQuestion.Name = "picQuestion"
         Me.picQuestion.Size = New System.Drawing.Size(1280, 93)
         Me.picQuestion.TabIndex = 81
@@ -316,8 +309,7 @@ Partial Class GuestScreen
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(1264, 681)
-        Me.Controls.Add(Me.pnlStrap)
+        Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.pnlD)
         Me.Controls.Add(Me.pnlB)
         Me.Controls.Add(Me.pnlC)
@@ -333,8 +325,8 @@ Partial Class GuestScreen
         Me.Controls.Add(Me.pic50)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlStrap)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
-        Me.MaximizeBox = False
         Me.Name = "GuestScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Screen"

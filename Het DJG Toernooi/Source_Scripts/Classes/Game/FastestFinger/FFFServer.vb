@@ -620,8 +620,8 @@ Public Class FFFServer
             Case 6
                 If txtPL7_Answer.Text = ControlPanel.lblAnswer.Text Then
                     TVControlPnl.txtPL7_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.Text = txtPL7_Points.Text
+                    TVControlPnl.txtPL7_Points.ForeColor = Color.Black
+                    TVControlPnl.txtPL7_Points.Text = txtPL7_Points.Text
                     TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 7
