@@ -214,6 +214,7 @@ Public Class Data
         CoreConsole.LogMsgDate("> Level 3 Questions        = " + te_q_Level3.ToString())
         CoreConsole.LogMsgDate("> Level 4 Questions        = " + te_q_Level4.ToString())
         CoreConsole.LogMsgDate("> Host Messages            = " + te_s_HostMessages.ToString())
+        CoreConsole.LogMsgDate("> Profiles                 = " + te_s_Profiles.ToString())
         CoreConsole.LogMsgDate("=====================================")
         CoreConsole.LogMsg("")
 
@@ -354,9 +355,18 @@ Public Class Data
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
+            Case 100
+                CoreConsole.LogMsgLineDate("Creating table 'settings_HostMessages'...")
+                table = "CREATE TABLE [dbo].[settings_Profiles] ([Id] INT IDENTITY (1,1) NOT NULL, [ProfileName] VARCHAR(MAX) NOT NULL, [ProfileLocation] VARCHAR(MAX) NOT NULL, PRIMARY KEY CLUSTERED ([Id] ASC))"
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
         End Select
-
-
     End Sub
 
 End Class

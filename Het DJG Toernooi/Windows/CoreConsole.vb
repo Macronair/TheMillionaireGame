@@ -1,6 +1,4 @@
-﻿Imports System.Runtime.InteropServices
-
-Public Class CoreConsole
+﻿Public Class CoreConsole
 
     Public Shared isRunning As Boolean = False
 
@@ -16,6 +14,9 @@ Public Class CoreConsole
         LogMsg("")
 
         Threading.Thread.Sleep(250)
+        LogMsgDate("Loading configuration")
+        Game.CurrentProfile.LoadSettings()
+
         LogMsgDate("Checking database...")
         Try
             Data.CreateDatabase()

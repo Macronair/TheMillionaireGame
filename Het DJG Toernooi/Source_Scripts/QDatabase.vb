@@ -1,5 +1,4 @@
-﻿Imports System.Data.OleDb
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 
 Public Class QDatabase
     Dim sql As String

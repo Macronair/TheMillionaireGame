@@ -1,6 +1,4 @@
-﻿Imports System.Drawing
-
-Public Class LifelineSwitch
+﻿Public Class LifelineSwitch
     Dim act As Integer = 0
     Public Sub LifelineUse1()
         If act = 0 Then

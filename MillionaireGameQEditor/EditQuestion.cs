@@ -134,7 +134,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 lblAnswer.Text = "";
             }
-            
+
             lblAnswer.Text = lblAnswer.Text + "A";
             btnFFFA.Enabled = false;
             btnReset.Enabled = true;

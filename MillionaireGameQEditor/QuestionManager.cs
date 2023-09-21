@@ -168,7 +168,7 @@ namespace Millionaire
 
         public void DeleteDB()
         {
-            if(stLevel.Text == "Not selected")
+            if (stLevel.Text == "Not selected")
             {
                 MessageBox.Show("Please select the question you want to remove.", "Remove question", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

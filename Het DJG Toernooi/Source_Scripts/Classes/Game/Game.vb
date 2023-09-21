@@ -1,5 +1,7 @@
 ﻿Public Class Game
 
+    Public Shared CurrentProfile As New Profile
+
     ' Game info variables
     Public Shared gamemode As Integer = 0
     Public Shared level As Integer = 0

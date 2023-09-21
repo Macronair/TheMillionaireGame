@@ -124,13 +124,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeNormal.vb" />
     <Compile Include="Source_Scripts\Classes\Question.vb" />
     <Compile Include="Source_Scripts\Classes\User.vb" />
-    <Compile Include="Source_Scripts\Database\Data.vb" />
-    <Compile Include="Source_Scripts\Database\Message.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Data.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Message.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
@@ -227,6 +228,12 @@
     <Compile Include="Windows\Options\OptionsScreen.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Windows\Options\OptionsSelectSound.Designer.vb">
+      <DependentUpon>OptionsSelectSound.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\OptionsSelectSound.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Windows\About\About.resx">
@@ -270,6 +277,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\OptionsScreen.resx">
       <DependentUpon>OptionsScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\OptionsSelectSound.resx">
+      <DependentUpon>OptionsSelectSound.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

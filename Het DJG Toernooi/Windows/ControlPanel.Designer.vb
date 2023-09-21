@@ -780,8 +780,8 @@ Partial Class ControlPanel
         '
         Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeMoneyStrapToolStripMenuItem, Me.HostMessagesToolStripMenuItem, Me.ShowOptionsToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
-        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(61, 20)
-        Me.DatabaseToolStripMenuItem.Text = "Options"
+        Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
+        Me.DatabaseToolStripMenuItem.Text = " Main"
         '
         'ChangeMoneyStrapToolStripMenuItem
         '
@@ -800,7 +800,6 @@ Partial Class ControlPanel
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
         Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
-        Me.ShowOptionsToolStripMenuItem.Visible = False
         '
         'GameToolStripMenuItem
         '
@@ -812,19 +811,19 @@ Partial Class ControlPanel
         'QuestionsEditorToolStripMenuItem
         '
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
         Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         Me.ProfileEditorToolStripMenuItem.Visible = False
         '
@@ -874,13 +873,13 @@ Partial Class ControlPanel
         'X720720pToolStripMenuItem
         '
         Me.X720720pToolStripMenuItem.Name = "X720720pToolStripMenuItem"
-        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.X720720pToolStripMenuItem.Text = "1280 x 720 (720p)"
         '
         'X10801080pToolStripMenuItem
         '
         Me.X10801080pToolStripMenuItem.Name = "X10801080pToolStripMenuItem"
-        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.X10801080pToolStripMenuItem.Text = "1920 x 1080 (1080p)"
         '
         'OptionsToolStripMenuItem

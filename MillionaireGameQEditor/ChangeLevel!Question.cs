@@ -1,13 +1,6 @@
 ﻿using Millionaire;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MillionaireGameQEditor
@@ -110,7 +103,7 @@ namespace MillionaireGameQEditor
                 cmd.ExecuteNonQuery();
             }
 
-            if(lblOldLevel.Text == "Level 1")
+            if (lblOldLevel.Text == "Level 1")
             {
                 string strR = "DELETE FROM questions_Level1 WHERE Id = @Id";
                 cmdRemove = new SqlCommand(strR, QEditor.c);
@@ -118,7 +111,7 @@ namespace MillionaireGameQEditor
                 cmdRemove.ExecuteNonQuery();
                 QEditor.c.Close();
             }
-            else if(lblOldLevel.Text == "Level 2")
+            else if (lblOldLevel.Text == "Level 2")
             {
                 string strR = "DELETE FROM questions_Level2 WHERE Id = @Id";
                 cmdRemove = new SqlCommand(strR, QEditor.c);

@@ -1,5 +1,4 @@
-﻿Imports System.Net
-Imports System.IO
+﻿Imports System.IO
 Imports System.Net.Sockets
 
 'Client Side

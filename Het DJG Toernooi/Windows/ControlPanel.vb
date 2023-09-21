@@ -1,6 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports System.Drawing
-Imports System.Media
 
 Public Class ControlPanel
     Dim debug As Boolean = False
@@ -1368,5 +1366,9 @@ Public Class ControlPanel
     Private Sub X720720pToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles X720720pToolStripMenuItem.Click
         GameResolution.ChangeTo720()
         GameResolution.ChangeTo720()
+    End Sub
+
+    Private Sub ShowOptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowOptionsToolStripMenuItem.Click
+        OptionsScreen.Show()
     End Sub
 End Class

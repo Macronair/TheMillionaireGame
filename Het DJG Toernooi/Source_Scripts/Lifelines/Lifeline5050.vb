@@ -1,6 +1,4 @@
-﻿Imports System.Drawing
-
-Public Class Lifeline5050
+﻿Public Class Lifeline5050
 
     Public Sub LifelineUse1()
 
