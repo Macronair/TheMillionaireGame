@@ -339,6 +339,9 @@ Partial Class OptionsScreen
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
+        Me.TextBox61 = New System.Windows.Forms.TextBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label106 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -362,7 +365,7 @@ Partial Class OptionsScreen
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1250, 491)
+        Me.TabPage1.Size = New System.Drawing.Size(1250, 524)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -372,7 +375,7 @@ Partial Class OptionsScreen
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1250, 491)
+        Me.TabPage3.Size = New System.Drawing.Size(1250, 524)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Database"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -1725,6 +1728,9 @@ Partial Class OptionsScreen
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.TextBox61)
+        Me.TabPage4.Controls.Add(Me.Button1)
+        Me.TabPage4.Controls.Add(Me.Label106)
         Me.TabPage4.Controls.Add(Me.TextBox60)
         Me.TabPage4.Controls.Add(Me.Button101)
         Me.TabPage4.Controls.Add(Me.Label102)
@@ -1908,7 +1914,7 @@ Partial Class OptionsScreen
         Me.TabPage4.Location = New System.Drawing.Point(4, 29)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1250, 491)
+        Me.TabPage4.Size = New System.Drawing.Size(1250, 524)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Sounds (Questions)"
         Me.TabPage4.UseVisualStyleBackColor = True
@@ -3621,6 +3627,34 @@ Partial Class OptionsScreen
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
+        'TextBox61
+        '
+        Me.TextBox61.Location = New System.Drawing.Point(835, 418)
+        Me.TextBox61.Name = "TextBox61"
+        Me.TextBox61.ReadOnly = True
+        Me.TextBox61.Size = New System.Drawing.Size(127, 26)
+        Me.TextBox61.TabIndex = 308
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(968, 421)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(24, 23)
+        Me.Button1.TabIndex = 307
+        Me.Button1.Text = "<"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label106
+        '
+        Me.Label106.AutoSize = True
+        Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label106.Location = New System.Drawing.Point(748, 424)
+        Me.Label106.Name = "Label106"
+        Me.Label106.Size = New System.Drawing.Size(80, 32)
+        Me.Label106.TabIndex = 306
+        Me.Label106.Text = "Q10 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Risk Mode)"
+        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3960,4 +3994,7 @@ Partial Class OptionsScreen
     Friend WithEvents txtSndWalkAway1 As TextBox
     Friend WithEvents Button102 As Button
     Friend WithEvents Label103 As Label
+    Friend WithEvents TextBox61 As TextBox
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label106 As Label
 End Class

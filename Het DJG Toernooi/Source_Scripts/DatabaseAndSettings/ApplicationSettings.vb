@@ -64,6 +64,72 @@ Public Class AppSettings
     Public Property snd_Switch0_ShowCorrect As String
     Public Property snd_Switch0_Clear As String
     Public Property snd_5050 As String
+
+    Public Property snd_Q1to5LightsDown As String
+    Public Property snd_Q6LightsDown As String
+    Public Property snd_Q7LightsDown As String
+    Public Property snd_Q8LightsDown As String
+    Public Property snd_Q9LightsDown As String
+    Public Property snd_Q10LightsDown As String
+    Public Property snd_Q11LightsDown As String
+    Public Property snd_Q12LightsDown As String
+    Public Property snd_Q13LightsDown As String
+    Public Property snd_Q14LightsDown As String
+    Public Property snd_Q15LightsDown As String
+
+    Public Property snd_Q1to5Bed As String
+    Public Property snd_Q6Bed As String
+    Public Property snd_Q7Bed As String
+    Public Property snd_Q8Bed As String
+    Public Property snd_Q9Bed As String
+    Public Property snd_Q10Bed As String
+    Public Property snd_Q11Bed As String
+    Public Property snd_Q12Bed As String
+    Public Property snd_Q13Bed As String
+    Public Property snd_Q14Bed As String
+    Public Property snd_Q15Bed As String
+
+    Public Property snd_Q1Final As String
+    Public Property snd_Q2Final As String
+    Public Property snd_Q3Final As String
+    Public Property snd_Q4Final As String
+    Public Property snd_Q5Final As String
+    Public Property snd_Q6Final As String
+    Public Property snd_Q7Final As String
+    Public Property snd_Q8Final As String
+    Public Property snd_Q9Final As String
+    Public Property snd_Q10Final As String
+    Public Property snd_Q11Final As String
+    Public Property snd_Q12Final As String
+    Public Property snd_Q13Final As String
+    Public Property snd_Q14Final As String
+    Public Property snd_Q15Final As String
+
+    Public Property snd_Q1to4Correct As String
+    Public Property snd_Q5Correct As String
+    Public Property snd_Q6Correct As String
+    Public Property snd_Q7Correct As String
+    Public Property snd_Q8Correct As String
+    Public Property snd_Q9Correct As String
+    Public Property snd_Q10Correct As String
+    Public Property snd_Q10Correct_R As String
+    Public Property snd_Q11Correct As String
+    Public Property snd_Q12Correct As String
+    Public Property snd_Q13Correct As String
+    Public Property snd_Q14Correct As String
+    Public Property snd_Q15Correct As String
+
+    Public Property snd_Q1to5Wrong As String
+    Public Property snd_Q6Wrong As String
+    Public Property snd_Q7Wrong As String
+    Public Property snd_Q8Wrong As String
+    Public Property snd_Q9Wrong As String
+    Public Property snd_Q10Wrong As String
+    Public Property snd_Q11Wrong As String
+    Public Property snd_Q12Wrong As String
+    Public Property snd_Q13Wrong As String
+    Public Property snd_Q14Wrong As String
+    Public Property snd_Q15Wrong As String
 End Class
 
 Public Class Profile
