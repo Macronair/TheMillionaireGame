@@ -16,6 +16,9 @@
         txtSndToHotSeat.Text = Profile.Options.snd_ToHotSeat
         txtSndToHotSeatLD.Text = Profile.Options.snd_ToHotSeat_LD
         txtSndRiskModeActivate.Text = Profile.Options.snd_RiskModeActive
+        txtSndWalkAway1.Text = Profile.Options.snd_WalkAway1
+        txtSndWalkAway2.Text = Profile.Options.snd_WalkAway2
+        txtSndGameOver.Text = Profile.Options.snd_GameOver
 
         txtSndFMeet2.Text = Profile.Options.snd_F_Meet2
         txtSndFMeet3.Text = Profile.Options.snd_F_Meet3
@@ -48,6 +51,84 @@
         txtSndSwitchClear.Text = Profile.Options.snd_Switch0_Clear
 
         txtSnd5050Use.Text = Profile.Options.snd_5050
+
+        txtSndQ1to5LD.Text = Profile.Options.snd_Q1to5LightsDown
+        txtSndQ6LD.Text = Profile.Options.snd_Q6LightsDown
+        txtSndQ7LD.Text = Profile.Options.snd_Q7LightsDown
+        txtSndQ8LD.Text = Profile.Options.snd_Q8LightsDown
+        txtSndQ9LD.Text = Profile.Options.snd_Q9LightsDown
+        txtSndQ10LD.Text = Profile.Options.snd_Q10LightsDown
+        txtSndQ11LD.Text = Profile.Options.snd_Q11LightsDown
+        txtSndQ12LD.Text = Profile.Options.snd_Q12LightsDown
+        txtSndQ13LD.Text = Profile.Options.snd_Q13LightsDown
+        txtSndQ14LD.Text = Profile.Options.snd_Q14LightsDown
+        txtSndQ15LD.Text = Profile.Options.snd_Q15LightsDown
+
+        chkSndStopQ1to5LD.Checked = Profile.Options.snd_Q1to5LightsDown_Stop
+        chkSndStopQ6LD.Checked = Profile.Options.snd_Q6LightsDown_Stop
+        chkSndStopQ7LD.Checked = Profile.Options.snd_Q7LightsDown_Stop
+        chkSndStopQ8LD.Checked = Profile.Options.snd_Q8LightsDown_Stop
+        chkSndStopQ9LD.Checked = Profile.Options.snd_Q9LightsDown_Stop
+        chkSndStopQ10LD.Checked = Profile.Options.snd_Q10LightsDown_Stop
+        chkSndStopQ11LD.Checked = Profile.Options.snd_Q11LightsDown_Stop
+        chkSndStopQ12LD.Checked = Profile.Options.snd_Q12LightsDown_Stop
+        chkSndStopQ13LD.Checked = Profile.Options.snd_Q13LightsDown_Stop
+        chkSndStopQ14LD.Checked = Profile.Options.snd_Q14LightsDown_Stop
+        chkSndStopQ15LD.Checked = Profile.Options.snd_Q15LightsDown_Stop
+
+        txtSndQ1to5Bed.Text = Profile.Options.snd_Q1to5Bed
+        txtSndQ6Bed.Text = Profile.Options.snd_Q6Bed
+        txtSndQ7Bed.Text = Profile.Options.snd_Q7Bed
+        txtSndQ8Bed.Text = Profile.Options.snd_Q8Bed
+        txtSndQ9Bed.Text = Profile.Options.snd_Q9Bed
+        txtSndQ10Bed.Text = Profile.Options.snd_Q10Bed
+        txtSndQ11Bed.Text = Profile.Options.snd_Q11Bed
+        txtSndQ12Bed.Text = Profile.Options.snd_Q12Bed
+        txtSndQ13Bed.Text = Profile.Options.snd_Q13Bed
+        txtSndQ14Bed.Text = Profile.Options.snd_Q14Bed
+        txtSndQ15Bed.Text = Profile.Options.snd_Q15Bed
+
+        txtSndQ1Final.Text = Profile.Options.snd_Q1Final
+        txtSndQ2Final.Text = Profile.Options.snd_Q2Final
+        txtSndQ3Final.Text = Profile.Options.snd_Q3Final
+        txtSndQ4Final.Text = Profile.Options.snd_Q4Final
+        txtSndQ5Final.Text = Profile.Options.snd_Q5Final
+        txtSndQ6Final.Text = Profile.Options.snd_Q6Final
+        txtSndQ7Final.Text = Profile.Options.snd_Q7Final
+        txtSndQ8Final.Text = Profile.Options.snd_Q8Final
+        txtSndQ9Final.Text = Profile.Options.snd_Q9Final
+        txtSndQ10Final.Text = Profile.Options.snd_Q10Final
+        txtSndQ11Final.Text = Profile.Options.snd_Q11Final
+        txtSndQ12Final.Text = Profile.Options.snd_Q12Final
+        txtSndQ13Final.Text = Profile.Options.snd_Q13Final
+        txtSndQ14Final.Text = Profile.Options.snd_Q14Final
+        txtSndQ15Final.Text = Profile.Options.snd_Q15Final
+
+        txtSndQ1to4Correct.Text = Profile.Options.snd_Q1to4Correct
+        txtSndQ5Correct.Text = Profile.Options.snd_Q5Correct
+        txtSndQ6Correct.Text = Profile.Options.snd_Q6Correct
+        txtSndQ7Correct.Text = Profile.Options.snd_Q7Correct
+        txtSndQ8Correct.Text = Profile.Options.snd_Q8Correct
+        txtSndQ9Correct.Text = Profile.Options.snd_Q9Correct
+        txtSndQ10Correct.Text = Profile.Options.snd_Q10Correct
+        txtSndQ10RCorrect.Text = Profile.Options.snd_Q10Correct_R
+        txtSndQ11Correct.Text = Profile.Options.snd_Q11Correct
+        txtSndQ12Correct.Text = Profile.Options.snd_Q12Correct
+        txtSndQ13Correct.Text = Profile.Options.snd_Q13Correct
+        txtSndQ14Correct.Text = Profile.Options.snd_Q14Correct
+        txtSndQ15Correct.Text = Profile.Options.snd_Q15Correct
+
+        txtSndQ1to5Wrong.Text = Profile.Options.snd_Q1to5Wrong
+        txtSndQ6Wrong.Text = Profile.Options.snd_Q6Wrong
+        txtSndQ7Wrong.Text = Profile.Options.snd_Q7Wrong
+        txtSndQ8Wrong.Text = Profile.Options.snd_Q8Wrong
+        txtSndQ9Wrong.Text = Profile.Options.snd_Q9Wrong
+        txtSndQ10Wrong.Text = Profile.Options.snd_Q10Wrong
+        txtSndQ11Wrong.Text = Profile.Options.snd_Q11Wrong
+        txtSndQ12Wrong.Text = Profile.Options.snd_Q12Wrong
+        txtSndQ13Wrong.Text = Profile.Options.snd_Q13Wrong
+        txtSndQ14Wrong.Text = Profile.Options.snd_Q14Wrong
+        txtSndQ15Wrong.Text = Profile.Options.snd_Q15Wrong
     End Sub
 
     Private Function GetSoundFile(ByVal currentFile As String) As String
@@ -61,171 +142,42 @@
         End If
     End Function
 
-    Private Sub txtSndOpening_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndOpening.MouseDoubleClick
-        txtSndOpening.Text = GetSoundFile(txtSndOpening.Text)
+    Private Sub txtSndQ15LD_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndQ9Wrong.MouseDoubleClick, txtSndQ9LD.MouseDoubleClick,
+    txtSndQ9Final.MouseDoubleClick, txtSndQ9Correct.MouseDoubleClick, txtSndQ9Bed.MouseDoubleClick, txtSndQ8Wrong.MouseDoubleClick, txtSndQ8LD.MouseDoubleClick,
+    txtSndQ8Final.MouseDoubleClick, txtSndQ8Correct.MouseDoubleClick, txtSndQ8Bed.MouseDoubleClick, txtSndQ7Wrong.MouseDoubleClick, txtSndQ7LD.MouseDoubleClick,
+    txtSndQ7Final.MouseDoubleClick, txtSndQ7Correct.MouseDoubleClick, txtSndQ7Bed.MouseDoubleClick, txtSndQ6Wrong.MouseDoubleClick, txtSndQ6LD.MouseDoubleClick,
+    txtSndQ6Final.MouseDoubleClick, txtSndQ6Correct.MouseDoubleClick, txtSndQ6Bed.MouseDoubleClick, txtSndQ5Final.MouseDoubleClick, txtSndQ5Correct.MouseDoubleClick,
+    txtSndQ4Final.MouseDoubleClick, txtSndQ3Final.MouseDoubleClick, txtSndQ2Final.MouseDoubleClick, txtSndQ1to5Wrong.MouseDoubleClick, txtSndQ1to5LD.MouseDoubleClick,
+    txtSndQ1to5Bed.MouseDoubleClick, txtSndQ1to4Correct.MouseDoubleClick, txtSndQ1Final.MouseDoubleClick, txtSndQ15Wrong.MouseDoubleClick, txtSndQ15LD.MouseDoubleClick,
+    txtSndQ15Final.MouseDoubleClick, txtSndQ15Correct.MouseDoubleClick, txtSndQ15Bed.MouseDoubleClick, txtSndQ14Wrong.MouseDoubleClick, txtSndQ14LD.MouseDoubleClick,
+    txtSndQ14Final.MouseDoubleClick, txtSndQ14Correct.MouseDoubleClick, txtSndQ14Bed.MouseDoubleClick, txtSndQ13Wrong.MouseDoubleClick, txtSndQ13LD.MouseDoubleClick,
+    txtSndQ13Final.MouseDoubleClick, txtSndQ13Correct.MouseDoubleClick, txtSndQ13Bed.MouseDoubleClick, txtSndQ12Wrong.MouseDoubleClick, txtSndQ12LD.MouseDoubleClick,
+    txtSndQ12Final.MouseDoubleClick, txtSndQ12Correct.MouseDoubleClick, txtSndQ12Bed.MouseDoubleClick, txtSndQ11Wrong.MouseDoubleClick, txtSndQ11LD.MouseDoubleClick,
+    txtSndQ11Final.MouseDoubleClick, txtSndQ11Correct.MouseDoubleClick, txtSndQ11Bed.MouseDoubleClick, txtSndQ10Wrong.MouseDoubleClick, txtSndQ10RCorrect.MouseDoubleClick,
+    txtSndQ10LD.MouseDoubleClick, txtSndQ10Final.MouseDoubleClick, txtSndQ10Correct.MouseDoubleClick, txtSndQ10Bed.MouseDoubleClick, txtSndWalkAway2.MouseDoubleClick,
+    txtSndWalkAway1.MouseDoubleClick, txtSndToHotSeatLD.MouseDoubleClick, txtSndToHotSeat.MouseDoubleClick, txtSndSwitchShowCorrect.MouseDoubleClick,
+    txtSndSwitchClear.MouseDoubleClick, txtSndSwitchActivate.MouseDoubleClick, txtSndRiskModeActivate.MouseDoubleClick, txtSndP1Start.MouseDoubleClick,
+    txtSndP1EndEarly.MouseDoubleClick, txtSndP1Clock.MouseDoubleClick, txtSndOpening.MouseDoubleClick, txtSndLifeline4Ping.MouseDoubleClick,
+    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick,
+    txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
+    txtSndFReadQuestion.MouseDoubleClick, txtSndFReadCorrectOrder.MouseDoubleClick, txtSndFOrder4.MouseDoubleClick, txtSndFOrder3.MouseDoubleClick,
+    txtSndFOrder2.MouseDoubleClick, txtSndFOrder1.MouseDoubleClick, txtSndFMeet8.MouseDoubleClick, txtSndFMeet7.MouseDoubleClick, txtSndFMeet6.MouseDoubleClick,
+    txtSndFMeet5.MouseDoubleClick, txtSndFMeet4.MouseDoubleClick, txtSndFMeet3.MouseDoubleClick, txtSndFMeet2.MouseDoubleClick, txtSndExplainRules.MouseDoubleClick,
+    txtSndCommercialOut.MouseDoubleClick, txtSndCommercialIn.MouseDoubleClick, txtSndClosing.MouseDoubleClick, txtSndATAVoting.MouseDoubleClick, txtSndATAStart.MouseDoubleClick,
+    txtSndATAEnd.MouseDoubleClick, txtSnd5050Use.MouseDoubleClick, TabPage2.MouseDoubleClick
+
+        Dim t As TextBox = DirectCast(sender, TextBox)
+        t.Text = GetSoundFile(t.Text)
+
     End Sub
 
-    Private Sub txtSndCommercialIn_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndCommercialIn.MouseDoubleClick
-        txtSndCommercialIn.Text = GetSoundFile(txtSndCommercialIn.Text)
+    Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
+        Game.CurrentProfile.SaveSettings()
+        Me.Close()
     End Sub
 
-    Private Sub txtSndCommercialOut_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndCommercialOut.MouseDoubleClick
-        txtSndCommercialOut.Text = GetSoundFile(txtSndCommercialOut.Text)
-    End Sub
-
-    Private Sub txtSndClosing_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndClosing.MouseDoubleClick
-        txtSndClosing.Text = GetSoundFile(txtSndClosing.Text)
-    End Sub
-
-    Private Sub txtSndLifeline1Ping_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndLifeline1Ping.MouseDoubleClick
-        txtSndLifeline1Ping.Text = GetSoundFile(txtSndLifeline1Ping.Text)
-    End Sub
-
-    Private Sub txtSndLifeline2Ping_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndLifeline2Ping.MouseDoubleClick
-        txtSndLifeline2Ping.Text = GetSoundFile(txtSndLifeline2Ping.Text)
-    End Sub
-
-    Private Sub txtSndLifeline3Ping_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndLifeline3Ping.MouseDoubleClick
-        txtSndLifeline3Ping.Text = GetSoundFile(txtSndLifeline3Ping.Text)
-    End Sub
-
-    Private Sub txtSndLifeline4Ping_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndLifeline4Ping.MouseDoubleClick
-        txtSndLifeline4Ping.Text = GetSoundFile(txtSndLifeline4Ping.Text)
-    End Sub
-
-    Private Sub txtSndExplainRules_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndExplainRules.MouseDoubleClick
-        txtSndExplainRules.Text = GetSoundFile(txtSndExplainRules.Text)
-    End Sub
-
-    Private Sub txtSndToHotSeat_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndToHotSeat.MouseDoubleClick
-        txtSndToHotSeat.Text = GetSoundFile(txtSndToHotSeat.Text)
-    End Sub
-
-    Private Sub txtSndToHotSeatLD_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndToHotSeatLD.MouseDoubleClick
-        txtSndToHotSeatLD.Text = GetSoundFile(txtSndToHotSeatLD.Text)
-    End Sub
-
-    Private Sub txtSndRiskModeActivate_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndRiskModeActivate.MouseDoubleClick
-        txtSndRiskModeActivate.Text = GetSoundFile(txtSndRiskModeActivate.Text)
-    End Sub
-
-    Private Sub txtSndWalkAway1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndWalkAway1.MouseDoubleClick
-        txtSndWalkAway1.Text = GetSoundFile(txtSndWalkAway1.Text)
-    End Sub
-
-    Private Sub txtSndWalkAway2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndWalkAway2.MouseDoubleClick
-        txtSndWalkAway2.Text = GetSoundFile(txtSndWalkAway2.Text)
-    End Sub
-
-    Private Sub txtSndGameOver_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndGameOver.MouseDoubleClick
-        txtSndLifeline4Ping.Text = GetSoundFile(txtSndLifeline4Ping.Text)
-    End Sub
-
-    Private Sub txtSndFMeet2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet2.MouseDoubleClick
-        txtSndFMeet2.Text = GetSoundFile(txtSndFMeet2.Text)
-    End Sub
-
-    Private Sub txtSndFMeet3_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet3.MouseDoubleClick
-        txtSndFMeet3.Text = GetSoundFile(txtSndFMeet3.Text)
-    End Sub
-
-    Private Sub txtSndFMeet4_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet4.MouseDoubleClick
-        txtSndFMeet4.Text = GetSoundFile(txtSndFMeet4.Text)
-    End Sub
-
-    Private Sub txtSndFMeet5_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet5.MouseDoubleClick
-        txtSndFMeet5.Text = GetSoundFile(txtSndFMeet5.Text)
-    End Sub
-
-    Private Sub txtSndFMeet6_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet6.MouseDoubleClick
-        txtSndFMeet6.Text = GetSoundFile(txtSndFMeet6.Text)
-    End Sub
-
-    Private Sub txtSndFMeet7_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet7.MouseDoubleClick
-        txtSndFMeet7.Text = GetSoundFile(txtSndFMeet7.Text)
-    End Sub
-
-    Private Sub txtSndFMeet8_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFMeet8.MouseDoubleClick
-        txtSndFMeet8.Text = GetSoundFile(txtSndFMeet8.Text)
-    End Sub
-
-    Private Sub txtSndFReadQuestion_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFReadQuestion.MouseDoubleClick
-        txtSndFReadQuestion.Text = GetSoundFile(txtSndFReadQuestion.Text)
-    End Sub
-
-    Private Sub txtSndFThreeNotes_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFThreeNotes.MouseDoubleClick
-        txtSndFThreeNotes.Text = GetSoundFile(txtSndFThreeNotes.Text)
-    End Sub
-
-    Private Sub txtSndFThinking_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFThinking.MouseDoubleClick
-        txtSndFThinking.Text = GetSoundFile(txtSndFThinking.Text)
-    End Sub
-
-    Private Sub txtSndFReadCorrectOrder_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFReadCorrectOrder.MouseDoubleClick
-        txtSndFReadCorrectOrder.Text = GetSoundFile(txtSndFReadCorrectOrder.Text)
-    End Sub
-
-    Private Sub txtSndFOrder1_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFOrder1.MouseDoubleClick
-        txtSndFOrder1.Text = GetSoundFile(txtSndFOrder1.Text)
-    End Sub
-
-    Private Sub txtSndFOrder2_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFOrder2.MouseDoubleClick
-        txtSndFOrder2.Text = GetSoundFile(txtSndFOrder2.Text)
-    End Sub
-
-    Private Sub txtSndFOrder3_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFOrder3.MouseDoubleClick
-        txtSndFOrder3.Text = GetSoundFile(txtSndFOrder3.Text)
-    End Sub
-
-    Private Sub txtSndFOrder4_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFOrder4.MouseDoubleClick
-        txtSndFOrder4.Text = GetSoundFile(txtSndFOrder4.Text)
-    End Sub
-
-    Private Sub txtSndFWhoWasCorrect_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFWhoWasCorrect.MouseDoubleClick
-        txtSndFWhoWasCorrect.Text = GetSoundFile(txtSndFWhoWasCorrect.Text)
-    End Sub
-
-    Private Sub txtSndFWinner_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndFWinner.MouseDoubleClick
-        txtSndFWinner.Text = GetSoundFile(txtSndFWinner.Text)
-    End Sub
-
-    Private Sub txtSndATAStart_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndATAStart.MouseDoubleClick
-        txtSndATAStart.Text = GetSoundFile(txtSndATAStart.Text)
-    End Sub
-
-    Private Sub txtSndATAVoting_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndATAVoting.MouseDoubleClick
-        txtSndATAVoting.Text = GetSoundFile(txtSndATAVoting.Text)
-    End Sub
-
-    Private Sub txtSndATAEnd_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndATAEnd.MouseDoubleClick
-        txtSndATAEnd.Text = GetSoundFile(txtSndATAEnd.Text)
-    End Sub
-
-    Private Sub txtSndP1Start_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndP1Start.MouseDoubleClick
-        txtSndP1Start.Text = GetSoundFile(txtSndP1Start.Text)
-    End Sub
-
-    Private Sub txtSndP1Clock_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndP1Clock.MouseDoubleClick
-        txtSndP1Clock.Text = GetSoundFile(txtSndP1Clock.Text)
-    End Sub
-
-    Private Sub txtSndP1EndEarly_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndP1EndEarly.MouseDoubleClick
-        txtSndP1EndEarly.Text = GetSoundFile(txtSndP1EndEarly.Text)
-    End Sub
-
-    Private Sub txtSndSwitchActivate_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndSwitchActivate.MouseDoubleClick
-        txtSndSwitchActivate.Text = GetSoundFile(txtSndSwitchActivate.Text)
-    End Sub
-
-    Private Sub txtSndSwitchShowCorrect_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndSwitchShowCorrect.MouseDoubleClick
-        txtSndSwitchShowCorrect.Text = GetSoundFile(txtSndSwitchShowCorrect.Text)
-    End Sub
-
-    Private Sub txtSndSwitchClear_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSndSwitchClear.MouseDoubleClick
-        txtSndSwitchClear.Text = GetSoundFile(txtSndSwitchClear.Text)
-    End Sub
-
-    Private Sub txtSnd5050Use_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles txtSnd5050Use.MouseDoubleClick
-        txtSnd5050Use.Text = GetSoundFile(txtSnd5050Use.Text)
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Game.CurrentProfile.SaveSettings()
+        MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 End Class

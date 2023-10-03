@@ -5,11 +5,11 @@
 
     Public Shared Sub NewUser()
         If a = 0 Then
-            ControlPanel.firstuse = True
+            Game.firstQuestion = True
             Game.level = 0
             ControlPanel.nmrLevel.Value = 0
             Game.SetValues()
-            ControlPanel.walkaway = False
+            Game.walkaway = False
 
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""
@@ -127,7 +127,7 @@
 
             Question.act = 0
             My.Computer.Audio.Play(My.Resources.hello_long, AudioPlayMode.Background)
-            ControlPanel.walkaway = False
+            Game.walkaway = False
             a = 1
         ElseIf a = 1 Then
             ControlPanel.intSound += 1

@@ -133,6 +133,7 @@
     <Compile Include="Source_Scripts\DatabaseAndSettings\Data.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Message.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
+    <Compile Include="Source_Scripts\Classes\Sounds.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -146,7 +147,6 @@
       <DependentUpon>ControlPanel.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source_Scripts\correct.vb" />
     <Compile Include="Windows\CoreConsole.Designer.vb">
       <DependentUpon>CoreConsole.vb</DependentUpon>
     </Compile>

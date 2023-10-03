@@ -63,7 +63,6 @@ Partial Class ControlPanel
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.chkCorrectAnswer = New System.Windows.Forms.CheckBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTime = New System.Windows.Forms.Label()
         Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
@@ -127,7 +126,6 @@ Partial Class ControlPanel
         Me.btnTestLifeline = New System.Windows.Forms.Button()
         Me.btnUndo = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.grpLifelines.SuspendLayout()
@@ -143,7 +141,7 @@ Partial Class ControlPanel
         Me.txtQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtQuestion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuestion.ForeColor = System.Drawing.Color.Black
-        Me.txtQuestion.Location = New System.Drawing.Point(20, 242)
+        Me.txtQuestion.Location = New System.Drawing.Point(20, 278)
         Me.txtQuestion.Multiline = True
         Me.txtQuestion.Name = "txtQuestion"
         Me.txtQuestion.ReadOnly = True
@@ -157,7 +155,7 @@ Partial Class ControlPanel
         Me.txtA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtA.ForeColor = System.Drawing.Color.Black
-        Me.txtA.Location = New System.Drawing.Point(97, 294)
+        Me.txtA.Location = New System.Drawing.Point(97, 330)
         Me.txtA.Name = "txtA"
         Me.txtA.ReadOnly = True
         Me.txtA.Size = New System.Drawing.Size(219, 26)
@@ -169,7 +167,7 @@ Partial Class ControlPanel
         Me.txtC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtC.ForeColor = System.Drawing.Color.Black
-        Me.txtC.Location = New System.Drawing.Point(97, 326)
+        Me.txtC.Location = New System.Drawing.Point(97, 362)
         Me.txtC.Name = "txtC"
         Me.txtC.ReadOnly = True
         Me.txtC.Size = New System.Drawing.Size(219, 26)
@@ -181,7 +179,7 @@ Partial Class ControlPanel
         Me.txtD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtD.ForeColor = System.Drawing.Color.Black
-        Me.txtD.Location = New System.Drawing.Point(322, 326)
+        Me.txtD.Location = New System.Drawing.Point(322, 362)
         Me.txtD.Name = "txtD"
         Me.txtD.ReadOnly = True
         Me.txtD.Size = New System.Drawing.Size(219, 26)
@@ -193,7 +191,7 @@ Partial Class ControlPanel
         Me.txtB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtB.ForeColor = System.Drawing.Color.Black
-        Me.txtB.Location = New System.Drawing.Point(322, 294)
+        Me.txtB.Location = New System.Drawing.Point(322, 330)
         Me.txtB.Name = "txtB"
         Me.txtB.ReadOnly = True
         Me.txtB.Size = New System.Drawing.Size(219, 26)
@@ -201,9 +199,9 @@ Partial Class ControlPanel
         '
         'btnSndOpening
         '
-        Me.btnSndOpening.Location = New System.Drawing.Point(9, 29)
+        Me.btnSndOpening.Location = New System.Drawing.Point(9, 52)
         Me.btnSndOpening.Name = "btnSndOpening"
-        Me.btnSndOpening.Size = New System.Drawing.Size(75, 28)
+        Me.btnSndOpening.Size = New System.Drawing.Size(75, 22)
         Me.btnSndOpening.TabIndex = 10
         Me.btnSndOpening.Text = "Opening"
         Me.btnSndOpening.UseVisualStyleBackColor = True
@@ -235,7 +233,7 @@ Partial Class ControlPanel
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(165, 119)
+        Me.Label1.Location = New System.Drawing.Point(179, 83)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 15
@@ -243,7 +241,7 @@ Partial Class ControlPanel
         '
         'nmrLevel
         '
-        Me.nmrLevel.Location = New System.Drawing.Point(249, 135)
+        Me.nmrLevel.Location = New System.Drawing.Point(309, 79)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
@@ -274,18 +272,18 @@ Partial Class ControlPanel
         '
         'btnCommercial
         '
-        Me.btnCommercial.Location = New System.Drawing.Point(87, 29)
+        Me.btnCommercial.Location = New System.Drawing.Point(9, 73)
         Me.btnCommercial.Name = "btnCommercial"
-        Me.btnCommercial.Size = New System.Drawing.Size(75, 28)
+        Me.btnCommercial.Size = New System.Drawing.Size(75, 23)
         Me.btnCommercial.TabIndex = 19
-        Me.btnCommercial.Text = "Commercial"
+        Me.btnCommercial.Text = "Commercials"
         Me.btnCommercial.UseVisualStyleBackColor = True
         '
         'btnClosing
         '
-        Me.btnClosing.Location = New System.Drawing.Point(165, 29)
+        Me.btnClosing.Location = New System.Drawing.Point(9, 95)
         Me.btnClosing.Name = "btnClosing"
-        Me.btnClosing.Size = New System.Drawing.Size(75, 28)
+        Me.btnClosing.Size = New System.Drawing.Size(75, 23)
         Me.btnClosing.TabIndex = 21
         Me.btnClosing.Text = "Closing"
         Me.btnClosing.UseVisualStyleBackColor = True
@@ -294,7 +292,7 @@ Partial Class ControlPanel
         '
         Me.txtCorrect.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorrect.Location = New System.Drawing.Point(390, 364)
+        Me.txtCorrect.Location = New System.Drawing.Point(390, 396)
         Me.txtCorrect.Name = "txtCorrect"
         Me.txtCorrect.ReadOnly = True
         Me.txtCorrect.Size = New System.Drawing.Size(78, 20)
@@ -306,7 +304,7 @@ Partial Class ControlPanel
         Me.txtWrong.BackColor = System.Drawing.Color.Red
         Me.txtWrong.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWrong.ForeColor = System.Drawing.Color.White
-        Me.txtWrong.Location = New System.Drawing.Point(390, 390)
+        Me.txtWrong.Location = New System.Drawing.Point(390, 415)
         Me.txtWrong.Name = "txtWrong"
         Me.txtWrong.ReadOnly = True
         Me.txtWrong.Size = New System.Drawing.Size(78, 20)
@@ -317,7 +315,7 @@ Partial Class ControlPanel
         '
         Me.txtCurrent.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrent.Location = New System.Drawing.Point(390, 416)
+        Me.txtCurrent.Location = New System.Drawing.Point(390, 434)
         Me.txtCurrent.Name = "txtCurrent"
         Me.txtCurrent.ReadOnly = True
         Me.txtCurrent.Size = New System.Drawing.Size(78, 20)
@@ -328,7 +326,7 @@ Partial Class ControlPanel
         '
         Me.txtDrop.BackColor = System.Drawing.Color.Aqua
         Me.txtDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDrop.Location = New System.Drawing.Point(518, 364)
+        Me.txtDrop.Location = New System.Drawing.Point(508, 396)
         Me.txtDrop.Name = "txtDrop"
         Me.txtDrop.ReadOnly = True
         Me.txtDrop.Size = New System.Drawing.Size(78, 20)
@@ -340,7 +338,7 @@ Partial Class ControlPanel
         Me.txtQLeft.BackColor = System.Drawing.Color.Blue
         Me.txtQLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQLeft.ForeColor = System.Drawing.Color.White
-        Me.txtQLeft.Location = New System.Drawing.Point(518, 390)
+        Me.txtQLeft.Location = New System.Drawing.Point(508, 415)
         Me.txtQLeft.Name = "txtQLeft"
         Me.txtQLeft.ReadOnly = True
         Me.txtQLeft.Size = New System.Drawing.Size(78, 20)
@@ -350,7 +348,7 @@ Partial Class ControlPanel
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(482, 367)
+        Me.Label2.Location = New System.Drawing.Point(472, 399)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 27
@@ -359,7 +357,7 @@ Partial Class ControlPanel
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(482, 393)
+        Me.Label3.Location = New System.Drawing.Point(472, 418)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 13)
         Me.Label3.TabIndex = 28
@@ -368,7 +366,7 @@ Partial Class ControlPanel
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(344, 367)
+        Me.Label4.Location = New System.Drawing.Point(344, 399)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 29
@@ -377,7 +375,7 @@ Partial Class ControlPanel
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(344, 393)
+        Me.Label5.Location = New System.Drawing.Point(344, 418)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 30
@@ -386,7 +384,7 @@ Partial Class ControlPanel
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(343, 419)
+        Me.Label6.Location = New System.Drawing.Point(343, 437)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 13)
         Me.Label6.TabIndex = 31
@@ -395,9 +393,10 @@ Partial Class ControlPanel
         'lblAnswer
         '
         Me.lblAnswer.AutoSize = True
-        Me.lblAnswer.Location = New System.Drawing.Point(3, 3)
+        Me.lblAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblAnswer.Location = New System.Drawing.Point(175, 72)
         Me.lblAnswer.Name = "lblAnswer"
-        Me.lblAnswer.Size = New System.Drawing.Size(24, 13)
+        Me.lblAnswer.Size = New System.Drawing.Size(36, 24)
         Me.lblAnswer.TabIndex = 33
         Me.lblAnswer.Text = "n/a"
         '
@@ -406,7 +405,7 @@ Partial Class ControlPanel
         Me.btnA.BackColor = System.Drawing.Color.Black
         Me.btnA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnA.ForeColor = System.Drawing.Color.White
-        Me.btnA.Location = New System.Drawing.Point(20, 294)
+        Me.btnA.Location = New System.Drawing.Point(20, 330)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(71, 26)
         Me.btnA.TabIndex = 34
@@ -418,7 +417,7 @@ Partial Class ControlPanel
         Me.btnB.BackColor = System.Drawing.Color.Black
         Me.btnB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnB.ForeColor = System.Drawing.Color.White
-        Me.btnB.Location = New System.Drawing.Point(547, 294)
+        Me.btnB.Location = New System.Drawing.Point(547, 330)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(71, 26)
         Me.btnB.TabIndex = 35
@@ -430,7 +429,7 @@ Partial Class ControlPanel
         Me.btnC.BackColor = System.Drawing.Color.Black
         Me.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnC.ForeColor = System.Drawing.Color.White
-        Me.btnC.Location = New System.Drawing.Point(20, 326)
+        Me.btnC.Location = New System.Drawing.Point(20, 362)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(71, 26)
         Me.btnC.TabIndex = 36
@@ -442,7 +441,7 @@ Partial Class ControlPanel
         Me.btnD.BackColor = System.Drawing.Color.Black
         Me.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnD.ForeColor = System.Drawing.Color.White
-        Me.btnD.Location = New System.Drawing.Point(547, 326)
+        Me.btnD.Location = New System.Drawing.Point(547, 362)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(71, 26)
         Me.btnD.TabIndex = 37
@@ -455,7 +454,7 @@ Partial Class ControlPanel
         Me.btnStopPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStopPC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStopPC.ForeColor = System.Drawing.Color.White
-        Me.btnStopPC.Location = New System.Drawing.Point(567, 137)
+        Me.btnStopPC.Location = New System.Drawing.Point(206, 24)
         Me.btnStopPC.Name = "btnStopPC"
         Me.btnStopPC.Size = New System.Drawing.Size(54, 25)
         Me.btnStopPC.TabIndex = 38
@@ -502,7 +501,7 @@ Partial Class ControlPanel
         'txtID
         '
         Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(568, 114)
+        Me.txtID.Location = New System.Drawing.Point(9, 27)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(28, 20)
@@ -512,7 +511,7 @@ Partial Class ControlPanel
         '
         Me.chkUsed.AutoSize = True
         Me.chkUsed.Enabled = False
-        Me.chkUsed.Location = New System.Drawing.Point(602, 117)
+        Me.chkUsed.Location = New System.Drawing.Point(43, 30)
         Me.chkUsed.Name = "chkUsed"
         Me.chkUsed.Size = New System.Drawing.Size(15, 14)
         Me.chkUsed.TabIndex = 48
@@ -523,7 +522,7 @@ Partial Class ControlPanel
         Me.Button2.BackColor = System.Drawing.Color.Maroon
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(110, 62)
+        Me.Button2.Location = New System.Drawing.Point(87, 52)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(95, 24)
         Me.Button2.TabIndex = 49
@@ -549,22 +548,12 @@ Partial Class ControlPanel
         'chkCorrectAnswer
         '
         Me.chkCorrectAnswer.AutoSize = True
-        Me.chkCorrectAnswer.Location = New System.Drawing.Point(11, 108)
+        Me.chkCorrectAnswer.Location = New System.Drawing.Point(176, 52)
         Me.chkCorrectAnswer.Name = "chkCorrectAnswer"
         Me.chkCorrectAnswer.Size = New System.Drawing.Size(90, 17)
         Me.chkCorrectAnswer.TabIndex = 52
         Me.chkCorrectAnswer.Text = "Show Correct"
         Me.chkCorrectAnswer.UseVisualStyleBackColor = True
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Transparent
-        Me.Panel1.Controls.Add(Me.lblAnswer)
-        Me.Panel1.Location = New System.Drawing.Point(107, 106)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(62, 20)
-        Me.Panel1.TabIndex = 53
-        Me.Panel1.Visible = False
         '
         'Timer2
         '
@@ -574,7 +563,7 @@ Partial Class ControlPanel
         '
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(550, 177)
+        Me.lblTime.Location = New System.Drawing.Point(116, 88)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(46, 26)
         Me.lblTime.TabIndex = 56
@@ -605,9 +594,11 @@ Partial Class ControlPanel
         Me.grpRules.Controls.Add(Me.btnLL1)
         Me.grpRules.Controls.Add(Me.btnRules)
         Me.grpRules.Controls.Add(Me.btnTreePr)
-        Me.grpRules.Location = New System.Drawing.Point(251, 27)
+        Me.grpRules.Controls.Add(Me.nmrLevel)
+        Me.grpRules.Controls.Add(Me.Label1)
+        Me.grpRules.Location = New System.Drawing.Point(260, 27)
         Me.grpRules.Name = "grpRules"
-        Me.grpRules.Size = New System.Drawing.Size(367, 85)
+        Me.grpRules.Size = New System.Drawing.Size(358, 111)
         Me.grpRules.TabIndex = 57
         Me.grpRules.TabStop = False
         Me.grpRules.Text = "Money Tree"
@@ -738,7 +729,7 @@ Partial Class ControlPanel
         Me.txtExplain.BackColor = System.Drawing.Color.White
         Me.txtExplain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtExplain.ForeColor = System.Drawing.Color.White
-        Me.txtExplain.Location = New System.Drawing.Point(346, 471)
+        Me.txtExplain.Location = New System.Drawing.Point(346, 460)
         Me.txtExplain.Multiline = True
         Me.txtExplain.Name = "txtExplain"
         Me.txtExplain.ReadOnly = True
@@ -749,7 +740,7 @@ Partial Class ControlPanel
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(343, 453)
+        Me.Label8.Location = New System.Drawing.Point(526, 446)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 13)
         Me.Label8.TabIndex = 61
@@ -811,19 +802,19 @@ Partial Class ControlPanel
         'QuestionsEditorToolStripMenuItem
         '
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
         Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         Me.ProfileEditorToolStripMenuItem.Visible = False
         '
@@ -898,17 +889,20 @@ Partial Class ControlPanel
         '
         'grpLifelines
         '
+        Me.grpLifelines.Controls.Add(Me.btnTestLifeline)
         Me.grpLifelines.Controls.Add(Me.btn5050)
         Me.grpLifelines.Controls.Add(Me.btnPlusOne)
         Me.grpLifelines.Controls.Add(Me.chkVote)
         Me.grpLifelines.Controls.Add(Me.btnVote)
+        Me.grpLifelines.Controls.Add(Me.grpATAInfo)
         Me.grpLifelines.Controls.Add(Me.btnSwitch)
         Me.grpLifelines.Controls.Add(Me.chk5050)
         Me.grpLifelines.Controls.Add(Me.chkPlusOne)
         Me.grpLifelines.Controls.Add(Me.chkSwitch)
-        Me.grpLifelines.Location = New System.Drawing.Point(11, 158)
+        Me.grpLifelines.Controls.Add(Me.lblTime)
+        Me.grpLifelines.Location = New System.Drawing.Point(11, 143)
         Me.grpLifelines.Name = "grpLifelines"
-        Me.grpLifelines.Size = New System.Drawing.Size(293, 81)
+        Me.grpLifelines.Size = New System.Drawing.Size(293, 134)
         Me.grpLifelines.TabIndex = 75
         Me.grpLifelines.TabStop = False
         Me.grpLifelines.Text = "Lifelines"
@@ -960,16 +954,17 @@ Partial Class ControlPanel
         '
         'grpMain
         '
+        Me.grpMain.Controls.Add(Me.lblAnswer)
         Me.grpMain.Controls.Add(Me.btnLightsDown)
         Me.grpMain.Controls.Add(Me.btnWalk)
+        Me.grpMain.Controls.Add(Me.btnUndo)
         Me.grpMain.Controls.Add(Me.btnQuit)
         Me.grpMain.Controls.Add(Me.btnReveal)
         Me.grpMain.Controls.Add(Me.btnNewQuestion)
-        Me.grpMain.Controls.Add(Me.Panel1)
         Me.grpMain.Controls.Add(Me.chkCorrectAnswer)
-        Me.grpMain.Location = New System.Drawing.Point(299, 106)
+        Me.grpMain.Location = New System.Drawing.Point(310, 144)
         Me.grpMain.Name = "grpMain"
-        Me.grpMain.Size = New System.Drawing.Size(182, 133)
+        Me.grpMain.Size = New System.Drawing.Size(308, 132)
         Me.grpMain.TabIndex = 76
         Me.grpMain.TabStop = False
         Me.grpMain.Text = "Main"
@@ -977,9 +972,9 @@ Partial Class ControlPanel
         'grpTV
         '
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
-        Me.grpTV.Location = New System.Drawing.Point(9, 116)
+        Me.grpTV.Location = New System.Drawing.Point(342, 526)
         Me.grpTV.Name = "grpTV"
-        Me.grpTV.Size = New System.Drawing.Size(139, 39)
+        Me.grpTV.Size = New System.Drawing.Size(254, 36)
         Me.grpTV.TabIndex = 78
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
@@ -990,9 +985,9 @@ Partial Class ControlPanel
         Me.grpATAInfo.Controls.Add(Me.lblATA_C)
         Me.grpATAInfo.Controls.Add(Me.lblATA_B)
         Me.grpATAInfo.Controls.Add(Me.lblATA_A)
-        Me.grpATAInfo.Location = New System.Drawing.Point(489, 114)
+        Me.grpATAInfo.Location = New System.Drawing.Point(6, 84)
         Me.grpATAInfo.Name = "grpATAInfo"
-        Me.grpATAInfo.Size = New System.Drawing.Size(57, 91)
+        Me.grpATAInfo.Size = New System.Drawing.Size(104, 48)
         Me.grpATAInfo.TabIndex = 79
         Me.grpATAInfo.TabStop = False
         Me.grpATAInfo.Text = "ATA"
@@ -1000,7 +995,7 @@ Partial Class ControlPanel
         'lblATA_D
         '
         Me.lblATA_D.AutoSize = True
-        Me.lblATA_D.Location = New System.Drawing.Point(10, 65)
+        Me.lblATA_D.Location = New System.Drawing.Point(52, 27)
         Me.lblATA_D.Name = "lblATA_D"
         Me.lblATA_D.Size = New System.Drawing.Size(27, 13)
         Me.lblATA_D.TabIndex = 3
@@ -1009,7 +1004,7 @@ Partial Class ControlPanel
         'lblATA_C
         '
         Me.lblATA_C.AutoSize = True
-        Me.lblATA_C.Location = New System.Drawing.Point(11, 51)
+        Me.lblATA_C.Location = New System.Drawing.Point(13, 27)
         Me.lblATA_C.Name = "lblATA_C"
         Me.lblATA_C.Size = New System.Drawing.Size(26, 13)
         Me.lblATA_C.TabIndex = 2
@@ -1018,7 +1013,7 @@ Partial Class ControlPanel
         'lblATA_B
         '
         Me.lblATA_B.AutoSize = True
-        Me.lblATA_B.Location = New System.Drawing.Point(11, 36)
+        Me.lblATA_B.Location = New System.Drawing.Point(52, 14)
         Me.lblATA_B.Name = "lblATA_B"
         Me.lblATA_B.Size = New System.Drawing.Size(26, 13)
         Me.lblATA_B.TabIndex = 1
@@ -1027,7 +1022,7 @@ Partial Class ControlPanel
         'lblATA_A
         '
         Me.lblATA_A.AutoSize = True
-        Me.lblATA_A.Location = New System.Drawing.Point(11, 21)
+        Me.lblATA_A.Location = New System.Drawing.Point(11, 14)
         Me.lblATA_A.Name = "lblATA_A"
         Me.lblATA_A.Size = New System.Drawing.Size(26, 13)
         Me.lblATA_A.TabIndex = 0
@@ -1041,7 +1036,7 @@ Partial Class ControlPanel
         '
         Me.btnFFF.BackColor = System.Drawing.Color.LightCoral
         Me.btnFFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFFF.Location = New System.Drawing.Point(9, 63)
+        Me.btnFFF.Location = New System.Drawing.Point(87, 76)
         Me.btnFFF.Name = "btnFFF"
         Me.btnFFF.Size = New System.Drawing.Size(95, 23)
         Me.btnFFF.TabIndex = 80
@@ -1062,9 +1057,9 @@ Partial Class ControlPanel
         '
         'btnSendToHost
         '
-        Me.btnSendToHost.Location = New System.Drawing.Point(6, 153)
+        Me.btnSendToHost.Location = New System.Drawing.Point(240, 101)
         Me.btnSendToHost.Name = "btnSendToHost"
-        Me.btnSendToHost.Size = New System.Drawing.Size(87, 23)
+        Me.btnSendToHost.Size = New System.Drawing.Size(60, 35)
         Me.btnSendToHost.TabIndex = 84
         Me.btnSendToHost.Text = "Send to Host"
         Me.btnSendToHost.UseVisualStyleBackColor = True
@@ -1075,9 +1070,9 @@ Partial Class ControlPanel
         Me.grpHostMessages.Controls.Add(Me.btnClearHostMessages)
         Me.grpHostMessages.Controls.Add(Me.txtHostMessages)
         Me.grpHostMessages.Controls.Add(Me.btnSendToHost)
-        Me.grpHostMessages.Location = New System.Drawing.Point(20, 361)
+        Me.grpHostMessages.Location = New System.Drawing.Point(20, 417)
         Me.grpHostMessages.Name = "grpHostMessages"
-        Me.grpHostMessages.Size = New System.Drawing.Size(306, 193)
+        Me.grpHostMessages.Size = New System.Drawing.Size(306, 142)
         Me.grpHostMessages.TabIndex = 85
         Me.grpHostMessages.TabStop = False
         Me.grpHostMessages.Text = "Host Messages"
@@ -1085,29 +1080,28 @@ Partial Class ControlPanel
         'drpNextHostMessage
         '
         Me.drpNextHostMessage.FormattingEnabled = True
-        Me.drpNextHostMessage.Location = New System.Drawing.Point(6, 126)
+        Me.drpNextHostMessage.Location = New System.Drawing.Point(67, 102)
         Me.drpNextHostMessage.Name = "drpNextHostMessage"
-        Me.drpNextHostMessage.Size = New System.Drawing.Size(290, 21)
+        Me.drpNextHostMessage.Size = New System.Drawing.Size(172, 21)
         Me.drpNextHostMessage.TabIndex = 86
         '
         'btnClearHostMessages
         '
-        Me.btnClearHostMessages.Location = New System.Drawing.Point(6, 101)
+        Me.btnClearHostMessages.Location = New System.Drawing.Point(1, 101)
         Me.btnClearHostMessages.Name = "btnClearHostMessages"
-        Me.btnClearHostMessages.Size = New System.Drawing.Size(113, 22)
+        Me.btnClearHostMessages.Size = New System.Drawing.Size(65, 35)
         Me.btnClearHostMessages.TabIndex = 85
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
         'btnTestLifeline
         '
-        Me.btnTestLifeline.Location = New System.Drawing.Point(487, 208)
+        Me.btnTestLifeline.Location = New System.Drawing.Point(234, 84)
         Me.btnTestLifeline.Name = "btnTestLifeline"
         Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
         Me.btnTestLifeline.TabIndex = 86
         Me.btnTestLifeline.Text = "2x"
         Me.btnTestLifeline.UseVisualStyleBackColor = True
-        Me.btnTestLifeline.Visible = False
         '
         'btnUndo
         '
@@ -1116,7 +1110,7 @@ Partial Class ControlPanel
         Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(568, 208)
+        Me.btnUndo.Location = New System.Drawing.Point(171, 16)
         Me.btnUndo.Name = "btnUndo"
         Me.btnUndo.Size = New System.Drawing.Size(49, 26)
         Me.btnUndo.TabIndex = 81
@@ -1128,11 +1122,8 @@ Partial Class ControlPanel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 564)
-        Me.Controls.Add(Me.btnTestLifeline)
         Me.Controls.Add(Me.grpHostMessages)
-        Me.Controls.Add(Me.btnUndo)
         Me.Controls.Add(Me.btnFFF)
-        Me.Controls.Add(Me.grpATAInfo)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.grpTV)
         Me.Controls.Add(Me.grpLifelines)
@@ -1142,7 +1133,6 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.btnB)
         Me.Controls.Add(Me.btnA)
         Me.Controls.Add(Me.txtExplain)
-        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.chkUsed)
         Me.Controls.Add(Me.btnStopPC)
@@ -1158,8 +1148,6 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.txtCorrect)
         Me.Controls.Add(Me.btnClosing)
         Me.Controls.Add(Me.btnCommercial)
-        Me.Controls.Add(Me.nmrLevel)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.btnSndOpening)
         Me.Controls.Add(Me.txtD)
         Me.Controls.Add(Me.txtC)
@@ -1176,9 +1164,8 @@ Partial Class ControlPanel
         Me.Name = "ControlPanel"
         Me.Text = "The Millionaire Game"
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.grpRules.ResumeLayout(False)
+        Me.grpRules.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.grpLifelines.ResumeLayout(False)
@@ -1236,7 +1223,6 @@ Partial Class ControlPanel
     Friend WithEvents btnQuit As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents chkCorrectAnswer As CheckBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Button4 As Button
     Friend WithEvents Timer2 As Timer
     Friend WithEvents lblTime As Label

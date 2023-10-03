@@ -5,6 +5,9 @@
     ' Game info variables
     Public Shared gamemode As Integer = 0
     Public Shared level As Integer = 0
+    Public Shared firstQuestion As Boolean = True
+    Public Shared intoCommercials As Boolean = False
+    Public Shared walkaway As Boolean = False
     Public Shared varCurrent As String = "0"
     Public Shared varCorrect As String = "0"
     Public Shared varWrong As String = "0"
