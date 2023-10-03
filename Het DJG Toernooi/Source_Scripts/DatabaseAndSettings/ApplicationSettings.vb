@@ -212,6 +212,18 @@ Public Class Profile
             Options.snd_Q14LightsDown = loadedvalues.snd_Q14LightsDown
             Options.snd_Q15LightsDown = loadedvalues.snd_Q15LightsDown
 
+            Options.snd_Q1to5LightsDown_Stop = loadedvalues.snd_Q1to5LightsDown_Stop
+            Options.snd_Q6LightsDown_Stop = loadedvalues.snd_Q6LightsDown_Stop
+            Options.snd_Q7LightsDown_Stop = loadedvalues.snd_Q7LightsDown_Stop
+            Options.snd_Q8LightsDown_Stop = loadedvalues.snd_Q8LightsDown_Stop
+            Options.snd_Q9LightsDown_Stop = loadedvalues.snd_Q9LightsDown_Stop
+            Options.snd_Q10LightsDown_Stop = loadedvalues.snd_Q10LightsDown_Stop
+            Options.snd_Q11LightsDown_Stop = loadedvalues.snd_Q11LightsDown_Stop
+            Options.snd_Q12LightsDown_Stop = loadedvalues.snd_Q12LightsDown_Stop
+            Options.snd_Q13LightsDown_Stop = loadedvalues.snd_Q13LightsDown_Stop
+            Options.snd_Q14LightsDown_Stop = loadedvalues.snd_Q14LightsDown_Stop
+            Options.snd_Q15LightsDown_Stop = loadedvalues.snd_Q15LightsDown_Stop
+
             Options.snd_Q1to5Bed = loadedvalues.snd_Q1to5Bed
             Options.snd_Q6Bed = loadedvalues.snd_Q6Bed
             Options.snd_Q7Bed = loadedvalues.snd_Q7Bed

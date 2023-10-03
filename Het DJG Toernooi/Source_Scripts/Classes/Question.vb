@@ -207,6 +207,7 @@ Public Class Question
             End Select
         End If
         Dim stopaudio As New Thread(Sub() Sounds.StopAudio("comb_forlights", 400))
+        stopaudio.Start()
     End Sub
 
     Public Shared Sub PlayQuestionCue()
@@ -219,106 +220,166 @@ Public Class Question
 
             Select Case Game.level
                 Case 0
+                    If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 1
+                    If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 2
+                    If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 3
+                    If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 4
+                    If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 5
+                    If Profile.Options.snd_Q6LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 6
+                    If Profile.Options.snd_Q7LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 7
+                    If Profile.Options.snd_Q8LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 8
+                    If Profile.Options.snd_Q9LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 9
+                    If Profile.Options.snd_Q10LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 10
+                    If Profile.Options.snd_Q11LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 11
+                    If Profile.Options.snd_Q12LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 12
+                    If Profile.Options.snd_Q13LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 13
+                    If Profile.Options.snd_Q14LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
                 Case 14
+                    If Profile.Options.snd_Q15LightsDown_Stop = True Then
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        stopmusic.Start()
+                    End If
                     With Sounds.sndQuestion
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Bed
                         .settings.setMode("Loop", True)
                         .controls.play()
                     End With
             End Select
-
-            If Game.level < 5 Then
-                Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 0))
-                stopmusic.Start()
-            End If
         End If
     End Sub
 
     Public Shared Sub PlayFinalAnswerCue()
         If Game.walkaway = False Then
+            If Game.level > 4 Then
+                Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 300))
+                stopmusic.Start()
+            End If
+
             Select Case Game.level
                 Case 0
                     If Profile.Options.snd_Q1Final IsNot "" Then
@@ -356,61 +417,51 @@ Public Class Question
                         End With
                     End If
                 Case 5
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Final
                         .controls.play()
                     End With
                 Case 6
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Final
                         .controls.play()
                     End With
                 Case 7
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Final
                         .controls.play()
                     End With
                 Case 8
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Final
                         .controls.play()
                     End With
                 Case 9
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Final
                         .controls.play()
                     End With
                 Case 10
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Final
                         .controls.play()
                     End With
                 Case 11
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Final
                         .controls.play()
                     End With
                 Case 12
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Final
                         .controls.play()
                     End With
                 Case 13
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Final
                         .controls.play()
                     End With
                 Case 14
-                    Sounds.sndQuestion.controls.stop()
                     With Sounds.sndFinal
                         .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Final
                         .controls.play()
