@@ -376,7 +376,7 @@ Public Class Question
     Public Shared Sub PlayFinalAnswerCue()
         If Game.walkaway = False Then
             If Game.level > 4 Then
-                Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 300))
+                Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 150))
                 stopmusic.Start()
             End If
 
