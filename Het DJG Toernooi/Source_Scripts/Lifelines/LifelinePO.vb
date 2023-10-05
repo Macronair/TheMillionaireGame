@@ -4,19 +4,26 @@
 
     Public Sub LifelineUse1()
         If plusone = 0 Then
-            TVControlPnl.grpATA.Visible = False
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(20, False, 750)
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Start
+                .controls.play()
             End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("question", 120))
+            stopaudio.Start()
+
             plusone = plusone + 1
+
+            TVControlPnl.grpATA.Visible = False
             HostScreen.lblPlusOneUsed.ForeColor = Color.Cyan
             TVControlPnl.pnlQuestion.Visible = False
-            ControlPanel.Timer1.Start()
         ElseIf plusone = 1 Then
-            My.Computer.Audio.Play(My.Resources.paf_countdown, AudioPlayMode.Background)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Clock
+                .controls.play()
+            End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("lifeline1", 50))
+            stopaudio.Start()
+
             HostScreen.lblTime.Text = "30"
             GuestScreen.lblTime.Text = "30"
             ControlPanel.lblTime.Text = "30"
@@ -29,20 +36,22 @@
             ControlPanel.Timer2.Start()
             ControlPanel.tmrTime.Start()
         ElseIf plusone = 2 Then
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(22, False, 750)
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_EndEarly
+                .controls.play()
             End With
-            ControlPanel.Timer1.Start()
+            Threading.Thread.Sleep(20)
+            Sounds.sndLifeline2.close()
+            Threading.Thread.Sleep(400)
+
+            Question.PlayQuestionCue()
+
             HostScreen.lblTime.Visible = False
             GuestScreen.lblTime.Visible = False
             ControlPanel.lblTime.Visible = False
             ControlPanel.tmrTime.Stop()
             plusone = 0
             TVControlPnl.lblTime.Visible = False
-            ControlPanel.tmrResume.Start()
             ControlPanel.chkPlusOne.Checked = False
             HostScreen.picPO.Image = My.Resources.lifeline_3_used
             GuestScreen.picPO.Image = My.Resources.lifeline_3_used

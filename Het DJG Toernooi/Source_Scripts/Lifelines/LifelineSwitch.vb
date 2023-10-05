@@ -2,21 +2,20 @@
     Dim act As Integer = 0
     Public Sub LifelineUse1()
         If act = 0 Then
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_Activate
+                .controls.play()
+            End With
+
             TVControlPnl.picLifelineUse.Image = My.Resources.lifeline_2
             TVControlPnl.picLifelineUse.Visible = True
             TVControlPnl.grpATA.Visible = False
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(9, False, 1000)
-            End With
             HostScreen.lblSwitchUsed.ForeColor = Color.Cyan
             HostScreen.pnlAnswer.BackColor = Color.LightGray
             act = 1
         ElseIf act = 1 Then
             Dim cor_seq As New WMPLib.WindowsMediaPlayer
-            cor_seq.URL = "Sounds\stq_reveal_correct_answer.mp3"
+            cor_seq.URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_ShowCorrect
             cor_seq.controls.play()
 
             TVControlPnl.tmrFlash.Start()
@@ -42,12 +41,11 @@
             End If
             act = 2
         ElseIf act = 2 Then
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(10, False, 1000)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_Clear
+                .controls.play()
             End With
+
             TVControlPnl.grpATA.Visible = False
             TVControlPnl.pnlQuestion.Visible = False
             TVControlPnl.tmrFlash.Stop()

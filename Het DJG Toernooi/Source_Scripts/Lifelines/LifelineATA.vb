@@ -14,13 +14,25 @@
 
     Public Sub LifelineUse1()
         If act = 0 Then
-            My.Computer.Audio.Play(My.Resources.ata_start, AudioPlayMode.Background)
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_ATA_Start
+                .controls.play()
+            End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("question", 100))
+            stopaudio.Start()
+
             Question.useMusic = False
             HostScreen.lblVoteUsed.ForeColor = Color.Cyan
             act = 1
             blankSub()
         ElseIf act = 1 Then
-            My.Computer.Audio.Play(My.Resources.ata_vote, AudioPlayMode.Background)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_ATA_Voting
+                .controls.play()
+            End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("lifeline1", 100))
+            stopaudio.Start()
+
             act = 2
             TVControlPnl.tmrRandomizer.Start()
             TVControlPnl.grpATA.Visible = True
@@ -120,7 +132,10 @@
             blankSub()
         ElseIf act = 2 Then
             TVControlPnl.tmrRandomizer.Stop()
-            My.Computer.Audio.Play(My.Resources.ata_end, AudioPlayMode.Background)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_ATA_End
+                .controls.play()
+            End With
             TVControlPnl.lblATA_A.Text = "A: " + perA + "%"
             TVControlPnl.lblATA_B.Text = "B: " + perB + "%"
             TVControlPnl.lblATA_C.Text = "C: " + perC + "%"
@@ -134,7 +149,9 @@
             GuestScreen.txtATAc.Text = "C= " + perC + "%"
             GuestScreen.txtATAd.Text = "D= " + perD + "%"
 
-            ControlPanel.tmrResume.Start()
+            Threading.Thread.Sleep(30)
+            Question.PlayQuestionCue()
+
             ControlPanel.btnVote.Enabled = False
             ControlPanel.chkVote.Checked = False
             HostScreen.picVO.Image = My.Resources.lifeline_4_used

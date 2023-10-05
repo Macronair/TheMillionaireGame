@@ -114,6 +114,17 @@ Partial Class OptionsScreen
         Me.txtSndOpening = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.chkSndStopQ15LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ14LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ13LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ12LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ11LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ10LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ9LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ8LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ7LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ6LD = New System.Windows.Forms.CheckBox()
+        Me.chkSndStopQ1to5LD = New System.Windows.Forms.CheckBox()
         Me.txtSndQ10RCorrect = New System.Windows.Forms.TextBox()
         Me.Label106 = New System.Windows.Forms.Label()
         Me.txtSndQ15Wrong = New System.Windows.Forms.TextBox()
@@ -239,17 +250,14 @@ Partial Class OptionsScreen
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.chkSndStopQ1to5LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ6LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ7LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ8LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ9LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ10LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ11LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ12LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ13LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ14LD = New System.Windows.Forms.CheckBox()
-        Me.chkSndStopQ15LD = New System.Windows.Forms.CheckBox()
+        Me.txtSndDD2ndAnswer = New System.Windows.Forms.TextBox()
+        Me.Label107 = New System.Windows.Forms.Label()
+        Me.txtSndDD1stFinal = New System.Windows.Forms.TextBox()
+        Me.Label108 = New System.Windows.Forms.Label()
+        Me.txtSndDD1stAnswer = New System.Windows.Forms.TextBox()
+        Me.Label109 = New System.Windows.Forms.Label()
+        Me.txtSndDD2ndFinal = New System.Windows.Forms.TextBox()
+        Me.Label110 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -290,6 +298,14 @@ Partial Class OptionsScreen
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtSndDD2ndFinal)
+        Me.TabPage2.Controls.Add(Me.Label110)
+        Me.TabPage2.Controls.Add(Me.txtSndDD2ndAnswer)
+        Me.TabPage2.Controls.Add(Me.Label107)
+        Me.TabPage2.Controls.Add(Me.txtSndDD1stFinal)
+        Me.TabPage2.Controls.Add(Me.Label108)
+        Me.TabPage2.Controls.Add(Me.txtSndDD1stAnswer)
+        Me.TabPage2.Controls.Add(Me.Label109)
         Me.TabPage2.Controls.Add(Me.txtSndGameOver)
         Me.TabPage2.Controls.Add(Me.Label105)
         Me.TabPage2.Controls.Add(Me.txtSndWalkAway2)
@@ -480,7 +496,7 @@ Partial Class OptionsScreen
         '
         'txtSnd5050Use
         '
-        Me.txtSnd5050Use.Location = New System.Drawing.Point(1069, 330)
+        Me.txtSnd5050Use.Location = New System.Drawing.Point(1069, 458)
         Me.txtSnd5050Use.Name = "txtSnd5050Use"
         Me.txtSnd5050Use.ReadOnly = True
         Me.txtSnd5050Use.Size = New System.Drawing.Size(127, 22)
@@ -490,7 +506,7 @@ Partial Class OptionsScreen
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(926, 333)
+        Me.Label39.Location = New System.Drawing.Point(926, 461)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(74, 16)
         Me.Label39.TabIndex = 115
@@ -498,7 +514,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchClear
         '
-        Me.txtSndSwitchClear.Location = New System.Drawing.Point(1069, 283)
+        Me.txtSndSwitchClear.Location = New System.Drawing.Point(1069, 411)
         Me.txtSndSwitchClear.Name = "txtSndSwitchClear"
         Me.txtSndSwitchClear.ReadOnly = True
         Me.txtSndSwitchClear.Size = New System.Drawing.Size(127, 22)
@@ -508,7 +524,7 @@ Partial Class OptionsScreen
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(926, 286)
+        Me.Label36.Location = New System.Drawing.Point(926, 414)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(144, 16)
         Me.Label36.TabIndex = 112
@@ -516,7 +532,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchShowCorrect
         '
-        Me.txtSndSwitchShowCorrect.Location = New System.Drawing.Point(1069, 255)
+        Me.txtSndSwitchShowCorrect.Location = New System.Drawing.Point(1069, 383)
         Me.txtSndSwitchShowCorrect.Name = "txtSndSwitchShowCorrect"
         Me.txtSndSwitchShowCorrect.ReadOnly = True
         Me.txtSndSwitchShowCorrect.Size = New System.Drawing.Size(127, 22)
@@ -526,7 +542,7 @@ Partial Class OptionsScreen
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(926, 258)
+        Me.Label37.Location = New System.Drawing.Point(926, 386)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(135, 16)
         Me.Label37.TabIndex = 109
@@ -534,7 +550,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchActivate
         '
-        Me.txtSndSwitchActivate.Location = New System.Drawing.Point(1069, 227)
+        Me.txtSndSwitchActivate.Location = New System.Drawing.Point(1069, 355)
         Me.txtSndSwitchActivate.Name = "txtSndSwitchActivate"
         Me.txtSndSwitchActivate.ReadOnly = True
         Me.txtSndSwitchActivate.Size = New System.Drawing.Size(127, 22)
@@ -544,7 +560,7 @@ Partial Class OptionsScreen
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(926, 230)
+        Me.Label38.Location = New System.Drawing.Point(926, 358)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(104, 16)
         Me.Label38.TabIndex = 106
@@ -1314,6 +1330,127 @@ Partial Class OptionsScreen
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Sounds (Questions)"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ15LD
+        '
+        Me.chkSndStopQ15LD.AutoSize = True
+        Me.chkSndStopQ15LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ15LD.Location = New System.Drawing.Point(256, 383)
+        Me.chkSndStopQ15LD.Name = "chkSndStopQ15LD"
+        Me.chkSndStopQ15LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ15LD.TabIndex = 319
+        Me.chkSndStopQ15LD.Text = "Stop @ Question"
+        Me.chkSndStopQ15LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ14LD
+        '
+        Me.chkSndStopQ14LD.AutoSize = True
+        Me.chkSndStopQ14LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ14LD.Location = New System.Drawing.Point(256, 357)
+        Me.chkSndStopQ14LD.Name = "chkSndStopQ14LD"
+        Me.chkSndStopQ14LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ14LD.TabIndex = 318
+        Me.chkSndStopQ14LD.Text = "Stop @ Question"
+        Me.chkSndStopQ14LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ13LD
+        '
+        Me.chkSndStopQ13LD.AutoSize = True
+        Me.chkSndStopQ13LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ13LD.Location = New System.Drawing.Point(256, 331)
+        Me.chkSndStopQ13LD.Name = "chkSndStopQ13LD"
+        Me.chkSndStopQ13LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ13LD.TabIndex = 317
+        Me.chkSndStopQ13LD.Text = "Stop @ Question"
+        Me.chkSndStopQ13LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ12LD
+        '
+        Me.chkSndStopQ12LD.AutoSize = True
+        Me.chkSndStopQ12LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ12LD.Location = New System.Drawing.Point(256, 305)
+        Me.chkSndStopQ12LD.Name = "chkSndStopQ12LD"
+        Me.chkSndStopQ12LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ12LD.TabIndex = 316
+        Me.chkSndStopQ12LD.Text = "Stop @ Question"
+        Me.chkSndStopQ12LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ11LD
+        '
+        Me.chkSndStopQ11LD.AutoSize = True
+        Me.chkSndStopQ11LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ11LD.Location = New System.Drawing.Point(256, 280)
+        Me.chkSndStopQ11LD.Name = "chkSndStopQ11LD"
+        Me.chkSndStopQ11LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ11LD.TabIndex = 315
+        Me.chkSndStopQ11LD.Text = "Stop @ Question"
+        Me.chkSndStopQ11LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ10LD
+        '
+        Me.chkSndStopQ10LD.AutoSize = True
+        Me.chkSndStopQ10LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ10LD.Location = New System.Drawing.Point(256, 253)
+        Me.chkSndStopQ10LD.Name = "chkSndStopQ10LD"
+        Me.chkSndStopQ10LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ10LD.TabIndex = 314
+        Me.chkSndStopQ10LD.Text = "Stop @ Question"
+        Me.chkSndStopQ10LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ9LD
+        '
+        Me.chkSndStopQ9LD.AutoSize = True
+        Me.chkSndStopQ9LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ9LD.Location = New System.Drawing.Point(256, 227)
+        Me.chkSndStopQ9LD.Name = "chkSndStopQ9LD"
+        Me.chkSndStopQ9LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ9LD.TabIndex = 313
+        Me.chkSndStopQ9LD.Text = "Stop @ Question"
+        Me.chkSndStopQ9LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ8LD
+        '
+        Me.chkSndStopQ8LD.AutoSize = True
+        Me.chkSndStopQ8LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ8LD.Location = New System.Drawing.Point(256, 201)
+        Me.chkSndStopQ8LD.Name = "chkSndStopQ8LD"
+        Me.chkSndStopQ8LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ8LD.TabIndex = 312
+        Me.chkSndStopQ8LD.Text = "Stop @ Question"
+        Me.chkSndStopQ8LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ7LD
+        '
+        Me.chkSndStopQ7LD.AutoSize = True
+        Me.chkSndStopQ7LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ7LD.Location = New System.Drawing.Point(256, 174)
+        Me.chkSndStopQ7LD.Name = "chkSndStopQ7LD"
+        Me.chkSndStopQ7LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ7LD.TabIndex = 311
+        Me.chkSndStopQ7LD.Text = "Stop @ Question"
+        Me.chkSndStopQ7LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ6LD
+        '
+        Me.chkSndStopQ6LD.AutoSize = True
+        Me.chkSndStopQ6LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ6LD.Location = New System.Drawing.Point(256, 147)
+        Me.chkSndStopQ6LD.Name = "chkSndStopQ6LD"
+        Me.chkSndStopQ6LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ6LD.TabIndex = 310
+        Me.chkSndStopQ6LD.Text = "Stop @ Question"
+        Me.chkSndStopQ6LD.UseVisualStyleBackColor = True
+        '
+        'chkSndStopQ1to5LD
+        '
+        Me.chkSndStopQ1to5LD.AutoSize = True
+        Me.chkSndStopQ1to5LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chkSndStopQ1to5LD.Location = New System.Drawing.Point(256, 16)
+        Me.chkSndStopQ1to5LD.Name = "chkSndStopQ1to5LD"
+        Me.chkSndStopQ1to5LD.Size = New System.Drawing.Size(107, 17)
+        Me.chkSndStopQ1to5LD.TabIndex = 309
+        Me.chkSndStopQ1to5LD.Text = "Stop @ Question"
+        Me.chkSndStopQ1to5LD.UseVisualStyleBackColor = True
         '
         'txtSndQ10RCorrect
         '
@@ -2502,126 +2639,77 @@ Partial Class OptionsScreen
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'chkSndStopQ1to5LD
+        'txtSndDD2ndAnswer
         '
-        Me.chkSndStopQ1to5LD.AutoSize = True
-        Me.chkSndStopQ1to5LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ1to5LD.Location = New System.Drawing.Point(256, 16)
-        Me.chkSndStopQ1to5LD.Name = "chkSndStopQ1to5LD"
-        Me.chkSndStopQ1to5LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ1to5LD.TabIndex = 309
-        Me.chkSndStopQ1to5LD.Text = "Stop @ Question"
-        Me.chkSndStopQ1to5LD.UseVisualStyleBackColor = True
+        Me.txtSndDD2ndAnswer.Location = New System.Drawing.Point(1069, 281)
+        Me.txtSndDD2ndAnswer.Name = "txtSndDD2ndAnswer"
+        Me.txtSndDD2ndAnswer.ReadOnly = True
+        Me.txtSndDD2ndAnswer.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD2ndAnswer.TabIndex = 137
         '
-        'chkSndStopQ6LD
+        'Label107
         '
-        Me.chkSndStopQ6LD.AutoSize = True
-        Me.chkSndStopQ6LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ6LD.Location = New System.Drawing.Point(256, 147)
-        Me.chkSndStopQ6LD.Name = "chkSndStopQ6LD"
-        Me.chkSndStopQ6LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ6LD.TabIndex = 310
-        Me.chkSndStopQ6LD.Text = "Stop @ Question"
-        Me.chkSndStopQ6LD.UseVisualStyleBackColor = True
+        Me.Label107.AutoSize = True
+        Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label107.Location = New System.Drawing.Point(926, 284)
+        Me.Label107.Name = "Label107"
+        Me.Label107.Size = New System.Drawing.Size(105, 16)
+        Me.Label107.TabIndex = 136
+        Me.Label107.Text = "(DD) 2nd Choice"
         '
-        'chkSndStopQ7LD
+        'txtSndDD1stFinal
         '
-        Me.chkSndStopQ7LD.AutoSize = True
-        Me.chkSndStopQ7LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ7LD.Location = New System.Drawing.Point(256, 174)
-        Me.chkSndStopQ7LD.Name = "chkSndStopQ7LD"
-        Me.chkSndStopQ7LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ7LD.TabIndex = 311
-        Me.chkSndStopQ7LD.Text = "Stop @ Question"
-        Me.chkSndStopQ7LD.UseVisualStyleBackColor = True
+        Me.txtSndDD1stFinal.Location = New System.Drawing.Point(1069, 253)
+        Me.txtSndDD1stFinal.Name = "txtSndDD1stFinal"
+        Me.txtSndDD1stFinal.ReadOnly = True
+        Me.txtSndDD1stFinal.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD1stFinal.TabIndex = 135
         '
-        'chkSndStopQ8LD
+        'Label108
         '
-        Me.chkSndStopQ8LD.AutoSize = True
-        Me.chkSndStopQ8LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ8LD.Location = New System.Drawing.Point(256, 201)
-        Me.chkSndStopQ8LD.Name = "chkSndStopQ8LD"
-        Me.chkSndStopQ8LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ8LD.TabIndex = 312
-        Me.chkSndStopQ8LD.Text = "Stop @ Question"
-        Me.chkSndStopQ8LD.UseVisualStyleBackColor = True
+        Me.Label108.AutoSize = True
+        Me.Label108.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label108.Location = New System.Drawing.Point(926, 256)
+        Me.Label108.Name = "Label108"
+        Me.Label108.Size = New System.Drawing.Size(134, 16)
+        Me.Label108.TabIndex = 134
+        Me.Label108.Text = "(DD) 1st Final Answer"
         '
-        'chkSndStopQ9LD
+        'txtSndDD1stAnswer
         '
-        Me.chkSndStopQ9LD.AutoSize = True
-        Me.chkSndStopQ9LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ9LD.Location = New System.Drawing.Point(256, 227)
-        Me.chkSndStopQ9LD.Name = "chkSndStopQ9LD"
-        Me.chkSndStopQ9LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ9LD.TabIndex = 313
-        Me.chkSndStopQ9LD.Text = "Stop @ Question"
-        Me.chkSndStopQ9LD.UseVisualStyleBackColor = True
+        Me.txtSndDD1stAnswer.Location = New System.Drawing.Point(1069, 225)
+        Me.txtSndDD1stAnswer.Name = "txtSndDD1stAnswer"
+        Me.txtSndDD1stAnswer.ReadOnly = True
+        Me.txtSndDD1stAnswer.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD1stAnswer.TabIndex = 133
         '
-        'chkSndStopQ10LD
+        'Label109
         '
-        Me.chkSndStopQ10LD.AutoSize = True
-        Me.chkSndStopQ10LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ10LD.Location = New System.Drawing.Point(256, 253)
-        Me.chkSndStopQ10LD.Name = "chkSndStopQ10LD"
-        Me.chkSndStopQ10LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ10LD.TabIndex = 314
-        Me.chkSndStopQ10LD.Text = "Stop @ Question"
-        Me.chkSndStopQ10LD.UseVisualStyleBackColor = True
+        Me.Label109.AutoSize = True
+        Me.Label109.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label109.Location = New System.Drawing.Point(926, 228)
+        Me.Label109.Name = "Label109"
+        Me.Label109.Size = New System.Drawing.Size(100, 16)
+        Me.Label109.TabIndex = 132
+        Me.Label109.Text = "(DD) 1st Choice"
         '
-        'chkSndStopQ11LD
+        'txtSndDD2ndFinal
         '
-        Me.chkSndStopQ11LD.AutoSize = True
-        Me.chkSndStopQ11LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ11LD.Location = New System.Drawing.Point(256, 280)
-        Me.chkSndStopQ11LD.Name = "chkSndStopQ11LD"
-        Me.chkSndStopQ11LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ11LD.TabIndex = 315
-        Me.chkSndStopQ11LD.Text = "Stop @ Question"
-        Me.chkSndStopQ11LD.UseVisualStyleBackColor = True
+        Me.txtSndDD2ndFinal.Location = New System.Drawing.Point(1069, 309)
+        Me.txtSndDD2ndFinal.Name = "txtSndDD2ndFinal"
+        Me.txtSndDD2ndFinal.ReadOnly = True
+        Me.txtSndDD2ndFinal.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD2ndFinal.TabIndex = 139
         '
-        'chkSndStopQ12LD
+        'Label110
         '
-        Me.chkSndStopQ12LD.AutoSize = True
-        Me.chkSndStopQ12LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ12LD.Location = New System.Drawing.Point(256, 305)
-        Me.chkSndStopQ12LD.Name = "chkSndStopQ12LD"
-        Me.chkSndStopQ12LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ12LD.TabIndex = 316
-        Me.chkSndStopQ12LD.Text = "Stop @ Question"
-        Me.chkSndStopQ12LD.UseVisualStyleBackColor = True
-        '
-        'chkSndStopQ13LD
-        '
-        Me.chkSndStopQ13LD.AutoSize = True
-        Me.chkSndStopQ13LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ13LD.Location = New System.Drawing.Point(256, 331)
-        Me.chkSndStopQ13LD.Name = "chkSndStopQ13LD"
-        Me.chkSndStopQ13LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ13LD.TabIndex = 317
-        Me.chkSndStopQ13LD.Text = "Stop @ Question"
-        Me.chkSndStopQ13LD.UseVisualStyleBackColor = True
-        '
-        'chkSndStopQ14LD
-        '
-        Me.chkSndStopQ14LD.AutoSize = True
-        Me.chkSndStopQ14LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ14LD.Location = New System.Drawing.Point(256, 357)
-        Me.chkSndStopQ14LD.Name = "chkSndStopQ14LD"
-        Me.chkSndStopQ14LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ14LD.TabIndex = 318
-        Me.chkSndStopQ14LD.Text = "Stop @ Question"
-        Me.chkSndStopQ14LD.UseVisualStyleBackColor = True
-        '
-        'chkSndStopQ15LD
-        '
-        Me.chkSndStopQ15LD.AutoSize = True
-        Me.chkSndStopQ15LD.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.chkSndStopQ15LD.Location = New System.Drawing.Point(256, 383)
-        Me.chkSndStopQ15LD.Name = "chkSndStopQ15LD"
-        Me.chkSndStopQ15LD.Size = New System.Drawing.Size(107, 17)
-        Me.chkSndStopQ15LD.TabIndex = 319
-        Me.chkSndStopQ15LD.Text = "Stop @ Question"
-        Me.chkSndStopQ15LD.UseVisualStyleBackColor = True
+        Me.Label110.AutoSize = True
+        Me.Label110.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label110.Location = New System.Drawing.Point(926, 312)
+        Me.Label110.Name = "Label110"
+        Me.Label110.Size = New System.Drawing.Size(92, 16)
+        Me.Label110.TabIndex = 138
+        Me.Label110.Text = "(DD) 2nd Final"
         '
         'OptionsScreen
         '
@@ -2873,4 +2961,12 @@ Partial Class OptionsScreen
     Friend WithEvents chkSndStopQ8LD As CheckBox
     Friend WithEvents chkSndStopQ7LD As CheckBox
     Friend WithEvents chkSndStopQ6LD As CheckBox
+    Friend WithEvents txtSndDD2ndFinal As TextBox
+    Friend WithEvents Label110 As Label
+    Friend WithEvents txtSndDD2ndAnswer As TextBox
+    Friend WithEvents Label107 As Label
+    Friend WithEvents txtSndDD1stFinal As TextBox
+    Friend WithEvents Label108 As Label
+    Friend WithEvents txtSndDD1stAnswer As TextBox
+    Friend WithEvents Label109 As Label
 End Class

@@ -151,5 +151,10 @@
             ControlPanel.txtD.Text = ""
             ControlPanel.txtD.BackColor = SystemColors.Control
         End If
+
+        With Sounds.sndLifeline1
+            .URL = Sounds.SoundsPath + Profile.Options.snd_5050
+            .controls.play()
+        End With
     End Sub
 End Class

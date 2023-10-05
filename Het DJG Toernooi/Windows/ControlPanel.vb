@@ -402,12 +402,6 @@ Public Class ControlPanel
     Dim ff As New Lifeline5050
     Private Sub btn5050_Click(sender As Object, e As EventArgs) Handles btn5050.Click
         ff.LifelineUse1()
-        intSound += 1
-
-        With snd
-            .Name = "SOUND" & intSound
-            .Play(27, False, 500)
-        End With
     End Sub
 
     Dim switch As New LifelineSwitch
@@ -577,7 +571,10 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnRules.Click
-        My.Computer.Audio.Play(My.Resources.game_resume, AudioPlayMode.BackgroundLoop)
+        With Sounds.sndGeneralBed
+            .URL = Sounds.SoundsPath + Profile.Options.snd_ExplainRules
+            .controls.play()
+        End With
         HostScreen.lblExplainRules.ForeColor = Color.Blue
     End Sub
 

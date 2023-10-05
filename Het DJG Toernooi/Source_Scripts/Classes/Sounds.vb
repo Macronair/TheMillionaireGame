@@ -6,36 +6,49 @@ Public Class Sounds
     Public Shared SoundsPath As String = Application.StartupPath + "\Sounds\"
 
     Public Shared sndGeneral As New WindowsMediaPlayer()
+    Public Shared sndGeneralBed As New WindowsMediaPlayer()
     Public Shared sndLightsDown As New WindowsMediaPlayer()
     Public Shared sndQuestion As New WindowsMediaPlayer()
     Public Shared sndFinal As New WindowsMediaPlayer()
     Public Shared sndAnswer As New WindowsMediaPlayer()
 
+    Public Shared sndLifeline1 As New WindowsMediaPlayer()
+    Public Shared sndLifeline2 As New WindowsMediaPlayer()
+
     Public Shared Sub StopAudio(ByVal source As String, ByVal delayInMiliseconds As Integer)
         If delayInMiliseconds > 0 Then
             Thread.Sleep(delayInMiliseconds)
         End If
-        Select Case source
-            Case "all"
-                sndGeneral.controls.stop()
-                sndQuestion.controls.stop()
-                sndFinal.controls.stop()
-                sndAnswer.controls.stop()
-            Case "question"
-                sndQuestion.controls.stop()
-            Case "final"
-                sndFinal.controls.stop()
-            Case "answer"
-                sndAnswer.controls.stop()
-            Case "lights"
-                sndLightsDown.controls.stop()
-            Case "lights_fade"
-                LightsDownFade()
-            Case "comb_forlights"
-                sndQuestion.controls.stop()
-                sndFinal.controls.stop()
-                sndAnswer.controls.stop()
-        End Select
+        Try
+            Select Case source
+                Case "all"
+                    sndGeneral.controls.stop()
+                    sndQuestion.controls.stop()
+                    sndFinal.controls.stop()
+                    sndAnswer.controls.stop()
+                Case "question"
+                    sndQuestion.controls.stop()
+                Case "final"
+                    sndFinal.controls.stop()
+                Case "answer"
+                    sndAnswer.controls.stop()
+                Case "lightsdown"
+                    sndLightsDown.controls.stop()
+                Case "lights_fade"
+                    LightsDownFade()
+                Case "for_lightsdown"
+                    sndQuestion.controls.stop()
+                    sndFinal.controls.stop()
+                    sndAnswer.controls.stop()
+                    sndGeneralBed.controls.stop()
+                Case "lifeline1"
+                    sndLifeline1.controls.stop()
+                Case "lifeline2"
+                    sndLifeline2.controls.stop()
+            End Select
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Private Shared Sub LightsDownFade()

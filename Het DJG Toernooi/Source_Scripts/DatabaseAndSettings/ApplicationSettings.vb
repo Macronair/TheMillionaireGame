@@ -60,6 +60,10 @@ Public Class AppSettings
     Public Property snd_P1_Start As String
     Public Property snd_P1_Clock As String
     Public Property snd_P1_EndEarly As String
+    Public Property snd_Double_1stAnswer As String
+    Public Property snd_Double_1stFinal As String
+    Public Property snd_Double_2ndAnswer As String
+    Public Property snd_Double_2ndFinal As String
     Public Property snd_Switch0_Activate As String
     Public Property snd_Switch0_ShowCorrect As String
     Public Property snd_Switch0_Clear As String
@@ -195,6 +199,10 @@ Public Class Profile
             Options.snd_P1_Start = loadedvalues.snd_P1_Start
             Options.snd_P1_Clock = loadedvalues.snd_P1_Clock
             Options.snd_P1_EndEarly = loadedvalues.snd_P1_EndEarly
+            Options.snd_Double_1stAnswer = loadedvalues.snd_Double_1stAnswer
+            Options.snd_Double_1stFinal = loadedvalues.snd_Double_1stFinal
+            Options.snd_Double_2ndAnswer = loadedvalues.snd_Double_2ndAnswer
+            Options.snd_Double_2ndFinal = loadedvalues.snd_Double_2ndFinal
             Options.snd_Switch0_Activate = loadedvalues.snd_Switch0_Activate
             Options.snd_Switch0_ShowCorrect = loadedvalues.snd_Switch0_ShowCorrect
             Options.snd_Switch0_Clear = loadedvalues.snd_Switch0_Clear
@@ -322,6 +330,10 @@ Public Class Profile
         Options.snd_P1_Start = "paf_start.mp3"
         Options.snd_P1_Clock = "pad_clock.mp3"
         Options.snd_P1_EndEarly = "paf_end_call_early.mp3"
+        Options.snd_Double_1stAnswer = "doubledip_start.mp3"
+        Options.snd_Double_1stFinal = "doubledip_final1.mp3"
+        Options.snd_Double_2ndAnswer = "doubledip_wrong.mp3"
+        Options.snd_Double_2ndFinal = "doubledip_final1.mp3"
         Options.snd_Switch0_Activate = "lifeline_4_on.mp3"
         Options.snd_Switch0_ShowCorrect = "stq_reveal_correct_answer.mp3"
         Options.snd_Switch0_Clear = "stq_new_question_flip.mp3"
@@ -447,6 +459,10 @@ Public Class Profile
         Options.snd_P1_Start = OptionsScreen.txtSndP1Start.Text
         Options.snd_P1_Clock = OptionsScreen.txtSndP1Clock.Text
         Options.snd_P1_EndEarly = OptionsScreen.txtSndP1EndEarly.Text
+        Options.snd_Double_1stAnswer = OptionsScreen.txtSndDD1stAnswer.Text
+        Options.snd_Double_1stFinal = OptionsScreen.txtSndDD1stFinal.Text
+        Options.snd_Double_2ndAnswer = OptionsScreen.txtSndDD2ndAnswer.Text
+        Options.snd_Double_2ndFinal = OptionsScreen.txtSndDD2ndFinal.Text
         Options.snd_Switch0_Activate = OptionsScreen.txtSndSwitchActivate.Text
         Options.snd_Switch0_ShowCorrect = OptionsScreen.txtSndSwitchShowCorrect.Text
         Options.snd_Switch0_Clear = OptionsScreen.txtSndSwitchClear.Text

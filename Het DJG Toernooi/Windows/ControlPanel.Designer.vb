@@ -105,17 +105,19 @@ Partial Class ControlPanel
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grpLifelines = New System.Windows.Forms.GroupBox()
+        Me.btnTestLifeline = New System.Windows.Forms.Button()
         Me.btn5050 = New System.Windows.Forms.Button()
         Me.btnPlusOne = New System.Windows.Forms.Button()
         Me.btnVote = New System.Windows.Forms.Button()
-        Me.btnSwitch = New System.Windows.Forms.Button()
-        Me.grpMain = New System.Windows.Forms.GroupBox()
-        Me.grpTV = New System.Windows.Forms.GroupBox()
         Me.grpATAInfo = New System.Windows.Forms.GroupBox()
         Me.lblATA_D = New System.Windows.Forms.Label()
         Me.lblATA_C = New System.Windows.Forms.Label()
         Me.lblATA_B = New System.Windows.Forms.Label()
         Me.lblATA_A = New System.Windows.Forms.Label()
+        Me.btnSwitch = New System.Windows.Forms.Button()
+        Me.grpMain = New System.Windows.Forms.GroupBox()
+        Me.btnUndo = New System.Windows.Forms.Button()
+        Me.grpTV = New System.Windows.Forms.GroupBox()
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
         Me.btnFFF = New System.Windows.Forms.Button()
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
@@ -123,15 +125,13 @@ Partial Class ControlPanel
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
-        Me.btnTestLifeline = New System.Windows.Forms.Button()
-        Me.btnUndo = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.grpLifelines.SuspendLayout()
+        Me.grpATAInfo.SuspendLayout()
         Me.grpMain.SuspendLayout()
         Me.grpTV.SuspendLayout()
-        Me.grpATAInfo.SuspendLayout()
         Me.grpHostMessages.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -399,6 +399,7 @@ Partial Class ControlPanel
         Me.lblAnswer.Size = New System.Drawing.Size(36, 24)
         Me.lblAnswer.TabIndex = 33
         Me.lblAnswer.Text = "n/a"
+        Me.lblAnswer.Visible = False
         '
         'btnA
         '
@@ -907,6 +908,15 @@ Partial Class ControlPanel
         Me.grpLifelines.TabStop = False
         Me.grpLifelines.Text = "Lifelines"
         '
+        'btnTestLifeline
+        '
+        Me.btnTestLifeline.Location = New System.Drawing.Point(234, 84)
+        Me.btnTestLifeline.Name = "btnTestLifeline"
+        Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
+        Me.btnTestLifeline.TabIndex = 86
+        Me.btnTestLifeline.Text = "2x"
+        Me.btnTestLifeline.UseVisualStyleBackColor = True
+        '
         'btn5050
         '
         Me.btn5050.BackColor = System.Drawing.Color.Transparent
@@ -939,45 +949,6 @@ Partial Class ControlPanel
         Me.btnVote.Size = New System.Drawing.Size(65, 42)
         Me.btnVote.TabIndex = 72
         Me.btnVote.UseVisualStyleBackColor = False
-        '
-        'btnSwitch
-        '
-        Me.btnSwitch.BackColor = System.Drawing.Color.Transparent
-        Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSwitch.Enabled = False
-        Me.btnSwitch.Location = New System.Drawing.Point(219, 19)
-        Me.btnSwitch.Name = "btnSwitch"
-        Me.btnSwitch.Size = New System.Drawing.Size(65, 42)
-        Me.btnSwitch.TabIndex = 43
-        Me.btnSwitch.UseVisualStyleBackColor = False
-        '
-        'grpMain
-        '
-        Me.grpMain.Controls.Add(Me.lblAnswer)
-        Me.grpMain.Controls.Add(Me.btnLightsDown)
-        Me.grpMain.Controls.Add(Me.btnWalk)
-        Me.grpMain.Controls.Add(Me.btnUndo)
-        Me.grpMain.Controls.Add(Me.btnQuit)
-        Me.grpMain.Controls.Add(Me.btnReveal)
-        Me.grpMain.Controls.Add(Me.btnNewQuestion)
-        Me.grpMain.Controls.Add(Me.chkCorrectAnswer)
-        Me.grpMain.Location = New System.Drawing.Point(310, 144)
-        Me.grpMain.Name = "grpMain"
-        Me.grpMain.Size = New System.Drawing.Size(308, 132)
-        Me.grpMain.TabIndex = 76
-        Me.grpMain.TabStop = False
-        Me.grpMain.Text = "Main"
-        '
-        'grpTV
-        '
-        Me.grpTV.Controls.Add(Me.chkShowQuestion)
-        Me.grpTV.Location = New System.Drawing.Point(342, 526)
-        Me.grpTV.Name = "grpTV"
-        Me.grpTV.Size = New System.Drawing.Size(254, 36)
-        Me.grpTV.TabIndex = 78
-        Me.grpTV.TabStop = False
-        Me.grpTV.Text = "TV"
         '
         'grpATAInfo
         '
@@ -1027,6 +998,58 @@ Partial Class ControlPanel
         Me.lblATA_A.Size = New System.Drawing.Size(26, 13)
         Me.lblATA_A.TabIndex = 0
         Me.lblATA_A.Text = "A: 0"
+        '
+        'btnSwitch
+        '
+        Me.btnSwitch.BackColor = System.Drawing.Color.Transparent
+        Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnSwitch.Enabled = False
+        Me.btnSwitch.Location = New System.Drawing.Point(219, 19)
+        Me.btnSwitch.Name = "btnSwitch"
+        Me.btnSwitch.Size = New System.Drawing.Size(65, 42)
+        Me.btnSwitch.TabIndex = 43
+        Me.btnSwitch.UseVisualStyleBackColor = False
+        '
+        'grpMain
+        '
+        Me.grpMain.Controls.Add(Me.lblAnswer)
+        Me.grpMain.Controls.Add(Me.btnLightsDown)
+        Me.grpMain.Controls.Add(Me.btnWalk)
+        Me.grpMain.Controls.Add(Me.btnUndo)
+        Me.grpMain.Controls.Add(Me.btnQuit)
+        Me.grpMain.Controls.Add(Me.btnReveal)
+        Me.grpMain.Controls.Add(Me.btnNewQuestion)
+        Me.grpMain.Controls.Add(Me.chkCorrectAnswer)
+        Me.grpMain.Location = New System.Drawing.Point(310, 144)
+        Me.grpMain.Name = "grpMain"
+        Me.grpMain.Size = New System.Drawing.Size(308, 132)
+        Me.grpMain.TabIndex = 76
+        Me.grpMain.TabStop = False
+        Me.grpMain.Text = "Main"
+        '
+        'btnUndo
+        '
+        Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnUndo.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._36973
+        Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnUndo.Location = New System.Drawing.Point(171, 16)
+        Me.btnUndo.Name = "btnUndo"
+        Me.btnUndo.Size = New System.Drawing.Size(49, 26)
+        Me.btnUndo.TabIndex = 81
+        Me.btnUndo.UseVisualStyleBackColor = False
+        '
+        'grpTV
+        '
+        Me.grpTV.Controls.Add(Me.chkShowQuestion)
+        Me.grpTV.Location = New System.Drawing.Point(342, 526)
+        Me.grpTV.Name = "grpTV"
+        Me.grpTV.Size = New System.Drawing.Size(254, 36)
+        Me.grpTV.TabIndex = 78
+        Me.grpTV.TabStop = False
+        Me.grpTV.Text = "TV"
         '
         'tmrLifelineBling
         '
@@ -1094,28 +1117,6 @@ Partial Class ControlPanel
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
-        'btnTestLifeline
-        '
-        Me.btnTestLifeline.Location = New System.Drawing.Point(234, 84)
-        Me.btnTestLifeline.Name = "btnTestLifeline"
-        Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
-        Me.btnTestLifeline.TabIndex = 86
-        Me.btnTestLifeline.Text = "2x"
-        Me.btnTestLifeline.UseVisualStyleBackColor = True
-        '
-        'btnUndo
-        '
-        Me.btnUndo.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.btnUndo.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._36973
-        Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(171, 16)
-        Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(49, 26)
-        Me.btnUndo.TabIndex = 81
-        Me.btnUndo.UseVisualStyleBackColor = False
-        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1170,12 +1171,12 @@ Partial Class ControlPanel
         Me.MenuStrip1.PerformLayout()
         Me.grpLifelines.ResumeLayout(False)
         Me.grpLifelines.PerformLayout()
+        Me.grpATAInfo.ResumeLayout(False)
+        Me.grpATAInfo.PerformLayout()
         Me.grpMain.ResumeLayout(False)
         Me.grpMain.PerformLayout()
         Me.grpTV.ResumeLayout(False)
         Me.grpTV.PerformLayout()
-        Me.grpATAInfo.ResumeLayout(False)
-        Me.grpATAInfo.PerformLayout()
         Me.grpHostMessages.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()

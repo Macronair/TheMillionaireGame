@@ -206,7 +206,7 @@ Public Class Question
                     End With
             End Select
         End If
-        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("comb_forlights", 400))
+        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 400))
         stopaudio.Start()
     End Sub
 

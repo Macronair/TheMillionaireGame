@@ -12,19 +12,22 @@ Public Class LifeLineDouble
         active = True
         ControlPanel.Timer1.Start()
         ControlPanel.Timer2.Start()
-        dd_Start.URL = Application.StartupPath + "\Sounds\doubledip_start.mp3"
+        dd_Start.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stAnswer
         TVControlPnl.picLifelineUse.Image = My.Resources.lifeline_5
         TVControlPnl.picLifelineUse.Visible = True
         dd_Start.controls.play()
+
+        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("question", 150))
+        stopaudio.Start()
     End Sub
 
     Public Shared Sub FinalAnswer()
         Dim stopmusic1 As Thread = New Thread(AddressOf StopCue1)
         stopmusic1.Start()
         If chance = 2 Then
-            dd_Final.URL = Application.StartupPath + "\Sounds\doubledip_final1.mp3"
+            dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stFinal
         ElseIf chance = 1 Then
-            dd_Final.URL = Application.StartupPath + "\Sounds\doubledip_final2.mp3"
+            dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndFinal
             chance = 0
             active = False
         End If
@@ -34,7 +37,7 @@ Public Class LifeLineDouble
     Public Shared Sub SecondChance()
         Dim stopmusic1 As Thread = New Thread(AddressOf StopCue2)
         StopCue2()
-        dd_Wrong.URL = Application.StartupPath + "\Sounds\doubledip_wrong.mp3"
+        dd_Wrong.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndAnswer
         dd_Wrong.controls.play()
         chance = 1
     End Sub
