@@ -142,6 +142,8 @@ Public Class Question
 
     Public Shared Sub PlayLightsDownCue()
         If Game.firstQuestion = True Then
+            Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 700))
+            stopaudio.Start()
             With Sounds.sndLightsDown
                 .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5LightsDown
                 .controls.play()
@@ -205,18 +207,14 @@ Public Class Question
                         .controls.play()
                     End With
             End Select
+            Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 550))
+            stopaudio.Start()
         End If
-        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 400))
-        stopaudio.Start()
     End Sub
 
     Public Shared Sub PlayQuestionCue()
         If useMusic = False Then
             useMusic = True
-
-            If Game.firstQuestion = True Or Game.level > 10 Then
-                ControlPanel.Timer2.Start()
-            End If
 
             Select Case Game.level
                 Case 0

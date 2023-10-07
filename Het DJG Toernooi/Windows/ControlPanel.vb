@@ -51,8 +51,7 @@ Public Class ControlPanel
 
     Public Shared answer As String
     Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
-        Dim q As New Question
-        q.UndoAnswer(False)
+        Question.UndoAnswer(False)
         answer = "A"
         HostScreen.txtExplain.ForeColor = Color.White
         txtA.BackColor = Color.Yellow
@@ -76,7 +75,7 @@ Public Class ControlPanel
 
     Private Sub btnB_Click(sender As Object, e As EventArgs) Handles btnB.Click
         Dim q As New Question
-        q.UndoAnswer(False)
+        Question.UndoAnswer(False)
         answer = "B"
         HostScreen.txtExplain.ForeColor = Color.White
         txtB.BackColor = Color.Yellow
@@ -100,7 +99,7 @@ Public Class ControlPanel
 
     Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
         Dim q As New Question
-        q.UndoAnswer(False)
+        Question.UndoAnswer(False)
         answer = "C"
         HostScreen.txtExplain.ForeColor = Color.White
         txtC.BackColor = Color.Yellow
@@ -124,7 +123,7 @@ Public Class ControlPanel
 
     Private Sub btnD_Click(sender As Object, e As EventArgs) Handles btnD.Click
         Dim q As New Question
-        q.UndoAnswer(False)
+        Question.UndoAnswer(False)
         answer = "D"
         HostScreen.txtExplain.ForeColor = Color.White
         txtD.BackColor = Color.Yellow
@@ -258,145 +257,24 @@ Public Class ControlPanel
         Game.walkaway = True
         HostScreen.txtWinnings.Text = "Totale Score: " + Game.varCurrent
         TVControlPnl.grpATA.Visible = False
-        If Game.level = 0 Then
-            intSound += 1
 
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 1 Then
-            intSound += 1
+        Select Case Game.level
+            Case < 11
+                With Sounds.sndGeneral
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway1
+                    .options.play()
+                End With
+            Case >= 11
+                With Sounds.sndGeneral
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway2
+                    .options.play()
+                End With
+        End Select
 
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 2 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 3 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 4 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 5 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 6 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 7 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 8 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 9 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(3, False, 1000)
-            End With
-        End If
-        If Game.level = 10 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
-        If Game.level = 11 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
-        If Game.level = 12 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
-        If Game.level = 13 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
-        If Game.level = 14 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
-        If Game.level = 15 Then
-            intSound += 1
-
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(4, False, 1000)
-            End With
-        End If
         HostScreen.lblWalkedAway.ForeColor = Color.White
         TVControlPnl.lblAmount.Text = "" & Game.varCurrent
         TVControlPnl.pnlQuestion.Visible = False
-        'TVControlPnl.lblATAa.Visible = False
-        'TVControlPnl.lblATAb.Visible = False
-        'TVControlPnl.lblATAc.Visible = False
-        'TVControlPnl.lblATAd.Visible = False
-        'TVControlPnl.lblATAa.Text = "0%"
-        'TVControlPnl.lblATAb.Text = "0%"
-        'TVControlPnl.lblATAc.Text = "0%"
-        'TVControlPnl.lblATAd.Text = "0%"
+        TVControlPnl.grpATA.Visible = False
     End Sub
 
     Dim ff As New Lifeline5050
@@ -496,9 +374,9 @@ Public Class ControlPanel
             TVControlPnl.pnlQuestion.Visible = False
             intSound += 1
 
-            With snd
-                .Name = "SOUND" & intSound
-                .Play(28, False, 1000)
+            With Sounds.sndGeneral
+                .URL = Sounds.SoundsPath + Profile.Options.snd_GameOver
+                .controls.play()
             End With
         ElseIf wa = 1 Then
             wa = 0
@@ -724,8 +602,7 @@ Public Class ControlPanel
     End Sub
 
     Private Sub btnUndo_Click(sender As Object, e As EventArgs) Handles btnUndo.Click
-        Dim q As New Question
-        q.UndoAnswer(True)
+        Question.UndoAnswer(True)
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click

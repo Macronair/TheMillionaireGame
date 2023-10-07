@@ -4,6 +4,7 @@
 
     Public Sub LifelineUse1()
         If plusone = 0 Then
+            Question.useMusic = False
             With Sounds.sndLifeline1
                 .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Start
                 .controls.play()
@@ -40,11 +41,10 @@
                 .URL = Sounds.SoundsPath + Profile.Options.snd_P1_EndEarly
                 .controls.play()
             End With
-            Threading.Thread.Sleep(20)
-            Sounds.sndLifeline2.close()
-            Threading.Thread.Sleep(400)
+            Sounds.sndLifeline2.controls.stop()
 
-            Question.PlayQuestionCue()
+            Dim continueaudio As New Threading.Thread(Sub() OffsetBeforeCue())
+            continueaudio.Start()
 
             HostScreen.lblTime.Visible = False
             GuestScreen.lblTime.Visible = False
@@ -58,6 +58,11 @@
             TVControlPnl.picPO.Image = My.Resources.lifeline_3_used
             ControlPanel.btnPlusOne.Enabled = False
         End If
+    End Sub
+
+    Sub OffsetBeforeCue()
+        Threading.Thread.Sleep(1000)
+        Question.PlayQuestionCue()
     End Sub
 
 End Class
