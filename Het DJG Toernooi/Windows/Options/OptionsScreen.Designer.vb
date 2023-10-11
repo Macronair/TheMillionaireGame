@@ -24,8 +24,50 @@ Partial Class OptionsScreen
     Private Sub InitializeComponent()
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.radStrapGreen = New System.Windows.Forms.RadioButton()
+        Me.radStrapYellow = New System.Windows.Forms.RadioButton()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.grpLifeline4 = New System.Windows.Forms.GroupBox()
+        Me.radL4RiskMode = New System.Windows.Forms.RadioButton()
+        Me.radL4AfterQ10 = New System.Windows.Forms.RadioButton()
+        Me.radL4AfterQ5 = New System.Windows.Forms.RadioButton()
+        Me.Label115 = New System.Windows.Forms.Label()
+        Me.radL4Always = New System.Windows.Forms.RadioButton()
+        Me.cmbLifeline4 = New System.Windows.Forms.ComboBox()
+        Me.grpLifeline3 = New System.Windows.Forms.GroupBox()
+        Me.radL3RiskMode = New System.Windows.Forms.RadioButton()
+        Me.radL3AfterQ10 = New System.Windows.Forms.RadioButton()
+        Me.radL3AfterQ5 = New System.Windows.Forms.RadioButton()
+        Me.Label114 = New System.Windows.Forms.Label()
+        Me.radL3Always = New System.Windows.Forms.RadioButton()
+        Me.cmbLifeline3 = New System.Windows.Forms.ComboBox()
+        Me.grpLifeline2 = New System.Windows.Forms.GroupBox()
+        Me.radL2RiskMode = New System.Windows.Forms.RadioButton()
+        Me.radL2AfterQ10 = New System.Windows.Forms.RadioButton()
+        Me.radL2AfterQ5 = New System.Windows.Forms.RadioButton()
+        Me.Label113 = New System.Windows.Forms.Label()
+        Me.radL2Always = New System.Windows.Forms.RadioButton()
+        Me.cmbLifeline2 = New System.Windows.Forms.ComboBox()
+        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.Label112 = New System.Windows.Forms.Label()
+        Me.grpLifeline1 = New System.Windows.Forms.GroupBox()
+        Me.radL1RiskMode = New System.Windows.Forms.RadioButton()
+        Me.radL1AfterQ10 = New System.Windows.Forms.RadioButton()
+        Me.radL1AfterQ5 = New System.Windows.Forms.RadioButton()
+        Me.Label111 = New System.Windows.Forms.Label()
+        Me.radL1Always = New System.Windows.Forms.RadioButton()
+        Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txtSndDD2ndFinal = New System.Windows.Forms.TextBox()
+        Me.Label110 = New System.Windows.Forms.Label()
+        Me.txtSndDD2ndAnswer = New System.Windows.Forms.TextBox()
+        Me.Label107 = New System.Windows.Forms.Label()
+        Me.txtSndDD1stFinal = New System.Windows.Forms.TextBox()
+        Me.Label108 = New System.Windows.Forms.Label()
+        Me.txtSndDD1stAnswer = New System.Windows.Forms.TextBox()
+        Me.Label109 = New System.Windows.Forms.Label()
         Me.txtSndGameOver = New System.Windows.Forms.TextBox()
         Me.Label105 = New System.Windows.Forms.Label()
         Me.txtSndWalkAway2 = New System.Windows.Forms.TextBox()
@@ -250,17 +292,28 @@ Partial Class OptionsScreen
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.txtSndDD2ndAnswer = New System.Windows.Forms.TextBox()
-        Me.Label107 = New System.Windows.Forms.Label()
-        Me.txtSndDD1stFinal = New System.Windows.Forms.TextBox()
-        Me.Label108 = New System.Windows.Forms.Label()
-        Me.txtSndDD1stAnswer = New System.Windows.Forms.TextBox()
-        Me.Label109 = New System.Windows.Forms.Label()
-        Me.txtSndDD2ndFinal = New System.Windows.Forms.TextBox()
-        Me.Label110 = New System.Windows.Forms.Label()
+        Me.radStrapBlack = New System.Windows.Forms.RadioButton()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.tabOptions.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.grpLifeline4.SuspendLayout()
+        Me.grpLifeline3.SuspendLayout()
+        Me.grpLifeline2.SuspendLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpLifeline1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabOptions
@@ -278,6 +331,9 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.GroupBox2)
+        Me.TabPage1.Controls.Add(Me.GroupBox1)
+        Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage1.Location = New System.Drawing.Point(4, 29)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
@@ -285,6 +341,414 @@ Partial Class OptionsScreen
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.radStrapBlack)
+        Me.GroupBox2.Controls.Add(Me.radStrapGreen)
+        Me.GroupBox2.Controls.Add(Me.radStrapYellow)
+        Me.GroupBox2.Controls.Add(Me.PictureBox5)
+        Me.GroupBox2.Location = New System.Drawing.Point(6, 267)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(607, 110)
+        Me.GroupBox2.TabIndex = 1
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "Question Skins"
+        '
+        'radStrapGreen
+        '
+        Me.radStrapGreen.AutoSize = True
+        Me.radStrapGreen.Location = New System.Drawing.Point(130, 80)
+        Me.radStrapGreen.Name = "radStrapGreen"
+        Me.radStrapGreen.Size = New System.Drawing.Size(62, 20)
+        Me.radStrapGreen.TabIndex = 5
+        Me.radStrapGreen.Text = "Green"
+        Me.radStrapGreen.UseVisualStyleBackColor = True
+        '
+        'radStrapYellow
+        '
+        Me.radStrapYellow.AutoSize = True
+        Me.radStrapYellow.Checked = True
+        Me.radStrapYellow.Location = New System.Drawing.Point(6, 80)
+        Me.radStrapYellow.Name = "radStrapYellow"
+        Me.radStrapYellow.Size = New System.Drawing.Size(118, 20)
+        Me.radStrapYellow.TabIndex = 4
+        Me.radStrapYellow.TabStop = True
+        Me.radStrapYellow.Text = "(Default) Yellow"
+        Me.radStrapYellow.UseVisualStyleBackColor = True
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.grpLifeline4)
+        Me.GroupBox1.Controls.Add(Me.grpLifeline3)
+        Me.GroupBox1.Controls.Add(Me.grpLifeline2)
+        Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox1.Controls.Add(Me.Label112)
+        Me.GroupBox1.Controls.Add(Me.grpLifeline1)
+        Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(616, 255)
+        Me.GroupBox1.TabIndex = 0
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Lifelines"
+        '
+        'grpLifeline4
+        '
+        Me.grpLifeline4.Controls.Add(Me.radL4RiskMode)
+        Me.grpLifeline4.Controls.Add(Me.radL4AfterQ10)
+        Me.grpLifeline4.Controls.Add(Me.radL4AfterQ5)
+        Me.grpLifeline4.Controls.Add(Me.Label115)
+        Me.grpLifeline4.Controls.Add(Me.radL4Always)
+        Me.grpLifeline4.Controls.Add(Me.picLifeline4)
+        Me.grpLifeline4.Controls.Add(Me.cmbLifeline4)
+        Me.grpLifeline4.Location = New System.Drawing.Point(462, 53)
+        Me.grpLifeline4.Name = "grpLifeline4"
+        Me.grpLifeline4.Size = New System.Drawing.Size(146, 194)
+        Me.grpLifeline4.TabIndex = 11
+        Me.grpLifeline4.TabStop = False
+        Me.grpLifeline4.Text = "Lifeline 4"
+        '
+        'radL4RiskMode
+        '
+        Me.radL4RiskMode.AutoSize = True
+        Me.radL4RiskMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL4RiskMode.Location = New System.Drawing.Point(9, 172)
+        Me.radL4RiskMode.Name = "radL4RiskMode"
+        Me.radL4RiskMode.Size = New System.Drawing.Size(121, 17)
+        Me.radL4RiskMode.TabIndex = 6
+        Me.radL4RiskMode.TabStop = True
+        Me.radL4RiskMode.Text = "RISK MODE Lifeline"
+        Me.radL4RiskMode.UseVisualStyleBackColor = True
+        '
+        'radL4AfterQ10
+        '
+        Me.radL4AfterQ10.AutoSize = True
+        Me.radL4AfterQ10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL4AfterQ10.Location = New System.Drawing.Point(9, 156)
+        Me.radL4AfterQ10.Name = "radL4AfterQ10"
+        Me.radL4AfterQ10.Size = New System.Drawing.Size(70, 17)
+        Me.radL4AfterQ10.TabIndex = 5
+        Me.radL4AfterQ10.TabStop = True
+        Me.radL4AfterQ10.Text = "After Q10"
+        Me.radL4AfterQ10.UseVisualStyleBackColor = True
+        '
+        'radL4AfterQ5
+        '
+        Me.radL4AfterQ5.AutoSize = True
+        Me.radL4AfterQ5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL4AfterQ5.Location = New System.Drawing.Point(9, 140)
+        Me.radL4AfterQ5.Name = "radL4AfterQ5"
+        Me.radL4AfterQ5.Size = New System.Drawing.Size(64, 17)
+        Me.radL4AfterQ5.TabIndex = 4
+        Me.radL4AfterQ5.TabStop = True
+        Me.radL4AfterQ5.Text = "After Q5"
+        Me.radL4AfterQ5.UseVisualStyleBackColor = True
+        '
+        'Label115
+        '
+        Me.Label115.AutoSize = True
+        Me.Label115.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label115.Location = New System.Drawing.Point(6, 111)
+        Me.Label115.Name = "Label115"
+        Me.Label115.Size = New System.Drawing.Size(87, 13)
+        Me.Label115.TabIndex = 3
+        Me.Label115.Text = "When available?"
+        '
+        'radL4Always
+        '
+        Me.radL4Always.AutoSize = True
+        Me.radL4Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL4Always.Location = New System.Drawing.Point(9, 124)
+        Me.radL4Always.Name = "radL4Always"
+        Me.radL4Always.Size = New System.Drawing.Size(58, 17)
+        Me.radL4Always.TabIndex = 2
+        Me.radL4Always.TabStop = True
+        Me.radL4Always.Text = "Always"
+        Me.radL4Always.UseVisualStyleBackColor = True
+        '
+        'cmbLifeline4
+        '
+        Me.cmbLifeline4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLifeline4.FormattingEnabled = True
+        Me.cmbLifeline4.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline4.Location = New System.Drawing.Point(6, 87)
+        Me.cmbLifeline4.Name = "cmbLifeline4"
+        Me.cmbLifeline4.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmbLifeline4.Size = New System.Drawing.Size(134, 21)
+        Me.cmbLifeline4.TabIndex = 0
+        '
+        'grpLifeline3
+        '
+        Me.grpLifeline3.Controls.Add(Me.radL3RiskMode)
+        Me.grpLifeline3.Controls.Add(Me.radL3AfterQ10)
+        Me.grpLifeline3.Controls.Add(Me.radL3AfterQ5)
+        Me.grpLifeline3.Controls.Add(Me.Label114)
+        Me.grpLifeline3.Controls.Add(Me.radL3Always)
+        Me.grpLifeline3.Controls.Add(Me.picLifeline3)
+        Me.grpLifeline3.Controls.Add(Me.cmbLifeline3)
+        Me.grpLifeline3.Location = New System.Drawing.Point(310, 53)
+        Me.grpLifeline3.Name = "grpLifeline3"
+        Me.grpLifeline3.Size = New System.Drawing.Size(146, 194)
+        Me.grpLifeline3.TabIndex = 10
+        Me.grpLifeline3.TabStop = False
+        Me.grpLifeline3.Text = "Lifeline 3"
+        '
+        'radL3RiskMode
+        '
+        Me.radL3RiskMode.AutoSize = True
+        Me.radL3RiskMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL3RiskMode.Location = New System.Drawing.Point(9, 172)
+        Me.radL3RiskMode.Name = "radL3RiskMode"
+        Me.radL3RiskMode.Size = New System.Drawing.Size(121, 17)
+        Me.radL3RiskMode.TabIndex = 6
+        Me.radL3RiskMode.TabStop = True
+        Me.radL3RiskMode.Text = "RISK MODE Lifeline"
+        Me.radL3RiskMode.UseVisualStyleBackColor = True
+        '
+        'radL3AfterQ10
+        '
+        Me.radL3AfterQ10.AutoSize = True
+        Me.radL3AfterQ10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL3AfterQ10.Location = New System.Drawing.Point(9, 156)
+        Me.radL3AfterQ10.Name = "radL3AfterQ10"
+        Me.radL3AfterQ10.Size = New System.Drawing.Size(70, 17)
+        Me.radL3AfterQ10.TabIndex = 5
+        Me.radL3AfterQ10.TabStop = True
+        Me.radL3AfterQ10.Text = "After Q10"
+        Me.radL3AfterQ10.UseVisualStyleBackColor = True
+        '
+        'radL3AfterQ5
+        '
+        Me.radL3AfterQ5.AutoSize = True
+        Me.radL3AfterQ5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL3AfterQ5.Location = New System.Drawing.Point(9, 140)
+        Me.radL3AfterQ5.Name = "radL3AfterQ5"
+        Me.radL3AfterQ5.Size = New System.Drawing.Size(64, 17)
+        Me.radL3AfterQ5.TabIndex = 4
+        Me.radL3AfterQ5.TabStop = True
+        Me.radL3AfterQ5.Text = "After Q5"
+        Me.radL3AfterQ5.UseVisualStyleBackColor = True
+        '
+        'Label114
+        '
+        Me.Label114.AutoSize = True
+        Me.Label114.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label114.Location = New System.Drawing.Point(6, 111)
+        Me.Label114.Name = "Label114"
+        Me.Label114.Size = New System.Drawing.Size(87, 13)
+        Me.Label114.TabIndex = 3
+        Me.Label114.Text = "When available?"
+        '
+        'radL3Always
+        '
+        Me.radL3Always.AutoSize = True
+        Me.radL3Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL3Always.Location = New System.Drawing.Point(9, 124)
+        Me.radL3Always.Name = "radL3Always"
+        Me.radL3Always.Size = New System.Drawing.Size(58, 17)
+        Me.radL3Always.TabIndex = 2
+        Me.radL3Always.TabStop = True
+        Me.radL3Always.Text = "Always"
+        Me.radL3Always.UseVisualStyleBackColor = True
+        '
+        'cmbLifeline3
+        '
+        Me.cmbLifeline3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLifeline3.FormattingEnabled = True
+        Me.cmbLifeline3.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline3.Location = New System.Drawing.Point(6, 87)
+        Me.cmbLifeline3.Name = "cmbLifeline3"
+        Me.cmbLifeline3.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmbLifeline3.Size = New System.Drawing.Size(134, 21)
+        Me.cmbLifeline3.TabIndex = 0
+        '
+        'grpLifeline2
+        '
+        Me.grpLifeline2.Controls.Add(Me.radL2RiskMode)
+        Me.grpLifeline2.Controls.Add(Me.radL2AfterQ10)
+        Me.grpLifeline2.Controls.Add(Me.radL2AfterQ5)
+        Me.grpLifeline2.Controls.Add(Me.Label113)
+        Me.grpLifeline2.Controls.Add(Me.radL2Always)
+        Me.grpLifeline2.Controls.Add(Me.picLifeline2)
+        Me.grpLifeline2.Controls.Add(Me.cmbLifeline2)
+        Me.grpLifeline2.Location = New System.Drawing.Point(158, 53)
+        Me.grpLifeline2.Name = "grpLifeline2"
+        Me.grpLifeline2.Size = New System.Drawing.Size(146, 194)
+        Me.grpLifeline2.TabIndex = 9
+        Me.grpLifeline2.TabStop = False
+        Me.grpLifeline2.Text = "Lifeline 2"
+        '
+        'radL2RiskMode
+        '
+        Me.radL2RiskMode.AutoSize = True
+        Me.radL2RiskMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL2RiskMode.Location = New System.Drawing.Point(9, 172)
+        Me.radL2RiskMode.Name = "radL2RiskMode"
+        Me.radL2RiskMode.Size = New System.Drawing.Size(121, 17)
+        Me.radL2RiskMode.TabIndex = 6
+        Me.radL2RiskMode.TabStop = True
+        Me.radL2RiskMode.Text = "RISK MODE Lifeline"
+        Me.radL2RiskMode.UseVisualStyleBackColor = True
+        '
+        'radL2AfterQ10
+        '
+        Me.radL2AfterQ10.AutoSize = True
+        Me.radL2AfterQ10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL2AfterQ10.Location = New System.Drawing.Point(9, 156)
+        Me.radL2AfterQ10.Name = "radL2AfterQ10"
+        Me.radL2AfterQ10.Size = New System.Drawing.Size(70, 17)
+        Me.radL2AfterQ10.TabIndex = 5
+        Me.radL2AfterQ10.TabStop = True
+        Me.radL2AfterQ10.Text = "After Q10"
+        Me.radL2AfterQ10.UseVisualStyleBackColor = True
+        '
+        'radL2AfterQ5
+        '
+        Me.radL2AfterQ5.AutoSize = True
+        Me.radL2AfterQ5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL2AfterQ5.Location = New System.Drawing.Point(9, 140)
+        Me.radL2AfterQ5.Name = "radL2AfterQ5"
+        Me.radL2AfterQ5.Size = New System.Drawing.Size(64, 17)
+        Me.radL2AfterQ5.TabIndex = 4
+        Me.radL2AfterQ5.TabStop = True
+        Me.radL2AfterQ5.Text = "After Q5"
+        Me.radL2AfterQ5.UseVisualStyleBackColor = True
+        '
+        'Label113
+        '
+        Me.Label113.AutoSize = True
+        Me.Label113.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label113.Location = New System.Drawing.Point(6, 111)
+        Me.Label113.Name = "Label113"
+        Me.Label113.Size = New System.Drawing.Size(87, 13)
+        Me.Label113.TabIndex = 3
+        Me.Label113.Text = "When available?"
+        '
+        'radL2Always
+        '
+        Me.radL2Always.AutoSize = True
+        Me.radL2Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL2Always.Location = New System.Drawing.Point(9, 124)
+        Me.radL2Always.Name = "radL2Always"
+        Me.radL2Always.Size = New System.Drawing.Size(58, 17)
+        Me.radL2Always.TabIndex = 2
+        Me.radL2Always.TabStop = True
+        Me.radL2Always.Text = "Always"
+        Me.radL2Always.UseVisualStyleBackColor = True
+        '
+        'cmbLifeline2
+        '
+        Me.cmbLifeline2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLifeline2.FormattingEnabled = True
+        Me.cmbLifeline2.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline2.Location = New System.Drawing.Point(6, 87)
+        Me.cmbLifeline2.Name = "cmbLifeline2"
+        Me.cmbLifeline2.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmbLifeline2.Size = New System.Drawing.Size(134, 21)
+        Me.cmbLifeline2.TabIndex = 0
+        '
+        'NumericUpDown1
+        '
+        Me.NumericUpDown1.Location = New System.Drawing.Point(136, 25)
+        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.NumericUpDown1.Name = "NumericUpDown1"
+        Me.NumericUpDown1.Size = New System.Drawing.Size(36, 22)
+        Me.NumericUpDown1.TabIndex = 10
+        Me.NumericUpDown1.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        '
+        'Label112
+        '
+        Me.Label112.AutoSize = True
+        Me.Label112.Location = New System.Drawing.Point(23, 27)
+        Me.Label112.Name = "Label112"
+        Me.Label112.Size = New System.Drawing.Size(90, 16)
+        Me.Label112.TabIndex = 9
+        Me.Label112.Text = "Total Lifelines"
+        '
+        'grpLifeline1
+        '
+        Me.grpLifeline1.Controls.Add(Me.radL1RiskMode)
+        Me.grpLifeline1.Controls.Add(Me.radL1AfterQ10)
+        Me.grpLifeline1.Controls.Add(Me.radL1AfterQ5)
+        Me.grpLifeline1.Controls.Add(Me.Label111)
+        Me.grpLifeline1.Controls.Add(Me.radL1Always)
+        Me.grpLifeline1.Controls.Add(Me.picLifeline1)
+        Me.grpLifeline1.Controls.Add(Me.cmbLifeline1)
+        Me.grpLifeline1.Location = New System.Drawing.Point(6, 53)
+        Me.grpLifeline1.Name = "grpLifeline1"
+        Me.grpLifeline1.Size = New System.Drawing.Size(146, 194)
+        Me.grpLifeline1.TabIndex = 8
+        Me.grpLifeline1.TabStop = False
+        Me.grpLifeline1.Text = "Lifeline 1"
+        '
+        'radL1RiskMode
+        '
+        Me.radL1RiskMode.AutoSize = True
+        Me.radL1RiskMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL1RiskMode.Location = New System.Drawing.Point(9, 172)
+        Me.radL1RiskMode.Name = "radL1RiskMode"
+        Me.radL1RiskMode.Size = New System.Drawing.Size(121, 17)
+        Me.radL1RiskMode.TabIndex = 6
+        Me.radL1RiskMode.TabStop = True
+        Me.radL1RiskMode.Text = "RISK MODE Lifeline"
+        Me.radL1RiskMode.UseVisualStyleBackColor = True
+        '
+        'radL1AfterQ10
+        '
+        Me.radL1AfterQ10.AutoSize = True
+        Me.radL1AfterQ10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL1AfterQ10.Location = New System.Drawing.Point(9, 156)
+        Me.radL1AfterQ10.Name = "radL1AfterQ10"
+        Me.radL1AfterQ10.Size = New System.Drawing.Size(70, 17)
+        Me.radL1AfterQ10.TabIndex = 5
+        Me.radL1AfterQ10.TabStop = True
+        Me.radL1AfterQ10.Text = "After Q10"
+        Me.radL1AfterQ10.UseVisualStyleBackColor = True
+        '
+        'radL1AfterQ5
+        '
+        Me.radL1AfterQ5.AutoSize = True
+        Me.radL1AfterQ5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL1AfterQ5.Location = New System.Drawing.Point(9, 140)
+        Me.radL1AfterQ5.Name = "radL1AfterQ5"
+        Me.radL1AfterQ5.Size = New System.Drawing.Size(64, 17)
+        Me.radL1AfterQ5.TabIndex = 4
+        Me.radL1AfterQ5.TabStop = True
+        Me.radL1AfterQ5.Text = "After Q5"
+        Me.radL1AfterQ5.UseVisualStyleBackColor = True
+        '
+        'Label111
+        '
+        Me.Label111.AutoSize = True
+        Me.Label111.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label111.Location = New System.Drawing.Point(6, 111)
+        Me.Label111.Name = "Label111"
+        Me.Label111.Size = New System.Drawing.Size(87, 13)
+        Me.Label111.TabIndex = 3
+        Me.Label111.Text = "When available?"
+        '
+        'radL1Always
+        '
+        Me.radL1Always.AutoSize = True
+        Me.radL1Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.radL1Always.Location = New System.Drawing.Point(9, 124)
+        Me.radL1Always.Name = "radL1Always"
+        Me.radL1Always.Size = New System.Drawing.Size(58, 17)
+        Me.radL1Always.TabIndex = 2
+        Me.radL1Always.TabStop = True
+        Me.radL1Always.Text = "Always"
+        Me.radL1Always.UseVisualStyleBackColor = True
+        '
+        'cmbLifeline1
+        '
+        Me.cmbLifeline1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmbLifeline1.FormattingEnabled = True
+        Me.cmbLifeline1.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline1.Location = New System.Drawing.Point(6, 87)
+        Me.cmbLifeline1.Name = "cmbLifeline1"
+        Me.cmbLifeline1.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.cmbLifeline1.Size = New System.Drawing.Size(134, 21)
+        Me.cmbLifeline1.TabIndex = 0
         '
         'TabPage3
         '
@@ -401,6 +865,78 @@ Partial Class OptionsScreen
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sounds (Regular)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'txtSndDD2ndFinal
+        '
+        Me.txtSndDD2ndFinal.Location = New System.Drawing.Point(1069, 309)
+        Me.txtSndDD2ndFinal.Name = "txtSndDD2ndFinal"
+        Me.txtSndDD2ndFinal.ReadOnly = True
+        Me.txtSndDD2ndFinal.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD2ndFinal.TabIndex = 139
+        '
+        'Label110
+        '
+        Me.Label110.AutoSize = True
+        Me.Label110.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label110.Location = New System.Drawing.Point(926, 312)
+        Me.Label110.Name = "Label110"
+        Me.Label110.Size = New System.Drawing.Size(92, 16)
+        Me.Label110.TabIndex = 138
+        Me.Label110.Text = "(DD) 2nd Final"
+        '
+        'txtSndDD2ndAnswer
+        '
+        Me.txtSndDD2ndAnswer.Location = New System.Drawing.Point(1069, 281)
+        Me.txtSndDD2ndAnswer.Name = "txtSndDD2ndAnswer"
+        Me.txtSndDD2ndAnswer.ReadOnly = True
+        Me.txtSndDD2ndAnswer.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD2ndAnswer.TabIndex = 137
+        '
+        'Label107
+        '
+        Me.Label107.AutoSize = True
+        Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label107.Location = New System.Drawing.Point(926, 284)
+        Me.Label107.Name = "Label107"
+        Me.Label107.Size = New System.Drawing.Size(105, 16)
+        Me.Label107.TabIndex = 136
+        Me.Label107.Text = "(DD) 2nd Choice"
+        '
+        'txtSndDD1stFinal
+        '
+        Me.txtSndDD1stFinal.Location = New System.Drawing.Point(1069, 253)
+        Me.txtSndDD1stFinal.Name = "txtSndDD1stFinal"
+        Me.txtSndDD1stFinal.ReadOnly = True
+        Me.txtSndDD1stFinal.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD1stFinal.TabIndex = 135
+        '
+        'Label108
+        '
+        Me.Label108.AutoSize = True
+        Me.Label108.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label108.Location = New System.Drawing.Point(926, 256)
+        Me.Label108.Name = "Label108"
+        Me.Label108.Size = New System.Drawing.Size(134, 16)
+        Me.Label108.TabIndex = 134
+        Me.Label108.Text = "(DD) 1st Final Answer"
+        '
+        'txtSndDD1stAnswer
+        '
+        Me.txtSndDD1stAnswer.Location = New System.Drawing.Point(1069, 225)
+        Me.txtSndDD1stAnswer.Name = "txtSndDD1stAnswer"
+        Me.txtSndDD1stAnswer.ReadOnly = True
+        Me.txtSndDD1stAnswer.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndDD1stAnswer.TabIndex = 133
+        '
+        'Label109
+        '
+        Me.Label109.AutoSize = True
+        Me.Label109.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label109.Location = New System.Drawing.Point(926, 228)
+        Me.Label109.Name = "Label109"
+        Me.Label109.Size = New System.Drawing.Size(100, 16)
+        Me.Label109.TabIndex = 132
+        Me.Label109.Text = "(DD) 1st Choice"
         '
         'txtSndGameOver
         '
@@ -2639,77 +3175,58 @@ Partial Class OptionsScreen
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'txtSndDD2ndAnswer
+        'radStrapBlack
         '
-        Me.txtSndDD2ndAnswer.Location = New System.Drawing.Point(1069, 281)
-        Me.txtSndDD2ndAnswer.Name = "txtSndDD2ndAnswer"
-        Me.txtSndDD2ndAnswer.ReadOnly = True
-        Me.txtSndDD2ndAnswer.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndDD2ndAnswer.TabIndex = 137
+        Me.radStrapBlack.AutoSize = True
+        Me.radStrapBlack.Location = New System.Drawing.Point(198, 80)
+        Me.radStrapBlack.Name = "radStrapBlack"
+        Me.radStrapBlack.Size = New System.Drawing.Size(59, 20)
+        Me.radStrapBlack.TabIndex = 6
+        Me.radStrapBlack.Text = "Black"
+        Me.radStrapBlack.UseVisualStyleBackColor = True
         '
-        'Label107
+        'PictureBox5
         '
-        Me.Label107.AutoSize = True
-        Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label107.Location = New System.Drawing.Point(926, 284)
-        Me.Label107.Name = "Label107"
-        Me.Label107.Size = New System.Drawing.Size(105, 16)
-        Me.Label107.TabIndex = 136
-        Me.Label107.Text = "(DD) 2nd Choice"
+        Me.PictureBox5.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.PictureBox5.Location = New System.Drawing.Point(-67, 21)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(740, 53)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
         '
-        'txtSndDD1stFinal
+        'picLifeline4
         '
-        Me.txtSndDD1stFinal.Location = New System.Drawing.Point(1069, 253)
-        Me.txtSndDD1stFinal.Name = "txtSndDD1stFinal"
-        Me.txtSndDD1stFinal.ReadOnly = True
-        Me.txtSndDD1stFinal.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndDD1stFinal.TabIndex = 135
+        Me.picLifeline4.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline4.TabIndex = 1
+        Me.picLifeline4.TabStop = False
         '
-        'Label108
+        'picLifeline3
         '
-        Me.Label108.AutoSize = True
-        Me.Label108.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label108.Location = New System.Drawing.Point(926, 256)
-        Me.Label108.Name = "Label108"
-        Me.Label108.Size = New System.Drawing.Size(134, 16)
-        Me.Label108.TabIndex = 134
-        Me.Label108.Text = "(DD) 1st Final Answer"
+        Me.picLifeline3.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline3.TabIndex = 1
+        Me.picLifeline3.TabStop = False
         '
-        'txtSndDD1stAnswer
+        'picLifeline2
         '
-        Me.txtSndDD1stAnswer.Location = New System.Drawing.Point(1069, 225)
-        Me.txtSndDD1stAnswer.Name = "txtSndDD1stAnswer"
-        Me.txtSndDD1stAnswer.ReadOnly = True
-        Me.txtSndDD1stAnswer.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndDD1stAnswer.TabIndex = 133
+        Me.picLifeline2.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline2.TabIndex = 1
+        Me.picLifeline2.TabStop = False
         '
-        'Label109
+        'picLifeline1
         '
-        Me.Label109.AutoSize = True
-        Me.Label109.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label109.Location = New System.Drawing.Point(926, 228)
-        Me.Label109.Name = "Label109"
-        Me.Label109.Size = New System.Drawing.Size(100, 16)
-        Me.Label109.TabIndex = 132
-        Me.Label109.Text = "(DD) 1st Choice"
-        '
-        'txtSndDD2ndFinal
-        '
-        Me.txtSndDD2ndFinal.Location = New System.Drawing.Point(1069, 309)
-        Me.txtSndDD2ndFinal.Name = "txtSndDD2ndFinal"
-        Me.txtSndDD2ndFinal.ReadOnly = True
-        Me.txtSndDD2ndFinal.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndDD2ndFinal.TabIndex = 139
-        '
-        'Label110
-        '
-        Me.Label110.AutoSize = True
-        Me.Label110.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label110.Location = New System.Drawing.Point(926, 312)
-        Me.Label110.Name = "Label110"
-        Me.Label110.Size = New System.Drawing.Size(92, 16)
-        Me.Label110.TabIndex = 138
-        Me.Label110.Text = "(DD) 2nd Final"
+        Me.picLifeline1.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 1
+        Me.picLifeline1.TabStop = False
         '
         'OptionsScreen
         '
@@ -2725,10 +3242,29 @@ Partial Class OptionsScreen
         Me.Name = "OptionsScreen"
         Me.Text = "Options - The Millionaire Game"
         Me.tabOptions.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox2.ResumeLayout(False)
+        Me.GroupBox2.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
+        Me.grpLifeline4.ResumeLayout(False)
+        Me.grpLifeline4.PerformLayout()
+        Me.grpLifeline3.ResumeLayout(False)
+        Me.grpLifeline3.PerformLayout()
+        Me.grpLifeline2.ResumeLayout(False)
+        Me.grpLifeline2.PerformLayout()
+        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpLifeline1.ResumeLayout(False)
+        Me.grpLifeline1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -2969,4 +3505,44 @@ Partial Class OptionsScreen
     Friend WithEvents Label108 As Label
     Friend WithEvents txtSndDD1stAnswer As TextBox
     Friend WithEvents Label109 As Label
+    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents picLifeline1 As PictureBox
+    Friend WithEvents cmbLifeline1 As ComboBox
+    Friend WithEvents grpLifeline1 As GroupBox
+    Friend WithEvents radL1RiskMode As RadioButton
+    Friend WithEvents radL1AfterQ10 As RadioButton
+    Friend WithEvents radL1AfterQ5 As RadioButton
+    Friend WithEvents Label111 As Label
+    Friend WithEvents radL1Always As RadioButton
+    Friend WithEvents grpLifeline4 As GroupBox
+    Friend WithEvents radL4RiskMode As RadioButton
+    Friend WithEvents radL4AfterQ10 As RadioButton
+    Friend WithEvents radL4AfterQ5 As RadioButton
+    Friend WithEvents Label115 As Label
+    Friend WithEvents radL4Always As RadioButton
+    Friend WithEvents picLifeline4 As PictureBox
+    Friend WithEvents cmbLifeline4 As ComboBox
+    Friend WithEvents grpLifeline3 As GroupBox
+    Friend WithEvents radL3RiskMode As RadioButton
+    Friend WithEvents radL3AfterQ10 As RadioButton
+    Friend WithEvents radL3AfterQ5 As RadioButton
+    Friend WithEvents Label114 As Label
+    Friend WithEvents radL3Always As RadioButton
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents cmbLifeline3 As ComboBox
+    Friend WithEvents grpLifeline2 As GroupBox
+    Friend WithEvents radL2RiskMode As RadioButton
+    Friend WithEvents radL2AfterQ10 As RadioButton
+    Friend WithEvents radL2AfterQ5 As RadioButton
+    Friend WithEvents Label113 As Label
+    Friend WithEvents radL2Always As RadioButton
+    Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents cmbLifeline2 As ComboBox
+    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents Label112 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents radStrapGreen As RadioButton
+    Friend WithEvents radStrapYellow As RadioButton
+    Friend WithEvents radStrapBlack As RadioButton
 End Class

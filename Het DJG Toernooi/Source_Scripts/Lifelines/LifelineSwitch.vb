@@ -7,7 +7,7 @@
                 .controls.play()
             End With
 
-            TVControlPnl.picLifelineUse.Image = My.Resources.lifeline_2
+            TVControlPnl.picLifelineUse.Image = My.Resources.Resources.ll_switch
             TVControlPnl.picLifelineUse.Visible = True
             TVControlPnl.grpATA.Visible = False
             HostScreen.lblSwitchUsed.ForeColor = Color.Cyan
@@ -21,23 +21,23 @@
             TVControlPnl.tmrFlash.Start()
             If ControlPanel.lblAnswer.Text = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green
-                HostScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-                GuestScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
             End If
             If ControlPanel.lblAnswer.Text = "B" Then
                 ControlPanel.txtB.BackColor = Color.Green
-                HostScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-                GuestScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
             End If
             If ControlPanel.lblAnswer.Text = "C" Then
                 ControlPanel.txtC.BackColor = Color.Green
-                HostScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-                GuestScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
             End If
             If ControlPanel.lblAnswer.Text = "D" Then
                 ControlPanel.txtD.BackColor = Color.Green
-                HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-                HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
             End If
             act = 2
         ElseIf act = 2 Then
@@ -49,18 +49,18 @@
             TVControlPnl.grpATA.Visible = False
             TVControlPnl.pnlQuestion.Visible = False
             TVControlPnl.tmrFlash.Stop()
-            TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""
             ControlPanel.txtB.Text = ""
@@ -90,9 +90,9 @@
     Public Sub reset()
         TVControlPnl.picLifelineUse.Visible = False
         act = 0
-        HostScreen.picSW.Image = My.Resources.lifeline_2_used
-        GuestScreen.picSW.Image = My.Resources.lifeline_2_used
-        TVControlPnl.picSW.Image = My.Resources.lifeline_2_used
+        HostScreen.picSW.Image = My.Resources.Resources.ll_switch_used
+        GuestScreen.picSW.Image = My.Resources.Resources.ll_switch_used
+        TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch_used
         ControlPanel.chkSwitch.Checked = False
         ControlPanel.btnSwitch.Enabled = False
     End Sub

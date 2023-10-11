@@ -20,9 +20,9 @@
         TVControlPnl.txtD.Text = ""
         HostScreen.lbl5050Used.ForeColor = Color.Cyan
 
-        TVControlPnl.pic50.Image = My.Resources.lifeline_1_used
-        HostScreen.pic50.Image = My.Resources.lifeline_1_used
-        GuestScreen.pic50.Image = My.Resources.lifeline_1_used
+        TVControlPnl.pic50.Image = My.Resources.ll_5050_used
+        HostScreen.pic50.Image = My.Resources.ll_5050_used
+        GuestScreen.pic50.Image = My.Resources.ll_5050_used
         ControlPanel.btn5050.Enabled = False
         ControlPanel.chk5050.Checked = False
 

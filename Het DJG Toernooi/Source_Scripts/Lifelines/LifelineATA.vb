@@ -152,45 +152,12 @@
 
                 ControlPanel.btnVote.Enabled = False
                 ControlPanel.chkVote.Checked = False
-                HostScreen.picVO.Image = My.Resources.lifeline_4_used
-                GuestScreen.picVO.Image = My.Resources.lifeline_4_used
-                TVControlPnl.picVO.Image = My.Resources.lifeline_4_used
+                HostScreen.picVO.Image = My.Resources.ll_audience_used
+                GuestScreen.picVO.Image = My.Resources.ll_audience_used
+                TVControlPnl.picVO.Image = My.Resources.ll_audience_used
                 act = 0
         End Select
 
-        'Dim ff As New Lifeline5050
-        'Dim sw As New LifelineSwitch
-        'Dim po As New LifelinePO
-        'If ControlPanel.doublell = 1 Then
-        '    ff.LifelineUse1()
-        '    ControlPanel.btnVote.Enabled = False
-        '    ControlPanel.chkVote.Checked = False
-        '    HostScreen.picVO.Image = My.Resources.lifeline_1_used
-        '    GuestScreen.picVO.Image = My.Resources.lifeline_1_used
-        '    TVControlPnl.picVO.Image = My.Resources.lifeline_1_used
-        '    ControlPanel.intSound += 1
-
-        '    With ControlPanel.snd
-        '        .Name = "SOUND" & ControlPanel.intSound
-        '        .Play(27, False, 500)
-        '    End With
-        'ElseIf ControlPanel.doublell = 2 Then
-        '    sw.LifelineUse1()
-        '    ControlPanel.btnSwitch.Enabled = True
-        '    ControlPanel.btnVote.Enabled = False
-        '    ControlPanel.chkVote.Checked = False
-        '    HostScreen.picVO.Image = My.Resources.lifeline_2_used
-        '    GuestScreen.picVO.Image = My.Resources.lifeline_2_used
-        '    TVControlPnl.picVO.Image = My.Resources.lifeline_2_used
-        'ElseIf ControlPanel.doublell = 3 Then
-        '    po.LifelineUse1()
-        '    ControlPanel.btnPlusOne.Enabled = True
-        '    ControlPanel.btnVote.Enabled = False
-        '    ControlPanel.chkVote.Checked = False
-        '    HostScreen.picVO.Image = My.Resources.lifeline_3_used
-        '    GuestScreen.picVO.Image = My.Resources.lifeline_3_used
-        '    TVControlPnl.picVO.Image = My.Resources.lifeline_3_used
-        'End If
     End Sub
 
     Public Sub blankSub()

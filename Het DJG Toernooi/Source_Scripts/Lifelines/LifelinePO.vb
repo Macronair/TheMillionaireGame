@@ -53,9 +53,9 @@
             plusone = 0
             TVControlPnl.lblTime.Visible = False
             ControlPanel.chkPlusOne.Checked = False
-            HostScreen.picPO.Image = My.Resources.lifeline_3_used
-            GuestScreen.picPO.Image = My.Resources.lifeline_3_used
-            TVControlPnl.picPO.Image = My.Resources.lifeline_3_used
+            HostScreen.picPO.Image = My.Resources.ll_phone_used
+            GuestScreen.picPO.Image = My.Resources.ll_phone_used
+            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
             ControlPanel.btnPlusOne.Enabled = False
         End If
     End Sub

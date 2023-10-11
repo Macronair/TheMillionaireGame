@@ -13,7 +13,7 @@ Public Class LifeLineDouble
         ControlPanel.Timer1.Start()
         ControlPanel.Timer2.Start()
         dd_Start.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stAnswer
-        TVControlPnl.picLifelineUse.Image = My.Resources.lifeline_5
+        TVControlPnl.picLifelineUse.Image = My.Resources.ll_double
         TVControlPnl.picLifelineUse.Visible = True
         dd_Start.controls.play()
 

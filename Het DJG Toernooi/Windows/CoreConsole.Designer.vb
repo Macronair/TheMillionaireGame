@@ -48,7 +48,7 @@ Partial Class CoreConsole
         '
         'tmrRuntime
         '
-        Me.tmrRuntime.Interval = 500
+        Me.tmrRuntime.Interval = 1000
         '
         'CoreConsole
         '

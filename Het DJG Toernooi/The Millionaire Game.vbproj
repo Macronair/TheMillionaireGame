@@ -36,11 +36,17 @@
     <PublisherName>TeamDJG</PublisherName>
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.343.0</ApplicationVersion>
+    <ApplicationRevision>2233</ApplicationRevision>
+    <ApplicationVersion>1.1.409.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <AssemblyVersionSettings>
+    </AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>
+    </AssemblyInfoVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -419,6 +425,26 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo21.ico" />
+    <None Include="Resources\ll_switch_used.png" />
+    <None Include="Resources\ll_switch_glint.png" />
+    <None Include="Resources\ll_switch.png" />
+    <None Include="Resources\ll_plusone_used.png" />
+    <None Include="Resources\ll_plusone_glint.png" />
+    <None Include="Resources\ll_plusone.png" />
+    <None Include="Resources\ll_phone_used.png" />
+    <None Include="Resources\ll_phone_glint.png" />
+    <None Include="Resources\ll_phone.png" />
+    <None Include="Resources\ll_host_used.png" />
+    <None Include="Resources\ll_host_glint.png" />
+    <None Include="Resources\ll_host.png" />
+    <None Include="Resources\ll_audience_used.png" />
+    <None Include="Resources\ll_audience_glint.png" />
+    <None Include="Resources\ll_audience.png" />
+    <None Include="Resources\ll_5050_used.png" />
+    <None Include="Resources\ll_5050_glint.png" />
+    <None Include="Resources\ll_5050.png" />
+    <None Include="Resources\ll_double_used.png" />
+    <None Include="Resources\ll_double_glint.png" />
     <None Include="Resources\fff_idle_new.png" />
     <None Include="Resources\fff_fastest_new.png" />
     <None Include="Resources\fff_correct_new.png" />
@@ -529,7 +555,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.15.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2019 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source_Scripts\Skins\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

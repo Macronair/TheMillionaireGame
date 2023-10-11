@@ -57,10 +57,10 @@ Public Class Question
             act = 3
         End If
         If act = 1 Then
-            TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             TVControlPnl.picTree.Visible = False
             TVControlPnl.pnlStrap.Visible = False
             HostScreen.pnlStrap.Visible = False
@@ -84,18 +84,18 @@ Public Class Question
             HostScreen.txtB.ForeColor = Color.White
             HostScreen.txtC.ForeColor = Color.White
             HostScreen.txtD.ForeColor = Color.White
-            HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             GuestScreen.txtA.ForeColor = Color.White
             GuestScreen.txtB.ForeColor = Color.White
             GuestScreen.txtC.ForeColor = Color.White
             GuestScreen.txtD.ForeColor = Color.White
-            GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             TVControlPnl.txtA.ForeColor = Color.White
             TVControlPnl.txtB.ForeColor = Color.White
             TVControlPnl.txtC.ForeColor = Color.White
@@ -659,29 +659,29 @@ Public Class Question
             LifeLineDouble.chance = 2
             If ControlPanel.answer = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green
-                HostScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                 HostScreen.txtA.ForeColor = Color.Black
-                GuestScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                 GuestScreen.txtA.ForeColor = Color.Black
             End If
             If ControlPanel.answer = "B" Then
                 ControlPanel.txtB.BackColor = Color.Green
-                HostScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                 HostScreen.txtB.ForeColor = Color.Black
-                GuestScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                 GuestScreen.txtB.ForeColor = Color.Black
             End If
             If ControlPanel.answer = "C" Then
-                HostScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                 HostScreen.txtC.ForeColor = Color.Black
-                GuestScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                 GuestScreen.txtC.ForeColor = Color.Black
                 ControlPanel.txtC.BackColor = Color.Green
             End If
             If ControlPanel.answer = "D" Then
-                HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                 HostScreen.txtD.ForeColor = Color.Black
-                GuestScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                GuestScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                 GuestScreen.txtD.ForeColor = Color.Black
                 ControlPanel.txtD.BackColor = Color.Green
             End If
@@ -721,41 +721,41 @@ Public Class Question
                 LifeLineDouble.SecondChance()
                 If ControlPanel.answer = "A" Then
                     TVControlPnl.txtA.Text = ""
-                    TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     HostScreen.txtA.Text = ""
-                    HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     GuestScreen.txtA.Text = ""
-                    GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     ControlPanel.txtA.Text = ""
                     ControlPanel.txtA.BackColor = Color.Silver
                 End If
                 If ControlPanel.answer = "B" Then
                     TVControlPnl.txtB.Text = ""
-                    TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     HostScreen.txtB.Text = ""
-                    HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     GuestScreen.txtB.Text = ""
-                    GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     ControlPanel.txtB.Text = ""
                     ControlPanel.txtB.BackColor = Color.Silver
                 End If
                 If ControlPanel.answer = "C" Then
                     TVControlPnl.txtC.Text = ""
-                    TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     HostScreen.txtC.Text = ""
-                    HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     GuestScreen.txtC.Text = ""
-                    GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
+                    GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                     ControlPanel.txtC.Text = ""
                     ControlPanel.txtC.BackColor = Color.Silver
                 End If
                 If ControlPanel.answer = "D" Then
                     TVControlPnl.txtD.Text = ""
-                    TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     HostScreen.txtD.Text = ""
-                    HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     GuestScreen.txtD.Text = ""
-                    GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                    GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                     ControlPanel.txtD.Text = ""
                     ControlPanel.txtD.BackColor = Color.Silver
                 End If
@@ -768,30 +768,30 @@ Public Class Question
                 Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
                 trStopDD.Start()
                 If ControlPanel.lblAnswer.Text = "A" Then
-                    HostScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                    HostScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                     HostScreen.txtA.ForeColor = Color.Black
-                    GuestScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                    GuestScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                     GuestScreen.txtA.ForeColor = Color.Black
                     ControlPanel.txtA.BackColor = Color.Green
                 End If
                 If ControlPanel.lblAnswer.Text = "B" Then
-                    HostScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                    HostScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                     HostScreen.txtB.ForeColor = Color.Black
-                    GuestScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                    GuestScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                     GuestScreen.txtB.ForeColor = Color.Black
                     ControlPanel.txtB.BackColor = Color.Green
                 End If
                 If ControlPanel.lblAnswer.Text = "C" Then
-                    HostScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                    HostScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                     HostScreen.txtC.ForeColor = Color.Black
-                    GuestScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                    GuestScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                     GuestScreen.txtC.ForeColor = Color.Black
                     ControlPanel.txtC.BackColor = Color.Green
                 End If
                 If ControlPanel.lblAnswer.Text = "D" Then
-                    HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                    HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                     HostScreen.txtC.ForeColor = Color.Black
-                    GuestScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                    GuestScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                     GuestScreen.txtD.ForeColor = Color.Black
                     ControlPanel.txtD.BackColor = Color.Green
                 End If
@@ -807,7 +807,7 @@ Public Class Question
         End If
     End Sub
 
-    Public Sub UndoAnswer(ByVal music As Boolean)
+    Public Shared Sub UndoAnswer(ByVal music As Boolean)
         ControlPanel.HaltSound()
         If music = True Then
             PlayQuestionCue()
@@ -820,28 +820,28 @@ Public Class Question
 
         HostScreen.txtExplain.BackColor = Color.Black
         HostScreen.pnlAnswer.BackColor = Color.Black
-        HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-        HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+        HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
         HostScreen.txtA.ForeColor = Color.White
         HostScreen.txtB.ForeColor = Color.White
         HostScreen.txtC.ForeColor = Color.White
         HostScreen.txtD.ForeColor = Color.White
 
-        GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-        GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+        GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
         GuestScreen.txtA.ForeColor = Color.White
         GuestScreen.txtB.ForeColor = Color.White
         GuestScreen.txtC.ForeColor = Color.White
         GuestScreen.txtD.ForeColor = Color.White
 
-        TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-        TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+        TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
         TVControlPnl.txtA.ForeColor = Color.White
         TVControlPnl.txtB.ForeColor = Color.White
         TVControlPnl.txtC.ForeColor = Color.White

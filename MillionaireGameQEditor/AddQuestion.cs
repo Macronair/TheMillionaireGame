@@ -209,6 +209,31 @@ namespace Millionaire.Windows.Question_Editor
             fff_answer = 0;
             btnReset.Enabled = false;
         }
+
+        private void txtQuestion_TextChanged(object sender, EventArgs e)
+        {
+            lblQuestion.Text = txtQuestion.Text;
+        }
+
+        private void txtA_TextChanged(object sender, EventArgs e)
+        {
+            lblA.Text = "A: " + txtA.Text;
+        }
+
+        private void txtB_TextChanged(object sender, EventArgs e)
+        {
+            lblB.Text = "B: " + txtB.Text;
+        }
+
+        private void txtC_TextChanged(object sender, EventArgs e)
+        {
+            lblC.Text = "C: " + txtC.Text;
+        }
+
+        private void txtD_TextChanged(object sender, EventArgs e)
+        {
+            lblD.Text = "D: " + txtD.Text;
+        }
     }
 
     public class Edits

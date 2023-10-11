@@ -1,4 +1,5 @@
-﻿Imports System.Reflection
+Imports System.Resources
+Imports System.Reflection
 Imports System.Runtime.InteropServices
 
 ' General Information about an assembly is controlled through the following
@@ -8,10 +9,10 @@ Imports System.Runtime.InteropServices
 ' Review the values of the assembly attributes
 
 <Assembly: AssemblyTitle("The Millionaire Game")>
-<Assembly: AssemblyDescription("The Millionaire Game (made by Maerciezz)")>
-<Assembly: AssemblyCompany("TeamDJG")>
+<Assembly: AssemblyDescription("The Millionaire Game (made by Marco Loenen)")>
+<Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("The Millionaire Game")>
-<Assembly: AssemblyCopyright("Copyright ©  2020")>
+<Assembly: AssemblyCopyright("Copyright ©  2023")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
@@ -30,5 +31,8 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.0.344.0")>
-<Assembly: AssemblyFileVersion("1.0.344.0")>
+<Assembly: AssemblyVersion("1.1.410.0")>
+<Assembly: AssemblyFileVersion("1.1.410.0")>
+
+<Assembly: AssemblyInformationalVersion("1.1.410.0")>
+<Assembly: NeutralResourcesLanguage("en-US")>

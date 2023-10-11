@@ -130,14 +130,11 @@
   <data name="_0_tree_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Large_Strap_Fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Large_Strap_Fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Large_Strap_Fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="q15_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q15_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lifeline_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_tree_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,13 +148,10 @@
   <data name="stq_new_question_flip" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stq_new_question_flip.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lifeline_2_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_2_bling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="q14_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q14_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Correct_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Correct_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Correct_Answer_Fill_l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_tree_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -187,7 +181,7 @@
   <data name="hello_long" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\hello_long.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Normal_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Normal_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Normal_Answer_Fill_r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_tree_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -223,20 +217,17 @@
   <data name="q14_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q14_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="Final_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Final_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Final_Answer_Fill_l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_0_tree_15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Final_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Final_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Final_Answer_Fill_r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_0_tree_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lifeline_4_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_4_bling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_1_tree_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,44 +259,26 @@
   <data name="_1_tree_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lifeline_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="ata_start" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ata_start.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_0_tree_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_13.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lifeline_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Normal_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Normal_Answer_Fill_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Normal_Answer_Fill_l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fastest_finger_read_question" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fastest_finger_read_question.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lifeline_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="_1_tree_12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lifeline_4_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_4_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fff_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fff_correct.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="q8_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q8_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="q12_bed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q12_bed.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lifeline_1_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_1_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="q6_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q6_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -322,23 +295,11 @@
   <data name="q10_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q10_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lifeline_1_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_1_bling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="36973" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\36973.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lifeline_3_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_3_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="q13_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q13_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lifeline_2_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_2_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="background1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\background2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="q10_correct_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q10_correct_2.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -351,9 +312,6 @@
   </data>
   <data name="q9_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q9_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="Correct_Answer_Fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Correct_Answer_Fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_0_tree_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\0_tree_9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,7 +328,7 @@
   <data name="ata_vote" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ata_vote.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lifeline_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="ll_double" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lifeline_5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="_0_tree_11" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -400,7 +358,7 @@
   <data name="_1_tree_10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Correct_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="0_Correct_Answer_Fill_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Correct_Answer_Fill_r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="winning_strap_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -415,17 +373,11 @@
   <data name="q5_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q5_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lifeline_3_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lifeline_3_bling.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="q9_lose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q9_lose.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="_1_tree_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1_tree_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Final_Answer_Fill" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Final_Answer_Fill.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stq_reveal_correct_answer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stq_reveal_correct_answer.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -439,9 +391,6 @@
   <data name="q1_to_q4_correct" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\q1_to_q4_correct.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fff_idle" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fff_idle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="fff_correct_new" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fff_correct_new.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -453,5 +402,65 @@
   </data>
   <data name="tree_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tree_0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_5050" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_5050.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_5050_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_5050_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_5050_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_5050_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_audience" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_audience.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_audience_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_audience_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_audience_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_audience_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_double_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_double_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_double_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_double_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_host" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_host.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_host_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_host_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_host_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_host_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_phone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_phone_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_phone_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_phone_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_phone_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_plusone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_plusone.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_plusone_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_plusone_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_plusone_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_plusone_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_switch" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_switch.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_switch_bling" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_switch_glint.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ll_switch_used" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ll_switch_used.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

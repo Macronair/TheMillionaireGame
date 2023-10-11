@@ -143,5 +143,14 @@
   <ItemGroup>
     <None Include="Resources\move icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal_Answer_Fill_r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Large_Strap_Fill.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Normal_Answer_Fill_l.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -150,7 +150,7 @@ Partial Class TVControlPnl
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_3
+        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_phone
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox1.Name = "PictureBox1"
@@ -271,7 +271,7 @@ Partial Class TVControlPnl
         'PictureBox2
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_4
+        Me.PictureBox2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_audience
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Location = New System.Drawing.Point(13, 62)
         Me.PictureBox2.Name = "PictureBox2"
@@ -296,7 +296,7 @@ Partial Class TVControlPnl
         '
         'picD
         '
-        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.picD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picD.Controls.Add(Me.txtD)
         Me.picD.Location = New System.Drawing.Point(642, 168)
@@ -318,7 +318,7 @@ Partial Class TVControlPnl
         '
         'picB
         '
-        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.picB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picB.Controls.Add(Me.txtB)
         Me.picB.Location = New System.Drawing.Point(642, 109)
@@ -340,7 +340,7 @@ Partial Class TVControlPnl
         '
         'picC
         '
-        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.picC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picC.Controls.Add(Me.txtC)
         Me.picC.Location = New System.Drawing.Point(0, 168)
@@ -362,7 +362,7 @@ Partial Class TVControlPnl
         '
         'picA
         '
-        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.picA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picA.Controls.Add(Me.txtA)
         Me.picA.Location = New System.Drawing.Point(0, 109)
@@ -384,7 +384,7 @@ Partial Class TVControlPnl
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 9)
@@ -437,7 +437,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder4
         '
-        Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder4.Controls.Add(Me.txtFFFOrder4)
         Me.pnlFFFOrder4.Location = New System.Drawing.Point(689, 571)
@@ -459,7 +459,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder3
         '
-        Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder3.Controls.Add(Me.txtFFFOrder3)
         Me.pnlFFFOrder3.Location = New System.Drawing.Point(689, 517)
@@ -481,7 +481,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder2
         '
-        Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder2.Controls.Add(Me.txtFFFOrder2)
         Me.pnlFFFOrder2.Location = New System.Drawing.Point(689, 463)
@@ -503,7 +503,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder1
         '
-        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder1.Controls.Add(Me.txtFFFOrder1)
         Me.pnlFFFOrder1.Location = New System.Drawing.Point(689, 409)
@@ -526,7 +526,7 @@ Partial Class TVControlPnl
         'picVO
         '
         Me.picVO.BackColor = System.Drawing.Color.Transparent
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
+        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.ll_audience
         Me.picVO.Location = New System.Drawing.Point(846, 67)
         Me.picVO.Name = "picVO"
         Me.picVO.Size = New System.Drawing.Size(74, 48)
@@ -537,7 +537,7 @@ Partial Class TVControlPnl
         'picPO
         '
         Me.picPO.BackColor = System.Drawing.Color.Transparent
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
+        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.ll_phone
         Me.picPO.Location = New System.Drawing.Point(926, 67)
         Me.picPO.Name = "picPO"
         Me.picPO.Size = New System.Drawing.Size(74, 48)
@@ -548,7 +548,7 @@ Partial Class TVControlPnl
         'picSW
         '
         Me.picSW.BackColor = System.Drawing.Color.Transparent
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.ll_switch
         Me.picSW.Location = New System.Drawing.Point(1086, 67)
         Me.picSW.Name = "picSW"
         Me.picSW.Size = New System.Drawing.Size(74, 48)
@@ -560,7 +560,7 @@ Partial Class TVControlPnl
         'pic50
         '
         Me.pic50.BackColor = System.Drawing.Color.Transparent
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
+        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.ll_5050
         Me.pic50.Location = New System.Drawing.Point(1006, 67)
         Me.pic50.Name = "pic50"
         Me.pic50.Size = New System.Drawing.Size(74, 48)
@@ -632,7 +632,7 @@ Partial Class TVControlPnl
         'picLifelineUse
         '
         Me.picLifelineUse.BackColor = System.Drawing.Color.Transparent
-        Me.picLifelineUse.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.picLifelineUse.Image = Global.MillionaireGame.My.Resources.Resources.ll_switch
         Me.picLifelineUse.Location = New System.Drawing.Point(606, 418)
         Me.picLifelineUse.Name = "picLifelineUse"
         Me.picLifelineUse.Size = New System.Drawing.Size(68, 48)

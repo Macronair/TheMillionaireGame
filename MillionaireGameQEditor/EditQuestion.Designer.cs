@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEditQuestion));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,13 +56,29 @@
             this.btnFFFA = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtNote = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.pnlD = new System.Windows.Forms.Panel();
+            this.lblD = new System.Windows.Forms.Label();
+            this.pnlB = new System.Windows.Forms.Panel();
+            this.lblB = new System.Windows.Forms.Label();
+            this.pnlC = new System.Windows.Forms.Panel();
+            this.lblC = new System.Windows.Forms.Label();
+            this.pnlA = new System.Windows.Forms.Panel();
+            this.lblA = new System.Windows.Forms.Label();
+            this.picQuestion = new System.Windows.Forms.Panel();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.pnlFFFAnswer.SuspendLayout();
+            this.pnlD.SuspendLayout();
+            this.pnlB.SuspendLayout();
+            this.pnlC.SuspendLayout();
+            this.pnlA.SuspendLayout();
+            this.picQuestion.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 19);
+            this.label1.Location = new System.Drawing.Point(12, 46);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -70,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 76);
+            this.label2.Location = new System.Drawing.Point(47, 103);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 1;
@@ -79,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 101);
+            this.label3.Location = new System.Drawing.Point(47, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 2;
@@ -88,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 126);
+            this.label4.Location = new System.Drawing.Point(47, 153);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 3;
@@ -97,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(58, 151);
+            this.label5.Location = new System.Drawing.Point(46, 178);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 13);
             this.label5.TabIndex = 4;
@@ -106,7 +123,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(32, 181);
+            this.label6.Location = new System.Drawing.Point(430, 46);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 5;
@@ -115,43 +132,48 @@
             // txtQuestion
             // 
             this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(79, 12);
+            this.txtQuestion.Location = new System.Drawing.Point(67, 39);
             this.txtQuestion.Multiline = true;
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(357, 53);
             this.txtQuestion.TabIndex = 6;
+            this.txtQuestion.TextChanged += new System.EventHandler(this.txtQuestion_TextChanged);
             // 
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(79, 69);
+            this.txtA.Location = new System.Drawing.Point(67, 96);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(357, 24);
             this.txtA.TabIndex = 7;
+            this.txtA.TextChanged += new System.EventHandler(this.txtA_TextChanged);
             // 
             // txtB
             // 
             this.txtB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtB.Location = new System.Drawing.Point(79, 94);
+            this.txtB.Location = new System.Drawing.Point(67, 121);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(357, 24);
             this.txtB.TabIndex = 8;
+            this.txtB.TextChanged += new System.EventHandler(this.txtB_TextChanged);
             // 
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(79, 119);
+            this.txtC.Location = new System.Drawing.Point(67, 146);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(357, 24);
             this.txtC.TabIndex = 9;
+            this.txtC.TextChanged += new System.EventHandler(this.txtC_TextChanged);
             // 
             // txtD
             // 
             this.txtD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtD.Location = new System.Drawing.Point(79, 144);
+            this.txtD.Location = new System.Drawing.Point(67, 171);
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(357, 24);
             this.txtD.TabIndex = 10;
+            this.txtD.TextChanged += new System.EventHandler(this.txtD_TextChanged);
             // 
             // txtCorrect
             // 
@@ -162,7 +184,7 @@
             "B",
             "C",
             "D"});
-            this.txtCorrect.Location = new System.Drawing.Point(79, 174);
+            this.txtCorrect.Location = new System.Drawing.Point(477, 39);
             this.txtCorrect.MaxLength = 1;
             this.txtCorrect.Name = "txtCorrect";
             this.txtCorrect.Size = new System.Drawing.Size(80, 26);
@@ -170,7 +192,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(162, 387);
+            this.txtId.Location = new System.Drawing.Point(35, 12);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(59, 20);
@@ -179,7 +201,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(140, 390);
+            this.label7.Location = new System.Drawing.Point(13, 15);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 13;
@@ -188,7 +210,7 @@
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(334, 358);
+            this.btnSave.Location = new System.Drawing.Point(626, 10);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(102, 23);
             this.btnSave.TabIndex = 14;
@@ -198,7 +220,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(334, 385);
+            this.btnCancel.Location = new System.Drawing.Point(626, 37);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(102, 23);
             this.btnCancel.TabIndex = 15;
@@ -208,7 +230,7 @@
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(281, 387);
+            this.txtLevel.Location = new System.Drawing.Point(154, 12);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.ReadOnly = true;
             this.txtLevel.Size = new System.Drawing.Size(47, 20);
@@ -217,7 +239,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(242, 390);
+            this.label8.Location = new System.Drawing.Point(115, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 17;
@@ -231,9 +253,9 @@
             this.pnlFFFAnswer.Controls.Add(this.btnFFFC);
             this.pnlFFFAnswer.Controls.Add(this.btnFFFB);
             this.pnlFFFAnswer.Controls.Add(this.btnFFFA);
-            this.pnlFFFAnswer.Location = new System.Drawing.Point(176, 174);
+            this.pnlFFFAnswer.Location = new System.Drawing.Point(433, 71);
             this.pnlFFFAnswer.Name = "pnlFFFAnswer";
-            this.pnlFFFAnswer.Size = new System.Drawing.Size(228, 85);
+            this.pnlFFFAnswer.Size = new System.Drawing.Size(175, 85);
             this.pnlFFFAnswer.TabIndex = 18;
             this.pnlFFFAnswer.Visible = false;
             // 
@@ -243,16 +265,16 @@
             this.lblAnswer.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAnswer.Location = new System.Drawing.Point(12, 55);
             this.lblAnswer.Name = "lblAnswer";
-            this.lblAnswer.Size = new System.Drawing.Size(13, 16);
+            this.lblAnswer.Size = new System.Drawing.Size(12, 16);
             this.lblAnswer.TabIndex = 6;
             this.lblAnswer.Text = "*";
             // 
             // btnReset
             // 
             this.btnReset.Enabled = false;
-            this.btnReset.Location = new System.Drawing.Point(126, 52);
+            this.btnReset.Location = new System.Drawing.Point(114, 52);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.Size = new System.Drawing.Size(56, 23);
             this.btnReset.TabIndex = 5;
             this.btnReset.Text = "Reset";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -261,7 +283,7 @@
             // btnFFFD
             // 
             this.btnFFFD.Enabled = false;
-            this.btnFFFD.Location = new System.Drawing.Point(159, 7);
+            this.btnFFFD.Location = new System.Drawing.Point(128, 7);
             this.btnFFFD.Name = "btnFFFD";
             this.btnFFFD.Size = new System.Drawing.Size(42, 43);
             this.btnFFFD.TabIndex = 4;
@@ -272,7 +294,7 @@
             // btnFFFC
             // 
             this.btnFFFC.Enabled = false;
-            this.btnFFFC.Location = new System.Drawing.Point(111, 7);
+            this.btnFFFC.Location = new System.Drawing.Point(87, 7);
             this.btnFFFC.Name = "btnFFFC";
             this.btnFFFC.Size = new System.Drawing.Size(42, 43);
             this.btnFFFC.TabIndex = 3;
@@ -283,7 +305,7 @@
             // btnFFFB
             // 
             this.btnFFFB.Enabled = false;
-            this.btnFFFB.Location = new System.Drawing.Point(63, 7);
+            this.btnFFFB.Location = new System.Drawing.Point(46, 7);
             this.btnFFFB.Name = "btnFFFB";
             this.btnFFFB.Size = new System.Drawing.Size(42, 43);
             this.btnFFFB.TabIndex = 2;
@@ -294,7 +316,7 @@
             // btnFFFA
             // 
             this.btnFFFA.Enabled = false;
-            this.btnFFFA.Location = new System.Drawing.Point(15, 7);
+            this.btnFFFA.Location = new System.Drawing.Point(5, 7);
             this.btnFFFA.Name = "btnFFFA";
             this.btnFFFA.Size = new System.Drawing.Size(42, 43);
             this.btnFFFA.TabIndex = 1;
@@ -305,7 +327,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 268);
+            this.label9.Location = new System.Drawing.Point(64, 206);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
             this.label9.TabIndex = 21;
@@ -314,17 +336,141 @@
             // txtNote
             // 
             this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(79, 265);
+            this.txtNote.Location = new System.Drawing.Point(135, 201);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(357, 75);
+            this.txtNote.Size = new System.Drawing.Size(289, 60);
             this.txtNote.TabIndex = 20;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(115, 284);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(48, 13);
+            this.label15.TabIndex = 87;
+            this.label15.Text = "Preview:";
+            // 
+            // pnlD
+            // 
+            this.pnlD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlD.BackgroundImage")));
+            this.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlD.Controls.Add(this.lblD);
+            this.pnlD.Location = new System.Drawing.Point(636, 459);
+            this.pnlD.Name = "pnlD";
+            this.pnlD.Size = new System.Drawing.Size(641, 57);
+            this.pnlD.TabIndex = 85;
+            // 
+            // lblD
+            // 
+            this.lblD.BackColor = System.Drawing.Color.Transparent;
+            this.lblD.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblD.ForeColor = System.Drawing.Color.White;
+            this.lblD.Location = new System.Drawing.Point(41, 5);
+            this.lblD.Name = "lblD";
+            this.lblD.Size = new System.Drawing.Size(476, 46);
+            this.lblD.TabIndex = 19;
+            this.lblD.Text = "D:";
+            this.lblD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlB
+            // 
+            this.pnlB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlB.BackgroundImage")));
+            this.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlB.Controls.Add(this.lblB);
+            this.pnlB.Location = new System.Drawing.Point(636, 400);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(641, 57);
+            this.pnlB.TabIndex = 84;
+            // 
+            // lblB
+            // 
+            this.lblB.BackColor = System.Drawing.Color.Transparent;
+            this.lblB.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB.ForeColor = System.Drawing.Color.White;
+            this.lblB.Location = new System.Drawing.Point(41, 6);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(476, 45);
+            this.lblB.TabIndex = 19;
+            this.lblB.Text = "B:";
+            this.lblB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlC
+            // 
+            this.pnlC.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
+            this.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlC.Controls.Add(this.lblC);
+            this.pnlC.Location = new System.Drawing.Point(-4, 459);
+            this.pnlC.Name = "pnlC";
+            this.pnlC.Size = new System.Drawing.Size(641, 57);
+            this.pnlC.TabIndex = 83;
+            // 
+            // lblC
+            // 
+            this.lblC.BackColor = System.Drawing.Color.Transparent;
+            this.lblC.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.ForeColor = System.Drawing.Color.White;
+            this.lblC.Location = new System.Drawing.Point(122, 5);
+            this.lblC.Name = "lblC";
+            this.lblC.Size = new System.Drawing.Size(476, 46);
+            this.lblC.TabIndex = 18;
+            this.lblC.Text = "C:";
+            this.lblC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlA
+            // 
+            this.pnlA.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
+            this.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlA.Controls.Add(this.lblA);
+            this.pnlA.Location = new System.Drawing.Point(-4, 400);
+            this.pnlA.Name = "pnlA";
+            this.pnlA.Size = new System.Drawing.Size(641, 57);
+            this.pnlA.TabIndex = 82;
+            // 
+            // lblA
+            // 
+            this.lblA.BackColor = System.Drawing.Color.Transparent;
+            this.lblA.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.ForeColor = System.Drawing.Color.White;
+            this.lblA.Location = new System.Drawing.Point(123, 6);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(476, 45);
+            this.lblA.TabIndex = 17;
+            this.lblA.Text = "A:";
+            this.lblA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picQuestion
+            // 
+            this.picQuestion.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Large_Strap_Fill;
+            this.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picQuestion.Controls.Add(this.lblQuestion);
+            this.picQuestion.Location = new System.Drawing.Point(-4, 300);
+            this.picQuestion.Name = "picQuestion";
+            this.picQuestion.Size = new System.Drawing.Size(1280, 93);
+            this.picQuestion.TabIndex = 86;
+            // 
+            // lblQuestion
+            // 
+            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuestion.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.ForeColor = System.Drawing.Color.White;
+            this.lblQuestion.Location = new System.Drawing.Point(132, 12);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(1016, 69);
+            this.lblQuestion.TabIndex = 13;
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // frmEditQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(448, 418);
+            this.ClientSize = new System.Drawing.Size(1275, 528);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.pnlD);
+            this.Controls.Add(this.pnlB);
+            this.Controls.Add(this.pnlC);
+            this.Controls.Add(this.pnlA);
+            this.Controls.Add(this.picQuestion);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txtNote);
             this.Controls.Add(this.pnlFFFAnswer);
@@ -352,6 +498,11 @@
             this.Load += new System.EventHandler(this.frmEditQuestion_Load);
             this.pnlFFFAnswer.ResumeLayout(false);
             this.pnlFFFAnswer.PerformLayout();
+            this.pnlD.ResumeLayout(false);
+            this.pnlB.ResumeLayout(false);
+            this.pnlC.ResumeLayout(false);
+            this.pnlA.ResumeLayout(false);
+            this.picQuestion.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,5 +537,16 @@
         public System.Windows.Forms.Label lblAnswer;
         private System.Windows.Forms.Label label9;
         public System.Windows.Forms.TextBox txtNote;
+        internal System.Windows.Forms.Panel pnlD;
+        internal System.Windows.Forms.Label lblD;
+        internal System.Windows.Forms.Panel pnlB;
+        internal System.Windows.Forms.Label lblB;
+        internal System.Windows.Forms.Panel pnlC;
+        internal System.Windows.Forms.Label lblC;
+        internal System.Windows.Forms.Panel pnlA;
+        internal System.Windows.Forms.Label lblA;
+        internal System.Windows.Forms.Panel picQuestion;
+        internal System.Windows.Forms.Label lblQuestion;
+        private System.Windows.Forms.Label label15;
     }
 }

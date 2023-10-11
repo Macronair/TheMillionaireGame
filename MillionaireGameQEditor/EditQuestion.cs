@@ -110,6 +110,12 @@ namespace Millionaire.Windows.Question_Editor
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;
             }
+
+            lblQuestion.Text = txtQuestion.Text;
+            lblA.Text = txtA.Text;
+            lblB.Text = txtB.Text;
+            lblC.Text = txtC.Text;
+            lblD.Text = txtD.Text;
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -198,6 +204,31 @@ namespace Millionaire.Windows.Question_Editor
             {
                 btnSave.Enabled = true;
             }
+        }
+
+        private void txtQuestion_TextChanged(object sender, EventArgs e)
+        {
+            lblQuestion.Text = txtQuestion.Text;
+        }
+
+        private void txtA_TextChanged(object sender, EventArgs e)
+        {
+            lblA.Text = "A: " + txtA.Text;
+        }
+
+        private void txtB_TextChanged(object sender, EventArgs e)
+        {
+            lblB.Text = "B: " + txtB.Text;
+        }
+
+        private void txtC_TextChanged(object sender, EventArgs e)
+        {
+            lblC.Text = "C: " + txtC.Text;
+        }
+
+        private void txtD_TextChanged(object sender, EventArgs e)
+        {
+            lblD.Text = "D: " + txtD.Text;
         }
     }
 }

@@ -4,10 +4,14 @@ Imports System.Xml.Serialization
 
 Public Class AppSettings
     Public Property RiskMode As Boolean
-    Public Property Lifeline1 As Integer
-    Public Property Lifeline2 As Integer
-    Public Property Lifeline3 As Integer
-    Public Property Lifeline4 As Integer
+    Public Property Lifeline1 As String
+    Public Property Lifeline2 As String
+    Public Property Lifeline3 As String
+    Public Property Lifeline4 As String
+    Public Property Lifeline1_available As Integer
+    Public Property Lifeline2_available As Integer
+    Public Property Lifeline3_available As Integer
+    Public Property Lifeline4_available As Integer
     Public Property WinningStrapTexture As Integer
     Public Property QuestionTexture As Integer
 
@@ -292,6 +296,18 @@ Public Class Profile
     End Sub
 
     Private Sub SaveFefaultSettings()
+        Options.RiskMode = False
+        Options.WinningStrapTexture = 0
+
+        Options.Lifeline1 = "ask_audience"
+        Options.Lifeline2 = "50_50"
+        Options.Lifeline3 = "switch"
+        Options.Lifeline4 = "ask_host"
+        Options.Lifeline1_available = 0
+        Options.Lifeline2_available = 0
+        Options.Lifeline3_available = 0
+        Options.Lifeline4_available = 3
+
         Options.snd_Opening = "host_entrance.mp3"
         Options.snd_CommIn = "commercial_in.mp3"
         Options.snd_CommOut = "commercial_out.mp3"

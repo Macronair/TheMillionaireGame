@@ -1,6 +1,11 @@
 ﻿Public Class OptionsScreen
 
     Private Sub OptionsScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbLifeline1.Text = Profile.Options.Lifeline1
+        cmbLifeline2.Text = Profile.Options.Lifeline2
+        cmbLifeline3.Text = Profile.Options.Lifeline3
+        cmbLifeline4.Text = Profile.Options.Lifeline4
+
         txtSndOpening.Text = Profile.Options.snd_Opening
         txtSndCommercialIn.Text = Profile.Options.snd_CommIn
         txtSndCommercialOut.Text = Profile.Options.snd_CommOut

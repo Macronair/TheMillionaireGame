@@ -401,7 +401,7 @@ Partial Class HostScreen
         '
         'pnlD
         '
-        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
         Me.pnlD.Location = New System.Drawing.Point(640, 651)
@@ -423,7 +423,7 @@ Partial Class HostScreen
         '
         'pnlB
         '
-        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
         Me.pnlB.Location = New System.Drawing.Point(640, 592)
@@ -445,7 +445,7 @@ Partial Class HostScreen
         '
         'pnlC
         '
-        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
         Me.pnlC.Location = New System.Drawing.Point(0, 651)
@@ -467,7 +467,7 @@ Partial Class HostScreen
         '
         'pnlA
         '
-        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
         Me.pnlA.Location = New System.Drawing.Point(0, 592)
@@ -489,7 +489,7 @@ Partial Class HostScreen
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 492)
@@ -510,7 +510,7 @@ Partial Class HostScreen
         '
         'picVO
         '
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
+        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.ll_audience
         Me.picVO.Location = New System.Drawing.Point(680, 9)
         Me.picVO.Name = "picVO"
         Me.picVO.Size = New System.Drawing.Size(94, 65)
@@ -520,7 +520,7 @@ Partial Class HostScreen
         '
         'picSW
         '
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.ll_switch
         Me.picSW.Location = New System.Drawing.Point(580, 9)
         Me.picSW.Name = "picSW"
         Me.picSW.Size = New System.Drawing.Size(94, 65)
@@ -531,7 +531,7 @@ Partial Class HostScreen
         '
         'picPO
         '
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
+        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.ll_phone
         Me.picPO.Location = New System.Drawing.Point(780, 9)
         Me.picPO.Name = "picPO"
         Me.picPO.Size = New System.Drawing.Size(94, 65)
@@ -541,7 +541,7 @@ Partial Class HostScreen
         '
         'pic50
         '
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
+        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.ll_5050
         Me.pic50.Location = New System.Drawing.Point(880, 9)
         Me.pic50.Name = "pic50"
         Me.pic50.Size = New System.Drawing.Size(94, 65)

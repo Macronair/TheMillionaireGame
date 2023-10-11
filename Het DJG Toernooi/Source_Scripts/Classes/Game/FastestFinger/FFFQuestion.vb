@@ -56,18 +56,18 @@
                 HostScreen.txtB.ForeColor = Color.White
                 HostScreen.txtC.ForeColor = Color.White
                 HostScreen.txtD.ForeColor = Color.White
-                HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 GuestScreen.txtA.ForeColor = Color.White
                 GuestScreen.txtB.ForeColor = Color.White
                 GuestScreen.txtC.ForeColor = Color.White
                 GuestScreen.txtD.ForeColor = Color.White
-                GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 TVControlPnl.txtA.ForeColor = Color.White
                 TVControlPnl.txtB.ForeColor = Color.White
                 TVControlPnl.txtC.ForeColor = Color.White
@@ -150,10 +150,10 @@
                 TVControlPnl.txtPL8_Name.ForeColor = Color.White
                 TVControlPnl.txtPL8_Points.ForeColor = Color.White
 
-                TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 TVControlPnl.tmrFlash.Stop()
                 FFFServer.newQ.newQuestion()
                 My.Computer.Audio.Play(My.Resources.fastest_finger_read_question, AudioPlayMode.Background)

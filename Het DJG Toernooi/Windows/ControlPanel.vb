@@ -55,11 +55,11 @@ Public Class ControlPanel
         answer = "A"
         HostScreen.txtExplain.ForeColor = Color.White
         txtA.BackColor = Color.Yellow
-        HostScreen.pnlA.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        HostScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtA.ForeColor = Color.Black
-        TVControlPnl.picA.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        TVControlPnl.picA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         TVControlPnl.txtA.ForeColor = Color.Black
-        GuestScreen.pnlA.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        GuestScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtA.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
@@ -79,11 +79,11 @@ Public Class ControlPanel
         answer = "B"
         HostScreen.txtExplain.ForeColor = Color.White
         txtB.BackColor = Color.Yellow
-        HostScreen.pnlB.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        HostScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtB.ForeColor = Color.Black
-        TVControlPnl.picB.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        TVControlPnl.picB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         TVControlPnl.txtB.ForeColor = Color.Black
-        GuestScreen.pnlB.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        GuestScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtB.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
@@ -103,11 +103,11 @@ Public Class ControlPanel
         answer = "C"
         HostScreen.txtExplain.ForeColor = Color.White
         txtC.BackColor = Color.Yellow
-        HostScreen.pnlC.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        HostScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtC.ForeColor = Color.Black
-        TVControlPnl.picC.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        TVControlPnl.picC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         TVControlPnl.txtC.ForeColor = Color.Black
-        GuestScreen.pnlC.BackgroundImage = My.Resources.Final_Answer_Fill_l
+        GuestScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtC.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
@@ -127,11 +127,11 @@ Public Class ControlPanel
         answer = "D"
         HostScreen.txtExplain.ForeColor = Color.White
         txtD.BackColor = Color.Yellow
-        HostScreen.pnlD.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        HostScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtD.ForeColor = Color.Black
-        TVControlPnl.picD.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        TVControlPnl.picD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         TVControlPnl.txtD.ForeColor = Color.Black
-        GuestScreen.pnlD.BackgroundImage = My.Resources.Final_Answer_Fill_r
+        GuestScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtD.ForeColor = Color.Black
         If answer = lblAnswer.Text Then
             HostScreen.pnlAnswer.BackColor = Color.Lime
@@ -170,10 +170,10 @@ Public Class ControlPanel
             TVControlPnl.txtB.ForeColor = Color.White
             TVControlPnl.txtC.ForeColor = Color.White
             TVControlPnl.txtD.ForeColor = Color.White
-            TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             TVControlPnl.pnlQuestion.Visible = False
             TVControlPnl.pnlStrap.Visible = False
             TVControlPnl.tmrFlash.Stop()
@@ -187,19 +187,19 @@ Public Class ControlPanel
             HostScreen.txtB.Text = ""
             HostScreen.txtC.Text = ""
             HostScreen.txtD.Text = ""
-            HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             GuestScreen.txtQuestion.Text = ""
             GuestScreen.txtA.Text = ""
             GuestScreen.txtB.Text = ""
             GuestScreen.txtC.Text = ""
             GuestScreen.txtD.Text = ""
-            GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             i = 0
         End If
     End Sub
@@ -295,45 +295,45 @@ Public Class ControlPanel
     Private Sub chk5050_CheckedChanged(sender As Object, e As EventArgs) Handles chk5050.CheckedChanged
         If chk5050.Checked = True Then
             btn5050.Enabled = True
-            HostScreen.pic50.Image = My.Resources.lifeline_1
-            GuestScreen.pic50.Image = My.Resources.lifeline_1
-            TVControlPnl.pic50.Image = My.Resources.lifeline_1
+            HostScreen.pic50.Image = My.Resources.ll_5050
+            GuestScreen.pic50.Image = My.Resources.ll_5050
+            TVControlPnl.pic50.Image = My.Resources.ll_5050
         End If
         If chk5050.Checked = False Then
             btn5050.Enabled = False
-            HostScreen.pic50.Image = My.Resources.lifeline_1_used
-            GuestScreen.pic50.Image = My.Resources.lifeline_1_used
-            TVControlPnl.pic50.Image = My.Resources.lifeline_1_used
+            HostScreen.pic50.Image = My.Resources.ll_5050_used
+            GuestScreen.pic50.Image = My.Resources.ll_5050_used
+            TVControlPnl.pic50.Image = My.Resources.ll_5050_used
         End If
     End Sub
 
     Private Sub chkSwitch_CheckedChanged(sender As Object, e As EventArgs) Handles chkSwitch.CheckedChanged
         If chkSwitch.Checked = True Then
             btnSwitch.Enabled = True
-            HostScreen.picSW.Image = My.Resources.lifeline_2
-            GuestScreen.picSW.Image = My.Resources.lifeline_2
-            TVControlPnl.picSW.Image = My.Resources.lifeline_2
+            HostScreen.picSW.Image = My.Resources.Resources.ll_switch
+            GuestScreen.picSW.Image = My.Resources.Resources.ll_switch
+            TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch
         End If
         If chkSwitch.Checked = False Then
             btnSwitch.Enabled = False
-            HostScreen.picSW.Image = My.Resources.lifeline_2_used
-            GuestScreen.picSW.Image = My.Resources.lifeline_2_used
-            TVControlPnl.picSW.Image = My.Resources.lifeline_2_used
+            HostScreen.picSW.Image = My.Resources.Resources.ll_switch_used
+            GuestScreen.picSW.Image = My.Resources.Resources.ll_switch_used
+            TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch_used
         End If
     End Sub
 
     Private Sub chkPlusOne_CheckedChanged(sender As Object, e As EventArgs) Handles chkPlusOne.CheckedChanged
         If chkPlusOne.Checked = True Then
             btnPlusOne.Enabled = True
-            HostScreen.picPO.Image = My.Resources.lifeline_3
-            GuestScreen.picPO.Image = My.Resources.lifeline_3
-            TVControlPnl.picPO.Image = My.Resources.lifeline_3
+            HostScreen.picPO.Image = My.Resources.ll_phone
+            GuestScreen.picPO.Image = My.Resources.ll_phone
+            TVControlPnl.picPO.Image = My.Resources.ll_phone
         End If
         If chkPlusOne.Checked = False Then
             btnPlusOne.Enabled = False
-            HostScreen.picPO.Image = My.Resources.lifeline_3_used
-            GuestScreen.picPO.Image = My.Resources.lifeline_3_used
-            TVControlPnl.picPO.Image = My.Resources.lifeline_3_used
+            HostScreen.picPO.Image = My.Resources.ll_phone_used
+            GuestScreen.picPO.Image = My.Resources.ll_phone_used
+            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
         End If
     End Sub
 
@@ -422,9 +422,9 @@ Public Class ControlPanel
             LifelinePO.plusone = 0
             tmrResume.Start()
             chkPlusOne.Checked = False
-            HostScreen.picPO.Image = My.Resources.lifeline_3_used
-            GuestScreen.picPO.Image = My.Resources.lifeline_3_used
-            TVControlPnl.picPO.Image = My.Resources.lifeline_3_used
+            HostScreen.picPO.Image = My.Resources.ll_phone_used
+            GuestScreen.picPO.Image = My.Resources.ll_phone_used
+            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
             btnPlusOne.Enabled = False
         End If
     End Sub
@@ -457,9 +457,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnLL1.Click
-        HostScreen.picVO.Image = My.Resources.lifeline_4_bling
-        GuestScreen.picVO.Image = My.Resources.lifeline_4_bling
-        TVControlPnl.picVO.Image = My.Resources.lifeline_4_bling
+        HostScreen.picVO.Image = My.Resources.ll_audience_bling
+        GuestScreen.picVO.Image = My.Resources.ll_audience_bling
+        TVControlPnl.picVO.Image = My.Resources.ll_audience_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -470,9 +470,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btnLL2.Click
-        HostScreen.picPO.Image = My.Resources.lifeline_3_bling
-        GuestScreen.picPO.Image = My.Resources.lifeline_3_bling
-        TVControlPnl.picPO.Image = My.Resources.lifeline_3_bling
+        HostScreen.picPO.Image = My.Resources.ll_phone_bling
+        GuestScreen.picPO.Image = My.Resources.ll_phone_bling
+        TVControlPnl.picPO.Image = My.Resources.ll_phone_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -483,9 +483,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles btnLL3.Click
-        HostScreen.pic50.Image = My.Resources.lifeline_1_bling
-        GuestScreen.pic50.Image = My.Resources.lifeline_1_bling
-        TVControlPnl.pic50.Image = My.Resources.lifeline_1_bling
+        HostScreen.pic50.Image = My.Resources.ll_5050_bling
+        GuestScreen.pic50.Image = My.Resources.ll_5050_bling
+        TVControlPnl.pic50.Image = My.Resources.ll_5050_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -546,15 +546,15 @@ Public Class ControlPanel
     Private Sub chkVote_CheckedChanged(sender As Object, e As EventArgs) Handles chkVote.CheckedChanged
         If chkVote.Checked = True Then
             btnVote.Enabled = True
-            HostScreen.picVO.Image = My.Resources.lifeline_4
-            GuestScreen.picVO.Image = My.Resources.lifeline_4
-            TVControlPnl.picVO.Image = My.Resources.lifeline_4
+            HostScreen.picVO.Image = My.Resources.ll_audience
+            GuestScreen.picVO.Image = My.Resources.ll_audience
+            TVControlPnl.picVO.Image = My.Resources.ll_audience
         End If
         If chkVote.Checked = False Then
             btnVote.Enabled = False
-            HostScreen.picVO.Image = My.Resources.lifeline_4_used
-            GuestScreen.picVO.Image = My.Resources.lifeline_4_used
-            TVControlPnl.picVO.Image = My.Resources.lifeline_4_used
+            HostScreen.picVO.Image = My.Resources.ll_audience_used
+            GuestScreen.picVO.Image = My.Resources.ll_audience_used
+            TVControlPnl.picVO.Image = My.Resources.ll_audience_used
         End If
     End Sub
 
@@ -585,15 +585,15 @@ Public Class ControlPanel
     End Sub
 
     Private Sub tmrLifelineBling_Tick(sender As Object, e As EventArgs) Handles tmrLifelineBling.Tick
-        HostScreen.pic50.Image = My.Resources.lifeline_1
-        HostScreen.picPO.Image = My.Resources.lifeline_3
-        HostScreen.picVO.Image = My.Resources.lifeline_4
-        GuestScreen.pic50.Image = My.Resources.lifeline_1
-        GuestScreen.picPO.Image = My.Resources.lifeline_3
-        GuestScreen.picVO.Image = My.Resources.lifeline_4
-        TVControlPnl.pic50.Image = My.Resources.lifeline_1
-        TVControlPnl.picPO.Image = My.Resources.lifeline_3
-        TVControlPnl.picVO.Image = My.Resources.lifeline_4
+        HostScreen.pic50.Image = My.Resources.ll_5050
+        HostScreen.picPO.Image = My.Resources.ll_phone
+        HostScreen.picVO.Image = My.Resources.ll_audience
+        GuestScreen.pic50.Image = My.Resources.ll_5050
+        GuestScreen.picPO.Image = My.Resources.ll_phone
+        GuestScreen.picVO.Image = My.Resources.ll_audience
+        TVControlPnl.pic50.Image = My.Resources.ll_5050
+        TVControlPnl.picPO.Image = My.Resources.ll_phone
+        TVControlPnl.picVO.Image = My.Resources.ll_audience
         tmrLifelineBling.Stop()
     End Sub
 
@@ -669,5 +669,9 @@ Public Class ControlPanel
 
     Private Sub ShowOptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowOptionsToolStripMenuItem.Click
         OptionsScreen.Show()
+    End Sub
+
+    Private Sub ShowConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowConsoleToolStripMenuItem.Click
+        CoreConsole.Show()
     End Sub
 End Class

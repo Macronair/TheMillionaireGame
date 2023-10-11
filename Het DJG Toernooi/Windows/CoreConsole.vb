@@ -10,12 +10,13 @@
         Me.Enabled = True
         'Version info
         LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
-        LogMsg(String.Format("Created by Marco (Maerciezz). Compatible with Microsoft SQL!"))
+        LogMsg(String.Format("Created by Marco (Macronair). Compatible with Microsoft SQL!"))
         LogMsg("")
+        Threading.Thread.Sleep(500)
 
-        Threading.Thread.Sleep(250)
-        LogMsgDate("Loading configuration")
+        LogMsgDate("Loading configuration...")
         Game.CurrentProfile.LoadSettings()
+        Threading.Thread.Sleep(250)
 
         LogMsgDate("Checking database...")
         Try
@@ -27,6 +28,7 @@
             MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
         End Try
+        Threading.Thread.Sleep(600)
 
         LogMsgDate("Lauching controller...")
 
@@ -73,5 +75,17 @@
 
     Private Sub CoreConsole_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
         StartSeq()
+    End Sub
+
+    Private Sub CoreConsole_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+
+        If isRunning = True Then
+            If e.CloseReason = CloseReason.UserClosing Then
+                e.Cancel = True
+            Else
+                e.Cancel = False
+            End If
+        End If
     End Sub
 End Class

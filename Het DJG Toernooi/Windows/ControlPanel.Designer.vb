@@ -125,6 +125,8 @@ Partial Class ControlPanel
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
+        Me.ShowConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -876,7 +878,7 @@ Partial Class ControlPanel
         '
         'OptionsToolStripMenuItem
         '
-        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AboutToolStripMenuItem})
+        Me.OptionsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ShowConsoleToolStripMenuItem, Me.ToolStripMenuItem3, Me.AboutToolStripMenuItem})
         Me.OptionsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.OptionsToolStripMenuItem.Name = "OptionsToolStripMenuItem"
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
@@ -885,7 +887,7 @@ Partial Class ControlPanel
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(107, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'grpLifelines
@@ -920,7 +922,7 @@ Partial Class ControlPanel
         'btn5050
         '
         Me.btn5050.BackColor = System.Drawing.Color.Transparent
-        Me.btn5050.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_1
+        Me.btn5050.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_5050
         Me.btn5050.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn5050.Location = New System.Drawing.Point(150, 19)
         Me.btn5050.Name = "btn5050"
@@ -931,7 +933,7 @@ Partial Class ControlPanel
         'btnPlusOne
         '
         Me.btnPlusOne.BackColor = System.Drawing.Color.Transparent
-        Me.btnPlusOne.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_3
+        Me.btnPlusOne.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_phone
         Me.btnPlusOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnPlusOne.Location = New System.Drawing.Point(80, 19)
         Me.btnPlusOne.Name = "btnPlusOne"
@@ -942,7 +944,7 @@ Partial Class ControlPanel
         'btnVote
         '
         Me.btnVote.BackColor = System.Drawing.Color.Transparent
-        Me.btnVote.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_4
+        Me.btnVote.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_audience
         Me.btnVote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnVote.Location = New System.Drawing.Point(10, 19)
         Me.btnVote.Name = "btnVote"
@@ -1002,7 +1004,7 @@ Partial Class ControlPanel
         'btnSwitch
         '
         Me.btnSwitch.BackColor = System.Drawing.Color.Transparent
-        Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_switch
         Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btnSwitch.Enabled = False
         Me.btnSwitch.Location = New System.Drawing.Point(219, 19)
@@ -1116,6 +1118,17 @@ Partial Class ControlPanel
         Me.btnClearHostMessages.TabIndex = 85
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
+        '
+        'ShowConsoleToolStripMenuItem
+        '
+        Me.ShowConsoleToolStripMenuItem.Name = "ShowConsoleToolStripMenuItem"
+        Me.ShowConsoleToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShowConsoleToolStripMenuItem.Text = "Show Console"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(177, 6)
         '
         'ControlPanel
         '
@@ -1284,4 +1297,6 @@ Partial Class ControlPanel
     Friend WithEvents ChangeQuestionFontToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents X720720pToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents X10801080pToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShowConsoleToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
 End Class
