@@ -170,12 +170,13 @@ Public Class Data
                 CoreConsole.LogMsgLineDate("Creating table 'fff_questions'...")
                 table = "CREATE TABLE [dbo].[fff_questions] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
-                            "[Question] NVARCHAR NOT NULL," +
+                            "[Question] NTEXT NOT NULL," +
                             "[A] NVARCHAR (50) NOT NULL," +
                             "[B] NVARCHAR (50) NOT NULL," +
                             "[C] NVARCHAR (50) NOT NULL," +
                             "[D] NVARCHAR (50) NOT NULL," +
                             "[CorrectAnswer] VARCHAR (50) NOT NULL," +
+                            "[Level] INT DEFAULT ('0') NOT NULL," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] NTEXT NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
@@ -191,7 +192,7 @@ Public Class Data
                 CoreConsole.LogMsgLineDate("Creating table 'questions'...")
                 table = "CREATE TABLE [dbo].[questions] (" +
                             "[Id] INT IDENTITY (1,1) NOT NULL," +
-                            "[Question] NVARCHAR NOT NULL," +
+                            "[Question] NTEXT NOT NULL," +
                             "[A] NVARCHAR (50) NOT NULL," +
                             "[B] NVARCHAR (50) NOT NULL," +
                             "[C] NVARCHAR (50) NOT NULL," +
@@ -200,8 +201,6 @@ Public Class Data
                             "[Level] INT DEFAULT ('1') NOT NULL CHECK(Level BETWEEN 1 AND 15)," +
                             "[Used] BIT NOT NULL DEFAULT 0," +
                             "[Note] NTEXT NULL," +
-                            "[ATA] VARCHAR NULL," +
-                            "[5050] VARCHAR NULL," +
                             "PRIMARY KEY CLUSTERED ([Id] ASC))"
                 Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
                 Try

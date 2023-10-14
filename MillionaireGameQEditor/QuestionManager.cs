@@ -21,7 +21,7 @@ namespace Millionaire
 
         public void UpdateDB()
         {
-            var select1 = "SELECT * FROM questions_Level1";
+            var select1 = "SELECT * FROM questions";
             var dataAdapter1 = new SqlDataAdapter(select1, c);
             var commandBuilder1 = new SqlCommandBuilder(dataAdapter1);
             var ds1 = new DataSet();
@@ -29,31 +29,7 @@ namespace Millionaire
             dtLevel1.ReadOnly = true;
             dtLevel1.DataSource = ds1.Tables[0];
 
-            var select2 = "SELECT * FROM questions_Level2";
-            var dataAdapter2 = new SqlDataAdapter(select2, c);
-            var commandBuilder2 = new SqlCommandBuilder(dataAdapter2);
-            var ds2 = new DataSet();
-            dataAdapter2.Fill(ds2);
-            dtLevel2.ReadOnly = true;
-            dtLevel2.DataSource = ds2.Tables[0];
-
-            var select3 = "SELECT * FROM questions_Level3";
-            var dataAdapter3 = new SqlDataAdapter(select3, c);
-            var commandBuilder3 = new SqlCommandBuilder(dataAdapter3);
-            var ds3 = new DataSet();
-            dataAdapter3.Fill(ds3);
-            dtLevel3.ReadOnly = true;
-            dtLevel3.DataSource = ds3.Tables[0];
-
-            var select4 = "SELECT * FROM questions_Level4";
-            var dataAdapter4 = new SqlDataAdapter(select4, c);
-            var commandBuilder4 = new SqlCommandBuilder(dataAdapter4);
-            var ds4 = new DataSet();
-            dataAdapter4.Fill(ds4);
-            dtLevel4.ReadOnly = true;
-            dtLevel4.DataSource = ds4.Tables[0];
-
-            var select0 = "SELECT * FROM questions_Level0";
+            var select0 = "SELECT * FROM fff_questions";
             var dataAdapter0 = new SqlDataAdapter(select0, c);
             var commandBuilder0 = new SqlCommandBuilder(dataAdapter0);
             var ds0 = new DataSet();
@@ -66,7 +42,7 @@ namespace Millionaire
         {
             frmEditQuestion edit = new frmEditQuestion(this);
 
-            if (stLevel.Text == "Lvl1")
+            if (Convert.ToInt16(stLevel.Text) >= 1 & Convert.ToInt16(stLevel.Text) <= 15)
             {
                 if (Convert.ToInt32(dtLevel1.CurrentRow.Cells[0].Value) == 0)
                 {
@@ -85,66 +61,7 @@ namespace Millionaire
                     edit.txtNote.Text = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
                 }
             }
-            else if (stLevel.Text == "Lvl2")
-            {
-                if (Convert.ToInt32(dtLevel2.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    edit.txtId.Text = this.dtLevel2.CurrentRow.Cells[0].Value.ToString();
-                    edit.txtQuestion.Text = this.dtLevel2.CurrentRow.Cells[1].Value.ToString();
-                    edit.txtA.Text = this.dtLevel2.CurrentRow.Cells[2].Value.ToString();
-                    edit.txtB.Text = this.dtLevel2.CurrentRow.Cells[3].Value.ToString();
-                    edit.txtC.Text = this.dtLevel2.CurrentRow.Cells[4].Value.ToString();
-                    edit.txtD.Text = this.dtLevel2.CurrentRow.Cells[5].Value.ToString();
-                    edit.txtCorrect.Text = this.dtLevel2.CurrentRow.Cells[6].Value.ToString();
-                    edit.txtLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
-                    edit.txtNote.Text = this.dtLevel2.CurrentRow.Cells[9].Value.ToString();
-                }
-
-            }
-            else if (stLevel.Text == "Lvl3")
-            {
-                if (Convert.ToInt32(dtLevel3.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    edit.txtId.Text = this.dtLevel3.CurrentRow.Cells[0].Value.ToString();
-                    edit.txtQuestion.Text = this.dtLevel3.CurrentRow.Cells[1].Value.ToString();
-                    edit.txtA.Text = this.dtLevel3.CurrentRow.Cells[2].Value.ToString();
-                    edit.txtB.Text = this.dtLevel3.CurrentRow.Cells[3].Value.ToString();
-                    edit.txtC.Text = this.dtLevel3.CurrentRow.Cells[4].Value.ToString();
-                    edit.txtD.Text = this.dtLevel3.CurrentRow.Cells[5].Value.ToString();
-                    edit.txtCorrect.Text = this.dtLevel3.CurrentRow.Cells[6].Value.ToString();
-                    edit.txtLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
-                    edit.txtNote.Text = this.dtLevel3.CurrentRow.Cells[9].Value.ToString();
-                }
-
-            }
-            else if (stLevel.Text == "Lvl4")
-            {
-                if (Convert.ToInt32(dtLevel4.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    edit.txtId.Text = this.dtLevel4.CurrentRow.Cells[0].Value.ToString();
-                    edit.txtQuestion.Text = this.dtLevel4.CurrentRow.Cells[1].Value.ToString();
-                    edit.txtA.Text = this.dtLevel4.CurrentRow.Cells[2].Value.ToString();
-                    edit.txtB.Text = this.dtLevel4.CurrentRow.Cells[3].Value.ToString();
-                    edit.txtC.Text = this.dtLevel4.CurrentRow.Cells[4].Value.ToString();
-                    edit.txtD.Text = this.dtLevel4.CurrentRow.Cells[5].Value.ToString();
-                    edit.txtCorrect.Text = this.dtLevel4.CurrentRow.Cells[6].Value.ToString();
-                    edit.txtLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
-                    edit.txtNote.Text = this.dtLevel4.CurrentRow.Cells[9].Value.ToString();
-                }
-            }
-            else if (stLevel.Text == "Lvl0")
+            else if (stLevel.Text == "0")
             {
                 if (Convert.ToInt32(dtLevel0.CurrentRow.Cells[0].Value) == 0)
                 {
@@ -178,37 +95,16 @@ namespace Millionaire
                 if (remDiag == DialogResult.Yes)
                 {
                     int id = Convert.ToInt32(stlblId.Text);
-                    if (stLevel.Text == "Lvl1")
+                    if ((Convert.ToInt16(stLevel.Text) >= 1 & Convert.ToInt16(stLevel.Text) <= 15))
                     {
-                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level1 WHERE Id='" + id + "'", c);
+                        SqlCommand cmd = new SqlCommand("DELETE FROM questions WHERE Id='" + id + "'", c);
                         c.Open();
                         cmd.ExecuteNonQuery();
                         c.Close();
                     }
-                    else if (stLevel.Text == "Lvl2")
+                    else if (stLevel.Text == "0")
                     {
-                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level2 WHERE Id='" + id + "'", c);
-                        c.Open();
-                        cmd.ExecuteNonQuery();
-                        c.Close();
-                    }
-                    else if (stLevel.Text == "Lvl3")
-                    {
-                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level3 WHERE Id='" + id + "'", c);
-                        c.Open();
-                        cmd.ExecuteNonQuery();
-                        c.Close();
-                    }
-                    else if (stLevel.Text == "Lvl4")
-                    {
-                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level4 WHERE Id='" + id + "'", c);
-                        c.Open();
-                        cmd.ExecuteNonQuery();
-                        c.Close();
-                    }
-                    else if (stLevel.Text == "Lvl0")
-                    {
-                        SqlCommand cmd = new SqlCommand("DELETE FROM questions_Level0 WHERE Id='" + id + "'", c);
+                        SqlCommand cmd = new SqlCommand("DELETE FROM fff_questions WHERE Id='" + id + "'", c);
                         c.Open();
                         cmd.ExecuteNonQuery();
                         c.Close();
@@ -219,100 +115,6 @@ namespace Millionaire
                     return;
                 }
                 UpdateDB();
-            }
-        }
-
-        public void ChangeLevelDB()
-        {
-            frmChangeLevel change = new frmChangeLevel(this);
-            if (stLevel.Text == "Lvl1")
-            {
-                if (Convert.ToInt32(dtLevel1.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    change.lblOldLevel.Text = "Level 1";
-                    change.cmbNewLevel.Text = "Level 1";
-                    change.QuestionID = Convert.ToInt32(this.dtLevel1.CurrentRow.Cells[0].Value);
-                    change.question = this.dtLevel1.CurrentRow.Cells[1].Value.ToString();
-                    change.A = this.dtLevel1.CurrentRow.Cells[2].Value.ToString();
-                    change.B = this.dtLevel1.CurrentRow.Cells[3].Value.ToString();
-                    change.C = this.dtLevel1.CurrentRow.Cells[4].Value.ToString();
-                    change.D = this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
-                    change.Correct = this.dtLevel1.CurrentRow.Cells[6].Value.ToString();
-                    change.Note = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
-                    change.ShowDialog();
-                }
-            }
-            else if (stLevel.Text == "Lvl2")
-            {
-                if (Convert.ToInt32(dtLevel2.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    change.lblOldLevel.Text = "Level 2";
-                    change.cmbNewLevel.Text = "Level 2";
-                    change.QuestionID = Convert.ToInt32(this.dtLevel2.CurrentRow.Cells[0].Value);
-                    change.question = this.dtLevel2.CurrentRow.Cells[1].Value.ToString();
-                    change.A = this.dtLevel2.CurrentRow.Cells[2].Value.ToString();
-                    change.B = this.dtLevel2.CurrentRow.Cells[3].Value.ToString();
-                    change.C = this.dtLevel2.CurrentRow.Cells[4].Value.ToString();
-                    change.D = this.dtLevel2.CurrentRow.Cells[5].Value.ToString();
-                    change.Correct = this.dtLevel2.CurrentRow.Cells[6].Value.ToString();
-                    change.Note = this.dtLevel2.CurrentRow.Cells[9].Value.ToString();
-                    change.ShowDialog();
-                }
-            }
-            else if (stLevel.Text == "Lvl3")
-            {
-                if (Convert.ToInt32(dtLevel3.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    change.lblOldLevel.Text = "Level 3";
-                    change.cmbNewLevel.Text = "Level 3";
-                    change.QuestionID = Convert.ToInt32(this.dtLevel3.CurrentRow.Cells[0].Value);
-                    change.question = this.dtLevel3.CurrentRow.Cells[1].Value.ToString();
-                    change.A = this.dtLevel3.CurrentRow.Cells[2].Value.ToString();
-                    change.B = this.dtLevel3.CurrentRow.Cells[3].Value.ToString();
-                    change.C = this.dtLevel3.CurrentRow.Cells[4].Value.ToString();
-                    change.D = this.dtLevel3.CurrentRow.Cells[5].Value.ToString();
-                    change.Correct = this.dtLevel3.CurrentRow.Cells[6].Value.ToString();
-                    change.Note = this.dtLevel3.CurrentRow.Cells[9].Value.ToString();
-                    change.ShowDialog();
-                }
-
-            }
-            else if (stLevel.Text == "Lvl4")
-            {
-                if (Convert.ToInt32(dtLevel4.CurrentRow.Cells[0].Value) == 0)
-                {
-                    MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                else
-                {
-                    change.lblOldLevel.Text = "Level 4";
-                    change.cmbNewLevel.Text = "Level 4";
-                    change.QuestionID = Convert.ToInt32(this.dtLevel4.CurrentRow.Cells[0].Value);
-                    change.question = this.dtLevel4.CurrentRow.Cells[1].Value.ToString();
-                    change.A = this.dtLevel4.CurrentRow.Cells[2].Value.ToString();
-                    change.B = this.dtLevel4.CurrentRow.Cells[3].Value.ToString();
-                    change.C = this.dtLevel4.CurrentRow.Cells[4].Value.ToString();
-                    change.D = this.dtLevel4.CurrentRow.Cells[5].Value.ToString();
-                    change.Correct = this.dtLevel4.CurrentRow.Cells[6].Value.ToString();
-                    change.Note = this.dtLevel4.CurrentRow.Cells[9].Value.ToString();
-                    change.ShowDialog();
-                }
-            }
-            else if (stLevel.Text == "Lvl0")
-            {
-                MessageBox.Show("You cannot change the question level for a Fastest Finger question.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -339,36 +141,6 @@ namespace Millionaire
             dtLevel1.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtLevel1.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dtLevel1.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            dtLevel2.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dtLevel2.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel2.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            dtLevel3.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dtLevel3.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel3.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-
-            dtLevel4.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dtLevel4.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[3].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[4].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[5].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[6].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[7].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-            dtLevel4.Columns[8].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             #endregion
         }
 
@@ -422,75 +194,6 @@ namespace Millionaire
                 string a = Convert.ToString(selectedRow.Cells["Id"].Value);
                 stlblId.Text = Convert.ToString(a);
                 stLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-
-        private void dtLevel2_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtLevel2.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel2.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel2.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-        private void dtLevel2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtLevel2.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel2.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel2.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel2.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-
-        private void dtLevel3_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtLevel3.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel3.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel3.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-        private void dtLevel3_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtLevel3.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel3.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel3.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel3.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-
-        private void dtLevel4_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dtLevel4.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel4.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel4.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
-            }
-        }
-        private void dtLevel4_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtLevel4.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dtLevel4.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = dtLevel4.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Id"].Value);
-                stlblId.Text = Convert.ToString(a);
-                stLevel.Text = this.dtLevel4.CurrentRow.Cells[7].Value.ToString();
             }
         }
 
@@ -672,16 +375,6 @@ namespace Millionaire
             EditDB();
         }
 
-        private void dtLevel2_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            EditDB();
-        }
-
-        private void dtLevel3_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            EditDB();
-        }
-
         private void dtLevel4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EditDB();
@@ -689,25 +382,18 @@ namespace Millionaire
 
         #endregion
 
-        private void tsChangeLevel_Click(object sender, EventArgs e)
-        {
-            ChangeLevelDB();
-        }
-
-        private void changeLevelToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ChangeLevelDB();
-        }
-
         private void tbLevel_SelectedIndexChanged(object sender, EventArgs e)
         {
             stLevel.Text = "Not selected";
-            stlblId.Text = "0";
+            stlblId.Text = "Not selected";
             dtLevel0.ClearSelection();
             dtLevel1.ClearSelection();
-            dtLevel2.ClearSelection();
-            dtLevel3.ClearSelection();
-            dtLevel4.ClearSelection();
+        }
+
+        private void fromOldDatabaseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuestionImport questionImport = new frmQuestionImport(this);
+            questionImport.Show();
         }
     }
 }

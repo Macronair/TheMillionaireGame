@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ImportQuestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportQuestion.Designer.cs">
+      <DependentUpon>ImportQuestion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddQuestion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="QuestionManager.Designer.cs">
       <DependentUpon>QuestionManager.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ImportQuestion.resx">
+      <DependentUpon>ImportQuestion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddQuestion.resx">
       <DependentUpon>AddQuestion.cs</DependentUpon>
     </EmbeddedResource>
