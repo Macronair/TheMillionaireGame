@@ -476,5 +476,59 @@ namespace Millionaire.Windows.Question_Editor
             }
             olddb.Close();
         }
+
+        private void frmQuestionImport_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _qe.UpdateDB();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            btnClear.PerformClick();
+            UpdateViews();
+
+            Random rand = new Random();
+
+            string randomtable = "questions_Level1";
+            switch (rand.Next(1, 5))
+            {
+                case 1:
+                    randomtable = "questions_Level1";
+                    break;
+                case 2:
+                    randomtable = "questions_Level2";
+                    break;
+                case 3:
+                    randomtable = "questions_Level3";
+                    break;
+                case 4:
+                    randomtable = "questions_Level4";
+                    break;
+            }
+
+            DataSet ds = new DataSet();
+            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Used = 'False' ORDER BY NEWID()", olddb);
+
+            olddb.Open();
+            SqlDataReader reader = sql.ExecuteReader();
+
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    txtQuestion.Text = reader.GetString(1);
+                    txtA.Text = reader.GetString(2);
+                    txtB.Text = reader.GetString(3);
+                    txtC.Text = reader.GetString(4);
+                    txtD.Text = reader.GetString(5);
+                    txtCorrect.Text = reader.GetString(6);
+                    lblID.Text = Convert.ToString(reader.GetInt32(0));
+                    lblLevel.Text = reader.GetString(7);
+                    try { txtNote.Text = reader.GetString(9); } catch { txtNote.Text = ""; }
+                }
+                reader.Close();
+            }
+            olddb.Close();
+        }
     }
 }

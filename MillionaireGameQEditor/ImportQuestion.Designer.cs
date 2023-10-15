@@ -35,7 +35,6 @@
             this.txtC = new System.Windows.Forms.TextBox();
             this.txtD = new System.Windows.Forms.TextBox();
             this.txtCorrect = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,16 +52,6 @@
             this.btnFFFA = new System.Windows.Forms.Button();
             this.txtNote = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.pnlD = new System.Windows.Forms.Panel();
-            this.lblD = new System.Windows.Forms.Label();
-            this.pnlB = new System.Windows.Forms.Panel();
-            this.lblB = new System.Windows.Forms.Label();
-            this.pnlC = new System.Windows.Forms.Panel();
-            this.lblC = new System.Windows.Forms.Label();
-            this.pnlA = new System.Windows.Forms.Panel();
-            this.lblA = new System.Windows.Forms.Label();
-            this.picQuestion = new System.Windows.Forms.Panel();
-            this.lblQuestion = new System.Windows.Forms.Label();
             this.trkQuestionLevel = new System.Windows.Forms.TrackBar();
             this.lblQuestionLevelText = new System.Windows.Forms.Label();
             this.lblQuestionLevel = new System.Windows.Forms.Label();
@@ -94,12 +83,19 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
+            this.pnlD = new System.Windows.Forms.Panel();
+            this.lblD = new System.Windows.Forms.Label();
+            this.pnlB = new System.Windows.Forms.Panel();
+            this.lblB = new System.Windows.Forms.Label();
+            this.pnlC = new System.Windows.Forms.Panel();
+            this.lblC = new System.Windows.Forms.Label();
+            this.pnlA = new System.Windows.Forms.Panel();
+            this.lblA = new System.Windows.Forms.Label();
+            this.picQuestion = new System.Windows.Forms.Panel();
+            this.lblQuestion = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnNext = new System.Windows.Forms.Button();
             this.pnlFFFAnswer.SuspendLayout();
-            this.pnlD.SuspendLayout();
-            this.pnlB.SuspendLayout();
-            this.pnlC.SuspendLayout();
-            this.pnlA.SuspendLayout();
-            this.picQuestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).BeginInit();
             this.grpQuestionType.SuspendLayout();
             this.tbDatabases.SuspendLayout();
@@ -107,6 +103,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataOldDatabase)).BeginInit();
             this.tbNewDatabase.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataNewDatabase)).BeginInit();
+            this.pnlD.SuspendLayout();
+            this.pnlB.SuspendLayout();
+            this.pnlC.SuspendLayout();
+            this.pnlA.SuspendLayout();
+            this.picQuestion.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtQuestion
@@ -169,18 +170,6 @@
             this.txtCorrect.Size = new System.Drawing.Size(39, 26);
             this.txtCorrect.TabIndex = 5;
             this.txtCorrect.Text = "A";
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(12, 12);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(176, 35);
-            this.btnSave.TabIndex = 7;
-            this.btnSave.Text = "Import";
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -349,115 +338,6 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "Explanation:";
             // 
-            // pnlD
-            // 
-            this.pnlD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlD.BackgroundImage")));
-            this.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlD.Controls.Add(this.lblD);
-            this.pnlD.Location = new System.Drawing.Point(640, 412);
-            this.pnlD.Name = "pnlD";
-            this.pnlD.Size = new System.Drawing.Size(641, 57);
-            this.pnlD.TabIndex = 91;
-            // 
-            // lblD
-            // 
-            this.lblD.BackColor = System.Drawing.Color.Transparent;
-            this.lblD.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblD.ForeColor = System.Drawing.Color.White;
-            this.lblD.Location = new System.Drawing.Point(41, 5);
-            this.lblD.Name = "lblD";
-            this.lblD.Size = new System.Drawing.Size(476, 46);
-            this.lblD.TabIndex = 19;
-            this.lblD.Text = "D:";
-            this.lblD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlB
-            // 
-            this.pnlB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlB.BackgroundImage")));
-            this.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlB.Controls.Add(this.lblB);
-            this.pnlB.Location = new System.Drawing.Point(640, 353);
-            this.pnlB.Name = "pnlB";
-            this.pnlB.Size = new System.Drawing.Size(641, 57);
-            this.pnlB.TabIndex = 90;
-            // 
-            // lblB
-            // 
-            this.lblB.BackColor = System.Drawing.Color.Transparent;
-            this.lblB.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblB.ForeColor = System.Drawing.Color.White;
-            this.lblB.Location = new System.Drawing.Point(41, 6);
-            this.lblB.Name = "lblB";
-            this.lblB.Size = new System.Drawing.Size(476, 45);
-            this.lblB.TabIndex = 19;
-            this.lblB.Text = "B:";
-            this.lblB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlC
-            // 
-            this.pnlC.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
-            this.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlC.Controls.Add(this.lblC);
-            this.pnlC.Location = new System.Drawing.Point(0, 412);
-            this.pnlC.Name = "pnlC";
-            this.pnlC.Size = new System.Drawing.Size(641, 57);
-            this.pnlC.TabIndex = 89;
-            // 
-            // lblC
-            // 
-            this.lblC.BackColor = System.Drawing.Color.Transparent;
-            this.lblC.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblC.ForeColor = System.Drawing.Color.White;
-            this.lblC.Location = new System.Drawing.Point(122, 5);
-            this.lblC.Name = "lblC";
-            this.lblC.Size = new System.Drawing.Size(476, 46);
-            this.lblC.TabIndex = 18;
-            this.lblC.Text = "C:";
-            this.lblC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // pnlA
-            // 
-            this.pnlA.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
-            this.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pnlA.Controls.Add(this.lblA);
-            this.pnlA.Location = new System.Drawing.Point(0, 353);
-            this.pnlA.Name = "pnlA";
-            this.pnlA.Size = new System.Drawing.Size(641, 57);
-            this.pnlA.TabIndex = 88;
-            // 
-            // lblA
-            // 
-            this.lblA.BackColor = System.Drawing.Color.Transparent;
-            this.lblA.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblA.ForeColor = System.Drawing.Color.White;
-            this.lblA.Location = new System.Drawing.Point(123, 6);
-            this.lblA.Name = "lblA";
-            this.lblA.Size = new System.Drawing.Size(476, 45);
-            this.lblA.TabIndex = 17;
-            this.lblA.Text = "A:";
-            this.lblA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // picQuestion
-            // 
-            this.picQuestion.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Large_Strap_Fill;
-            this.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.picQuestion.Controls.Add(this.lblQuestion);
-            this.picQuestion.Location = new System.Drawing.Point(0, 253);
-            this.picQuestion.Name = "picQuestion";
-            this.picQuestion.Size = new System.Drawing.Size(1280, 93);
-            this.picQuestion.TabIndex = 92;
-            // 
-            // lblQuestion
-            // 
-            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
-            this.lblQuestion.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestion.ForeColor = System.Drawing.Color.White;
-            this.lblQuestion.Location = new System.Drawing.Point(132, 12);
-            this.lblQuestion.Name = "lblQuestion";
-            this.lblQuestion.Size = new System.Drawing.Size(1016, 69);
-            this.lblQuestion.TabIndex = 13;
-            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // trkQuestionLevel
             // 
             this.trkQuestionLevel.Location = new System.Drawing.Point(661, 37);
@@ -599,36 +479,39 @@
             // btnSaveAndNext
             // 
             this.btnSaveAndNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSaveAndNext.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.saveandnext;
+            this.btnSaveAndNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSaveAndNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSaveAndNext.Location = new System.Drawing.Point(12, 89);
+            this.btnSaveAndNext.Location = new System.Drawing.Point(12, 115);
             this.btnSaveAndNext.Name = "btnSaveAndNext";
             this.btnSaveAndNext.Size = new System.Drawing.Size(176, 35);
             this.btnSaveAndNext.TabIndex = 101;
-            this.btnSaveAndNext.Text = "Import and Next";
             this.btnSaveAndNext.UseVisualStyleBackColor = false;
             this.btnSaveAndNext.Click += new System.EventHandler(this.btnSaveAndNext_Click);
             // 
             // btnSkipAndNext
             // 
             this.btnSkipAndNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnSkipAndNext.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.skipandnext;
+            this.btnSkipAndNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSkipAndNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSkipAndNext.Location = new System.Drawing.Point(12, 123);
+            this.btnSkipAndNext.Location = new System.Drawing.Point(12, 149);
             this.btnSkipAndNext.Name = "btnSkipAndNext";
             this.btnSkipAndNext.Size = new System.Drawing.Size(176, 35);
             this.btnSkipAndNext.TabIndex = 102;
-            this.btnSkipAndNext.Text = "Skip and Next";
             this.btnSkipAndNext.UseVisualStyleBackColor = false;
             this.btnSkipAndNext.Click += new System.EventHandler(this.btnSkipAndNext_Click);
             // 
             // btnSkip
             // 
             this.btnSkip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.btnSkip.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.skip;
+            this.btnSkip.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSkip.Location = new System.Drawing.Point(12, 46);
+            this.btnSkip.Location = new System.Drawing.Point(12, 77);
             this.btnSkip.Name = "btnSkip";
             this.btnSkip.Size = new System.Drawing.Size(176, 35);
             this.btnSkip.TabIndex = 103;
-            this.btnSkip.Text = "Skip";
             this.btnSkip.UseVisualStyleBackColor = false;
             this.btnSkip.Click += new System.EventHandler(this.btnSkip_Click);
             // 
@@ -782,12 +665,147 @@
             this.label22.TabIndex = 119;
             this.label22.Text = "Q11";
             // 
+            // pnlD
+            // 
+            this.pnlD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlD.BackgroundImage")));
+            this.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlD.Controls.Add(this.lblD);
+            this.pnlD.Location = new System.Drawing.Point(640, 412);
+            this.pnlD.Name = "pnlD";
+            this.pnlD.Size = new System.Drawing.Size(641, 57);
+            this.pnlD.TabIndex = 91;
+            // 
+            // lblD
+            // 
+            this.lblD.BackColor = System.Drawing.Color.Transparent;
+            this.lblD.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblD.ForeColor = System.Drawing.Color.White;
+            this.lblD.Location = new System.Drawing.Point(41, 5);
+            this.lblD.Name = "lblD";
+            this.lblD.Size = new System.Drawing.Size(476, 46);
+            this.lblD.TabIndex = 19;
+            this.lblD.Text = "D:";
+            this.lblD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlB
+            // 
+            this.pnlB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlB.BackgroundImage")));
+            this.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlB.Controls.Add(this.lblB);
+            this.pnlB.Location = new System.Drawing.Point(640, 353);
+            this.pnlB.Name = "pnlB";
+            this.pnlB.Size = new System.Drawing.Size(641, 57);
+            this.pnlB.TabIndex = 90;
+            // 
+            // lblB
+            // 
+            this.lblB.BackColor = System.Drawing.Color.Transparent;
+            this.lblB.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblB.ForeColor = System.Drawing.Color.White;
+            this.lblB.Location = new System.Drawing.Point(41, 6);
+            this.lblB.Name = "lblB";
+            this.lblB.Size = new System.Drawing.Size(476, 45);
+            this.lblB.TabIndex = 19;
+            this.lblB.Text = "B:";
+            this.lblB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlC
+            // 
+            this.pnlC.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
+            this.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlC.Controls.Add(this.lblC);
+            this.pnlC.Location = new System.Drawing.Point(0, 412);
+            this.pnlC.Name = "pnlC";
+            this.pnlC.Size = new System.Drawing.Size(641, 57);
+            this.pnlC.TabIndex = 89;
+            // 
+            // lblC
+            // 
+            this.lblC.BackColor = System.Drawing.Color.Transparent;
+            this.lblC.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblC.ForeColor = System.Drawing.Color.White;
+            this.lblC.Location = new System.Drawing.Point(122, 5);
+            this.lblC.Name = "lblC";
+            this.lblC.Size = new System.Drawing.Size(476, 46);
+            this.lblC.TabIndex = 18;
+            this.lblC.Text = "C:";
+            this.lblC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // pnlA
+            // 
+            this.pnlA.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
+            this.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlA.Controls.Add(this.lblA);
+            this.pnlA.Location = new System.Drawing.Point(0, 353);
+            this.pnlA.Name = "pnlA";
+            this.pnlA.Size = new System.Drawing.Size(641, 57);
+            this.pnlA.TabIndex = 88;
+            // 
+            // lblA
+            // 
+            this.lblA.BackColor = System.Drawing.Color.Transparent;
+            this.lblA.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblA.ForeColor = System.Drawing.Color.White;
+            this.lblA.Location = new System.Drawing.Point(123, 6);
+            this.lblA.Name = "lblA";
+            this.lblA.Size = new System.Drawing.Size(476, 45);
+            this.lblA.TabIndex = 17;
+            this.lblA.Text = "A:";
+            this.lblA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picQuestion
+            // 
+            this.picQuestion.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Large_Strap_Fill;
+            this.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.picQuestion.Controls.Add(this.lblQuestion);
+            this.picQuestion.Location = new System.Drawing.Point(0, 253);
+            this.picQuestion.Name = "picQuestion";
+            this.picQuestion.Size = new System.Drawing.Size(1280, 93);
+            this.picQuestion.TabIndex = 92;
+            // 
+            // lblQuestion
+            // 
+            this.lblQuestion.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuestion.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestion.ForeColor = System.Drawing.Color.White;
+            this.lblQuestion.Location = new System.Drawing.Point(132, 12);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(1016, 69);
+            this.lblQuestion.TabIndex = 13;
+            this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.btnSave.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(12, 42);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(176, 35);
+            this.btnSave.TabIndex = 7;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnNext
+            // 
+            this.btnNext.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnNext.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.next;
+            this.btnNext.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnNext.Location = new System.Drawing.Point(12, 3);
+            this.btnNext.Name = "btnNext";
+            this.btnNext.Size = new System.Drawing.Size(176, 33);
+            this.btnNext.TabIndex = 120;
+            this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
+            // 
             // frmQuestionImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
             this.ClientSize = new System.Drawing.Size(1281, 874);
+            this.Controls.Add(this.btnNext);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label20);
@@ -839,14 +857,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuestionImport";
             this.Text = "Import question";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuestionImport_FormClosing);
             this.Load += new System.EventHandler(this.frmQuestionAdd_Load);
             this.pnlFFFAnswer.ResumeLayout(false);
             this.pnlFFFAnswer.PerformLayout();
-            this.pnlD.ResumeLayout(false);
-            this.pnlB.ResumeLayout(false);
-            this.pnlC.ResumeLayout(false);
-            this.pnlA.ResumeLayout(false);
-            this.picQuestion.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).EndInit();
             this.grpQuestionType.ResumeLayout(false);
             this.grpQuestionType.PerformLayout();
@@ -855,6 +869,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataOldDatabase)).EndInit();
             this.tbNewDatabase.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataNewDatabase)).EndInit();
+            this.pnlD.ResumeLayout(false);
+            this.pnlB.ResumeLayout(false);
+            this.pnlC.ResumeLayout(false);
+            this.pnlA.ResumeLayout(false);
+            this.picQuestion.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -927,5 +946,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Button btnNext;
     }
 }
