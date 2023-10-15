@@ -1,4 +1,7 @@
-﻿Public Class CoreConsole
+﻿Imports System.IO
+Imports System.Threading
+
+Public Class CoreConsole
 
     Public Shared isRunning As Boolean = False
 
@@ -12,15 +15,15 @@
         LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
         LogMsg(String.Format("Created by Marco (Macronair). Compatible with Microsoft SQL!"))
         LogMsg("")
-        Threading.Thread.Sleep(500)
+        Thread.Sleep(500)
 
         LogMsgDate("Loading configuration...")
         Game.CurrentProfile.LoadSettings()
-        Threading.Thread.Sleep(250)
+        Thread.Sleep(250)
 
         LogMsgDate("Checking database...")
         Try
-            Data.CreateDatabase()
+            Data.CheckDatabase()
         Catch ex As Exception
             tmrRuntime.Stop()
             tmrLoad.Stop()
@@ -28,13 +31,16 @@
             MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
         End Try
-        Threading.Thread.Sleep(600)
+        Thread.Sleep(600)
 
         LogMsgDate("Lauching controller...")
 
         isRunning = True
         Me.Hide()
         ControlPanel.Show()
+        If Data.openQEditor = True Then
+            Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QEDIT.EXE"))
+        End If
         tmrRuntime.Start()
     End Sub
 
@@ -55,10 +61,6 @@
     End Sub
     Public Shared Sub LogMsgLineDate(ByVal msg As String)
         CoreConsole.txtConsole.AppendText(DateTime.Now + " : " + msg)
-    End Sub
-
-    Private Sub CoreConsole_EnabledChanged(sender As Object, e As EventArgs) Handles MyBase.EnabledChanged
-
     End Sub
 
     Private Sub tmrLoad_Tick(sender As Object, e As EventArgs) Handles tmrLoad.Tick

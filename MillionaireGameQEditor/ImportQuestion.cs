@@ -11,10 +11,6 @@ namespace Millionaire.Windows.Question_Editor
         private readonly QEditor _qe;
         int fff_answer = 0;
 
-        public static SqlConnection olddb = new SqlConnection
-                   (String.Format
-                   (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, @"old\dbMillionaire"));
-
         public static SqlConnection newdb = new SqlConnection
                    (String.Format
                    (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
@@ -27,29 +23,36 @@ namespace Millionaire.Windows.Question_Editor
 
         private void UpdateViews()
         {
-            var old_select1 = "SELECT * FROM questions_level1";
-            var dataAdapter1 = new SqlDataAdapter(old_select1, olddb);
-            var commandBuilder1 = new SqlCommandBuilder(dataAdapter1);
+            try
+            {
+                var old_select1 = "SELECT * FROM questions_level1";
+                var dataAdapter1 = new SqlDataAdapter(old_select1, newdb);
+                var commandBuilder1 = new SqlCommandBuilder(dataAdapter1);
 
-            var old_select2 = "SELECT * FROM questions_level2";
-            var dataAdapter2 = new SqlDataAdapter(old_select2, olddb);
-            var commandBuilder2 = new SqlCommandBuilder(dataAdapter2);
+                var old_select2 = "SELECT * FROM questions_level2";
+                var dataAdapter2 = new SqlDataAdapter(old_select2, newdb);
+                var commandBuilder2 = new SqlCommandBuilder(dataAdapter2);
 
-            var old_select3 = "SELECT * FROM questions_level3";
-            var dataAdapter3 = new SqlDataAdapter(old_select3, olddb);
-            var commandBuilder3 = new SqlCommandBuilder(dataAdapter3);
+                var old_select3 = "SELECT * FROM questions_level3";
+                var dataAdapter3 = new SqlDataAdapter(old_select3, newdb);
+                var commandBuilder3 = new SqlCommandBuilder(dataAdapter3);
 
-            var old_select4 = "SELECT * FROM questions_level4";
-            var dataAdapter4 = new SqlDataAdapter(old_select4, olddb);
-            var commandBuilder4 = new SqlCommandBuilder(dataAdapter4);
+                var old_select4 = "SELECT * FROM questions_level4";
+                var dataAdapter4 = new SqlDataAdapter(old_select4, newdb);
+                var commandBuilder4 = new SqlCommandBuilder(dataAdapter4);
 
-            var ds1 = new DataSet();
-            dataAdapter1.Fill(ds1);
-            dataAdapter2.Fill(ds1);
-            dataAdapter3.Fill(ds1);
-            dataAdapter4.Fill(ds1);
-            dataOldDatabase.ReadOnly = true;
-            dataOldDatabase.DataSource = ds1.Tables[0];
+                var ds1 = new DataSet();
+                dataAdapter1.Fill(ds1);
+                dataAdapter2.Fill(ds1);
+                dataAdapter3.Fill(ds1);
+                dataAdapter4.Fill(ds1);
+                dataOldDatabase.ReadOnly = true;
+                dataOldDatabase.DataSource = ds1.Tables[0];
+            }
+            catch
+            {
+                MessageBox.Show("No questions are found in the old database tables","Question Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             var new_select = "SELECT * FROM questions";
             var dataAdapter0 = new SqlDataAdapter(new_select, newdb);
@@ -77,36 +80,36 @@ namespace Millionaire.Windows.Question_Editor
             cmd.ExecuteNonQuery();
             QEditor.c.Close();
 
-            olddb.Open();
+            newdb.Open();
             if(lblLevel.Text == "Lvl1")
             {
-                str = String.Format(@"UPDATE questions_Level1 SET Used = True WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl2")
             {
-                str = String.Format(@"UPDATE questions_Level2 SET Used = True WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl3")
             {
-                str = String.Format(@"UPDATE questions_Level3 SET Used = True WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if(lblLevel.Text == "Lvl4")
             {
-                str = String.Format(@"UPDATE questions_Level4 SET Used = True WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
-            olddb.Close();
+            newdb.Close();
             btnClear.PerformClick();
             UpdateViews();
         }
@@ -279,36 +282,36 @@ namespace Millionaire.Windows.Question_Editor
             cmd.ExecuteNonQuery();
             QEditor.c.Close();
 
-            olddb.Open();
+            newdb.Open();
             if (lblLevel.Text == "Lvl1")
             {
-                str = String.Format(@"UPDATE questions_Level1 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl2")
             {
-                str = String.Format(@"UPDATE questions_Level2 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl3")
             {
-                str = String.Format(@"UPDATE questions_Level3 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl4")
             {
-                str = String.Format(@"UPDATE questions_Level4 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
-            olddb.Close();
+            newdb.Close();
             btnClear.PerformClick();
             UpdateViews();
 
@@ -332,9 +335,9 @@ namespace Millionaire.Windows.Question_Editor
             }
 
             DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Used = 'False' ORDER BY NEWID()", olddb);
+            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
 
-            olddb.Open();
+            newdb.Open();
             SqlDataReader reader = sql.ExecuteReader();
 
             if (reader.HasRows)
@@ -353,7 +356,7 @@ namespace Millionaire.Windows.Question_Editor
                 }
                 reader.Close();
             }
-            olddb.Close();
+            newdb.Close();
     }
 
         private void btnSkip_Click(object sender, EventArgs e)
@@ -361,36 +364,36 @@ namespace Millionaire.Windows.Question_Editor
             SqlCommand cmd;
             string str;
 
-            olddb.Open();
+            newdb.Open();
             if (lblLevel.Text == "Lvl1")
             {
-                str = String.Format(@"UPDATE questions_Level1 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl2")
             {
-                str = String.Format(@"UPDATE questions_Level2 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl3")
             {
-                str = String.Format(@"UPDATE questions_Level3 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl4")
             {
-                str = String.Format(@"UPDATE questions_Level4 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
-            olddb.Close();
+            newdb.Close();
             btnClear.PerformClick();
             UpdateViews();
         }
@@ -400,36 +403,36 @@ namespace Millionaire.Windows.Question_Editor
             SqlCommand cmd;
             string str;
 
-            olddb.Open();
+            newdb.Open();
             if (lblLevel.Text == "Lvl1")
             {
-                str = String.Format(@"UPDATE questions_Level1 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl2")
             {
-                str = String.Format(@"UPDATE questions_Level2 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl3")
             {
-                str = String.Format(@"UPDATE questions_Level3 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
             else if (lblLevel.Text == "Lvl4")
             {
-                str = String.Format(@"UPDATE questions_Level4 SET Used = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, olddb);
+                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
-            olddb.Close();
+            newdb.Close();
             btnClear.PerformClick();
             UpdateViews();
 
@@ -453,9 +456,9 @@ namespace Millionaire.Windows.Question_Editor
             }
 
             DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Used = 'False' ORDER BY NEWID()", olddb);
+            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
 
-            olddb.Open();
+            newdb.Open();
             SqlDataReader reader = sql.ExecuteReader();
 
             if (reader.HasRows)
@@ -474,7 +477,7 @@ namespace Millionaire.Windows.Question_Editor
                 }
                 reader.Close();
             }
-            olddb.Close();
+            newdb.Close();
         }
 
         private void frmQuestionImport_FormClosing(object sender, FormClosingEventArgs e)
@@ -507,9 +510,9 @@ namespace Millionaire.Windows.Question_Editor
             }
 
             DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Used = 'False' ORDER BY NEWID()", olddb);
+            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
 
-            olddb.Open();
+            newdb.Open();
             SqlDataReader reader = sql.ExecuteReader();
 
             if (reader.HasRows)
@@ -528,7 +531,7 @@ namespace Millionaire.Windows.Question_Editor
                 }
                 reader.Close();
             }
-            olddb.Close();
+            newdb.Close();
         }
     }
 }

@@ -4,8 +4,10 @@ Imports System.IO
 Public Class Data
 
     Public Shared connectionString As New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30"))
+    Public Shared openQEditor As Boolean = False
+    Public Shared scanOldTables As Boolean = True
 
-    Public Shared Sub CreateDatabase()
+    Public Shared Sub CheckDatabase()
 
         Dim dbPath As String = Application.StartupPath
 
@@ -95,9 +97,89 @@ Public Class Data
         Dim te_q_Level0 As Boolean
         Dim te_q_Level1 As Boolean
 
-        'Check the Settings tables
+        'Since October 2023, there is a new database design which invole less tables and other names.
+        'When this method is called, the code below would be run to create the new tables within the existing database (if they aren't created yet).
+        'The user will also be informed about this.
+        If scanOldTables = True Then    ' You can turn off scanning at the top of this class/file. Change it there to False.
+            Try
+                'Tables to look out for.
+                Dim cmd_q_Lvl0 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level0'"
+                Dim cmd_q_Lvl1 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level1'"
+                Dim cmd_q_Lvl2 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level2'"
+                Dim cmd_q_Lvl3 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level3'"
+                Dim cmd_q_Lvl4 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level4'"
 
-        'Settings
+                Dim OldTablesPresent = False    ' This will switch to True if there is an old tablename found.
+
+                Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl0, connectionString)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
+                            OldTablesPresent = True
+                        End If
+                    End Using
+                End Using
+                Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl1, connectionString)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
+                            OldTablesPresent = True
+                        End If
+                    End Using
+                End Using
+                Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl2, connectionString)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
+                            OldTablesPresent = True
+                        End If
+                    End Using
+                End Using
+                Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl3, connectionString)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
+                            OldTablesPresent = True
+                        End If
+                    End Using
+                End Using
+                Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl4, connectionString)
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
+                            OldTablesPresent = True
+                        End If
+                    End Using
+                End Using
+
+                If OldTablesPresent = True Then
+                    Dim msgNewTB As DialogResult =
+                    MessageBox.Show($"The current tables in your database are not compatible with version 1.1 or higher.{vbNewLine}
+For the new features (such as questions per money level), the old table design is unfortunately not suitable for this change
+The new tables will be automatically created for you (if this isn't executed yet).
+If you had used some older versions, there is a new import tool in the Questions Editor you can use where you can set the desired difficulty/money level to each question.{vbNewLine}
+Do you want to run the Questions Editor first? Click 'No' to continue loading the main program. Or 'Cancel' to exit (no tables will be made){vbNewLine}
+(You can disable this message at startup in the Options window under the Database tab)", "INFO: Major Database Change!",
+MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
+                    Select Case msgNewTB
+                        Case DialogResult.Yes
+                            openQEditor = True
+                        Case DialogResult.No
+                            openQEditor = False
+                        Case DialogResult.Cancel
+                            Environment.Exit(0)
+                    End Select
+                End If
+
+                Dim addColumn As SqlCommand
+                addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
+                addColumn.ExecuteNonQuery()
+                addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
+                addColumn.ExecuteNonQuery()
+                addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
+                addColumn.ExecuteNonQuery()
+                addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
+                addColumn.ExecuteNonQuery()
+            Catch ex As Exception
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+
         Try
             CoreConsole.LogMsgDate("Checking table 'settings_HostMessages'...")
             Using sqlCmd As SqlCommand = New SqlCommand(cmd_s_HostMessages, connectionString)
@@ -112,7 +194,6 @@ Public Class Data
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking database < settings_HostMessages >: " + Environment.NewLine + ex.Message)
         End Try
-
         Try
             CoreConsole.LogMsgDate("Checking table 'fff_questions'...")
             Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_fffquestions, connectionString)

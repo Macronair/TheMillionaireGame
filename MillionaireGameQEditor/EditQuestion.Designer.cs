@@ -78,7 +78,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 46);
+            this.label1.Location = new System.Drawing.Point(12, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
@@ -87,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(47, 103);
+            this.label2.Location = new System.Drawing.Point(47, 121);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(14, 13);
             this.label2.TabIndex = 1;
@@ -96,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(47, 128);
+            this.label3.Location = new System.Drawing.Point(47, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 13);
             this.label3.TabIndex = 2;
@@ -105,7 +105,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(47, 153);
+            this.label4.Location = new System.Drawing.Point(47, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 13);
             this.label4.TabIndex = 3;
@@ -114,7 +114,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 178);
+            this.label5.Location = new System.Drawing.Point(46, 196);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(15, 13);
             this.label5.TabIndex = 4;
@@ -123,7 +123,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(430, 46);
+            this.label6.Location = new System.Drawing.Point(430, 64);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(41, 13);
             this.label6.TabIndex = 5;
@@ -132,7 +132,7 @@
             // txtQuestion
             // 
             this.txtQuestion.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuestion.Location = new System.Drawing.Point(67, 39);
+            this.txtQuestion.Location = new System.Drawing.Point(67, 57);
             this.txtQuestion.Multiline = true;
             this.txtQuestion.Name = "txtQuestion";
             this.txtQuestion.Size = new System.Drawing.Size(357, 53);
@@ -142,7 +142,7 @@
             // txtA
             // 
             this.txtA.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtA.Location = new System.Drawing.Point(67, 96);
+            this.txtA.Location = new System.Drawing.Point(67, 114);
             this.txtA.Name = "txtA";
             this.txtA.Size = new System.Drawing.Size(357, 24);
             this.txtA.TabIndex = 7;
@@ -151,7 +151,7 @@
             // txtB
             // 
             this.txtB.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtB.Location = new System.Drawing.Point(67, 121);
+            this.txtB.Location = new System.Drawing.Point(67, 139);
             this.txtB.Name = "txtB";
             this.txtB.Size = new System.Drawing.Size(357, 24);
             this.txtB.TabIndex = 8;
@@ -160,7 +160,7 @@
             // txtC
             // 
             this.txtC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtC.Location = new System.Drawing.Point(67, 146);
+            this.txtC.Location = new System.Drawing.Point(67, 164);
             this.txtC.Name = "txtC";
             this.txtC.Size = new System.Drawing.Size(357, 24);
             this.txtC.TabIndex = 9;
@@ -169,7 +169,7 @@
             // txtD
             // 
             this.txtD.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtD.Location = new System.Drawing.Point(67, 171);
+            this.txtD.Location = new System.Drawing.Point(67, 189);
             this.txtD.Name = "txtD";
             this.txtD.Size = new System.Drawing.Size(357, 24);
             this.txtD.TabIndex = 10;
@@ -184,7 +184,7 @@
             "B",
             "C",
             "D"});
-            this.txtCorrect.Location = new System.Drawing.Point(477, 39);
+            this.txtCorrect.Location = new System.Drawing.Point(477, 57);
             this.txtCorrect.MaxLength = 1;
             this.txtCorrect.Name = "txtCorrect";
             this.txtCorrect.Size = new System.Drawing.Size(80, 26);
@@ -192,7 +192,7 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(35, 12);
+            this.txtId.Location = new System.Drawing.Point(203, 7);
             this.txtId.Name = "txtId";
             this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(59, 20);
@@ -201,7 +201,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 15);
+            this.label7.Location = new System.Drawing.Point(181, 10);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(16, 13);
             this.label7.TabIndex = 13;
@@ -209,37 +209,41 @@
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnSave.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(626, 10);
+            this.btnSave.Location = new System.Drawing.Point(12, 4);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(102, 23);
+            this.btnSave.Size = new System.Drawing.Size(63, 47);
             this.btnSave.TabIndex = 14;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(626, 37);
+            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnCancel.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.skip;
+            this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancel.Location = new System.Drawing.Point(81, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(102, 23);
+            this.btnCancel.Size = new System.Drawing.Size(63, 47);
             this.btnCancel.TabIndex = 15;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(154, 12);
+            this.txtLevel.Location = new System.Drawing.Point(203, 28);
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.ReadOnly = true;
-            this.txtLevel.Size = new System.Drawing.Size(47, 20);
+            this.txtLevel.Size = new System.Drawing.Size(59, 20);
             this.txtLevel.TabIndex = 16;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(115, 15);
+            this.label8.Location = new System.Drawing.Point(164, 31);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(33, 13);
             this.label8.TabIndex = 17;
@@ -253,7 +257,7 @@
             this.pnlFFFAnswer.Controls.Add(this.btnFFFC);
             this.pnlFFFAnswer.Controls.Add(this.btnFFFB);
             this.pnlFFFAnswer.Controls.Add(this.btnFFFA);
-            this.pnlFFFAnswer.Location = new System.Drawing.Point(433, 71);
+            this.pnlFFFAnswer.Location = new System.Drawing.Point(433, 89);
             this.pnlFFFAnswer.Name = "pnlFFFAnswer";
             this.pnlFFFAnswer.Size = new System.Drawing.Size(175, 85);
             this.pnlFFFAnswer.TabIndex = 18;
@@ -327,7 +331,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(64, 206);
+            this.label9.Location = new System.Drawing.Point(64, 224);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(65, 13);
             this.label9.TabIndex = 21;
@@ -336,7 +340,7 @@
             // txtNote
             // 
             this.txtNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNote.Location = new System.Drawing.Point(135, 201);
+            this.txtNote.Location = new System.Drawing.Point(135, 219);
             this.txtNote.Multiline = true;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(289, 60);
@@ -356,7 +360,7 @@
             this.pnlD.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlD.BackgroundImage")));
             this.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlD.Controls.Add(this.lblD);
-            this.pnlD.Location = new System.Drawing.Point(636, 459);
+            this.pnlD.Location = new System.Drawing.Point(640, 459);
             this.pnlD.Name = "pnlD";
             this.pnlD.Size = new System.Drawing.Size(641, 57);
             this.pnlD.TabIndex = 85;
@@ -378,7 +382,7 @@
             this.pnlB.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnlB.BackgroundImage")));
             this.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlB.Controls.Add(this.lblB);
-            this.pnlB.Location = new System.Drawing.Point(636, 400);
+            this.pnlB.Location = new System.Drawing.Point(640, 400);
             this.pnlB.Name = "pnlB";
             this.pnlB.Size = new System.Drawing.Size(641, 57);
             this.pnlB.TabIndex = 84;
@@ -400,7 +404,7 @@
             this.pnlC.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
             this.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlC.Controls.Add(this.lblC);
-            this.pnlC.Location = new System.Drawing.Point(-4, 459);
+            this.pnlC.Location = new System.Drawing.Point(0, 459);
             this.pnlC.Name = "pnlC";
             this.pnlC.Size = new System.Drawing.Size(641, 57);
             this.pnlC.TabIndex = 83;
@@ -422,7 +426,7 @@
             this.pnlA.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Normal_Answer_Fill_l;
             this.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pnlA.Controls.Add(this.lblA);
-            this.pnlA.Location = new System.Drawing.Point(-4, 400);
+            this.pnlA.Location = new System.Drawing.Point(0, 400);
             this.pnlA.Name = "pnlA";
             this.pnlA.Size = new System.Drawing.Size(641, 57);
             this.pnlA.TabIndex = 82;
@@ -444,7 +448,7 @@
             this.picQuestion.BackgroundImage = global::MillionaireGameQEditor.Properties.Resources.Large_Strap_Fill;
             this.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picQuestion.Controls.Add(this.lblQuestion);
-            this.picQuestion.Location = new System.Drawing.Point(-4, 300);
+            this.picQuestion.Location = new System.Drawing.Point(0, 300);
             this.picQuestion.Name = "picQuestion";
             this.picQuestion.Size = new System.Drawing.Size(1280, 93);
             this.picQuestion.TabIndex = 86;
