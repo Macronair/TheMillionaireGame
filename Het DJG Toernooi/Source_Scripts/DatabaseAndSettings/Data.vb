@@ -4,6 +4,8 @@ Imports System.IO
 Public Class Data
 
     Public Shared connectionString As New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30"))
+    Public Shared OldTablesPresent = False    ' This will switch to True if there is an old tablename found.
+
     Public Shared openQEditor As Boolean = False
     Public Shared scanOldTables As Boolean = True
 
@@ -109,7 +111,7 @@ Public Class Data
                 Dim cmd_q_Lvl3 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level3'"
                 Dim cmd_q_Lvl4 As String = "SELECT * FROM sys.tables WHERE name = 'questions_Level4'"
 
-                Dim OldTablesPresent = False    ' This will switch to True if there is an old tablename found.
+
 
                 Using sqlCmd As SqlCommand = New SqlCommand(cmd_q_Lvl0, connectionString)
                     Using reader As SqlDataReader = sqlCmd.ExecuteReader
@@ -164,17 +166,17 @@ MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
                         Case DialogResult.Cancel
                             Environment.Exit(0)
                     End Select
-                End If
 
-                Dim addColumn As SqlCommand
-                addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
-                addColumn.ExecuteNonQuery()
-                addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
-                addColumn.ExecuteNonQuery()
-                addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
-                addColumn.ExecuteNonQuery()
-                addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
-                addColumn.ExecuteNonQuery()
+                    Dim addColumn As SqlCommand
+                    addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
+                    addColumn.ExecuteNonQuery()
+                    addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
+                    addColumn.ExecuteNonQuery()
+                    addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
+                    addColumn.ExecuteNonQuery()
+                    addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
+                    addColumn.ExecuteNonQuery()
+                End If
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
@@ -269,6 +271,25 @@ MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
+
+                If OldTablesPresent = True Then
+                    Dim da As New SqlDataAdapter("SELECT Question,A,B,C,D,CorrectAnswer,Used,Note FROM questions_Level0", connectionString)
+                    da.InsertCommand = New SqlCommand("INSERT INTO fff_questions (Question,A,B,C,D,CorrectAnswer,Level,Used,Note) VALUES (@Question,@A,@B,@C,@D,@CorrectAnswer,0,@Used,@Note)")
+                    da.InsertCommand.Parameters.Add("@Question", SqlDbType.NText, 0, "Question")
+                    da.InsertCommand.Parameters.Add("@A", SqlDbType.NVarChar, 50, "A")
+                    da.InsertCommand.Parameters.Add("@B", SqlDbType.NVarChar, 50, "B")
+                    da.InsertCommand.Parameters.Add("@C", SqlDbType.NVarChar, 50, "C")
+                    da.InsertCommand.Parameters.Add("@D", SqlDbType.NVarChar, 50, "D")
+                    da.InsertCommand.Parameters.Add("@CorrectAnswer", SqlDbType.NVarChar, 50, "CorrectAnswer")
+                    da.InsertCommand.Parameters.Add("@Used", SqlDbType.Bit, 0, "Used")
+                    da.InsertCommand.Parameters.Add("@Note", SqlDbType.NText, 50, "Note")
+
+                    da.AcceptChangesDuringFill = False
+
+                    Dim dt As New DataTable
+                    da.Fill(dt)
+                    da.Update(dt)
+                End If
             Case 1
                 CoreConsole.LogMsgLineDate("Creating table 'questions'...")
                 table = "CREATE TABLE [dbo].[questions] (" +

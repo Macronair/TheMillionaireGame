@@ -58,6 +58,8 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel1.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
+                    edit.trkQuestionLevel.Value = Convert.ToInt16(this.dtLevel1.CurrentRow.Cells[7].Value.ToString());
+                    edit.lblQuestionLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
                     edit.txtNote.Text = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
                 }
             }
@@ -77,6 +79,8 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel0.CurrentRow.Cells[5].Value.ToString();
                     edit.lblAnswer.Text = this.dtLevel0.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
+                    edit.trkQuestionLevel.Value = Convert.ToInt16(this.dtLevel1.CurrentRow.Cells[7].Value.ToString());
+                    edit.lblQuestionLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
                     edit.txtNote.Text = this.dtLevel0.CurrentRow.Cells[9].Value.ToString();
                 }
             }

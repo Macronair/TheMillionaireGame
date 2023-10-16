@@ -67,12 +67,16 @@
             this.lblA = new System.Windows.Forms.Label();
             this.picQuestion = new System.Windows.Forms.Panel();
             this.lblQuestion = new System.Windows.Forms.Label();
+            this.lblQuestionLevel = new System.Windows.Forms.Label();
+            this.lblQuestionLevelText = new System.Windows.Forms.Label();
+            this.trkQuestionLevel = new System.Windows.Forms.TrackBar();
             this.pnlFFFAnswer.SuspendLayout();
             this.pnlD.SuspendLayout();
             this.pnlB.SuspendLayout();
             this.pnlC.SuspendLayout();
             this.pnlA.SuspendLayout();
             this.picQuestion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -464,11 +468,45 @@
             this.lblQuestion.TabIndex = 13;
             this.lblQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblQuestionLevel
+            // 
+            this.lblQuestionLevel.AutoSize = true;
+            this.lblQuestionLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblQuestionLevel.Location = new System.Drawing.Point(584, 274);
+            this.lblQuestionLevel.Name = "lblQuestionLevel";
+            this.lblQuestionLevel.Size = new System.Drawing.Size(18, 20);
+            this.lblQuestionLevel.TabIndex = 99;
+            this.lblQuestionLevel.Text = "1";
+            this.lblQuestionLevel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblQuestionLevelText
+            // 
+            this.lblQuestionLevelText.AutoSize = true;
+            this.lblQuestionLevelText.Location = new System.Drawing.Point(478, 274);
+            this.lblQuestionLevelText.Name = "lblQuestionLevelText";
+            this.lblQuestionLevelText.Size = new System.Drawing.Size(81, 13);
+            this.lblQuestionLevelText.TabIndex = 98;
+            this.lblQuestionLevelText.Text = "Question Level:";
+            // 
+            // trkQuestionLevel
+            // 
+            this.trkQuestionLevel.Location = new System.Drawing.Point(614, 57);
+            this.trkQuestionLevel.Maximum = 15;
+            this.trkQuestionLevel.Minimum = 1;
+            this.trkQuestionLevel.Name = "trkQuestionLevel";
+            this.trkQuestionLevel.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trkQuestionLevel.Size = new System.Drawing.Size(45, 237);
+            this.trkQuestionLevel.TabIndex = 97;
+            this.trkQuestionLevel.Value = 1;
+            // 
             // frmEditQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 528);
+            this.Controls.Add(this.lblQuestionLevel);
+            this.Controls.Add(this.lblQuestionLevelText);
+            this.Controls.Add(this.trkQuestionLevel);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.pnlD);
             this.Controls.Add(this.pnlB);
@@ -507,6 +545,7 @@
             this.pnlC.ResumeLayout(false);
             this.pnlA.ResumeLayout(false);
             this.picQuestion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -552,5 +591,8 @@
         internal System.Windows.Forms.Panel picQuestion;
         internal System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.Label label15;
+        public System.Windows.Forms.Label lblQuestionLevel;
+        public System.Windows.Forms.Label lblQuestionLevelText;
+        public System.Windows.Forms.TrackBar trkQuestionLevel;
     }
 }
