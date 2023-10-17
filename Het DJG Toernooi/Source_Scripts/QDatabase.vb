@@ -17,7 +17,7 @@ Public Class QDatabase
         If Game.level = -1 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            Dim sql = New SqlCommand("SELECT TOP 1 * FROM fff_question WHERE Used = 'False' ORDER BY NEWID()", Data.connectionString)
+            Dim sql = New SqlCommand("SELECT TOP 1 * FROM fff_questionS WHERE Used = 'False' ORDER BY NEWID()", Data.connectionString)
             Try
                 Dim reader As SqlDataReader = sql.ExecuteReader
                 If reader.HasRows Then
