@@ -22,9 +22,25 @@ Partial Class OptionsScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.btnIdentifyMonitors = New System.Windows.Forms.Button()
+        Me.cmbFullScrTVScreen = New System.Windows.Forms.ComboBox()
+        Me.cmbFullScrGuestScreen = New System.Windows.Forms.ComboBox()
+        Me.cmbFullScrHostScreen = New System.Windows.Forms.ComboBox()
+        Me.chkFullScrTVScreen = New System.Windows.Forms.CheckBox()
+        Me.chkFullScrGuestScreen = New System.Windows.Forms.CheckBox()
+        Me.chkFullScrHostScreen = New System.Windows.Forms.CheckBox()
+        Me.cmbResTVScreen = New System.Windows.Forms.ComboBox()
+        Me.cmbResGuestScreen = New System.Windows.Forms.ComboBox()
+        Me.cmbResHostScreen = New System.Windows.Forms.ComboBox()
+        Me.Label118 = New System.Windows.Forms.Label()
+        Me.Label117 = New System.Windows.Forms.Label()
+        Me.Label116 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.radStrapBlack = New System.Windows.Forms.RadioButton()
         Me.radStrapGreen = New System.Windows.Forms.RadioButton()
         Me.radStrapYellow = New System.Windows.Forms.RadioButton()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -49,7 +65,7 @@ Partial Class OptionsScreen
         Me.Label113 = New System.Windows.Forms.Label()
         Me.radL2Always = New System.Windows.Forms.RadioButton()
         Me.cmbLifeline2 = New System.Windows.Forms.ComboBox()
-        Me.NumericUpDown1 = New System.Windows.Forms.NumericUpDown()
+        Me.nmrTotalLifelines = New System.Windows.Forms.NumericUpDown()
         Me.Label112 = New System.Windows.Forms.Label()
         Me.grpLifeline1 = New System.Windows.Forms.GroupBox()
         Me.radL1RiskMode = New System.Windows.Forms.RadioButton()
@@ -292,7 +308,7 @@ Partial Class OptionsScreen
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
-        Me.radStrapBlack = New System.Windows.Forms.RadioButton()
+        Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.picLifeline3 = New System.Windows.Forms.PictureBox()
@@ -300,12 +316,13 @@ Partial Class OptionsScreen
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grpLifeline4.SuspendLayout()
         Me.grpLifeline3.SuspendLayout()
         Me.grpLifeline2.SuspendLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.nmrTotalLifelines, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpLifeline1.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
@@ -331,6 +348,7 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
         Me.TabPage1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -341,6 +359,151 @@ Partial Class OptionsScreen
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.btnIdentifyMonitors)
+        Me.GroupBox3.Controls.Add(Me.cmbFullScrTVScreen)
+        Me.GroupBox3.Controls.Add(Me.cmbFullScrGuestScreen)
+        Me.GroupBox3.Controls.Add(Me.cmbFullScrHostScreen)
+        Me.GroupBox3.Controls.Add(Me.chkFullScrTVScreen)
+        Me.GroupBox3.Controls.Add(Me.chkFullScrGuestScreen)
+        Me.GroupBox3.Controls.Add(Me.chkFullScrHostScreen)
+        Me.GroupBox3.Controls.Add(Me.cmbResTVScreen)
+        Me.GroupBox3.Controls.Add(Me.cmbResGuestScreen)
+        Me.GroupBox3.Controls.Add(Me.cmbResHostScreen)
+        Me.GroupBox3.Controls.Add(Me.Label118)
+        Me.GroupBox3.Controls.Add(Me.Label117)
+        Me.GroupBox3.Controls.Add(Me.Label116)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 383)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(529, 105)
+        Me.GroupBox3.TabIndex = 2
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Resolutions"
+        '
+        'btnIdentifyMonitors
+        '
+        Me.btnIdentifyMonitors.Location = New System.Drawing.Point(446, 36)
+        Me.btnIdentifyMonitors.Name = "btnIdentifyMonitors"
+        Me.btnIdentifyMonitors.Size = New System.Drawing.Size(75, 41)
+        Me.btnIdentifyMonitors.TabIndex = 12
+        Me.btnIdentifyMonitors.Text = "Identify" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Monitors"
+        Me.btnIdentifyMonitors.UseVisualStyleBackColor = True
+        '
+        'cmbFullScrTVScreen
+        '
+        Me.cmbFullScrTVScreen.Enabled = False
+        Me.cmbFullScrTVScreen.FormattingEnabled = True
+        Me.cmbFullScrTVScreen.Location = New System.Drawing.Point(309, 72)
+        Me.cmbFullScrTVScreen.Name = "cmbFullScrTVScreen"
+        Me.cmbFullScrTVScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrTVScreen.TabIndex = 11
+        '
+        'cmbFullScrGuestScreen
+        '
+        Me.cmbFullScrGuestScreen.Enabled = False
+        Me.cmbFullScrGuestScreen.FormattingEnabled = True
+        Me.cmbFullScrGuestScreen.Location = New System.Drawing.Point(309, 44)
+        Me.cmbFullScrGuestScreen.Name = "cmbFullScrGuestScreen"
+        Me.cmbFullScrGuestScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrGuestScreen.TabIndex = 10
+        '
+        'cmbFullScrHostScreen
+        '
+        Me.cmbFullScrHostScreen.Enabled = False
+        Me.cmbFullScrHostScreen.FormattingEnabled = True
+        Me.cmbFullScrHostScreen.Location = New System.Drawing.Point(309, 16)
+        Me.cmbFullScrHostScreen.Name = "cmbFullScrHostScreen"
+        Me.cmbFullScrHostScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrHostScreen.TabIndex = 9
+        '
+        'chkFullScrTVScreen
+        '
+        Me.chkFullScrTVScreen.AutoSize = True
+        Me.chkFullScrTVScreen.Location = New System.Drawing.Point(210, 74)
+        Me.chkFullScrTVScreen.Name = "chkFullScrTVScreen"
+        Me.chkFullScrTVScreen.Size = New System.Drawing.Size(93, 20)
+        Me.chkFullScrTVScreen.TabIndex = 8
+        Me.chkFullScrTVScreen.Text = "Full Screen"
+        Me.chkFullScrTVScreen.UseVisualStyleBackColor = True
+        '
+        'chkFullScrGuestScreen
+        '
+        Me.chkFullScrGuestScreen.AutoSize = True
+        Me.chkFullScrGuestScreen.Location = New System.Drawing.Point(210, 46)
+        Me.chkFullScrGuestScreen.Name = "chkFullScrGuestScreen"
+        Me.chkFullScrGuestScreen.Size = New System.Drawing.Size(93, 20)
+        Me.chkFullScrGuestScreen.TabIndex = 7
+        Me.chkFullScrGuestScreen.Text = "Full Screen"
+        Me.chkFullScrGuestScreen.UseVisualStyleBackColor = True
+        '
+        'chkFullScrHostScreen
+        '
+        Me.chkFullScrHostScreen.AutoSize = True
+        Me.chkFullScrHostScreen.Location = New System.Drawing.Point(210, 18)
+        Me.chkFullScrHostScreen.Name = "chkFullScrHostScreen"
+        Me.chkFullScrHostScreen.Size = New System.Drawing.Size(93, 20)
+        Me.chkFullScrHostScreen.TabIndex = 6
+        Me.chkFullScrHostScreen.Text = "Full Screen"
+        Me.chkFullScrHostScreen.UseVisualStyleBackColor = True
+        '
+        'cmbResTVScreen
+        '
+        Me.cmbResTVScreen.FormattingEnabled = True
+        Me.cmbResTVScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
+        Me.cmbResTVScreen.Location = New System.Drawing.Point(100, 72)
+        Me.cmbResTVScreen.Name = "cmbResTVScreen"
+        Me.cmbResTVScreen.Size = New System.Drawing.Size(92, 24)
+        Me.cmbResTVScreen.TabIndex = 5
+        Me.cmbResTVScreen.Text = "1280x720"
+        '
+        'cmbResGuestScreen
+        '
+        Me.cmbResGuestScreen.FormattingEnabled = True
+        Me.cmbResGuestScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
+        Me.cmbResGuestScreen.Location = New System.Drawing.Point(100, 44)
+        Me.cmbResGuestScreen.Name = "cmbResGuestScreen"
+        Me.cmbResGuestScreen.Size = New System.Drawing.Size(92, 24)
+        Me.cmbResGuestScreen.TabIndex = 4
+        Me.cmbResGuestScreen.Text = "1280x720"
+        '
+        'cmbResHostScreen
+        '
+        Me.cmbResHostScreen.FormattingEnabled = True
+        Me.cmbResHostScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
+        Me.cmbResHostScreen.Location = New System.Drawing.Point(100, 16)
+        Me.cmbResHostScreen.Name = "cmbResHostScreen"
+        Me.cmbResHostScreen.Size = New System.Drawing.Size(92, 24)
+        Me.cmbResHostScreen.TabIndex = 3
+        Me.cmbResHostScreen.Text = "1280x720"
+        '
+        'Label118
+        '
+        Me.Label118.AutoSize = True
+        Me.Label118.Location = New System.Drawing.Point(20, 75)
+        Me.Label118.Name = "Label118"
+        Me.Label118.Size = New System.Drawing.Size(74, 16)
+        Me.Label118.TabIndex = 2
+        Me.Label118.Text = "TV Screen:"
+        '
+        'Label117
+        '
+        Me.Label117.AutoSize = True
+        Me.Label117.Location = New System.Drawing.Point(3, 47)
+        Me.Label117.Name = "Label117"
+        Me.Label117.Size = New System.Drawing.Size(91, 16)
+        Me.Label117.TabIndex = 1
+        Me.Label117.Text = "Guest Screen:"
+        '
+        'Label116
+        '
+        Me.Label116.AutoSize = True
+        Me.Label116.Location = New System.Drawing.Point(10, 19)
+        Me.Label116.Name = "Label116"
+        Me.Label116.Size = New System.Drawing.Size(84, 16)
+        Me.Label116.TabIndex = 0
+        Me.Label116.Text = "Host Screen:"
         '
         'GroupBox2
         '
@@ -354,6 +517,16 @@ Partial Class OptionsScreen
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Question Skins"
+        '
+        'radStrapBlack
+        '
+        Me.radStrapBlack.AutoSize = True
+        Me.radStrapBlack.Location = New System.Drawing.Point(198, 80)
+        Me.radStrapBlack.Name = "radStrapBlack"
+        Me.radStrapBlack.Size = New System.Drawing.Size(59, 20)
+        Me.radStrapBlack.TabIndex = 6
+        Me.radStrapBlack.Text = "Black"
+        Me.radStrapBlack.UseVisualStyleBackColor = True
         '
         'radStrapGreen
         '
@@ -382,7 +555,7 @@ Partial Class OptionsScreen
         Me.GroupBox1.Controls.Add(Me.grpLifeline4)
         Me.GroupBox1.Controls.Add(Me.grpLifeline3)
         Me.GroupBox1.Controls.Add(Me.grpLifeline2)
-        Me.GroupBox1.Controls.Add(Me.NumericUpDown1)
+        Me.GroupBox1.Controls.Add(Me.nmrTotalLifelines)
         Me.GroupBox1.Controls.Add(Me.Label112)
         Me.GroupBox1.Controls.Add(Me.grpLifeline1)
         Me.GroupBox1.Location = New System.Drawing.Point(6, 6)
@@ -411,6 +584,7 @@ Partial Class OptionsScreen
         'radL4RiskMode
         '
         Me.radL4RiskMode.AutoSize = True
+        Me.radL4RiskMode.Checked = True
         Me.radL4RiskMode.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.radL4RiskMode.Location = New System.Drawing.Point(9, 172)
         Me.radL4RiskMode.Name = "radL4RiskMode"
@@ -428,7 +602,6 @@ Partial Class OptionsScreen
         Me.radL4AfterQ10.Name = "radL4AfterQ10"
         Me.radL4AfterQ10.Size = New System.Drawing.Size(70, 17)
         Me.radL4AfterQ10.TabIndex = 5
-        Me.radL4AfterQ10.TabStop = True
         Me.radL4AfterQ10.Text = "After Q10"
         Me.radL4AfterQ10.UseVisualStyleBackColor = True
         '
@@ -440,7 +613,6 @@ Partial Class OptionsScreen
         Me.radL4AfterQ5.Name = "radL4AfterQ5"
         Me.radL4AfterQ5.Size = New System.Drawing.Size(64, 17)
         Me.radL4AfterQ5.TabIndex = 4
-        Me.radL4AfterQ5.TabStop = True
         Me.radL4AfterQ5.Text = "After Q5"
         Me.radL4AfterQ5.UseVisualStyleBackColor = True
         '
@@ -462,7 +634,6 @@ Partial Class OptionsScreen
         Me.radL4Always.Name = "radL4Always"
         Me.radL4Always.Size = New System.Drawing.Size(58, 17)
         Me.radL4Always.TabIndex = 2
-        Me.radL4Always.TabStop = True
         Me.radL4Always.Text = "Always"
         Me.radL4Always.UseVisualStyleBackColor = True
         '
@@ -501,7 +672,6 @@ Partial Class OptionsScreen
         Me.radL3RiskMode.Name = "radL3RiskMode"
         Me.radL3RiskMode.Size = New System.Drawing.Size(121, 17)
         Me.radL3RiskMode.TabIndex = 6
-        Me.radL3RiskMode.TabStop = True
         Me.radL3RiskMode.Text = "RISK MODE Lifeline"
         Me.radL3RiskMode.UseVisualStyleBackColor = True
         '
@@ -513,7 +683,6 @@ Partial Class OptionsScreen
         Me.radL3AfterQ10.Name = "radL3AfterQ10"
         Me.radL3AfterQ10.Size = New System.Drawing.Size(70, 17)
         Me.radL3AfterQ10.TabIndex = 5
-        Me.radL3AfterQ10.TabStop = True
         Me.radL3AfterQ10.Text = "After Q10"
         Me.radL3AfterQ10.UseVisualStyleBackColor = True
         '
@@ -525,7 +694,6 @@ Partial Class OptionsScreen
         Me.radL3AfterQ5.Name = "radL3AfterQ5"
         Me.radL3AfterQ5.Size = New System.Drawing.Size(64, 17)
         Me.radL3AfterQ5.TabIndex = 4
-        Me.radL3AfterQ5.TabStop = True
         Me.radL3AfterQ5.Text = "After Q5"
         Me.radL3AfterQ5.UseVisualStyleBackColor = True
         '
@@ -542,6 +710,7 @@ Partial Class OptionsScreen
         'radL3Always
         '
         Me.radL3Always.AutoSize = True
+        Me.radL3Always.Checked = True
         Me.radL3Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.radL3Always.Location = New System.Drawing.Point(9, 124)
         Me.radL3Always.Name = "radL3Always"
@@ -586,7 +755,6 @@ Partial Class OptionsScreen
         Me.radL2RiskMode.Name = "radL2RiskMode"
         Me.radL2RiskMode.Size = New System.Drawing.Size(121, 17)
         Me.radL2RiskMode.TabIndex = 6
-        Me.radL2RiskMode.TabStop = True
         Me.radL2RiskMode.Text = "RISK MODE Lifeline"
         Me.radL2RiskMode.UseVisualStyleBackColor = True
         '
@@ -598,7 +766,6 @@ Partial Class OptionsScreen
         Me.radL2AfterQ10.Name = "radL2AfterQ10"
         Me.radL2AfterQ10.Size = New System.Drawing.Size(70, 17)
         Me.radL2AfterQ10.TabIndex = 5
-        Me.radL2AfterQ10.TabStop = True
         Me.radL2AfterQ10.Text = "After Q10"
         Me.radL2AfterQ10.UseVisualStyleBackColor = True
         '
@@ -610,7 +777,6 @@ Partial Class OptionsScreen
         Me.radL2AfterQ5.Name = "radL2AfterQ5"
         Me.radL2AfterQ5.Size = New System.Drawing.Size(64, 17)
         Me.radL2AfterQ5.TabIndex = 4
-        Me.radL2AfterQ5.TabStop = True
         Me.radL2AfterQ5.Text = "After Q5"
         Me.radL2AfterQ5.UseVisualStyleBackColor = True
         '
@@ -627,6 +793,7 @@ Partial Class OptionsScreen
         'radL2Always
         '
         Me.radL2Always.AutoSize = True
+        Me.radL2Always.Checked = True
         Me.radL2Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.radL2Always.Location = New System.Drawing.Point(9, 124)
         Me.radL2Always.Name = "radL2Always"
@@ -647,14 +814,14 @@ Partial Class OptionsScreen
         Me.cmbLifeline2.Size = New System.Drawing.Size(134, 21)
         Me.cmbLifeline2.TabIndex = 0
         '
-        'NumericUpDown1
+        'nmrTotalLifelines
         '
-        Me.NumericUpDown1.Location = New System.Drawing.Point(136, 25)
-        Me.NumericUpDown1.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
-        Me.NumericUpDown1.Name = "NumericUpDown1"
-        Me.NumericUpDown1.Size = New System.Drawing.Size(36, 22)
-        Me.NumericUpDown1.TabIndex = 10
-        Me.NumericUpDown1.Value = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.nmrTotalLifelines.Location = New System.Drawing.Point(136, 25)
+        Me.nmrTotalLifelines.Maximum = New Decimal(New Integer() {4, 0, 0, 0})
+        Me.nmrTotalLifelines.Name = "nmrTotalLifelines"
+        Me.nmrTotalLifelines.Size = New System.Drawing.Size(36, 22)
+        Me.nmrTotalLifelines.TabIndex = 10
+        Me.nmrTotalLifelines.Value = New Decimal(New Integer() {4, 0, 0, 0})
         '
         'Label112
         '
@@ -689,7 +856,6 @@ Partial Class OptionsScreen
         Me.radL1RiskMode.Name = "radL1RiskMode"
         Me.radL1RiskMode.Size = New System.Drawing.Size(121, 17)
         Me.radL1RiskMode.TabIndex = 6
-        Me.radL1RiskMode.TabStop = True
         Me.radL1RiskMode.Text = "RISK MODE Lifeline"
         Me.radL1RiskMode.UseVisualStyleBackColor = True
         '
@@ -701,7 +867,6 @@ Partial Class OptionsScreen
         Me.radL1AfterQ10.Name = "radL1AfterQ10"
         Me.radL1AfterQ10.Size = New System.Drawing.Size(70, 17)
         Me.radL1AfterQ10.TabIndex = 5
-        Me.radL1AfterQ10.TabStop = True
         Me.radL1AfterQ10.Text = "After Q10"
         Me.radL1AfterQ10.UseVisualStyleBackColor = True
         '
@@ -713,7 +878,6 @@ Partial Class OptionsScreen
         Me.radL1AfterQ5.Name = "radL1AfterQ5"
         Me.radL1AfterQ5.Size = New System.Drawing.Size(64, 17)
         Me.radL1AfterQ5.TabIndex = 4
-        Me.radL1AfterQ5.TabStop = True
         Me.radL1AfterQ5.Text = "After Q5"
         Me.radL1AfterQ5.UseVisualStyleBackColor = True
         '
@@ -730,6 +894,7 @@ Partial Class OptionsScreen
         'radL1Always
         '
         Me.radL1Always.AutoSize = True
+        Me.radL1Always.Checked = True
         Me.radL1Always.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.radL1Always.Location = New System.Drawing.Point(9, 124)
         Me.radL1Always.Name = "radL1Always"
@@ -3175,15 +3340,9 @@ Partial Class OptionsScreen
         Me.btnClose.Text = "Close"
         Me.btnClose.UseVisualStyleBackColor = True
         '
-        'radStrapBlack
+        'tmrEnableIdentifyButton
         '
-        Me.radStrapBlack.AutoSize = True
-        Me.radStrapBlack.Location = New System.Drawing.Point(198, 80)
-        Me.radStrapBlack.Name = "radStrapBlack"
-        Me.radStrapBlack.Size = New System.Drawing.Size(59, 20)
-        Me.radStrapBlack.TabIndex = 6
-        Me.radStrapBlack.Text = "Black"
-        Me.radStrapBlack.UseVisualStyleBackColor = True
+        Me.tmrEnableIdentifyButton.Interval = 3000
         '
         'PictureBox5
         '
@@ -3243,6 +3402,8 @@ Partial Class OptionsScreen
         Me.Text = "Options - The Millionaire Game"
         Me.tabOptions.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
@@ -3253,7 +3414,7 @@ Partial Class OptionsScreen
         Me.grpLifeline3.PerformLayout()
         Me.grpLifeline2.ResumeLayout(False)
         Me.grpLifeline2.PerformLayout()
-        CType(Me.NumericUpDown1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.nmrTotalLifelines, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpLifeline1.ResumeLayout(False)
         Me.grpLifeline1.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
@@ -3539,10 +3700,25 @@ Partial Class OptionsScreen
     Friend WithEvents radL2Always As RadioButton
     Friend WithEvents picLifeline2 As PictureBox
     Friend WithEvents cmbLifeline2 As ComboBox
-    Friend WithEvents NumericUpDown1 As NumericUpDown
+    Friend WithEvents nmrTotalLifelines As NumericUpDown
     Friend WithEvents Label112 As Label
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents radStrapGreen As RadioButton
     Friend WithEvents radStrapYellow As RadioButton
     Friend WithEvents radStrapBlack As RadioButton
+    Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents cmbResTVScreen As ComboBox
+    Friend WithEvents cmbResGuestScreen As ComboBox
+    Friend WithEvents cmbResHostScreen As ComboBox
+    Friend WithEvents Label118 As Label
+    Friend WithEvents Label117 As Label
+    Friend WithEvents Label116 As Label
+    Friend WithEvents btnIdentifyMonitors As Button
+    Friend WithEvents cmbFullScrTVScreen As ComboBox
+    Friend WithEvents cmbFullScrGuestScreen As ComboBox
+    Friend WithEvents cmbFullScrHostScreen As ComboBox
+    Friend WithEvents chkFullScrTVScreen As CheckBox
+    Friend WithEvents chkFullScrGuestScreen As CheckBox
+    Friend WithEvents chkFullScrHostScreen As CheckBox
+    Friend WithEvents tmrEnableIdentifyButton As Timer
 End Class

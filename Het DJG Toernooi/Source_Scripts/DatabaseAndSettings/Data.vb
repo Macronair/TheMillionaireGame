@@ -148,33 +148,37 @@ Public Class Data
                 End Using
 
                 If OldTablesPresent = True Then
-                    Dim msgNewTB As DialogResult =
-                    MessageBox.Show($"The current tables in your database are not compatible with version 1.1 or higher.{vbNewLine}
+                    Dim sqlCmd As New SqlCommand("SELECT * FROM sys.tables WHERE name = 'questions' OR name = 'fff_questions'", connectionString)
+                    Dim reader As SqlDataReader = sqlCmd.ExecuteReader
+
+                    If reader.HasRows Then
+                        Dim msgNewTB As DialogResult =
+                        MessageBox.Show($"The current tables in your database are not compatible with version 1.1 or higher.{vbNewLine}
 For the new features (such as questions per money level), the old table design is unfortunately not suitable for this change
 The new tables will be automatically created for you (if this isn't executed yet).
 If you had used some older versions, there is a new import tool in the Questions Editor you can use where you can set the desired difficulty/money level to each question.{vbNewLine}
-Do you want to run the Questions Editor first? Click 'No' to continue loading the main program. Or 'Cancel' to exit (no tables will be made){vbNewLine}
-(You can disable this message at startup in the Options window under the Database tab)", "INFO: Major Database Change!",
-MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
-                    Select Case msgNewTB
-                        Case DialogResult.Yes
-                            openQEditor = True
-                        Case DialogResult.No
-                            openQEditor = False
-                        Case DialogResult.Cancel
-                            Environment.Exit(0)
-                    End Select
+Do you want to run the Questions Editor first? Click 'No' to continue loading the main program. Or 'Cancel' to exit (no tables will be made)", "INFO: Major Database Change!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
+                        Select Case msgNewTB
+                            Case DialogResult.Yes
+                                openQEditor = True
+                            Case DialogResult.No
+                                openQEditor = False
+                            Case DialogResult.Cancel
+                                Environment.Exit(0)
+                        End Select
 
-                    Dim addColumn As SqlCommand
-                    addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
-                    addColumn.ExecuteNonQuery()
-                    addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
-                    addColumn.ExecuteNonQuery()
-                    addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
-                    addColumn.ExecuteNonQuery()
-                    addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
-                    addColumn.ExecuteNonQuery()
+                        Dim addColumn As SqlCommand
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn.ExecuteNonQuery()
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn.ExecuteNonQuery()
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn.ExecuteNonQuery()
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn.ExecuteNonQuery()
+                    End If
                 End If
+
             Catch ex As Exception
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End Try
@@ -271,7 +275,10 @@ MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
                 End Try
 
                 If OldTablesPresent = True Then
-                    Dim da As New SqlDataAdapter("INSERT INTO fff_questions SELECT * FROM questions_Level0", connectionString)
+                    Dim cmdTransfer As New SqlCommand("INSERT INTO fff_questions SELECT * FROM questions_Level0", connectionString)
+                    cmdTransfer.ExecuteNonQuery()
+                    cmdTransfer = New SqlCommand("UPDATE fff_questions SET Level = 0")
+                    cmdTransfer.ExecuteNonQuery()
                 End If
             Case 1
                 CoreConsole.LogMsgLineDate("Creating table 'questions'...")

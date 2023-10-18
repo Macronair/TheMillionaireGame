@@ -37,7 +37,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.428.0</ApplicationVersion>
+    <ApplicationVersion>1.1.450.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -140,6 +140,7 @@
     <Compile Include="Source_Scripts\DatabaseAndSettings\Message.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
     <Compile Include="Source_Scripts\Classes\Sounds.vb" />
+    <Compile Include="Source_Scripts\Screens_Views\Monitor.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -222,6 +223,12 @@
     <Compile Include="Windows\Options\HostMessages.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Windows\Options\MonitorIdentifier.Designer.vb">
+      <DependentUpon>MonitorIdentifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\MonitorIdentifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\Options\OptionsScreen.Designer.vb">
       <DependentUpon>OptionsScreen.vb</DependentUpon>
     </Compile>
@@ -271,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\MonitorIdentifier.resx">
+      <DependentUpon>MonitorIdentifier.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\OptionsScreen.resx">
       <DependentUpon>OptionsScreen.vb</DependentUpon>

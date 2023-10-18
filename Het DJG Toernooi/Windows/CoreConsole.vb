@@ -19,6 +19,16 @@ Public Class CoreConsole
 
         LogMsgDate("Loading configuration...")
         Game.CurrentProfile.LoadSettings()
+        Monitor.Detect()
+        Game.TotalLifelines = Profile.Options.TotalLifelines
+        If Game.TotalLifelines > 4 Then
+            Game.TotalLifelines = 4
+            Profile.Options.TotalLifelines = 4
+        ElseIf Game.TotalLifelines < 0 Then
+            Game.TotalLifelines = 0
+            Profile.Options.TotalLifelines = 0
+        End If
+
         Thread.Sleep(250)
 
         LogMsgDate("Checking database...")

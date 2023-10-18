@@ -1,10 +1,73 @@
 ﻿Public Class OptionsScreen
 
+    Public Shared Lifeline1_availableAt As Integer
+    Public Shared Lifeline2_availableAt As Integer
+    Public Shared Lifeline3_availableAt As Integer
+    Public Shared Lifeline4_availableAt As Integer
+    Public Shared WinningStrapTexture As Integer
+
     Private Sub OptionsScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cmbFullScrHostScreen.DataSource = New List(Of String)(Monitor.ConnectedScreens)
+        cmbFullScrGuestScreen.DataSource = New List(Of String)(Monitor.ConnectedScreens)
+        cmbFullScrTVScreen.DataSource = New List(Of String)(Monitor.ConnectedScreens)
+        Lifeline1_availableAt = Profile.Options.Lifeline1_available
+        Lifeline2_availableAt = Profile.Options.Lifeline2_available
+        Lifeline3_availableAt = Profile.Options.Lifeline3_available
+        Lifeline4_availableAt = Profile.Options.Lifeline4_available
+
+        nmrTotalLifelines.Value = Profile.Options.TotalLifelines
         cmbLifeline1.Text = Profile.Options.Lifeline1
         cmbLifeline2.Text = Profile.Options.Lifeline2
         cmbLifeline3.Text = Profile.Options.Lifeline3
         cmbLifeline4.Text = Profile.Options.Lifeline4
+
+        Select Case Lifeline1_availableAt
+            Case 0
+                radL1Always.Checked = True
+            Case 1
+                radL1AfterQ5.Checked = True
+            Case 2
+                radL1AfterQ10.Checked = True
+            Case 3
+                radL1RiskMode.Checked = True
+        End Select
+        Select Case Lifeline2_availableAt
+            Case 0
+                radL2Always.Checked = True
+            Case 1
+                radL2AfterQ5.Checked = True
+            Case 2
+                radL2AfterQ10.Checked = True
+            Case 3
+                radL2RiskMode.Checked = True
+        End Select
+        Select Case Lifeline3_availableAt
+            Case 0
+                radL3Always.Checked = True
+            Case 1
+                radL3AfterQ5.Checked = True
+            Case 2
+                radL3AfterQ10.Checked = True
+            Case 3
+                radL3RiskMode.Checked = True
+        End Select
+        Select Case Lifeline4_availableAt
+            Case 0
+                radL4Always.Checked = True
+            Case 1
+                radL4AfterQ5.Checked = True
+            Case 2
+                radL4AfterQ10.Checked = True
+            Case 3
+                radL4RiskMode.Checked = True
+        End Select
+
+        cmbResHostScreen.Text = Profile.Options.Resolution_HostScreen
+        cmbResGuestScreen.Text = Profile.Options.Resolution_GuestScreen
+        cmbResTVScreen.Text = Profile.Options.Resolution_TVScreen
+        chkFullScrHostScreen.Checked = Profile.Options.FullScreen_HostScreen_Enable
+        chkFullScrGuestScreen.Checked = Profile.Options.FullScreen_GuestScreen_Enable
+        chkFullScrTVScreen.Checked = Profile.Options.FullScreen_TVScreen_Enable
 
         txtSndOpening.Text = Profile.Options.snd_Opening
         txtSndCommercialIn.Text = Profile.Options.snd_CommIn
@@ -184,5 +247,65 @@
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Game.CurrentProfile.SaveSettings()
         MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
+
+    Private Sub btnIdentifyMonitors_Click(sender As Object, e As EventArgs) Handles btnIdentifyMonitors.Click
+        Monitor.Identify()
+        btnIdentifyMonitors.Enabled = False
+        tmrEnableIdentifyButton.Start()
+    End Sub
+
+    Private Sub tmrEnableIdentifyButton_Tick(sender As Object, e As EventArgs) Handles tmrEnableIdentifyButton.Tick
+        btnIdentifyMonitors.Enabled = True
+        tmrEnableIdentifyButton.Stop()
+    End Sub
+
+    Private Sub chkFullScrHostScreen_CheckedChanged(sender As Object, e As EventArgs) Handles chkFullScrHostScreen.CheckedChanged
+        If chkFullScrHostScreen.Checked Then
+            cmbFullScrHostScreen.Enabled = True
+        Else
+            cmbFullScrHostScreen.Enabled = False
+        End If
+    End Sub
+
+    Private Sub chkFullScrGuestScreen_CheckedChanged(sender As Object, e As EventArgs) Handles chkFullScrGuestScreen.CheckedChanged
+        If chkFullScrGuestScreen.Checked Then
+            cmbFullScrGuestScreen.Enabled = True
+        Else
+            cmbFullScrGuestScreen.Enabled = False
+        End If
+    End Sub
+
+    Private Sub chkFullScrTVScreen_CheckedChanged(sender As Object, e As EventArgs) Handles chkFullScrTVScreen.CheckedChanged
+        If chkFullScrTVScreen.Checked Then
+            cmbFullScrTVScreen.Enabled = True
+        Else
+            cmbFullScrTVScreen.Enabled = False
+        End If
+    End Sub
+
+    Private Sub nmrTotalLifelines_ValueChanged(sender As Object, e As EventArgs) Handles nmrTotalLifelines.ValueChanged
+        Select Case nmrTotalLifelines.Value
+            Case 4
+                grpLifeline1.Visible = True
+                grpLifeline2.Visible = True
+                grpLifeline3.Visible = True
+                grpLifeline4.Visible = True
+            Case 3
+                grpLifeline1.Visible = True
+                grpLifeline2.Visible = True
+                grpLifeline3.Visible = True
+                grpLifeline4.Visible = False
+            Case 2
+                grpLifeline1.Visible = True
+                grpLifeline2.Visible = True
+                grpLifeline3.Visible = False
+                grpLifeline4.Visible = False
+            Case 1
+                grpLifeline1.Visible = True
+                grpLifeline2.Visible = False
+                grpLifeline3.Visible = False
+                grpLifeline4.Visible = False
+        End Select
     End Sub
 End Class

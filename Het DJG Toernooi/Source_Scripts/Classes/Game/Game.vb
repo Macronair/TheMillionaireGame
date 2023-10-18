@@ -1,6 +1,7 @@
 ﻿Public Class Game
 
     Public Shared CurrentProfile As New Profile
+    Public Shared TotalLifelines As Integer
 
     ' Game info variables
     Public Shared gamemode As Integer = 0

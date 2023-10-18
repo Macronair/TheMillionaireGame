@@ -3,7 +3,7 @@ Imports System.Xml
 Imports System.Xml.Serialization
 
 Public Class AppSettings
-    Public Property RiskMode As Boolean
+    Public Property TotalLifelines As Integer
     Public Property Lifeline1 As String
     Public Property Lifeline2 As String
     Public Property Lifeline3 As String
@@ -12,8 +12,18 @@ Public Class AppSettings
     Public Property Lifeline2_available As Integer
     Public Property Lifeline3_available As Integer
     Public Property Lifeline4_available As Integer
+
     Public Property WinningStrapTexture As Integer
-    Public Property QuestionTexture As Integer
+
+    Public Property Resolution_HostScreen As String
+    Public Property Resolution_GuestScreen As String
+    Public Property Resolution_TVScreen As String
+    Public Property FullScreen_HostScreen_Enable As Boolean
+    Public Property FullScreen_HostScreen_Monitor As Integer
+    Public Property FullScreen_GuestScreen_Enable As Boolean
+    Public Property FullScreen_GuestScreen_Monitor As Integer
+    Public Property FullScreen_TVScreen_Enable As Boolean
+    Public Property FullScreen_TVScreen_Monitor As Integer
 
     Public Property FFF_Port As Integer
 
@@ -165,6 +175,28 @@ Public Class Profile
         Dim loadedvalues As AppSettings = DeserializeFromXml(filePath)
 
         If loadedvalues IsNot Nothing Then
+            Options.TotalLifelines = loadedvalues.TotalLifelines
+            Options.Lifeline1 = loadedvalues.Lifeline1
+            Options.Lifeline2 = loadedvalues.Lifeline2
+            Options.Lifeline3 = loadedvalues.Lifeline3
+            Options.Lifeline4 = loadedvalues.Lifeline4
+            Options.Lifeline1_available = loadedvalues.Lifeline1_available
+            Options.Lifeline2_available = loadedvalues.Lifeline2_available
+            Options.Lifeline3_available = loadedvalues.Lifeline3_available
+            Options.Lifeline4_available = loadedvalues.Lifeline4_available
+
+            Options.WinningStrapTexture = loadedvalues.WinningStrapTexture
+
+            Options.Resolution_HostScreen = loadedvalues.Resolution_HostScreen
+            Options.Resolution_GuestScreen = loadedvalues.Resolution_GuestScreen
+            Options.Resolution_TVScreen = loadedvalues.Resolution_TVScreen
+            Options.FullScreen_HostScreen_Enable = loadedvalues.FullScreen_HostScreen_Enable
+            Options.FullScreen_HostScreen_Monitor = loadedvalues.FullScreen_HostScreen_Monitor
+            Options.FullScreen_GuestScreen_Enable = loadedvalues.FullScreen_GuestScreen_Enable
+            Options.FullScreen_GuestScreen_Monitor = loadedvalues.FullScreen_GuestScreen_Monitor
+            Options.FullScreen_TVScreen_Enable = loadedvalues.FullScreen_TVScreen_Enable
+            Options.FullScreen_TVScreen_Monitor = loadedvalues.FullScreen_TVScreen_Monitor
+
             Options.snd_Opening = loadedvalues.snd_Opening
             Options.snd_CommIn = loadedvalues.snd_CommIn
             Options.snd_CommOut = loadedvalues.snd_CommOut
@@ -296,9 +328,7 @@ Public Class Profile
     End Sub
 
     Private Sub SaveFefaultSettings()
-        Options.RiskMode = False
-        Options.WinningStrapTexture = 0
-
+        Options.TotalLifelines = 4
         Options.Lifeline1 = "ask_audience"
         Options.Lifeline2 = "50_50"
         Options.Lifeline3 = "switch"
@@ -307,6 +337,18 @@ Public Class Profile
         Options.Lifeline2_available = 0
         Options.Lifeline3_available = 0
         Options.Lifeline4_available = 3
+
+        Options.WinningStrapTexture = 0
+
+        Options.Resolution_HostScreen = "1280x720"
+        Options.Resolution_GuestScreen = "1280x720"
+        Options.Resolution_TVScreen = "1280x720"
+        Options.FullScreen_HostScreen_Enable = False
+        Options.FullScreen_HostScreen_Monitor = 0
+        Options.FullScreen_GuestScreen_Enable = False
+        Options.FullScreen_GuestScreen_Monitor = 0
+        Options.FullScreen_TVScreen_Enable = False
+        Options.FullScreen_TVScreen_Monitor = 0
 
         Options.snd_Opening = "host_entrance.mp3"
         Options.snd_CommIn = "commercial_in.mp3"
@@ -437,6 +479,28 @@ Public Class Profile
     End Sub
 
     Public Sub SaveSettings()
+        Options.TotalLifelines = OptionsScreen.nmrTotalLifelines.Text
+        Options.Lifeline1 = OptionsScreen.cmbLifeline1.Text
+        Options.Lifeline2 = OptionsScreen.cmbLifeline2.Text
+        Options.Lifeline3 = OptionsScreen.cmbLifeline3.Text
+        Options.Lifeline4 = OptionsScreen.cmbLifeline4.Text
+        Options.Lifeline1_available = OptionsScreen.Lifeline1_availableAt
+        Options.Lifeline2_available = OptionsScreen.Lifeline2_availableAt
+        Options.Lifeline3_available = OptionsScreen.Lifeline3_availableAt
+        Options.Lifeline4_available = OptionsScreen.Lifeline4_availableAt
+
+        Options.WinningStrapTexture = OptionsScreen.WinningStrapTexture
+
+        Options.Resolution_HostScreen = OptionsScreen.cmbResHostScreen.Text
+        Options.Resolution_GuestScreen = OptionsScreen.cmbResGuestScreen.Text
+        Options.Resolution_TVScreen = OptionsScreen.cmbResTVScreen.Text
+        Options.FullScreen_HostScreen_Enable = OptionsScreen.chkFullScrHostScreen.Checked
+        Options.FullScreen_GuestScreen_Enable = OptionsScreen.chkFullScrGuestScreen.Checked
+        Options.FullScreen_TVScreen_Enable = OptionsScreen.chkFullScrTVScreen.Checked
+        Options.FullScreen_HostScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
+        Options.FullScreen_GuestScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
+        Options.FullScreen_TVScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
+
         Options.snd_Opening = OptionsScreen.txtSndOpening.Text
         Options.snd_CommIn = OptionsScreen.txtSndCommercialIn.Text
         Options.snd_CommOut = OptionsScreen.txtSndCommercialOut.Text
