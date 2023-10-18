@@ -7,8 +7,7 @@
     Public Shared Sub Detect()
         For i As Integer = 0 To Screen.AllScreens.Count - 1
             Dim scr = Screen.AllScreens(i)
-            Dim device As String = $"{i} | "
-            device = device + $"{scr.Bounds.Location.X}, {scr.Bounds.Location.Y}"
+            Dim device As Integer = i
 
             ConnectedScreens.Add(device.ToString)
         Next
@@ -28,7 +27,7 @@
     End Sub
 
     Public Shared Function Find(ByVal number As Integer)
-
+        Dim result = ConnectedScreens.Where(Function(s) number)
     End Function
 
 End Class
