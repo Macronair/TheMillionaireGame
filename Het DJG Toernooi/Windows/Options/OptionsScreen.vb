@@ -241,6 +241,7 @@
 
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
+        Game.CurrentProfile.LoadSettings()
         Me.Close()
     End Sub
 

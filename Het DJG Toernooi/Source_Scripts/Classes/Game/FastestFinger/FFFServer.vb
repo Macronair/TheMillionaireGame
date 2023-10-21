@@ -355,10 +355,10 @@ Public Class FFFServer
             Case 2
                 TVControlPnl.picTree.BackgroundImage = My.Resources.tree_0
                 TVControlPnl.lblFFFQuestion.Visible = True
-                TVControlPnl.pic50.Visible = False
-                TVControlPnl.picVO.Visible = False
-                TVControlPnl.picPO.Visible = False
-                TVControlPnl.picSW.Visible = False
+                TVControlPnl.picLifeline3.Visible = False
+                TVControlPnl.picLifeline1.Visible = False
+                TVControlPnl.picLifeline2.Visible = False
+                TVControlPnl.picLifeline4.Visible = False
                 TVControlPnl.picTree.Visible = True
                 i = i + 1
             Case 3
@@ -461,10 +461,10 @@ Public Class FFFServer
             TVControlPnl.pnlFFFOrder2.Visible = False
             TVControlPnl.pnlFFFOrder3.Visible = False
             TVControlPnl.pnlFFFOrder4.Visible = False
-            TVControlPnl.pic50.Visible = False
-            TVControlPnl.picVO.Visible = False
-            TVControlPnl.picPO.Visible = False
-            TVControlPnl.picSW.Visible = False
+            TVControlPnl.picLifeline3.Visible = False
+            TVControlPnl.picLifeline1.Visible = False
+            TVControlPnl.picLifeline2.Visible = False
+            TVControlPnl.picLifeline4.Visible = False
             tmrRevealPlayers.Start()
             If Game.level = -1 Then
                 ControlPanel.intSound += 1

@@ -2,7 +2,7 @@
 
     Public Shared plusone As Integer
 
-    Public Sub LifelineUse1()
+    Public Shared Sub LifelineUse1()
         If plusone = 0 Then
             Question.useMusic = False
             With Sounds.sndLifeline1
@@ -52,15 +52,15 @@
             ControlPanel.tmrTime.Stop()
             plusone = 0
             TVControlPnl.lblTime.Visible = False
-            ControlPanel.chkPlusOne.Checked = False
-            HostScreen.picPO.Image = My.Resources.ll_phone_used
-            GuestScreen.picPO.Image = My.Resources.ll_phone_used
-            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
-            ControlPanel.btnPlusOne.Enabled = False
+            ControlPanel.chkLifeline2Unused.Checked = False
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
+            ControlPanel.btnLifeline2.Enabled = False
         End If
     End Sub
 
-    Sub OffsetBeforeCue()
+    Shared Sub OffsetBeforeCue()
         Threading.Thread.Sleep(1000)
         Question.PlayQuestionCue()
     End Sub

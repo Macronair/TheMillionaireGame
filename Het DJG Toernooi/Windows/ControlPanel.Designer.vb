@@ -54,9 +54,9 @@ Partial Class ControlPanel
         Me.btnC = New System.Windows.Forms.Button()
         Me.btnD = New System.Windows.Forms.Button()
         Me.btnStopPC = New System.Windows.Forms.Button()
-        Me.chk5050 = New System.Windows.Forms.CheckBox()
-        Me.chkPlusOne = New System.Windows.Forms.CheckBox()
-        Me.chkSwitch = New System.Windows.Forms.CheckBox()
+        Me.chkLifeline3Unused = New System.Windows.Forms.CheckBox()
+        Me.chkLifeline2Unused = New System.Windows.Forms.CheckBox()
+        Me.chkLifeline4Unused = New System.Windows.Forms.CheckBox()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.chkUsed = New System.Windows.Forms.CheckBox()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -70,7 +70,6 @@ Partial Class ControlPanel
         Me.tmrRules = New System.Windows.Forms.Timer(Me.components)
         Me.grpRules = New System.Windows.Forms.GroupBox()
         Me.btnLL4 = New System.Windows.Forms.Button()
-        Me.btnUnlockSwitch = New System.Windows.Forms.Button()
         Me.btnHideTree = New System.Windows.Forms.Button()
         Me.btnShowTree = New System.Windows.Forms.Button()
         Me.btnTreeReset = New System.Windows.Forms.Button()
@@ -79,11 +78,12 @@ Partial Class ControlPanel
         Me.btnLL1 = New System.Windows.Forms.Button()
         Me.btnRules = New System.Windows.Forms.Button()
         Me.btnTreePr = New System.Windows.Forms.Button()
+        Me.btnUnlockSwitch = New System.Windows.Forms.Button()
         Me.chkShowQuestion = New System.Windows.Forms.CheckBox()
         Me.clrBGColor = New System.Windows.Forms.ColorDialog()
         Me.txtExplain = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.chkVote = New System.Windows.Forms.CheckBox()
+        Me.chkLifeline1Unused = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ChangeMoneyStrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -103,18 +103,20 @@ Partial Class ControlPanel
         Me.X720720pToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.X10801080pToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.OptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ShowConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grpLifelines = New System.Windows.Forms.GroupBox()
         Me.btnTestLifeline = New System.Windows.Forms.Button()
-        Me.btn5050 = New System.Windows.Forms.Button()
-        Me.btnPlusOne = New System.Windows.Forms.Button()
-        Me.btnVote = New System.Windows.Forms.Button()
+        Me.btnLifeline3 = New System.Windows.Forms.Button()
+        Me.btnLifeline2 = New System.Windows.Forms.Button()
+        Me.btnLifeline1 = New System.Windows.Forms.Button()
         Me.grpATAInfo = New System.Windows.Forms.GroupBox()
         Me.lblATA_D = New System.Windows.Forms.Label()
         Me.lblATA_C = New System.Windows.Forms.Label()
         Me.lblATA_B = New System.Windows.Forms.Label()
         Me.lblATA_A = New System.Windows.Forms.Label()
-        Me.btnSwitch = New System.Windows.Forms.Button()
+        Me.btnLifeline4 = New System.Windows.Forms.Button()
         Me.grpMain = New System.Windows.Forms.GroupBox()
         Me.btnUndo = New System.Windows.Forms.Button()
         Me.grpTV = New System.Windows.Forms.GroupBox()
@@ -125,8 +127,6 @@ Partial Class ControlPanel
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
-        Me.ShowConsoleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -235,7 +235,7 @@ Partial Class ControlPanel
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(179, 83)
+        Me.Label1.Location = New System.Drawing.Point(8, 125)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 15
@@ -243,7 +243,7 @@ Partial Class ControlPanel
         '
         'nmrLevel
         '
-        Me.nmrLevel.Location = New System.Drawing.Point(309, 79)
+        Me.nmrLevel.Location = New System.Drawing.Point(134, 123)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
@@ -396,7 +396,7 @@ Partial Class ControlPanel
         '
         Me.lblAnswer.AutoSize = True
         Me.lblAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnswer.Location = New System.Drawing.Point(175, 72)
+        Me.lblAnswer.Location = New System.Drawing.Point(107, 105)
         Me.lblAnswer.Name = "lblAnswer"
         Me.lblAnswer.Size = New System.Drawing.Size(36, 24)
         Me.lblAnswer.TabIndex = 33
@@ -457,49 +457,49 @@ Partial Class ControlPanel
         Me.btnStopPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnStopPC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnStopPC.ForeColor = System.Drawing.Color.White
-        Me.btnStopPC.Location = New System.Drawing.Point(206, 24)
+        Me.btnStopPC.Location = New System.Drawing.Point(64, 24)
         Me.btnStopPC.Name = "btnStopPC"
         Me.btnStopPC.Size = New System.Drawing.Size(54, 25)
         Me.btnStopPC.TabIndex = 38
         Me.btnStopPC.Text = "HALT"
         Me.btnStopPC.UseVisualStyleBackColor = False
         '
-        'chk5050
+        'chkLifeline3Unused
         '
-        Me.chk5050.AutoSize = True
-        Me.chk5050.Checked = True
-        Me.chk5050.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chk5050.Location = New System.Drawing.Point(150, 61)
-        Me.chk5050.Name = "chk5050"
-        Me.chk5050.Size = New System.Drawing.Size(59, 17)
-        Me.chk5050.TabIndex = 39
-        Me.chk5050.Text = "Enable"
-        Me.chk5050.UseVisualStyleBackColor = True
+        Me.chkLifeline3Unused.AutoSize = True
+        Me.chkLifeline3Unused.Checked = True
+        Me.chkLifeline3Unused.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkLifeline3Unused.Location = New System.Drawing.Point(150, 61)
+        Me.chkLifeline3Unused.Name = "chkLifeline3Unused"
+        Me.chkLifeline3Unused.Size = New System.Drawing.Size(63, 17)
+        Me.chkLifeline3Unused.TabIndex = 39
+        Me.chkLifeline3Unused.Text = "Unused"
+        Me.chkLifeline3Unused.UseVisualStyleBackColor = True
         '
-        'chkPlusOne
+        'chkLifeline2Unused
         '
-        Me.chkPlusOne.AutoSize = True
-        Me.chkPlusOne.Checked = True
-        Me.chkPlusOne.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkPlusOne.Location = New System.Drawing.Point(80, 61)
-        Me.chkPlusOne.Name = "chkPlusOne"
-        Me.chkPlusOne.Size = New System.Drawing.Size(59, 17)
-        Me.chkPlusOne.TabIndex = 40
-        Me.chkPlusOne.Text = "Enable"
-        Me.chkPlusOne.UseVisualStyleBackColor = True
+        Me.chkLifeline2Unused.AutoSize = True
+        Me.chkLifeline2Unused.Checked = True
+        Me.chkLifeline2Unused.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkLifeline2Unused.Location = New System.Drawing.Point(80, 61)
+        Me.chkLifeline2Unused.Name = "chkLifeline2Unused"
+        Me.chkLifeline2Unused.Size = New System.Drawing.Size(63, 17)
+        Me.chkLifeline2Unused.TabIndex = 40
+        Me.chkLifeline2Unused.Text = "Unused"
+        Me.chkLifeline2Unused.UseVisualStyleBackColor = True
         '
-        'chkSwitch
+        'chkLifeline4Unused
         '
-        Me.chkSwitch.AutoSize = True
-        Me.chkSwitch.Checked = True
-        Me.chkSwitch.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkSwitch.Enabled = False
-        Me.chkSwitch.Location = New System.Drawing.Point(218, 61)
-        Me.chkSwitch.Name = "chkSwitch"
-        Me.chkSwitch.Size = New System.Drawing.Size(59, 17)
-        Me.chkSwitch.TabIndex = 41
-        Me.chkSwitch.Text = "Enable"
-        Me.chkSwitch.UseVisualStyleBackColor = True
+        Me.chkLifeline4Unused.AutoSize = True
+        Me.chkLifeline4Unused.Checked = True
+        Me.chkLifeline4Unused.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkLifeline4Unused.Enabled = False
+        Me.chkLifeline4Unused.Location = New System.Drawing.Point(218, 61)
+        Me.chkLifeline4Unused.Name = "chkLifeline4Unused"
+        Me.chkLifeline4Unused.Size = New System.Drawing.Size(63, 17)
+        Me.chkLifeline4Unused.TabIndex = 41
+        Me.chkLifeline4Unused.Text = "Unused"
+        Me.chkLifeline4Unused.UseVisualStyleBackColor = True
         '
         'txtID
         '
@@ -551,7 +551,7 @@ Partial Class ControlPanel
         'chkCorrectAnswer
         '
         Me.chkCorrectAnswer.AutoSize = True
-        Me.chkCorrectAnswer.Location = New System.Drawing.Point(176, 52)
+        Me.chkCorrectAnswer.Location = New System.Drawing.Point(11, 109)
         Me.chkCorrectAnswer.Name = "chkCorrectAnswer"
         Me.chkCorrectAnswer.Size = New System.Drawing.Size(90, 17)
         Me.chkCorrectAnswer.TabIndex = 52
@@ -588,7 +588,6 @@ Partial Class ControlPanel
         'grpRules
         '
         Me.grpRules.Controls.Add(Me.btnLL4)
-        Me.grpRules.Controls.Add(Me.btnUnlockSwitch)
         Me.grpRules.Controls.Add(Me.btnHideTree)
         Me.grpRules.Controls.Add(Me.btnShowTree)
         Me.grpRules.Controls.Add(Me.btnTreeReset)
@@ -597,45 +596,32 @@ Partial Class ControlPanel
         Me.grpRules.Controls.Add(Me.btnLL1)
         Me.grpRules.Controls.Add(Me.btnRules)
         Me.grpRules.Controls.Add(Me.btnTreePr)
-        Me.grpRules.Controls.Add(Me.nmrLevel)
-        Me.grpRules.Controls.Add(Me.Label1)
-        Me.grpRules.Location = New System.Drawing.Point(260, 27)
+        Me.grpRules.Location = New System.Drawing.Point(330, 24)
         Me.grpRules.Name = "grpRules"
-        Me.grpRules.Size = New System.Drawing.Size(358, 111)
+        Me.grpRules.Size = New System.Drawing.Size(291, 111)
         Me.grpRules.TabIndex = 57
         Me.grpRules.TabStop = False
         Me.grpRules.Text = "Money Tree"
         '
         'btnLL4
         '
-        Me.btnLL4.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnLL4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLL4.Location = New System.Drawing.Point(317, 16)
+        Me.btnLL4.ForeColor = System.Drawing.Color.White
+        Me.btnLL4.Location = New System.Drawing.Point(235, 58)
         Me.btnLL4.Name = "btnLL4"
-        Me.btnLL4.Size = New System.Drawing.Size(31, 24)
+        Me.btnLL4.Size = New System.Drawing.Size(46, 42)
         Me.btnLL4.TabIndex = 9
-        Me.btnLL4.Text = "J4"
+        Me.btnLL4.Text = "LL4 PING"
         Me.btnLL4.UseVisualStyleBackColor = False
-        '
-        'btnUnlockSwitch
-        '
-        Me.btnUnlockSwitch.BackColor = System.Drawing.Color.Orange
-        Me.btnUnlockSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUnlockSwitch.ForeColor = System.Drawing.Color.Black
-        Me.btnUnlockSwitch.Location = New System.Drawing.Point(221, 49)
-        Me.btnUnlockSwitch.Name = "btnUnlockSwitch"
-        Me.btnUnlockSwitch.Size = New System.Drawing.Size(127, 24)
-        Me.btnUnlockSwitch.TabIndex = 8
-        Me.btnUnlockSwitch.Text = "RISK MODE OFF"
-        Me.btnUnlockSwitch.UseVisualStyleBackColor = False
         '
         'btnHideTree
         '
         Me.btnHideTree.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnHideTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHideTree.Location = New System.Drawing.Point(62, 16)
+        Me.btnHideTree.Location = New System.Drawing.Point(6, 49)
         Me.btnHideTree.Name = "btnHideTree"
-        Me.btnHideTree.Size = New System.Drawing.Size(54, 32)
+        Me.btnHideTree.Size = New System.Drawing.Size(54, 31)
         Me.btnHideTree.TabIndex = 7
         Me.btnHideTree.Text = "Hide"
         Me.btnHideTree.UseVisualStyleBackColor = False
@@ -646,7 +632,7 @@ Partial Class ControlPanel
         Me.btnShowTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnShowTree.Location = New System.Drawing.Point(6, 16)
         Me.btnShowTree.Name = "btnShowTree"
-        Me.btnShowTree.Size = New System.Drawing.Size(54, 32)
+        Me.btnShowTree.Size = New System.Drawing.Size(54, 31)
         Me.btnShowTree.TabIndex = 6
         Me.btnShowTree.Text = "Show"
         Me.btnShowTree.UseVisualStyleBackColor = False
@@ -655,7 +641,7 @@ Partial Class ControlPanel
         '
         Me.btnTreeReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnTreeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreeReset.Location = New System.Drawing.Point(122, 49)
+        Me.btnTreeReset.Location = New System.Drawing.Point(93, 75)
         Me.btnTreeReset.Name = "btnTreeReset"
         Me.btnTreeReset.Size = New System.Drawing.Size(88, 24)
         Me.btnTreeReset.TabIndex = 5
@@ -664,42 +650,45 @@ Partial Class ControlPanel
         '
         'btnLL3
         '
-        Me.btnLL3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnLL3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLL3.Location = New System.Drawing.Point(285, 16)
+        Me.btnLL3.ForeColor = System.Drawing.Color.White
+        Me.btnLL3.Location = New System.Drawing.Point(187, 58)
         Me.btnLL3.Name = "btnLL3"
-        Me.btnLL3.Size = New System.Drawing.Size(31, 24)
+        Me.btnLL3.Size = New System.Drawing.Size(46, 42)
         Me.btnLL3.TabIndex = 4
-        Me.btnLL3.Text = "J3"
+        Me.btnLL3.Text = "LL3 PING"
         Me.btnLL3.UseVisualStyleBackColor = False
         '
         'btnLL2
         '
-        Me.btnLL2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnLL2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLL2.Location = New System.Drawing.Point(253, 16)
+        Me.btnLL2.ForeColor = System.Drawing.Color.White
+        Me.btnLL2.Location = New System.Drawing.Point(235, 16)
         Me.btnLL2.Name = "btnLL2"
-        Me.btnLL2.Size = New System.Drawing.Size(31, 24)
+        Me.btnLL2.Size = New System.Drawing.Size(46, 42)
         Me.btnLL2.TabIndex = 3
-        Me.btnLL2.Text = "J2"
+        Me.btnLL2.Text = "LL2 PING"
         Me.btnLL2.UseVisualStyleBackColor = False
         '
         'btnLL1
         '
-        Me.btnLL1.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnLL1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnLL1.Location = New System.Drawing.Point(221, 16)
+        Me.btnLL1.ForeColor = System.Drawing.Color.White
+        Me.btnLL1.Location = New System.Drawing.Point(187, 16)
         Me.btnLL1.Name = "btnLL1"
-        Me.btnLL1.Size = New System.Drawing.Size(31, 24)
+        Me.btnLL1.Size = New System.Drawing.Size(46, 42)
         Me.btnLL1.TabIndex = 2
-        Me.btnLL1.Text = "J1"
+        Me.btnLL1.Text = "LL1 PING"
         Me.btnLL1.UseVisualStyleBackColor = False
         '
         'btnRules
         '
         Me.btnRules.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRules.Location = New System.Drawing.Point(6, 50)
+        Me.btnRules.Location = New System.Drawing.Point(93, 16)
         Me.btnRules.Name = "btnRules"
         Me.btnRules.Size = New System.Drawing.Size(88, 23)
         Me.btnRules.TabIndex = 1
@@ -710,12 +699,24 @@ Partial Class ControlPanel
         '
         Me.btnTreePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnTreePr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreePr.Location = New System.Drawing.Point(122, 16)
+        Me.btnTreePr.Location = New System.Drawing.Point(93, 45)
         Me.btnTreePr.Name = "btnTreePr"
         Me.btnTreePr.Size = New System.Drawing.Size(88, 24)
         Me.btnTreePr.TabIndex = 0
         Me.btnTreePr.Text = "PROG. ANIM"
         Me.btnTreePr.UseVisualStyleBackColor = False
+        '
+        'btnUnlockSwitch
+        '
+        Me.btnUnlockSwitch.BackColor = System.Drawing.Color.Orange
+        Me.btnUnlockSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnUnlockSwitch.ForeColor = System.Drawing.Color.Black
+        Me.btnUnlockSwitch.Location = New System.Drawing.Point(202, 15)
+        Me.btnUnlockSwitch.Name = "btnUnlockSwitch"
+        Me.btnUnlockSwitch.Size = New System.Drawing.Size(100, 24)
+        Me.btnUnlockSwitch.TabIndex = 8
+        Me.btnUnlockSwitch.Text = "RISK MODE OFF"
+        Me.btnUnlockSwitch.UseVisualStyleBackColor = False
         '
         'chkShowQuestion
         '
@@ -749,17 +750,17 @@ Partial Class ControlPanel
         Me.Label8.TabIndex = 61
         Me.Label8.Text = "Question info"
         '
-        'chkVote
+        'chkLifeline1Unused
         '
-        Me.chkVote.AutoSize = True
-        Me.chkVote.Checked = True
-        Me.chkVote.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkVote.Location = New System.Drawing.Point(10, 61)
-        Me.chkVote.Name = "chkVote"
-        Me.chkVote.Size = New System.Drawing.Size(59, 17)
-        Me.chkVote.TabIndex = 71
-        Me.chkVote.Text = "Enable"
-        Me.chkVote.UseVisualStyleBackColor = True
+        Me.chkLifeline1Unused.AutoSize = True
+        Me.chkLifeline1Unused.Checked = True
+        Me.chkLifeline1Unused.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.chkLifeline1Unused.Location = New System.Drawing.Point(10, 61)
+        Me.chkLifeline1Unused.Name = "chkLifeline1Unused"
+        Me.chkLifeline1Unused.Size = New System.Drawing.Size(63, 17)
+        Me.chkLifeline1Unused.TabIndex = 71
+        Me.chkLifeline1Unused.Text = "Unused"
+        Me.chkLifeline1Unused.UseVisualStyleBackColor = True
         '
         'MenuStrip1
         '
@@ -884,24 +885,35 @@ Partial Class ControlPanel
         Me.OptionsToolStripMenuItem.Size = New System.Drawing.Size(40, 20)
         Me.OptionsToolStripMenuItem.Text = "Info"
         '
+        'ShowConsoleToolStripMenuItem
+        '
+        Me.ShowConsoleToolStripMenuItem.Name = "ShowConsoleToolStripMenuItem"
+        Me.ShowConsoleToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
+        Me.ShowConsoleToolStripMenuItem.Text = "Show Console"
+        '
+        'ToolStripMenuItem3
+        '
+        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(146, 6)
+        '
         'AboutToolStripMenuItem
         '
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
-        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.AboutToolStripMenuItem.Text = "About"
         '
         'grpLifelines
         '
         Me.grpLifelines.Controls.Add(Me.btnTestLifeline)
-        Me.grpLifelines.Controls.Add(Me.btn5050)
-        Me.grpLifelines.Controls.Add(Me.btnPlusOne)
-        Me.grpLifelines.Controls.Add(Me.chkVote)
-        Me.grpLifelines.Controls.Add(Me.btnVote)
+        Me.grpLifelines.Controls.Add(Me.btnLifeline3)
+        Me.grpLifelines.Controls.Add(Me.btnLifeline2)
+        Me.grpLifelines.Controls.Add(Me.chkLifeline1Unused)
+        Me.grpLifelines.Controls.Add(Me.btnLifeline1)
         Me.grpLifelines.Controls.Add(Me.grpATAInfo)
-        Me.grpLifelines.Controls.Add(Me.btnSwitch)
-        Me.grpLifelines.Controls.Add(Me.chk5050)
-        Me.grpLifelines.Controls.Add(Me.chkPlusOne)
-        Me.grpLifelines.Controls.Add(Me.chkSwitch)
+        Me.grpLifelines.Controls.Add(Me.btnLifeline4)
+        Me.grpLifelines.Controls.Add(Me.chkLifeline3Unused)
+        Me.grpLifelines.Controls.Add(Me.chkLifeline2Unused)
+        Me.grpLifelines.Controls.Add(Me.chkLifeline4Unused)
         Me.grpLifelines.Controls.Add(Me.lblTime)
         Me.grpLifelines.Location = New System.Drawing.Point(11, 143)
         Me.grpLifelines.Name = "grpLifelines"
@@ -919,38 +931,35 @@ Partial Class ControlPanel
         Me.btnTestLifeline.Text = "2x"
         Me.btnTestLifeline.UseVisualStyleBackColor = True
         '
-        'btn5050
+        'btnLifeline3
         '
-        Me.btn5050.BackColor = System.Drawing.Color.Transparent
-        Me.btn5050.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_5050
-        Me.btn5050.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn5050.Location = New System.Drawing.Point(150, 19)
-        Me.btn5050.Name = "btn5050"
-        Me.btn5050.Size = New System.Drawing.Size(65, 42)
-        Me.btn5050.TabIndex = 42
-        Me.btn5050.UseVisualStyleBackColor = False
+        Me.btnLifeline3.BackColor = System.Drawing.Color.Transparent
+        Me.btnLifeline3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLifeline3.Location = New System.Drawing.Point(150, 19)
+        Me.btnLifeline3.Name = "btnLifeline3"
+        Me.btnLifeline3.Size = New System.Drawing.Size(65, 42)
+        Me.btnLifeline3.TabIndex = 42
+        Me.btnLifeline3.UseVisualStyleBackColor = False
         '
-        'btnPlusOne
+        'btnLifeline2
         '
-        Me.btnPlusOne.BackColor = System.Drawing.Color.Transparent
-        Me.btnPlusOne.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_phone
-        Me.btnPlusOne.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnPlusOne.Location = New System.Drawing.Point(80, 19)
-        Me.btnPlusOne.Name = "btnPlusOne"
-        Me.btnPlusOne.Size = New System.Drawing.Size(65, 42)
-        Me.btnPlusOne.TabIndex = 44
-        Me.btnPlusOne.UseVisualStyleBackColor = False
+        Me.btnLifeline2.BackColor = System.Drawing.Color.Transparent
+        Me.btnLifeline2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLifeline2.Location = New System.Drawing.Point(80, 19)
+        Me.btnLifeline2.Name = "btnLifeline2"
+        Me.btnLifeline2.Size = New System.Drawing.Size(65, 42)
+        Me.btnLifeline2.TabIndex = 44
+        Me.btnLifeline2.UseVisualStyleBackColor = False
         '
-        'btnVote
+        'btnLifeline1
         '
-        Me.btnVote.BackColor = System.Drawing.Color.Transparent
-        Me.btnVote.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_audience
-        Me.btnVote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnVote.Location = New System.Drawing.Point(10, 19)
-        Me.btnVote.Name = "btnVote"
-        Me.btnVote.Size = New System.Drawing.Size(65, 42)
-        Me.btnVote.TabIndex = 72
-        Me.btnVote.UseVisualStyleBackColor = False
+        Me.btnLifeline1.BackColor = System.Drawing.Color.Transparent
+        Me.btnLifeline1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLifeline1.Location = New System.Drawing.Point(10, 19)
+        Me.btnLifeline1.Name = "btnLifeline1"
+        Me.btnLifeline1.Size = New System.Drawing.Size(65, 42)
+        Me.btnLifeline1.TabIndex = 72
+        Me.btnLifeline1.UseVisualStyleBackColor = False
         '
         'grpATAInfo
         '
@@ -1001,21 +1010,21 @@ Partial Class ControlPanel
         Me.lblATA_A.TabIndex = 0
         Me.lblATA_A.Text = "A: 0"
         '
-        'btnSwitch
+        'btnLifeline4
         '
-        Me.btnSwitch.BackColor = System.Drawing.Color.Transparent
-        Me.btnSwitch.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_switch
-        Me.btnSwitch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnSwitch.Enabled = False
-        Me.btnSwitch.Location = New System.Drawing.Point(219, 19)
-        Me.btnSwitch.Name = "btnSwitch"
-        Me.btnSwitch.Size = New System.Drawing.Size(65, 42)
-        Me.btnSwitch.TabIndex = 43
-        Me.btnSwitch.UseVisualStyleBackColor = False
+        Me.btnLifeline4.BackColor = System.Drawing.Color.Transparent
+        Me.btnLifeline4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btnLifeline4.Enabled = False
+        Me.btnLifeline4.Location = New System.Drawing.Point(219, 19)
+        Me.btnLifeline4.Name = "btnLifeline4"
+        Me.btnLifeline4.Size = New System.Drawing.Size(65, 42)
+        Me.btnLifeline4.TabIndex = 43
+        Me.btnLifeline4.UseVisualStyleBackColor = False
         '
         'grpMain
         '
         Me.grpMain.Controls.Add(Me.lblAnswer)
+        Me.grpMain.Controls.Add(Me.btnUnlockSwitch)
         Me.grpMain.Controls.Add(Me.btnLightsDown)
         Me.grpMain.Controls.Add(Me.btnWalk)
         Me.grpMain.Controls.Add(Me.btnUndo)
@@ -1037,7 +1046,7 @@ Partial Class ControlPanel
         Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(171, 16)
+        Me.btnUndo.Location = New System.Drawing.Point(253, 97)
         Me.btnUndo.Name = "btnUndo"
         Me.btnUndo.Size = New System.Drawing.Size(49, 26)
         Me.btnUndo.TabIndex = 81
@@ -1119,17 +1128,6 @@ Partial Class ControlPanel
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
-        'ShowConsoleToolStripMenuItem
-        '
-        Me.ShowConsoleToolStripMenuItem.Name = "ShowConsoleToolStripMenuItem"
-        Me.ShowConsoleToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ShowConsoleToolStripMenuItem.Text = "Show Console"
-        '
-        'ToolStripMenuItem3
-        '
-        Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(177, 6)
-        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1145,7 +1143,9 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.btnC)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnB)
+        Me.Controls.Add(Me.nmrLevel)
         Me.Controls.Add(Me.btnA)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtExplain)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.chkUsed)
@@ -1179,7 +1179,6 @@ Partial Class ControlPanel
         Me.Text = "The Millionaire Game"
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpRules.ResumeLayout(False)
-        Me.grpRules.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.grpLifelines.ResumeLayout(False)
@@ -1225,12 +1224,12 @@ Partial Class ControlPanel
     Friend WithEvents btnC As Button
     Friend WithEvents btnD As Button
     Friend WithEvents btnStopPC As Button
-    Friend WithEvents chk5050 As CheckBox
-    Friend WithEvents chkPlusOne As CheckBox
-    Friend WithEvents chkSwitch As CheckBox
-    Friend WithEvents btn5050 As Button
-    Friend WithEvents btnSwitch As Button
-    Friend WithEvents btnPlusOne As Button
+    Friend WithEvents chkLifeline3Unused As CheckBox
+    Friend WithEvents chkLifeline2Unused As CheckBox
+    Friend WithEvents chkLifeline4Unused As CheckBox
+    Friend WithEvents btnLifeline3 As Button
+    Friend WithEvents btnLifeline4 As Button
+    Friend WithEvents btnLifeline2 As Button
     Friend WithEvents txtID As TextBox
     Friend WithEvents chkUsed As CheckBox
     Friend WithEvents Button2 As Button
@@ -1256,8 +1255,8 @@ Partial Class ControlPanel
     Friend WithEvents clrBGColor As ColorDialog
     Friend WithEvents txtExplain As TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents btnVote As Button
-    Friend WithEvents chkVote As CheckBox
+    Friend WithEvents btnLifeline1 As Button
+    Friend WithEvents chkLifeline1Unused As CheckBox
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents DatabaseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem

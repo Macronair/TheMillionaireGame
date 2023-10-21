@@ -277,63 +277,64 @@ Public Class ControlPanel
         TVControlPnl.grpATA.Visible = False
     End Sub
 
-    Dim ff As New Lifeline5050
-    Private Sub btn5050_Click(sender As Object, e As EventArgs) Handles btn5050.Click
-        ff.LifelineUse1()
+    Private Sub btnLifeline1_Click(sender As Object, e As EventArgs) Handles btnLifeline1.Click
+        LifelineManager.Use(1)
     End Sub
 
-    Dim switch As New LifelineSwitch
-    Private Sub btnSwitch_Click(sender As Object, e As EventArgs) Handles btnSwitch.Click
-        switch.LifelineUse1()
+    Private Sub btnLifeline2_Click(sender As Object, e As EventArgs) Handles btnLifeline2.Click
+        LifelineManager.Use(2)
     End Sub
 
-    Dim po As New LifelinePO
-    Private Sub btnPlusOne_Click(sender As Object, e As EventArgs) Handles btnPlusOne.Click
-        po.LifelineUse1()
+    Private Sub btnLifeline3_Click(sender As Object, e As EventArgs) Handles btnLifeline3.Click
+        LifelineManager.Use(3)
     End Sub
 
-    Private Sub chk5050_CheckedChanged(sender As Object, e As EventArgs) Handles chk5050.CheckedChanged
-        If chk5050.Checked = True Then
-            btn5050.Enabled = True
-            HostScreen.pic50.Image = My.Resources.ll_5050
-            GuestScreen.pic50.Image = My.Resources.ll_5050
-            TVControlPnl.pic50.Image = My.Resources.ll_5050
+    Private Sub btnLifeline4_Click(sender As Object, e As EventArgs) Handles btnLifeline4.Click
+        LifelineManager.Use(4)
+    End Sub
+
+    Private Sub chk5050_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline3Unused.CheckedChanged
+        If chkLifeline3Unused.Checked = True Then
+            btnLifeline3.Enabled = True
+            HostScreen.picLifeline4.Image = My.Resources.ll_5050
+            GuestScreen.picLifeline4.Image = My.Resources.ll_5050
+            TVControlPnl.picLifeline3.Image = My.Resources.ll_5050
         End If
-        If chk5050.Checked = False Then
-            btn5050.Enabled = False
-            HostScreen.pic50.Image = My.Resources.ll_5050_used
-            GuestScreen.pic50.Image = My.Resources.ll_5050_used
-            TVControlPnl.pic50.Image = My.Resources.ll_5050_used
-        End If
-    End Sub
-
-    Private Sub chkSwitch_CheckedChanged(sender As Object, e As EventArgs) Handles chkSwitch.CheckedChanged
-        If chkSwitch.Checked = True Then
-            btnSwitch.Enabled = True
-            HostScreen.picSW.Image = My.Resources.Resources.ll_switch
-            GuestScreen.picSW.Image = My.Resources.Resources.ll_switch
-            TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch
-        End If
-        If chkSwitch.Checked = False Then
-            btnSwitch.Enabled = False
-            HostScreen.picSW.Image = My.Resources.Resources.ll_switch_used
-            GuestScreen.picSW.Image = My.Resources.Resources.ll_switch_used
-            TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch_used
+        If chkLifeline3Unused.Checked = False Then
+            btnLifeline3.Enabled = False
+            HostScreen.picLifeline4.Image = My.Resources.ll_5050_used
+            GuestScreen.picLifeline4.Image = My.Resources.ll_5050_used
+            TVControlPnl.picLifeline3.Image = My.Resources.ll_5050_used
         End If
     End Sub
 
-    Private Sub chkPlusOne_CheckedChanged(sender As Object, e As EventArgs) Handles chkPlusOne.CheckedChanged
-        If chkPlusOne.Checked = True Then
-            btnPlusOne.Enabled = True
-            HostScreen.picPO.Image = My.Resources.ll_phone
-            GuestScreen.picPO.Image = My.Resources.ll_phone
-            TVControlPnl.picPO.Image = My.Resources.ll_phone
+    Private Sub chkSwitch_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline4Unused.CheckedChanged
+        If chkLifeline4Unused.Checked = True Then
+            btnLifeline4.Enabled = True
+            HostScreen.picLifeline1.Image = My.Resources.Resources.ll_switch
+            GuestScreen.picLifeline1.Image = My.Resources.Resources.ll_switch
+            TVControlPnl.picLifeline4.Image = My.Resources.Resources.ll_switch
         End If
-        If chkPlusOne.Checked = False Then
-            btnPlusOne.Enabled = False
-            HostScreen.picPO.Image = My.Resources.ll_phone_used
-            GuestScreen.picPO.Image = My.Resources.ll_phone_used
-            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
+        If chkLifeline4Unused.Checked = False Then
+            btnLifeline4.Enabled = False
+            HostScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
+            GuestScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
+            TVControlPnl.picLifeline4.Image = My.Resources.Resources.ll_switch_used
+        End If
+    End Sub
+
+    Private Sub chkPlusOne_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline2Unused.CheckedChanged
+        If chkLifeline2Unused.Checked = True Then
+            btnLifeline2.Enabled = True
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone
+            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone
+        End If
+        If chkLifeline2Unused.Checked = False Then
+            btnLifeline2.Enabled = False
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
         End If
     End Sub
 
@@ -365,7 +366,7 @@ Public Class ControlPanel
     End Sub
 
     Dim wa As Integer = 0
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
+    Private Sub btnQuit_Click(sender As Object, e As EventArgs) Handles btnQuit.Click
         If wa = 0 Then
             User.a = 0
             wa = 1
@@ -421,11 +422,11 @@ Public Class ControlPanel
             tmrTime.Stop()
             LifelinePO.plusone = 0
             tmrResume.Start()
-            chkPlusOne.Checked = False
-            HostScreen.picPO.Image = My.Resources.ll_phone_used
-            GuestScreen.picPO.Image = My.Resources.ll_phone_used
-            TVControlPnl.picPO.Image = My.Resources.ll_phone_used
-            btnPlusOne.Enabled = False
+            chkLifeline2Unused.Checked = False
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
+            btnLifeline2.Enabled = False
         End If
     End Sub
 
@@ -457,9 +458,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles btnLL1.Click
-        HostScreen.picVO.Image = My.Resources.ll_audience_bling
-        GuestScreen.picVO.Image = My.Resources.ll_audience_bling
-        TVControlPnl.picVO.Image = My.Resources.ll_audience_bling
+        HostScreen.picLifeline2.Image = My.Resources.ll_audience_bling
+        GuestScreen.picLifeline2.Image = My.Resources.ll_audience_bling
+        TVControlPnl.picLifeline1.Image = My.Resources.ll_audience_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -470,9 +471,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles btnLL2.Click
-        HostScreen.picPO.Image = My.Resources.ll_phone_bling
-        GuestScreen.picPO.Image = My.Resources.ll_phone_bling
-        TVControlPnl.picPO.Image = My.Resources.ll_phone_bling
+        HostScreen.picLifeline3.Image = My.Resources.ll_phone_bling
+        GuestScreen.picLifeline3.Image = My.Resources.ll_phone_bling
+        TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -483,9 +484,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub Button11_Click(sender As Object, e As EventArgs) Handles btnLL3.Click
-        HostScreen.pic50.Image = My.Resources.ll_5050_bling
-        GuestScreen.pic50.Image = My.Resources.ll_5050_bling
-        TVControlPnl.pic50.Image = My.Resources.ll_5050_bling
+        HostScreen.picLifeline4.Image = My.Resources.ll_5050_bling
+        GuestScreen.picLifeline4.Image = My.Resources.ll_5050_bling
+        TVControlPnl.picLifeline3.Image = My.Resources.ll_5050_bling
         tmrLifelineBling.Start()
         intSound += 1
 
@@ -537,24 +538,18 @@ Public Class ControlPanel
         TVControlPnl.BackColor = clrBGColor.Color
     End Sub
 
-    Dim vote As New LifelineATA
-
-    Private Sub Button3_Click_1(sender As Object, e As EventArgs) Handles btnVote.Click
-        vote.LifelineUse1()
-    End Sub
-
-    Private Sub chkVote_CheckedChanged(sender As Object, e As EventArgs) Handles chkVote.CheckedChanged
-        If chkVote.Checked = True Then
-            btnVote.Enabled = True
-            HostScreen.picVO.Image = My.Resources.ll_audience
-            GuestScreen.picVO.Image = My.Resources.ll_audience
-            TVControlPnl.picVO.Image = My.Resources.ll_audience
+    Private Sub chkVote_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline1Unused.CheckedChanged
+        If chkLifeline1Unused.Checked = True Then
+            btnLifeline1.Enabled = True
+            HostScreen.picLifeline2.Image = My.Resources.ll_audience
+            GuestScreen.picLifeline2.Image = My.Resources.ll_audience
+            TVControlPnl.picLifeline1.Image = My.Resources.ll_audience
         End If
-        If chkVote.Checked = False Then
-            btnVote.Enabled = False
-            HostScreen.picVO.Image = My.Resources.ll_audience_used
-            GuestScreen.picVO.Image = My.Resources.ll_audience_used
-            TVControlPnl.picVO.Image = My.Resources.ll_audience_used
+        If chkLifeline1Unused.Checked = False Then
+            btnLifeline1.Enabled = False
+            HostScreen.picLifeline2.Image = My.Resources.ll_audience_used
+            GuestScreen.picLifeline2.Image = My.Resources.ll_audience_used
+            TVControlPnl.picLifeline1.Image = My.Resources.ll_audience_used
         End If
     End Sub
 
@@ -585,15 +580,15 @@ Public Class ControlPanel
     End Sub
 
     Private Sub tmrLifelineBling_Tick(sender As Object, e As EventArgs) Handles tmrLifelineBling.Tick
-        HostScreen.pic50.Image = My.Resources.ll_5050
-        HostScreen.picPO.Image = My.Resources.ll_phone
-        HostScreen.picVO.Image = My.Resources.ll_audience
-        GuestScreen.pic50.Image = My.Resources.ll_5050
-        GuestScreen.picPO.Image = My.Resources.ll_phone
-        GuestScreen.picVO.Image = My.Resources.ll_audience
-        TVControlPnl.pic50.Image = My.Resources.ll_5050
-        TVControlPnl.picPO.Image = My.Resources.ll_phone
-        TVControlPnl.picVO.Image = My.Resources.ll_audience
+        HostScreen.picLifeline4.Image = My.Resources.ll_5050
+        HostScreen.picLifeline3.Image = My.Resources.ll_phone
+        HostScreen.picLifeline2.Image = My.Resources.ll_audience
+        GuestScreen.picLifeline4.Image = My.Resources.ll_5050
+        GuestScreen.picLifeline3.Image = My.Resources.ll_phone
+        GuestScreen.picLifeline2.Image = My.Resources.ll_audience
+        TVControlPnl.picLifeline3.Image = My.Resources.ll_5050
+        TVControlPnl.picLifeline2.Image = My.Resources.ll_phone
+        TVControlPnl.picLifeline1.Image = My.Resources.ll_audience
         tmrLifelineBling.Stop()
     End Sub
 

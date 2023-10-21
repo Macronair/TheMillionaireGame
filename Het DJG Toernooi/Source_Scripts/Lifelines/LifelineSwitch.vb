@@ -1,6 +1,6 @@
 ﻿Public Class LifelineSwitch
-    Dim act As Integer = 0
-    Public Sub LifelineUse1()
+    Private Shared act As Integer = 0
+    Public Shared Sub LifelineUse1()
         If act = 0 Then
             With Sounds.sndLifeline1
                 .URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_Activate
@@ -80,21 +80,21 @@
             ControlPanel.txtB.BackColor = SystemColors.Control
             ControlPanel.txtC.BackColor = SystemColors.Control
             ControlPanel.txtD.BackColor = SystemColors.Control
-            ControlPanel.btnSwitch.Enabled = False
+            ControlPanel.btnLifeline4.Enabled = False
             act = 0
             Question.act = 0
             reset()
         End If
     End Sub
 
-    Public Sub reset()
+    Private Shared Sub reset()
         TVControlPnl.picLifelineUse.Visible = False
         act = 0
-        HostScreen.picSW.Image = My.Resources.Resources.ll_switch_used
-        GuestScreen.picSW.Image = My.Resources.Resources.ll_switch_used
-        TVControlPnl.picSW.Image = My.Resources.Resources.ll_switch_used
-        ControlPanel.chkSwitch.Checked = False
-        ControlPanel.btnSwitch.Enabled = False
+        HostScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
+        GuestScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
+        TVControlPnl.picLifeline4.Image = My.Resources.Resources.ll_switch_used
+        ControlPanel.chkLifeline4Unused.Checked = False
+        ControlPanel.btnLifeline4.Enabled = False
     End Sub
 
 End Class

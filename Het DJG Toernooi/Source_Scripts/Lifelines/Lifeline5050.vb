@@ -1,6 +1,6 @@
 ﻿Public Class Lifeline5050
 
-    Public Sub LifelineUse1()
+    Public Shared Sub LifelineUse1()
 
         ControlPanel.txtA.BackColor = Color.Red
         ControlPanel.txtB.BackColor = Color.Red
@@ -20,11 +20,11 @@
         TVControlPnl.txtD.Text = ""
         HostScreen.lbl5050Used.ForeColor = Color.Cyan
 
-        TVControlPnl.pic50.Image = My.Resources.ll_5050_used
-        HostScreen.pic50.Image = My.Resources.ll_5050_used
-        GuestScreen.pic50.Image = My.Resources.ll_5050_used
-        ControlPanel.btn5050.Enabled = False
-        ControlPanel.chk5050.Checked = False
+        TVControlPnl.picLifeline3.Image = My.Resources.ll_5050_used
+        HostScreen.picLifeline4.Image = My.Resources.ll_5050_used
+        GuestScreen.picLifeline4.Image = My.Resources.ll_5050_used
+        ControlPanel.btnLifeline3.Enabled = False
+        ControlPanel.chkLifeline3Unused.Checked = False
 
         If ControlPanel.lblAnswer.Text = "A" Then
             Dim rnd As New Random

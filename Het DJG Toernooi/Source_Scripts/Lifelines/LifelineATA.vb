@@ -1,18 +1,17 @@
 ﻿Public Class LifelineATA
-    Dim snd As New SOUND
-    Dim act As Integer = 0
-    Dim amountA As Integer
-    Dim amountB As Integer
-    Dim amountC As Integer
-    Dim amountD As Integer
-    Dim perA As String
-    Dim perB As String
-    Dim perC As String
-    Dim perD As String
-    Dim amountTotal As Integer
+    Private Shared act As Integer = 0
+    Private Shared amountA As Integer
+    Private Shared amountB As Integer
+    Private Shared amountC As Integer
+    Private Shared amountD As Integer
+    Private Shared perA As String
+    Private Shared perB As String
+    Private Shared perC As String
+    Private Shared perD As String
+    Private Shared amountTotal As Integer
 
 
-    Public Sub LifelineUse1()
+    Public Shared Sub LifelineUse1()
         Select Case act
             Case 0
                 With Sounds.sndLifeline1
@@ -150,11 +149,11 @@
 
                 Question.PlayQuestionCue()
 
-                ControlPanel.btnVote.Enabled = False
-                ControlPanel.chkVote.Checked = False
-                HostScreen.picVO.Image = My.Resources.ll_audience_used
-                GuestScreen.picVO.Image = My.Resources.ll_audience_used
-                TVControlPnl.picVO.Image = My.Resources.ll_audience_used
+                ControlPanel.btnLifeline1.Enabled = False
+                ControlPanel.chkLifeline1Unused.Checked = False
+                HostScreen.picLifeline2.Image = My.Resources.ll_audience_used
+                GuestScreen.picLifeline2.Image = My.Resources.ll_audience_used
+                TVControlPnl.picLifeline1.Image = My.Resources.ll_audience_used
                 act = 0
         End Select
 

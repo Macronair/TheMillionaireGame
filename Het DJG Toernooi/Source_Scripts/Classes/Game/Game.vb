@@ -265,11 +265,6 @@
                 SetValues()
                 ControlPanel.btnUnlockSwitch.Text = "RISK MODE OFF"
                 ControlPanel.btnUnlockSwitch.BackColor = Color.Orange
-                ControlPanel.btnSwitch.Enabled = False
-                ControlPanel.chkSwitch.Enabled = False
-                HostScreen.picSW.Visible = False
-                GuestScreen.picSW.Visible = False
-                TVControlPnl.picSW.Visible = False
             Case 1      ' Change to risk mode
                 gamemode = 1
                 SetValues()
@@ -281,12 +276,10 @@
                 End With
                 ControlPanel.btnUnlockSwitch.Text = "RISK MODE ON"
                 ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
-                ControlPanel.btnSwitch.Enabled = True
-                ControlPanel.chkSwitch.Enabled = True
-                HostScreen.picSW.Visible = True
-                GuestScreen.picSW.Visible = True
-                TVControlPnl.picSW.Visible = True
         End Select
+
+        Dim checkll As New Threading.Thread(Sub() CheckLifelineAvailability())
+        checkll.Start()
     End Sub
 
     Public Shared Sub SetValues()
@@ -305,6 +298,13 @@
 
     Dim intSound As Integer = 0
     Dim snd As New SOUND
+
+    Shared Sub CheckLifelineAvailability()
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
+    End Sub
 
     Public Sub wrongAsnwer()
         If Game.level = 0 Then

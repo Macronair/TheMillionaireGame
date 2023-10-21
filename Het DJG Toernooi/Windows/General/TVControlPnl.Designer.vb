@@ -60,10 +60,10 @@ Partial Class TVControlPnl
         Me.txtFFFOrder2 = New System.Windows.Forms.Label()
         Me.pnlFFFOrder1 = New System.Windows.Forms.Panel()
         Me.txtFFFOrder1 = New System.Windows.Forms.Label()
-        Me.picVO = New System.Windows.Forms.PictureBox()
-        Me.picPO = New System.Windows.Forms.PictureBox()
-        Me.picSW = New System.Windows.Forms.PictureBox()
-        Me.pic50 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.pnlFFFWinner = New System.Windows.Forms.Panel()
@@ -111,10 +111,10 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder3.SuspendLayout()
         Me.pnlFFFOrder2.SuspendLayout()
         Me.pnlFFFOrder1.SuspendLayout()
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
         Me.pnlFFFWinner.SuspendLayout()
         CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -414,10 +414,10 @@ Partial Class TVControlPnl
         Me.picTree.Controls.Add(Me.pnlFFFOrder3)
         Me.picTree.Controls.Add(Me.pnlFFFOrder2)
         Me.picTree.Controls.Add(Me.pnlFFFOrder1)
-        Me.picTree.Controls.Add(Me.picVO)
-        Me.picTree.Controls.Add(Me.picPO)
-        Me.picTree.Controls.Add(Me.picSW)
-        Me.picTree.Controls.Add(Me.pic50)
+        Me.picTree.Controls.Add(Me.picLifeline1)
+        Me.picTree.Controls.Add(Me.picLifeline2)
+        Me.picTree.Controls.Add(Me.picLifeline4)
+        Me.picTree.Controls.Add(Me.picLifeline3)
         Me.picTree.Location = New System.Drawing.Point(48, -28)
         Me.picTree.Name = "picTree"
         Me.picTree.Size = New System.Drawing.Size(1232, 748)
@@ -523,50 +523,45 @@ Partial Class TVControlPnl
         Me.txtFFFOrder1.Text = "A:"
         Me.txtFFFOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'picVO
+        'picLifeline1
         '
-        Me.picVO.BackColor = System.Drawing.Color.Transparent
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.ll_audience
-        Me.picVO.Location = New System.Drawing.Point(846, 67)
-        Me.picVO.Name = "picVO"
-        Me.picVO.Size = New System.Drawing.Size(74, 48)
-        Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picVO.TabIndex = 3
-        Me.picVO.TabStop = False
+        Me.picLifeline1.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline1.Location = New System.Drawing.Point(846, 67)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 3
+        Me.picLifeline1.TabStop = False
         '
-        'picPO
+        'picLifeline2
         '
-        Me.picPO.BackColor = System.Drawing.Color.Transparent
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.ll_phone
-        Me.picPO.Location = New System.Drawing.Point(926, 67)
-        Me.picPO.Name = "picPO"
-        Me.picPO.Size = New System.Drawing.Size(74, 48)
-        Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPO.TabIndex = 2
-        Me.picPO.TabStop = False
+        Me.picLifeline2.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline2.Location = New System.Drawing.Point(926, 67)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 2
+        Me.picLifeline2.TabStop = False
         '
-        'picSW
+        'picLifeline4
         '
-        Me.picSW.BackColor = System.Drawing.Color.Transparent
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.ll_switch
-        Me.picSW.Location = New System.Drawing.Point(1086, 67)
-        Me.picSW.Name = "picSW"
-        Me.picSW.Size = New System.Drawing.Size(74, 48)
-        Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picSW.TabIndex = 1
-        Me.picSW.TabStop = False
-        Me.picSW.Visible = False
+        Me.picLifeline4.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline4.Location = New System.Drawing.Point(1086, 67)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 1
+        Me.picLifeline4.TabStop = False
         '
-        'pic50
+        'picLifeline3
         '
-        Me.pic50.BackColor = System.Drawing.Color.Transparent
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.ll_5050
-        Me.pic50.Location = New System.Drawing.Point(1006, 67)
-        Me.pic50.Name = "pic50"
-        Me.pic50.Size = New System.Drawing.Size(74, 48)
-        Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic50.TabIndex = 0
-        Me.pic50.TabStop = False
+        Me.picLifeline3.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline3.Location = New System.Drawing.Point(1006, 67)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 0
+        Me.picLifeline3.TabStop = False
         '
         'pnlStrap
         '
@@ -948,7 +943,6 @@ Partial Class TVControlPnl
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
-        Me.Controls.Add(Me.pnlFFFPlayers)
         Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
@@ -957,6 +951,7 @@ Partial Class TVControlPnl
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.picLifelineUse)
+        Me.Controls.Add(Me.pnlFFFPlayers)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "TVControlPnl"
@@ -979,10 +974,10 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder3.ResumeLayout(False)
         Me.pnlFFFOrder2.ResumeLayout(False)
         Me.pnlFFFOrder1.ResumeLayout(False)
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
         Me.pnlFFFWinner.ResumeLayout(False)
         Me.pnlFFFWinner.PerformLayout()
@@ -1017,16 +1012,16 @@ Partial Class TVControlPnl
     Friend WithEvents pnlTime As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTime As Label
-    Friend WithEvents pic50 As PictureBox
-    Friend WithEvents picPO As PictureBox
-    Friend WithEvents picSW As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents picLifelineUse As PictureBox
     Friend WithEvents txtQuestion As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents pnlTotal As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents tmrRandomizer As Timer
-    Friend WithEvents picVO As PictureBox
+    Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents lblATA_D As Label
     Friend WithEvents lblATA_B As Label
     Friend WithEvents lblATA_C As Label

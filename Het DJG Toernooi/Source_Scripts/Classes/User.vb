@@ -48,25 +48,25 @@
 
             HostScreen.txtWinnings.Text = ""
 
-            TVControlPnl.pic50.Visible = True
-            TVControlPnl.picVO.Visible = True
-            TVControlPnl.picPO.Visible = True
+            TVControlPnl.picLifeline3.Visible = True
+            TVControlPnl.picLifeline1.Visible = True
+            TVControlPnl.picLifeline2.Visible = True
 
-            HostScreen.pic50.Image = My.Resources.ll_5050
-            HostScreen.picSW.Image = My.Resources.ll_switch
-            HostScreen.picPO.Image = My.Resources.ll_phone
-            HostScreen.picVO.Image = My.Resources.ll_audience
-            HostScreen.picSW.Visible = False
-            GuestScreen.pic50.Image = My.Resources.ll_5050
-            GuestScreen.picSW.Image = My.Resources.ll_switch
-            GuestScreen.picPO.Image = My.Resources.ll_phone
-            GuestScreen.picVO.Image = My.Resources.ll_audience
-            GuestScreen.picSW.Visible = False
-            TVControlPnl.picSW.Visible = False
-            ControlPanel.chk5050.Checked = True
-            ControlPanel.chkPlusOne.Checked = True
-            ControlPanel.chkSwitch.Checked = True
-            ControlPanel.chkVote.Checked = True
+            HostScreen.picLifeline4.Image = My.Resources.ll_5050
+            HostScreen.picLifeline1.Image = My.Resources.ll_switch
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone
+            HostScreen.picLifeline2.Image = My.Resources.ll_audience
+            HostScreen.picLifeline1.Visible = False
+            GuestScreen.picLifeline4.Image = My.Resources.ll_5050
+            GuestScreen.picLifeline1.Image = My.Resources.ll_switch
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone
+            GuestScreen.picLifeline2.Image = My.Resources.ll_audience
+            GuestScreen.picLifeline1.Visible = False
+            TVControlPnl.picLifeline4.Visible = False
+            ControlPanel.chkLifeline3Unused.Checked = True
+            ControlPanel.chkLifeline2Unused.Checked = True
+            ControlPanel.chkLifeline4Unused.Checked = True
+            ControlPanel.chkLifeline1Unused.Checked = True
 
             ControlPanel.txtCorrect.Text = Game.varCorrect
             ControlPanel.txtCurrent.Text = Game.varCurrent
