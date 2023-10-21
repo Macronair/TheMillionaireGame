@@ -469,6 +469,7 @@ Public Class Question
     End Sub
 
     Public Shared Sub PlayAnswerRevealCue(ByVal IsItCorrect As Boolean)
+        ' Run code below if contestant hasn't walked away
         If Game.walkaway = False Then
             If IsItCorrect = True Then
                 Select Case Game.level
@@ -653,8 +654,8 @@ Public Class Question
             End If
         End If
 
+        ' Run code below if contestant has walked away or not
         If IsItCorrect = True Then  'On a right answer
-
             TVControlPnl.tmrFlash.Start()
             LifeLineDouble.chance = 2
             If ControlPanel.answer = "A" Then
@@ -691,12 +692,15 @@ Public Class Question
                 End If
             End If
 
+            ' Make lifeline textures invisible on TV Screen
             TVControlPnl.grpATA.Visible = False
             TVControlPnl.picLifelineUse.Visible = False
 
+            ' Stop Double Dip final answer cue
             Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
             trStopDD.Start()
 
+            ' Update host screen and control panel money values for next question
             If Game.level >= 15 Then
 
             Else
@@ -713,6 +717,18 @@ Public Class Question
                 HostScreen.lblQLeft.Text = Game.varQLeft
                 HostScreen.lblWrong.Text = Game.varWrong
                 Question.act = 0
+            End If
+
+            ' Update the lifeline availability
+            Dim unlockll1 As New Thread(Sub() LifelineManager.UnlockLifeline(1))
+            Dim unlockll2 As New Thread(Sub() LifelineManager.UnlockLifeline(2))
+            Dim unlockll3 As New Thread(Sub() LifelineManager.UnlockLifeline(3))
+            Dim unlockll4 As New Thread(Sub() LifelineManager.UnlockLifeline(4))
+            If Game.level = 5 Or 10 Then
+                unlockll1.Start()
+                unlockll2.Start()
+                unlockll3.Start()
+                unlockll4.Start()
             End If
 
         Else        ' On a wrong answer

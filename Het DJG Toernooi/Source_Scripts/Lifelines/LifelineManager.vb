@@ -234,6 +234,56 @@
         End Select
     End Sub
 
+    Public Shared Sub EnableLifeline(ByVal LifelineNumber As Integer, ByVal enable As Boolean)
+        If enable = True Then
+            Select Case LifelineNumber
+                Case 1
+                    ControlPanel.btnLifeline1.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline1)
+                    HostScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                    GuestScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                    TVControlPnl.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                Case 2
+                    ControlPanel.btnLifeline2.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline2)
+                    HostScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                    GuestScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                    TVControlPnl.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                Case 3
+                    ControlPanel.btnLifeline3.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline3)
+                    HostScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                    GuestScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                    TVControlPnl.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                Case 4
+                    ControlPanel.btnLifeline4.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline4)
+                    HostScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+                    GuestScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+                    TVControlPnl.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+            End Select
+        Else
+            Select Case LifelineNumber
+                Case 1
+                    ControlPanel.btnLifeline1.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                    HostScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                    GuestScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                    TVControlPnl.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                Case 2
+                    ControlPanel.btnLifeline2.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                    HostScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                    GuestScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                    TVControlPnl.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                Case 3
+                    ControlPanel.btnLifeline3.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                    HostScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                    GuestScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                    TVControlPnl.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                Case 4
+                    ControlPanel.btnLifeline4.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                    HostScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                    GuestScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                    TVControlPnl.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+            End Select
+        End If
+    End Sub
+
     Public Shared Function GetLifelineImage(Lifeline As String)
         Select Case Lifeline
             Case "ask_audience"
@@ -249,7 +299,6 @@
             Case "ask_host"
                 Return My.Resources.ll_host
         End Select
-
         Return vbNull
     End Function
 

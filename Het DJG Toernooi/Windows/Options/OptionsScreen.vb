@@ -242,6 +242,10 @@
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
         Me.Close()
     End Sub
 
@@ -376,5 +380,53 @@
             Case "ask_host"
                 picLifeline4.BackgroundImage = My.Resources.ll_host
         End Select
+    End Sub
+
+    Private Sub LL1_CheckedChanged(sender As Object, e As EventArgs) Handles radL1Always.CheckedChanged, radL1AfterQ5.CheckedChanged, radL1AfterQ10.CheckedChanged, radL1RiskMode.CheckedChanged
+        If radL1Always.Checked Then
+            OptionsScreen.Lifeline1_availableAt = 0
+        ElseIf radL1AfterQ5.Checked Then
+            OptionsScreen.Lifeline1_availableAt = 1
+        ElseIf radL1AfterQ10.Checked Then
+            OptionsScreen.Lifeline1_availableAt = 2
+        ElseIf radL1RiskMode.Checked Then
+            OptionsScreen.Lifeline1_availableAt = 3
+        End If
+    End Sub
+
+    Private Sub LL2_CheckedChanged(sender As Object, e As EventArgs) Handles radL2Always.CheckedChanged, radL2AfterQ5.CheckedChanged, radL2AfterQ10.CheckedChanged, radL2RiskMode.CheckedChanged
+        If radL2Always.Checked Then
+            OptionsScreen.Lifeline2_availableAt = 0
+        ElseIf radL2AfterQ5.Checked Then
+            OptionsScreen.Lifeline2_availableAt = 1
+        ElseIf radL2AfterQ10.Checked Then
+            OptionsScreen.Lifeline2_availableAt = 2
+        ElseIf radL2RiskMode.Checked Then
+            OptionsScreen.Lifeline2_availableAt = 3
+        End If
+    End Sub
+
+    Private Sub LL3_CheckedChanged(sender As Object, e As EventArgs) Handles radL3Always.CheckedChanged, radL3AfterQ5.CheckedChanged, radL3AfterQ10.CheckedChanged, radL3RiskMode.CheckedChanged
+        If radL3Always.Checked Then
+            OptionsScreen.Lifeline3_availableAt = 0
+        ElseIf radL3AfterQ5.Checked Then
+            OptionsScreen.Lifeline3_availableAt = 1
+        ElseIf radL3AfterQ10.Checked Then
+            OptionsScreen.Lifeline3_availableAt = 2
+        ElseIf radL3RiskMode.Checked Then
+            OptionsScreen.Lifeline3_availableAt = 3
+        End If
+    End Sub
+
+    Private Sub LL4_CheckedChanged(sender As Object, e As EventArgs) Handles radL4Always.CheckedChanged, radL4AfterQ5.CheckedChanged, radL4AfterQ10.CheckedChanged, radL4RiskMode.CheckedChanged
+        If radL4Always.Checked Then
+            OptionsScreen.Lifeline4_availableAt = 0
+        ElseIf radL4AfterQ5.Checked Then
+            OptionsScreen.Lifeline4_availableAt = 1
+        ElseIf radL4AfterQ10.Checked Then
+            OptionsScreen.Lifeline4_availableAt = 2
+        ElseIf radL4RiskMode.Checked Then
+            OptionsScreen.Lifeline4_availableAt = 3
+        End If
     End Sub
 End Class

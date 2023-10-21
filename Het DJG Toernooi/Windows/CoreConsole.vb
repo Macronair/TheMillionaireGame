@@ -28,6 +28,10 @@ Public Class CoreConsole
             Game.TotalLifelines = 0
             Profile.Options.TotalLifelines = 0
         End If
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
 
         Thread.Sleep(250)
 

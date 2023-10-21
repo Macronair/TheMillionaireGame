@@ -152,6 +152,18 @@
             ControlPanel.txtD.BackColor = SystemColors.Control
         End If
 
+        LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
+        Select Case LifelineManager.CurrentActive
+            Case 1
+                ControlPanel.chkLifeline1Unused.Checked = False
+            Case 2
+                ControlPanel.chkLifeline2Unused.Checked = False
+            Case 3
+                ControlPanel.chkLifeline3Unused.Checked = False
+            Case 4
+                ControlPanel.chkLifeline4Unused.Checked = False
+        End Select
+
         With Sounds.sndLifeline1
             .URL = Sounds.SoundsPath + Profile.Options.snd_5050
             .controls.play()

@@ -90,11 +90,18 @@
     Private Shared Sub reset()
         TVControlPnl.picLifelineUse.Visible = False
         act = 0
-        HostScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
-        GuestScreen.picLifeline1.Image = My.Resources.Resources.ll_switch_used
-        TVControlPnl.picLifeline4.Image = My.Resources.Resources.ll_switch_used
-        ControlPanel.chkLifeline4Unused.Checked = False
-        ControlPanel.btnLifeline4.Enabled = False
+
+        LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
+        Select Case LifelineManager.CurrentActive
+            Case 1
+                ControlPanel.chkLifeline1Unused.Checked = False
+            Case 2
+                ControlPanel.chkLifeline2Unused.Checked = False
+            Case 3
+                ControlPanel.chkLifeline3Unused.Checked = False
+            Case 4
+                ControlPanel.chkLifeline4Unused.Checked = False
+        End Select
     End Sub
 
 End Class

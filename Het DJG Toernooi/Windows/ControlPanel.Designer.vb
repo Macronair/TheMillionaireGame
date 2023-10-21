@@ -493,7 +493,6 @@ Partial Class ControlPanel
         Me.chkLifeline4Unused.AutoSize = True
         Me.chkLifeline4Unused.Checked = True
         Me.chkLifeline4Unused.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLifeline4Unused.Enabled = False
         Me.chkLifeline4Unused.Location = New System.Drawing.Point(218, 61)
         Me.chkLifeline4Unused.Name = "chkLifeline4Unused"
         Me.chkLifeline4Unused.Size = New System.Drawing.Size(63, 17)
@@ -1014,7 +1013,6 @@ Partial Class ControlPanel
         '
         Me.btnLifeline4.BackColor = System.Drawing.Color.Transparent
         Me.btnLifeline4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLifeline4.Enabled = False
         Me.btnLifeline4.Location = New System.Drawing.Point(219, 19)
         Me.btnLifeline4.Name = "btnLifeline4"
         Me.btnLifeline4.Size = New System.Drawing.Size(65, 42)

@@ -278,8 +278,7 @@
                 ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
         End Select
 
-        Dim checkll As New Threading.Thread(Sub() CheckLifelineAvailability())
-        checkll.Start()
+        CheckLifelineAvailability()
     End Sub
 
     Public Shared Sub SetValues()
