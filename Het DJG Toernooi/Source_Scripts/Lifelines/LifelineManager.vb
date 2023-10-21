@@ -1,6 +1,15 @@
 ﻿Public Class LifelineManager
 
+    Public Shared CurrentActive As Integer = 0
+    Public Shared Lifeline1_Used As Boolean = False
+    Public Shared Lifeline2_Used As Boolean = False
+    Public Shared Lifeline3_Used As Boolean = False
+    Public Shared Lifeline4_Used As Boolean = False
+
     Public Shared Sub Use(ByVal LifelineNumber As Integer)
+        CurrentActive = 0
+        CurrentActive = LifelineNumber
+
         Select Case LifelineNumber
             Case 1
                 Select Case Profile.Options.Lifeline1
@@ -108,6 +117,10 @@
                             End If
                     End Select
                 End If
+                If Lifeline1_Used Then
+                    ControlPanel.btnLifeline1.Enabled = False
+                    ControlPanel.chkLifeline1Unused.Enabled = False
+                End If
             Case 2
                 ControlPanel.btnLifeline2.Enabled = False
                 ControlPanel.chkLifeline2Unused.Enabled = False
@@ -148,6 +161,10 @@
                                 TVControlPnl.picLifeline2.Visible = True
                             End If
                     End Select
+                End If
+                If Lifeline2_Used Then
+                    ControlPanel.btnLifeline2.Enabled = False
+                    ControlPanel.chkLifeline2Unused.Enabled = False
                 End If
             Case 3
                 ControlPanel.btnLifeline3.Enabled = False
@@ -190,6 +207,10 @@
                             End If
                     End Select
                 End If
+                If Lifeline3_Used Then
+                    ControlPanel.btnLifeline3.Enabled = False
+                    ControlPanel.chkLifeline3Unused.Enabled = False
+                End If
             Case 4
                 ControlPanel.btnLifeline4.Enabled = False
                 ControlPanel.chkLifeline4Unused.Enabled = False
@@ -230,6 +251,10 @@
                                 TVControlPnl.picLifeline4.Visible = True
                             End If
                     End Select
+                End If
+                If Lifeline4_Used Then
+                    ControlPanel.btnLifeline4.Enabled = False
+                    ControlPanel.chkLifeline4Unused.Enabled = False
                 End If
         End Select
     End Sub

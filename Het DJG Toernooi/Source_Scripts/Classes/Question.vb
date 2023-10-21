@@ -720,15 +720,11 @@ Public Class Question
             End If
 
             ' Update the lifeline availability
-            Dim unlockll1 As New Thread(Sub() LifelineManager.UnlockLifeline(1))
-            Dim unlockll2 As New Thread(Sub() LifelineManager.UnlockLifeline(2))
-            Dim unlockll3 As New Thread(Sub() LifelineManager.UnlockLifeline(3))
-            Dim unlockll4 As New Thread(Sub() LifelineManager.UnlockLifeline(4))
             If Game.level = 5 Or 10 Then
-                unlockll1.Start()
-                unlockll2.Start()
-                unlockll3.Start()
-                unlockll4.Start()
+                LifelineManager.UnlockLifeline(1)
+                LifelineManager.UnlockLifeline(2)
+                LifelineManager.UnlockLifeline(3)
+                LifelineManager.UnlockLifeline(4)
             End If
 
         Else        ' On a wrong answer

@@ -10,6 +10,10 @@
             ControlPanel.nmrLevel.Value = 0
             Game.SetValues()
             Game.walkaway = False
+            LifelineManager.Lifeline1_Used = False
+            LifelineManager.Lifeline2_Used = False
+            LifelineManager.Lifeline3_Used = False
+            LifelineManager.Lifeline4_Used = False
 
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""

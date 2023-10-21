@@ -17,7 +17,7 @@ Public Class QDatabase
         If Game.level = -1 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            Dim sql = New SqlCommand("SELECT TOP 1 * FROM fff_questionS WHERE Used = 'False' ORDER BY NEWID()", Data.connectionString)
+            Dim sql = New SqlCommand("SELECT TOP 1 * FROM fff_questions WHERE Used = 'False' ORDER BY NEWID()", Data.connectionString)
             Try
                 Dim reader As SqlDataReader = sql.ExecuteReader
                 If reader.HasRows Then
@@ -50,12 +50,10 @@ Public Class QDatabase
                 My.Computer.Audio.Stop()
                 Question.useMusic = False
             End Try
-
-
         End If
 
         'Haalt een vraag uit de database (100 - 1.000 pt)
-        If Game.level >= 0 And Game.level < 5 Then
+        If Game.level >= 0 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
             sql = $"SELECT TOP 1 * FROM questions WHERE Used = 'False' AND Level = {Game.level + 1} ORDER BY NEWID()"
