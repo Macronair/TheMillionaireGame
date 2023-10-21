@@ -43,6 +43,7 @@ Partial Class OptionsScreen
         Me.radStrapBlack = New System.Windows.Forms.RadioButton()
         Me.radStrapGreen = New System.Windows.Forms.RadioButton()
         Me.radStrapYellow = New System.Windows.Forms.RadioButton()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.grpLifeline4 = New System.Windows.Forms.GroupBox()
         Me.radL4RiskMode = New System.Windows.Forms.RadioButton()
@@ -50,6 +51,7 @@ Partial Class OptionsScreen
         Me.radL4AfterQ5 = New System.Windows.Forms.RadioButton()
         Me.Label115 = New System.Windows.Forms.Label()
         Me.radL4Always = New System.Windows.Forms.RadioButton()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline4 = New System.Windows.Forms.ComboBox()
         Me.grpLifeline3 = New System.Windows.Forms.GroupBox()
         Me.radL3RiskMode = New System.Windows.Forms.RadioButton()
@@ -57,6 +59,7 @@ Partial Class OptionsScreen
         Me.radL3AfterQ5 = New System.Windows.Forms.RadioButton()
         Me.Label114 = New System.Windows.Forms.Label()
         Me.radL3Always = New System.Windows.Forms.RadioButton()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline3 = New System.Windows.Forms.ComboBox()
         Me.grpLifeline2 = New System.Windows.Forms.GroupBox()
         Me.radL2RiskMode = New System.Windows.Forms.RadioButton()
@@ -64,6 +67,7 @@ Partial Class OptionsScreen
         Me.radL2AfterQ5 = New System.Windows.Forms.RadioButton()
         Me.Label113 = New System.Windows.Forms.Label()
         Me.radL2Always = New System.Windows.Forms.RadioButton()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline2 = New System.Windows.Forms.ComboBox()
         Me.nmrTotalLifelines = New System.Windows.Forms.NumericUpDown()
         Me.Label112 = New System.Windows.Forms.Label()
@@ -73,6 +77,7 @@ Partial Class OptionsScreen
         Me.radL1AfterQ5 = New System.Windows.Forms.RadioButton()
         Me.Label111 = New System.Windows.Forms.Label()
         Me.radL1Always = New System.Windows.Forms.RadioButton()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
@@ -309,28 +314,23 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.grpLifeline4.SuspendLayout()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpLifeline3.SuspendLayout()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpLifeline2.SuspendLayout()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmrTotalLifelines, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpLifeline1.SuspendLayout()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabOptions
@@ -550,6 +550,16 @@ Partial Class OptionsScreen
         Me.radStrapYellow.Text = "(Default) Yellow"
         Me.radStrapYellow.UseVisualStyleBackColor = True
         '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.PictureBox5.Location = New System.Drawing.Point(-67, 21)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(740, 53)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 0
+        Me.PictureBox5.TabStop = False
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.grpLifeline4)
@@ -637,6 +647,15 @@ Partial Class OptionsScreen
         Me.radL4Always.Text = "Always"
         Me.radL4Always.UseVisualStyleBackColor = True
         '
+        'picLifeline4
+        '
+        Me.picLifeline4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline4.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline4.TabIndex = 1
+        Me.picLifeline4.TabStop = False
+        '
         'cmbLifeline4
         '
         Me.cmbLifeline4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -720,6 +739,15 @@ Partial Class OptionsScreen
         Me.radL3Always.Text = "Always"
         Me.radL3Always.UseVisualStyleBackColor = True
         '
+        'picLifeline3
+        '
+        Me.picLifeline3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline3.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline3.TabIndex = 1
+        Me.picLifeline3.TabStop = False
+        '
         'cmbLifeline3
         '
         Me.cmbLifeline3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -802,6 +830,15 @@ Partial Class OptionsScreen
         Me.radL2Always.TabStop = True
         Me.radL2Always.Text = "Always"
         Me.radL2Always.UseVisualStyleBackColor = True
+        '
+        'picLifeline2
+        '
+        Me.picLifeline2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline2.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline2.TabIndex = 1
+        Me.picLifeline2.TabStop = False
         '
         'cmbLifeline2
         '
@@ -903,6 +940,16 @@ Partial Class OptionsScreen
         Me.radL1Always.TabStop = True
         Me.radL1Always.Text = "Always"
         Me.radL1Always.UseVisualStyleBackColor = True
+        '
+        'picLifeline1
+        '
+        Me.picLifeline1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline1.Location = New System.Drawing.Point(17, 19)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(112, 62)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 1
+        Me.picLifeline1.TabStop = False
         '
         'cmbLifeline1
         '
@@ -3344,49 +3391,6 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap
-        Me.PictureBox5.Location = New System.Drawing.Point(-67, 21)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(740, 53)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
-        '
-        'picLifeline4
-        '
-        Me.picLifeline4.Location = New System.Drawing.Point(17, 19)
-        Me.picLifeline4.Name = "picLifeline4"
-        Me.picLifeline4.Size = New System.Drawing.Size(112, 62)
-        Me.picLifeline4.TabIndex = 1
-        Me.picLifeline4.TabStop = False
-        '
-        'picLifeline3
-        '
-        Me.picLifeline3.Location = New System.Drawing.Point(17, 19)
-        Me.picLifeline3.Name = "picLifeline3"
-        Me.picLifeline3.Size = New System.Drawing.Size(112, 62)
-        Me.picLifeline3.TabIndex = 1
-        Me.picLifeline3.TabStop = False
-        '
-        'picLifeline2
-        '
-        Me.picLifeline2.Location = New System.Drawing.Point(17, 19)
-        Me.picLifeline2.Name = "picLifeline2"
-        Me.picLifeline2.Size = New System.Drawing.Size(112, 62)
-        Me.picLifeline2.TabIndex = 1
-        Me.picLifeline2.TabStop = False
-        '
-        'picLifeline1
-        '
-        Me.picLifeline1.Location = New System.Drawing.Point(17, 19)
-        Me.picLifeline1.Name = "picLifeline1"
-        Me.picLifeline1.Size = New System.Drawing.Size(112, 62)
-        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline1.TabIndex = 1
-        Me.picLifeline1.TabStop = False
-        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3406,26 +3410,26 @@ Partial Class OptionsScreen
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.grpLifeline4.ResumeLayout(False)
         Me.grpLifeline4.PerformLayout()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpLifeline3.ResumeLayout(False)
         Me.grpLifeline3.PerformLayout()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpLifeline2.ResumeLayout(False)
         Me.grpLifeline2.PerformLayout()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmrTotalLifelines, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grpLifeline1.ResumeLayout(False)
         Me.grpLifeline1.PerformLayout()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

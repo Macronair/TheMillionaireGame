@@ -308,4 +308,72 @@
                 grpLifeline4.Visible = False
         End Select
     End Sub
+
+    Private Sub cmbLifeline1_TextChanged(sender As Object, e As EventArgs) Handles cmbLifeline1.TextChanged
+        Select Case cmbLifeline1.Text
+            Case "ask_audience"
+                picLifeline1.BackgroundImage = My.Resources.ll_audience
+            Case "50_50"
+                picLifeline1.BackgroundImage = My.Resources.ll_5050
+            Case "plus_one"
+                picLifeline1.BackgroundImage = My.Resources.ll_plusone
+            Case "switch"
+                picLifeline1.BackgroundImage = My.Resources.ll_switch
+            Case "double_dip"
+                picLifeline1.BackgroundImage = My.Resources.ll_double
+            Case "ask_host"
+                picLifeline1.BackgroundImage = My.Resources.ll_host
+        End Select
+    End Sub
+
+    Private Sub cmbLifeline2_TextChanged(sender As Object, e As EventArgs) Handles cmbLifeline2.TextChanged
+        Select Case cmbLifeline2.Text
+            Case "ask_audience"
+                picLifeline2.BackgroundImage = My.Resources.ll_audience
+            Case "50_50"
+                picLifeline2.BackgroundImage = My.Resources.ll_5050
+            Case "plus_one"
+                picLifeline2.BackgroundImage = My.Resources.ll_plusone
+            Case "switch"
+                picLifeline2.BackgroundImage = My.Resources.ll_switch
+            Case "double_dip"
+                picLifeline2.BackgroundImage = My.Resources.ll_double
+            Case "ask_host"
+                picLifeline2.BackgroundImage = My.Resources.ll_host
+        End Select
+    End Sub
+
+    Private Sub cmbLifeline3_TextChanged(sender As Object, e As EventArgs) Handles cmbLifeline3.TextChanged
+        Select Case cmbLifeline3.Text
+            Case "ask_audience"
+                picLifeline3.BackgroundImage = My.Resources.ll_audience
+            Case "50_50"
+                picLifeline3.BackgroundImage = My.Resources.ll_5050
+            Case "plus_one"
+                picLifeline3.BackgroundImage = My.Resources.ll_plusone
+            Case "switch"
+                picLifeline3.BackgroundImage = My.Resources.ll_switch
+            Case "double_dip"
+                picLifeline3.BackgroundImage = My.Resources.ll_double
+            Case "ask_host"
+                picLifeline3.BackgroundImage = My.Resources.ll_host
+        End Select
+    End Sub
+
+    Private Sub cmbLifeline4_TextChanged(sender As Object, e As EventArgs) Handles cmbLifeline4.TextChanged
+        Select Case cmbLifeline4.Text
+            Case "ask_audience"
+                picLifeline4.BackgroundImage = My.Resources.ll_audience
+            Case "50_50"
+                picLifeline4.BackgroundImage = My.Resources.ll_5050
+            Case "plus_one"
+                picLifeline4.BackgroundImage = My.Resources.ll_plusone
+            Case "switch"
+                picLifeline4.BackgroundImage = My.Resources.ll_switch
+            Case "double_dip"
+                picLifeline4.BackgroundImage = My.Resources.ll_double
+            Case "ask_host"
+                picLifeline4.BackgroundImage = My.Resources.ll_host
+        End Select
+    End Sub
 End Class
