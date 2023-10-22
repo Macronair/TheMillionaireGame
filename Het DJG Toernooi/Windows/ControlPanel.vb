@@ -462,6 +462,12 @@ Public Class ControlPanel
         GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         tmrLifelineBling.Start()
+
+        Dim ping As New WMPLib.WindowsMediaPlayer
+        With ping
+            .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline1Ping
+            .controls.play()
+        End With
     End Sub
 
     Private Sub btnLL2_Click(sender As Object, e As EventArgs) Handles btnLL2.Click
@@ -470,6 +476,12 @@ Public Class ControlPanel
         GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         tmrLifelineBling.Start()
+
+        Dim ping As New WMPLib.WindowsMediaPlayer
+        With ping
+            .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline2Ping
+            .controls.play()
+        End With
     End Sub
 
     Private Sub btnLL3_Click(sender As Object, e As EventArgs) Handles btnLL3.Click
@@ -478,6 +490,12 @@ Public Class ControlPanel
         GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         tmrLifelineBling.Start()
+
+        Dim ping As New WMPLib.WindowsMediaPlayer
+        With ping
+            .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline3Ping
+            .controls.play()
+        End With
     End Sub
 
     Private Sub btnLL4_Click(sender As Object, e As EventArgs) Handles btnLL4.Click
@@ -486,6 +504,12 @@ Public Class ControlPanel
         GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         tmrLifelineBling.Start()
+
+        Dim ping As New WMPLib.WindowsMediaPlayer
+        With ping
+            .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline4Ping
+            .controls.play()
+        End With
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnTreePr.Click
