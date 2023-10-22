@@ -53,11 +53,8 @@
             this.tsmenuActions = new System.Windows.Forms.ToolStripMenuItem();
             this.resetUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmenuActionsResetAllQuestions = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel1UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel2UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel3UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetLevel4UsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetFastestFingerUsedQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.atLevelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.importQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromOldDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -106,6 +103,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtLevel1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtLevel1.Location = new System.Drawing.Point(6, 6);
+            this.dtLevel1.MultiSelect = false;
             this.dtLevel1.Name = "dtLevel1";
             this.dtLevel1.ReadOnly = true;
             this.dtLevel1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -134,12 +132,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dtLevel0.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtLevel0.Location = new System.Drawing.Point(6, 6);
+            this.dtLevel0.MultiSelect = false;
             this.dtLevel0.Name = "dtLevel0";
             this.dtLevel0.ReadOnly = true;
             this.dtLevel0.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtLevel0.Size = new System.Drawing.Size(1432, 651);
             this.dtLevel0.TabIndex = 16;
             this.dtLevel0.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel0_CellClick);
+            this.dtLevel0.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel0_CellDoubleClick);
             this.dtLevel0.SelectionChanged += new System.EventHandler(this.dtLevel0_SelectionChanged);
             // 
             // tsTools
@@ -289,11 +289,8 @@
             // 
             this.resetUsedQuestionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmenuActionsResetAllQuestions,
-            this.resetLevel1UsedQuestionsToolStripMenuItem,
-            this.resetLevel2UsedQuestionsToolStripMenuItem,
-            this.resetLevel3UsedQuestionsToolStripMenuItem,
-            this.resetLevel4UsedQuestionsToolStripMenuItem,
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem});
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem,
+            this.atLevelToolStripMenuItem});
             this.resetUsedQuestionsToolStripMenuItem.Name = "resetUsedQuestionsToolStripMenuItem";
             this.resetUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.resetUsedQuestionsToolStripMenuItem.Text = "Reset Used Questions";
@@ -301,44 +298,23 @@
             // tsmenuActionsResetAllQuestions
             // 
             this.tsmenuActionsResetAllQuestions.Name = "tsmenuActionsResetAllQuestions";
-            this.tsmenuActionsResetAllQuestions.Size = new System.Drawing.Size(172, 22);
+            this.tsmenuActionsResetAllQuestions.Size = new System.Drawing.Size(202, 22);
             this.tsmenuActionsResetAllQuestions.Text = "All";
             this.tsmenuActionsResetAllQuestions.Click += new System.EventHandler(this.tsmenuActionsResetAllQuestions_Click_1);
-            // 
-            // resetLevel1UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Name = "resetLevel1UsedQuestionsToolStripMenuItem";
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Text = "Level 1 only";
-            this.resetLevel1UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel1UsedQuestionsToolStripMenuItem_Click_1);
-            // 
-            // resetLevel2UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Name = "resetLevel2UsedQuestionsToolStripMenuItem";
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Text = "Level 2 only";
-            this.resetLevel2UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel2UsedQuestionsToolStripMenuItem_Click_1);
-            // 
-            // resetLevel3UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Name = "resetLevel3UsedQuestionsToolStripMenuItem";
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Text = "Level 3 only";
-            this.resetLevel3UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel3UsedQuestionsToolStripMenuItem_Click_1);
-            // 
-            // resetLevel4UsedQuestionsToolStripMenuItem
-            // 
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Name = "resetLevel4UsedQuestionsToolStripMenuItem";
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Text = "Level 4 only";
-            this.resetLevel4UsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetLevel4UsedQuestionsToolStripMenuItem_Click_1);
             // 
             // resetFastestFingerUsedQuestionsToolStripMenuItem
             // 
             this.resetFastestFingerUsedQuestionsToolStripMenuItem.Name = "resetFastestFingerUsedQuestionsToolStripMenuItem";
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(172, 22);
-            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Text = "Fastest Finger only";
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.resetFastestFingerUsedQuestionsToolStripMenuItem.Text = "Fastest Finger Questions";
             this.resetFastestFingerUsedQuestionsToolStripMenuItem.Click += new System.EventHandler(this.resetFastestFingerUsedQuestionsToolStripMenuItem_Click_1);
+            // 
+            // atLevelToolStripMenuItem
+            // 
+            this.atLevelToolStripMenuItem.Name = "atLevelToolStripMenuItem";
+            this.atLevelToolStripMenuItem.Size = new System.Drawing.Size(202, 22);
+            this.atLevelToolStripMenuItem.Text = "At Level...";
+            this.atLevelToolStripMenuItem.Click += new System.EventHandler(this.atLevelToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
@@ -427,13 +403,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem resetUsedQuestionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmenuActionsResetAllQuestions;
-        private System.Windows.Forms.ToolStripMenuItem resetLevel1UsedQuestionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetLevel2UsedQuestionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetLevel3UsedQuestionsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem resetLevel4UsedQuestionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem resetFastestFingerUsedQuestionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem importQuestionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromOldDatabaseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem atLevelToolStripMenuItem;
     }
 }

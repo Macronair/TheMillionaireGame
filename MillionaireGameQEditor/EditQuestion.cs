@@ -24,28 +24,30 @@ namespace Millionaire.Windows.Question_Editor
             QEditor.c.Open();
             if (level == 0)
             {
-                cmd = new SqlCommand("UPDATE fff_questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (level >= 1)
-            {
-                cmd = new SqlCommand("UPDATE questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE fff_questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Level = @Level,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
+                cmd.Parameters.AddWithValue("@Id", txtId.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else if (level >= 1)
+            {
+                cmd = new SqlCommand("UPDATE questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Level = @Level,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
+                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
+                cmd.Parameters.AddWithValue("@A", txtA.Text);
+                cmd.Parameters.AddWithValue("@B", txtB.Text);
+                cmd.Parameters.AddWithValue("@C", txtC.Text);
+                cmd.Parameters.AddWithValue("@D", txtD.Text);
+                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
+                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
@@ -63,18 +65,20 @@ namespace Millionaire.Windows.Question_Editor
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
                 btnReset.Enabled = true;
+
+                trkQuestionLevel.Visible = false;
+                lblQuestionLevel.Visible = false;
+                lblQuestionLevelText.Visible = false;
             }
             else
             {
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;
-            }
 
-            lblQuestion.Text = txtQuestion.Text;
-            lblA.Text = txtA.Text;
-            lblB.Text = txtB.Text;
-            lblC.Text = txtC.Text;
-            lblD.Text = txtD.Text;
+                trkQuestionLevel.Visible = true;
+                lblQuestionLevel.Visible = true;
+                lblQuestionLevelText.Visible = true;
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)

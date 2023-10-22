@@ -58,10 +58,18 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
                     edit.txtCorrect.Text = this.dtLevel1.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
-                    edit.trkQuestionLevel.Value = Convert.ToInt16(this.dtLevel1.CurrentRow.Cells[7].Value.ToString());
+                    edit.trkQuestionLevel.Value = Convert.ToInt16(this.dtLevel1.CurrentRow.Cells[7].Value);
                     edit.lblQuestionLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
+                    edit.chkQuestionUsed.Checked = Convert.ToBoolean(this.dtLevel1.CurrentRow.Cells[8].Value);
                     edit.txtNote.Text = this.dtLevel1.CurrentRow.Cells[9].Value.ToString();
+
+                    edit.lblQuestion.Text = this.dtLevel1.CurrentRow.Cells[1].Value.ToString();
+                    edit.lblA.Text = "A: " + this.dtLevel1.CurrentRow.Cells[2].Value.ToString();
+                    edit.lblB.Text = "B: " + this.dtLevel1.CurrentRow.Cells[3].Value.ToString();
+                    edit.lblC.Text = "C: " + this.dtLevel1.CurrentRow.Cells[4].Value.ToString();
+                    edit.lblD.Text = "D: " + this.dtLevel1.CurrentRow.Cells[5].Value.ToString();
                 }
+                edit.ShowDialog();
             }
             else if (stLevel.Text == "0")
             {
@@ -79,12 +87,22 @@ namespace Millionaire
                     edit.txtD.Text = this.dtLevel0.CurrentRow.Cells[5].Value.ToString();
                     edit.lblAnswer.Text = this.dtLevel0.CurrentRow.Cells[6].Value.ToString();
                     edit.txtLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
-                    edit.trkQuestionLevel.Value = Convert.ToInt16(this.dtLevel1.CurrentRow.Cells[7].Value.ToString());
-                    edit.lblQuestionLevel.Text = this.dtLevel1.CurrentRow.Cells[7].Value.ToString();
+                    edit.lblQuestionLevel.Text = this.dtLevel0.CurrentRow.Cells[7].Value.ToString();
+                    edit.chkQuestionUsed.Checked = Convert.ToBoolean(this.dtLevel0.CurrentRow.Cells[8].Value);
                     edit.txtNote.Text = this.dtLevel0.CurrentRow.Cells[9].Value.ToString();
+
+                    edit.lblQuestion.Text = this.dtLevel0.CurrentRow.Cells[1].Value.ToString();
+                    edit.lblA.Text = "A: " + this.dtLevel0.CurrentRow.Cells[2].Value.ToString();
+                    edit.lblB.Text = "B: " + this.dtLevel0.CurrentRow.Cells[3].Value.ToString();
+                    edit.lblC.Text = "C: " + this.dtLevel0.CurrentRow.Cells[4].Value.ToString();
+                    edit.lblD.Text = "D: " + this.dtLevel0.CurrentRow.Cells[5].Value.ToString();
                 }
+                edit.ShowDialog();
             }
-            edit.ShowDialog();
+            else
+            {
+                MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         public void DeleteDB()
@@ -228,112 +246,12 @@ namespace Millionaire
         #region Questions Reset functions
         private void tsmenuActionsResetAllQuestions_Click_1(object sender, EventArgs e)
         {
-            SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
-            SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
-            SqlCommand cmd2 = new SqlCommand("UPDATE questions_Level2 SET Used='False'", c);
-            SqlCommand cmd3 = new SqlCommand("UPDATE questions_Level3 SET Used='False'", c);
-            SqlCommand cmd4 = new SqlCommand("UPDATE questions_Level4 SET Used='False'", c);
+            SqlCommand cmd0 = new SqlCommand("UPDATE questions SET Used='False'", c);
             try
             {
                 c.Open();
                 cmd0.ExecuteNonQuery();
-                cmd1.ExecuteNonQuery();
-                cmd2.ExecuteNonQuery();
-                cmd3.ExecuteNonQuery();
-                cmd4.ExecuteNonQuery();
                 MessageBox.Show("All questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (c.State == ConnectionState.Open)
-                {
-                    c.Close();
-                }
-                UpdateDB();
-            }
-        }
-
-        private void resetLevel1UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            SqlCommand cmd1 = new SqlCommand("UPDATE questions_Level1 SET Used='False'", c);
-            try
-            {
-                c.Open();
-                cmd1.ExecuteNonQuery();
-                MessageBox.Show("All Level 1 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (c.State == ConnectionState.Open)
-                {
-                    c.Close();
-                }
-                UpdateDB();
-            }
-        }
-
-        private void resetLevel2UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            SqlCommand cmd2 = new SqlCommand("UPDATE questions_Level2 SET Used='False'", c);
-            try
-            {
-                c.Open();
-                cmd2.ExecuteNonQuery();
-                MessageBox.Show("All Level 2 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (c.State == ConnectionState.Open)
-                {
-                    c.Close();
-                }
-                UpdateDB();
-            }
-        }
-
-        private void resetLevel3UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            SqlCommand cmd3 = new SqlCommand("UPDATE questions_Level3 SET Used='False'", c);
-            try
-            {
-                c.Open();
-                cmd3.ExecuteNonQuery();
-                MessageBox.Show("All Level 3 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                if (c.State == ConnectionState.Open)
-                {
-                    c.Close();
-                }
-                UpdateDB();
-            }
-        }
-
-        private void resetLevel4UsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
-        {
-            SqlCommand cmd4 = new SqlCommand("UPDATE questions_Level4 SET Used='False'", c);
-            try
-            {
-                c.Open();
-                cmd4.ExecuteNonQuery();
-                MessageBox.Show("All Level 4 questions succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -351,7 +269,7 @@ namespace Millionaire
 
         private void resetFastestFingerUsedQuestionsToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            SqlCommand cmd0 = new SqlCommand("UPDATE questions_Level0 SET Used='False'", c);
+            SqlCommand cmd0 = new SqlCommand("UPDATE fff_questions SET Used='False'", c);
             try
             {
                 c.Open();
@@ -379,11 +297,10 @@ namespace Millionaire
             EditDB();
         }
 
-        private void dtLevel4_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dtLevel0_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             EditDB();
         }
-
         #endregion
 
         private void tbLevel_SelectedIndexChanged(object sender, EventArgs e)
@@ -398,6 +315,36 @@ namespace Millionaire
         {
             frmQuestionImport questionImport = new frmQuestionImport(this);
             questionImport.Show();
+        }
+
+        private void atLevelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            using (var reset = new frmResetQuestions(this))
+            {
+                var result = reset.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    SqlCommand cmd0 = new SqlCommand($"UPDATE questions SET Used='False' WHERE Level={reset.nmrLevel.Value}", c);
+                    try
+                    {
+                        c.Open();
+                        cmd0.ExecuteNonQuery();
+                        MessageBox.Show($"Questions from level {reset.nmrLevel.Value} has been reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    finally
+                    {
+                        if (c.State == ConnectionState.Open)
+                        {
+                            c.Close();
+                        }
+                        UpdateDB();
+                    }
+                }
+            }
         }
     }
 }

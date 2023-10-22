@@ -81,6 +81,10 @@ Partial Class OptionsScreen
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
+        Me.Label119 = New System.Windows.Forms.Label()
+        Me.txtSndHostStart = New System.Windows.Forms.TextBox()
+        Me.Label120 = New System.Windows.Forms.Label()
         Me.txtSndDD2ndFinal = New System.Windows.Forms.TextBox()
         Me.Label110 = New System.Windows.Forms.Label()
         Me.txtSndDD2ndAnswer = New System.Windows.Forms.TextBox()
@@ -314,10 +318,8 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
-        Me.Label119 = New System.Windows.Forms.Label()
-        Me.txtSndHostStart = New System.Windows.Forms.TextBox()
-        Me.Label120 = New System.Windows.Forms.Label()
+        Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
+        Me.btnResetQuestionsLevel = New System.Windows.Forms.Button()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -333,6 +335,7 @@ Partial Class OptionsScreen
         CType(Me.nmrTotalLifelines, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpLifeline1.SuspendLayout()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
         Me.SuspendLayout()
@@ -968,6 +971,9 @@ Partial Class OptionsScreen
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnResetQuestionsLevel)
+        Me.TabPage3.Controls.Add(Me.btnResetQuestionsAll)
+        Me.TabPage3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
@@ -1085,6 +1091,42 @@ Partial Class OptionsScreen
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sounds (Regular)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'txtSndHostEnd
+        '
+        Me.txtSndHostEnd.Location = New System.Drawing.Point(1069, 456)
+        Me.txtSndHostEnd.Name = "txtSndHostEnd"
+        Me.txtSndHostEnd.ReadOnly = True
+        Me.txtSndHostEnd.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndHostEnd.TabIndex = 143
+        '
+        'Label119
+        '
+        Me.Label119.AutoSize = True
+        Me.Label119.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label119.Location = New System.Drawing.Point(926, 459)
+        Me.Label119.Name = "Label119"
+        Me.Label119.Size = New System.Drawing.Size(70, 16)
+        Me.Label119.TabIndex = 142
+        Me.Label119.Text = "(Host) End"
+        '
+        'txtSndHostStart
+        '
+        Me.txtSndHostStart.Location = New System.Drawing.Point(1069, 428)
+        Me.txtSndHostStart.Name = "txtSndHostStart"
+        Me.txtSndHostStart.ReadOnly = True
+        Me.txtSndHostStart.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndHostStart.TabIndex = 141
+        '
+        'Label120
+        '
+        Me.Label120.AutoSize = True
+        Me.Label120.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label120.Location = New System.Drawing.Point(926, 431)
+        Me.Label120.Name = "Label120"
+        Me.Label120.Size = New System.Drawing.Size(73, 16)
+        Me.Label120.TabIndex = 140
+        Me.Label120.Text = "(Host) Start"
         '
         'txtSndDD2ndFinal
         '
@@ -3399,41 +3441,23 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'txtSndHostEnd
+        'btnResetQuestionsAll
         '
-        Me.txtSndHostEnd.Location = New System.Drawing.Point(1069, 456)
-        Me.txtSndHostEnd.Name = "txtSndHostEnd"
-        Me.txtSndHostEnd.ReadOnly = True
-        Me.txtSndHostEnd.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndHostEnd.TabIndex = 143
+        Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 6)
+        Me.btnResetQuestionsAll.Name = "btnResetQuestionsAll"
+        Me.btnResetQuestionsAll.Size = New System.Drawing.Size(87, 64)
+        Me.btnResetQuestionsAll.TabIndex = 0
+        Me.btnResetQuestionsAll.Text = "Reset Used Questions (All)"
+        Me.btnResetQuestionsAll.UseVisualStyleBackColor = True
         '
-        'Label119
+        'btnResetQuestionsLevel
         '
-        Me.Label119.AutoSize = True
-        Me.Label119.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label119.Location = New System.Drawing.Point(926, 459)
-        Me.Label119.Name = "Label119"
-        Me.Label119.Size = New System.Drawing.Size(70, 16)
-        Me.Label119.TabIndex = 142
-        Me.Label119.Text = "(Host) End"
-        '
-        'txtSndHostStart
-        '
-        Me.txtSndHostStart.Location = New System.Drawing.Point(1069, 428)
-        Me.txtSndHostStart.Name = "txtSndHostStart"
-        Me.txtSndHostStart.ReadOnly = True
-        Me.txtSndHostStart.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndHostStart.TabIndex = 141
-        '
-        'Label120
-        '
-        Me.Label120.AutoSize = True
-        Me.Label120.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label120.Location = New System.Drawing.Point(926, 431)
-        Me.Label120.Name = "Label120"
-        Me.Label120.Size = New System.Drawing.Size(73, 16)
-        Me.Label120.TabIndex = 140
-        Me.Label120.Text = "(Host) Start"
+        Me.btnResetQuestionsLevel.Location = New System.Drawing.Point(6, 76)
+        Me.btnResetQuestionsLevel.Name = "btnResetQuestionsLevel"
+        Me.btnResetQuestionsLevel.Size = New System.Drawing.Size(87, 64)
+        Me.btnResetQuestionsLevel.TabIndex = 1
+        Me.btnResetQuestionsLevel.Text = "Reset Used Questions (At Level)"
+        Me.btnResetQuestionsLevel.UseVisualStyleBackColor = True
         '
         'OptionsScreen
         '
@@ -3470,6 +3494,7 @@ Partial Class OptionsScreen
         Me.grpLifeline1.ResumeLayout(False)
         Me.grpLifeline1.PerformLayout()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabPage3.ResumeLayout(False)
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
@@ -3773,4 +3798,6 @@ Partial Class OptionsScreen
     Friend WithEvents Label119 As Label
     Friend WithEvents txtSndHostStart As TextBox
     Friend WithEvents Label120 As Label
+    Friend WithEvents btnResetQuestionsLevel As Button
+    Friend WithEvents btnResetQuestionsAll As Button
 End Class

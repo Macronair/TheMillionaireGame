@@ -70,6 +70,7 @@
             this.lblQuestionLevel = new System.Windows.Forms.Label();
             this.lblQuestionLevelText = new System.Windows.Forms.Label();
             this.trkQuestionLevel = new System.Windows.Forms.TrackBar();
+            this.chkQuestionUsed = new System.Windows.Forms.CheckBox();
             this.pnlFFFAnswer.SuspendLayout();
             this.pnlD.SuspendLayout();
             this.pnlB.SuspendLayout();
@@ -499,11 +500,22 @@
             this.trkQuestionLevel.TabIndex = 97;
             this.trkQuestionLevel.Value = 1;
             // 
+            // chkQuestionUsed
+            // 
+            this.chkQuestionUsed.AutoSize = true;
+            this.chkQuestionUsed.Location = new System.Drawing.Point(433, 180);
+            this.chkQuestionUsed.Name = "chkQuestionUsed";
+            this.chkQuestionUsed.Size = new System.Drawing.Size(104, 17);
+            this.chkQuestionUsed.TabIndex = 100;
+            this.chkQuestionUsed.Text = "Question is used";
+            this.chkQuestionUsed.UseVisualStyleBackColor = true;
+            // 
             // frmEditQuestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 528);
+            this.Controls.Add(this.chkQuestionUsed);
             this.Controls.Add(this.lblQuestionLevel);
             this.Controls.Add(this.lblQuestionLevelText);
             this.Controls.Add(this.trkQuestionLevel);
@@ -594,5 +606,6 @@
         public System.Windows.Forms.Label lblQuestionLevel;
         public System.Windows.Forms.Label lblQuestionLevelText;
         public System.Windows.Forms.TrackBar trkQuestionLevel;
+        public System.Windows.Forms.CheckBox chkQuestionUsed;
     }
 }

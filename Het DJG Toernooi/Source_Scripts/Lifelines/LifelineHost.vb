@@ -1,11 +1,12 @@
-﻿Public Class LifelineHost
-    Public Shared act As Integer = 0
-    Shared tmr As Timer
+﻿Imports System.Threading
 
+Public Class LifelineHost
+    Public Shared act As Integer = 0
 
     Public Shared Sub LifelineUse1()
         Select Case act
             Case 0
+                Question.useMusic = False
                 TVControlPnl.picLifelineUse.Image = My.Resources.ll_host
                 TVControlPnl.picLifelineUse.Visible = True
                 With Sounds.sndLifeline1
@@ -16,16 +17,15 @@
                 stopaudio.Start()
                 act = act + 1
             Case 1
-                tmr = New Timer
-                tmr.Interval = 500
-                AddHandler tmr.Tick, AddressOf PlayCue
                 TVControlPnl.picLifelineUse.Visible = False
                 TVControlPnl.picLifelineUse.Image = My.Resources.ll_switch
                 With Sounds.sndLifeline1
                     .URL = Sounds.SoundsPath + Profile.Options.snd_Host_End
                     .controls.play()
                 End With
-                tmr.Start()
+
+                Dim pc As Thread = New Thread(New ThreadStart(AddressOf PlayCue))
+                pc.Start()
 
                 LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
                 Select Case LifelineManager.CurrentActive
@@ -43,8 +43,8 @@
     End Sub
 
     Shared Sub PlayCue()
+        Thread.Sleep(500)
         Question.PlayQuestionCue()
-        tmr.Stop()
     End Sub
 
 End Class
