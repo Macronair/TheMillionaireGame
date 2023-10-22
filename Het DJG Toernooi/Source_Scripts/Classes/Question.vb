@@ -219,7 +219,7 @@ Public Class Question
             Select Case Game.level
                 Case 0
                     If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -229,7 +229,7 @@ Public Class Question
                     End With
                 Case 1
                     If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -239,7 +239,7 @@ Public Class Question
                     End With
                 Case 2
                     If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -249,7 +249,7 @@ Public Class Question
                     End With
                 Case 3
                     If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -259,7 +259,7 @@ Public Class Question
                     End With
                 Case 4
                     If Profile.Options.snd_Q1to5LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -269,7 +269,7 @@ Public Class Question
                     End With
                 Case 5
                     If Profile.Options.snd_Q6LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -279,7 +279,7 @@ Public Class Question
                     End With
                 Case 6
                     If Profile.Options.snd_Q7LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -289,7 +289,7 @@ Public Class Question
                     End With
                 Case 7
                     If Profile.Options.snd_Q8LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -299,7 +299,7 @@ Public Class Question
                     End With
                 Case 8
                     If Profile.Options.snd_Q9LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -309,7 +309,7 @@ Public Class Question
                     End With
                 Case 9
                     If Profile.Options.snd_Q10LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -319,7 +319,7 @@ Public Class Question
                     End With
                 Case 10
                     If Profile.Options.snd_Q11LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -329,7 +329,7 @@ Public Class Question
                     End With
                 Case 11
                     If Profile.Options.snd_Q12LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -339,7 +339,7 @@ Public Class Question
                     End With
                 Case 12
                     If Profile.Options.snd_Q13LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -349,7 +349,7 @@ Public Class Question
                     End With
                 Case 13
                     If Profile.Options.snd_Q14LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
@@ -359,7 +359,7 @@ Public Class Question
                     End With
                 Case 14
                     If Profile.Options.snd_Q15LightsDown_Stop = True Then
-                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lights", 200))
+                        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("lightsdown", 200))
                         stopmusic.Start()
                     End If
                     With Sounds.sndQuestion
