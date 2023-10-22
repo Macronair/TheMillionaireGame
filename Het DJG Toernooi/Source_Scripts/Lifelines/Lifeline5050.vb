@@ -20,12 +20,6 @@
         TVControlPnl.txtD.Text = ""
         HostScreen.lbl5050Used.ForeColor = Color.Cyan
 
-        TVControlPnl.picLifeline3.Image = My.Resources.ll_5050_used
-        HostScreen.picLifeline4.Image = My.Resources.ll_5050_used
-        GuestScreen.picLifeline4.Image = My.Resources.ll_5050_used
-        ControlPanel.btnLifeline3.Enabled = False
-        ControlPanel.chkLifeline3Unused.Checked = False
-
         If ControlPanel.lblAnswer.Text = "A" Then
             Dim rnd As New Random
             Dim rndint As Integer
