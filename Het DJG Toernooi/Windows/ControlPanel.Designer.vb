@@ -107,7 +107,6 @@ Partial Class ControlPanel
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
         Me.AboutToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.grpLifelines = New System.Windows.Forms.GroupBox()
-        Me.btnTestLifeline = New System.Windows.Forms.Button()
         Me.btnLifeline3 = New System.Windows.Forms.Button()
         Me.btnLifeline2 = New System.Windows.Forms.Button()
         Me.btnLifeline1 = New System.Windows.Forms.Button()
@@ -903,7 +902,6 @@ Partial Class ControlPanel
         '
         'grpLifelines
         '
-        Me.grpLifelines.Controls.Add(Me.btnTestLifeline)
         Me.grpLifelines.Controls.Add(Me.btnLifeline3)
         Me.grpLifelines.Controls.Add(Me.btnLifeline2)
         Me.grpLifelines.Controls.Add(Me.chkLifeline1Unused)
@@ -920,15 +918,6 @@ Partial Class ControlPanel
         Me.grpLifelines.TabIndex = 75
         Me.grpLifelines.TabStop = False
         Me.grpLifelines.Text = "Lifelines"
-        '
-        'btnTestLifeline
-        '
-        Me.btnTestLifeline.Location = New System.Drawing.Point(234, 84)
-        Me.btnTestLifeline.Name = "btnTestLifeline"
-        Me.btnTestLifeline.Size = New System.Drawing.Size(59, 23)
-        Me.btnTestLifeline.TabIndex = 86
-        Me.btnTestLifeline.Text = "2x"
-        Me.btnTestLifeline.UseVisualStyleBackColor = True
         '
         'btnLifeline3
         '
@@ -1289,7 +1278,6 @@ Partial Class ControlPanel
     Friend WithEvents grpHostMessages As GroupBox
     Friend WithEvents drpNextHostMessage As ComboBox
     Friend WithEvents btnClearHostMessages As Button
-    Friend WithEvents btnTestLifeline As Button
     Friend WithEvents ChangeBackgroundColorTVToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ChangeQuestionFontToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents X720720pToolStripMenuItem As ToolStripMenuItem

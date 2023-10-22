@@ -82,6 +82,8 @@ Public Class AppSettings
     Public Property snd_Switch0_ShowCorrect As String
     Public Property snd_Switch0_Clear As String
     Public Property snd_5050 As String
+    Public Property snd_Host_Start As String
+    Public Property snd_Host_End As String
 
     Public Property snd_Q1to5LightsDown As String
     Public Property snd_Q1to5LightsDown_Stop As Boolean
@@ -260,6 +262,8 @@ Public Class Profile
             Options.snd_Switch0_ShowCorrect = loadedvalues.snd_Switch0_ShowCorrect
             Options.snd_Switch0_Clear = loadedvalues.snd_Switch0_Clear
             Options.snd_5050 = loadedvalues.snd_5050
+            Options.snd_Host_Start = loadedvalues.snd_Host_Start
+            Options.snd_Host_End = loadedvalues.snd_Host_End
 
             Options.snd_Q1to5LightsDown = loadedvalues.snd_Q1to5LightsDown
             Options.snd_Q6LightsDown = loadedvalues.snd_Q6LightsDown
@@ -413,6 +417,8 @@ Public Class Profile
         Options.snd_Switch0_ShowCorrect = "stq_reveal_correct_answer.mp3"
         Options.snd_Switch0_Clear = "stq_new_question_flip.mp3"
         Options.snd_5050 = "fifty_fifty.mp3"
+        Options.snd_Host_Start = "host_bed.mp3"
+        Options.snd_Host_End = "host_end.mp3"
 
         Options.snd_Q1to5LightsDown = "q1_to_q5_lights_down.mp3"
         Options.snd_Q6LightsDown = "lights_down_classic.mp3"
@@ -564,6 +570,8 @@ Public Class Profile
         Options.snd_Switch0_ShowCorrect = OptionsScreen.txtSndSwitchShowCorrect.Text
         Options.snd_Switch0_Clear = OptionsScreen.txtSndSwitchClear.Text
         Options.snd_5050 = OptionsScreen.txtSnd5050Use.Text
+        Options.snd_Host_Start = OptionsScreen.txtSndHostStart.Text
+        Options.snd_Host_End = OptionsScreen.txtSndHostEnd.Text
 
         Options.snd_Q1to5LightsDown = OptionsScreen.txtSndQ1to5LD.Text
         Options.snd_Q6LightsDown = OptionsScreen.txtSndQ6LD.Text

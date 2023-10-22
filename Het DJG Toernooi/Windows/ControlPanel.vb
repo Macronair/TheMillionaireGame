@@ -627,7 +627,7 @@ Public Class ControlPanel
         End If
     End Sub
 
-    Private Sub btnTestLifeline_Click(sender As Object, e As EventArgs) Handles btnTestLifeline.Click
+    Private Sub btnTestLifeline_Click(sender As Object, e As EventArgs)
         LifeLineDouble.LifelineUse1()
     End Sub
 

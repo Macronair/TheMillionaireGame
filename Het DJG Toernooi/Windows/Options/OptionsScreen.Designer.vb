@@ -314,6 +314,10 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
+        Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
+        Me.Label119 = New System.Windows.Forms.Label()
+        Me.txtSndHostStart = New System.Windows.Forms.TextBox()
+        Me.Label120 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -974,6 +978,10 @@ Partial Class OptionsScreen
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtSndHostEnd)
+        Me.TabPage2.Controls.Add(Me.Label119)
+        Me.TabPage2.Controls.Add(Me.txtSndHostStart)
+        Me.TabPage2.Controls.Add(Me.Label120)
         Me.TabPage2.Controls.Add(Me.txtSndDD2ndFinal)
         Me.TabPage2.Controls.Add(Me.Label110)
         Me.TabPage2.Controls.Add(Me.txtSndDD2ndAnswer)
@@ -1080,7 +1088,7 @@ Partial Class OptionsScreen
         '
         'txtSndDD2ndFinal
         '
-        Me.txtSndDD2ndFinal.Location = New System.Drawing.Point(1069, 309)
+        Me.txtSndDD2ndFinal.Location = New System.Drawing.Point(1069, 286)
         Me.txtSndDD2ndFinal.Name = "txtSndDD2ndFinal"
         Me.txtSndDD2ndFinal.ReadOnly = True
         Me.txtSndDD2ndFinal.Size = New System.Drawing.Size(127, 22)
@@ -1090,7 +1098,7 @@ Partial Class OptionsScreen
         '
         Me.Label110.AutoSize = True
         Me.Label110.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label110.Location = New System.Drawing.Point(926, 312)
+        Me.Label110.Location = New System.Drawing.Point(926, 289)
         Me.Label110.Name = "Label110"
         Me.Label110.Size = New System.Drawing.Size(92, 16)
         Me.Label110.TabIndex = 138
@@ -1098,7 +1106,7 @@ Partial Class OptionsScreen
         '
         'txtSndDD2ndAnswer
         '
-        Me.txtSndDD2ndAnswer.Location = New System.Drawing.Point(1069, 281)
+        Me.txtSndDD2ndAnswer.Location = New System.Drawing.Point(1069, 258)
         Me.txtSndDD2ndAnswer.Name = "txtSndDD2ndAnswer"
         Me.txtSndDD2ndAnswer.ReadOnly = True
         Me.txtSndDD2ndAnswer.Size = New System.Drawing.Size(127, 22)
@@ -1108,7 +1116,7 @@ Partial Class OptionsScreen
         '
         Me.Label107.AutoSize = True
         Me.Label107.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label107.Location = New System.Drawing.Point(926, 284)
+        Me.Label107.Location = New System.Drawing.Point(926, 261)
         Me.Label107.Name = "Label107"
         Me.Label107.Size = New System.Drawing.Size(105, 16)
         Me.Label107.TabIndex = 136
@@ -1116,7 +1124,7 @@ Partial Class OptionsScreen
         '
         'txtSndDD1stFinal
         '
-        Me.txtSndDD1stFinal.Location = New System.Drawing.Point(1069, 253)
+        Me.txtSndDD1stFinal.Location = New System.Drawing.Point(1069, 230)
         Me.txtSndDD1stFinal.Name = "txtSndDD1stFinal"
         Me.txtSndDD1stFinal.ReadOnly = True
         Me.txtSndDD1stFinal.Size = New System.Drawing.Size(127, 22)
@@ -1126,7 +1134,7 @@ Partial Class OptionsScreen
         '
         Me.Label108.AutoSize = True
         Me.Label108.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label108.Location = New System.Drawing.Point(926, 256)
+        Me.Label108.Location = New System.Drawing.Point(926, 233)
         Me.Label108.Name = "Label108"
         Me.Label108.Size = New System.Drawing.Size(134, 16)
         Me.Label108.TabIndex = 134
@@ -1134,7 +1142,7 @@ Partial Class OptionsScreen
         '
         'txtSndDD1stAnswer
         '
-        Me.txtSndDD1stAnswer.Location = New System.Drawing.Point(1069, 225)
+        Me.txtSndDD1stAnswer.Location = New System.Drawing.Point(1069, 202)
         Me.txtSndDD1stAnswer.Name = "txtSndDD1stAnswer"
         Me.txtSndDD1stAnswer.ReadOnly = True
         Me.txtSndDD1stAnswer.Size = New System.Drawing.Size(127, 22)
@@ -1144,7 +1152,7 @@ Partial Class OptionsScreen
         '
         Me.Label109.AutoSize = True
         Me.Label109.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label109.Location = New System.Drawing.Point(926, 228)
+        Me.Label109.Location = New System.Drawing.Point(926, 205)
         Me.Label109.Name = "Label109"
         Me.Label109.Size = New System.Drawing.Size(100, 16)
         Me.Label109.TabIndex = 132
@@ -1244,7 +1252,7 @@ Partial Class OptionsScreen
         '
         'txtSnd5050Use
         '
-        Me.txtSnd5050Use.Location = New System.Drawing.Point(1069, 458)
+        Me.txtSnd5050Use.Location = New System.Drawing.Point(1069, 399)
         Me.txtSnd5050Use.Name = "txtSnd5050Use"
         Me.txtSnd5050Use.ReadOnly = True
         Me.txtSnd5050Use.Size = New System.Drawing.Size(127, 22)
@@ -1254,7 +1262,7 @@ Partial Class OptionsScreen
         '
         Me.Label39.AutoSize = True
         Me.Label39.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.Location = New System.Drawing.Point(926, 461)
+        Me.Label39.Location = New System.Drawing.Point(926, 402)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(74, 16)
         Me.Label39.TabIndex = 115
@@ -1262,7 +1270,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchClear
         '
-        Me.txtSndSwitchClear.Location = New System.Drawing.Point(1069, 411)
+        Me.txtSndSwitchClear.Location = New System.Drawing.Point(1069, 370)
         Me.txtSndSwitchClear.Name = "txtSndSwitchClear"
         Me.txtSndSwitchClear.ReadOnly = True
         Me.txtSndSwitchClear.Size = New System.Drawing.Size(127, 22)
@@ -1272,7 +1280,7 @@ Partial Class OptionsScreen
         '
         Me.Label36.AutoSize = True
         Me.Label36.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label36.Location = New System.Drawing.Point(926, 414)
+        Me.Label36.Location = New System.Drawing.Point(926, 373)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(144, 16)
         Me.Label36.TabIndex = 112
@@ -1280,7 +1288,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchShowCorrect
         '
-        Me.txtSndSwitchShowCorrect.Location = New System.Drawing.Point(1069, 383)
+        Me.txtSndSwitchShowCorrect.Location = New System.Drawing.Point(1069, 342)
         Me.txtSndSwitchShowCorrect.Name = "txtSndSwitchShowCorrect"
         Me.txtSndSwitchShowCorrect.ReadOnly = True
         Me.txtSndSwitchShowCorrect.Size = New System.Drawing.Size(127, 22)
@@ -1290,7 +1298,7 @@ Partial Class OptionsScreen
         '
         Me.Label37.AutoSize = True
         Me.Label37.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label37.Location = New System.Drawing.Point(926, 386)
+        Me.Label37.Location = New System.Drawing.Point(926, 345)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(135, 16)
         Me.Label37.TabIndex = 109
@@ -1298,7 +1306,7 @@ Partial Class OptionsScreen
         '
         'txtSndSwitchActivate
         '
-        Me.txtSndSwitchActivate.Location = New System.Drawing.Point(1069, 355)
+        Me.txtSndSwitchActivate.Location = New System.Drawing.Point(1069, 314)
         Me.txtSndSwitchActivate.Name = "txtSndSwitchActivate"
         Me.txtSndSwitchActivate.ReadOnly = True
         Me.txtSndSwitchActivate.Size = New System.Drawing.Size(127, 22)
@@ -1308,7 +1316,7 @@ Partial Class OptionsScreen
         '
         Me.Label38.AutoSize = True
         Me.Label38.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label38.Location = New System.Drawing.Point(926, 358)
+        Me.Label38.Location = New System.Drawing.Point(926, 316)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(104, 16)
         Me.Label38.TabIndex = 106
@@ -1316,7 +1324,7 @@ Partial Class OptionsScreen
         '
         'txtSndP1EndEarly
         '
-        Me.txtSndP1EndEarly.Location = New System.Drawing.Point(1069, 184)
+        Me.txtSndP1EndEarly.Location = New System.Drawing.Point(1069, 174)
         Me.txtSndP1EndEarly.Name = "txtSndP1EndEarly"
         Me.txtSndP1EndEarly.ReadOnly = True
         Me.txtSndP1EndEarly.Size = New System.Drawing.Size(127, 22)
@@ -1326,7 +1334,7 @@ Partial Class OptionsScreen
         '
         Me.Label33.AutoSize = True
         Me.Label33.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label33.Location = New System.Drawing.Point(926, 187)
+        Me.Label33.Location = New System.Drawing.Point(926, 177)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(98, 16)
         Me.Label33.TabIndex = 103
@@ -1334,7 +1342,7 @@ Partial Class OptionsScreen
         '
         'txtSndP1Clock
         '
-        Me.txtSndP1Clock.Location = New System.Drawing.Point(1069, 156)
+        Me.txtSndP1Clock.Location = New System.Drawing.Point(1069, 146)
         Me.txtSndP1Clock.Name = "txtSndP1Clock"
         Me.txtSndP1Clock.ReadOnly = True
         Me.txtSndP1Clock.Size = New System.Drawing.Size(127, 22)
@@ -1344,7 +1352,7 @@ Partial Class OptionsScreen
         '
         Me.Label34.AutoSize = True
         Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label34.Location = New System.Drawing.Point(926, 159)
+        Me.Label34.Location = New System.Drawing.Point(926, 149)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(98, 16)
         Me.Label34.TabIndex = 100
@@ -1352,7 +1360,7 @@ Partial Class OptionsScreen
         '
         'txtSndP1Start
         '
-        Me.txtSndP1Start.Location = New System.Drawing.Point(1069, 128)
+        Me.txtSndP1Start.Location = New System.Drawing.Point(1069, 118)
         Me.txtSndP1Start.Name = "txtSndP1Start"
         Me.txtSndP1Start.ReadOnly = True
         Me.txtSndP1Start.Size = New System.Drawing.Size(127, 22)
@@ -1362,7 +1370,7 @@ Partial Class OptionsScreen
         '
         Me.Label35.AutoSize = True
         Me.Label35.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label35.Location = New System.Drawing.Point(926, 131)
+        Me.Label35.Location = New System.Drawing.Point(926, 121)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(59, 16)
         Me.Label35.TabIndex = 97
@@ -3391,6 +3399,42 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
+        'txtSndHostEnd
+        '
+        Me.txtSndHostEnd.Location = New System.Drawing.Point(1069, 456)
+        Me.txtSndHostEnd.Name = "txtSndHostEnd"
+        Me.txtSndHostEnd.ReadOnly = True
+        Me.txtSndHostEnd.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndHostEnd.TabIndex = 143
+        '
+        'Label119
+        '
+        Me.Label119.AutoSize = True
+        Me.Label119.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label119.Location = New System.Drawing.Point(926, 459)
+        Me.Label119.Name = "Label119"
+        Me.Label119.Size = New System.Drawing.Size(70, 16)
+        Me.Label119.TabIndex = 142
+        Me.Label119.Text = "(Host) End"
+        '
+        'txtSndHostStart
+        '
+        Me.txtSndHostStart.Location = New System.Drawing.Point(1069, 428)
+        Me.txtSndHostStart.Name = "txtSndHostStart"
+        Me.txtSndHostStart.ReadOnly = True
+        Me.txtSndHostStart.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndHostStart.TabIndex = 141
+        '
+        'Label120
+        '
+        Me.Label120.AutoSize = True
+        Me.Label120.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label120.Location = New System.Drawing.Point(926, 431)
+        Me.Label120.Name = "Label120"
+        Me.Label120.Size = New System.Drawing.Size(73, 16)
+        Me.Label120.TabIndex = 140
+        Me.Label120.Text = "(Host) Start"
+        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3725,4 +3769,8 @@ Partial Class OptionsScreen
     Friend WithEvents chkFullScrGuestScreen As CheckBox
     Friend WithEvents chkFullScrHostScreen As CheckBox
     Friend WithEvents tmrEnableIdentifyButton As Timer
+    Friend WithEvents txtSndHostEnd As TextBox
+    Friend WithEvents Label119 As Label
+    Friend WithEvents txtSndHostStart As TextBox
+    Friend WithEvents Label120 As Label
 End Class

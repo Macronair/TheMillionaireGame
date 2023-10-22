@@ -37,7 +37,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.475.0</ApplicationVersion>
+    <ApplicationVersion>1.1.478.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -140,6 +140,7 @@
     <Compile Include="Source_Scripts\DatabaseAndSettings\Message.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
     <Compile Include="Source_Scripts\Classes\Sounds.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifelineHost.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\Screens_Views\Monitor.vb" />
     <Compile Include="Windows\About\About.Designer.vb">

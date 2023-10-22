@@ -947,11 +947,11 @@ Partial Class TVControlPnl
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.pnlFFFPlayers)
+        Me.Controls.Add(Me.picTree)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "TVControlPnl"

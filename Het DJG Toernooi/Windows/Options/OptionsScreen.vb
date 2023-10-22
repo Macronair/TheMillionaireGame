@@ -114,11 +114,19 @@
         txtSndP1Clock.Text = Profile.Options.snd_P1_Clock
         txtSndP1EndEarly.Text = Profile.Options.snd_P1_EndEarly
 
+        txtSndDD1stAnswer.Text = Profile.Options.snd_Double_1stAnswer
+        txtSndDD1stFinal.Text = Profile.Options.snd_Double_1stFinal
+        txtSndDD2ndAnswer.Text = Profile.Options.snd_Double_2ndAnswer
+        txtSndDD2ndFinal.Text = Profile.Options.snd_Double_2ndFinal
+
         txtSndSwitchActivate.Text = Profile.Options.snd_Switch0_Activate
         txtSndSwitchShowCorrect.Text = Profile.Options.snd_Switch0_ShowCorrect
         txtSndSwitchClear.Text = Profile.Options.snd_Switch0_Clear
 
         txtSnd5050Use.Text = Profile.Options.snd_5050
+
+        txtSndHostStart.Text = Profile.Options.snd_Host_Start
+        txtSndHostEnd.Text = Profile.Options.snd_Host_End
 
         txtSndQ1to5LD.Text = Profile.Options.snd_Q1to5LightsDown
         txtSndQ6LD.Text = Profile.Options.snd_Q6LightsDown
@@ -232,7 +240,7 @@
     txtSndFOrder2.MouseDoubleClick, txtSndFOrder1.MouseDoubleClick, txtSndFMeet8.MouseDoubleClick, txtSndFMeet7.MouseDoubleClick, txtSndFMeet6.MouseDoubleClick,
     txtSndFMeet5.MouseDoubleClick, txtSndFMeet4.MouseDoubleClick, txtSndFMeet3.MouseDoubleClick, txtSndFMeet2.MouseDoubleClick, txtSndExplainRules.MouseDoubleClick,
     txtSndCommercialOut.MouseDoubleClick, txtSndCommercialIn.MouseDoubleClick, txtSndClosing.MouseDoubleClick, txtSndATAVoting.MouseDoubleClick, txtSndATAStart.MouseDoubleClick,
-    txtSndATAEnd.MouseDoubleClick, txtSnd5050Use.MouseDoubleClick, TabPage2.MouseDoubleClick
+    txtSndATAEnd.MouseDoubleClick, txtSnd5050Use.MouseDoubleClick, txtSndDD1stAnswer.MouseDoubleClick, txtSndDD1stFinal.MouseDoubleClick, txtSndDD2ndAnswer.MouseDoubleClick, txtSndDD2ndFinal.MouseDoubleClick
 
         Dim t As TextBox = DirectCast(sender, TextBox)
         t.Text = GetSoundFile(t.Text)

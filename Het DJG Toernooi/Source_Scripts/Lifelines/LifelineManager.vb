@@ -24,7 +24,7 @@
                     Case "double_dip"
                         LifeLineDouble.LifelineUse1()
                     Case "ask_host"
-                        ' Ask the Host class here
+                        LifelineHost.LifelineUse1()
                 End Select
             Case 2
                 Select Case Profile.Options.Lifeline2
@@ -39,7 +39,7 @@
                     Case "double_dip"
                         LifeLineDouble.LifelineUse1()
                     Case "ask_host"
-                        ' Ask the Host class here
+                        LifelineHost.LifelineUse1()
                 End Select
             Case 3
                 Select Case Profile.Options.Lifeline3
@@ -54,7 +54,7 @@
                     Case "double_dip"
                         LifeLineDouble.LifelineUse1()
                     Case "ask_host"
-                        ' Ask the Host class here
+                        LifelineHost.LifelineUse1()
                 End Select
             Case 4
                 Select Case Profile.Options.Lifeline4
@@ -69,7 +69,7 @@
                     Case "double_dip"
                         LifeLineDouble.LifelineUse1()
                     Case "ask_host"
-                        ' Ask the Host class here
+                        LifelineHost.LifelineUse1()
                 End Select
         End Select
     End Sub
@@ -267,21 +267,25 @@
                     HostScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
                     GuestScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
                     TVControlPnl.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                    Lifeline1_Used = True
                 Case 2
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline2)
                     HostScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
                     GuestScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
                     TVControlPnl.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                    Lifeline2_Used = True
                 Case 3
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline3)
                     HostScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
                     GuestScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
                     TVControlPnl.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                    Lifeline3_Used = True
                 Case 4
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline4)
                     HostScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
                     GuestScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
                     TVControlPnl.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+                    Lifeline4_Used = True
             End Select
         Else
             Select Case LifelineNumber
@@ -290,21 +294,25 @@
                     HostScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
                     GuestScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
                     TVControlPnl.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                    Lifeline1_Used = False
                 Case 2
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     HostScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     GuestScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     TVControlPnl.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                    Lifeline2_Used = False
                 Case 3
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     HostScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     GuestScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     TVControlPnl.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                    Lifeline3_Used = False
                 Case 4
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     HostScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     GuestScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     TVControlPnl.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                    Lifeline4_Used = False
             End Select
         End If
     End Sub
