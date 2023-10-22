@@ -268,12 +268,13 @@
             Case 1      ' Change to risk mode
                 gamemode = 1
                 SetValues()
-                ControlPanel.intSound += 1
 
-                With ControlPanel.snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(9, False, 1000)
+                Dim enable As New WMPLib.WindowsMediaPlayer
+                With enable
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_RiskModeActive
+                    .controls.play()
                 End With
+
                 ControlPanel.btnUnlockSwitch.Text = "RISK MODE ON"
                 ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
         End Select
