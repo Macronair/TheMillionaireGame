@@ -412,7 +412,7 @@ Public Class Profile
         Options.snd_Double_1stAnswer = "doubledip_start.mp3"
         Options.snd_Double_1stFinal = "doubledip_final1.mp3"
         Options.snd_Double_2ndAnswer = "doubledip_wrong.mp3"
-        Options.snd_Double_2ndFinal = "doubledip_final1.mp3"
+        Options.snd_Double_2ndFinal = "doubledip_final2.mp3"
         Options.snd_Switch0_Activate = "lifeline_4_on.mp3"
         Options.snd_Switch0_ShowCorrect = "stq_reveal_correct_answer.mp3"
         Options.snd_Switch0_Clear = "stq_new_question_flip.mp3"

@@ -30,7 +30,9 @@ Partial Class About
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.lblVersion = New System.Windows.Forms.Label()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -62,18 +64,19 @@ Partial Class About
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(173, 106)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(174, 16)
+        Me.Label3.Size = New System.Drawing.Size(172, 16)
         Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Made by Marco (Maerciezz)"
+        Me.Label3.Text = "Made by Marco (Macronair)"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(-68, 14)
+        Me.PictureBox1.BackgroundImage = CType(resources.GetObject("PictureBox1.BackgroundImage"), System.Drawing.Image)
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.PictureBox1.Location = New System.Drawing.Point(-8, -5)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(302, 172)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.Size = New System.Drawing.Size(915, 548)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox1.TabIndex = 3
         Me.PictureBox1.TabStop = False
         '
@@ -93,7 +96,7 @@ Partial Class About
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(173, 135)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(57, 16)
+        Me.Label4.Size = New System.Drawing.Size(56, 16)
         Me.Label4.TabIndex = 5
         Me.Label4.Text = "Version:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -101,18 +104,31 @@ Partial Class About
         'lblVersion
         '
         Me.lblVersion.AutoSize = True
+        Me.lblVersion.BackColor = System.Drawing.Color.Transparent
         Me.lblVersion.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblVersion.Location = New System.Drawing.Point(240, 135)
         Me.lblVersion.Name = "lblVersion"
-        Me.lblVersion.Size = New System.Drawing.Size(45, 16)
+        Me.lblVersion.Size = New System.Drawing.Size(44, 16)
         Me.lblVersion.TabIndex = 6
         Me.lblVersion.Text = "0.0.0.0"
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(12, 40)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(136, 128)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox2.TabIndex = 7
+        Me.PictureBox2.TabStop = False
         '
         'About
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(414, 209)
+        Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Button1)
@@ -124,6 +140,7 @@ Partial Class About
         Me.Name = "About"
         Me.Text = "About - Millionaire Game"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -136,4 +153,5 @@ Partial Class About
     Friend WithEvents Button1 As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents lblVersion As Label
+    Friend WithEvents PictureBox2 As PictureBox
 End Class

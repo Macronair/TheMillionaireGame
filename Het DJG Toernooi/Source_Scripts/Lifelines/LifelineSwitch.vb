@@ -13,6 +13,9 @@
             HostScreen.lblSwitchUsed.ForeColor = Color.Cyan
             HostScreen.pnlAnswer.BackColor = Color.LightGray
             act = 1
+
+            ControlPanel.txtHostMessages.AppendText("SWITCH ACTIVATED." + Environment.NewLine)
+            HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "SWITCH ACTIVATED."
         ElseIf act = 1 Then
             Dim cor_seq As New WMPLib.WindowsMediaPlayer
             cor_seq.URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_ShowCorrect

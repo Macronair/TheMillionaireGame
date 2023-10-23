@@ -418,7 +418,6 @@ Partial Class HostScreen
         Me.txtD.Name = "txtD"
         Me.txtD.Size = New System.Drawing.Size(476, 46)
         Me.txtD.TabIndex = 19
-        Me.txtD.Text = "D:"
         Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlB
@@ -440,7 +439,6 @@ Partial Class HostScreen
         Me.txtB.Name = "txtB"
         Me.txtB.Size = New System.Drawing.Size(476, 45)
         Me.txtB.TabIndex = 19
-        Me.txtB.Text = "B:"
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlC
@@ -462,7 +460,6 @@ Partial Class HostScreen
         Me.txtC.Name = "txtC"
         Me.txtC.Size = New System.Drawing.Size(476, 46)
         Me.txtC.TabIndex = 18
-        Me.txtC.Text = "C:"
         Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlA
@@ -484,7 +481,6 @@ Partial Class HostScreen
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(476, 45)
         Me.txtA.TabIndex = 17
-        Me.txtA.Text = "A:"
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picQuestion

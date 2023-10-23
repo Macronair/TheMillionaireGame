@@ -80,6 +80,8 @@ Partial Class OptionsScreen
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnResetQuestionsLevel = New System.Windows.Forms.Button()
+        Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
         Me.Label119 = New System.Windows.Forms.Label()
@@ -318,8 +320,9 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
-        Me.btnResetQuestionsLevel = New System.Windows.Forms.Button()
+        Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -355,6 +358,9 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.CheckBox2)
+        Me.TabPage1.Controls.Add(Me.CheckBox1)
+        Me.TabPage1.Controls.Add(Me.chkClearHostMessages)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
         Me.TabPage1.Controls.Add(Me.GroupBox1)
@@ -523,7 +529,7 @@ Partial Class OptionsScreen
         Me.GroupBox2.Size = New System.Drawing.Size(607, 110)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Question Skins"
+        Me.GroupBox2.Text = "Winning strap texture"
         '
         'radStrapBlack
         '
@@ -981,6 +987,24 @@ Partial Class OptionsScreen
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Database"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'btnResetQuestionsLevel
+        '
+        Me.btnResetQuestionsLevel.Location = New System.Drawing.Point(6, 76)
+        Me.btnResetQuestionsLevel.Name = "btnResetQuestionsLevel"
+        Me.btnResetQuestionsLevel.Size = New System.Drawing.Size(87, 64)
+        Me.btnResetQuestionsLevel.TabIndex = 1
+        Me.btnResetQuestionsLevel.Text = "Reset Used Questions (At Level)"
+        Me.btnResetQuestionsLevel.UseVisualStyleBackColor = True
+        '
+        'btnResetQuestionsAll
+        '
+        Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 6)
+        Me.btnResetQuestionsAll.Name = "btnResetQuestionsAll"
+        Me.btnResetQuestionsAll.Size = New System.Drawing.Size(87, 64)
+        Me.btnResetQuestionsAll.TabIndex = 0
+        Me.btnResetQuestionsAll.Text = "Reset Used Questions (All)"
+        Me.btnResetQuestionsAll.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -3441,23 +3465,35 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'btnResetQuestionsAll
+        'chkClearHostMessages
         '
-        Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 6)
-        Me.btnResetQuestionsAll.Name = "btnResetQuestionsAll"
-        Me.btnResetQuestionsAll.Size = New System.Drawing.Size(87, 64)
-        Me.btnResetQuestionsAll.TabIndex = 0
-        Me.btnResetQuestionsAll.Text = "Reset Used Questions (All)"
-        Me.btnResetQuestionsAll.UseVisualStyleBackColor = True
+        Me.chkClearHostMessages.AutoSize = True
+        Me.chkClearHostMessages.Location = New System.Drawing.Point(628, 18)
+        Me.chkClearHostMessages.Name = "chkClearHostMessages"
+        Me.chkClearHostMessages.Size = New System.Drawing.Size(451, 20)
+        Me.chkClearHostMessages.TabIndex = 3
+        Me.chkClearHostMessages.Text = "Clear Host Messages box on Host screen when new question is loaded."
+        Me.chkClearHostMessages.UseVisualStyleBackColor = True
         '
-        'btnResetQuestionsLevel
+        'CheckBox1
         '
-        Me.btnResetQuestionsLevel.Location = New System.Drawing.Point(6, 76)
-        Me.btnResetQuestionsLevel.Name = "btnResetQuestionsLevel"
-        Me.btnResetQuestionsLevel.Size = New System.Drawing.Size(87, 64)
-        Me.btnResetQuestionsLevel.TabIndex = 1
-        Me.btnResetQuestionsLevel.Text = "Reset Used Questions (At Level)"
-        Me.btnResetQuestionsLevel.UseVisualStyleBackColor = True
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(628, 44)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(360, 20)
+        Me.CheckBox1.TabIndex = 4
+        Me.CheckBox1.Text = "Auto-show Total Winnings when 'Bye Bye' cue is played."
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(628, 70)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(431, 20)
+        Me.CheckBox2.TabIndex = 5
+        Me.CheckBox2.Text = "Show answer on host screen only when contestant gave final answer."
+        Me.CheckBox2.UseVisualStyleBackColor = True
         '
         'OptionsScreen
         '
@@ -3474,6 +3510,7 @@ Partial Class OptionsScreen
         Me.Text = "Options - The Millionaire Game"
         Me.tabOptions.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -3800,4 +3837,7 @@ Partial Class OptionsScreen
     Friend WithEvents Label120 As Label
     Friend WithEvents btnResetQuestionsLevel As Button
     Friend WithEvents btnResetQuestionsAll As Button
+    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents chkClearHostMessages As CheckBox
+    Friend WithEvents CheckBox2 As CheckBox
 End Class

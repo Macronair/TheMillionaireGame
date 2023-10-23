@@ -16,6 +16,9 @@ Public Class LifelineHost
                 Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("question", 100))
                 stopaudio.Start()
                 act = act + 1
+
+                ControlPanel.txtHostMessages.AppendText("ASK THE HOST ACTIVATED." + Environment.NewLine)
+                HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "ASK THE HOST ACTIVATED."
             Case 1
                 TVControlPnl.picLifelineUse.Visible = False
                 TVControlPnl.picLifelineUse.Image = My.Resources.ll_switch

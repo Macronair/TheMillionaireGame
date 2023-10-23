@@ -173,7 +173,7 @@ Partial Class TVControlPnl1080
         'txtA
         '
         Me.txtA.BackColor = System.Drawing.Color.Transparent
-        Me.txtA.Font = New System.Drawing.Font("Calibri", 32.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtA.Font = New System.Drawing.Font("Calibri", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtA.ForeColor = System.Drawing.Color.White
         Me.txtA.Location = New System.Drawing.Point(185, 7)
         Me.txtA.Name = "txtA"
@@ -197,7 +197,7 @@ Partial Class TVControlPnl1080
         'txtQuestion
         '
         Me.txtQuestion.BackColor = System.Drawing.Color.Transparent
-        Me.txtQuestion.Font = New System.Drawing.Font("Calibri", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuestion.Font = New System.Drawing.Font("Calibri", 30.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuestion.ForeColor = System.Drawing.Color.White
         Me.txtQuestion.Location = New System.Drawing.Point(198, 8)
         Me.txtQuestion.Name = "txtQuestion"

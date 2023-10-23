@@ -158,6 +158,9 @@
                 ControlPanel.chkLifeline4Unused.Checked = False
         End Select
 
+        ControlPanel.txtHostMessages.AppendText("50:50 ACTIVATED." + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "50:50 ACTIVATED."
+
         With Sounds.sndLifeline1
             .URL = Sounds.SoundsPath + Profile.Options.snd_5050
             .controls.play()

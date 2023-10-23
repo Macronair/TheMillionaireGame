@@ -20,6 +20,11 @@ Public Class LifeLineDouble
         Dim stopaudio As New Thread(Sub() Sounds.StopAudio("question", 150))
         stopaudio.Start()
 
+        ControlPanel.txtHostMessages.AppendText("DOUBLE DIP ACTIVATED. (NO WALK AWAY)" + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "DOUBLE DIP ACTIVATED. (NO WALK AWAY)"
+        ControlPanel.txtHostMessages.AppendText("WHAT IS THE FIRST ANSWER?" + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "WHAT IS THE FIRST ANSWER?"
+
         LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
         Select Case LifelineManager.CurrentActive
             Case 1
@@ -36,13 +41,16 @@ Public Class LifeLineDouble
     Public Shared Sub FinalAnswer()
         Dim stopmusic1 As Thread = New Thread(AddressOf StopCue1)
         stopmusic1.Start()
-        If chance = 2 Then
-            dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stFinal
-        ElseIf chance = 1 Then
-            dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndFinal
-            chance = 0
-            active = False
-        End If
+        Select Case chance
+            Case 2
+                dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stFinal
+                chance = 1
+            Case 1
+                HostScreen.lblAnswer.Visible = True
+                dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndFinal
+                chance = 0
+                active = False
+        End Select
         dd_Final.controls.play()
     End Sub
 
@@ -52,6 +60,8 @@ Public Class LifeLineDouble
         dd_Wrong.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndAnswer
         dd_Wrong.controls.play()
         chance = 1
+        ControlPanel.txtHostMessages.AppendText("WHAT IS THE SECOND/LAST ANSWER?" + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "WHAT IS THE SECOND/LAST ANSWER?"
     End Sub
 
     Public Shared Sub StopCue1()

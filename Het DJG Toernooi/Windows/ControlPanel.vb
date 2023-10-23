@@ -262,12 +262,12 @@ Public Class ControlPanel
             Case < 11
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway1
-                    .options.play()
+                    .controls.play()
                 End With
             Case >= 11
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway2
-                    .options.play()
+                    .controls.play()
                 End With
         End Select
 
@@ -456,6 +456,11 @@ Public Class ControlPanel
         HostScreen.lblExplainRules.ForeColor = Color.Blue
     End Sub
 
+    Dim ping1 As New WMPLib.WindowsMediaPlayer
+    Dim ping2 As New WMPLib.WindowsMediaPlayer
+    Dim ping3 As New WMPLib.WindowsMediaPlayer
+    Dim ping4 As New WMPLib.WindowsMediaPlayer
+
     Private Sub btnLL1_Click(sender As Object, e As EventArgs) Handles btnLL1.Click
         btnLifeline1.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         HostScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
@@ -463,8 +468,7 @@ Public Class ControlPanel
         TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         tmrLifelineBling.Start()
 
-        Dim ping As New WMPLib.WindowsMediaPlayer
-        With ping
+        With ping1
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline1Ping
             .controls.play()
         End With
@@ -477,8 +481,7 @@ Public Class ControlPanel
         TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         tmrLifelineBling.Start()
 
-        Dim ping As New WMPLib.WindowsMediaPlayer
-        With ping
+        With ping2
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline2Ping
             .controls.play()
         End With
@@ -491,8 +494,7 @@ Public Class ControlPanel
         TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         tmrLifelineBling.Start()
 
-        Dim ping As New WMPLib.WindowsMediaPlayer
-        With ping
+        With ping3
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline3Ping
             .controls.play()
         End With
@@ -505,8 +507,7 @@ Public Class ControlPanel
         TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         tmrLifelineBling.Start()
 
-        Dim ping As New WMPLib.WindowsMediaPlayer
-        With ping
+        With ping4
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline4Ping
             .controls.play()
         End With

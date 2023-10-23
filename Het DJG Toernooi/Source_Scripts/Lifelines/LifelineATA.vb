@@ -24,6 +24,9 @@
                 Question.useMusic = False
                 HostScreen.lblVoteUsed.ForeColor = Color.Cyan
                 act = 1
+
+                ControlPanel.txtHostMessages.AppendText("AUDIENCE ACTIVATED." + Environment.NewLine)
+                HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "AUDIENCE ACTIVATED."
             Case 1
                 With Sounds.sndLifeline2
                     .URL = Sounds.SoundsPath + Profile.Options.snd_ATA_Voting
@@ -160,12 +163,6 @@
                 End Select
 
                 Question.PlayQuestionCue()
-
-                ControlPanel.btnLifeline1.Enabled = False
-                ControlPanel.chkLifeline1Unused.Checked = False
-                HostScreen.picLifeline2.Image = My.Resources.ll_audience_used
-                GuestScreen.picLifeline2.Image = My.Resources.ll_audience_used
-                TVControlPnl.picLifeline1.Image = My.Resources.ll_audience_used
                 act = 0
         End Select
 

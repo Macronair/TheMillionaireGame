@@ -256,6 +256,8 @@
             HostScreen.lblQLeft.Text = Game.varQLeft
             HostScreen.lblWrong.Text = Game.varWrong
         End If
+
+        CheckLifelineAvailability()
     End Sub
 
     Public Shared Sub ChangeMode(ByVal newmode As Integer)

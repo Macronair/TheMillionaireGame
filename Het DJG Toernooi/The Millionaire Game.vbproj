@@ -37,7 +37,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.486.0</ApplicationVersion>
+    <ApplicationVersion>1.1.505.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -81,7 +81,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo21.ico</ApplicationIcon>
+    <ApplicationIcon>logo23.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -428,6 +428,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo21.ico" />
+    <Content Include="logo23.ico" />
     <None Include="Resources\ll_switch_used.png" />
     <None Include="Resources\ll_switch_glint.png" />
     <None Include="Resources\ll_switch.png" />

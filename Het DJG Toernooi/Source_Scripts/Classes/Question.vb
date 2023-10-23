@@ -372,6 +372,7 @@ Public Class Question
     End Sub
 
     Public Shared Sub PlayFinalAnswerCue()
+        useMusic = False
         If Game.walkaway = False Then
             If Game.level > 4 Then
                 Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 150))
@@ -524,10 +525,17 @@ Public Class Question
                         End With
                     Case 9
                         Sounds.sndQuestion.controls.stop()
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct
-                            .controls.play()
-                        End With
+                        If Game.gamemode = 0 Then
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct
+                                .controls.play()
+                            End With
+                        ElseIf Game.gamemode = 1 Then
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct_R
+                                .controls.play()
+                            End With
+                        End If
                     Case 10
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
@@ -560,101 +568,105 @@ Public Class Question
                         End With
                 End Select
                 If Game.level > 4 Then
-                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 100))
+                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 250))
                     stopaudio.Start()
                 ElseIf Game.level = 4 Then
                     Dim stopaudio As New Thread(Sub() Sounds.StopAudio("question", 600))
                     stopaudio.Start()
                 End If
             Else
-                Select Case Game.level
-                    Case 0
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
-                            .controls.play()
-                        End With
-                    Case 1
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
-                            .controls.play()
-                        End With
-                    Case 2
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
-                            .controls.play()
-                        End With
-                    Case 3
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
-                            .controls.play()
-                        End With
-                    Case 4
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
-                            .controls.play()
-                        End With
-                    Case 5
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Wrong
-                            .controls.play()
-                        End With
-                    Case 6
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Wrong
-                            .controls.play()
-                        End With
-                    Case 7
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Wrong
-                            .controls.play()
-                        End With
-                    Case 8
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Wrong
-                            .controls.play()
-                        End With
-                    Case 9
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Wrong
-                            .controls.play()
-                        End With
-                    Case 10
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Wrong
-                            .controls.play()
-                        End With
-                    Case 11
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Wrong
-                            .controls.play()
-                        End With
-                    Case 12
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Wrong
-                            .controls.play()
-                        End With
-                    Case 13
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Wrong
-                            .controls.play()
-                        End With
-                    Case 14
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Wrong
-                            .controls.play()
-                        End With
-                End Select
+                If LifeLineDouble.active = False Then
+                    Select Case Game.level
+                        Case 0
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
+                                .controls.play()
+                            End With
+                        Case 1
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
+                                .controls.play()
+                            End With
+                        Case 2
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
+                                .controls.play()
+                            End With
+                        Case 3
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
+                                .controls.play()
+                            End With
+                        Case 4
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Wrong
+                                .controls.play()
+                            End With
+                        Case 5
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Wrong
+                                .controls.play()
+                            End With
+                        Case 6
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Wrong
+                                .controls.play()
+                            End With
+                        Case 7
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Wrong
+                                .controls.play()
+                            End With
+                        Case 8
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Wrong
+                                .controls.play()
+                            End With
+                        Case 9
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Wrong
+                                .controls.play()
+                            End With
+                        Case 10
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Wrong
+                                .controls.play()
+                            End With
+                        Case 11
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Wrong
+                                .controls.play()
+                            End With
+                        Case 12
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Wrong
+                                .controls.play()
+                            End With
+                        Case 13
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Wrong
+                                .controls.play()
+                            End With
+                        Case 14
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Wrong
+                                .controls.play()
+                            End With
+                    End Select
+                End If
+
                 If Game.level < 5 Then
                     Dim stopaudio As New Thread(Sub() Sounds.StopAudio("question", 300))
                     stopaudio.Start()
                 ElseIf Game.level >= 5 Then
-                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 100))
+                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 250))
                     stopaudio.Start()
                 End If
             End If
         End If
 
         ' Run code below if contestant has walked away or not
+        HostScreen.lblAnswer.Visible = True
         If IsItCorrect = True Then  'On a right answer
             TVControlPnl.tmrFlash.Start()
             LifeLineDouble.chance = 2
@@ -699,6 +711,7 @@ Public Class Question
             ' Stop Double Dip final answer cue
             Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
             trStopDD.Start()
+            LifeLineDouble.active = False
 
             ' Update host screen and control panel money values for next question
             If Game.level >= 15 Then
@@ -717,14 +730,6 @@ Public Class Question
                 HostScreen.lblQLeft.Text = Game.varQLeft
                 HostScreen.lblWrong.Text = Game.varWrong
                 Question.act = 0
-            End If
-
-            ' Update the lifeline availability
-            If Game.level = 5 Or 10 Then
-                LifelineManager.UnlockLifeline(1)
-                LifelineManager.UnlockLifeline(2)
-                LifelineManager.UnlockLifeline(3)
-                LifelineManager.UnlockLifeline(4)
             End If
 
         Else        ' On a wrong answer
@@ -822,6 +827,8 @@ Public Class Question
     Public Shared Sub UndoAnswer(ByVal music As Boolean)
         ControlPanel.HaltSound()
         If music = True Then
+            Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 100))
+            stopaudio.Start()
             PlayQuestionCue()
         End If
         ControlPanel.i = 0

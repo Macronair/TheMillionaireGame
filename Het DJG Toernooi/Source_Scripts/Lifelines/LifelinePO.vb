@@ -17,6 +17,9 @@
             TVControlPnl.grpATA.Visible = False
             HostScreen.lblPlusOneUsed.ForeColor = Color.Cyan
             TVControlPnl.pnlQuestion.Visible = False
+
+            ControlPanel.txtHostMessages.AppendText("PLUS ONE ACTIVATED." + Environment.NewLine)
+            HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "PLUS ONE ACTIVATED."
         ElseIf plusone = 1 Then
             With Sounds.sndLifeline2
                 .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Clock
