@@ -233,7 +233,7 @@ Partial Class TVControlPnl
         'pnlTotal
         '
         Me.pnlTotal.Controls.Add(Me.Label1)
-        Me.pnlTotal.Location = New System.Drawing.Point(0, 479)
+        Me.pnlTotal.Location = New System.Drawing.Point(0, 506)
         Me.pnlTotal.Name = "pnlTotal"
         Me.pnlTotal.Size = New System.Drawing.Size(1280, 62)
         Me.pnlTotal.TabIndex = 31
@@ -569,7 +569,7 @@ Partial Class TVControlPnl
         Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlStrap.Controls.Add(Me.lblAmount)
-        Me.pnlStrap.Location = New System.Drawing.Point(0, 546)
+        Me.pnlStrap.Location = New System.Drawing.Point(0, 573)
         Me.pnlStrap.Name = "pnlStrap"
         Me.pnlStrap.Size = New System.Drawing.Size(1280, 83)
         Me.pnlStrap.TabIndex = 28
@@ -943,15 +943,15 @@ Partial Class TVControlPnl
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.pnlFFFPlayers)
+        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.grpATA)
-        Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.picLifelineUse)
-        Me.Controls.Add(Me.pnlFFFPlayers)
-        Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlTime)
+        Me.Controls.Add(Me.grpATA)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "TVControlPnl"

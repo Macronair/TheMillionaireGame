@@ -170,9 +170,9 @@
         TVControlPnl.lblATA_D.Font = New Font(TVControlPnl.lblATA_D.Font.FontFamily, 24)
 
         ' Winning Strap
-        TVControlPnl.pnlStrap.Location = New Point(0, 546)
+        TVControlPnl.pnlStrap.Location = New Point(0, 573)
         TVControlPnl.lblAmount.Location = New Point(476, 5)
-        TVControlPnl.pnlTotal.Location = New Point(0, 479)
+        TVControlPnl.pnlTotal.Location = New Point(0, 506)
         TVControlPnl.Label1.Location = New Point(473, 6)
 
         TVControlPnl.pnlStrap.Size = New Size(1280, 83)
