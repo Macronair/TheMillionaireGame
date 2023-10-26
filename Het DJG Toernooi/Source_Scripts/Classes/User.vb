@@ -13,6 +13,8 @@ Public Class User
             ControlPanel.nmrLevel.Value = 0
             Game.SetValues()
             Game.walkaway = False
+
+            LifelineManager.CurrentActive = 0
             LifelineManager.EnableLifeline(1, True)
             LifelineManager.EnableLifeline(2, True)
             LifelineManager.EnableLifeline(3, True)
