@@ -10,7 +10,6 @@
             TVControlPnl.picLifelineUse.Image = My.Resources.Resources.ll_switch
             TVControlPnl.picLifelineUse.Visible = True
             TVControlPnl.grpATA.Visible = False
-            HostScreen.lblSwitchUsed.ForeColor = Color.Cyan
             HostScreen.pnlAnswer.BackColor = Color.LightGray
             act = 1
 

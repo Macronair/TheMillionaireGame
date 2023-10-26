@@ -5,6 +5,7 @@
     Public Shared Sub ChangeTo720()
         CurrentRes = 720
 
+#Region "TV"
         ' Window size
         TVControlPnl.Size = New Size(1296, 759)
 
@@ -193,11 +194,208 @@
 
         TVControlPnl.lblFFFWinnerName.Font = New Font(TVControlPnl.lblFFFWinnerName.Font.FontFamily, 22)
         TVControlPnl.lblFFFWinnerPoints.Font = New Font(TVControlPnl.lblFFFWinnerPoints.Font.FontFamily, 22)
+#End Region
+
+#Region "Host Screen"
+        HostScreen.Size = New Size(1296, 759)
+
+        'Question
+        HostScreen.picQuestion.Location = New Point(0, 492)
+        HostScreen.txtQuestion.Location = New Point(132, 11)
+        HostScreen.pnlA.Location = New Point(0, 592)
+        HostScreen.pnlB.Location = New Point(640, 592)
+        HostScreen.pnlC.Location = New Point(0, 651)
+        HostScreen.pnlD.Location = New Point(640, 651)
+        HostScreen.txtA.Location = New Point(122, 5)
+        HostScreen.txtB.Location = New Point(41, 5)
+        HostScreen.txtC.Location = New Point(122, 5)
+        HostScreen.txtD.Location = New Point(41, 5)
+
+        HostScreen.txtQuestion.Font = New Font(HostScreen.txtQuestion.Font.FontFamily, 20)
+        HostScreen.txtA.Font = New Font(HostScreen.txtA.Font.FontFamily, 24)
+        HostScreen.txtB.Font = New Font(HostScreen.txtB.Font.FontFamily, 24)
+        HostScreen.txtC.Font = New Font(HostScreen.txtC.Font.FontFamily, 24)
+        HostScreen.txtD.Font = New Font(HostScreen.txtD.Font.FontFamily, 24)
+
+        HostScreen.picQuestion.Size = New Size(1280, 93)
+        HostScreen.txtQuestion.Size = New Size(1016, 69)
+        HostScreen.pnlA.Size = New Size(641, 57)
+        HostScreen.pnlB.Size = New Size(641, 57)
+        HostScreen.pnlC.Size = New Size(641, 57)
+        HostScreen.pnlD.Size = New Size(641, 57)
+        HostScreen.txtA.Size = New Size(476, 46)
+        HostScreen.txtB.Size = New Size(476, 46)
+        HostScreen.txtC.Size = New Size(476, 46)
+        HostScreen.txtD.Size = New Size(476, 46)
+
+        'Tree
+        HostScreen.picTree.Location = New Point(367, -51)
+        HostScreen.picLifeline1.Location = New Point(580, 9)
+        HostScreen.picLifeline2.Location = New Point(680, 9)
+        HostScreen.picLifeline3.Location = New Point(780, 9)
+        HostScreen.picLifeline4.Location = New Point(880, 9)
+
+        HostScreen.picTree.Size = New Size(921, 540)
+        HostScreen.picLifeline1.Size = New Size(94, 65)
+        HostScreen.picLifeline2.Size = New Size(94, 65)
+        HostScreen.picLifeline3.Size = New Size(94, 65)
+        HostScreen.picLifeline4.Size = New Size(94, 65)
+
+        'Answer
+        HostScreen.pnlAnswer.Location = New Point(924, 442)
+        HostScreen.lblAnswer.Location = New Point(12, 11)
+
+        HostScreen.lblAnswer.Font = New Font(HostScreen.lblAnswer.Font.FontFamily, 16)
+
+        HostScreen.pnlAnswer.Size = New Size(47, 46)
+
+        'Ask the Audience
+        HostScreen.txtATAa.Location = New Point(776, 78)
+        HostScreen.txtATAb.Location = New Point(776, 120)
+        HostScreen.txtATAc.Location = New Point(776, 162)
+        HostScreen.txtATAd.Location = New Point(776, 204)
+
+        HostScreen.txtATAa.Font = New Font(HostScreen.txtATAa.Font.FontFamily, 24)
+        HostScreen.txtATAb.Font = New Font(HostScreen.txtATAb.Font.FontFamily, 24)
+        HostScreen.txtATAc.Font = New Font(HostScreen.txtATAc.Font.FontFamily, 24)
+        HostScreen.txtATAd.Font = New Font(HostScreen.txtATAd.Font.FontFamily, 24)
+
+        HostScreen.txtATAa.Size = New Size(182, 36)
+        HostScreen.txtATAb.Size = New Size(182, 36)
+        HostScreen.txtATAc.Size = New Size(182, 36)
+        HostScreen.txtATAd.Size = New Size(182, 36)
+
+        'Plus One
+        HostScreen.lblTime.Location = New Point(793, 284)
+        HostScreen.lblTime.Font = New Font(HostScreen.lblTime.Font.FontFamily, 72)
+
+        'Host Panels
+        HostScreen.pnlCorrect.Location = New Point(9, 4)
+        HostScreen.pnlWrong.Location = New Point(9, 59)
+        HostScreen.pnlCurrent.Location = New Point(206, 4)
+        HostScreen.pnlDrop.Location = New Point(9, 114)
+        HostScreen.pnlQLeft.Location = New Point(206, 59)
+        HostScreen.lblCorrect.Location = New Point(9, 12)
+        HostScreen.lblWrong.Location = New Point(9, 12)
+        HostScreen.lblCurrent.Location = New Point(9, 12)
+        HostScreen.lblDrop.Location = New Point(9, 12)
+        HostScreen.lblQLeft.Location = New Point(9, 12)
+        HostScreen.picCorrect.Location = New Point(153, 9)
+        HostScreen.picWrong.Location = New Point(153, 9)
+        HostScreen.picCurrent.Location = New Point(153, 9)
+        HostScreen.picQLeft.Location = New Point(153, 9)
+
+        HostScreen.lblCorrect.Font = New Font(HostScreen.lblCorrect.Font.FontFamily, 16)
+        HostScreen.lblWrong.Font = New Font(HostScreen.lblWrong.Font.FontFamily, 16)
+        HostScreen.lblCurrent.Font = New Font(HostScreen.lblCurrent.Font.FontFamily, 16)
+        HostScreen.lblDrop.Font = New Font(HostScreen.lblDrop.Font.FontFamily, 16)
+        HostScreen.lblQLeft.Font = New Font(HostScreen.lblQLeft.Font.FontFamily, 16)
+
+        HostScreen.pnlCorrect.Size = New Size(191, 49)
+        HostScreen.pnlWrong.Size = New Size(191, 49)
+        HostScreen.pnlCurrent.Size = New Size(191, 49)
+        HostScreen.pnlDrop.Size = New Size(191, 49)
+        HostScreen.pnlQLeft.Size = New Size(191, 49)
+        HostScreen.picCorrect.Size = New Size(31, 31)
+        HostScreen.picWrong.Size = New Size(31, 31)
+        HostScreen.picCurrent.Size = New Size(31, 31)
+        HostScreen.picQLeft.Size = New Size(31, 31)
+
+        'Host Info
+        HostScreen.lblHostMsg.Location = New Point(12, 169)
+        HostScreen.txtExplain.Location = New Point(12, 333)
+
+        HostScreen.lblHostMsg.Font = New Font(HostScreen.lblHostMsg.Font.FontFamily, 16)
+        HostScreen.txtExplain.Font = New Font(HostScreen.txtExplain.Font.FontFamily, 14)
+
+        HostScreen.lblHostMsg.Size = New Size(746, 161)
+        HostScreen.txtExplain.Size = New Size(746, 155)
+
+        'General
+        HostScreen.lblExplainRules.Location = New Point(400, 17)
+        HostScreen.lblWalkedAway.Location = New Point(400, 35)
+
+        HostScreen.lblExplainRules.Font = New Font(HostScreen.lblExplainRules.Font.FontFamily, 12)
+        HostScreen.lblWalkedAway.Font = New Font(HostScreen.lblWalkedAway.Font.FontFamily, 12)
+
+        'Total Winnings
+        HostScreen.txtWinnings.Location = New Point(206, 115)
+
+        HostScreen.txtWinnings.Font = New Font(HostScreen.txtWinnings.Font.FontFamily, 18)
+
+        HostScreen.txtWinnings.Size = New Size(288, 46)
+#End Region
+
+#Region "Guest Screen"
+        GuestScreen.Size = New Size(1936, 1100)
+
+        'Question
+        GuestScreen.picQuestion.Location = New Point(0, 712)
+        GuestScreen.txtQuestion.Location = New Point(198, 8)
+        GuestScreen.pnlA.Location = New Point(0, 856)
+        GuestScreen.pnlB.Location = New Point(963, 856)
+        GuestScreen.pnlC.Location = New Point(0, 942)
+        GuestScreen.pnlD.Location = New Point(963, 942)
+        GuestScreen.txtA.Location = New Point(185, 7)
+        GuestScreen.txtB.Location = New Point(60, 7)
+        GuestScreen.txtC.Location = New Point(185, 7)
+        GuestScreen.txtD.Location = New Point(60, 7)
+
+        GuestScreen.txtQuestion.Font = New Font(GuestScreen.txtQuestion.Font.FontFamily, 31)
+        GuestScreen.txtA.Font = New Font(GuestScreen.txtA.Font.FontFamily, 36)
+        GuestScreen.txtB.Font = New Font(GuestScreen.txtB.Font.FontFamily, 36)
+        GuestScreen.txtC.Font = New Font(GuestScreen.txtC.Font.FontFamily, 36)
+        GuestScreen.txtD.Font = New Font(GuestScreen.txtD.Font.FontFamily, 36)
+
+        GuestScreen.picQuestion.Size = New Size(1920, 141)
+        GuestScreen.txtQuestion.Size = New Size(1524, 123)
+        GuestScreen.pnlA.Size = New Size(963, 87)
+        GuestScreen.pnlB.Size = New Size(963, 87)
+        GuestScreen.pnlC.Size = New Size(963, 87)
+        GuestScreen.pnlD.Size = New Size(963, 87)
+        GuestScreen.txtA.Size = New Size(714, 69)
+        GuestScreen.txtB.Size = New Size(714, 69)
+        GuestScreen.txtC.Size = New Size(714, 69)
+        GuestScreen.txtD.Size = New Size(714, 69)
+
+        'Tree
+        GuestScreen.picTree.Location = New Point(537, -97)
+        GuestScreen.picLifeline1.Location = New Point(864, 12)
+        GuestScreen.picLifeline2.Location = New Point(1011, 12)
+        GuestScreen.picLifeline3.Location = New Point(1158, 12)
+        GuestScreen.picLifeline4.Location = New Point(1305, 12)
+
+        GuestScreen.picTree.Size = New Size(1383, 810)
+        GuestScreen.picLifeline1.Size = New Size(141, 99)
+        GuestScreen.picLifeline2.Size = New Size(141, 99)
+        GuestScreen.picLifeline3.Size = New Size(141, 99)
+        GuestScreen.picLifeline4.Size = New Size(141, 99)
+
+        'Ask the Audience
+        GuestScreen.txtATAa.Location = New Point(1173, 117)
+        GuestScreen.txtATAb.Location = New Point(1173, 177)
+        GuestScreen.txtATAc.Location = New Point(1173, 237)
+        GuestScreen.txtATAd.Location = New Point(1173, 297)
+
+        GuestScreen.txtATAa.Font = New Font(GuestScreen.txtATAa.Font.FontFamily, 36)
+        GuestScreen.txtATAb.Font = New Font(GuestScreen.txtATAb.Font.FontFamily, 36)
+        GuestScreen.txtATAc.Font = New Font(GuestScreen.txtATAc.Font.FontFamily, 36)
+        GuestScreen.txtATAd.Font = New Font(GuestScreen.txtATAd.Font.FontFamily, 36)
+
+        GuestScreen.txtATAa.Size = New Size(273, 54)
+        GuestScreen.txtATAb.Size = New Size(273, 54)
+        GuestScreen.txtATAc.Size = New Size(273, 54)
+        GuestScreen.txtATAd.Size = New Size(273, 54)
+
+        'Plus One
+        GuestScreen.lblTime.Location = New Point(1171, 474)
+        GuestScreen.lblTime.Font = New Font(GuestScreen.lblTime.Font.FontFamily, 108)
+#End Region
+
     End Sub
 
     Public Shared Sub ChangeTo1080()
         CurrentRes = 1080
-
 #Region "TV"
         ' Window size
         TVControlPnl.Size = New Size(1936, 1100)
@@ -466,17 +664,6 @@
         HostScreen.lblTime.Location = New Point(1171, 474)
         HostScreen.lblTime.Font = New Font(HostScreen.lblTime.Font.FontFamily, 108)
 
-        'Used Lifelines
-        HostScreen.lbl5050Used.Location = New Point(939, 117)
-        HostScreen.lblPlusOneUsed.Location = New Point(993, 152)
-        HostScreen.lblSwitchUsed.Location = New Point(896, 187)
-        HostScreen.lblVoteUsed.Location = New Point(943, 221)
-
-        HostScreen.lbl5050Used.Font = New Font(HostScreen.lbl5050Used.Font.FontFamily, 24)
-        HostScreen.lblPlusOneUsed.Font = New Font(HostScreen.lblPlusOneUsed.Font.FontFamily, 24)
-        HostScreen.lblSwitchUsed.Font = New Font(HostScreen.lblSwitchUsed.Font.FontFamily, 24)
-        HostScreen.lblVoteUsed.Font = New Font(HostScreen.lblVoteUsed.Font.FontFamily, 24)
-
         'Host Panels
         HostScreen.pnlCorrect.Location = New Point(12, 12)
         HostScreen.pnlWrong.Location = New Point(12, 93)
@@ -517,7 +704,7 @@
         HostScreen.txtExplain.Font = New Font(HostScreen.txtExplain.Font.FontFamily, 22)
 
         HostScreen.lblHostMsg.Size = New Size(1119, 243)
-        HostScreen.txtExplain.Size = New Size(12, 501)
+        HostScreen.txtExplain.Size = New Size(1119, 205)
 
         'General
         HostScreen.lblExplainRules.Location = New Point(600, 12)

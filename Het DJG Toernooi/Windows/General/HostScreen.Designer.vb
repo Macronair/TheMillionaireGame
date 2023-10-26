@@ -39,13 +39,9 @@ Partial Class HostScreen
         Me.lblQLeft = New System.Windows.Forms.Label()
         Me.pnlAnswer = New System.Windows.Forms.Panel()
         Me.lblAnswer = New System.Windows.Forms.Label()
-        Me.lbl5050Used = New System.Windows.Forms.Label()
-        Me.lblPlusOneUsed = New System.Windows.Forms.Label()
-        Me.lblSwitchUsed = New System.Windows.Forms.Label()
         Me.lblExplainRules = New System.Windows.Forms.Label()
         Me.lblWalkedAway = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
-        Me.lblVoteUsed = New System.Windows.Forms.Label()
         Me.txtATAd = New System.Windows.Forms.TextBox()
         Me.txtATAc = New System.Windows.Forms.TextBox()
         Me.txtATAb = New System.Windows.Forms.TextBox()
@@ -106,9 +102,9 @@ Partial Class HostScreen
         'picCorrect
         '
         Me.picCorrect.Image = CType(resources.GetObject("picCorrect.Image"), System.Drawing.Image)
-        Me.picCorrect.Location = New System.Drawing.Point(154, 10)
+        Me.picCorrect.Location = New System.Drawing.Point(153, 9)
         Me.picCorrect.Name = "picCorrect"
-        Me.picCorrect.Size = New System.Drawing.Size(34, 31)
+        Me.picCorrect.Size = New System.Drawing.Size(31, 31)
         Me.picCorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picCorrect.TabIndex = 17
         Me.picCorrect.TabStop = False
@@ -137,9 +133,9 @@ Partial Class HostScreen
         'picWrong
         '
         Me.picWrong.Image = CType(resources.GetObject("picWrong.Image"), System.Drawing.Image)
-        Me.picWrong.Location = New System.Drawing.Point(154, 7)
+        Me.picWrong.Location = New System.Drawing.Point(153, 9)
         Me.picWrong.Name = "picWrong"
-        Me.picWrong.Size = New System.Drawing.Size(36, 38)
+        Me.picWrong.Size = New System.Drawing.Size(31, 31)
         Me.picWrong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picWrong.TabIndex = 19
         Me.picWrong.TabStop = False
@@ -168,9 +164,9 @@ Partial Class HostScreen
         'picCurrent
         '
         Me.picCurrent.Image = CType(resources.GetObject("picCurrent.Image"), System.Drawing.Image)
-        Me.picCurrent.Location = New System.Drawing.Point(161, 10)
+        Me.picCurrent.Location = New System.Drawing.Point(153, 9)
         Me.picCurrent.Name = "picCurrent"
-        Me.picCurrent.Size = New System.Drawing.Size(27, 31)
+        Me.picCurrent.Size = New System.Drawing.Size(31, 31)
         Me.picCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picCurrent.TabIndex = 18
         Me.picCurrent.TabStop = False
@@ -200,7 +196,7 @@ Partial Class HostScreen
         Me.lblDrop.AutoSize = True
         Me.lblDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDrop.ForeColor = System.Drawing.Color.Black
-        Me.lblDrop.Location = New System.Drawing.Point(9, 13)
+        Me.lblDrop.Location = New System.Drawing.Point(9, 12)
         Me.lblDrop.Name = "lblDrop"
         Me.lblDrop.Size = New System.Drawing.Size(25, 25)
         Me.lblDrop.TabIndex = 16
@@ -219,9 +215,9 @@ Partial Class HostScreen
         'picQLeft
         '
         Me.picQLeft.Image = CType(resources.GetObject("picQLeft.Image"), System.Drawing.Image)
-        Me.picQLeft.Location = New System.Drawing.Point(161, 9)
+        Me.picQLeft.Location = New System.Drawing.Point(153, 9)
         Me.picQLeft.Name = "picQLeft"
-        Me.picQLeft.Size = New System.Drawing.Size(27, 31)
+        Me.picQLeft.Size = New System.Drawing.Size(31, 31)
         Me.picQLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picQLeft.TabIndex = 18
         Me.picQLeft.TabStop = False
@@ -231,7 +227,7 @@ Partial Class HostScreen
         Me.lblQLeft.AutoSize = True
         Me.lblQLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQLeft.ForeColor = System.Drawing.Color.White
-        Me.lblQLeft.Location = New System.Drawing.Point(10, 13)
+        Me.lblQLeft.Location = New System.Drawing.Point(9, 12)
         Me.lblQLeft.Name = "lblQLeft"
         Me.lblQLeft.Size = New System.Drawing.Size(25, 25)
         Me.lblQLeft.TabIndex = 16
@@ -256,39 +252,6 @@ Partial Class HostScreen
         Me.lblAnswer.Size = New System.Drawing.Size(25, 25)
         Me.lblAnswer.TabIndex = 0
         Me.lblAnswer.Text = "1"
-        '
-        'lbl5050Used
-        '
-        Me.lbl5050Used.AutoSize = True
-        Me.lbl5050Used.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl5050Used.ForeColor = System.Drawing.Color.Black
-        Me.lbl5050Used.Location = New System.Drawing.Point(624, 81)
-        Me.lbl5050Used.Name = "lbl5050Used"
-        Me.lbl5050Used.Size = New System.Drawing.Size(147, 24)
-        Me.lbl5050Used.TabIndex = 20
-        Me.lbl5050Used.Text = "50:50 USED"
-        '
-        'lblPlusOneUsed
-        '
-        Me.lblPlusOneUsed.AutoSize = True
-        Me.lblPlusOneUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPlusOneUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblPlusOneUsed.Location = New System.Drawing.Point(659, 103)
-        Me.lblPlusOneUsed.Name = "lblPlusOneUsed"
-        Me.lblPlusOneUsed.Size = New System.Drawing.Size(112, 24)
-        Me.lblPlusOneUsed.TabIndex = 21
-        Me.lblPlusOneUsed.Text = "+1 USED"
-        '
-        'lblSwitchUsed
-        '
-        Me.lblSwitchUsed.AutoSize = True
-        Me.lblSwitchUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSwitchUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblSwitchUsed.Location = New System.Drawing.Point(594, 124)
-        Me.lblSwitchUsed.Name = "lblSwitchUsed"
-        Me.lblSwitchUsed.Size = New System.Drawing.Size(177, 24)
-        Me.lblSwitchUsed.TabIndex = 22
-        Me.lblSwitchUsed.Text = "SWITCH USED"
         '
         'lblExplainRules
         '
@@ -324,17 +287,6 @@ Partial Class HostScreen
         Me.lblTime.Text = "30"
         Me.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblTime.Visible = False
-        '
-        'lblVoteUsed
-        '
-        Me.lblVoteUsed.AutoSize = True
-        Me.lblVoteUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVoteUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblVoteUsed.Location = New System.Drawing.Point(625, 144)
-        Me.lblVoteUsed.Name = "lblVoteUsed"
-        Me.lblVoteUsed.Size = New System.Drawing.Size(145, 24)
-        Me.lblVoteUsed.TabIndex = 33
-        Me.lblVoteUsed.Text = "VOTE USED"
         '
         'txtATAd
         '
@@ -435,9 +387,9 @@ Partial Class HostScreen
         Me.txtB.BackColor = System.Drawing.Color.Transparent
         Me.txtB.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtB.ForeColor = System.Drawing.Color.White
-        Me.txtB.Location = New System.Drawing.Point(41, 6)
+        Me.txtB.Location = New System.Drawing.Point(41, 5)
         Me.txtB.Name = "txtB"
-        Me.txtB.Size = New System.Drawing.Size(476, 45)
+        Me.txtB.Size = New System.Drawing.Size(476, 46)
         Me.txtB.TabIndex = 19
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -477,9 +429,9 @@ Partial Class HostScreen
         Me.txtA.BackColor = System.Drawing.Color.Transparent
         Me.txtA.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtA.ForeColor = System.Drawing.Color.White
-        Me.txtA.Location = New System.Drawing.Point(123, 6)
+        Me.txtA.Location = New System.Drawing.Point(122, 5)
         Me.txtA.Name = "txtA"
-        Me.txtA.Size = New System.Drawing.Size(476, 45)
+        Me.txtA.Size = New System.Drawing.Size(476, 46)
         Me.txtA.TabIndex = 17
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -616,15 +568,11 @@ Partial Class HostScreen
         Me.Controls.Add(Me.txtATAc)
         Me.Controls.Add(Me.txtATAb)
         Me.Controls.Add(Me.txtATAa)
-        Me.Controls.Add(Me.lblVoteUsed)
         Me.Controls.Add(Me.picLifeline3)
         Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblWalkedAway)
         Me.Controls.Add(Me.lblExplainRules)
-        Me.Controls.Add(Me.lblSwitchUsed)
-        Me.Controls.Add(Me.lblPlusOneUsed)
-        Me.Controls.Add(Me.lbl5050Used)
         Me.Controls.Add(Me.pnlAnswer)
         Me.Controls.Add(Me.pnlQLeft)
         Me.Controls.Add(Me.pnlDrop)
@@ -682,16 +630,12 @@ Partial Class HostScreen
     Friend WithEvents lblQLeft As Label
     Friend WithEvents pnlAnswer As Panel
     Friend WithEvents lblAnswer As Label
-    Friend WithEvents lbl5050Used As Label
-    Friend WithEvents lblPlusOneUsed As Label
-    Friend WithEvents lblSwitchUsed As Label
     Friend WithEvents lblExplainRules As Label
     Friend WithEvents lblWalkedAway As Label
     Friend WithEvents lblTime As Label
     Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents picLifeline3 As PictureBox
-    Friend WithEvents lblVoteUsed As Label
     Friend WithEvents txtATAd As TextBox
     Friend WithEvents txtATAc As TextBox
     Friend WithEvents txtATAb As TextBox

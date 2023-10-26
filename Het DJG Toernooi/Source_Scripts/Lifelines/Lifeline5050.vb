@@ -18,7 +18,6 @@
         TVControlPnl.txtB.Text = ""
         TVControlPnl.txtC.Text = ""
         TVControlPnl.txtD.Text = ""
-        HostScreen.lbl5050Used.ForeColor = Color.Cyan
 
         If ControlPanel.lblAnswer.Text = "A" Then
             Dim rnd As New Random

@@ -72,10 +72,6 @@ Public Class Question
             act = 1
             newQ.newQuestion()
             HostScreen.pnlAnswer.BackColor = Color.Black
-            HostScreen.lbl5050Used.ForeColor = Color.Black
-            HostScreen.lblSwitchUsed.ForeColor = Color.Black
-            HostScreen.lblPlusOneUsed.ForeColor = Color.Black
-            HostScreen.lblVoteUsed.ForeColor = Color.Black
             ControlPanel.txtA.BackColor = Color.Silver
             ControlPanel.txtB.BackColor = Color.Silver
             ControlPanel.txtC.BackColor = Color.Silver
@@ -207,7 +203,7 @@ Public Class Question
                         .controls.play()
                     End With
             End Select
-            Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 550))
+            Dim stopaudio As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 625))
             stopaudio.Start()
         End If
     End Sub
@@ -372,7 +368,9 @@ Public Class Question
     End Sub
 
     Public Shared Sub PlayFinalAnswerCue()
-        useMusic = False
+        If Game.level >= 5 Then
+            useMusic = False
+        End If
         If Game.walkaway = False Then
             If Game.level > 4 Then
                 Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 150))

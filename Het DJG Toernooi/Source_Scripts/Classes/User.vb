@@ -1,4 +1,7 @@
-﻿Public Class User
+﻿Imports System.Net.NetworkInformation
+Imports System.Threading
+
+Public Class User
 
     Public Shared a As Integer = 0
     Shared snd As New SOUND
@@ -10,10 +13,15 @@
             ControlPanel.nmrLevel.Value = 0
             Game.SetValues()
             Game.walkaway = False
-            LifelineManager.Lifeline1_Used = False
-            LifelineManager.Lifeline2_Used = False
-            LifelineManager.Lifeline3_Used = False
-            LifelineManager.Lifeline4_Used = False
+            LifelineManager.EnableLifeline(1, True)
+            LifelineManager.EnableLifeline(2, True)
+            LifelineManager.EnableLifeline(3, True)
+            LifelineManager.EnableLifeline(4, True)
+
+            LifelineManager.UnlockLifeline(1)
+            LifelineManager.UnlockLifeline(2)
+            LifelineManager.UnlockLifeline(3)
+            LifelineManager.UnlockLifeline(4)
 
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""
@@ -21,7 +29,6 @@
             ControlPanel.txtC.Text = ""
             ControlPanel.txtD.Text = ""
 
-            HostScreen.lblVoteUsed.ForeColor = Color.Black
             HostScreen.txtATAa.ForeColor = Color.White
             HostScreen.txtATAb.ForeColor = Color.White
             HostScreen.txtATAc.ForeColor = Color.White
@@ -52,26 +59,6 @@
 
             HostScreen.txtWinnings.Text = ""
 
-            TVControlPnl.picLifeline3.Visible = True
-            TVControlPnl.picLifeline1.Visible = True
-            TVControlPnl.picLifeline2.Visible = True
-
-            HostScreen.picLifeline4.Image = My.Resources.ll_5050
-            HostScreen.picLifeline1.Image = My.Resources.ll_switch
-            HostScreen.picLifeline3.Image = My.Resources.ll_phone
-            HostScreen.picLifeline2.Image = My.Resources.ll_audience
-            HostScreen.picLifeline1.Visible = False
-            GuestScreen.picLifeline4.Image = My.Resources.ll_5050
-            GuestScreen.picLifeline1.Image = My.Resources.ll_switch
-            GuestScreen.picLifeline3.Image = My.Resources.ll_phone
-            GuestScreen.picLifeline2.Image = My.Resources.ll_audience
-            GuestScreen.picLifeline1.Visible = False
-            TVControlPnl.picLifeline4.Visible = False
-            ControlPanel.chkLifeline3Unused.Checked = True
-            ControlPanel.chkLifeline2Unused.Checked = True
-            ControlPanel.chkLifeline4Unused.Checked = True
-            ControlPanel.chkLifeline1Unused.Checked = True
-
             ControlPanel.txtCorrect.Text = Game.varCorrect
             ControlPanel.txtCurrent.Text = Game.varCurrent
             ControlPanel.txtDrop.Text = Game.varDrop
@@ -83,9 +70,6 @@
             HostScreen.lblQLeft.Text = Game.varQLeft
             HostScreen.lblWrong.Text = Game.varWrong
             HostScreen.pnlAnswer.BackColor = Color.Black
-            HostScreen.lbl5050Used.ForeColor = Color.Black
-            HostScreen.lblSwitchUsed.ForeColor = Color.Black
-            HostScreen.lblPlusOneUsed.ForeColor = Color.Black
             HostScreen.txtExplain.ForeColor = Color.Black
 
             ControlPanel.txtA.BackColor = Color.Silver
@@ -130,17 +114,20 @@
             Game.ChangeMode(0)
 
             Question.act = 0
-            My.Computer.Audio.Play(My.Resources.hello_long, AudioPlayMode.Background)
+            With Sounds.sndGeneral
+                .URL = Sounds.SoundsPath + Profile.Options.snd_ToHotSeat
+                .controls.play()
+            End With
             Game.walkaway = False
             a = 1
         ElseIf a = 1 Then
-            ControlPanel.intSound += 1
-
-            With snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(6, False, 1000)
+            With Sounds.sndLightsDown
+                .URL = Sounds.SoundsPath + Profile.Options.snd_ToHotSeat_LD
+                .controls.play()
             End With
-            ControlPanel.Timer1.Start()
+
+            Dim stopmusic As New Thread(Sub() Sounds.StopAudio("all", 720))
+            stopmusic.Start()
             a = 0
         End If
     End Sub

@@ -43,10 +43,6 @@
                 FFFServer.txtPL8_Points.Clear()
 
                 HostScreen.pnlAnswer.BackColor = Color.Black
-                HostScreen.lbl5050Used.ForeColor = Color.Black
-                HostScreen.lblSwitchUsed.ForeColor = Color.Black
-                HostScreen.lblPlusOneUsed.ForeColor = Color.Black
-                HostScreen.lblVoteUsed.ForeColor = Color.Black
                 ControlPanel.txtA.BackColor = SystemColors.Control
                 ControlPanel.txtB.BackColor = SystemColors.Control
                 ControlPanel.txtC.BackColor = SystemColors.Control

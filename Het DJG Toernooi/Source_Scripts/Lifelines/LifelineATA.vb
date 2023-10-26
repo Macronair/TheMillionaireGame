@@ -22,7 +22,6 @@
                 stopaudio.Start()
 
                 Question.useMusic = False
-                HostScreen.lblVoteUsed.ForeColor = Color.Cyan
                 act = 1
 
                 ControlPanel.txtHostMessages.AppendText("AUDIENCE ACTIVATED." + Environment.NewLine)

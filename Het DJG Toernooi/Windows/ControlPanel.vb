@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SqlClient
+Imports System.Threading
 
 Public Class ControlPanel
     Dim debug As Boolean = False
@@ -257,6 +258,9 @@ Public Class ControlPanel
         Game.walkaway = True
         HostScreen.txtWinnings.Text = "Totale Score: " + Game.varCurrent
         TVControlPnl.grpATA.Visible = False
+
+        Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 250))
+        stopmusic.Start()
 
         Select Case Game.level
             Case < 11

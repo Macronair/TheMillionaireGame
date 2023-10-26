@@ -15,7 +15,6 @@
             plusone = plusone + 1
 
             TVControlPnl.grpATA.Visible = False
-            HostScreen.lblPlusOneUsed.ForeColor = Color.Cyan
             TVControlPnl.pnlQuestion.Visible = False
 
             ControlPanel.txtHostMessages.AppendText("PLUS ONE ACTIVATED." + Environment.NewLine)
