@@ -3,179 +3,183 @@
 Public Class PlayerCheck
 
     Public Shared tie As Integer = 0
+    Public Shared rnd As New Random()
 
     Public Shared Sub Tiebreaker()
-        If FFFServer.pl1_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl1_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl2_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl2_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl3_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl3_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl4_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl4_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl5_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl5_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl6_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl6_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl7_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl7_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
-        If FFFServer.pl8_points = FFFServer.fff_pointsmin Then
+        If FFFServer.pl8_time = FFFServer.fff_timemin Then
             tie = tie + 1
         End If
     End Sub
 
     Public Shared Sub Randomizer()
-        Dim rnd As New Random()
-        Dim points As Integer
+        Dim points As Double
         Dim answer As Integer
 
         If FFFServer.chkPL1.Checked = True And FFFServer.chkPL1_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL1_Answer.Clear()
             FFFServer.txtPL1_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL1_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL1_Points.Text = points
-                FFFServer.pl1_points = points
+                FFFServer.pl1_time = points
             Else
-                FFFServer.pl1_points = 9999
+                FFFServer.pl1_time = 9999
             End If
         End If
 
         If FFFServer.chkPL2.Checked = True And FFFServer.chkPL2_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL2_Answer.Clear()
             FFFServer.txtPL2_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL2_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL2_Points.Text = points
-                FFFServer.pl2_points = points
+                FFFServer.pl2_time = points
             Else
-                FFFServer.pl2_points = 9999
+                FFFServer.pl2_time = 9999
             End If
         End If
 
         If FFFServer.chkPL3.Checked = True And FFFServer.pnlPlayer3.Visible = True And FFFServer.chkPL3_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL3_Answer.Clear()
             FFFServer.txtPL3_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL3_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL3_Points.Text = points
-                FFFServer.pl3_points = points
+                FFFServer.pl3_time = points
             Else
-                FFFServer.pl3_points = 9999
+                FFFServer.pl3_time = 9999
             End If
         End If
 
         If FFFServer.chkPL4.Checked = True And FFFServer.pnlPlayer4.Visible = True And FFFServer.chkPL4_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL4_Answer.Clear()
             FFFServer.txtPL4_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL4_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL4_Points.Text = points
-                FFFServer.pl4_points = points
+                FFFServer.pl4_time = points
             Else
-                FFFServer.pl4_points = 9999
+                FFFServer.pl4_time = 9999
             End If
         End If
 
         If FFFServer.chkPL5.Checked = True And FFFServer.pnlPlayer5.Visible = True And FFFServer.chkPL5_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL5_Answer.Clear()
             FFFServer.txtPL5_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL5_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL5_Points.Text = points
-                FFFServer.pl5_points = points
+                FFFServer.pl5_time = points
             Else
-                FFFServer.pl5_points = 9999
+                FFFServer.pl5_time = 9999
             End If
         End If
 
         If FFFServer.chkPL6.Checked = True And FFFServer.pnlPlayer6.Visible = True And FFFServer.chkPL6_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL6_Answer.Clear()
             FFFServer.txtPL6_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL6_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL6_Points.Text = points
-                FFFServer.pl6_points = points
+                FFFServer.pl6_time = points
             Else
-                FFFServer.pl6_points = 9999
+                FFFServer.pl6_time = 9999
             End If
         End If
 
         If FFFServer.chkPL7.Checked = True And FFFServer.pnlPlayer7.Visible = True And FFFServer.chkPL7_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL7_Answer.Clear()
             FFFServer.txtPL7_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL7_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL7_Points.Text = points
-                FFFServer.pl7_points = points
+                FFFServer.pl7_time = points
             Else
-                FFFServer.pl7_points = 9999
+                FFFServer.pl7_time = 9999
             End If
         End If
 
         If FFFServer.chkPL8.Checked = True And FFFServer.pnlPlayer8.Visible = True And FFFServer.chkPL8_Active.Checked = True Then
-            points = rnd.Next(400, 1190)
-            answer = rnd.Next(0, 2)
+            points = RandomTime()
+            answer = Rnd.Next(0, 2)
             FFFServer.txtPL8_Answer.Clear()
             FFFServer.txtPL8_Points.Clear()
             If answer = 0 Then
                 FFFServer.txtPL8_Answer.Text = FFFServer.correctAnswer
                 FFFServer.txtPL8_Points.Text = points
-                FFFServer.pl8_points = points
+                FFFServer.pl8_time = points
             Else
-                FFFServer.pl8_points = 9999
+                FFFServer.pl8_time = 9999
             End If
         End If
         getSmallestScore()
     End Sub
 
+    Private Shared Function RandomTime() As Double
+        Return rnd.Next(250, 1400) / 100
+    End Function
+
     Private Shared Sub getSmallestScore()
 
-        FFFServer.fff_pointsmin = FFFServer.pl1_points
-        If FFFServer.pl2_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl2_points
+        FFFServer.fff_timemin = FFFServer.pl1_time
+        If FFFServer.pl2_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl2_time
         End If
-        If FFFServer.pl3_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl3_points
+        If FFFServer.pl3_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl3_time
         End If
-        If FFFServer.pl4_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl4_points
+        If FFFServer.pl4_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl4_time
         End If
-        If FFFServer.pl5_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl5_points
+        If FFFServer.pl5_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl5_time
         End If
-        If FFFServer.pl6_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl6_points
+        If FFFServer.pl6_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl6_time
         End If
-        If FFFServer.pl7_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl7_points
+        If FFFServer.pl7_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl7_time
         End If
-        If FFFServer.pl8_points < FFFServer.fff_pointsmin Then
-            FFFServer.fff_pointsmin = FFFServer.pl8_points
+        If FFFServer.pl8_time < FFFServer.fff_timemin Then
+            FFFServer.fff_timemin = FFFServer.pl8_time
         End If
 
-        FFFServer.lblSmallestScore.Text = "Smallest Score: " + FFFServer.fff_pointsmin.ToString
+        FFFServer.lblSmallestScore.Text = "Smallest Score: " + FFFServer.fff_timemin.ToString
 
     End Sub
 

@@ -59,7 +59,7 @@ Partial Class ControlPanel
         Me.chkLifeline4Unused = New System.Windows.Forms.CheckBox()
         Me.txtID = New System.Windows.Forms.TextBox()
         Me.chkUsed = New System.Windows.Forms.CheckBox()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnToHotSeat = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.chkCorrectAnswer = New System.Windows.Forms.CheckBox()
@@ -126,6 +126,7 @@ Partial Class ControlPanel
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
+        Me.btnResetGame = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -518,17 +519,17 @@ Partial Class ControlPanel
         Me.chkUsed.TabIndex = 48
         Me.chkUsed.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnToHotSeat
         '
-        Me.Button2.BackColor = System.Drawing.Color.Maroon
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.ForeColor = System.Drawing.Color.White
-        Me.Button2.Location = New System.Drawing.Point(87, 52)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(95, 24)
-        Me.Button2.TabIndex = 49
-        Me.Button2.Text = "New Guest"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.btnToHotSeat.BackColor = System.Drawing.Color.Tomato
+        Me.btnToHotSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnToHotSeat.ForeColor = System.Drawing.Color.Black
+        Me.btnToHotSeat.Location = New System.Drawing.Point(87, 52)
+        Me.btnToHotSeat.Name = "btnToHotSeat"
+        Me.btnToHotSeat.Size = New System.Drawing.Size(86, 30)
+        Me.btnToHotSeat.TabIndex = 49
+        Me.btnToHotSeat.Text = "To Hot Seat"
+        Me.btnToHotSeat.UseVisualStyleBackColor = False
         '
         'btnQuit
         '
@@ -1057,7 +1058,7 @@ Partial Class ControlPanel
         '
         Me.btnFFF.BackColor = System.Drawing.Color.LightCoral
         Me.btnFFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFFF.Location = New System.Drawing.Point(87, 76)
+        Me.btnFFF.Location = New System.Drawing.Point(124, 25)
         Me.btnFFF.Name = "btnFFF"
         Me.btnFFF.Size = New System.Drawing.Size(95, 23)
         Me.btnFFF.TabIndex = 80
@@ -1115,15 +1116,28 @@ Partial Class ControlPanel
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
+        'btnResetGame
+        '
+        Me.btnResetGame.BackColor = System.Drawing.Color.SeaShell
+        Me.btnResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnResetGame.ForeColor = System.Drawing.Color.Black
+        Me.btnResetGame.Location = New System.Drawing.Point(87, 82)
+        Me.btnResetGame.Name = "btnResetGame"
+        Me.btnResetGame.Size = New System.Drawing.Size(86, 30)
+        Me.btnResetGame.TabIndex = 86
+        Me.btnResetGame.Text = "Reset Game"
+        Me.btnResetGame.UseVisualStyleBackColor = False
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 564)
+        Me.Controls.Add(Me.btnResetGame)
         Me.Controls.Add(Me.grpHostMessages)
         Me.Controls.Add(Me.btnFFF)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.btnToHotSeat)
         Me.Controls.Add(Me.grpTV)
         Me.Controls.Add(Me.grpLifelines)
         Me.Controls.Add(Me.btnD)
@@ -1219,7 +1233,7 @@ Partial Class ControlPanel
     Friend WithEvents btnLifeline2 As Button
     Friend WithEvents txtID As TextBox
     Friend WithEvents chkUsed As CheckBox
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnToHotSeat As Button
     Friend WithEvents btnQuit As Button
     Friend WithEvents Timer1 As Timer
     Friend WithEvents chkCorrectAnswer As CheckBox
@@ -1284,4 +1298,5 @@ Partial Class ControlPanel
     Friend WithEvents X10801080pToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ShowConsoleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
+    Friend WithEvents btnResetGame As Button
 End Class

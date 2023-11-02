@@ -5,9 +5,9 @@ Public Class Question
     Public Shared act As Integer
     Public Shared useMusic As Boolean = False
 
-    Dim newQ As New QDatabase
+    Shared newQ As New QDatabase
 
-    Public Sub Generate()
+    Public Shared Sub Generate()
         ControlPanel.i = 0
 
         HostScreen.txtExplain.ForeColor = Color.Black

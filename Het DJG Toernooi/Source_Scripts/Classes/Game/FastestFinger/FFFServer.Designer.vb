@@ -106,7 +106,7 @@ Partial Class FFFServer
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chkDisableWinnerAuto = New System.Windows.Forms.CheckBox()
         Me.chkShowPointsInServerConsole = New System.Windows.Forms.CheckBox()
-        Me.lblTimeElapsed = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPlayer1.SuspendLayout()
         Me.pnlPlayer2.SuspendLayout()
@@ -587,11 +587,10 @@ Partial Class FFFServer
         '
         'tmrPoints
         '
-        Me.tmrPoints.Interval = 10
         '
         'tmrRevealPlayers
         '
-        Me.tmrRevealPlayers.Interval = 50
+        Me.tmrRevealPlayers.Interval = 30
         '
         'tmrFastestPlayer
         '
@@ -987,14 +986,14 @@ Partial Class FFFServer
         Me.chkShowPointsInServerConsole.Text = "Show points in server console"
         Me.chkShowPointsInServerConsole.UseVisualStyleBackColor = True
         '
-        'lblTimeElapsed
+        'lblTime
         '
-        Me.lblTimeElapsed.AutoSize = True
-        Me.lblTimeElapsed.Location = New System.Drawing.Point(455, 355)
-        Me.lblTimeElapsed.Name = "lblTimeElapsed"
-        Me.lblTimeElapsed.Size = New System.Drawing.Size(28, 13)
-        Me.lblTimeElapsed.TabIndex = 111
-        Me.lblTimeElapsed.Text = "0,00"
+        Me.lblTime.AutoSize = True
+        Me.lblTime.Location = New System.Drawing.Point(387, 14)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(28, 13)
+        Me.lblTime.TabIndex = 111
+        Me.lblTime.Text = "0.00"
         '
         'FFFServer
         '
@@ -1002,7 +1001,7 @@ Partial Class FFFServer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(523, 377)
-        Me.Controls.Add(Me.lblTimeElapsed)
+        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.chkShowPointsInServerConsole)
         Me.Controls.Add(Me.chkDisableWinnerAuto)
         Me.Controls.Add(Me.Label3)
@@ -1140,5 +1139,5 @@ Partial Class FFFServer
     Friend WithEvents Label3 As Label
     Friend WithEvents chkDisableWinnerAuto As CheckBox
     Friend WithEvents chkShowPointsInServerConsole As CheckBox
-    Friend WithEvents lblTimeElapsed As Label
+    Friend WithEvents lblTime As Label
 End Class

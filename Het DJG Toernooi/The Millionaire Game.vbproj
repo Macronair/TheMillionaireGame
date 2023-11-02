@@ -37,7 +37,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.520.0</ApplicationVersion>
+    <ApplicationVersion>1.1.560.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -130,6 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />

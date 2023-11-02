@@ -8,19 +8,19 @@
                 FFFServer.a = 0
                 FFFServer.act = 0
                 FFFServer.fff_points = 0
-                FFFServer.fff_pointsmin = 0
+                FFFServer.fff_timemin = 0
                 FFFServer.firstMan = True
                 PlayerCheck.tie = 0
                 FFFServer.lblSmallestScore.Text = "Smallest Score: 0"
 
-                FFFServer.pl1_points = 9999
-                FFFServer.pl2_points = 9999
-                FFFServer.pl3_points = 9999
-                FFFServer.pl4_points = 9999
-                FFFServer.pl5_points = 9999
-                FFFServer.pl6_points = 9999
-                FFFServer.pl7_points = 9999
-                FFFServer.pl8_points = 9999
+                FFFServer.pl1_time = 9999
+                FFFServer.pl2_time = 9999
+                FFFServer.pl3_time = 9999
+                FFFServer.pl4_time = 9999
+                FFFServer.pl5_time = 9999
+                FFFServer.pl6_time = 9999
+                FFFServer.pl7_time = 9999
+                FFFServer.pl8_time = 9999
                 FFFServer.txtReceive.Clear()
 
                 FFFServer.lblPoints.Text = "0"
@@ -151,8 +151,14 @@
                 TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                 TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 TVControlPnl.tmrFlash.Stop()
-                FFFServer.newQ.newQuestion()
-                My.Computer.Audio.Play(My.Resources.fastest_finger_read_question, AudioPlayMode.Background)
+                Dim q As New QDatabase
+                q.newQuestion()
+
+                With FFFServer.question
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadQuestion
+                    .controls.play()
+                End With
+
                 FFFServer.UpdateList("/clear", True)
             Case 1
                 FFFServer.correctAnswer = ControlPanel.lblAnswer.Text

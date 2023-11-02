@@ -341,31 +341,8 @@ Public Class ControlPanel
         End If
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        User.NewUser()
-    End Sub
-
-    Private Sub Button5_Click(sender As Object, e As EventArgs)
-        If lblAnswer.Text = "A" Then
-            HostScreen.txtA.BackColor = Color.Green
-            GuestScreen.txtA.BackColor = Color.Green
-            txtA.BackColor = Color.Green
-        End If
-        If lblAnswer.Text = "B" Then
-            HostScreen.txtB.BackColor = Color.Green
-            GuestScreen.txtB.BackColor = Color.Green
-            txtB.BackColor = Color.Green
-        End If
-        If lblAnswer.Text = "C" Then
-            HostScreen.txtC.BackColor = Color.Green
-            GuestScreen.txtC.BackColor = Color.Green
-            txtC.BackColor = Color.Green
-        End If
-        If lblAnswer.Text = "D" Then
-            HostScreen.txtD.BackColor = Color.Green
-            GuestScreen.txtD.BackColor = Color.Green
-            txtD.BackColor = Color.Green
-        End If
+    Private Sub btnToHotSeat_Click(sender As Object, e As EventArgs) Handles btnToHotSeat.Click
+        User.ToHotSeat()
     End Sub
 
     Dim wa As Integer = 0
@@ -675,5 +652,9 @@ Public Class ControlPanel
 
     Private Sub ShowConsoleToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowConsoleToolStripMenuItem.Click
         CoreConsole.Show()
+    End Sub
+
+    Private Sub btnResetGame_Click(sender As Object, e As EventArgs) Handles btnResetGame.Click
+        User.ResetGame()
     End Sub
 End Class
