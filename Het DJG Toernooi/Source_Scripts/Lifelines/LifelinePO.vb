@@ -61,16 +61,6 @@
             ControlPanel.btnLifeline2.Enabled = False
 
             LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
-            Select Case LifelineManager.CurrentActive
-                Case 1
-                    ControlPanel.chkLifeline1Unused.Checked = False
-                Case 2
-                    ControlPanel.chkLifeline2Unused.Checked = False
-                Case 3
-                    ControlPanel.chkLifeline3Unused.Checked = False
-                Case 4
-                    ControlPanel.chkLifeline4Unused.Checked = False
-            End Select
         End If
     End Sub
 

@@ -83,6 +83,24 @@
                 GuestScreen.picLifeline1.Visible = False
                 TVControlPnl.picLifeline1.Visible = False
 
+                ControlPanel.btnLifeline2.Enabled = False
+                ControlPanel.chkLifeline2Unused.Enabled = False
+                HostScreen.picLifeline2.Visible = False
+                GuestScreen.picLifeline2.Visible = False
+                TVControlPnl.picLifeline2.Visible = False
+
+                ControlPanel.btnLifeline3.Enabled = False
+                ControlPanel.chkLifeline3Unused.Enabled = False
+                HostScreen.picLifeline3.Visible = False
+                GuestScreen.picLifeline3.Visible = False
+                TVControlPnl.picLifeline3.Visible = False
+
+                ControlPanel.btnLifeline4.Enabled = False
+                ControlPanel.chkLifeline4Unused.Enabled = False
+                HostScreen.picLifeline4.Visible = False
+                GuestScreen.picLifeline4.Visible = False
+                TVControlPnl.picLifeline4.Visible = False
+
                 If Profile.Options.TotalLifelines >= 1 Then
                     Select Case Profile.Options.Lifeline1_available
                         Case 0
@@ -257,12 +275,26 @@
                     ControlPanel.chkLifeline4Unused.Enabled = False
                 End If
         End Select
+
+        If Lifeline1_Used = True Then
+            EnableLifeline(1, False)
+        End If
+        If Lifeline2_Used = True Then
+            EnableLifeline(2, False)
+        End If
+        If Lifeline3_Used = True Then
+            EnableLifeline(3, False)
+        End If
+        If Lifeline4_Used = True Then
+            EnableLifeline(4, False)
+        End If
     End Sub
 
     Public Shared Sub EnableLifeline(ByVal LifelineNumber As Integer, ByVal enable As Boolean)
         If enable = True Then
             Select Case LifelineNumber
                 Case 1
+                    ControlPanel.btnLifeline1.Enabled = True
                     ControlPanel.btnLifeline1.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline1)
                     HostScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
                     GuestScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
@@ -270,6 +302,7 @@
                     Lifeline1_Used = False
                     ControlPanel.chkLifeline1Unused.Checked = True
                 Case 2
+                    ControlPanel.btnLifeline2.Enabled = True
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline2)
                     HostScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
                     GuestScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
@@ -277,6 +310,7 @@
                     Lifeline2_Used = False
                     ControlPanel.chkLifeline2Unused.Checked = True
                 Case 3
+                    ControlPanel.btnLifeline3.Enabled = True
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline3)
                     HostScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
                     GuestScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
@@ -284,6 +318,7 @@
                     Lifeline3_Used = False
                     ControlPanel.chkLifeline3Unused.Checked = True
                 Case 4
+                    ControlPanel.btnLifeline4.Enabled = True
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline4)
                     HostScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
                     GuestScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
@@ -294,6 +329,7 @@
         Else
             Select Case LifelineNumber
                 Case 1
+                    ControlPanel.btnLifeline1.Enabled = False
                     ControlPanel.btnLifeline1.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline1)
                     HostScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
                     GuestScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
@@ -301,6 +337,7 @@
                     Lifeline1_Used = True
                     ControlPanel.chkLifeline1Unused.Checked = False
                 Case 2
+                    ControlPanel.btnLifeline1.Enabled = False
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     HostScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     GuestScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
@@ -308,6 +345,7 @@
                     Lifeline2_Used = True
                     ControlPanel.chkLifeline2Unused.Checked = False
                 Case 3
+                    ControlPanel.btnLifeline1.Enabled = False
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     HostScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     GuestScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
@@ -315,6 +353,7 @@
                     Lifeline3_Used = True
                     ControlPanel.chkLifeline3Unused.Checked = False
                 Case 4
+                    ControlPanel.btnLifeline1.Enabled = False
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     HostScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     GuestScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)

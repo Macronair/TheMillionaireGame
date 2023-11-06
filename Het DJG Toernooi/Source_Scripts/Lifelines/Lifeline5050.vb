@@ -146,16 +146,6 @@
         End If
 
         LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
-        Select Case LifelineManager.CurrentActive
-            Case 1
-                ControlPanel.chkLifeline1Unused.Checked = False
-            Case 2
-                ControlPanel.chkLifeline2Unused.Checked = False
-            Case 3
-                ControlPanel.chkLifeline3Unused.Checked = False
-            Case 4
-                ControlPanel.chkLifeline4Unused.Checked = False
-        End Select
 
         ControlPanel.txtHostMessages.AppendText("50:50 ACTIVATED." + Environment.NewLine)
         HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "50:50 ACTIVATED."
