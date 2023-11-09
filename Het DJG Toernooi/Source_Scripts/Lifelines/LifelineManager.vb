@@ -337,7 +337,7 @@
                     Lifeline1_Used = True
                     ControlPanel.chkLifeline1Unused.Checked = False
                 Case 2
-                    ControlPanel.btnLifeline1.Enabled = False
+                    ControlPanel.btnLifeline2.Enabled = False
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     HostScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
                     GuestScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
@@ -345,7 +345,7 @@
                     Lifeline2_Used = True
                     ControlPanel.chkLifeline2Unused.Checked = False
                 Case 3
-                    ControlPanel.btnLifeline1.Enabled = False
+                    ControlPanel.btnLifeline3.Enabled = False
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     HostScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
                     GuestScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
@@ -353,7 +353,7 @@
                     Lifeline3_Used = True
                     ControlPanel.chkLifeline3Unused.Checked = False
                 Case 4
-                    ControlPanel.btnLifeline1.Enabled = False
+                    ControlPanel.btnLifeline4.Enabled = False
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     HostScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
                     GuestScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
