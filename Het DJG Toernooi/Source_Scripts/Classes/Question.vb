@@ -707,9 +707,11 @@ Public Class Question
             TVControlPnl.picLifelineUse.Visible = False
 
             ' Stop Double Dip final answer cue
-            Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
-            trStopDD.Start()
-            LifeLineDouble.active = False
+            If LifeLineDouble.active = True Then
+                Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
+                trStopDD.Start()
+                LifeLineDouble.active = False
+            End If
 
             ' Update host screen and control panel money values for next question
             If Game.level >= 15 Then

@@ -66,7 +66,6 @@ Partial Class FFFServer
         Me.txtPL2_Name = New System.Windows.Forms.TextBox()
         Me.txtPL1_Answer = New System.Windows.Forms.TextBox()
         Me.txtPL1_Name = New System.Windows.Forms.TextBox()
-        Me.tmrStopSnd1 = New System.Windows.Forms.Timer(Me.components)
         Me.tmrThink = New System.Windows.Forms.Timer(Me.components)
         Me.tmrPoints = New System.Windows.Forms.Timer(Me.components)
         Me.tmrRevealPlayers = New System.Windows.Forms.Timer(Me.components)
@@ -107,6 +106,7 @@ Partial Class FFFServer
         Me.chkDisableWinnerAuto = New System.Windows.Forms.CheckBox()
         Me.chkShowPointsInServerConsole = New System.Windows.Forms.CheckBox()
         Me.lblTime = New System.Windows.Forms.Label()
+        Me.tmrThreeNotes = New System.Windows.Forms.Timer(Me.components)
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPlayer1.SuspendLayout()
         Me.pnlPlayer2.SuspendLayout()
@@ -578,9 +578,6 @@ Partial Class FFFServer
         Me.txtPL1_Name.TabIndex = 51
         Me.txtPL1_Name.Text = "Player 1"
         '
-        'tmrStopSnd1
-        '
-        '
         'tmrThink
         '
         Me.tmrThink.Interval = 20100
@@ -995,6 +992,10 @@ Partial Class FFFServer
         Me.lblTime.TabIndex = 111
         Me.lblTime.Text = "0.00"
         '
+        'tmrThreeNotes
+        '
+        Me.tmrThreeNotes.Interval = 2000
+        '
         'FFFServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1099,7 +1100,6 @@ Partial Class FFFServer
     Friend WithEvents txtPL2_Name As TextBox
     Friend WithEvents txtPL1_Answer As TextBox
     Friend WithEvents txtPL1_Name As TextBox
-    Friend WithEvents tmrStopSnd1 As Timer
     Friend WithEvents tmrThink As Timer
     Friend WithEvents tmrPoints As Timer
     Friend WithEvents tmrRevealPlayers As Timer
@@ -1140,4 +1140,5 @@ Partial Class FFFServer
     Friend WithEvents chkDisableWinnerAuto As CheckBox
     Friend WithEvents chkShowPointsInServerConsole As CheckBox
     Friend WithEvents lblTime As Label
+    Friend WithEvents tmrThreeNotes As Timer
 End Class

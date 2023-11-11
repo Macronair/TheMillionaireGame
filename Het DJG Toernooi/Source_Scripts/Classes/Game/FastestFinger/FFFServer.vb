@@ -279,8 +279,10 @@ Public Class FFFServer
 
         question.controls.stop()
 
-        Thread.Sleep(2000)
+        tmrThreeNotes.Start()
+    End Sub
 
+    Private Sub tmrThreeNotes_Tick(sender As Object, e As EventArgs) Handles tmrThreeNotes.Tick
         tmr = New System.Timers.Timer(1)
         AddHandler tmr.Elapsed, AddressOf Handler
 
@@ -288,7 +290,6 @@ Public Class FFFServer
         PlayerCheck.Randomizer()
         txtReceive.Clear()
         fff_think = True
-        tmrStopSnd1.Start()
 
         tmrThink.Start()
         HostScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
@@ -319,11 +320,7 @@ Public Class FFFServer
 
         UpdateList("/unlock", True)
         tmrPoints.Start()
-    End Sub
-
-    Private Sub tmrStopSnd1_Tick(sender As Object, e As EventArgs) Handles tmrStopSnd1.Tick
-        My.Computer.Audio.Stop()
-        tmrStopSnd1.Stop()
+        tmrThreeNotes.Stop()
     End Sub
 
     Private Sub tmrThink_Tick(sender As Object, e As EventArgs) Handles tmrThink.Tick
@@ -422,24 +419,21 @@ Public Class FFFServer
             TVControlPnl.picLifeline4.Visible = False
             tmrRevealPlayers.Start()
             If Game.level = -1 Then
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(35, False, 1000)
+                With st1
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_WhoWasCorrect
+                    .controls.play()
                 End With
+                st2.controls.stop()
             End If
-            ControlPanel.Timer1.Start()
             a = a + 1
         ElseIf a = 2 Then
 
             If fff_timemin < 9999 Then
 
                 If PlayerCheck.tie = 1 Then
-                    ControlPanel.intSound += 1
-                    With snd
-                        .Name = "SOUND" & ControlPanel.intSound
-                        .Play(44, False, 1000)
+                    With st2
+                        .URL = Sounds.SoundsPath + Profile.Options.snd_F_Winner
+                        .controls.play()
                     End With
                     Select Case fff_timemin
                         Case pl1_time

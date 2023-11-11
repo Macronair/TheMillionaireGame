@@ -127,6 +127,7 @@ Partial Class ControlPanel
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
         Me.btnResetGame = New System.Windows.Forms.Button()
+        Me.chkShowTotalScore = New System.Windows.Forms.CheckBox()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -143,7 +144,7 @@ Partial Class ControlPanel
         Me.txtQuestion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtQuestion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQuestion.ForeColor = System.Drawing.Color.Black
-        Me.txtQuestion.Location = New System.Drawing.Point(20, 278)
+        Me.txtQuestion.Location = New System.Drawing.Point(20, 269)
         Me.txtQuestion.Multiline = True
         Me.txtQuestion.Name = "txtQuestion"
         Me.txtQuestion.ReadOnly = True
@@ -157,7 +158,7 @@ Partial Class ControlPanel
         Me.txtA.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtA.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtA.ForeColor = System.Drawing.Color.Black
-        Me.txtA.Location = New System.Drawing.Point(97, 330)
+        Me.txtA.Location = New System.Drawing.Point(97, 321)
         Me.txtA.Name = "txtA"
         Me.txtA.ReadOnly = True
         Me.txtA.Size = New System.Drawing.Size(219, 26)
@@ -169,7 +170,7 @@ Partial Class ControlPanel
         Me.txtC.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtC.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtC.ForeColor = System.Drawing.Color.Black
-        Me.txtC.Location = New System.Drawing.Point(97, 362)
+        Me.txtC.Location = New System.Drawing.Point(97, 353)
         Me.txtC.Name = "txtC"
         Me.txtC.ReadOnly = True
         Me.txtC.Size = New System.Drawing.Size(219, 26)
@@ -181,7 +182,7 @@ Partial Class ControlPanel
         Me.txtD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtD.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtD.ForeColor = System.Drawing.Color.Black
-        Me.txtD.Location = New System.Drawing.Point(322, 362)
+        Me.txtD.Location = New System.Drawing.Point(322, 353)
         Me.txtD.Name = "txtD"
         Me.txtD.ReadOnly = True
         Me.txtD.Size = New System.Drawing.Size(219, 26)
@@ -193,7 +194,7 @@ Partial Class ControlPanel
         Me.txtB.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtB.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtB.ForeColor = System.Drawing.Color.Black
-        Me.txtB.Location = New System.Drawing.Point(322, 330)
+        Me.txtB.Location = New System.Drawing.Point(322, 321)
         Me.txtB.Name = "txtB"
         Me.txtB.ReadOnly = True
         Me.txtB.Size = New System.Drawing.Size(219, 26)
@@ -235,7 +236,7 @@ Partial Class ControlPanel
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 125)
+        Me.Label1.Location = New System.Drawing.Point(178, 52)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 15
@@ -243,7 +244,7 @@ Partial Class ControlPanel
         '
         'nmrLevel
         '
-        Me.nmrLevel.Location = New System.Drawing.Point(134, 123)
+        Me.nmrLevel.Location = New System.Drawing.Point(265, 69)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
@@ -294,7 +295,7 @@ Partial Class ControlPanel
         '
         Me.txtCorrect.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCorrect.Location = New System.Drawing.Point(390, 396)
+        Me.txtCorrect.Location = New System.Drawing.Point(390, 383)
         Me.txtCorrect.Name = "txtCorrect"
         Me.txtCorrect.ReadOnly = True
         Me.txtCorrect.Size = New System.Drawing.Size(78, 20)
@@ -306,7 +307,7 @@ Partial Class ControlPanel
         Me.txtWrong.BackColor = System.Drawing.Color.Red
         Me.txtWrong.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtWrong.ForeColor = System.Drawing.Color.White
-        Me.txtWrong.Location = New System.Drawing.Point(390, 415)
+        Me.txtWrong.Location = New System.Drawing.Point(390, 402)
         Me.txtWrong.Name = "txtWrong"
         Me.txtWrong.ReadOnly = True
         Me.txtWrong.Size = New System.Drawing.Size(78, 20)
@@ -317,7 +318,7 @@ Partial Class ControlPanel
         '
         Me.txtCurrent.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.txtCurrent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtCurrent.Location = New System.Drawing.Point(390, 434)
+        Me.txtCurrent.Location = New System.Drawing.Point(390, 421)
         Me.txtCurrent.Name = "txtCurrent"
         Me.txtCurrent.ReadOnly = True
         Me.txtCurrent.Size = New System.Drawing.Size(78, 20)
@@ -328,7 +329,7 @@ Partial Class ControlPanel
         '
         Me.txtDrop.BackColor = System.Drawing.Color.Aqua
         Me.txtDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtDrop.Location = New System.Drawing.Point(508, 396)
+        Me.txtDrop.Location = New System.Drawing.Point(508, 383)
         Me.txtDrop.Name = "txtDrop"
         Me.txtDrop.ReadOnly = True
         Me.txtDrop.Size = New System.Drawing.Size(78, 20)
@@ -340,7 +341,7 @@ Partial Class ControlPanel
         Me.txtQLeft.BackColor = System.Drawing.Color.Blue
         Me.txtQLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtQLeft.ForeColor = System.Drawing.Color.White
-        Me.txtQLeft.Location = New System.Drawing.Point(508, 415)
+        Me.txtQLeft.Location = New System.Drawing.Point(508, 402)
         Me.txtQLeft.Name = "txtQLeft"
         Me.txtQLeft.ReadOnly = True
         Me.txtQLeft.Size = New System.Drawing.Size(78, 20)
@@ -350,7 +351,7 @@ Partial Class ControlPanel
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(472, 399)
+        Me.Label2.Location = New System.Drawing.Point(472, 386)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(30, 13)
         Me.Label2.TabIndex = 27
@@ -359,7 +360,7 @@ Partial Class ControlPanel
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(472, 418)
+        Me.Label3.Location = New System.Drawing.Point(472, 405)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(33, 13)
         Me.Label3.TabIndex = 28
@@ -368,7 +369,7 @@ Partial Class ControlPanel
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(344, 399)
+        Me.Label4.Location = New System.Drawing.Point(344, 386)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(41, 13)
         Me.Label4.TabIndex = 29
@@ -377,7 +378,7 @@ Partial Class ControlPanel
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(344, 418)
+        Me.Label5.Location = New System.Drawing.Point(344, 405)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(39, 13)
         Me.Label5.TabIndex = 30
@@ -386,7 +387,7 @@ Partial Class ControlPanel
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(343, 437)
+        Me.Label6.Location = New System.Drawing.Point(343, 424)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(41, 13)
         Me.Label6.TabIndex = 31
@@ -408,7 +409,7 @@ Partial Class ControlPanel
         Me.btnA.BackColor = System.Drawing.Color.Black
         Me.btnA.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnA.ForeColor = System.Drawing.Color.White
-        Me.btnA.Location = New System.Drawing.Point(20, 330)
+        Me.btnA.Location = New System.Drawing.Point(20, 321)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(71, 26)
         Me.btnA.TabIndex = 34
@@ -420,7 +421,7 @@ Partial Class ControlPanel
         Me.btnB.BackColor = System.Drawing.Color.Black
         Me.btnB.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnB.ForeColor = System.Drawing.Color.White
-        Me.btnB.Location = New System.Drawing.Point(547, 330)
+        Me.btnB.Location = New System.Drawing.Point(547, 321)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(71, 26)
         Me.btnB.TabIndex = 35
@@ -432,7 +433,7 @@ Partial Class ControlPanel
         Me.btnC.BackColor = System.Drawing.Color.Black
         Me.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnC.ForeColor = System.Drawing.Color.White
-        Me.btnC.Location = New System.Drawing.Point(20, 362)
+        Me.btnC.Location = New System.Drawing.Point(20, 353)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(71, 26)
         Me.btnC.TabIndex = 36
@@ -444,7 +445,7 @@ Partial Class ControlPanel
         Me.btnD.BackColor = System.Drawing.Color.Black
         Me.btnD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnD.ForeColor = System.Drawing.Color.White
-        Me.btnD.Location = New System.Drawing.Point(547, 362)
+        Me.btnD.Location = New System.Drawing.Point(547, 353)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(71, 26)
         Me.btnD.TabIndex = 37
@@ -469,7 +470,7 @@ Partial Class ControlPanel
         Me.chkLifeline3Unused.AutoSize = True
         Me.chkLifeline3Unused.Checked = True
         Me.chkLifeline3Unused.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLifeline3Unused.Location = New System.Drawing.Point(150, 61)
+        Me.chkLifeline3Unused.Location = New System.Drawing.Point(150, 55)
         Me.chkLifeline3Unused.Name = "chkLifeline3Unused"
         Me.chkLifeline3Unused.Size = New System.Drawing.Size(63, 17)
         Me.chkLifeline3Unused.TabIndex = 39
@@ -481,7 +482,7 @@ Partial Class ControlPanel
         Me.chkLifeline2Unused.AutoSize = True
         Me.chkLifeline2Unused.Checked = True
         Me.chkLifeline2Unused.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLifeline2Unused.Location = New System.Drawing.Point(80, 61)
+        Me.chkLifeline2Unused.Location = New System.Drawing.Point(80, 55)
         Me.chkLifeline2Unused.Name = "chkLifeline2Unused"
         Me.chkLifeline2Unused.Size = New System.Drawing.Size(63, 17)
         Me.chkLifeline2Unused.TabIndex = 40
@@ -493,7 +494,7 @@ Partial Class ControlPanel
         Me.chkLifeline4Unused.AutoSize = True
         Me.chkLifeline4Unused.Checked = True
         Me.chkLifeline4Unused.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLifeline4Unused.Location = New System.Drawing.Point(218, 61)
+        Me.chkLifeline4Unused.Location = New System.Drawing.Point(218, 55)
         Me.chkLifeline4Unused.Name = "chkLifeline4Unused"
         Me.chkLifeline4Unused.Size = New System.Drawing.Size(63, 17)
         Me.chkLifeline4Unused.TabIndex = 41
@@ -565,7 +566,7 @@ Partial Class ControlPanel
         '
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTime.Location = New System.Drawing.Point(116, 88)
+        Me.lblTime.Location = New System.Drawing.Point(112, 72)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(46, 26)
         Me.lblTime.TabIndex = 56
@@ -720,11 +721,11 @@ Partial Class ControlPanel
         'chkShowQuestion
         '
         Me.chkShowQuestion.AutoSize = True
-        Me.chkShowQuestion.Location = New System.Drawing.Point(6, 12)
+        Me.chkShowQuestion.Location = New System.Drawing.Point(6, 13)
         Me.chkShowQuestion.Name = "chkShowQuestion"
-        Me.chkShowQuestion.Size = New System.Drawing.Size(121, 17)
+        Me.chkShowQuestion.Size = New System.Drawing.Size(98, 17)
         Me.chkShowQuestion.TabIndex = 0
-        Me.chkShowQuestion.Text = "Show Question (TV)"
+        Me.chkShowQuestion.Text = "Show Question"
         Me.chkShowQuestion.UseVisualStyleBackColor = True
         '
         'txtExplain
@@ -732,7 +733,7 @@ Partial Class ControlPanel
         Me.txtExplain.BackColor = System.Drawing.Color.White
         Me.txtExplain.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.txtExplain.ForeColor = System.Drawing.Color.White
-        Me.txtExplain.Location = New System.Drawing.Point(346, 460)
+        Me.txtExplain.Location = New System.Drawing.Point(346, 444)
         Me.txtExplain.Multiline = True
         Me.txtExplain.Name = "txtExplain"
         Me.txtExplain.ReadOnly = True
@@ -743,7 +744,7 @@ Partial Class ControlPanel
         '
         Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(526, 446)
+        Me.Label8.Location = New System.Drawing.Point(526, 430)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(69, 13)
         Me.Label8.TabIndex = 61
@@ -754,7 +755,7 @@ Partial Class ControlPanel
         Me.chkLifeline1Unused.AutoSize = True
         Me.chkLifeline1Unused.Checked = True
         Me.chkLifeline1Unused.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkLifeline1Unused.Location = New System.Drawing.Point(10, 61)
+        Me.chkLifeline1Unused.Location = New System.Drawing.Point(10, 55)
         Me.chkLifeline1Unused.Name = "chkLifeline1Unused"
         Me.chkLifeline1Unused.Size = New System.Drawing.Size(63, 17)
         Me.chkLifeline1Unused.TabIndex = 71
@@ -867,13 +868,13 @@ Partial Class ControlPanel
         'X720720pToolStripMenuItem
         '
         Me.X720720pToolStripMenuItem.Name = "X720720pToolStripMenuItem"
-        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.X720720pToolStripMenuItem.Text = "1280 x 720 (720p)"
         '
         'X10801080pToolStripMenuItem
         '
         Me.X10801080pToolStripMenuItem.Name = "X10801080pToolStripMenuItem"
-        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.X10801080pToolStripMenuItem.Text = "1920 x 1080 (1080p)"
         '
         'OptionsToolStripMenuItem
@@ -913,9 +914,9 @@ Partial Class ControlPanel
         Me.grpLifelines.Controls.Add(Me.chkLifeline2Unused)
         Me.grpLifelines.Controls.Add(Me.chkLifeline4Unused)
         Me.grpLifelines.Controls.Add(Me.lblTime)
-        Me.grpLifelines.Location = New System.Drawing.Point(11, 143)
+        Me.grpLifelines.Location = New System.Drawing.Point(11, 135)
         Me.grpLifelines.Name = "grpLifelines"
-        Me.grpLifelines.Size = New System.Drawing.Size(293, 134)
+        Me.grpLifelines.Size = New System.Drawing.Size(293, 124)
         Me.grpLifelines.TabIndex = 75
         Me.grpLifelines.TabStop = False
         Me.grpLifelines.Text = "Lifelines"
@@ -924,7 +925,7 @@ Partial Class ControlPanel
         '
         Me.btnLifeline3.BackColor = System.Drawing.Color.Transparent
         Me.btnLifeline3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLifeline3.Location = New System.Drawing.Point(150, 19)
+        Me.btnLifeline3.Location = New System.Drawing.Point(150, 13)
         Me.btnLifeline3.Name = "btnLifeline3"
         Me.btnLifeline3.Size = New System.Drawing.Size(65, 42)
         Me.btnLifeline3.TabIndex = 42
@@ -934,7 +935,7 @@ Partial Class ControlPanel
         '
         Me.btnLifeline2.BackColor = System.Drawing.Color.Transparent
         Me.btnLifeline2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLifeline2.Location = New System.Drawing.Point(80, 19)
+        Me.btnLifeline2.Location = New System.Drawing.Point(80, 13)
         Me.btnLifeline2.Name = "btnLifeline2"
         Me.btnLifeline2.Size = New System.Drawing.Size(65, 42)
         Me.btnLifeline2.TabIndex = 44
@@ -944,7 +945,7 @@ Partial Class ControlPanel
         '
         Me.btnLifeline1.BackColor = System.Drawing.Color.Transparent
         Me.btnLifeline1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLifeline1.Location = New System.Drawing.Point(10, 19)
+        Me.btnLifeline1.Location = New System.Drawing.Point(10, 13)
         Me.btnLifeline1.Name = "btnLifeline1"
         Me.btnLifeline1.Size = New System.Drawing.Size(65, 42)
         Me.btnLifeline1.TabIndex = 72
@@ -956,7 +957,7 @@ Partial Class ControlPanel
         Me.grpATAInfo.Controls.Add(Me.lblATA_C)
         Me.grpATAInfo.Controls.Add(Me.lblATA_B)
         Me.grpATAInfo.Controls.Add(Me.lblATA_A)
-        Me.grpATAInfo.Location = New System.Drawing.Point(6, 84)
+        Me.grpATAInfo.Location = New System.Drawing.Point(6, 69)
         Me.grpATAInfo.Name = "grpATAInfo"
         Me.grpATAInfo.Size = New System.Drawing.Size(104, 48)
         Me.grpATAInfo.TabIndex = 79
@@ -1003,7 +1004,7 @@ Partial Class ControlPanel
         '
         Me.btnLifeline4.BackColor = System.Drawing.Color.Transparent
         Me.btnLifeline4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btnLifeline4.Location = New System.Drawing.Point(219, 19)
+        Me.btnLifeline4.Location = New System.Drawing.Point(219, 13)
         Me.btnLifeline4.Name = "btnLifeline4"
         Me.btnLifeline4.Size = New System.Drawing.Size(65, 42)
         Me.btnLifeline4.TabIndex = 43
@@ -1020,7 +1021,7 @@ Partial Class ControlPanel
         Me.grpMain.Controls.Add(Me.btnReveal)
         Me.grpMain.Controls.Add(Me.btnNewQuestion)
         Me.grpMain.Controls.Add(Me.chkCorrectAnswer)
-        Me.grpMain.Location = New System.Drawing.Point(310, 144)
+        Me.grpMain.Location = New System.Drawing.Point(310, 135)
         Me.grpMain.Name = "grpMain"
         Me.grpMain.Size = New System.Drawing.Size(308, 132)
         Me.grpMain.TabIndex = 76
@@ -1042,10 +1043,11 @@ Partial Class ControlPanel
         '
         'grpTV
         '
+        Me.grpTV.Controls.Add(Me.chkShowTotalScore)
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
-        Me.grpTV.Location = New System.Drawing.Point(342, 526)
+        Me.grpTV.Location = New System.Drawing.Point(342, 516)
         Me.grpTV.Name = "grpTV"
-        Me.grpTV.Size = New System.Drawing.Size(254, 36)
+        Me.grpTV.Size = New System.Drawing.Size(254, 57)
         Me.grpTV.TabIndex = 78
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
@@ -1092,7 +1094,7 @@ Partial Class ControlPanel
         Me.grpHostMessages.Controls.Add(Me.btnClearHostMessages)
         Me.grpHostMessages.Controls.Add(Me.txtHostMessages)
         Me.grpHostMessages.Controls.Add(Me.btnSendToHost)
-        Me.grpHostMessages.Location = New System.Drawing.Point(20, 417)
+        Me.grpHostMessages.Location = New System.Drawing.Point(20, 382)
         Me.grpHostMessages.Name = "grpHostMessages"
         Me.grpHostMessages.Size = New System.Drawing.Size(306, 142)
         Me.grpHostMessages.TabIndex = 85
@@ -1128,12 +1130,22 @@ Partial Class ControlPanel
         Me.btnResetGame.Text = "Reset Game"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
+        'chkShowTotalScore
+        '
+        Me.chkShowTotalScore.AutoSize = True
+        Me.chkShowTotalScore.Location = New System.Drawing.Point(6, 30)
+        Me.chkShowTotalScore.Name = "chkShowTotalScore"
+        Me.chkShowTotalScore.Size = New System.Drawing.Size(111, 17)
+        Me.chkShowTotalScore.TabIndex = 1
+        Me.chkShowTotalScore.Text = "Show Total Score"
+        Me.chkShowTotalScore.UseVisualStyleBackColor = True
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(633, 564)
+        Me.ClientSize = New System.Drawing.Size(633, 575)
         Me.Controls.Add(Me.btnResetGame)
         Me.Controls.Add(Me.grpHostMessages)
         Me.Controls.Add(Me.btnFFF)
@@ -1299,4 +1311,5 @@ Partial Class ControlPanel
     Friend WithEvents ShowConsoleToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
     Friend WithEvents btnResetGame As Button
+    Friend WithEvents chkShowTotalScore As CheckBox
 End Class

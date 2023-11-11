@@ -25,6 +25,9 @@ Partial Class OptionsScreen
         Me.components = New System.ComponentModel.Container()
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btnIdentifyMonitors = New System.Windows.Forms.Button()
         Me.cmbFullScrTVScreen = New System.Windows.Forms.ComboBox()
@@ -320,9 +323,8 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -358,6 +360,8 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.CheckBox4)
+        Me.TabPage1.Controls.Add(Me.CheckBox3)
         Me.TabPage1.Controls.Add(Me.CheckBox2)
         Me.TabPage1.Controls.Add(Me.CheckBox1)
         Me.TabPage1.Controls.Add(Me.chkClearHostMessages)
@@ -372,6 +376,36 @@ Partial Class OptionsScreen
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'CheckBox2
+        '
+        Me.CheckBox2.AutoSize = True
+        Me.CheckBox2.Location = New System.Drawing.Point(628, 59)
+        Me.CheckBox2.Name = "CheckBox2"
+        Me.CheckBox2.Size = New System.Drawing.Size(431, 20)
+        Me.CheckBox2.TabIndex = 5
+        Me.CheckBox2.Text = "Show answer on host screen only when contestant gave final answer."
+        Me.CheckBox2.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(628, 120)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(360, 20)
+        Me.CheckBox1.TabIndex = 4
+        Me.CheckBox1.Text = "Auto-show Total Winnings when 'Bye Bye' cue is played."
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'chkClearHostMessages
+        '
+        Me.chkClearHostMessages.AutoSize = True
+        Me.chkClearHostMessages.Location = New System.Drawing.Point(628, 18)
+        Me.chkClearHostMessages.Name = "chkClearHostMessages"
+        Me.chkClearHostMessages.Size = New System.Drawing.Size(451, 20)
+        Me.chkClearHostMessages.TabIndex = 3
+        Me.chkClearHostMessages.Text = "Clear Host Messages box on Host screen when new question is loaded."
+        Me.chkClearHostMessages.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -3465,35 +3499,25 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'chkClearHostMessages
+        'CheckBox3
         '
-        Me.chkClearHostMessages.AutoSize = True
-        Me.chkClearHostMessages.Location = New System.Drawing.Point(628, 18)
-        Me.chkClearHostMessages.Name = "chkClearHostMessages"
-        Me.chkClearHostMessages.Size = New System.Drawing.Size(451, 20)
-        Me.chkClearHostMessages.TabIndex = 3
-        Me.chkClearHostMessages.Text = "Clear Host Messages box on Host screen when new question is loaded."
-        Me.chkClearHostMessages.UseVisualStyleBackColor = True
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(628, 79)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(339, 20)
+        Me.CheckBox3.TabIndex = 6
+        Me.CheckBox3.Text = "Auto hide question when Plus One lifeline is activated"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'CheckBox4
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(628, 44)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(360, 20)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "Auto-show Total Winnings when 'Bye Bye' cue is played."
-        Me.CheckBox1.UseVisualStyleBackColor = True
-        '
-        'CheckBox2
-        '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(628, 70)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(431, 20)
-        Me.CheckBox2.TabIndex = 5
-        Me.CheckBox2.Text = "Show answer on host screen only when contestant gave final answer."
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(628, 140)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(306, 20)
+        Me.CheckBox4.TabIndex = 7
+        Me.CheckBox4.Text = "Auto hide question when contestant walks away"
+        Me.CheckBox4.UseVisualStyleBackColor = True
         '
         'OptionsScreen
         '
@@ -3840,4 +3864,6 @@ Partial Class OptionsScreen
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents chkClearHostMessages As CheckBox
     Friend WithEvents CheckBox2 As CheckBox
+    Friend WithEvents CheckBox3 As CheckBox
+    Friend WithEvents CheckBox4 As CheckBox
 End Class

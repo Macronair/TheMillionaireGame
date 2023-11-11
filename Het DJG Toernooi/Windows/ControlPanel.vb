@@ -516,9 +516,25 @@ Public Class ControlPanel
     Private Sub chkShowQuestion_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowQuestion.CheckedChanged
         If chkShowQuestion.Checked = True Then
             TVControlPnl.pnlQuestion.Visible = True
+            TVControlPnl.picTree.Visible = False
+            TVControlPnl.pnlTotal.Visible = False
+            TVControlPnl.pnlStrap.Visible = False
         End If
         If chkShowQuestion.Checked = False Then
             TVControlPnl.pnlQuestion.Visible = False
+        End If
+    End Sub
+
+    Private Sub chkShowTotalScore_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowTotalScore.CheckedChanged
+        If chkShowTotalScore.Checked = True Then
+            TVControlPnl.pnlQuestion.Visible = False
+            TVControlPnl.picTree.Visible = False
+            TVControlPnl.pnlTotal.Visible = True
+            TVControlPnl.pnlStrap.Visible = True
+        End If
+        If chkShowTotalScore.Checked = False Then
+            TVControlPnl.pnlTotal.Visible = False
+            TVControlPnl.pnlStrap.Visible = False
         End If
     End Sub
 
@@ -637,13 +653,21 @@ Public Class ControlPanel
     End Sub
 
     Private Sub X10801080pToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles X10801080pToolStripMenuItem.Click
-        GameResolution.ChangeTo1080()
-        GameResolution.ChangeTo1080()
+        GameResolution.ChangeTo1080(1)
+        GameResolution.ChangeTo1080(2)
+        GameResolution.ChangeTo1080(3)
+        GameResolution.ChangeTo1080(1)
+        GameResolution.ChangeTo1080(2)
+        GameResolution.ChangeTo1080(3)
     End Sub
 
     Private Sub X720720pToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles X720720pToolStripMenuItem.Click
-        GameResolution.ChangeTo720()
-        GameResolution.ChangeTo720()
+        GameResolution.ChangeTo720(1)
+        GameResolution.ChangeTo720(2)
+        GameResolution.ChangeTo720(3)
+        GameResolution.ChangeTo720(1)
+        GameResolution.ChangeTo720(2)
+        GameResolution.ChangeTo720(3)
     End Sub
 
     Private Sub ShowOptionsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ShowOptionsToolStripMenuItem.Click

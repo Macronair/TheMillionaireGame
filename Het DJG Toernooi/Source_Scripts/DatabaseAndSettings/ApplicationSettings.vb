@@ -395,7 +395,7 @@ Public Class Profile
         Options.snd_F_Meet8 = "fastest_finger_contestants_8.mp3"
         Options.snd_F_ReadQuestion = "fastest_finger_read_question.mp3"
         Options.snd_F_ThreeNotes = "fastest_finger_3_stabs.mp3"
-        Options.snd_F_Thinking = "fastest_finger_read_think.mp3"
+        Options.snd_F_Thinking = "fastest_finger_think.mp3"
         Options.snd_F_ReadCorrectOrder = "fastest_finger_read_answer_order.mp3"
         Options.snd_F_Order1 = "fastest_finger_answer_correct_1.mp3"
         Options.snd_F_Order2 = "fastest_finger_answer_correct_2.mp3"

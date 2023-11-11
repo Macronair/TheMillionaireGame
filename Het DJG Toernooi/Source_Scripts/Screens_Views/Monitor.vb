@@ -26,8 +26,64 @@
         Next
     End Sub
 
+    Public Shared Sub ApplyScreenSettings()
+        ' Resolutions
+        Select Case Profile.Options.Resolution_HostScreen
+            Case "1280x720"
+                GameResolution.ChangeTo720(2)
+            Case "1920x1080"
+                GameResolution.ChangeTo1080(2)
+        End Select
+
+        Select Case Profile.Options.Resolution_GuestScreen
+            Case "1280x720"
+                GameResolution.ChangeTo720(3)
+            Case "1920x1080"
+                GameResolution.ChangeTo1080(3)
+        End Select
+
+        Select Case Profile.Options.Resolution_TVScreen
+            Case "1280x720"
+                GameResolution.ChangeTo720(1)
+            Case "1920x1080"
+                GameResolution.ChangeTo1080(1)
+        End Select
+
+        ' Full Screen?
+        If Profile.Options.FullScreen_HostScreen_Enable = True Then
+            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_HostScreen_Monitor)
+
+            HostScreen.FormBorderStyle = FormBorderStyle.None
+            HostScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
+            HostScreen.WindowState = FormWindowState.Maximized
+        Else
+
+        End If
+
+        If Profile.Options.FullScreen_GuestScreen_Enable = True Then
+            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_GuestScreen_Monitor)
+
+            GuestScreen.FormBorderStyle = FormBorderStyle.None
+            GuestScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
+            GuestScreen.WindowState = FormWindowState.Maximized
+        Else
+
+        End If
+
+        If Profile.Options.FullScreen_TVScreen_Enable = True Then
+            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_TVScreen_Monitor)
+
+            TVControlPnl.FormBorderStyle = FormBorderStyle.None
+            TVControlPnl.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
+            TVControlPnl.WindowState = FormWindowState.Maximized
+        Else
+
+        End If
+    End Sub
+
     Public Shared Function Find(ByVal number As Integer)
         Dim result = ConnectedScreens.Where(Function(s) number)
+        Return result
     End Function
 
 End Class
