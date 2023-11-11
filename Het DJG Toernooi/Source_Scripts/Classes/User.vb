@@ -46,6 +46,8 @@ Public Class User
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
 
+        LifelineHost.used = False
+
         ControlPanel.txtQuestion.Text = ""
         ControlPanel.txtA.Text = ""
         ControlPanel.txtB.Text = ""

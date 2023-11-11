@@ -2,6 +2,7 @@
 
 Public Class LifelineHost
     Public Shared act As Integer = 0
+    Public Shared used As Boolean = False
 
     Public Shared Sub LifelineUse1()
         Select Case act

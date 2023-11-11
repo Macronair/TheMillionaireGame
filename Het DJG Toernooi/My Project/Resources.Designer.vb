@@ -1127,9 +1127,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property winning_strap() As System.Drawing.Bitmap
+        Friend ReadOnly Property winning_0() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("winning_strap", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("winning_0", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1137,9 +1137,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property winning_strap_1() As System.Drawing.Bitmap
+        Friend ReadOnly Property winning_1() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("winning_strap_1", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("winning_1", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property
@@ -1147,19 +1147,9 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
-        Friend ReadOnly Property winning_strap_2() As System.Drawing.Bitmap
+        Friend ReadOnly Property winning_2() As System.Drawing.Bitmap
             Get
-                Dim obj As Object = ResourceManager.GetObject("winning_strap_2", resourceCulture)
-                Return CType(obj,System.Drawing.Bitmap)
-            End Get
-        End Property
-        
-        '''<summary>
-        '''  Looks up a localized resource of type System.Drawing.Bitmap.
-        '''</summary>
-        Friend ReadOnly Property winning_strap_3() As System.Drawing.Bitmap
-            Get
-                Dim obj As Object = ResourceManager.GetObject("winning_strap_3", resourceCulture)
+                Dim obj As Object = ResourceManager.GetObject("winning_2", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

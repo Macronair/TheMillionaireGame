@@ -14,7 +14,11 @@ Public Class AppSettings
     Public Property Lifeline4_available As Integer
 
     Public Property WinningStrapTexture As Integer
+    Public Property QuestionsTexture As Integer
 
+    Public Property AutoShow_HostScreen As Boolean
+    Public Property AutoShow_GuestScreen As Boolean
+    Public Property AutoShow_TVScreen As Boolean
     Public Property Resolution_HostScreen As String
     Public Property Resolution_GuestScreen As String
     Public Property Resolution_TVScreen As String
@@ -205,7 +209,11 @@ Public Class Profile
             GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
 
             Options.WinningStrapTexture = loadedvalues.WinningStrapTexture
+            Options.QuestionsTexture = loadedvalues.QuestionsTexture
 
+            Options.AutoShow_HostScreen = loadedvalues.AutoShow_HostScreen
+            Options.AutoShow_GuestScreen = loadedvalues.AutoShow_GuestScreen
+            Options.AutoShow_TVScreen = loadedvalues.AutoShow_TVScreen
             Options.Resolution_HostScreen = loadedvalues.Resolution_HostScreen
             Options.Resolution_GuestScreen = loadedvalues.Resolution_GuestScreen
             Options.Resolution_TVScreen = loadedvalues.Resolution_TVScreen
@@ -360,7 +368,11 @@ Public Class Profile
         Options.Lifeline4_available = 3
 
         Options.WinningStrapTexture = 0
+        Options.QuestionsTexture = 0
 
+        Options.AutoShow_HostScreen = False
+        Options.AutoShow_GuestScreen = False
+        Options.AutoShow_TVScreen = False
         Options.Resolution_HostScreen = "1280x720"
         Options.Resolution_GuestScreen = "1280x720"
         Options.Resolution_TVScreen = "1280x720"
@@ -513,16 +525,20 @@ Public Class Profile
         Options.Lifeline4_available = OptionsScreen.Lifeline4_availableAt
 
         Options.WinningStrapTexture = OptionsScreen.WinningStrapTexture
+        Options.QuestionsTexture = OptionsScreen.QuestionTexture
 
+        Options.AutoShow_HostScreen = OptionsScreen.chkAutoShowHostScreen.Checked
+        Options.AutoShow_GuestScreen = OptionsScreen.chkAutoShowGuestScreen.Checked
+        Options.AutoShow_TVScreen = OptionsScreen.chkAutoShowTVScreen.Checked
         Options.Resolution_HostScreen = OptionsScreen.cmbResHostScreen.Text
         Options.Resolution_GuestScreen = OptionsScreen.cmbResGuestScreen.Text
         Options.Resolution_TVScreen = OptionsScreen.cmbResTVScreen.Text
         Options.FullScreen_HostScreen_Enable = OptionsScreen.chkFullScrHostScreen.Checked
         Options.FullScreen_GuestScreen_Enable = OptionsScreen.chkFullScrGuestScreen.Checked
         Options.FullScreen_TVScreen_Enable = OptionsScreen.chkFullScrTVScreen.Checked
-        Options.FullScreen_HostScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
-        Options.FullScreen_GuestScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
-        Options.FullScreen_TVScreen_Monitor = Convert.ToInt32(OptionsScreen.cmbFullScrHostScreen.Text.First)
+        Options.FullScreen_HostScreen_Monitor = OptionsScreen.cmbFullScrHostScreen.Text
+        Options.FullScreen_GuestScreen_Monitor = OptionsScreen.cmbFullScrGuestScreen.Text
+        Options.FullScreen_TVScreen_Monitor = OptionsScreen.cmbFullScrTVScreen.Text
 
         Options.snd_Opening = OptionsScreen.txtSndOpening.Text
         Options.snd_CommIn = OptionsScreen.txtSndCommercialIn.Text

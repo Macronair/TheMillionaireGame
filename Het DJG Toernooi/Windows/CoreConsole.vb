@@ -49,6 +49,8 @@ Public Class CoreConsole
 
         LogMsgDate("Lauching controller...")
 
+        Monitor.ApplyScreenSettings()
+
         isRunning = True
         Me.Hide()
         ControlPanel.Show()

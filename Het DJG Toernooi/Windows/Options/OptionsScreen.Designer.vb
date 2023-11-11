@@ -25,10 +25,17 @@ Partial Class OptionsScreen
         Me.components = New System.ComponentModel.Container()
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.nmrFFFPortNumber = New System.Windows.Forms.NumericUpDown()
+        Me.Label121 = New System.Windows.Forms.Label()
+        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
+        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.chkAutoShowTVScreen = New System.Windows.Forms.CheckBox()
+        Me.chkAutoShowGuestScreen = New System.Windows.Forms.CheckBox()
+        Me.chkAutoShowHostScreen = New System.Windows.Forms.CheckBox()
         Me.btnIdentifyMonitors = New System.Windows.Forms.Button()
         Me.cmbFullScrTVScreen = New System.Windows.Forms.ComboBox()
         Me.cmbFullScrGuestScreen = New System.Windows.Forms.ComboBox()
@@ -43,10 +50,11 @@ Partial Class OptionsScreen
         Me.Label117 = New System.Windows.Forms.Label()
         Me.Label116 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.picWinningStrapTexture = New System.Windows.Forms.Panel()
+        Me.lblWinningStrapTexture = New System.Windows.Forms.Label()
         Me.radStrapBlack = New System.Windows.Forms.RadioButton()
         Me.radStrapGreen = New System.Windows.Forms.RadioButton()
         Me.radStrapYellow = New System.Windows.Forms.RadioButton()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.grpLifeline4 = New System.Windows.Forms.GroupBox()
         Me.radL4RiskMode = New System.Windows.Forms.RadioButton()
@@ -323,13 +331,12 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
+        CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.picWinningStrapTexture.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.grpLifeline4.SuspendLayout()
         CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -360,6 +367,8 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.nmrFFFPortNumber)
+        Me.TabPage1.Controls.Add(Me.Label121)
         Me.TabPage1.Controls.Add(Me.CheckBox4)
         Me.TabPage1.Controls.Add(Me.CheckBox3)
         Me.TabPage1.Controls.Add(Me.CheckBox2)
@@ -376,6 +385,45 @@ Partial Class OptionsScreen
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'nmrFFFPortNumber
+        '
+        Me.nmrFFFPortNumber.Location = New System.Drawing.Point(744, 181)
+        Me.nmrFFFPortNumber.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
+        Me.nmrFFFPortNumber.Minimum = New Decimal(New Integer() {1024, 0, 0, 0})
+        Me.nmrFFFPortNumber.Name = "nmrFFFPortNumber"
+        Me.nmrFFFPortNumber.Size = New System.Drawing.Size(68, 22)
+        Me.nmrFFFPortNumber.TabIndex = 9
+        Me.nmrFFFPortNumber.Value = New Decimal(New Integer() {3818, 0, 0, 0})
+        '
+        'Label121
+        '
+        Me.Label121.AutoSize = True
+        Me.Label121.Location = New System.Drawing.Point(625, 183)
+        Me.Label121.Name = "Label121"
+        Me.Label121.Size = New System.Drawing.Size(113, 16)
+        Me.Label121.TabIndex = 8
+        Me.Label121.Text = "FFF Network Port:"
+        '
+        'CheckBox4
+        '
+        Me.CheckBox4.AutoSize = True
+        Me.CheckBox4.Location = New System.Drawing.Point(628, 140)
+        Me.CheckBox4.Name = "CheckBox4"
+        Me.CheckBox4.Size = New System.Drawing.Size(306, 20)
+        Me.CheckBox4.TabIndex = 7
+        Me.CheckBox4.Text = "Auto hide question when contestant walks away"
+        Me.CheckBox4.UseVisualStyleBackColor = True
+        '
+        'CheckBox3
+        '
+        Me.CheckBox3.AutoSize = True
+        Me.CheckBox3.Location = New System.Drawing.Point(628, 79)
+        Me.CheckBox3.Name = "CheckBox3"
+        Me.CheckBox3.Size = New System.Drawing.Size(339, 20)
+        Me.CheckBox3.TabIndex = 6
+        Me.CheckBox3.Text = "Auto hide question when Plus One lifeline is activated"
+        Me.CheckBox3.UseVisualStyleBackColor = True
         '
         'CheckBox2
         '
@@ -409,6 +457,9 @@ Partial Class OptionsScreen
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.chkAutoShowTVScreen)
+        Me.GroupBox3.Controls.Add(Me.chkAutoShowGuestScreen)
+        Me.GroupBox3.Controls.Add(Me.chkAutoShowHostScreen)
         Me.GroupBox3.Controls.Add(Me.btnIdentifyMonitors)
         Me.GroupBox3.Controls.Add(Me.cmbFullScrTVScreen)
         Me.GroupBox3.Controls.Add(Me.cmbFullScrGuestScreen)
@@ -422,16 +473,46 @@ Partial Class OptionsScreen
         Me.GroupBox3.Controls.Add(Me.Label118)
         Me.GroupBox3.Controls.Add(Me.Label117)
         Me.GroupBox3.Controls.Add(Me.Label116)
-        Me.GroupBox3.Location = New System.Drawing.Point(6, 383)
+        Me.GroupBox3.Location = New System.Drawing.Point(6, 366)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(529, 105)
+        Me.GroupBox3.Size = New System.Drawing.Size(616, 105)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Resolutions"
         '
+        'chkAutoShowTVScreen
+        '
+        Me.chkAutoShowTVScreen.AutoSize = True
+        Me.chkAutoShowTVScreen.Location = New System.Drawing.Point(192, 74)
+        Me.chkAutoShowTVScreen.Name = "chkAutoShowTVScreen"
+        Me.chkAutoShowTVScreen.Size = New System.Drawing.Size(89, 20)
+        Me.chkAutoShowTVScreen.TabIndex = 15
+        Me.chkAutoShowTVScreen.Text = "Auto Show"
+        Me.chkAutoShowTVScreen.UseVisualStyleBackColor = True
+        '
+        'chkAutoShowGuestScreen
+        '
+        Me.chkAutoShowGuestScreen.AutoSize = True
+        Me.chkAutoShowGuestScreen.Location = New System.Drawing.Point(192, 46)
+        Me.chkAutoShowGuestScreen.Name = "chkAutoShowGuestScreen"
+        Me.chkAutoShowGuestScreen.Size = New System.Drawing.Size(89, 20)
+        Me.chkAutoShowGuestScreen.TabIndex = 14
+        Me.chkAutoShowGuestScreen.Text = "Auto Show"
+        Me.chkAutoShowGuestScreen.UseVisualStyleBackColor = True
+        '
+        'chkAutoShowHostScreen
+        '
+        Me.chkAutoShowHostScreen.AutoSize = True
+        Me.chkAutoShowHostScreen.Location = New System.Drawing.Point(192, 18)
+        Me.chkAutoShowHostScreen.Name = "chkAutoShowHostScreen"
+        Me.chkAutoShowHostScreen.Size = New System.Drawing.Size(89, 20)
+        Me.chkAutoShowHostScreen.TabIndex = 13
+        Me.chkAutoShowHostScreen.Text = "Auto Show"
+        Me.chkAutoShowHostScreen.UseVisualStyleBackColor = True
+        '
         'btnIdentifyMonitors
         '
-        Me.btnIdentifyMonitors.Location = New System.Drawing.Point(446, 36)
+        Me.btnIdentifyMonitors.Location = New System.Drawing.Point(536, 36)
         Me.btnIdentifyMonitors.Name = "btnIdentifyMonitors"
         Me.btnIdentifyMonitors.Size = New System.Drawing.Size(75, 41)
         Me.btnIdentifyMonitors.TabIndex = 12
@@ -442,7 +523,7 @@ Partial Class OptionsScreen
         '
         Me.cmbFullScrTVScreen.Enabled = False
         Me.cmbFullScrTVScreen.FormattingEnabled = True
-        Me.cmbFullScrTVScreen.Location = New System.Drawing.Point(309, 72)
+        Me.cmbFullScrTVScreen.Location = New System.Drawing.Point(399, 72)
         Me.cmbFullScrTVScreen.Name = "cmbFullScrTVScreen"
         Me.cmbFullScrTVScreen.Size = New System.Drawing.Size(131, 24)
         Me.cmbFullScrTVScreen.TabIndex = 11
@@ -451,7 +532,7 @@ Partial Class OptionsScreen
         '
         Me.cmbFullScrGuestScreen.Enabled = False
         Me.cmbFullScrGuestScreen.FormattingEnabled = True
-        Me.cmbFullScrGuestScreen.Location = New System.Drawing.Point(309, 44)
+        Me.cmbFullScrGuestScreen.Location = New System.Drawing.Point(399, 44)
         Me.cmbFullScrGuestScreen.Name = "cmbFullScrGuestScreen"
         Me.cmbFullScrGuestScreen.Size = New System.Drawing.Size(131, 24)
         Me.cmbFullScrGuestScreen.TabIndex = 10
@@ -460,7 +541,7 @@ Partial Class OptionsScreen
         '
         Me.cmbFullScrHostScreen.Enabled = False
         Me.cmbFullScrHostScreen.FormattingEnabled = True
-        Me.cmbFullScrHostScreen.Location = New System.Drawing.Point(309, 16)
+        Me.cmbFullScrHostScreen.Location = New System.Drawing.Point(399, 16)
         Me.cmbFullScrHostScreen.Name = "cmbFullScrHostScreen"
         Me.cmbFullScrHostScreen.Size = New System.Drawing.Size(131, 24)
         Me.cmbFullScrHostScreen.TabIndex = 9
@@ -468,7 +549,7 @@ Partial Class OptionsScreen
         'chkFullScrTVScreen
         '
         Me.chkFullScrTVScreen.AutoSize = True
-        Me.chkFullScrTVScreen.Location = New System.Drawing.Point(210, 74)
+        Me.chkFullScrTVScreen.Location = New System.Drawing.Point(300, 74)
         Me.chkFullScrTVScreen.Name = "chkFullScrTVScreen"
         Me.chkFullScrTVScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrTVScreen.TabIndex = 8
@@ -478,7 +559,7 @@ Partial Class OptionsScreen
         'chkFullScrGuestScreen
         '
         Me.chkFullScrGuestScreen.AutoSize = True
-        Me.chkFullScrGuestScreen.Location = New System.Drawing.Point(210, 46)
+        Me.chkFullScrGuestScreen.Location = New System.Drawing.Point(300, 46)
         Me.chkFullScrGuestScreen.Name = "chkFullScrGuestScreen"
         Me.chkFullScrGuestScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrGuestScreen.TabIndex = 7
@@ -488,7 +569,7 @@ Partial Class OptionsScreen
         'chkFullScrHostScreen
         '
         Me.chkFullScrHostScreen.AutoSize = True
-        Me.chkFullScrHostScreen.Location = New System.Drawing.Point(210, 18)
+        Me.chkFullScrHostScreen.Location = New System.Drawing.Point(300, 18)
         Me.chkFullScrHostScreen.Name = "chkFullScrHostScreen"
         Me.chkFullScrHostScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrHostScreen.TabIndex = 6
@@ -499,7 +580,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResTVScreen.FormattingEnabled = True
         Me.cmbResTVScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResTVScreen.Location = New System.Drawing.Point(100, 72)
+        Me.cmbResTVScreen.Location = New System.Drawing.Point(94, 72)
         Me.cmbResTVScreen.Name = "cmbResTVScreen"
         Me.cmbResTVScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResTVScreen.TabIndex = 5
@@ -509,7 +590,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResGuestScreen.FormattingEnabled = True
         Me.cmbResGuestScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResGuestScreen.Location = New System.Drawing.Point(100, 44)
+        Me.cmbResGuestScreen.Location = New System.Drawing.Point(94, 44)
         Me.cmbResGuestScreen.Name = "cmbResGuestScreen"
         Me.cmbResGuestScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResGuestScreen.TabIndex = 4
@@ -519,7 +600,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResHostScreen.FormattingEnabled = True
         Me.cmbResHostScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResHostScreen.Location = New System.Drawing.Point(100, 16)
+        Me.cmbResHostScreen.Location = New System.Drawing.Point(94, 16)
         Me.cmbResHostScreen.Name = "cmbResHostScreen"
         Me.cmbResHostScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResHostScreen.TabIndex = 3
@@ -554,21 +635,41 @@ Partial Class OptionsScreen
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.picWinningStrapTexture)
         Me.GroupBox2.Controls.Add(Me.radStrapBlack)
         Me.GroupBox2.Controls.Add(Me.radStrapGreen)
         Me.GroupBox2.Controls.Add(Me.radStrapYellow)
-        Me.GroupBox2.Controls.Add(Me.PictureBox5)
         Me.GroupBox2.Location = New System.Drawing.Point(6, 267)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(607, 110)
+        Me.GroupBox2.Size = New System.Drawing.Size(616, 95)
         Me.GroupBox2.TabIndex = 1
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Winning strap texture"
         '
+        'picWinningStrapTexture
+        '
+        Me.picWinningStrapTexture.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
+        Me.picWinningStrapTexture.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picWinningStrapTexture.Controls.Add(Me.lblWinningStrapTexture)
+        Me.picWinningStrapTexture.Location = New System.Drawing.Point(-32, 17)
+        Me.picWinningStrapTexture.Name = "picWinningStrapTexture"
+        Me.picWinningStrapTexture.Size = New System.Drawing.Size(680, 50)
+        Me.picWinningStrapTexture.TabIndex = 7
+        '
+        'lblWinningStrapTexture
+        '
+        Me.lblWinningStrapTexture.AutoSize = True
+        Me.lblWinningStrapTexture.Font = New System.Drawing.Font("Copperplate Gothic Bold", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblWinningStrapTexture.Location = New System.Drawing.Point(259, 10)
+        Me.lblWinningStrapTexture.Name = "lblWinningStrapTexture"
+        Me.lblWinningStrapTexture.Size = New System.Drawing.Size(162, 30)
+        Me.lblWinningStrapTexture.TabIndex = 10
+        Me.lblWinningStrapTexture.Text = "1.000.000"
+        '
         'radStrapBlack
         '
         Me.radStrapBlack.AutoSize = True
-        Me.radStrapBlack.Location = New System.Drawing.Point(198, 80)
+        Me.radStrapBlack.Location = New System.Drawing.Point(198, 71)
         Me.radStrapBlack.Name = "radStrapBlack"
         Me.radStrapBlack.Size = New System.Drawing.Size(59, 20)
         Me.radStrapBlack.TabIndex = 6
@@ -578,7 +679,7 @@ Partial Class OptionsScreen
         'radStrapGreen
         '
         Me.radStrapGreen.AutoSize = True
-        Me.radStrapGreen.Location = New System.Drawing.Point(130, 80)
+        Me.radStrapGreen.Location = New System.Drawing.Point(130, 71)
         Me.radStrapGreen.Name = "radStrapGreen"
         Me.radStrapGreen.Size = New System.Drawing.Size(62, 20)
         Me.radStrapGreen.TabIndex = 5
@@ -589,23 +690,13 @@ Partial Class OptionsScreen
         '
         Me.radStrapYellow.AutoSize = True
         Me.radStrapYellow.Checked = True
-        Me.radStrapYellow.Location = New System.Drawing.Point(6, 80)
+        Me.radStrapYellow.Location = New System.Drawing.Point(6, 71)
         Me.radStrapYellow.Name = "radStrapYellow"
         Me.radStrapYellow.Size = New System.Drawing.Size(118, 20)
         Me.radStrapYellow.TabIndex = 4
         Me.radStrapYellow.TabStop = True
         Me.radStrapYellow.Text = "(Default) Yellow"
         Me.radStrapYellow.UseVisualStyleBackColor = True
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap
-        Me.PictureBox5.Location = New System.Drawing.Point(-67, 21)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(740, 53)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 0
-        Me.PictureBox5.TabStop = False
         '
         'GroupBox1
         '
@@ -3499,26 +3590,6 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'CheckBox3
-        '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(628, 79)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(339, 20)
-        Me.CheckBox3.TabIndex = 6
-        Me.CheckBox3.Text = "Auto hide question when Plus One lifeline is activated"
-        Me.CheckBox3.UseVisualStyleBackColor = True
-        '
-        'CheckBox4
-        '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(628, 140)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(306, 20)
-        Me.CheckBox4.TabIndex = 7
-        Me.CheckBox4.Text = "Auto hide question when contestant walks away"
-        Me.CheckBox4.UseVisualStyleBackColor = True
-        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3535,11 +3606,13 @@ Partial Class OptionsScreen
         Me.tabOptions.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
+        CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.picWinningStrapTexture.ResumeLayout(False)
+        Me.picWinningStrapTexture.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.grpLifeline4.ResumeLayout(False)
@@ -3836,7 +3909,6 @@ Partial Class OptionsScreen
     Friend WithEvents cmbLifeline2 As ComboBox
     Friend WithEvents nmrTotalLifelines As NumericUpDown
     Friend WithEvents Label112 As Label
-    Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents radStrapGreen As RadioButton
     Friend WithEvents radStrapYellow As RadioButton
     Friend WithEvents radStrapBlack As RadioButton
@@ -3866,4 +3938,11 @@ Partial Class OptionsScreen
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents CheckBox3 As CheckBox
     Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents nmrFFFPortNumber As NumericUpDown
+    Friend WithEvents Label121 As Label
+    Friend WithEvents chkAutoShowTVScreen As CheckBox
+    Friend WithEvents chkAutoShowGuestScreen As CheckBox
+    Friend WithEvents chkAutoShowHostScreen As CheckBox
+    Friend WithEvents picWinningStrapTexture As Panel
+    Friend WithEvents lblWinningStrapTexture As Label
 End Class

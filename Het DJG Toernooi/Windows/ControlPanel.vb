@@ -47,7 +47,16 @@ Public Class ControlPanel
     Private Sub ControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         TVControlPnl.pnlTotal.Visible = False
         drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())
-        'Me.Show()
+
+        If Profile.Options.AutoShow_HostScreen = True Then
+            HostScreen.Show()
+        End If
+        If Profile.Options.AutoShow_GuestScreen = True Then
+            GuestScreen.Show()
+        End If
+        If Profile.Options.AutoShow_TVScreen = True Then
+            TVControlPnl.Show()
+        End If
     End Sub
 
     Public Shared answer As String

@@ -5,6 +5,7 @@
     Public Shared Lifeline3_availableAt As Integer
     Public Shared Lifeline4_availableAt As Integer
     Public Shared WinningStrapTexture As Integer
+    Public Shared QuestionTexture As Integer
 
     Private Sub OptionsScreen_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cmbFullScrHostScreen.DataSource = New List(Of String)(Monitor.ConnectedScreens)
@@ -62,9 +63,26 @@
                 radL4RiskMode.Checked = True
         End Select
 
+        picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture()
+        lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor()
+        Select Case Profile.Options.WinningStrapTexture
+            Case 0
+                radStrapYellow.Checked = True
+                WinningStrapTexture = 0
+            Case 1
+                radStrapGreen.Checked = True
+                WinningStrapTexture = 1
+            Case 2
+                radStrapBlack.Checked = True
+                WinningStrapTexture = 2
+        End Select
+
         cmbResHostScreen.Text = Profile.Options.Resolution_HostScreen
         cmbResGuestScreen.Text = Profile.Options.Resolution_GuestScreen
         cmbResTVScreen.Text = Profile.Options.Resolution_TVScreen
+        chkAutoShowHostScreen.Checked = Profile.Options.AutoShow_HostScreen
+        chkAutoShowGuestScreen.Checked = Profile.Options.AutoShow_GuestScreen
+        chkAutoShowTVScreen.Checked = Profile.Options.AutoShow_TVScreen
         chkFullScrHostScreen.Checked = Profile.Options.FullScreen_HostScreen_Enable
         chkFullScrGuestScreen.Checked = Profile.Options.FullScreen_GuestScreen_Enable
         chkFullScrTVScreen.Checked = Profile.Options.FullScreen_TVScreen_Enable
@@ -250,15 +268,26 @@
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
+        Monitor.ApplyScreenSettings()
         Me.Close()
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Game.CurrentProfile.SaveSettings()
+        Game.CurrentProfile.LoadSettings()
+        TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
+        Monitor.ApplyScreenSettings()
         MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
 
@@ -435,6 +464,30 @@
             OptionsScreen.Lifeline4_availableAt = 2
         ElseIf radL4RiskMode.Checked Then
             OptionsScreen.Lifeline4_availableAt = 3
+        End If
+    End Sub
+
+    Private Sub radStrapYellow_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapYellow.CheckedChanged
+        If radStrapYellow.Checked Then
+            WinningStrapTexture = 0
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapGreen_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapGreen.CheckedChanged
+        If radStrapGreen.Checked Then
+            WinningStrapTexture = 1
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapBlack_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlack.CheckedChanged
+        If radStrapBlack.Checked Then
+            WinningStrapTexture = 2
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
     End Sub
 End Class

@@ -195,6 +195,7 @@
     End Sub
 
     Private Sub TVControlPnl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
     End Sub
 End Class

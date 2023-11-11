@@ -86,7 +86,6 @@ Partial Class ControlPanel
         Me.chkLifeline1Unused = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ChangeMoneyStrapToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HostMessagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -119,6 +118,7 @@ Partial Class ControlPanel
         Me.grpMain = New System.Windows.Forms.GroupBox()
         Me.btnUndo = New System.Windows.Forms.Button()
         Me.grpTV = New System.Windows.Forms.GroupBox()
+        Me.chkShowTotalScore = New System.Windows.Forms.CheckBox()
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
         Me.btnFFF = New System.Windows.Forms.Button()
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
@@ -127,7 +127,6 @@ Partial Class ControlPanel
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
         Me.btnResetGame = New System.Windows.Forms.Button()
-        Me.chkShowTotalScore = New System.Windows.Forms.CheckBox()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -773,27 +772,21 @@ Partial Class ControlPanel
         '
         'DatabaseToolStripMenuItem
         '
-        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ChangeMoneyStrapToolStripMenuItem, Me.HostMessagesToolStripMenuItem, Me.ShowOptionsToolStripMenuItem})
+        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HostMessagesToolStripMenuItem, Me.ShowOptionsToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
         Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
         Me.DatabaseToolStripMenuItem.Text = " Main"
         '
-        'ChangeMoneyStrapToolStripMenuItem
-        '
-        Me.ChangeMoneyStrapToolStripMenuItem.Name = "ChangeMoneyStrapToolStripMenuItem"
-        Me.ChangeMoneyStrapToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
-        Me.ChangeMoneyStrapToolStripMenuItem.Text = "Change Money strap"
-        '
         'HostMessagesToolStripMenuItem
         '
         Me.HostMessagesToolStripMenuItem.Name = "HostMessagesToolStripMenuItem"
-        Me.HostMessagesToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.HostMessagesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.HostMessagesToolStripMenuItem.Text = "Host Messages"
         '
         'ShowOptionsToolStripMenuItem
         '
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
         '
         'GameToolStripMenuItem
@@ -868,13 +861,13 @@ Partial Class ControlPanel
         'X720720pToolStripMenuItem
         '
         Me.X720720pToolStripMenuItem.Name = "X720720pToolStripMenuItem"
-        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.X720720pToolStripMenuItem.Text = "1280 x 720 (720p)"
         '
         'X10801080pToolStripMenuItem
         '
         Me.X10801080pToolStripMenuItem.Name = "X10801080pToolStripMenuItem"
-        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.X10801080pToolStripMenuItem.Text = "1920 x 1080 (1080p)"
         '
         'OptionsToolStripMenuItem
@@ -1052,6 +1045,16 @@ Partial Class ControlPanel
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
         '
+        'chkShowTotalScore
+        '
+        Me.chkShowTotalScore.AutoSize = True
+        Me.chkShowTotalScore.Location = New System.Drawing.Point(6, 30)
+        Me.chkShowTotalScore.Name = "chkShowTotalScore"
+        Me.chkShowTotalScore.Size = New System.Drawing.Size(111, 17)
+        Me.chkShowTotalScore.TabIndex = 1
+        Me.chkShowTotalScore.Text = "Show Total Score"
+        Me.chkShowTotalScore.UseVisualStyleBackColor = True
+        '
         'tmrLifelineBling
         '
         Me.tmrLifelineBling.Interval = 300
@@ -1129,16 +1132,6 @@ Partial Class ControlPanel
         Me.btnResetGame.TabIndex = 86
         Me.btnResetGame.Text = "Reset Game"
         Me.btnResetGame.UseVisualStyleBackColor = False
-        '
-        'chkShowTotalScore
-        '
-        Me.chkShowTotalScore.AutoSize = True
-        Me.chkShowTotalScore.Location = New System.Drawing.Point(6, 30)
-        Me.chkShowTotalScore.Name = "chkShowTotalScore"
-        Me.chkShowTotalScore.Size = New System.Drawing.Size(111, 17)
-        Me.chkShowTotalScore.TabIndex = 1
-        Me.chkShowTotalScore.Text = "Show Total Score"
-        Me.chkShowTotalScore.UseVisualStyleBackColor = True
         '
         'ControlPanel
         '
@@ -1292,7 +1285,6 @@ Partial Class ControlPanel
     Friend WithEvents btnFFF As Button
     Friend WithEvents btnUndo As Button
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ChangeMoneyStrapToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuestionsEditorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator

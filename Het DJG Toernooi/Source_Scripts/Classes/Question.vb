@@ -10,6 +10,7 @@ Public Class Question
     Public Shared Sub Generate()
         ControlPanel.i = 0
 
+        LifelineHost.used = False
         HostScreen.txtExplain.ForeColor = Color.Black
         ControlPanel.lblATA_A.Text = "A: 0"
         ControlPanel.lblATA_B.Text = "B: 0"
@@ -368,6 +369,20 @@ Public Class Question
     End Sub
 
     Public Shared Sub PlayFinalAnswerCue()
+        HostScreen.txtExplain.ForeColor = Color.White
+        UndoAnswer(False)
+
+        If LifelineHost.used = True Then
+            HostScreen.pnlAnswer.BackColor = Color.Black
+        Else
+            If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
+                HostScreen.pnlAnswer.BackColor = Color.Lime
+            ElseIf ControlPanel.answer IsNot ControlPanel.lblAnswer.Text Then
+                HostScreen.pnlAnswer.BackColor = Color.Red
+            End If
+        End If
+
+
         If Game.level >= 5 Then
             useMusic = False
         End If

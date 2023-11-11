@@ -514,7 +514,7 @@ Partial Class HostScreen
         '
         'pnlStrap
         '
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
         Me.pnlStrap.Location = New System.Drawing.Point(-8, 492)

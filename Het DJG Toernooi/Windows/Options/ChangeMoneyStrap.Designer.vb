@@ -108,7 +108,7 @@ Partial Class ChangeMoneyStrap
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox1.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap_1
+        Me.PictureBox1.Image = Global.MillionaireGame.My.Resources.Resources.winning_0
         Me.PictureBox1.Location = New System.Drawing.Point(181, 14)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(803, 92)
@@ -119,7 +119,7 @@ Partial Class ChangeMoneyStrap
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox2.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap_2
+        Me.PictureBox2.Image = Global.MillionaireGame.My.Resources.Resources.winning_1
         Me.PictureBox2.Location = New System.Drawing.Point(181, 112)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(803, 92)
@@ -130,7 +130,7 @@ Partial Class ChangeMoneyStrap
         'PictureBox3
         '
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
-        Me.PictureBox3.Image = Global.MillionaireGame.My.Resources.Resources.winning_strap_3
+        Me.PictureBox3.Image = Global.MillionaireGame.My.Resources.Resources.winning_2
         Me.PictureBox3.Location = New System.Drawing.Point(181, 210)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(803, 92)
