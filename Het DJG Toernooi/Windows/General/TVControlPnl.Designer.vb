@@ -313,7 +313,6 @@ Partial Class TVControlPnl
         Me.txtD.Name = "txtD"
         Me.txtD.Size = New System.Drawing.Size(476, 46)
         Me.txtD.TabIndex = 19
-        Me.txtD.Text = "D:"
         Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picB
@@ -335,7 +334,6 @@ Partial Class TVControlPnl
         Me.txtB.Name = "txtB"
         Me.txtB.Size = New System.Drawing.Size(476, 46)
         Me.txtB.TabIndex = 20
-        Me.txtB.Text = "B:"
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picC
@@ -357,7 +355,6 @@ Partial Class TVControlPnl
         Me.txtC.Name = "txtC"
         Me.txtC.Size = New System.Drawing.Size(476, 46)
         Me.txtC.TabIndex = 18
-        Me.txtC.Text = "C:"
         Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picA
@@ -379,7 +376,6 @@ Partial Class TVControlPnl
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(476, 46)
         Me.txtA.TabIndex = 19
-        Me.txtA.Text = "A:"
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picQuestion
@@ -401,7 +397,6 @@ Partial Class TVControlPnl
         Me.txtQuestion.Name = "txtQuestion"
         Me.txtQuestion.Size = New System.Drawing.Size(1016, 82)
         Me.txtQuestion.TabIndex = 13
-        Me.txtQuestion.Text = "txtQuestion" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "txtQuestion"
         Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'picTree
@@ -946,12 +941,12 @@ Partial Class TVControlPnl
         Me.Controls.Add(Me.pnlFFFPlayers)
         Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlQuestion)
-        Me.Controls.Add(Me.pnlFFFWinner)
-        Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.picLifelineUse)
-        Me.Controls.Add(Me.pnlTime)
+        Me.Controls.Add(Me.pnlFFFWinner)
+        Me.Controls.Add(Me.pnlTotal)
+        Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.grpATA)
+        Me.Controls.Add(Me.pnlTime)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Name = "TVControlPnl"

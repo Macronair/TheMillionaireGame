@@ -20,6 +20,8 @@ Public Class LifelineHost
 
                 ControlPanel.txtHostMessages.AppendText("ASK THE HOST ACTIVATED." + Environment.NewLine)
                 HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "ASK THE HOST ACTIVATED."
+
+                used = True
             Case 1
                 TVControlPnl.picLifelineUse.Visible = False
                 TVControlPnl.picLifelineUse.Image = My.Resources.ll_switch

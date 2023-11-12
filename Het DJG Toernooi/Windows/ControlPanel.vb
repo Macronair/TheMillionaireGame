@@ -61,9 +61,9 @@ Public Class ControlPanel
 
     Public Shared answer As String
     Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
+        Dim q As New Question
         Question.UndoAnswer(False)
         answer = "A"
-        HostScreen.txtExplain.ForeColor = Color.White
         txtA.BackColor = Color.Yellow
         HostScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtA.ForeColor = Color.Black
@@ -71,11 +71,7 @@ Public Class ControlPanel
         TVControlPnl.txtA.ForeColor = Color.Black
         GuestScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtA.ForeColor = Color.Black
-        If answer = lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Lime
-        ElseIf answer IsNot lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Red
-        End If
+
         If LifeLineDouble.active = True Then
             LifeLineDouble.FinalAnswer()
         Else
@@ -87,7 +83,6 @@ Public Class ControlPanel
         Dim q As New Question
         Question.UndoAnswer(False)
         answer = "B"
-        HostScreen.txtExplain.ForeColor = Color.White
         txtB.BackColor = Color.Yellow
         HostScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtB.ForeColor = Color.Black
@@ -95,11 +90,6 @@ Public Class ControlPanel
         TVControlPnl.txtB.ForeColor = Color.Black
         GuestScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtB.ForeColor = Color.Black
-        If answer = lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Lime
-        ElseIf answer IsNot lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Red
-        End If
         If LifeLineDouble.active = True Then
             LifeLineDouble.FinalAnswer()
         Else
@@ -111,7 +101,6 @@ Public Class ControlPanel
         Dim q As New Question
         Question.UndoAnswer(False)
         answer = "C"
-        HostScreen.txtExplain.ForeColor = Color.White
         txtC.BackColor = Color.Yellow
         HostScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtC.ForeColor = Color.Black
@@ -119,11 +108,6 @@ Public Class ControlPanel
         TVControlPnl.txtC.ForeColor = Color.Black
         GuestScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtC.ForeColor = Color.Black
-        If answer = lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Lime
-        ElseIf answer IsNot lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Red
-        End If
         If LifeLineDouble.active = True Then
             LifeLineDouble.FinalAnswer()
         Else
@@ -135,7 +119,6 @@ Public Class ControlPanel
         Dim q As New Question
         Question.UndoAnswer(False)
         answer = "D"
-        HostScreen.txtExplain.ForeColor = Color.White
         txtD.BackColor = Color.Yellow
         HostScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtD.ForeColor = Color.Black
@@ -143,11 +126,6 @@ Public Class ControlPanel
         TVControlPnl.txtD.ForeColor = Color.Black
         GuestScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtD.ForeColor = Color.Black
-        If answer = lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Lime
-        ElseIf answer IsNot lblAnswer.Text Then
-            HostScreen.pnlAnswer.BackColor = Color.Red
-        End If
         If LifeLineDouble.active = True Then
             LifeLineDouble.FinalAnswer()
         Else
@@ -160,13 +138,12 @@ Public Class ControlPanel
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
         If i = 0 Then
             HostScreen.txtExplain.ForeColor = Color.White
-            If HostScreen.pnlAnswer.BackColor = Color.Lime Then
+            If answer = lblAnswer.Text Then
                 If Game.walkaway = False Then
                     TVControlPnl.tmrStrap.Start()
                 End If
                 Question.PlayAnswerRevealCue(True)
-            End If
-            If HostScreen.pnlAnswer.BackColor = Color.Red Or HostScreen.pnlAnswer.BackColor = Color.LightGray Then
+            Else
                 Question.PlayAnswerRevealCue(False)
             End If
             i = 1
@@ -248,7 +225,7 @@ Public Class ControlPanel
         Timer1.Start()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnStopPC.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         My.Computer.Audio.Stop()
         HaltSound()
     End Sub
@@ -611,10 +588,6 @@ Public Class ControlPanel
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
         About.ShowDialog()
-    End Sub
-
-    Private Sub ChangeMoneyStrapToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ChangeMoneyStrapToolStripMenuItem.Click
-        ChangeMoneyStrap.ShowDialog()
     End Sub
 
     Private Sub ControlPanel_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

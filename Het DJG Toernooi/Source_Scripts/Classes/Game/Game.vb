@@ -256,8 +256,6 @@
             HostScreen.lblQLeft.Text = Game.varQLeft
             HostScreen.lblWrong.Text = Game.varWrong
         End If
-
-        CheckLifelineAvailability()
     End Sub
 
     Public Shared Sub ChangeMode(ByVal newmode As Integer)
@@ -281,7 +279,10 @@
                 ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
         End Select
 
-        CheckLifelineAvailability()
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
     End Sub
 
     Public Shared Sub SetValues()
@@ -300,13 +301,6 @@
 
     Dim intSound As Integer = 0
     Dim snd As New SOUND
-
-    Shared Sub CheckLifelineAvailability()
-        LifelineManager.UnlockLifeline(1)
-        LifelineManager.UnlockLifeline(2)
-        LifelineManager.UnlockLifeline(3)
-        LifelineManager.UnlockLifeline(4)
-    End Sub
 
     Public Sub wrongAsnwer()
         If Game.level = 0 Then

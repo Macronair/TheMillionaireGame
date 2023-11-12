@@ -83,24 +83,6 @@
                 GuestScreen.picLifeline1.Visible = False
                 TVControlPnl.picLifeline1.Visible = False
 
-                ControlPanel.btnLifeline2.Enabled = False
-                ControlPanel.chkLifeline2Unused.Enabled = False
-                HostScreen.picLifeline2.Visible = False
-                GuestScreen.picLifeline2.Visible = False
-                TVControlPnl.picLifeline2.Visible = False
-
-                ControlPanel.btnLifeline3.Enabled = False
-                ControlPanel.chkLifeline3Unused.Enabled = False
-                HostScreen.picLifeline3.Visible = False
-                GuestScreen.picLifeline3.Visible = False
-                TVControlPnl.picLifeline3.Visible = False
-
-                ControlPanel.btnLifeline4.Enabled = False
-                ControlPanel.chkLifeline4Unused.Enabled = False
-                HostScreen.picLifeline4.Visible = False
-                GuestScreen.picLifeline4.Visible = False
-                TVControlPnl.picLifeline4.Visible = False
-
                 If Profile.Options.TotalLifelines >= 1 Then
                     Select Case Profile.Options.Lifeline1_available
                         Case 0
@@ -137,7 +119,7 @@
                 End If
                 If Lifeline1_Used Then
                     ControlPanel.btnLifeline1.Enabled = False
-                    ControlPanel.chkLifeline1Unused.Enabled = False
+                    ControlPanel.chkLifeline1Unused.Checked = False
                 End If
             Case 2
                 ControlPanel.btnLifeline2.Enabled = False
@@ -182,7 +164,7 @@
                 End If
                 If Lifeline2_Used Then
                     ControlPanel.btnLifeline2.Enabled = False
-                    ControlPanel.chkLifeline2Unused.Enabled = False
+                    ControlPanel.chkLifeline2Unused.Checked = False
                 End If
             Case 3
                 ControlPanel.btnLifeline3.Enabled = False
@@ -227,7 +209,7 @@
                 End If
                 If Lifeline3_Used Then
                     ControlPanel.btnLifeline3.Enabled = False
-                    ControlPanel.chkLifeline3Unused.Enabled = False
+                    ControlPanel.chkLifeline3Unused.Checked = False
                 End If
             Case 4
                 ControlPanel.btnLifeline4.Enabled = False
@@ -272,7 +254,7 @@
                 End If
                 If Lifeline4_Used Then
                     ControlPanel.btnLifeline4.Enabled = False
-                    ControlPanel.chkLifeline4Unused.Enabled = False
+                    ControlPanel.chkLifeline4Unused.Checked = False
                 End If
         End Select
 

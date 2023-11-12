@@ -53,7 +53,6 @@ Partial Class ControlPanel
         Me.btnB = New System.Windows.Forms.Button()
         Me.btnC = New System.Windows.Forms.Button()
         Me.btnD = New System.Windows.Forms.Button()
-        Me.btnStopPC = New System.Windows.Forms.Button()
         Me.chkLifeline3Unused = New System.Windows.Forms.CheckBox()
         Me.chkLifeline2Unused = New System.Windows.Forms.CheckBox()
         Me.chkLifeline4Unused = New System.Windows.Forms.CheckBox()
@@ -201,12 +200,15 @@ Partial Class ControlPanel
         '
         'btnSndOpening
         '
+        Me.btnSndOpening.BackColor = System.Drawing.Color.Blue
+        Me.btnSndOpening.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSndOpening.ForeColor = System.Drawing.Color.White
         Me.btnSndOpening.Location = New System.Drawing.Point(9, 52)
         Me.btnSndOpening.Name = "btnSndOpening"
         Me.btnSndOpening.Size = New System.Drawing.Size(75, 22)
         Me.btnSndOpening.TabIndex = 10
         Me.btnSndOpening.Text = "Opening"
-        Me.btnSndOpening.UseVisualStyleBackColor = True
+        Me.btnSndOpening.UseVisualStyleBackColor = False
         '
         'btnLightsDown
         '
@@ -222,9 +224,9 @@ Partial Class ControlPanel
         '
         'btnNewQuestion
         '
-        Me.btnNewQuestion.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnNewQuestion.BackColor = System.Drawing.Color.Teal
         Me.btnNewQuestion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNewQuestion.ForeColor = System.Drawing.Color.Black
+        Me.btnNewQuestion.ForeColor = System.Drawing.Color.White
         Me.btnNewQuestion.Location = New System.Drawing.Point(11, 46)
         Me.btnNewQuestion.Name = "btnNewQuestion"
         Me.btnNewQuestion.Size = New System.Drawing.Size(158, 27)
@@ -235,7 +237,7 @@ Partial Class ControlPanel
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(178, 52)
+        Me.Label1.Location = New System.Drawing.Point(10, 99)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(126, 13)
         Me.Label1.TabIndex = 15
@@ -243,7 +245,7 @@ Partial Class ControlPanel
         '
         'nmrLevel
         '
-        Me.nmrLevel.Location = New System.Drawing.Point(265, 69)
+        Me.nmrLevel.Location = New System.Drawing.Point(142, 97)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
@@ -262,10 +264,10 @@ Partial Class ControlPanel
         '
         'btnWalk
         '
-        Me.btnWalk.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnWalk.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btnWalk.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnWalk.ForeColor = System.Drawing.Color.Black
-        Me.btnWalk.Location = New System.Drawing.Point(11, 78)
+        Me.btnWalk.Location = New System.Drawing.Point(219, 15)
         Me.btnWalk.Name = "btnWalk"
         Me.btnWalk.Size = New System.Drawing.Size(78, 27)
         Me.btnWalk.TabIndex = 18
@@ -274,21 +276,27 @@ Partial Class ControlPanel
         '
         'btnCommercial
         '
-        Me.btnCommercial.Location = New System.Drawing.Point(9, 73)
+        Me.btnCommercial.BackColor = System.Drawing.Color.Blue
+        Me.btnCommercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnCommercial.ForeColor = System.Drawing.Color.White
+        Me.btnCommercial.Location = New System.Drawing.Point(9, 77)
         Me.btnCommercial.Name = "btnCommercial"
         Me.btnCommercial.Size = New System.Drawing.Size(75, 23)
         Me.btnCommercial.TabIndex = 19
         Me.btnCommercial.Text = "Commercials"
-        Me.btnCommercial.UseVisualStyleBackColor = True
+        Me.btnCommercial.UseVisualStyleBackColor = False
         '
         'btnClosing
         '
-        Me.btnClosing.Location = New System.Drawing.Point(9, 95)
+        Me.btnClosing.BackColor = System.Drawing.Color.Blue
+        Me.btnClosing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnClosing.ForeColor = System.Drawing.Color.White
+        Me.btnClosing.Location = New System.Drawing.Point(9, 103)
         Me.btnClosing.Name = "btnClosing"
         Me.btnClosing.Size = New System.Drawing.Size(75, 23)
         Me.btnClosing.TabIndex = 21
         Me.btnClosing.Text = "Closing"
-        Me.btnClosing.UseVisualStyleBackColor = True
+        Me.btnClosing.UseVisualStyleBackColor = False
         '
         'txtCorrect
         '
@@ -396,7 +404,7 @@ Partial Class ControlPanel
         '
         Me.lblAnswer.AutoSize = True
         Me.lblAnswer.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnswer.Location = New System.Drawing.Point(107, 105)
+        Me.lblAnswer.Location = New System.Drawing.Point(107, 72)
         Me.lblAnswer.Name = "lblAnswer"
         Me.lblAnswer.Size = New System.Drawing.Size(36, 24)
         Me.lblAnswer.TabIndex = 33
@@ -451,19 +459,6 @@ Partial Class ControlPanel
         Me.btnD.Text = "D"
         Me.btnD.UseVisualStyleBackColor = False
         '
-        'btnStopPC
-        '
-        Me.btnStopPC.BackColor = System.Drawing.Color.Red
-        Me.btnStopPC.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnStopPC.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnStopPC.ForeColor = System.Drawing.Color.White
-        Me.btnStopPC.Location = New System.Drawing.Point(64, 24)
-        Me.btnStopPC.Name = "btnStopPC"
-        Me.btnStopPC.Size = New System.Drawing.Size(54, 25)
-        Me.btnStopPC.TabIndex = 38
-        Me.btnStopPC.Text = "HALT"
-        Me.btnStopPC.UseVisualStyleBackColor = False
-        '
         'chkLifeline3Unused
         '
         Me.chkLifeline3Unused.AutoSize = True
@@ -503,7 +498,7 @@ Partial Class ControlPanel
         'txtID
         '
         Me.txtID.Enabled = False
-        Me.txtID.Location = New System.Drawing.Point(9, 27)
+        Me.txtID.Location = New System.Drawing.Point(0, 553)
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(28, 20)
@@ -513,7 +508,7 @@ Partial Class ControlPanel
         '
         Me.chkUsed.AutoSize = True
         Me.chkUsed.Enabled = False
-        Me.chkUsed.Location = New System.Drawing.Point(43, 30)
+        Me.chkUsed.Location = New System.Drawing.Point(34, 556)
         Me.chkUsed.Name = "chkUsed"
         Me.chkUsed.Size = New System.Drawing.Size(15, 14)
         Me.chkUsed.TabIndex = 48
@@ -524,19 +519,19 @@ Partial Class ControlPanel
         Me.btnToHotSeat.BackColor = System.Drawing.Color.Tomato
         Me.btnToHotSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnToHotSeat.ForeColor = System.Drawing.Color.Black
-        Me.btnToHotSeat.Location = New System.Drawing.Point(87, 52)
+        Me.btnToHotSeat.Location = New System.Drawing.Point(87, 77)
         Me.btnToHotSeat.Name = "btnToHotSeat"
-        Me.btnToHotSeat.Size = New System.Drawing.Size(86, 30)
+        Me.btnToHotSeat.Size = New System.Drawing.Size(86, 22)
         Me.btnToHotSeat.TabIndex = 49
         Me.btnToHotSeat.Text = "To Hot Seat"
         Me.btnToHotSeat.UseVisualStyleBackColor = False
         '
         'btnQuit
         '
-        Me.btnQuit.BackColor = System.Drawing.Color.LimeGreen
+        Me.btnQuit.BackColor = System.Drawing.Color.Red
         Me.btnQuit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnQuit.ForeColor = System.Drawing.Color.Black
-        Me.btnQuit.Location = New System.Drawing.Point(91, 78)
+        Me.btnQuit.Location = New System.Drawing.Point(219, 46)
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.Size = New System.Drawing.Size(78, 27)
         Me.btnQuit.TabIndex = 50
@@ -550,7 +545,7 @@ Partial Class ControlPanel
         'chkCorrectAnswer
         '
         Me.chkCorrectAnswer.AutoSize = True
-        Me.chkCorrectAnswer.Location = New System.Drawing.Point(11, 109)
+        Me.chkCorrectAnswer.Location = New System.Drawing.Point(11, 79)
         Me.chkCorrectAnswer.Name = "chkCorrectAnswer"
         Me.chkCorrectAnswer.Size = New System.Drawing.Size(90, 17)
         Me.chkCorrectAnswer.TabIndex = 52
@@ -595,9 +590,9 @@ Partial Class ControlPanel
         Me.grpRules.Controls.Add(Me.btnLL1)
         Me.grpRules.Controls.Add(Me.btnRules)
         Me.grpRules.Controls.Add(Me.btnTreePr)
-        Me.grpRules.Location = New System.Drawing.Point(330, 24)
+        Me.grpRules.Location = New System.Drawing.Point(301, 24)
         Me.grpRules.Name = "grpRules"
-        Me.grpRules.Size = New System.Drawing.Size(291, 111)
+        Me.grpRules.Size = New System.Drawing.Size(332, 86)
         Me.grpRules.TabIndex = 57
         Me.grpRules.TabStop = False
         Me.grpRules.Text = "Money Tree"
@@ -607,7 +602,7 @@ Partial Class ControlPanel
         Me.btnLL4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLL4.ForeColor = System.Drawing.Color.White
-        Me.btnLL4.Location = New System.Drawing.Point(235, 58)
+        Me.btnLL4.Location = New System.Drawing.Point(278, 15)
         Me.btnLL4.Name = "btnLL4"
         Me.btnLL4.Size = New System.Drawing.Size(46, 42)
         Me.btnLL4.TabIndex = 9
@@ -618,9 +613,9 @@ Partial Class ControlPanel
         '
         Me.btnHideTree.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer))
         Me.btnHideTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnHideTree.Location = New System.Drawing.Point(6, 49)
+        Me.btnHideTree.Location = New System.Drawing.Point(64, 15)
         Me.btnHideTree.Name = "btnHideTree"
-        Me.btnHideTree.Size = New System.Drawing.Size(54, 31)
+        Me.btnHideTree.Size = New System.Drawing.Size(54, 42)
         Me.btnHideTree.TabIndex = 7
         Me.btnHideTree.Text = "Hide"
         Me.btnHideTree.UseVisualStyleBackColor = False
@@ -629,9 +624,9 @@ Partial Class ControlPanel
         '
         Me.btnShowTree.BackColor = System.Drawing.Color.Lime
         Me.btnShowTree.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnShowTree.Location = New System.Drawing.Point(6, 16)
+        Me.btnShowTree.Location = New System.Drawing.Point(8, 15)
         Me.btnShowTree.Name = "btnShowTree"
-        Me.btnShowTree.Size = New System.Drawing.Size(54, 31)
+        Me.btnShowTree.Size = New System.Drawing.Size(54, 42)
         Me.btnShowTree.TabIndex = 6
         Me.btnShowTree.Text = "Show"
         Me.btnShowTree.UseVisualStyleBackColor = False
@@ -640,9 +635,9 @@ Partial Class ControlPanel
         '
         Me.btnTreeReset.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnTreeReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreeReset.Location = New System.Drawing.Point(93, 75)
+        Me.btnTreeReset.Location = New System.Drawing.Point(234, 60)
         Me.btnTreeReset.Name = "btnTreeReset"
-        Me.btnTreeReset.Size = New System.Drawing.Size(88, 24)
+        Me.btnTreeReset.Size = New System.Drawing.Size(88, 23)
         Me.btnTreeReset.TabIndex = 5
         Me.btnTreeReset.Text = "RESET TREE"
         Me.btnTreeReset.UseVisualStyleBackColor = False
@@ -652,7 +647,7 @@ Partial Class ControlPanel
         Me.btnLL3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLL3.ForeColor = System.Drawing.Color.White
-        Me.btnLL3.Location = New System.Drawing.Point(187, 58)
+        Me.btnLL3.Location = New System.Drawing.Point(230, 15)
         Me.btnLL3.Name = "btnLL3"
         Me.btnLL3.Size = New System.Drawing.Size(46, 42)
         Me.btnLL3.TabIndex = 4
@@ -664,7 +659,7 @@ Partial Class ControlPanel
         Me.btnLL2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLL2.ForeColor = System.Drawing.Color.White
-        Me.btnLL2.Location = New System.Drawing.Point(235, 16)
+        Me.btnLL2.Location = New System.Drawing.Point(183, 15)
         Me.btnLL2.Name = "btnLL2"
         Me.btnLL2.Size = New System.Drawing.Size(46, 42)
         Me.btnLL2.TabIndex = 3
@@ -676,7 +671,7 @@ Partial Class ControlPanel
         Me.btnLL1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnLL1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnLL1.ForeColor = System.Drawing.Color.White
-        Me.btnLL1.Location = New System.Drawing.Point(187, 16)
+        Me.btnLL1.Location = New System.Drawing.Point(135, 15)
         Me.btnLL1.Name = "btnLL1"
         Me.btnLL1.Size = New System.Drawing.Size(46, 42)
         Me.btnLL1.TabIndex = 2
@@ -687,7 +682,7 @@ Partial Class ControlPanel
         '
         Me.btnRules.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRules.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRules.Location = New System.Drawing.Point(93, 16)
+        Me.btnRules.Location = New System.Drawing.Point(46, 60)
         Me.btnRules.Name = "btnRules"
         Me.btnRules.Size = New System.Drawing.Size(88, 23)
         Me.btnRules.TabIndex = 1
@@ -698,9 +693,9 @@ Partial Class ControlPanel
         '
         Me.btnTreePr.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnTreePr.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnTreePr.Location = New System.Drawing.Point(93, 45)
+        Me.btnTreePr.Location = New System.Drawing.Point(140, 60)
         Me.btnTreePr.Name = "btnTreePr"
-        Me.btnTreePr.Size = New System.Drawing.Size(88, 24)
+        Me.btnTreePr.Size = New System.Drawing.Size(88, 23)
         Me.btnTreePr.TabIndex = 0
         Me.btnTreePr.Text = "PROG. ANIM"
         Me.btnTreePr.UseVisualStyleBackColor = False
@@ -710,9 +705,9 @@ Partial Class ControlPanel
         Me.btnUnlockSwitch.BackColor = System.Drawing.Color.Orange
         Me.btnUnlockSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUnlockSwitch.ForeColor = System.Drawing.Color.Black
-        Me.btnUnlockSwitch.Location = New System.Drawing.Point(202, 15)
+        Me.btnUnlockSwitch.Location = New System.Drawing.Point(194, 52)
         Me.btnUnlockSwitch.Name = "btnUnlockSwitch"
-        Me.btnUnlockSwitch.Size = New System.Drawing.Size(100, 24)
+        Me.btnUnlockSwitch.Size = New System.Drawing.Size(101, 22)
         Me.btnUnlockSwitch.TabIndex = 8
         Me.btnUnlockSwitch.Text = "RISK MODE OFF"
         Me.btnUnlockSwitch.UseVisualStyleBackColor = False
@@ -1006,7 +1001,6 @@ Partial Class ControlPanel
         'grpMain
         '
         Me.grpMain.Controls.Add(Me.lblAnswer)
-        Me.grpMain.Controls.Add(Me.btnUnlockSwitch)
         Me.grpMain.Controls.Add(Me.btnLightsDown)
         Me.grpMain.Controls.Add(Me.btnWalk)
         Me.grpMain.Controls.Add(Me.btnUndo)
@@ -1014,9 +1008,11 @@ Partial Class ControlPanel
         Me.grpMain.Controls.Add(Me.btnReveal)
         Me.grpMain.Controls.Add(Me.btnNewQuestion)
         Me.grpMain.Controls.Add(Me.chkCorrectAnswer)
-        Me.grpMain.Location = New System.Drawing.Point(310, 135)
+        Me.grpMain.Controls.Add(Me.nmrLevel)
+        Me.grpMain.Controls.Add(Me.Label1)
+        Me.grpMain.Location = New System.Drawing.Point(310, 113)
         Me.grpMain.Name = "grpMain"
-        Me.grpMain.Size = New System.Drawing.Size(308, 132)
+        Me.grpMain.Size = New System.Drawing.Size(308, 131)
         Me.grpMain.TabIndex = 76
         Me.grpMain.TabStop = False
         Me.grpMain.Text = "Main"
@@ -1028,9 +1024,9 @@ Partial Class ControlPanel
         Me.btnUndo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.btnUndo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUndo.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnUndo.Location = New System.Drawing.Point(253, 97)
+        Me.btnUndo.Location = New System.Drawing.Point(219, 94)
         Me.btnUndo.Name = "btnUndo"
-        Me.btnUndo.Size = New System.Drawing.Size(49, 26)
+        Me.btnUndo.Size = New System.Drawing.Size(78, 26)
         Me.btnUndo.TabIndex = 81
         Me.btnUndo.UseVisualStyleBackColor = False
         '
@@ -1061,11 +1057,11 @@ Partial Class ControlPanel
         '
         'btnFFF
         '
-        Me.btnFFF.BackColor = System.Drawing.Color.LightCoral
+        Me.btnFFF.BackColor = System.Drawing.Color.Gold
         Me.btnFFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFFF.Location = New System.Drawing.Point(124, 25)
+        Me.btnFFF.Location = New System.Drawing.Point(11, 27)
         Me.btnFFF.Name = "btnFFF"
-        Me.btnFFF.Size = New System.Drawing.Size(95, 23)
+        Me.btnFFF.Size = New System.Drawing.Size(162, 23)
         Me.btnFFF.TabIndex = 80
         Me.btnFFF.Text = "Fastest Finger"
         Me.btnFFF.UseVisualStyleBackColor = False
@@ -1078,13 +1074,13 @@ Partial Class ControlPanel
         Me.txtHostMessages.Location = New System.Drawing.Point(6, 16)
         Me.txtHostMessages.Name = "txtHostMessages"
         Me.txtHostMessages.ReadOnly = True
-        Me.txtHostMessages.Size = New System.Drawing.Size(290, 79)
+        Me.txtHostMessages.Size = New System.Drawing.Size(290, 102)
         Me.txtHostMessages.TabIndex = 83
         Me.txtHostMessages.Text = ""
         '
         'btnSendToHost
         '
-        Me.btnSendToHost.Location = New System.Drawing.Point(240, 101)
+        Me.btnSendToHost.Location = New System.Drawing.Point(240, 124)
         Me.btnSendToHost.Name = "btnSendToHost"
         Me.btnSendToHost.Size = New System.Drawing.Size(60, 35)
         Me.btnSendToHost.TabIndex = 84
@@ -1099,7 +1095,7 @@ Partial Class ControlPanel
         Me.grpHostMessages.Controls.Add(Me.btnSendToHost)
         Me.grpHostMessages.Location = New System.Drawing.Point(20, 382)
         Me.grpHostMessages.Name = "grpHostMessages"
-        Me.grpHostMessages.Size = New System.Drawing.Size(306, 142)
+        Me.grpHostMessages.Size = New System.Drawing.Size(306, 164)
         Me.grpHostMessages.TabIndex = 85
         Me.grpHostMessages.TabStop = False
         Me.grpHostMessages.Text = "Host Messages"
@@ -1107,14 +1103,14 @@ Partial Class ControlPanel
         'drpNextHostMessage
         '
         Me.drpNextHostMessage.FormattingEnabled = True
-        Me.drpNextHostMessage.Location = New System.Drawing.Point(67, 102)
+        Me.drpNextHostMessage.Location = New System.Drawing.Point(67, 137)
         Me.drpNextHostMessage.Name = "drpNextHostMessage"
         Me.drpNextHostMessage.Size = New System.Drawing.Size(172, 21)
         Me.drpNextHostMessage.TabIndex = 86
         '
         'btnClearHostMessages
         '
-        Me.btnClearHostMessages.Location = New System.Drawing.Point(1, 101)
+        Me.btnClearHostMessages.Location = New System.Drawing.Point(1, 124)
         Me.btnClearHostMessages.Name = "btnClearHostMessages"
         Me.btnClearHostMessages.Size = New System.Drawing.Size(65, 35)
         Me.btnClearHostMessages.TabIndex = 85
@@ -1123,12 +1119,12 @@ Partial Class ControlPanel
         '
         'btnResetGame
         '
-        Me.btnResetGame.BackColor = System.Drawing.Color.SeaShell
+        Me.btnResetGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnResetGame.ForeColor = System.Drawing.Color.Black
-        Me.btnResetGame.Location = New System.Drawing.Point(87, 82)
+        Me.btnResetGame.ForeColor = System.Drawing.Color.White
+        Me.btnResetGame.Location = New System.Drawing.Point(87, 52)
         Me.btnResetGame.Name = "btnResetGame"
-        Me.btnResetGame.Size = New System.Drawing.Size(86, 30)
+        Me.btnResetGame.Size = New System.Drawing.Size(86, 22)
         Me.btnResetGame.TabIndex = 86
         Me.btnResetGame.Text = "Reset Game"
         Me.btnResetGame.UseVisualStyleBackColor = False
@@ -1140,6 +1136,7 @@ Partial Class ControlPanel
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 575)
         Me.Controls.Add(Me.btnResetGame)
+        Me.Controls.Add(Me.btnUnlockSwitch)
         Me.Controls.Add(Me.grpHostMessages)
         Me.Controls.Add(Me.btnFFF)
         Me.Controls.Add(Me.btnToHotSeat)
@@ -1149,13 +1146,10 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.btnC)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.btnB)
-        Me.Controls.Add(Me.nmrLevel)
         Me.Controls.Add(Me.btnA)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtExplain)
         Me.Controls.Add(Me.txtID)
         Me.Controls.Add(Me.chkUsed)
-        Me.Controls.Add(Me.btnStopPC)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -1229,7 +1223,6 @@ Partial Class ControlPanel
     Friend WithEvents btnB As Button
     Friend WithEvents btnC As Button
     Friend WithEvents btnD As Button
-    Friend WithEvents btnStopPC As Button
     Friend WithEvents chkLifeline3Unused As CheckBox
     Friend WithEvents chkLifeline2Unused As CheckBox
     Friend WithEvents chkLifeline4Unused As CheckBox

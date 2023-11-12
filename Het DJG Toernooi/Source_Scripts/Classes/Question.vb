@@ -5,6 +5,8 @@ Public Class Question
     Public Shared act As Integer
     Public Shared useMusic As Boolean = False
 
+    Shared UpdateLifelines As Thread
+
     Shared newQ As New QDatabase
 
     Public Shared Sub Generate()
@@ -370,10 +372,10 @@ Public Class Question
 
     Public Shared Sub PlayFinalAnswerCue()
         HostScreen.txtExplain.ForeColor = Color.White
-        UndoAnswer(False)
 
         If LifelineHost.used = True Then
             HostScreen.pnlAnswer.BackColor = Color.Black
+            HostScreen.txtExplain.ForeColor = Color.Black
         Else
             If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
                 HostScreen.pnlAnswer.BackColor = Color.Lime
@@ -581,7 +583,7 @@ Public Class Question
                         End With
                 End Select
                 If Game.level > 4 Then
-                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 250))
+                    Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 300))
                     stopaudio.Start()
                 ElseIf Game.level = 4 Then
                     Dim stopaudio As New Thread(Sub() Sounds.StopAudio("question", 600))
@@ -679,7 +681,6 @@ Public Class Question
         End If
 
         ' Run code below if contestant has walked away or not
-        HostScreen.lblAnswer.Visible = True
         If IsItCorrect = True Then  'On a right answer
             TVControlPnl.tmrFlash.Start()
             LifeLineDouble.chance = 2
@@ -745,6 +746,8 @@ Public Class Question
                 HostScreen.lblQLeft.Text = Game.varQLeft
                 HostScreen.lblWrong.Text = Game.varWrong
                 Question.act = 0
+                UpdateLifelines = New Thread(New ThreadStart(AddressOf LifelinesUpdate))
+                UpdateLifelines.Start()
             End If
 
         Else        ' On a wrong answer
@@ -834,9 +837,18 @@ Public Class Question
                     ControlPanel.Timer2.Start()
                     TVControlPnl.lblAmount.Text = "" & Game.varCurrent
                 End If
+
+                HostScreen.txtExplain.ForeColor = Color.White
             End If
 
         End If
+    End Sub
+
+    Private Shared Sub LifelinesUpdate()
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
     End Sub
 
     Public Shared Sub UndoAnswer(ByVal music As Boolean)

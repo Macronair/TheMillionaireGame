@@ -5,7 +5,7 @@
 
     Private Sub tmrFlash_Tick(sender As Object, e As EventArgs) Handles tmrFlash.Tick
         If strstep <= 3 Then
-            If HostScreen.pnlAnswer.BackColor = Color.Lime Then
+            If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
                 If ControlPanel.lblAnswer.Text = "A" Then
                     If i = 0 Then
                         picA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
@@ -42,51 +42,6 @@
                         i = 0
                     End If
                 End If
-            ElseIf HostScreen.pnlAnswer.BackColor = Color.Red Or HostScreen.pnlAnswer.BackColor = Color.LightGray Then
-                If ControlPanel.lblAnswer.Text = "A" Then
-                    If i = 0 Then
-                        picA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
-                        txtA.ForeColor = Color.Black
-                        i = 1
-                    ElseIf i = 1 Then
-                        picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                        txtA.ForeColor = Color.White
-                        i = 0
-                    End If
-                End If
-                If ControlPanel.lblAnswer.Text = "B" Then
-                    If i = 0 Then
-                        i = 1
-                        picB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
-                        txtB.ForeColor = Color.Black
-                    ElseIf i = 1 Then
-                        picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-                        txtB.ForeColor = Color.White
-                        i = 0
-                    End If
-                End If
-                If ControlPanel.lblAnswer.Text = "C" Then
-                    If i = 0 Then
-                        i = 1
-                        picC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
-                        txtC.ForeColor = Color.Black
-                    ElseIf i = 1 Then
-                        picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                        txtC.ForeColor = Color.White
-                        i = 0
-                    End If
-                End If
-                If ControlPanel.lblAnswer.Text = "D" Then
-                    If i = 0 Then
-                        i = 1
-                        picD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
-                        txtD.ForeColor = Color.Black
-                    ElseIf i = 1 Then
-                        picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-                        txtD.ForeColor = Color.White
-                        i = 0
-                    End If
-                End If
             Else
                 If ControlPanel.lblAnswer.Text = "A" Then
                     If i = 0 Then
@@ -101,9 +56,9 @@
                 End If
                 If ControlPanel.lblAnswer.Text = "B" Then
                     If i = 0 Then
+                        i = 1
                         picB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                         txtB.ForeColor = Color.Black
-                        i = 1
                     ElseIf i = 1 Then
                         picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                         txtB.ForeColor = Color.White
@@ -112,9 +67,9 @@
                 End If
                 If ControlPanel.lblAnswer.Text = "C" Then
                     If i = 0 Then
+                        i = 1
                         picC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
                         txtC.ForeColor = Color.Black
-                        i = 1
                     ElseIf i = 1 Then
                         picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
                         txtC.ForeColor = Color.White
@@ -123,9 +78,9 @@
                 End If
                 If ControlPanel.lblAnswer.Text = "D" Then
                     If i = 0 Then
+                        i = 1
                         picD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                         txtD.ForeColor = Color.Black
-                        i = 1
                     ElseIf i = 1 Then
                         picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                         txtD.ForeColor = Color.White

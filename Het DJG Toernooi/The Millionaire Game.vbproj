@@ -37,7 +37,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.587.0</ApplicationVersion>
+    <ApplicationVersion>1.1.603.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -209,12 +209,6 @@
     <Compile Include="Windows\General\TVControlPnl1080.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Options\ChangeMoneyStrap.Designer.vb">
-      <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Options\ChangeMoneyStrap.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Windows\General\TVControlPnl.Designer.vb">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </Compile>
@@ -273,9 +267,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl1080.resx">
       <DependentUpon>TVControlPnl1080.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Options\ChangeMoneyStrap.resx">
-      <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl.resx">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
