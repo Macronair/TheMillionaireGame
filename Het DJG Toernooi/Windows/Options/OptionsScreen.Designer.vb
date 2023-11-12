@@ -28,10 +28,10 @@ Partial Class OptionsScreen
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.nmrFFFPortNumber = New System.Windows.Forms.NumericUpDown()
         Me.Label121 = New System.Windows.Forms.Label()
-        Me.CheckBox4 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox3 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox2 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.chkAutoHideQuestionAtWalkAway = New System.Windows.Forms.CheckBox()
+        Me.chkAutoHideQuestionAtPlusOne = New System.Windows.Forms.CheckBox()
+        Me.chkShowAnswerOnlyAtFinal = New System.Windows.Forms.CheckBox()
+        Me.chkAutoShowTotalWinnings = New System.Windows.Forms.CheckBox()
         Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.chkAutoShowTVScreen = New System.Windows.Forms.CheckBox()
@@ -92,8 +92,14 @@ Partial Class OptionsScreen
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Label122 = New System.Windows.Forms.Label()
+        Me.dtMessages = New System.Windows.Forms.DataGridView()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.txtNewHostMessage = New System.Windows.Forms.TextBox()
+        Me.btnRemoveAllHostMessages = New System.Windows.Forms.Button()
         Me.btnResetQuestionsFFF = New System.Windows.Forms.Button()
         Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
+        Me.btnDeleteMessage = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
         Me.Label119 = New System.Windows.Forms.Label()
@@ -195,6 +201,8 @@ Partial Class OptionsScreen
         Me.txtSndOpening = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label123 = New System.Windows.Forms.Label()
         Me.chkSndStopQ15LD = New System.Windows.Forms.CheckBox()
         Me.chkSndStopQ14LD = New System.Windows.Forms.CheckBox()
         Me.chkSndStopQ13LD = New System.Windows.Forms.CheckBox()
@@ -332,14 +340,8 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.btnRemoveAllHostMessages = New System.Windows.Forms.Button()
-        Me.dtMessages = New System.Windows.Forms.DataGridView()
-        Me.btnDeleteMessage = New System.Windows.Forms.Button()
-        Me.btnAdd = New System.Windows.Forms.Button()
-        Me.txtNewHostMessage = New System.Windows.Forms.TextBox()
-        Me.Label122 = New System.Windows.Forms.Label()
-        Me.Label123 = New System.Windows.Forms.Label()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Label124 = New System.Windows.Forms.Label()
+        Me.Label125 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -357,9 +359,9 @@ Partial Class OptionsScreen
         Me.grpLifeline1.SuspendLayout()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage3.SuspendLayout()
+        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
-        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -380,10 +382,10 @@ Partial Class OptionsScreen
         '
         Me.TabPage1.Controls.Add(Me.nmrFFFPortNumber)
         Me.TabPage1.Controls.Add(Me.Label121)
-        Me.TabPage1.Controls.Add(Me.CheckBox4)
-        Me.TabPage1.Controls.Add(Me.CheckBox3)
-        Me.TabPage1.Controls.Add(Me.CheckBox2)
-        Me.TabPage1.Controls.Add(Me.CheckBox1)
+        Me.TabPage1.Controls.Add(Me.chkAutoHideQuestionAtWalkAway)
+        Me.TabPage1.Controls.Add(Me.chkAutoHideQuestionAtPlusOne)
+        Me.TabPage1.Controls.Add(Me.chkShowAnswerOnlyAtFinal)
+        Me.TabPage1.Controls.Add(Me.chkAutoShowTotalWinnings)
         Me.TabPage1.Controls.Add(Me.chkClearHostMessages)
         Me.TabPage1.Controls.Add(Me.GroupBox3)
         Me.TabPage1.Controls.Add(Me.GroupBox2)
@@ -416,45 +418,45 @@ Partial Class OptionsScreen
         Me.Label121.TabIndex = 8
         Me.Label121.Text = "FFF Network Port:"
         '
-        'CheckBox4
+        'chkAutoHideQuestionAtWalkAway
         '
-        Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(628, 140)
-        Me.CheckBox4.Name = "CheckBox4"
-        Me.CheckBox4.Size = New System.Drawing.Size(306, 20)
-        Me.CheckBox4.TabIndex = 7
-        Me.CheckBox4.Text = "Auto hide question when contestant walks away"
-        Me.CheckBox4.UseVisualStyleBackColor = True
+        Me.chkAutoHideQuestionAtWalkAway.AutoSize = True
+        Me.chkAutoHideQuestionAtWalkAway.Location = New System.Drawing.Point(628, 140)
+        Me.chkAutoHideQuestionAtWalkAway.Name = "chkAutoHideQuestionAtWalkAway"
+        Me.chkAutoHideQuestionAtWalkAway.Size = New System.Drawing.Size(306, 20)
+        Me.chkAutoHideQuestionAtWalkAway.TabIndex = 7
+        Me.chkAutoHideQuestionAtWalkAway.Text = "Auto hide question when contestant walks away"
+        Me.chkAutoHideQuestionAtWalkAway.UseVisualStyleBackColor = True
         '
-        'CheckBox3
+        'chkAutoHideQuestionAtPlusOne
         '
-        Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(628, 79)
-        Me.CheckBox3.Name = "CheckBox3"
-        Me.CheckBox3.Size = New System.Drawing.Size(339, 20)
-        Me.CheckBox3.TabIndex = 6
-        Me.CheckBox3.Text = "Auto hide question when Plus One lifeline is activated"
-        Me.CheckBox3.UseVisualStyleBackColor = True
+        Me.chkAutoHideQuestionAtPlusOne.AutoSize = True
+        Me.chkAutoHideQuestionAtPlusOne.Location = New System.Drawing.Point(628, 79)
+        Me.chkAutoHideQuestionAtPlusOne.Name = "chkAutoHideQuestionAtPlusOne"
+        Me.chkAutoHideQuestionAtPlusOne.Size = New System.Drawing.Size(339, 20)
+        Me.chkAutoHideQuestionAtPlusOne.TabIndex = 6
+        Me.chkAutoHideQuestionAtPlusOne.Text = "Auto hide question when Plus One lifeline is activated"
+        Me.chkAutoHideQuestionAtPlusOne.UseVisualStyleBackColor = True
         '
-        'CheckBox2
+        'chkShowAnswerOnlyAtFinal
         '
-        Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(628, 59)
-        Me.CheckBox2.Name = "CheckBox2"
-        Me.CheckBox2.Size = New System.Drawing.Size(431, 20)
-        Me.CheckBox2.TabIndex = 5
-        Me.CheckBox2.Text = "Show answer on host screen only when contestant gave final answer."
-        Me.CheckBox2.UseVisualStyleBackColor = True
+        Me.chkShowAnswerOnlyAtFinal.AutoSize = True
+        Me.chkShowAnswerOnlyAtFinal.Location = New System.Drawing.Point(628, 37)
+        Me.chkShowAnswerOnlyAtFinal.Name = "chkShowAnswerOnlyAtFinal"
+        Me.chkShowAnswerOnlyAtFinal.Size = New System.Drawing.Size(431, 20)
+        Me.chkShowAnswerOnlyAtFinal.TabIndex = 5
+        Me.chkShowAnswerOnlyAtFinal.Text = "Show answer on host screen only when contestant gave final answer."
+        Me.chkShowAnswerOnlyAtFinal.UseVisualStyleBackColor = True
         '
-        'CheckBox1
+        'chkAutoShowTotalWinnings
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(628, 120)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(360, 20)
-        Me.CheckBox1.TabIndex = 4
-        Me.CheckBox1.Text = "Auto-show Total Winnings when 'Bye Bye' cue is played."
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chkAutoShowTotalWinnings.AutoSize = True
+        Me.chkAutoShowTotalWinnings.Location = New System.Drawing.Point(628, 120)
+        Me.chkAutoShowTotalWinnings.Name = "chkAutoShowTotalWinnings"
+        Me.chkAutoShowTotalWinnings.Size = New System.Drawing.Size(360, 20)
+        Me.chkAutoShowTotalWinnings.TabIndex = 4
+        Me.chkAutoShowTotalWinnings.Text = "Auto-show Total Winnings when 'Bye Bye' cue is played."
+        Me.chkAutoShowTotalWinnings.UseVisualStyleBackColor = True
         '
         'chkClearHostMessages
         '
@@ -468,6 +470,8 @@ Partial Class OptionsScreen
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.Label125)
+        Me.GroupBox3.Controls.Add(Me.Label124)
         Me.GroupBox3.Controls.Add(Me.chkAutoShowTVScreen)
         Me.GroupBox3.Controls.Add(Me.chkAutoShowGuestScreen)
         Me.GroupBox3.Controls.Add(Me.chkAutoShowHostScreen)
@@ -486,7 +490,7 @@ Partial Class OptionsScreen
         Me.GroupBox3.Controls.Add(Me.Label116)
         Me.GroupBox3.Location = New System.Drawing.Point(6, 366)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(616, 105)
+        Me.GroupBox3.Size = New System.Drawing.Size(616, 124)
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Resolutions"
@@ -494,7 +498,7 @@ Partial Class OptionsScreen
         'chkAutoShowTVScreen
         '
         Me.chkAutoShowTVScreen.AutoSize = True
-        Me.chkAutoShowTVScreen.Location = New System.Drawing.Point(192, 74)
+        Me.chkAutoShowTVScreen.Location = New System.Drawing.Point(192, 92)
         Me.chkAutoShowTVScreen.Name = "chkAutoShowTVScreen"
         Me.chkAutoShowTVScreen.Size = New System.Drawing.Size(89, 20)
         Me.chkAutoShowTVScreen.TabIndex = 15
@@ -504,7 +508,7 @@ Partial Class OptionsScreen
         'chkAutoShowGuestScreen
         '
         Me.chkAutoShowGuestScreen.AutoSize = True
-        Me.chkAutoShowGuestScreen.Location = New System.Drawing.Point(192, 46)
+        Me.chkAutoShowGuestScreen.Location = New System.Drawing.Point(192, 64)
         Me.chkAutoShowGuestScreen.Name = "chkAutoShowGuestScreen"
         Me.chkAutoShowGuestScreen.Size = New System.Drawing.Size(89, 20)
         Me.chkAutoShowGuestScreen.TabIndex = 14
@@ -514,7 +518,7 @@ Partial Class OptionsScreen
         'chkAutoShowHostScreen
         '
         Me.chkAutoShowHostScreen.AutoSize = True
-        Me.chkAutoShowHostScreen.Location = New System.Drawing.Point(192, 18)
+        Me.chkAutoShowHostScreen.Location = New System.Drawing.Point(192, 36)
         Me.chkAutoShowHostScreen.Name = "chkAutoShowHostScreen"
         Me.chkAutoShowHostScreen.Size = New System.Drawing.Size(89, 20)
         Me.chkAutoShowHostScreen.TabIndex = 13
@@ -523,7 +527,7 @@ Partial Class OptionsScreen
         '
         'btnIdentifyMonitors
         '
-        Me.btnIdentifyMonitors.Location = New System.Drawing.Point(536, 36)
+        Me.btnIdentifyMonitors.Location = New System.Drawing.Point(479, 54)
         Me.btnIdentifyMonitors.Name = "btnIdentifyMonitors"
         Me.btnIdentifyMonitors.Size = New System.Drawing.Size(75, 41)
         Me.btnIdentifyMonitors.TabIndex = 12
@@ -534,33 +538,33 @@ Partial Class OptionsScreen
         '
         Me.cmbFullScrTVScreen.Enabled = False
         Me.cmbFullScrTVScreen.FormattingEnabled = True
-        Me.cmbFullScrTVScreen.Location = New System.Drawing.Point(399, 72)
+        Me.cmbFullScrTVScreen.Location = New System.Drawing.Point(399, 90)
         Me.cmbFullScrTVScreen.Name = "cmbFullScrTVScreen"
-        Me.cmbFullScrTVScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrTVScreen.Size = New System.Drawing.Size(75, 24)
         Me.cmbFullScrTVScreen.TabIndex = 11
         '
         'cmbFullScrGuestScreen
         '
         Me.cmbFullScrGuestScreen.Enabled = False
         Me.cmbFullScrGuestScreen.FormattingEnabled = True
-        Me.cmbFullScrGuestScreen.Location = New System.Drawing.Point(399, 44)
+        Me.cmbFullScrGuestScreen.Location = New System.Drawing.Point(399, 62)
         Me.cmbFullScrGuestScreen.Name = "cmbFullScrGuestScreen"
-        Me.cmbFullScrGuestScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrGuestScreen.Size = New System.Drawing.Size(75, 24)
         Me.cmbFullScrGuestScreen.TabIndex = 10
         '
         'cmbFullScrHostScreen
         '
         Me.cmbFullScrHostScreen.Enabled = False
         Me.cmbFullScrHostScreen.FormattingEnabled = True
-        Me.cmbFullScrHostScreen.Location = New System.Drawing.Point(399, 16)
+        Me.cmbFullScrHostScreen.Location = New System.Drawing.Point(399, 34)
         Me.cmbFullScrHostScreen.Name = "cmbFullScrHostScreen"
-        Me.cmbFullScrHostScreen.Size = New System.Drawing.Size(131, 24)
+        Me.cmbFullScrHostScreen.Size = New System.Drawing.Size(75, 24)
         Me.cmbFullScrHostScreen.TabIndex = 9
         '
         'chkFullScrTVScreen
         '
         Me.chkFullScrTVScreen.AutoSize = True
-        Me.chkFullScrTVScreen.Location = New System.Drawing.Point(300, 74)
+        Me.chkFullScrTVScreen.Location = New System.Drawing.Point(300, 92)
         Me.chkFullScrTVScreen.Name = "chkFullScrTVScreen"
         Me.chkFullScrTVScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrTVScreen.TabIndex = 8
@@ -570,7 +574,7 @@ Partial Class OptionsScreen
         'chkFullScrGuestScreen
         '
         Me.chkFullScrGuestScreen.AutoSize = True
-        Me.chkFullScrGuestScreen.Location = New System.Drawing.Point(300, 46)
+        Me.chkFullScrGuestScreen.Location = New System.Drawing.Point(300, 64)
         Me.chkFullScrGuestScreen.Name = "chkFullScrGuestScreen"
         Me.chkFullScrGuestScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrGuestScreen.TabIndex = 7
@@ -580,7 +584,7 @@ Partial Class OptionsScreen
         'chkFullScrHostScreen
         '
         Me.chkFullScrHostScreen.AutoSize = True
-        Me.chkFullScrHostScreen.Location = New System.Drawing.Point(300, 18)
+        Me.chkFullScrHostScreen.Location = New System.Drawing.Point(300, 36)
         Me.chkFullScrHostScreen.Name = "chkFullScrHostScreen"
         Me.chkFullScrHostScreen.Size = New System.Drawing.Size(93, 20)
         Me.chkFullScrHostScreen.TabIndex = 6
@@ -591,7 +595,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResTVScreen.FormattingEnabled = True
         Me.cmbResTVScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResTVScreen.Location = New System.Drawing.Point(94, 72)
+        Me.cmbResTVScreen.Location = New System.Drawing.Point(94, 90)
         Me.cmbResTVScreen.Name = "cmbResTVScreen"
         Me.cmbResTVScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResTVScreen.TabIndex = 5
@@ -601,7 +605,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResGuestScreen.FormattingEnabled = True
         Me.cmbResGuestScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResGuestScreen.Location = New System.Drawing.Point(94, 44)
+        Me.cmbResGuestScreen.Location = New System.Drawing.Point(94, 62)
         Me.cmbResGuestScreen.Name = "cmbResGuestScreen"
         Me.cmbResGuestScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResGuestScreen.TabIndex = 4
@@ -611,7 +615,7 @@ Partial Class OptionsScreen
         '
         Me.cmbResHostScreen.FormattingEnabled = True
         Me.cmbResHostScreen.Items.AddRange(New Object() {"1280x720", "1920x1080"})
-        Me.cmbResHostScreen.Location = New System.Drawing.Point(94, 16)
+        Me.cmbResHostScreen.Location = New System.Drawing.Point(94, 34)
         Me.cmbResHostScreen.Name = "cmbResHostScreen"
         Me.cmbResHostScreen.Size = New System.Drawing.Size(92, 24)
         Me.cmbResHostScreen.TabIndex = 3
@@ -620,7 +624,7 @@ Partial Class OptionsScreen
         'Label118
         '
         Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(20, 75)
+        Me.Label118.Location = New System.Drawing.Point(20, 93)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(74, 16)
         Me.Label118.TabIndex = 2
@@ -629,7 +633,7 @@ Partial Class OptionsScreen
         'Label117
         '
         Me.Label117.AutoSize = True
-        Me.Label117.Location = New System.Drawing.Point(3, 47)
+        Me.Label117.Location = New System.Drawing.Point(3, 65)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(91, 16)
         Me.Label117.TabIndex = 1
@@ -638,7 +642,7 @@ Partial Class OptionsScreen
         'Label116
         '
         Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(10, 19)
+        Me.Label116.Location = New System.Drawing.Point(10, 37)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(84, 16)
         Me.Label116.TabIndex = 0
@@ -1115,12 +1119,12 @@ Partial Class OptionsScreen
         '
         Me.TabPage3.Controls.Add(Me.Label122)
         Me.TabPage3.Controls.Add(Me.dtMessages)
-        Me.TabPage3.Controls.Add(Me.btnDeleteMessage)
         Me.TabPage3.Controls.Add(Me.btnAdd)
         Me.TabPage3.Controls.Add(Me.txtNewHostMessage)
         Me.TabPage3.Controls.Add(Me.btnRemoveAllHostMessages)
         Me.TabPage3.Controls.Add(Me.btnResetQuestionsFFF)
         Me.TabPage3.Controls.Add(Me.btnResetQuestionsAll)
+        Me.TabPage3.Controls.Add(Me.btnDeleteMessage)
         Me.TabPage3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
         Me.TabPage3.Name = "TabPage3"
@@ -1129,6 +1133,55 @@ Partial Class OptionsScreen
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Database"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Label122
+        '
+        Me.Label122.AutoSize = True
+        Me.Label122.Location = New System.Drawing.Point(250, 12)
+        Me.Label122.Name = "Label122"
+        Me.Label122.Size = New System.Drawing.Size(105, 16)
+        Me.Label122.TabIndex = 10
+        Me.Label122.Text = "Host Messages:"
+        '
+        'dtMessages
+        '
+        Me.dtMessages.AllowUserToAddRows = False
+        Me.dtMessages.AllowUserToDeleteRows = False
+        Me.dtMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtMessages.ColumnHeadersVisible = False
+        Me.dtMessages.Location = New System.Drawing.Point(253, 60)
+        Me.dtMessages.Name = "dtMessages"
+        Me.dtMessages.ReadOnly = True
+        Me.dtMessages.RowHeadersVisible = False
+        Me.dtMessages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtMessages.Size = New System.Drawing.Size(514, 168)
+        Me.dtMessages.TabIndex = 9
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(652, 29)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(56, 30)
+        Me.btnAdd.TabIndex = 7
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'txtNewHostMessage
+        '
+        Me.txtNewHostMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNewHostMessage.Location = New System.Drawing.Point(253, 31)
+        Me.txtNewHostMessage.Name = "txtNewHostMessage"
+        Me.txtNewHostMessage.Size = New System.Drawing.Size(393, 26)
+        Me.txtNewHostMessage.TabIndex = 6
+        '
+        'btnRemoveAllHostMessages
+        '
+        Me.btnRemoveAllHostMessages.Location = New System.Drawing.Point(6, 95)
+        Me.btnRemoveAllHostMessages.Name = "btnRemoveAllHostMessages"
+        Me.btnRemoveAllHostMessages.Size = New System.Drawing.Size(238, 28)
+        Me.btnRemoveAllHostMessages.TabIndex = 2
+        Me.btnRemoveAllHostMessages.Text = "Remove all Host Messages"
+        Me.btnRemoveAllHostMessages.UseVisualStyleBackColor = True
         '
         'btnResetQuestionsFFF
         '
@@ -1147,6 +1200,16 @@ Partial Class OptionsScreen
         Me.btnResetQuestionsAll.TabIndex = 0
         Me.btnResetQuestionsAll.Text = "Reset Used Questions (Regular)"
         Me.btnResetQuestionsAll.UseVisualStyleBackColor = True
+        '
+        'btnDeleteMessage
+        '
+        Me.btnDeleteMessage.BackgroundImage = CType(resources.GetObject("btnDeleteMessage.BackgroundImage"), System.Drawing.Image)
+        Me.btnDeleteMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnDeleteMessage.Location = New System.Drawing.Point(711, 29)
+        Me.btnDeleteMessage.Name = "btnDeleteMessage"
+        Me.btnDeleteMessage.Size = New System.Drawing.Size(56, 30)
+        Me.btnDeleteMessage.TabIndex = 8
+        Me.btnDeleteMessage.UseVisualStyleBackColor = True
         '
         'TabPage2
         '
@@ -2296,6 +2359,26 @@ Partial Class OptionsScreen
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Sounds (Questions)"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 441)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 321
+        Me.PictureBox1.TabStop = False
+        '
+        'Label123
+        '
+        Me.Label123.AutoSize = True
+        Me.Label123.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label123.Location = New System.Drawing.Point(67, 439)
+        Me.Label123.Name = "Label123"
+        Me.Label123.Size = New System.Drawing.Size(519, 48)
+        Me.Label123.TabIndex = 320
+        Me.Label123.Text = resources.GetString("Label123.Text")
         '
         'chkSndStopQ15LD
         '
@@ -3614,84 +3697,23 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'btnRemoveAllHostMessages
+        'Label124
         '
-        Me.btnRemoveAllHostMessages.Location = New System.Drawing.Point(6, 95)
-        Me.btnRemoveAllHostMessages.Name = "btnRemoveAllHostMessages"
-        Me.btnRemoveAllHostMessages.Size = New System.Drawing.Size(238, 28)
-        Me.btnRemoveAllHostMessages.TabIndex = 2
-        Me.btnRemoveAllHostMessages.Text = "Remove all Host Messages"
-        Me.btnRemoveAllHostMessages.UseVisualStyleBackColor = True
+        Me.Label124.AutoSize = True
+        Me.Label124.Location = New System.Drawing.Point(91, 15)
+        Me.Label124.Name = "Label124"
+        Me.Label124.Size = New System.Drawing.Size(74, 16)
+        Me.Label124.TabIndex = 16
+        Me.Label124.Text = "Resolution:"
         '
-        'dtMessages
+        'Label125
         '
-        Me.dtMessages.AllowUserToAddRows = False
-        Me.dtMessages.AllowUserToDeleteRows = False
-        Me.dtMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dtMessages.ColumnHeadersVisible = False
-        Me.dtMessages.Location = New System.Drawing.Point(253, 60)
-        Me.dtMessages.Name = "dtMessages"
-        Me.dtMessages.ReadOnly = True
-        Me.dtMessages.RowHeadersVisible = False
-        Me.dtMessages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dtMessages.Size = New System.Drawing.Size(514, 168)
-        Me.dtMessages.TabIndex = 9
-        '
-        'btnDeleteMessage
-        '
-        Me.btnDeleteMessage.BackgroundImage = CType(resources.GetObject("btnDeleteMessage.BackgroundImage"), System.Drawing.Image)
-        Me.btnDeleteMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnDeleteMessage.Location = New System.Drawing.Point(711, 29)
-        Me.btnDeleteMessage.Name = "btnDeleteMessage"
-        Me.btnDeleteMessage.Size = New System.Drawing.Size(56, 30)
-        Me.btnDeleteMessage.TabIndex = 8
-        Me.btnDeleteMessage.UseVisualStyleBackColor = True
-        '
-        'btnAdd
-        '
-        Me.btnAdd.Location = New System.Drawing.Point(652, 29)
-        Me.btnAdd.Name = "btnAdd"
-        Me.btnAdd.Size = New System.Drawing.Size(56, 30)
-        Me.btnAdd.TabIndex = 7
-        Me.btnAdd.Text = "Add"
-        Me.btnAdd.UseVisualStyleBackColor = True
-        '
-        'txtNewHostMessage
-        '
-        Me.txtNewHostMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNewHostMessage.Location = New System.Drawing.Point(253, 31)
-        Me.txtNewHostMessage.Name = "txtNewHostMessage"
-        Me.txtNewHostMessage.Size = New System.Drawing.Size(393, 26)
-        Me.txtNewHostMessage.TabIndex = 6
-        '
-        'Label122
-        '
-        Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(250, 12)
-        Me.Label122.Name = "Label122"
-        Me.Label122.Size = New System.Drawing.Size(105, 16)
-        Me.Label122.TabIndex = 10
-        Me.Label122.Text = "Host Messages:"
-        '
-        'Label123
-        '
-        Me.Label123.AutoSize = True
-        Me.Label123.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label123.Location = New System.Drawing.Point(67, 439)
-        Me.Label123.Name = "Label123"
-        Me.Label123.Size = New System.Drawing.Size(519, 48)
-        Me.Label123.TabIndex = 320
-        Me.Label123.Text = resources.GetString("Label123.Text")
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(20, 441)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 321
-        Me.PictureBox1.TabStop = False
+        Me.Label125.AutoSize = True
+        Me.Label125.Location = New System.Drawing.Point(396, 15)
+        Me.Label125.Name = "Label125"
+        Me.Label125.Size = New System.Drawing.Size(54, 16)
+        Me.Label125.TabIndex = 17
+        Me.Label125.Text = "Monitor:"
         '
         'OptionsScreen
         '
@@ -3733,11 +3755,11 @@ Partial Class OptionsScreen
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
         Me.TabPage3.PerformLayout()
+        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
-        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -4038,11 +4060,11 @@ Partial Class OptionsScreen
     Friend WithEvents txtSndHostStart As TextBox
     Friend WithEvents Label120 As Label
     Friend WithEvents btnResetQuestionsAll As Button
-    Friend WithEvents CheckBox1 As CheckBox
+    Friend WithEvents chkAutoShowTotalWinnings As CheckBox
     Friend WithEvents chkClearHostMessages As CheckBox
-    Friend WithEvents CheckBox2 As CheckBox
-    Friend WithEvents CheckBox3 As CheckBox
-    Friend WithEvents CheckBox4 As CheckBox
+    Friend WithEvents chkShowAnswerOnlyAtFinal As CheckBox
+    Friend WithEvents chkAutoHideQuestionAtPlusOne As CheckBox
+    Friend WithEvents chkAutoHideQuestionAtWalkAway As CheckBox
     Friend WithEvents nmrFFFPortNumber As NumericUpDown
     Friend WithEvents Label121 As Label
     Friend WithEvents chkAutoShowTVScreen As CheckBox
@@ -4059,4 +4081,6 @@ Partial Class OptionsScreen
     Friend WithEvents txtNewHostMessage As TextBox
     Friend WithEvents Label123 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Label125 As Label
+    Friend WithEvents Label124 As Label
 End Class

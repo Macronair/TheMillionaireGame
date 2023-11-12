@@ -40,8 +40,9 @@ Public Class ControlPanel
     End Sub
 
     Private Sub btnNewQuestion_Click(sender As Object, e As EventArgs) Handles btnNewQuestion.Click
-        Dim q As New Question
-        q.Generate()
+        'Dim q As New Question
+        'q.Generate()
+        Question.Generate()
     End Sub
 
     Private Sub ControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -161,7 +162,6 @@ Public Class ControlPanel
             TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
             TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            TVControlPnl.pnlQuestion.Visible = False
             TVControlPnl.pnlStrap.Visible = False
             TVControlPnl.tmrFlash.Stop()
             i = 2
@@ -263,7 +263,11 @@ Public Class ControlPanel
 
         HostScreen.lblWalkedAway.ForeColor = Color.White
         TVControlPnl.lblAmount.Text = "" & Game.varCurrent
-        TVControlPnl.pnlQuestion.Visible = False
+
+        If Profile.Options.S_AutoHideQuestionAtWalkAway = True Then
+            chkShowQuestion.Checked = False
+        End If
+
         TVControlPnl.grpATA.Visible = False
     End Sub
 
@@ -336,9 +340,9 @@ Public Class ControlPanel
         If wa = 0 Then
             User.a = 0
             wa = 1
-            TVControlPnl.pnlTotal.Visible = True
-            TVControlPnl.pnlStrap.Visible = True
-            TVControlPnl.pnlQuestion.Visible = False
+            If Profile.Options.S_AutoShowTotalWinnings = True Then
+                chkShowTotalScore.Checked = True
+            End If
             intSound += 1
 
             With Sounds.sndGeneral
@@ -347,8 +351,9 @@ Public Class ControlPanel
             End With
         ElseIf wa = 1 Then
             wa = 0
-            TVControlPnl.pnlTotal.Visible = False
-            TVControlPnl.pnlStrap.Visible = False
+            If Profile.Options.S_AutoShowTotalWinnings = True Then
+                chkShowTotalScore.Checked = False
+            End If
         End If
     End Sub
 
@@ -491,7 +496,7 @@ Public Class ControlPanel
 
     Private Sub btnShowTree_Click(sender As Object, e As EventArgs) Handles btnShowTree.Click
         TVControlPnl.picTree.Visible = True
-        TVControlPnl.pnlQuestion.Visible = False
+        chkShowQuestion.Checked = False
         TVControlPnl.pnlStrap.Visible = False
     End Sub
 

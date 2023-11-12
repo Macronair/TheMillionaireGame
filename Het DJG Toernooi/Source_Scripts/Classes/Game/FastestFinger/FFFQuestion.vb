@@ -168,7 +168,7 @@
                 GuestScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text
                 HostScreen.lblAnswer.Text = ControlPanel.lblAnswer.Text
                 HostScreen.txtExplain.Text = ControlPanel.txtExplain.Text
-                TVControlPnl.pnlQuestion.Visible = True
+                ControlPanel.chkShowQuestion.Checked = True
                 FFFServer.UpdateList("/q1#" + ControlPanel.txtQuestion.Text, True)
         End Select
     End Sub

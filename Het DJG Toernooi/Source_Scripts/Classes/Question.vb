@@ -68,13 +68,23 @@ Public Class Question
             TVControlPnl.pnlStrap.Visible = False
             HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
-            TVControlPnl.pnlQuestion.Visible = True
+            ControlPanel.chkShowQuestion.Checked = True
             act = 2
         End If
         If act = 0 Then
             act = 1
             newQ.newQuestion()
-            HostScreen.pnlAnswer.BackColor = Color.Black
+            If Profile.Options.S_ClearHostMessagesAtNewQuestion = True Then
+                HostScreen.lblHostMsg.Clear()
+            End If
+
+            If Profile.Options.S_ShowAnswerOnlyOnHostScreenAtFinal = True Then
+                HostScreen.pnlAnswer.BackColor = Color.Black
+            Else
+                HostScreen.pnlAnswer.BackColor = Color.DarkCyan
+            End If
+
+            ControlPanel.answer = ""
             ControlPanel.txtA.BackColor = Color.Silver
             ControlPanel.txtB.BackColor = Color.Silver
             ControlPanel.txtC.BackColor = Color.Silver
@@ -383,7 +393,6 @@ Public Class Question
                 HostScreen.pnlAnswer.BackColor = Color.Red
             End If
         End If
-
 
         If Game.level >= 5 Then
             useMusic = False

@@ -49,7 +49,7 @@
             End With
 
             TVControlPnl.grpATA.Visible = False
-            TVControlPnl.pnlQuestion.Visible = False
+            ControlPanel.chkShowQuestion.Checked = False
             TVControlPnl.tmrFlash.Stop()
             TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
             TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r

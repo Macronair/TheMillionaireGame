@@ -29,6 +29,12 @@ Public Class AppSettings
     Public Property FullScreen_TVScreen_Enable As Boolean
     Public Property FullScreen_TVScreen_Monitor As Integer
 
+    Public Property S_ClearHostMessagesAtNewQuestion As Boolean
+    Public Property S_ShowAnswerOnlyOnHostScreenAtFinal As Boolean
+    Public Property S_AutoHideQuestionAtPlusOne As Boolean
+    Public Property S_AutoShowTotalWinnings As Boolean
+    Public Property S_AutoHideQuestionAtWalkAway As Boolean
+
     Public Property FFF_Port As Integer
 
     Public Property FFF_Player1_Name As String
@@ -224,6 +230,14 @@ Public Class Profile
             Options.FullScreen_TVScreen_Enable = loadedvalues.FullScreen_TVScreen_Enable
             Options.FullScreen_TVScreen_Monitor = loadedvalues.FullScreen_TVScreen_Monitor
 
+            Options.S_ClearHostMessagesAtNewQuestion = loadedvalues.S_ClearHostMessagesAtNewQuestion
+            Options.S_ShowAnswerOnlyOnHostScreenAtFinal = loadedvalues.S_ShowAnswerOnlyOnHostScreenAtFinal
+            Options.S_AutoHideQuestionAtPlusOne = loadedvalues.S_AutoHideQuestionAtPlusOne
+            Options.S_AutoShowTotalWinnings = loadedvalues.S_AutoShowTotalWinnings
+            Options.S_AutoHideQuestionAtWalkAway = loadedvalues.S_AutoHideQuestionAtWalkAway
+
+            Options.FFF_Port = loadedvalues.FFF_Port
+
             Options.snd_Opening = loadedvalues.snd_Opening
             Options.snd_CommIn = loadedvalues.snd_CommIn
             Options.snd_CommOut = loadedvalues.snd_CommOut
@@ -383,6 +397,14 @@ Public Class Profile
         Options.FullScreen_TVScreen_Enable = False
         Options.FullScreen_TVScreen_Monitor = 0
 
+        Options.S_ClearHostMessagesAtNewQuestion = True
+        Options.S_ShowAnswerOnlyOnHostScreenAtFinal = True
+        Options.S_AutoHideQuestionAtPlusOne = True
+        Options.S_AutoShowTotalWinnings = True
+        Options.S_AutoHideQuestionAtWalkAway = True
+
+        Options.FFF_Port = 3818
+
         Options.snd_Opening = "host_entrance.mp3"
         Options.snd_CommIn = "commercial_in.mp3"
         Options.snd_CommOut = "commercial_out.mp3"
@@ -539,6 +561,14 @@ Public Class Profile
         Options.FullScreen_HostScreen_Monitor = OptionsScreen.cmbFullScrHostScreen.Text
         Options.FullScreen_GuestScreen_Monitor = OptionsScreen.cmbFullScrGuestScreen.Text
         Options.FullScreen_TVScreen_Monitor = OptionsScreen.cmbFullScrTVScreen.Text
+
+        Options.S_ClearHostMessagesAtNewQuestion = OptionsScreen.chkClearHostMessages.Checked
+        Options.S_ShowAnswerOnlyOnHostScreenAtFinal = OptionsScreen.chkShowAnswerOnlyAtFinal.Checked
+        Options.S_AutoHideQuestionAtPlusOne = OptionsScreen.chkAutoHideQuestionAtPlusOne.Checked
+        Options.S_AutoShowTotalWinnings = OptionsScreen.chkAutoShowTotalWinnings.Checked
+        Options.S_AutoHideQuestionAtWalkAway = OptionsScreen.chkAutoHideQuestionAtWalkAway.Checked
+
+        Options.FFF_Port = OptionsScreen.nmrFFFPortNumber.Value
 
         Options.snd_Opening = OptionsScreen.txtSndOpening.Text
         Options.snd_CommIn = OptionsScreen.txtSndCommercialIn.Text

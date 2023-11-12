@@ -15,7 +15,9 @@
             plusone = plusone + 1
 
             TVControlPnl.grpATA.Visible = False
-            TVControlPnl.pnlQuestion.Visible = False
+            If Profile.Options.S_AutoHideQuestionAtPlusOne = True Then
+                ControlPanel.chkShowQuestion.Checked = False
+            End If
 
             ControlPanel.txtHostMessages.AppendText("PLUS ONE ACTIVATED." + Environment.NewLine)
             HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "PLUS ONE ACTIVATED."
@@ -34,7 +36,7 @@
             GuestScreen.lblTime.Visible = True
             TVControlPnl.pnlTime.Visible = True
             ControlPanel.lblTime.Visible = True
-            TVControlPnl.pnlQuestion.Visible = True
+            ControlPanel.chkShowQuestion.Checked = True
             plusone = 2
             ControlPanel.Timer2.Start()
             ControlPanel.tmrTime.Start()

@@ -35,6 +35,9 @@ Public Class User
         Game.SetValues()
         Game.walkaway = False
 
+        ControlPanel.chkShowQuestion.Checked = False
+        ControlPanel.chkShowTotalScore.Checked = False
+
         LifelineManager.CurrentActive = 0
         LifelineManager.EnableLifeline(1, True)
         LifelineManager.EnableLifeline(2, True)

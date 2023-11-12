@@ -90,6 +90,17 @@ Public Class OptionsScreen
         chkFullScrHostScreen.Checked = Profile.Options.FullScreen_HostScreen_Enable
         chkFullScrGuestScreen.Checked = Profile.Options.FullScreen_GuestScreen_Enable
         chkFullScrTVScreen.Checked = Profile.Options.FullScreen_TVScreen_Enable
+        cmbFullScrHostScreen.Text = Profile.Options.FullScreen_HostScreen_Monitor
+        cmbFullScrGuestScreen.Text = Profile.Options.FullScreen_GuestScreen_Monitor
+        cmbFullScrTVScreen.Text = Profile.Options.FullScreen_TVScreen_Monitor
+
+        chkClearHostMessages.Checked = Profile.Options.S_ClearHostMessagesAtNewQuestion
+        chkShowAnswerOnlyAtFinal.Checked = Profile.Options.S_ShowAnswerOnlyOnHostScreenAtFinal
+        chkAutoHideQuestionAtPlusOne.Checked = Profile.Options.S_AutoHideQuestionAtPlusOne
+        chkAutoShowTotalWinnings.Checked = Profile.Options.S_AutoShowTotalWinnings
+        chkAutoHideQuestionAtWalkAway.Checked = Profile.Options.S_AutoHideQuestionAtWalkAway
+
+        nmrFFFPortNumber.Value = Profile.Options.FFF_Port
 
         txtSndOpening.Text = Profile.Options.snd_Opening
         txtSndCommercialIn.Text = Profile.Options.snd_CommIn
@@ -294,6 +305,7 @@ Public Class OptionsScreen
         LifelineManager.UnlockLifeline(4)
 
         Monitor.ApplyScreenSettings()
+        Monitor.ApplyScreenSettings()
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
@@ -313,6 +325,7 @@ Public Class OptionsScreen
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
 
+        Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
 
         ControlPanel.drpNextHostMessage.Items.Clear()

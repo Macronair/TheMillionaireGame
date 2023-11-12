@@ -349,7 +349,7 @@ Public Class FFFServer
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
         Select Case i
             Case 0
-                TVControlPnl.pnlQuestion.Visible = False
+                ControlPanel.chkShowQuestion.Checked = False
                 i = i + 1
             Case 1
                 With st1
