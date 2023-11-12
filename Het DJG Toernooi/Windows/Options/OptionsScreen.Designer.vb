@@ -23,6 +23,7 @@ Partial Class OptionsScreen
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OptionsScreen))
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.nmrFFFPortNumber = New System.Windows.Forms.NumericUpDown()
@@ -332,6 +333,13 @@ Partial Class OptionsScreen
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
         Me.btnRemoveAllHostMessages = New System.Windows.Forms.Button()
+        Me.dtMessages = New System.Windows.Forms.DataGridView()
+        Me.btnDeleteMessage = New System.Windows.Forms.Button()
+        Me.btnAdd = New System.Windows.Forms.Button()
+        Me.txtNewHostMessage = New System.Windows.Forms.TextBox()
+        Me.Label122 = New System.Windows.Forms.Label()
+        Me.Label123 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -351,6 +359,8 @@ Partial Class OptionsScreen
         Me.TabPage3.SuspendLayout()
         Me.TabPage2.SuspendLayout()
         Me.TabPage4.SuspendLayout()
+        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tabOptions
@@ -1103,6 +1113,11 @@ Partial Class OptionsScreen
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.Label122)
+        Me.TabPage3.Controls.Add(Me.dtMessages)
+        Me.TabPage3.Controls.Add(Me.btnDeleteMessage)
+        Me.TabPage3.Controls.Add(Me.btnAdd)
+        Me.TabPage3.Controls.Add(Me.txtNewHostMessage)
         Me.TabPage3.Controls.Add(Me.btnRemoveAllHostMessages)
         Me.TabPage3.Controls.Add(Me.btnResetQuestionsFFF)
         Me.TabPage3.Controls.Add(Me.btnResetQuestionsAll)
@@ -2139,6 +2154,8 @@ Partial Class OptionsScreen
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.PictureBox1)
+        Me.TabPage4.Controls.Add(Me.Label123)
         Me.TabPage4.Controls.Add(Me.chkSndStopQ15LD)
         Me.TabPage4.Controls.Add(Me.chkSndStopQ14LD)
         Me.TabPage4.Controls.Add(Me.chkSndStopQ13LD)
@@ -3391,6 +3408,7 @@ Partial Class OptionsScreen
         '
         'txtSndQ5Final
         '
+        Me.txtSndQ5Final.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSndQ5Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSndQ5Final.Location = New System.Drawing.Point(647, 116)
         Me.txtSndQ5Final.Name = "txtSndQ5Final"
@@ -3410,6 +3428,7 @@ Partial Class OptionsScreen
         '
         'txtSndQ4Final
         '
+        Me.txtSndQ4Final.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSndQ4Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSndQ4Final.Location = New System.Drawing.Point(647, 90)
         Me.txtSndQ4Final.Name = "txtSndQ4Final"
@@ -3429,6 +3448,7 @@ Partial Class OptionsScreen
         '
         'txtSndQ3Final
         '
+        Me.txtSndQ3Final.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSndQ3Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSndQ3Final.Location = New System.Drawing.Point(647, 64)
         Me.txtSndQ3Final.Name = "txtSndQ3Final"
@@ -3448,6 +3468,7 @@ Partial Class OptionsScreen
         '
         'txtSndQ2Final
         '
+        Me.txtSndQ2Final.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSndQ2Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSndQ2Final.Location = New System.Drawing.Point(647, 38)
         Me.txtSndQ2Final.Name = "txtSndQ2Final"
@@ -3467,6 +3488,7 @@ Partial Class OptionsScreen
         '
         'txtSndQ1Final
         '
+        Me.txtSndQ1Final.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txtSndQ1Final.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtSndQ1Final.Location = New System.Drawing.Point(647, 12)
         Me.txtSndQ1Final.Name = "txtSndQ1Final"
@@ -3601,6 +3623,76 @@ Partial Class OptionsScreen
         Me.btnRemoveAllHostMessages.Text = "Remove all Host Messages"
         Me.btnRemoveAllHostMessages.UseVisualStyleBackColor = True
         '
+        'dtMessages
+        '
+        Me.dtMessages.AllowUserToAddRows = False
+        Me.dtMessages.AllowUserToDeleteRows = False
+        Me.dtMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dtMessages.ColumnHeadersVisible = False
+        Me.dtMessages.Location = New System.Drawing.Point(253, 60)
+        Me.dtMessages.Name = "dtMessages"
+        Me.dtMessages.ReadOnly = True
+        Me.dtMessages.RowHeadersVisible = False
+        Me.dtMessages.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dtMessages.Size = New System.Drawing.Size(514, 168)
+        Me.dtMessages.TabIndex = 9
+        '
+        'btnDeleteMessage
+        '
+        Me.btnDeleteMessage.BackgroundImage = CType(resources.GetObject("btnDeleteMessage.BackgroundImage"), System.Drawing.Image)
+        Me.btnDeleteMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.btnDeleteMessage.Location = New System.Drawing.Point(711, 29)
+        Me.btnDeleteMessage.Name = "btnDeleteMessage"
+        Me.btnDeleteMessage.Size = New System.Drawing.Size(56, 30)
+        Me.btnDeleteMessage.TabIndex = 8
+        Me.btnDeleteMessage.UseVisualStyleBackColor = True
+        '
+        'btnAdd
+        '
+        Me.btnAdd.Location = New System.Drawing.Point(652, 29)
+        Me.btnAdd.Name = "btnAdd"
+        Me.btnAdd.Size = New System.Drawing.Size(56, 30)
+        Me.btnAdd.TabIndex = 7
+        Me.btnAdd.Text = "Add"
+        Me.btnAdd.UseVisualStyleBackColor = True
+        '
+        'txtNewHostMessage
+        '
+        Me.txtNewHostMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtNewHostMessage.Location = New System.Drawing.Point(253, 31)
+        Me.txtNewHostMessage.Name = "txtNewHostMessage"
+        Me.txtNewHostMessage.Size = New System.Drawing.Size(393, 26)
+        Me.txtNewHostMessage.TabIndex = 6
+        '
+        'Label122
+        '
+        Me.Label122.AutoSize = True
+        Me.Label122.Location = New System.Drawing.Point(250, 12)
+        Me.Label122.Name = "Label122"
+        Me.Label122.Size = New System.Drawing.Size(105, 16)
+        Me.Label122.TabIndex = 10
+        Me.Label122.Text = "Host Messages:"
+        '
+        'Label123
+        '
+        Me.Label123.AutoSize = True
+        Me.Label123.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label123.Location = New System.Drawing.Point(67, 439)
+        Me.Label123.Name = "Label123"
+        Me.Label123.Size = New System.Drawing.Size(519, 48)
+        Me.Label123.TabIndex = 320
+        Me.Label123.Text = resources.GetString("Label123.Text")
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(20, 441)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 40)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 321
+        Me.PictureBox1.TabStop = False
+        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3640,10 +3732,13 @@ Partial Class OptionsScreen
         Me.grpLifeline1.PerformLayout()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.TabPage3.ResumeLayout(False)
+        Me.TabPage3.PerformLayout()
         Me.TabPage2.ResumeLayout(False)
         Me.TabPage2.PerformLayout()
         Me.TabPage4.ResumeLayout(False)
         Me.TabPage4.PerformLayout()
+        CType(Me.dtMessages, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -3957,4 +4052,11 @@ Partial Class OptionsScreen
     Friend WithEvents lblWinningStrapTexture As Label
     Friend WithEvents btnResetQuestionsFFF As Button
     Friend WithEvents btnRemoveAllHostMessages As Button
+    Friend WithEvents Label122 As Label
+    Friend WithEvents dtMessages As DataGridView
+    Friend WithEvents btnDeleteMessage As Button
+    Friend WithEvents btnAdd As Button
+    Friend WithEvents txtNewHostMessage As TextBox
+    Friend WithEvents Label123 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

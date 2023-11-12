@@ -1,4 +1,6 @@
-﻿Public Class OptionsScreen
+﻿Imports System.Data.SqlClient
+
+Public Class OptionsScreen
 
     Public Shared Lifeline1_availableAt As Integer
     Public Shared Lifeline2_availableAt As Integer
@@ -76,6 +78,8 @@
                 radStrapBlack.Checked = True
                 WinningStrapTexture = 2
         End Select
+
+        UpdateHostMessagesList()
 
         cmbResHostScreen.Text = Profile.Options.Resolution_HostScreen
         cmbResGuestScreen.Text = Profile.Options.Resolution_GuestScreen
@@ -225,6 +229,7 @@
         txtSndQ15Wrong.Text = Profile.Options.snd_Q15Wrong
     End Sub
 
+#Region "Sounds"
     Private Function GetSoundFile(ByVal currentFile As String) As String
         Dim soundfile = New OptionsSelectSound
 
@@ -265,32 +270,59 @@
 
     End Sub
 
+    Private Sub txtSndQ5Final_MouseClick(sender As Object, e As MouseEventArgs) Handles txtSndQ5Final.MouseClick,
+        txtSndQ4Final.MouseClick, txtSndQ3Final.MouseClick, txtSndQ2Final.MouseClick, txtSndQ1Final.MouseClick
+
+        If My.Computer.Keyboard.CtrlKeyDown Then
+            Dim t As TextBox = DirectCast(sender, TextBox)
+            t.Text = ""
+        End If
+    End Sub
+#End Region
+
+#Region "Save Settings"
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
+
         Monitor.ApplyScreenSettings()
+
+        ControlPanel.drpNextHostMessage.Items.Clear()
+        ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
+
         Me.Close()
     End Sub
 
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
+
         Monitor.ApplyScreenSettings()
+
+        ControlPanel.drpNextHostMessage.Items.Clear()
+        ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
+
         MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+#End Region
 
+#Region "Screen Settings"
     Private Sub btnIdentifyMonitors_Click(sender As Object, e As EventArgs) Handles btnIdentifyMonitors.Click
         Monitor.Identify()
         btnIdentifyMonitors.Enabled = False
@@ -325,7 +357,9 @@
             cmbFullScrTVScreen.Enabled = False
         End If
     End Sub
+#End Region
 
+#Region "Lifeline Settings"
     Private Sub nmrTotalLifelines_ValueChanged(sender As Object, e As EventArgs) Handles nmrTotalLifelines.ValueChanged
         Select Case nmrTotalLifelines.Value
             Case 4
@@ -466,7 +500,9 @@
             OptionsScreen.Lifeline4_availableAt = 3
         End If
     End Sub
+#End Region
 
+#Region "Winning Strap Texture"
     Private Sub radStrapYellow_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapYellow.CheckedChanged
         If radStrapYellow.Checked Then
             WinningStrapTexture = 0
@@ -490,34 +526,103 @@
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
     End Sub
+#End Region
 
+#Region "Database Settings"
     Private Sub btnResetQuestionsAll_Click(sender As Object, e As EventArgs) Handles btnResetQuestionsAll.Click
-        Dim cmd As String = "UPDATE questions SET User='False'"
-        Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+        Dim result As DialogResult =
+            MessageBox.Show("Are you sure you want to reset all used Regular questions?" + vbNewLine + "CAUTION: You can not undo this action!",
+                            "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
 
-        Try
-            Data.connectionString.Open()
-            sql.ExecuteNonQuery()
-            MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            Data.connectionString.Close()
-        End Try
+        If result = DialogResult.Yes Then
+            Dim cmd As String = "UPDATE questions SET Used='False'"
+            Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+
+            Try
+                Data.connectionString.Open()
+                sql.ExecuteNonQuery()
+                MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                Data.connectionString.Close()
+            End Try
+        End If
     End Sub
 
     Private Sub btnResetQuestionsFFF_Click(sender As Object, e As EventArgs) Handles btnResetQuestionsFFF.Click
-        Dim cmd As String = "UPDATE fff_questions SET User='False'"
-        Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+        Dim result As DialogResult =
+            MessageBox.Show("Are you sure you want to reset all used Fastest Finger questions?" + vbNewLine + "CAUTION: You can not undo this action!",
+                            "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
 
-        Try
-            Data.connectionString.Open()
-            sql.ExecuteNonQuery()
-            MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-            MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        Finally
-            Data.connectionString.Close()
-        End Try
+        If result = DialogResult.Yes Then
+            Dim cmd As String = "UPDATE fff_questions SET Used='False'"
+            Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+
+            Try
+                Data.connectionString.Open()
+                sql.ExecuteNonQuery()
+                MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                Data.connectionString.Close()
+            End Try
+        End If
     End Sub
+
+    Private Sub btnRemoveAllHostMessages_Click(sender As Object, e As EventArgs) Handles btnRemoveAllHostMessages.Click
+        Dim result As DialogResult =
+            MessageBox.Show("Are you sure you want to remove all host messages?" + vbNewLine + "CAUTION: You can not undo this action!",
+                            "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation)
+
+        If result = DialogResult.Yes Then
+            Dim cmd As String = "DELETE FROM settings_HostMessages"
+            Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+
+            Try
+                Data.connectionString.Open()
+                sql.ExecuteNonQuery()
+                MessageBox.Show("Host Messages are succesfully removed!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As Exception
+                MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Finally
+                Data.connectionString.Close()
+            End Try
+        End If
+        UpdateHostMessagesList()
+    End Sub
+
+    Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        Data.connectionString.Open()
+        Dim com As String = "INSERT INTO settings_HostMessages (Message) VALUES (@Message)"
+        Dim cmd As SqlCommand = New SqlCommand(com, Data.connectionString)
+        cmd.Parameters.AddWithValue("@Message", txtNewHostMessage.Text.ToUpper)
+        cmd.ExecuteNonQuery()
+        Data.connectionString.Close()
+        UpdateHostMessagesList()
+    End Sub
+
+    Private Sub btnDeleteMessage_Click(sender As Object, e As EventArgs) Handles btnDeleteMessage.Click
+        Data.connectionString.Open()
+        Dim com As String = "DELETE FROM settings_HostMessages WHERE Id = @Id"
+        Dim cmd As SqlCommand = New SqlCommand(com, Data.connectionString)
+        cmd.Parameters.AddWithValue("@Id", dtMessages.CurrentRow.Cells(0).Value)
+        cmd.ExecuteNonQuery()
+        Data.connectionString.Close()
+        UpdateHostMessagesList()
+    End Sub
+
+    Private Overloads Sub UpdateHostMessagesList()
+        Data.connectionString.Open()
+        Dim com As String = "SELECT * FROM settings_HostMessages"
+        Dim Adpt As New SqlDataAdapter(com, Data.connectionString)
+        Dim ds As New DataSet()
+        Adpt.Fill(ds, "Messages")
+        dtMessages.DataSource = ds.Tables(0)
+        dtMessages.Columns("Id").Visible = False
+        dtMessages.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+        Data.connectionString.Close()
+    End Sub
+#End Region
 End Class
