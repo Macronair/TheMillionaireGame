@@ -490,4 +490,34 @@
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
     End Sub
+
+    Private Sub btnResetQuestionsAll_Click(sender As Object, e As EventArgs) Handles btnResetQuestionsAll.Click
+        Dim cmd As String = "UPDATE questions SET User='False'"
+        Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+
+        Try
+            Data.connectionString.Open()
+            sql.ExecuteNonQuery()
+            MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Data.connectionString.Close()
+        End Try
+    End Sub
+
+    Private Sub btnResetQuestionsFFF_Click(sender As Object, e As EventArgs) Handles btnResetQuestionsFFF.Click
+        Dim cmd As String = "UPDATE fff_questions SET User='False'"
+        Dim sql As SqlClient.SqlCommand = New SqlClient.SqlCommand(cmd, Data.connectionString)
+
+        Try
+            Data.connectionString.Open()
+            sql.ExecuteNonQuery()
+            MessageBox.Show("Questions are succesfully reset!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As Exception
+            MessageBox.Show("Error when executing: " + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Finally
+            Data.connectionString.Close()
+        End Try
+    End Sub
 End Class

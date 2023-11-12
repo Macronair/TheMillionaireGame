@@ -56,22 +56,22 @@
                 TVControlPnl.txtPL8_Points.Size = New Size(105, 33)
                 TVControlPnl.pnlFFFPlayers.Size = New Size(1280, 720)
 
-                TVControlPnl.txtPL1_Name.Font = New Font(TVControlPnl.txtPL1_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL2_Name.Font = New Font(TVControlPnl.txtPL2_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL3_Name.Font = New Font(TVControlPnl.txtPL3_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL4_Name.Font = New Font(TVControlPnl.txtPL4_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL5_Name.Font = New Font(TVControlPnl.txtPL5_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL6_Name.Font = New Font(TVControlPnl.txtPL6_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL7_Name.Font = New Font(TVControlPnl.txtPL7_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL8_Name.Font = New Font(TVControlPnl.txtPL8_Name.Font.FontFamily, 20)
-                TVControlPnl.txtPL1_Points.Font = New Font(TVControlPnl.txtPL1_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL2_Points.Font = New Font(TVControlPnl.txtPL2_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL3_Points.Font = New Font(TVControlPnl.txtPL3_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL4_Points.Font = New Font(TVControlPnl.txtPL4_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL5_Points.Font = New Font(TVControlPnl.txtPL5_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL6_Points.Font = New Font(TVControlPnl.txtPL6_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL7_Points.Font = New Font(TVControlPnl.txtPL7_Points.Font.FontFamily, 20)
-                TVControlPnl.txtPL8_Points.Font = New Font(TVControlPnl.txtPL8_Points.Font.FontFamily, 20)
+                TVControlPnl.txtPL1_Name.Font = New Font(TVControlPnl.txtPL1_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL2_Name.Font = New Font(TVControlPnl.txtPL2_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL3_Name.Font = New Font(TVControlPnl.txtPL3_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL4_Name.Font = New Font(TVControlPnl.txtPL4_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL5_Name.Font = New Font(TVControlPnl.txtPL5_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL6_Name.Font = New Font(TVControlPnl.txtPL6_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL7_Name.Font = New Font(TVControlPnl.txtPL7_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL8_Name.Font = New Font(TVControlPnl.txtPL8_Name.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL1_Points.Font = New Font(TVControlPnl.txtPL1_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL2_Points.Font = New Font(TVControlPnl.txtPL2_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL3_Points.Font = New Font(TVControlPnl.txtPL3_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL4_Points.Font = New Font(TVControlPnl.txtPL4_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL5_Points.Font = New Font(TVControlPnl.txtPL5_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL6_Points.Font = New Font(TVControlPnl.txtPL6_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL7_Points.Font = New Font(TVControlPnl.txtPL7_Points.Font.FontFamily, 20, FontStyle.Bold)
+                TVControlPnl.txtPL8_Points.Font = New Font(TVControlPnl.txtPL8_Points.Font.FontFamily, 20, FontStyle.Bold)
 
                 ' Question
                 TVControlPnl.pnlQuestion.Location = New Point(0, 470)
@@ -184,7 +184,7 @@
                 TVControlPnl.Label1.Size = New Size(335, 53)
 
                 TVControlPnl.lblAmount.Font = New Font(TVControlPnl.lblAmount.Font.FontFamily, 36)
-                TVControlPnl.Label1.Font = New Font(TVControlPnl.Label1.Font.FontFamily, 27)
+                TVControlPnl.Label1.Font = New Font(TVControlPnl.Label1.Font.FontFamily, 27, FontStyle.Bold)
 
                 ' FFF Winner
                 TVControlPnl.pnlFFFWinner.Location = New Point(0, 569)
@@ -194,8 +194,8 @@
                 TVControlPnl.pnlFFFWinner.Size = New Size(1280, 57)
                 TVControlPnl.lblFFFWinnerPoints.Size = New Size(111, 36)
 
-                TVControlPnl.lblFFFWinnerName.Font = New Font(TVControlPnl.lblFFFWinnerName.Font.FontFamily, 22)
-                TVControlPnl.lblFFFWinnerPoints.Font = New Font(TVControlPnl.lblFFFWinnerPoints.Font.FontFamily, 22)
+                TVControlPnl.lblFFFWinnerName.Font = New Font(TVControlPnl.lblFFFWinnerName.Font.FontFamily, 22, FontStyle.Bold)
+                TVControlPnl.lblFFFWinnerPoints.Font = New Font(TVControlPnl.lblFFFWinnerPoints.Font.FontFamily, 22, FontStyle.Bold)
 #End Region
             Case 2
 #Region "Host Screen"
@@ -450,22 +450,22 @@
                 TVControlPnl.txtPL8_Points.Size = New Size(114, 49)
                 TVControlPnl.pnlFFFPlayers.Size = New Size(1920, 1080)
 
-                TVControlPnl.txtPL1_Name.Font = New Font(TVControlPnl.txtPL1_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL2_Name.Font = New Font(TVControlPnl.txtPL2_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL3_Name.Font = New Font(TVControlPnl.txtPL3_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL4_Name.Font = New Font(TVControlPnl.txtPL4_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL5_Name.Font = New Font(TVControlPnl.txtPL5_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL6_Name.Font = New Font(TVControlPnl.txtPL6_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL7_Name.Font = New Font(TVControlPnl.txtPL7_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL8_Name.Font = New Font(TVControlPnl.txtPL8_Name.Font.FontFamily, 30)
-                TVControlPnl.txtPL1_Points.Font = New Font(TVControlPnl.txtPL1_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL2_Points.Font = New Font(TVControlPnl.txtPL2_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL3_Points.Font = New Font(TVControlPnl.txtPL3_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL4_Points.Font = New Font(TVControlPnl.txtPL4_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL5_Points.Font = New Font(TVControlPnl.txtPL5_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL6_Points.Font = New Font(TVControlPnl.txtPL6_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL7_Points.Font = New Font(TVControlPnl.txtPL7_Points.Font.FontFamily, 30)
-                TVControlPnl.txtPL8_Points.Font = New Font(TVControlPnl.txtPL8_Points.Font.FontFamily, 30)
+                TVControlPnl.txtPL1_Name.Font = New Font(TVControlPnl.txtPL1_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL2_Name.Font = New Font(TVControlPnl.txtPL2_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL3_Name.Font = New Font(TVControlPnl.txtPL3_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL4_Name.Font = New Font(TVControlPnl.txtPL4_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL5_Name.Font = New Font(TVControlPnl.txtPL5_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL6_Name.Font = New Font(TVControlPnl.txtPL6_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL7_Name.Font = New Font(TVControlPnl.txtPL7_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL8_Name.Font = New Font(TVControlPnl.txtPL8_Name.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL1_Points.Font = New Font(TVControlPnl.txtPL1_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL2_Points.Font = New Font(TVControlPnl.txtPL2_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL3_Points.Font = New Font(TVControlPnl.txtPL3_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL4_Points.Font = New Font(TVControlPnl.txtPL4_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL5_Points.Font = New Font(TVControlPnl.txtPL5_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL6_Points.Font = New Font(TVControlPnl.txtPL6_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL7_Points.Font = New Font(TVControlPnl.txtPL7_Points.Font.FontFamily, 30, FontStyle.Bold)
+                TVControlPnl.txtPL8_Points.Font = New Font(TVControlPnl.txtPL8_Points.Font.FontFamily, 30, FontStyle.Bold)
 
                 ' Question
                 TVControlPnl.pnlQuestion.Location = New Point(0, 710)
@@ -533,7 +533,7 @@
                 TVControlPnl.txtFFFOrder2.Font = New Font(TVControlPnl.txtFFFOrder2.Font.FontFamily, 30)
                 TVControlPnl.txtFFFOrder3.Font = New Font(TVControlPnl.txtFFFOrder3.Font.FontFamily, 30)
                 TVControlPnl.txtFFFOrder4.Font = New Font(TVControlPnl.txtFFFOrder4.Font.FontFamily, 30)
-                TVControlPnl.lblFFFQuestion.Font = New Font(TVControlPnl.lblFFFQuestion.Font.FontFamily, 34)
+                TVControlPnl.lblFFFQuestion.Font = New Font(TVControlPnl.lblFFFQuestion.Font.FontFamily, 34, FontStyle.Bold)
 
                 ' Lifeline icon above question
                 TVControlPnl.picLifelineUse.Location = New Point(909, 638)
@@ -565,10 +565,10 @@
                 TVControlPnl.lblATA_C.Size = New Size(84, 59)
                 TVControlPnl.lblATA_D.Size = New Size(84, 59)
 
-                TVControlPnl.lblATA_A.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36)
-                TVControlPnl.lblATA_B.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36)
-                TVControlPnl.lblATA_C.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36)
-                TVControlPnl.lblATA_D.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36)
+                TVControlPnl.lblATA_A.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36, FontStyle.Bold)
+                TVControlPnl.lblATA_B.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36, FontStyle.Bold)
+                TVControlPnl.lblATA_C.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36, FontStyle.Bold)
+                TVControlPnl.lblATA_D.Font = New Font(TVControlPnl.lblATA_A.Font.FontFamily, 36, FontStyle.Bold)
 
                 ' Winning Strap
                 TVControlPnl.pnlStrap.Location = New Point(0, 862)
@@ -582,7 +582,7 @@
                 TVControlPnl.Label1.Size = New Size(504, 81)
 
                 TVControlPnl.lblAmount.Font = New Font(TVControlPnl.lblAmount.Font.FontFamily, 54)
-                TVControlPnl.Label1.Font = New Font(TVControlPnl.Label1.Font.FontFamily, 42)
+                TVControlPnl.Label1.Font = New Font(TVControlPnl.Label1.Font.FontFamily, 42, FontStyle.Bold)
 
                 ' FFF Winner
                 TVControlPnl.pnlFFFWinner.Location = New Point(0, 832)
@@ -645,7 +645,7 @@
                 HostScreen.pnlAnswer.Location = New Point(1377, 637)
                 HostScreen.lblAnswer.Location = New Point(15, 12)
 
-                HostScreen.lblAnswer.Font = New Font(HostScreen.lblAnswer.Font.FontFamily, 28)
+                HostScreen.lblAnswer.Font = New Font(HostScreen.lblAnswer.Font.FontFamily, 28, FontStyle.Bold)
 
                 HostScreen.pnlAnswer.Size = New Size(69, 69)
 
@@ -685,11 +685,11 @@
                 HostScreen.picCurrent.Location = New Point(227, 15)
                 HostScreen.picQLeft.Location = New Point(227, 15)
 
-                HostScreen.lblCorrect.Font = New Font(HostScreen.lblCorrect.Font.FontFamily, 24)
-                HostScreen.lblWrong.Font = New Font(HostScreen.lblWrong.Font.FontFamily, 24)
-                HostScreen.lblCurrent.Font = New Font(HostScreen.lblCurrent.Font.FontFamily, 24)
-                HostScreen.lblDrop.Font = New Font(HostScreen.lblDrop.Font.FontFamily, 24)
-                HostScreen.lblQLeft.Font = New Font(HostScreen.lblQLeft.Font.FontFamily, 24)
+                HostScreen.lblCorrect.Font = New Font(HostScreen.lblCorrect.Font.FontFamily, 24, FontStyle.Bold)
+                HostScreen.lblWrong.Font = New Font(HostScreen.lblWrong.Font.FontFamily, 24, FontStyle.Bold)
+                HostScreen.lblCurrent.Font = New Font(HostScreen.lblCurrent.Font.FontFamily, 24, FontStyle.Bold)
+                HostScreen.lblDrop.Font = New Font(HostScreen.lblDrop.Font.FontFamily, 24, FontStyle.Bold)
+                HostScreen.lblQLeft.Font = New Font(HostScreen.lblQLeft.Font.FontFamily, 24, FontStyle.Bold)
 
                 HostScreen.pnlCorrect.Size = New Size(288, 75)
                 HostScreen.pnlWrong.Size = New Size(288, 75)
@@ -705,8 +705,8 @@
                 HostScreen.lblHostMsg.Location = New Point(12, 255)
                 HostScreen.txtExplain.Location = New Point(12, 501)
 
-                HostScreen.lblHostMsg.Font = New Font(HostScreen.lblHostMsg.Font.FontFamily, 26)
-                HostScreen.txtExplain.Font = New Font(HostScreen.txtExplain.Font.FontFamily, 22)
+                HostScreen.lblHostMsg.Font = New Font(HostScreen.lblHostMsg.Font.FontFamily, 26, FontStyle.Bold)
+                HostScreen.txtExplain.Font = New Font(HostScreen.txtExplain.Font.FontFamily, 22, FontStyle.Bold)
 
                 HostScreen.lblHostMsg.Size = New Size(1119, 243)
                 HostScreen.txtExplain.Size = New Size(1119, 205)
@@ -721,7 +721,7 @@
                 'Total Winnings
                 HostScreen.txtWinnings.Location = New Point(306, 174)
 
-                HostScreen.txtWinnings.Font = New Font(HostScreen.txtWinnings.Font.FontFamily, 27)
+                HostScreen.txtWinnings.Font = New Font(HostScreen.txtWinnings.Font.FontFamily, 27, FontStyle.Bold)
 
                 HostScreen.txtWinnings.Size = New Size(420, 69)
 #End Region

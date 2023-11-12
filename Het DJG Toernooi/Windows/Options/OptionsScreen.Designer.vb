@@ -91,7 +91,7 @@ Partial Class OptionsScreen
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
-        Me.btnResetQuestionsLevel = New System.Windows.Forms.Button()
+        Me.btnResetQuestionsFFF = New System.Windows.Forms.Button()
         Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
@@ -331,6 +331,7 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
+        Me.btnRemoveAllHostMessages = New System.Windows.Forms.Button()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1102,7 +1103,8 @@ Partial Class OptionsScreen
         '
         'TabPage3
         '
-        Me.TabPage3.Controls.Add(Me.btnResetQuestionsLevel)
+        Me.TabPage3.Controls.Add(Me.btnRemoveAllHostMessages)
+        Me.TabPage3.Controls.Add(Me.btnResetQuestionsFFF)
         Me.TabPage3.Controls.Add(Me.btnResetQuestionsAll)
         Me.TabPage3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage3.Location = New System.Drawing.Point(4, 29)
@@ -1113,22 +1115,22 @@ Partial Class OptionsScreen
         Me.TabPage3.Text = "Database"
         Me.TabPage3.UseVisualStyleBackColor = True
         '
-        'btnResetQuestionsLevel
+        'btnResetQuestionsFFF
         '
-        Me.btnResetQuestionsLevel.Location = New System.Drawing.Point(6, 76)
-        Me.btnResetQuestionsLevel.Name = "btnResetQuestionsLevel"
-        Me.btnResetQuestionsLevel.Size = New System.Drawing.Size(87, 64)
-        Me.btnResetQuestionsLevel.TabIndex = 1
-        Me.btnResetQuestionsLevel.Text = "Reset Used Questions (At Level)"
-        Me.btnResetQuestionsLevel.UseVisualStyleBackColor = True
+        Me.btnResetQuestionsFFF.Location = New System.Drawing.Point(6, 40)
+        Me.btnResetQuestionsFFF.Name = "btnResetQuestionsFFF"
+        Me.btnResetQuestionsFFF.Size = New System.Drawing.Size(238, 28)
+        Me.btnResetQuestionsFFF.TabIndex = 1
+        Me.btnResetQuestionsFFF.Text = "Reset Used Questions (FFF)"
+        Me.btnResetQuestionsFFF.UseVisualStyleBackColor = True
         '
         'btnResetQuestionsAll
         '
         Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 6)
         Me.btnResetQuestionsAll.Name = "btnResetQuestionsAll"
-        Me.btnResetQuestionsAll.Size = New System.Drawing.Size(87, 64)
+        Me.btnResetQuestionsAll.Size = New System.Drawing.Size(238, 28)
         Me.btnResetQuestionsAll.TabIndex = 0
-        Me.btnResetQuestionsAll.Text = "Reset Used Questions (All)"
+        Me.btnResetQuestionsAll.Text = "Reset Used Questions (Regular)"
         Me.btnResetQuestionsAll.UseVisualStyleBackColor = True
         '
         'TabPage2
@@ -3590,6 +3592,15 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
+        'btnRemoveAllHostMessages
+        '
+        Me.btnRemoveAllHostMessages.Location = New System.Drawing.Point(6, 95)
+        Me.btnRemoveAllHostMessages.Name = "btnRemoveAllHostMessages"
+        Me.btnRemoveAllHostMessages.Size = New System.Drawing.Size(238, 28)
+        Me.btnRemoveAllHostMessages.TabIndex = 2
+        Me.btnRemoveAllHostMessages.Text = "Remove all Host Messages"
+        Me.btnRemoveAllHostMessages.UseVisualStyleBackColor = True
+        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3931,7 +3942,6 @@ Partial Class OptionsScreen
     Friend WithEvents Label119 As Label
     Friend WithEvents txtSndHostStart As TextBox
     Friend WithEvents Label120 As Label
-    Friend WithEvents btnResetQuestionsLevel As Button
     Friend WithEvents btnResetQuestionsAll As Button
     Friend WithEvents CheckBox1 As CheckBox
     Friend WithEvents chkClearHostMessages As CheckBox
@@ -3945,4 +3955,6 @@ Partial Class OptionsScreen
     Friend WithEvents chkAutoShowHostScreen As CheckBox
     Friend WithEvents picWinningStrapTexture As Panel
     Friend WithEvents lblWinningStrapTexture As Label
+    Friend WithEvents btnResetQuestionsFFF As Button
+    Friend WithEvents btnRemoveAllHostMessages As Button
 End Class
