@@ -3,61 +3,95 @@ Imports System.Threading
 
 Public Class CoreConsole
 
-    Public Shared isRunning As Boolean = False
+    '============[ The Millionaire Game ]============
+    '  >>>>>>>>>>>>>>> Source Code <<<<<<<<<<<<<<<
+    ' Project started:      June 2017
+    ' Open Source since:    2021
+    ' Author:               Marco (Macronair)
+    ' Program is mostly written in VB.NET. But small bits of code are in C#.
+    ' Based on the real-life television program Who Wants To Be A Millionaire?.
 
-    Private Sub CoreConsole_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+    Public Shared isRunning As Boolean = False  ' Check if the main program is running next to the core script.
+    ' This sub below checks at a specific interval if the boolean above is still true.
+    Private Sub tmrRuntime_Tick(sender As Object, e As EventArgs) Handles tmrRuntime.Tick
+        If isRunning = False Then   ' When Control Panel is closed, then do the following:
+            tmrRuntime.Stop()       ' - Stops this timer.
+            Me.Close()              ' - Kill application completely.
+        End If
     End Sub
 
+    Private Sub tmrLoad_Tick(sender As Object, e As EventArgs) Handles tmrLoad.Tick
+        StartSeq()
+        tmrLoad.Stop()
+    End Sub
+
+    Private Sub CoreConsole_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
+        StartSeq()
+    End Sub
+
+    ' The beginning of the application.
     Private Sub StartSeq()
-        Me.Enabled = True
-        'Version info
+        Me.Enabled = True       ' Enable.. Me? (Not sure anymore why this is added. ;D)
+
+        ''' APPLICATION / VERSION / CREATOR INFO '''
         LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
         LogMsg(String.Format("Created by Marco (Macronair). Compatible with Microsoft SQL!"))
         LogMsg("")
-        Thread.Sleep(500)
 
+        Thread.Sleep(500)   ' Little pause for 0,5 seconds.
+
+        ''' LOADING OF THE CONFIG.YML FILE '''
         LogMsgDate("Loading configuration...")
-        Game.CurrentProfile.LoadSettings()
-        Monitor.Detect()
-        Game.TotalLifelines = Profile.Options.TotalLifelines
-        If Game.TotalLifelines > 4 Then
+        Game.CurrentProfile.LoadSettings()      ' Load values of the config.yml file
+
+        Monitor.Detect()                        ' Detect all available monitors on the machine. Used for the Options menu.
+
+        ' Check and load the total available lifelines.
+        Game.TotalLifelines = Profile.Options.TotalLifelines    
+        If Game.TotalLifelines > 4 Then             ' If the value is above 4 (Which isn't possible in game)...
+            ' Set total to 4 active lifelines.
             Game.TotalLifelines = 4
             Profile.Options.TotalLifelines = 4
-        ElseIf Game.TotalLifelines < 0 Then
+        ElseIf Game.TotalLifelines < 0 Then         ' If the value is below 0 (Which also isn't possible in game)...
+            ' Set total to 0 active lifelines.
             Game.TotalLifelines = 0
             Profile.Options.TotalLifelines = 0
         End If
-        LifelineManager.UnlockLifeline(1)
-        LifelineManager.UnlockLifeline(2)
-        LifelineManager.UnlockLifeline(3)
-        LifelineManager.UnlockLifeline(4)
+        LifelineManager.UnlockLifeline(1)           ' Activate Lifeline 1 (if enabled).
+        LifelineManager.UnlockLifeline(2)           ' Activate Lifeline 2 (if enabled).
+        LifelineManager.UnlockLifeline(3)           ' Activate Lifeline 3 (if enabled).
+        LifelineManager.UnlockLifeline(4)           ' Activate Lifeline 4 (if enabled).
 
-        Thread.Sleep(250)
+        Thread.Sleep(250)   ' Again... a short break.
 
+        ''' THE DATABASE '''
         LogMsgDate("Checking database...")
         Try
-            Data.CheckDatabase()
-        Catch ex As Exception
-            tmrRuntime.Stop()
-            tmrLoad.Stop()
-            Me.Hide()
+            Data.CheckDatabase()                    ' Check if all required conditions for the database are met. If not, correct it. (more info in Data.vb class)
+        Catch ex As Exception           ' OOPS! Something is wrong.
+            tmrRuntime.Stop()                       ' Just to be sure, stop the Runtime check timer.
+            tmrLoad.Stop()                          ' And also the.. eh.. Load timer? (Don't know why this is in here...)
+            Me.Hide()                               ' Hide the console window.
+            ' And finally... the message.
             MessageBox.Show("Error when starting application: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Me.Close()
         End Try
         Thread.Sleep(600)
 
+        ''' FINALLY LAUNCHING APPLICATION '''
         LogMsgDate("Lauching controller...")
 
-        Monitor.ApplyScreenSettings()
-        Monitor.ApplyScreenSettings()
+        Monitor.ApplyScreenSettings()   ' Apply current screen settings
+        Monitor.ApplyScreenSettings()   ' Apply this again... otherwise some fonts will be glitched out for some reason.
 
-        isRunning = True
-        Me.Hide()
-        ControlPanel.Show()
+        isRunning = True                ' Change main control panel running state to True.
+        Me.Hide()                       ' Hide this console window.
+        ControlPanel.Show()             ' Show main control panel.
+
         If Data.openQEditor = True Then
             Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QEDIT.EXE"))
         End If
+
         tmrRuntime.Start()
     End Sub
 
@@ -78,22 +112,6 @@ Public Class CoreConsole
     End Sub
     Public Shared Sub LogMsgLineDate(ByVal msg As String)
         CoreConsole.txtConsole.AppendText(DateTime.Now + " : " + msg)
-    End Sub
-
-    Private Sub tmrLoad_Tick(sender As Object, e As EventArgs) Handles tmrLoad.Tick
-        StartSeq()
-        tmrLoad.Stop()
-    End Sub
-
-    Private Sub tmrRuntime_Tick(sender As Object, e As EventArgs) Handles tmrRuntime.Tick
-        If isRunning = False Then
-            tmrRuntime.Stop()
-            Me.Close()
-        End If
-    End Sub
-
-    Private Sub CoreConsole_Shown(sender As Object, e As EventArgs) Handles MyBase.Shown
-        StartSeq()
     End Sub
 
     Private Sub CoreConsole_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
