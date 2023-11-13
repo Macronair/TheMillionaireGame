@@ -251,29 +251,32 @@
             this.tsmenuQuestionEdit,
             this.tsmenuQuestionRemove});
             this.tsmenuQuestion.Name = "tsmenuQuestion";
-            this.tsmenuQuestion.Size = new System.Drawing.Size(122, 22);
+            this.tsmenuQuestion.Size = new System.Drawing.Size(180, 22);
             this.tsmenuQuestion.Text = "Question";
             // 
             // tsmenuQuestionCreate
             // 
             this.tsmenuQuestionCreate.Image = global::MillionaireGameQEditor.Properties.Resources.add;
             this.tsmenuQuestionCreate.Name = "tsmenuQuestionCreate";
-            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(117, 22);
-            this.tsmenuQuestionCreate.Text = "Create";
+            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionCreate.Text = "Add";
+            this.tsmenuQuestionCreate.Click += new System.EventHandler(this.tsmenuQuestionCreate_Click);
             // 
             // tsmenuQuestionEdit
             // 
             this.tsmenuQuestionEdit.Image = global::MillionaireGameQEditor.Properties.Resources.edit;
             this.tsmenuQuestionEdit.Name = "tsmenuQuestionEdit";
-            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(117, 22);
+            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(180, 22);
             this.tsmenuQuestionEdit.Text = "Edit";
+            this.tsmenuQuestionEdit.Click += new System.EventHandler(this.tsmenuQuestionEdit_Click);
             // 
             // tsmenuQuestionRemove
             // 
             this.tsmenuQuestionRemove.Image = global::MillionaireGameQEditor.Properties.Resources.remove;
             this.tsmenuQuestionRemove.Name = "tsmenuQuestionRemove";
-            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(117, 22);
+            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(180, 22);
             this.tsmenuQuestionRemove.Text = "Remove";
+            this.tsmenuQuestionRemove.Click += new System.EventHandler(this.tsmenuQuestionRemove_Click);
             // 
             // tsmenuActions
             // 

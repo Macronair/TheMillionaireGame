@@ -346,5 +346,28 @@ namespace Millionaire
                 }
             }
         }
+
+        private void tsmenuQuestionCreate_Click(object sender, EventArgs e)
+        {
+            frmQuestionAdd add = new frmQuestionAdd(this);
+            add.ShowDialog();
+        }
+
+        private void tsmenuQuestionEdit_Click(object sender, EventArgs e)
+        {
+            if (stLevel.Text == "Not selected")
+            {
+                MessageBox.Show("You must select a question first.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                EditDB();
+            }
+        }
+
+        private void tsmenuQuestionRemove_Click(object sender, EventArgs e)
+        {
+            DeleteDB();
+        }
     }
 }
