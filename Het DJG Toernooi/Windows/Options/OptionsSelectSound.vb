@@ -63,7 +63,7 @@ Public Class OptionsSelectSound
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Then
+        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
         Else
             MessageBox.Show("Please select a valid .mp3 or .wav file.", "Cannot use this type.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -75,7 +75,7 @@ Public Class OptionsSelectSound
     End Sub
 
     Private Sub treeSelectSound_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles treeSelectSound.MouseDoubleClick
-        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Then
+        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
         Else
             MessageBox.Show("Please select a valid .mp3 or .wav file.", "Cannot use this type.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)

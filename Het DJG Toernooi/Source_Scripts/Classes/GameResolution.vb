@@ -611,7 +611,7 @@
                 HostScreen.txtC.Location = New Point(185, 7)
                 HostScreen.txtD.Location = New Point(60, 7)
 
-                HostScreen.txtQuestion.Font = New Font(HostScreen.txtQuestion.Font.FontFamily, 31)
+                HostScreen.txtQuestion.Font = New Font(HostScreen.txtQuestion.Font.FontFamily, 32)
                 HostScreen.txtA.Font = New Font(HostScreen.txtA.Font.FontFamily, 36)
                 HostScreen.txtB.Font = New Font(HostScreen.txtB.Font.FontFamily, 36)
                 HostScreen.txtC.Font = New Font(HostScreen.txtC.Font.FontFamily, 36)
@@ -741,7 +741,7 @@
                 GuestScreen.txtC.Location = New Point(185, 7)
                 GuestScreen.txtD.Location = New Point(60, 7)
 
-                GuestScreen.txtQuestion.Font = New Font(GuestScreen.txtQuestion.Font.FontFamily, 31)
+                GuestScreen.txtQuestion.Font = New Font(GuestScreen.txtQuestion.Font.FontFamily, 32)
                 GuestScreen.txtA.Font = New Font(GuestScreen.txtA.Font.FontFamily, 36)
                 GuestScreen.txtB.Font = New Font(GuestScreen.txtB.Font.FontFamily, 36)
                 GuestScreen.txtC.Font = New Font(GuestScreen.txtC.Font.FontFamily, 36)

@@ -583,10 +583,6 @@ Public Class ControlPanel
         tmrLifelineBling.Stop()
     End Sub
 
-    Private Sub btnFFF_Click(sender As Object, e As EventArgs) Handles btnFFF.Click
-        FFFServer.Show()
-    End Sub
-
     Private Sub btnUndo_Click(sender As Object, e As EventArgs) Handles btnUndo.Click
         Question.UndoAnswer(True)
     End Sub
@@ -609,7 +605,7 @@ Public Class ControlPanel
         End Try
     End Sub
 
-    Private Sub HostMessagesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles HostMessagesToolStripMenuItem.Click
+    Private Sub HostMessagesToolStripMenuItem_Click(sender As Object, e As EventArgs)
         HostMessages.Show()
     End Sub
 
@@ -667,5 +663,13 @@ Public Class ControlPanel
 
     Private Sub btnResetGame_Click(sender As Object, e As EventArgs) Handles btnResetGame.Click
         User.ResetGame()
+    End Sub
+
+    Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub FastestFingerFirstToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FastestFingerFirstToolStripMenuItem.Click
+        FFFServer.Show()
     End Sub
 End Class

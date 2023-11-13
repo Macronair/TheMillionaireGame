@@ -85,8 +85,10 @@ Partial Class ControlPanel
         Me.chkLifeline1Unused = New System.Windows.Forms.CheckBox()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.DatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.HostMessagesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FastestFingerFirstToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ShowOptionsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem4 = New System.Windows.Forms.ToolStripSeparator()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GameToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuestionsEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
@@ -119,7 +121,6 @@ Partial Class ControlPanel
         Me.grpTV = New System.Windows.Forms.GroupBox()
         Me.chkShowTotalScore = New System.Windows.Forms.CheckBox()
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
-        Me.btnFFF = New System.Windows.Forms.Button()
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
         Me.btnSendToHost = New System.Windows.Forms.Button()
         Me.grpHostMessages = New System.Windows.Forms.GroupBox()
@@ -203,7 +204,7 @@ Partial Class ControlPanel
         Me.btnSndOpening.BackColor = System.Drawing.Color.Blue
         Me.btnSndOpening.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnSndOpening.ForeColor = System.Drawing.Color.White
-        Me.btnSndOpening.Location = New System.Drawing.Point(9, 52)
+        Me.btnSndOpening.Location = New System.Drawing.Point(11, 27)
         Me.btnSndOpening.Name = "btnSndOpening"
         Me.btnSndOpening.Size = New System.Drawing.Size(75, 22)
         Me.btnSndOpening.TabIndex = 10
@@ -279,7 +280,7 @@ Partial Class ControlPanel
         Me.btnCommercial.BackColor = System.Drawing.Color.Blue
         Me.btnCommercial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnCommercial.ForeColor = System.Drawing.Color.White
-        Me.btnCommercial.Location = New System.Drawing.Point(9, 77)
+        Me.btnCommercial.Location = New System.Drawing.Point(11, 52)
         Me.btnCommercial.Name = "btnCommercial"
         Me.btnCommercial.Size = New System.Drawing.Size(75, 23)
         Me.btnCommercial.TabIndex = 19
@@ -291,7 +292,7 @@ Partial Class ControlPanel
         Me.btnClosing.BackColor = System.Drawing.Color.Blue
         Me.btnClosing.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnClosing.ForeColor = System.Drawing.Color.White
-        Me.btnClosing.Location = New System.Drawing.Point(9, 103)
+        Me.btnClosing.Location = New System.Drawing.Point(11, 78)
         Me.btnClosing.Name = "btnClosing"
         Me.btnClosing.Size = New System.Drawing.Size(75, 23)
         Me.btnClosing.TabIndex = 21
@@ -519,7 +520,7 @@ Partial Class ControlPanel
         Me.btnToHotSeat.BackColor = System.Drawing.Color.Tomato
         Me.btnToHotSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnToHotSeat.ForeColor = System.Drawing.Color.Black
-        Me.btnToHotSeat.Location = New System.Drawing.Point(87, 77)
+        Me.btnToHotSeat.Location = New System.Drawing.Point(89, 52)
         Me.btnToHotSeat.Name = "btnToHotSeat"
         Me.btnToHotSeat.Size = New System.Drawing.Size(86, 22)
         Me.btnToHotSeat.TabIndex = 49
@@ -705,7 +706,7 @@ Partial Class ControlPanel
         Me.btnUnlockSwitch.BackColor = System.Drawing.Color.Orange
         Me.btnUnlockSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnUnlockSwitch.ForeColor = System.Drawing.Color.Black
-        Me.btnUnlockSwitch.Location = New System.Drawing.Point(194, 52)
+        Me.btnUnlockSwitch.Location = New System.Drawing.Point(197, 113)
         Me.btnUnlockSwitch.Name = "btnUnlockSwitch"
         Me.btnUnlockSwitch.Size = New System.Drawing.Size(101, 22)
         Me.btnUnlockSwitch.TabIndex = 8
@@ -767,22 +768,36 @@ Partial Class ControlPanel
         '
         'DatabaseToolStripMenuItem
         '
-        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.HostMessagesToolStripMenuItem, Me.ShowOptionsToolStripMenuItem})
+        Me.DatabaseToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FastestFingerFirstToolStripMenuItem, Me.ShowOptionsToolStripMenuItem, Me.ToolStripMenuItem4, Me.CloseToolStripMenuItem})
         Me.DatabaseToolStripMenuItem.Name = "DatabaseToolStripMenuItem"
         Me.DatabaseToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
         Me.DatabaseToolStripMenuItem.Text = " Main"
         '
-        'HostMessagesToolStripMenuItem
+        'FastestFingerFirstToolStripMenuItem
         '
-        Me.HostMessagesToolStripMenuItem.Name = "HostMessagesToolStripMenuItem"
-        Me.HostMessagesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.HostMessagesToolStripMenuItem.Text = "Host Messages"
+        Me.FastestFingerFirstToolStripMenuItem.Image = CType(resources.GetObject("FastestFingerFirstToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.FastestFingerFirstToolStripMenuItem.Name = "FastestFingerFirstToolStripMenuItem"
+        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FastestFingerFirstToolStripMenuItem.Text = "Fastest Finger First"
         '
         'ShowOptionsToolStripMenuItem
         '
+        Me.ShowOptionsToolStripMenuItem.Image = CType(resources.GetObject("ShowOptionsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
         Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ShowOptionsToolStripMenuItem.Text = "Show Options"
+        Me.ShowOptionsToolStripMenuItem.Text = "Options"
+        '
+        'ToolStripMenuItem4
+        '
+        Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
+        '
+        'CloseToolStripMenuItem
+        '
+        Me.CloseToolStripMenuItem.Image = CType(resources.GetObject("CloseToolStripMenuItem.Image"), System.Drawing.Image)
+        Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CloseToolStripMenuItem.Text = "Close"
         '
         'GameToolStripMenuItem
         '
@@ -793,6 +808,7 @@ Partial Class ControlPanel
         '
         'QuestionsEditorToolStripMenuItem
         '
+        Me.QuestionsEditorToolStripMenuItem.Image = CType(resources.GetObject("QuestionsEditorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
         Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
@@ -819,12 +835,14 @@ Partial Class ControlPanel
         '
         'HostScreenToolStripMenuItem
         '
+        Me.HostScreenToolStripMenuItem.Image = CType(resources.GetObject("HostScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
         Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
+        Me.GuestScreenToolStripMenuItem.Image = CType(resources.GetObject("GuestScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
         Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
@@ -836,12 +854,14 @@ Partial Class ControlPanel
         '
         'TVScreenToolStripMenuItem
         '
+        Me.TVScreenToolStripMenuItem.Image = CType(resources.GetObject("TVScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
         Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
         '
         'ChangeBackgroundColorTVToolStripMenuItem
         '
+        Me.ChangeBackgroundColorTVToolStripMenuItem.Image = CType(resources.GetObject("ChangeBackgroundColorTVToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ChangeBackgroundColorTVToolStripMenuItem.Name = "ChangeBackgroundColorTVToolStripMenuItem"
         Me.ChangeBackgroundColorTVToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.ChangeBackgroundColorTVToolStripMenuItem.Text = "Change background color (TV)"
@@ -852,6 +872,7 @@ Partial Class ControlPanel
         Me.ChangeQuestionFontToolStripMenuItem.Name = "ChangeQuestionFontToolStripMenuItem"
         Me.ChangeQuestionFontToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
         Me.ChangeQuestionFontToolStripMenuItem.Text = "Change resolutions"
+        Me.ChangeQuestionFontToolStripMenuItem.Visible = False
         '
         'X720720pToolStripMenuItem
         '
@@ -875,6 +896,7 @@ Partial Class ControlPanel
         '
         'ShowConsoleToolStripMenuItem
         '
+        Me.ShowConsoleToolStripMenuItem.Image = Global.MillionaireGame.My.Resources.Resources.triangle
         Me.ShowConsoleToolStripMenuItem.Name = "ShowConsoleToolStripMenuItem"
         Me.ShowConsoleToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.ShowConsoleToolStripMenuItem.Text = "Show Console"
@@ -886,6 +908,7 @@ Partial Class ControlPanel
         '
         'AboutToolStripMenuItem
         '
+        Me.AboutToolStripMenuItem.Image = CType(resources.GetObject("AboutToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AboutToolStripMenuItem.Name = "AboutToolStripMenuItem"
         Me.AboutToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.AboutToolStripMenuItem.Text = "About"
@@ -1055,17 +1078,6 @@ Partial Class ControlPanel
         '
         Me.tmrLifelineBling.Interval = 300
         '
-        'btnFFF
-        '
-        Me.btnFFF.BackColor = System.Drawing.Color.Gold
-        Me.btnFFF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnFFF.Location = New System.Drawing.Point(11, 27)
-        Me.btnFFF.Name = "btnFFF"
-        Me.btnFFF.Size = New System.Drawing.Size(162, 23)
-        Me.btnFFF.TabIndex = 80
-        Me.btnFFF.Text = "Fastest Finger"
-        Me.btnFFF.UseVisualStyleBackColor = False
-        '
         'txtHostMessages
         '
         Me.txtHostMessages.BackColor = System.Drawing.Color.White
@@ -1122,7 +1134,7 @@ Partial Class ControlPanel
         Me.btnResetGame.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.btnResetGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnResetGame.ForeColor = System.Drawing.Color.White
-        Me.btnResetGame.Location = New System.Drawing.Point(87, 52)
+        Me.btnResetGame.Location = New System.Drawing.Point(89, 27)
         Me.btnResetGame.Name = "btnResetGame"
         Me.btnResetGame.Size = New System.Drawing.Size(86, 22)
         Me.btnResetGame.TabIndex = 86
@@ -1138,7 +1150,6 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.btnResetGame)
         Me.Controls.Add(Me.btnUnlockSwitch)
         Me.Controls.Add(Me.grpHostMessages)
-        Me.Controls.Add(Me.btnFFF)
         Me.Controls.Add(Me.btnToHotSeat)
         Me.Controls.Add(Me.grpTV)
         Me.Controls.Add(Me.grpLifelines)
@@ -1275,14 +1286,12 @@ Partial Class ControlPanel
     Friend WithEvents lblATA_A As Label
     Friend WithEvents tmrLifelineBling As Timer
     Friend WithEvents OptionsToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents btnFFF As Button
     Friend WithEvents btnUndo As Button
     Friend WithEvents AboutToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GameToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuestionsEditorToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
     Friend WithEvents ProfileEditorToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents HostMessagesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ShowOptionsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txtHostMessages As RichTextBox
     Friend WithEvents btnSendToHost As Button
@@ -1297,4 +1306,7 @@ Partial Class ControlPanel
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
     Friend WithEvents btnResetGame As Button
     Friend WithEvents chkShowTotalScore As CheckBox
+    Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
+    Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FastestFingerFirstToolStripMenuItem As ToolStripMenuItem
 End Class

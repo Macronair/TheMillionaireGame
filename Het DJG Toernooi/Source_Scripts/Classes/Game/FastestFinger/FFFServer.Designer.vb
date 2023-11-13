@@ -23,6 +23,7 @@ Partial Class FFFServer
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FFFServer))
         Me.txtReceive = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -1033,6 +1034,7 @@ Partial Class FFFServer
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.txtReceive)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FFFServer"
         Me.Text = "Fastest Finger: Server"
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).EndInit()

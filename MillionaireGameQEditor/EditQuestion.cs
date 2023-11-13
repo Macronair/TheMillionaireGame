@@ -193,5 +193,10 @@ namespace Millionaire.Windows.Question_Editor
         {
             lblD.Text = "D: " + txtD.Text;
         }
+
+        private void trkQuestionLevel_Scroll(object sender, EventArgs e)
+        {
+            lblQuestionLevel.Text = trkQuestionLevel.Value.ToString();
+        }
     }
 }

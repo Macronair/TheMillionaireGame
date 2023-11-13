@@ -22,6 +22,7 @@ Partial Class frmMain
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.txtReceive = New System.Windows.Forms.TextBox()
@@ -276,7 +277,7 @@ Partial Class frmMain
         Me.lblStatus.ForeColor = System.Drawing.Color.Yellow
         Me.lblStatus.Location = New System.Drawing.Point(116, 46)
         Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(107, 16)
+        Me.lblStatus.Size = New System.Drawing.Size(106, 16)
         Me.lblStatus.TabIndex = 15
         Me.lblStatus.Text = "Disconnected!"
         '
@@ -296,7 +297,8 @@ Partial Class frmMain
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.TextBox1)
         Me.ForeColor = System.Drawing.Color.White
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMain"
         Me.Text = "The Millionaire Game - Fastest Finger Client"
         Me.grpAnswers.ResumeLayout(False)

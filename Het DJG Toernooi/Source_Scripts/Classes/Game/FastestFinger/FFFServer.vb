@@ -95,7 +95,7 @@ Public Class FFFServer
     Public Shared pl8_time As Double = 9999
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Listening = New TcpListener(IPAddress.Any, 3818)
+        Listening = New TcpListener(IPAddress.Any, Profile.Options.FFF_Port)
         Try
             Listening.Start()
             Listening.BeginAcceptTcpClient(New AsyncCallback(AddressOf AcceptClient), Listening)
@@ -279,19 +279,6 @@ Public Class FFFServer
 
         question.controls.stop()
 
-        tmrThreeNotes.Start()
-    End Sub
-
-    Private Sub tmrThreeNotes_Tick(sender As Object, e As EventArgs) Handles tmrThreeNotes.Tick
-        tmr = New System.Timers.Timer(1)
-        AddHandler tmr.Elapsed, AddressOf Handler
-
-        FFFQuestion.Fill()
-        PlayerCheck.Randomizer()
-        txtReceive.Clear()
-        fff_think = True
-
-        tmrThink.Start()
         HostScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
         GuestScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
         TVControlPnl.txtA.Text = "A: " & ControlPanel.txtA.Text
@@ -308,6 +295,21 @@ Public Class FFFServer
         GuestScreen.txtD.Text = "D: " & ControlPanel.txtD.Text
         TVControlPnl.txtD.Text = "D: " & ControlPanel.txtD.Text
         TVControlPnl.txtD.Visible = True
+
+        tmrThreeNotes.Start()
+    End Sub
+
+    Private Sub tmrThreeNotes_Tick(sender As Object, e As EventArgs) Handles tmrThreeNotes.Tick
+        tmr = New System.Timers.Timer(1)
+        AddHandler tmr.Elapsed, AddressOf Handler
+
+        FFFQuestion.Fill()
+        PlayerCheck.Randomizer()
+        txtReceive.Clear()
+        fff_think = True
+
+        tmrThink.Start()
+
         tmrSendAnswers.Start()
 
         stopwatch.Start()

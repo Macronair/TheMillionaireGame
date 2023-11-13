@@ -499,6 +499,7 @@
             this.trkQuestionLevel.Size = new System.Drawing.Size(45, 237);
             this.trkQuestionLevel.TabIndex = 97;
             this.trkQuestionLevel.Value = 1;
+            this.trkQuestionLevel.Scroll += new System.EventHandler(this.trkQuestionLevel_Scroll);
             // 
             // chkQuestionUsed
             // 
