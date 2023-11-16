@@ -149,7 +149,6 @@ Public Class ControlPanel
             End If
             i = 1
         ElseIf i = 1 Then
-            chkShowQuestion.Checked = False
             TVControlPnl.txtA.BackColor = Color.Transparent
             TVControlPnl.txtB.BackColor = Color.Transparent
             TVControlPnl.txtC.BackColor = Color.Transparent
@@ -340,6 +339,7 @@ Public Class ControlPanel
         If wa = 0 Then
             User.a = 0
             wa = 1
+            chkShowQuestion.Checked = False
             If Profile.Options.S_AutoShowTotalWinnings = True Then
                 chkShowTotalScore.Checked = True
             End If

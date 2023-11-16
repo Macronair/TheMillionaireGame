@@ -4,9 +4,11 @@ Imports System.IO
 Public Class Data
 
     Public Shared connectionString As New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30"))
-    Public Shared OldTablesPresent = False    ' This will switch to True if there is an old tablename found.
 
-    Public Shared openQEditor As Boolean = False
+    Public Shared OldTablesPresent = False              ' This will switch to True if there is an old tablename found.
+    Public Shared OpenQEditor As Boolean = False        ' If the user chooses to open the Question Editor after creating new database tables after detecting old tables.
+    Private Shared MoveFFFToNewTB As Boolean = False    ' Will be switched to true when old tables are detected and the new tables are not created yet.
+
     Public Shared scanOldTables As Boolean = True
 
     Public Shared Sub CheckDatabase()
@@ -95,9 +97,9 @@ Public Class Data
         Dim cmd_q_fffquestions As String = "SELECT * FROM sys.tables WHERE name = 'fff_questions'"
         Dim cmd_q_questions As String = "SELECT * FROM sys.tables WHERE name = 'questions'"
 
-        Dim te_s_HostMessages As Boolean
-        Dim te_q_Level0 As Boolean
-        Dim te_q_Level1 As Boolean
+        Dim te_s_HostMessages As Boolean = False
+        Dim te_q_Level0 As Boolean = False
+        Dim te_q_Level1 As Boolean = False
 
         'Since October 2023, there is a new database design which invole less tables and other names.
         'When this method is called, the code below would be run to create the new tables within the existing database (if they aren't created yet).
@@ -149,34 +151,42 @@ Public Class Data
 
                 If OldTablesPresent = True Then
                     Dim sqlCmd As New SqlCommand("SELECT * FROM sys.tables WHERE name = 'questions' OR name = 'fff_questions'", connectionString)
-                    Dim reader As SqlDataReader = sqlCmd.ExecuteReader
+                    Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                        If reader.HasRows Then
 
-                    If reader.HasRows Then
-                        Dim msgNewTB As DialogResult =
-                        MessageBox.Show($"The current tables in your database are not compatible with version 1.1 or higher.{vbNewLine}
+                        Else
+                            Dim msgNewTB As DialogResult =
+                            MessageBox.Show($"The current tables in your database are not compatible with version 1.1 or higher.{vbNewLine}
 For the new features (such as questions per money level), the old table design is unfortunately not suitable for this change
 The new tables will be automatically created for you (if this isn't executed yet).
 If you had used some older versions, there is a new import tool in the Questions Editor you can use where you can set the desired difficulty/money level to each question.{vbNewLine}
 Do you want to run the Questions Editor first? Click 'No' to continue loading the main program. Or 'Cancel' to exit (no tables will be made)", "INFO: Major Database Change!", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information)
-                        Select Case msgNewTB
-                            Case DialogResult.Yes
-                                openQEditor = True
-                            Case DialogResult.No
-                                openQEditor = False
-                            Case DialogResult.Cancel
-                                Environment.Exit(0)
-                        End Select
+                            Select Case msgNewTB
+                                Case DialogResult.Yes
+                                    OpenQEditor = True
+                                Case DialogResult.No
+                                    OpenQEditor = False
+                                Case DialogResult.Cancel
+                                    Environment.Exit(0)
+                            End Select
 
+                            MoveFFFToNewTB = True
+                        End If
+                    End Using
+
+                    Try
                         Dim addColumn As SqlCommand
-                        addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level1 ADD Imported BIT NOT NULL DEFAULT 0", connectionString)
                         addColumn.ExecuteNonQuery()
-                        addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level2 ADD Imported BIT NOT NULL DEFAULT 0", connectionString)
                         addColumn.ExecuteNonQuery()
-                        addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level3 ADD Imported BIT NOT NULL DEFAULT 0", connectionString)
                         addColumn.ExecuteNonQuery()
-                        addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT DEFAULT 'False'", connectionString)
+                        addColumn = New SqlCommand("ALTER TABLE questions_Level4 ADD Imported BIT NOT NULL DEFAULT 0", connectionString)
                         addColumn.ExecuteNonQuery()
-                    End If
+                    Catch
+
+                    End Try
                 End If
 
             Catch ex As Exception
@@ -208,6 +218,12 @@ Do you want to run the Questions Editor first? Click 'No' to continue loading th
             If te_q_Level0 = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
                 CreateTables(0)
+
+                If MoveFFFToNewTB = True Then
+                    Dim transferdata As SqlCommand =
+                    New SqlCommand("INSERT INTO fff_questions (Question,A,B,C,D,CorrectAnswer,Used,Note) SELECT Question,A,B,C,D,CorrectAnswer,Used,Note FROM questions_Level0", connectionString)
+                    transferdata.ExecuteNonQuery()
+                End If
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking table < fff_questions >: " + Environment.NewLine + ex.Message)
@@ -273,13 +289,6 @@ Do you want to run the Questions Editor first? Click 'No' to continue loading th
                     CoreConsole.LogMsg("<")
                     CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
                 End Try
-
-                If OldTablesPresent = True Then
-                    Dim cmdTransfer As New SqlCommand("INSERT INTO fff_questions SELECT * FROM questions_Level0", connectionString)
-                    cmdTransfer.ExecuteNonQuery()
-                    cmdTransfer = New SqlCommand("UPDATE fff_questions SET Level = 0")
-                    cmdTransfer.ExecuteNonQuery()
-                End If
             Case 1
                 CoreConsole.LogMsgLineDate("Creating table 'questions'...")
                 table = "CREATE TABLE [dbo].[questions] (" +

@@ -88,11 +88,17 @@ Public Class CoreConsole
         ' Otherwise they'll end up with a new clean database (except for the FFF questions which will be imported one on one).
         ' The if statement below will open the Question Editor with the import tool automatically if the user said yes on the prompt they got
         ' when loading the application for the first time.
-        If Data.openQEditor = True Then
-            Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QEDIT.EXE"))
+        If Data.OpenQEditor = True Then
+            Dim qedit As Thread = New Thread(New ThreadStart(AddressOf OpenQEditor))
+            qedit.Start()
+            LogMsgDate("Starting Question Editor...")
         End If
 
         tmrRuntime.Start()              ' Start the runtime timer (see code at the top).
+    End Sub
+
+    Private Sub OpenQEditor()
+        Process.Start(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "QEDIT.EXE"))
     End Sub
 
     '' LOGGING SUBS  (Not quite interesting) ''

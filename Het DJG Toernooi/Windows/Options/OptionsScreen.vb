@@ -395,6 +395,11 @@ Public Class OptionsScreen
                 grpLifeline2.Visible = False
                 grpLifeline3.Visible = False
                 grpLifeline4.Visible = False
+            Case 0
+                grpLifeline1.Visible = False
+                grpLifeline2.Visible = False
+                grpLifeline3.Visible = False
+                grpLifeline4.Visible = False
         End Select
     End Sub
 

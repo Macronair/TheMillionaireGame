@@ -124,10 +124,8 @@
             HostScreen.txtWinningStrap.Text = lblAmount.Text
             GuestScreen.txtWinningStrap.Text = lblAmount.Text
         End If
-        pnlQuestion.Visible = False
+        ControlPanel.chkShowQuestion.Checked = False
         pnlStrap.Visible = True
-        'HostScreen.pnlStrap.Visible = True
-        'GuestScreen.pnlStrap.Visible = True
         txtA.ForeColor = Color.White
         picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
         txtB.ForeColor = Color.White
@@ -143,10 +141,10 @@
     Private Sub tmrRandomizer_Tick(sender As Object, e As EventArgs) Handles tmrRandomizer.Tick
         Dim rnd1 As New Random
 
-        lblATA_A.Text = "A: " & rnd1.Next(10, 100) & "%"
-        lblATA_B.Text = "B: " & rnd1.Next(10, 100) & "%"
-        lblATA_C.Text = "C: " & rnd1.Next(10, 100) & "%"
-        lblATA_D.Text = "D: " & rnd1.Next(10, 100) & "%"
+        lblATA_A.Text = "A: " & rnd1.Next(5, 100) & "%"
+        lblATA_B.Text = "B: " & rnd1.Next(5, 100) & "%"
+        lblATA_C.Text = "C: " & rnd1.Next(5, 100) & "%"
+        lblATA_D.Text = "D: " & rnd1.Next(5, 100) & "%"
     End Sub
 
     Private Sub TVControlPnl_Load(sender As Object, e As EventArgs) Handles MyBase.Load

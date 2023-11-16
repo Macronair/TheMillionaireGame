@@ -1,5 +1,4 @@
-﻿Imports System.Net.NetworkInformation
-Imports System.Threading
+﻿Imports System.Threading
 
 Public Class User
 

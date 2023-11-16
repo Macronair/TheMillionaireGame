@@ -1,9 +1,6 @@
 ﻿Imports System.IO
 Imports System.Net
 Imports System.Net.Sockets
-Imports System.Runtime.InteropServices
-Imports System.Threading
-Imports System.Timers
 
 'Server Side
 Public Class FFFServer
@@ -356,6 +353,7 @@ Public Class FFFServer
             Case 1
                 With st1
                     .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadCorrectOrder
+                    .settings.setMode("Loop", True)
                     .controls.play()
                 End With
                 i = i + 1
@@ -423,6 +421,7 @@ Public Class FFFServer
             If Game.level = -1 Then
                 With st1
                     .URL = Sounds.SoundsPath + Profile.Options.snd_F_WhoWasCorrect
+                    .settings.setMode("Loop", False)
                     .controls.play()
                 End With
                 st2.controls.stop()

@@ -51,7 +51,10 @@ Partial Class MonitorIdentifier
         Me.Controls.Add(Me.lblMonitorNumber)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "MonitorIdentifier"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Text = "MonitorIdentifier"
+        Me.TopMost = True
         Me.ResumeLayout(False)
 
     End Sub

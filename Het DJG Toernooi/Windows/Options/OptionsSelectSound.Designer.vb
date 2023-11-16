@@ -105,6 +105,7 @@ Partial Class OptionsSelectSound
         Me.Controls.Add(Me.btnOK)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "OptionsSelectSound"
+        Me.ShowIcon = False
         Me.Text = "Select Sound..."
         Me.ResumeLayout(False)
         Me.PerformLayout()

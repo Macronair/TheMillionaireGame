@@ -20,7 +20,7 @@ namespace Millionaire.Windows.Question_Editor
         {
             string levelType;
             SqlCommand cmd;
-            if(radRegularQuestion.Checked)
+            if (radRegularQuestion.Checked)
             {
                 QEditor.c.Open();
                 string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
@@ -35,7 +35,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
-            }    
+            }
             else if (radFastestFinger.Checked)
             {
                 QEditor.c.Open();
@@ -175,7 +175,7 @@ namespace Millionaire.Windows.Question_Editor
 
         private void radFastestFinger_CheckedChanged(object sender, EventArgs e)
         {
-            if(radFastestFinger.Checked)
+            if (radFastestFinger.Checked)
             {
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
@@ -188,7 +188,7 @@ namespace Millionaire.Windows.Question_Editor
 
         private void radRegularQuestion_CheckedChanged(object sender, EventArgs e)
         {
-            if(radRegularQuestion.Checked)
+            if (radRegularQuestion.Checked)
             {
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;

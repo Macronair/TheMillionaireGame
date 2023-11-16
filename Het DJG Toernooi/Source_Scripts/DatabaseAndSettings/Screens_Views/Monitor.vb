@@ -57,7 +57,8 @@
             HostScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             HostScreen.WindowState = FormWindowState.Maximized
         Else
-
+            HostScreen.FormBorderStyle = FormBorderStyle.FixedDialog
+            HostScreen.WindowState = FormWindowState.Normal
         End If
 
         If Profile.Options.FullScreen_GuestScreen_Enable = True Then
@@ -67,7 +68,8 @@
             GuestScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             GuestScreen.WindowState = FormWindowState.Maximized
         Else
-
+            GuestScreen.FormBorderStyle = FormBorderStyle.FixedDialog
+            GuestScreen.WindowState = FormWindowState.Normal
         End If
 
         If Profile.Options.FullScreen_TVScreen_Enable = True Then
@@ -77,7 +79,8 @@
             TVControlPnl.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             TVControlPnl.WindowState = FormWindowState.Maximized
         Else
-
+            TVControlPnl.FormBorderStyle = FormBorderStyle.FixedDialog
+            TVControlPnl.WindowState = FormWindowState.Normal
         End If
     End Sub
 

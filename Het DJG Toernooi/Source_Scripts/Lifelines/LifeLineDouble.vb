@@ -33,15 +33,16 @@ Public Class LifeLineDouble
         stopmusic1.Start()
         Select Case chance
             Case 2
+                HostScreen.lblAnswer.Visible = False
                 dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stFinal
                 chance = 1
             Case 1
                 HostScreen.lblAnswer.Visible = True
                 dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_2ndFinal
                 chance = 0
-                active = False
         End Select
         dd_Final.controls.play()
+        Question.PlayFinalAnswerCue()
     End Sub
 
     Public Shared Sub SecondChance()

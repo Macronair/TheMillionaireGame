@@ -34,6 +34,8 @@ Partial Class OptionsScreen
         Me.chkAutoShowTotalWinnings = New System.Windows.Forms.CheckBox()
         Me.chkClearHostMessages = New System.Windows.Forms.CheckBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label125 = New System.Windows.Forms.Label()
+        Me.Label124 = New System.Windows.Forms.Label()
         Me.chkAutoShowTVScreen = New System.Windows.Forms.CheckBox()
         Me.chkAutoShowGuestScreen = New System.Windows.Forms.CheckBox()
         Me.chkAutoShowHostScreen = New System.Windows.Forms.CheckBox()
@@ -340,8 +342,6 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.Label124 = New System.Windows.Forms.Label()
-        Me.Label125 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.nmrFFFPortNumber, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -494,6 +494,24 @@ Partial Class OptionsScreen
         Me.GroupBox3.TabIndex = 2
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Resolutions"
+        '
+        'Label125
+        '
+        Me.Label125.AutoSize = True
+        Me.Label125.Location = New System.Drawing.Point(396, 15)
+        Me.Label125.Name = "Label125"
+        Me.Label125.Size = New System.Drawing.Size(54, 16)
+        Me.Label125.TabIndex = 17
+        Me.Label125.Text = "Monitor:"
+        '
+        'Label124
+        '
+        Me.Label124.AutoSize = True
+        Me.Label124.Location = New System.Drawing.Point(91, 15)
+        Me.Label124.Name = "Label124"
+        Me.Label124.Size = New System.Drawing.Size(74, 16)
+        Me.Label124.TabIndex = 16
+        Me.Label124.Text = "Resolution:"
         '
         'chkAutoShowTVScreen
         '
@@ -3697,24 +3715,6 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'Label124
-        '
-        Me.Label124.AutoSize = True
-        Me.Label124.Location = New System.Drawing.Point(91, 15)
-        Me.Label124.Name = "Label124"
-        Me.Label124.Size = New System.Drawing.Size(74, 16)
-        Me.Label124.TabIndex = 16
-        Me.Label124.Text = "Resolution:"
-        '
-        'Label125
-        '
-        Me.Label125.AutoSize = True
-        Me.Label125.Location = New System.Drawing.Point(396, 15)
-        Me.Label125.Name = "Label125"
-        Me.Label125.Size = New System.Drawing.Size(54, 16)
-        Me.Label125.TabIndex = 17
-        Me.Label125.Text = "Monitor:"
-        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -3725,6 +3725,7 @@ Partial Class OptionsScreen
         Me.Controls.Add(Me.btnSaveClose)
         Me.Controls.Add(Me.tabOptions)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "OptionsScreen"
         Me.Text = "Options - The Millionaire Game"

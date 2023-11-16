@@ -22,6 +22,7 @@ Partial Class GuestScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GuestScreen))
         Me.picLifeline2 = New System.Windows.Forms.PictureBox()
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.txtATAd = New System.Windows.Forms.TextBox()
@@ -318,6 +319,7 @@ Partial Class GuestScreen
         Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlStrap)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GuestScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Screen"

@@ -398,98 +398,101 @@ Public Class Question
             useMusic = False
         End If
         If Game.walkaway = False Then
-            If Game.level > 4 Then
-                Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 150))
-                stopmusic.Start()
+            If LifeLineDouble.active = True Then
+                ' Play no sounds at this conditions.
+            Else
+                If Game.level > 4 Then
+                    Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 150))
+                    stopmusic.Start()
+                End If
+                Select Case Game.level
+                    Case 0
+                        If Profile.Options.snd_Q1Final IsNot "" Then
+                            With Sounds.sndFinal
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q1Final
+                                .controls.play()
+                            End With
+                        End If
+                    Case 1
+                        If Profile.Options.snd_Q1Final IsNot "" Then
+                            With Sounds.sndFinal
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q2Final
+                                .controls.play()
+                            End With
+                        End If
+                    Case 2
+                        If Profile.Options.snd_Q1Final IsNot "" Then
+                            With Sounds.sndFinal
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q3Final
+                                .controls.play()
+                            End With
+                        End If
+                    Case 3
+                        If Profile.Options.snd_Q1Final IsNot "" Then
+                            With Sounds.sndFinal
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q4Final
+                                .controls.play()
+                            End With
+                        End If
+                    Case 4
+                        If Profile.Options.snd_Q1Final IsNot "" Then
+                            With Sounds.sndFinal
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Final
+                                .controls.play()
+                            End With
+                        End If
+                    Case 5
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Final
+                            .controls.play()
+                        End With
+                    Case 6
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Final
+                            .controls.play()
+                        End With
+                    Case 7
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Final
+                            .controls.play()
+                        End With
+                    Case 8
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Final
+                            .controls.play()
+                        End With
+                    Case 9
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Final
+                            .controls.play()
+                        End With
+                    Case 10
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Final
+                            .controls.play()
+                        End With
+                    Case 11
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Final
+                            .controls.play()
+                        End With
+                    Case 12
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Final
+                            .controls.play()
+                        End With
+                    Case 13
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Final
+                            .controls.play()
+                        End With
+                    Case 14
+                        With Sounds.sndFinal
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Final
+                            .controls.play()
+                        End With
+                End Select
             End If
-
-            Select Case Game.level
-                Case 0
-                    If Profile.Options.snd_Q1Final IsNot "" Then
-                        With Sounds.sndFinal
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q1Final
-                            .controls.play()
-                        End With
-                    End If
-                Case 1
-                    If Profile.Options.snd_Q1Final IsNot "" Then
-                        With Sounds.sndFinal
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q2Final
-                            .controls.play()
-                        End With
-                    End If
-                Case 2
-                    If Profile.Options.snd_Q1Final IsNot "" Then
-                        With Sounds.sndFinal
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q3Final
-                            .controls.play()
-                        End With
-                    End If
-                Case 3
-                    If Profile.Options.snd_Q1Final IsNot "" Then
-                        With Sounds.sndFinal
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q4Final
-                            .controls.play()
-                        End With
-                    End If
-                Case 4
-                    If Profile.Options.snd_Q1Final IsNot "" Then
-                        With Sounds.sndFinal
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Final
-                            .controls.play()
-                        End With
-                    End If
-                Case 5
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Final
-                        .controls.play()
-                    End With
-                Case 6
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Final
-                        .controls.play()
-                    End With
-                Case 7
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Final
-                        .controls.play()
-                    End With
-                Case 8
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Final
-                        .controls.play()
-                    End With
-                Case 9
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Final
-                        .controls.play()
-                    End With
-                Case 10
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Final
-                        .controls.play()
-                    End With
-                Case 11
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Final
-                        .controls.play()
-                    End With
-                Case 12
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Final
-                        .controls.play()
-                    End With
-                Case 13
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Final
-                        .controls.play()
-                    End With
-                Case 14
-                    With Sounds.sndFinal
-                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Final
-                        .controls.play()
-                    End With
-            End Select
         End If
     End Sub
 

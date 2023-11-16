@@ -10,6 +10,7 @@ namespace Millionaire.Windows.Question_Editor
 
         private readonly QEditor _qe;
         int fff_answer = 0;
+        SqlCommand sql;
 
         public static SqlConnection newdb = new SqlConnection
                    (String.Format
@@ -51,7 +52,7 @@ namespace Millionaire.Windows.Question_Editor
             }
             catch
             {
-                MessageBox.Show("No questions are found in the old database tables","Question Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No questions are found in the old database tables", "Question Editor", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             var new_select = "SELECT * FROM questions";
@@ -63,7 +64,47 @@ namespace Millionaire.Windows.Question_Editor
             dataNewDatabase.DataSource = ds0.Tables[0];
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void Next()
+        {
+            Random rand = new Random();
+
+            switch (rand.Next(1, 5))
+            {
+                case 1:
+                    sql = new SqlCommand($"SELECT TOP 1 * FROM questions_Level1 WHERE Imported='False' ORDER BY NEWID()", newdb);
+                    break;
+                case 2:
+                    sql = new SqlCommand($"SELECT TOP 1 * FROM questions_Level2 WHERE Imported='False' ORDER BY NEWID()", newdb);
+                    break;
+                case 3:
+                    sql = new SqlCommand($"SELECT TOP 1 * FROM questions_Level3 WHERE Imported='False' ORDER BY NEWID()", newdb);
+                    break;
+                case 4:
+                    sql = new SqlCommand($"SELECT TOP 1 * FROM questions_Level4 WHERE Imported='False' ORDER BY NEWID()", newdb);
+                    break;
+            }
+
+            DataSet ds = new DataSet();
+            
+            newdb.Open();
+            SqlDataReader reader = sql.ExecuteReader();
+            while (reader.Read())
+            {
+                txtQuestion.Text = reader.GetString(1);
+                txtA.Text = reader.GetString(2);
+                txtB.Text = reader.GetString(3);
+                txtC.Text = reader.GetString(4);
+                txtD.Text = reader.GetString(5);
+                txtCorrect.Text = reader.GetString(6);
+                lblID.Text = Convert.ToString(reader.GetInt32(0));
+                lblLevel.Text = reader.GetString(7);
+                try { txtNote.Text = reader.GetString(9); } catch { txtNote.Text = ""; }
+            }
+            reader.Close();
+            newdb.Close();
+        }
+
+        private void Save()
         {
             SqlCommand cmd;
             QEditor.c.Open();
@@ -81,7 +122,7 @@ namespace Millionaire.Windows.Question_Editor
             QEditor.c.Close();
 
             newdb.Open();
-            if(lblLevel.Text == "Lvl1")
+            if (lblLevel.Text == "Lvl1")
             {
                 str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
                 cmd = new SqlCommand(str, newdb);
@@ -102,7 +143,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Id", lblID.Text);
                 cmd.ExecuteNonQuery();
             }
-            else if(lblLevel.Text == "Lvl4")
+            else if (lblLevel.Text == "Lvl4")
             {
                 str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
                 cmd = new SqlCommand(str, newdb);
@@ -110,11 +151,51 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.ExecuteNonQuery();
             }
             newdb.Close();
-            btnClear.PerformClick();
+
+            Clear();
             UpdateViews();
         }
 
-        private void btnClear_Click(object sender, EventArgs e)
+        private void Skip()
+        {
+            SqlCommand cmd;
+            string str;
+
+            newdb.Open();
+            if (lblLevel.Text == "Lvl1")
+            {
+                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
+                cmd.Parameters.AddWithValue("@Id", lblID.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else if (lblLevel.Text == "Lvl2")
+            {
+                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
+                cmd.Parameters.AddWithValue("@Id", lblID.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else if (lblLevel.Text == "Lvl3")
+            {
+                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
+                cmd.Parameters.AddWithValue("@Id", lblID.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else if (lblLevel.Text == "Lvl4")
+            {
+                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
+                cmd = new SqlCommand(str, newdb);
+                cmd.Parameters.AddWithValue("@Id", lblID.Text);
+                cmd.ExecuteNonQuery();
+            }
+            newdb.Close();
+            Clear();
+            UpdateViews();
+        }
+
+        private void Clear()
         {
             txtQuestion.Text = "";
             txtA.Text = "";
@@ -124,6 +205,39 @@ namespace Millionaire.Windows.Question_Editor
             txtCorrect.Text = "";
             trkQuestionLevel.Value = 1;
             lblQuestionLevel.Text = "1";
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void btnSaveAndNext_Click(object sender, EventArgs e)
+        {
+            Save();
+            Next();
+        }
+
+        private void btnSkip_Click(object sender, EventArgs e)
+        {
+            Skip();
+        }
+
+        private void btnSkipAndNext_Click(object sender, EventArgs e)
+        {
+            Skip();
+            Next();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            Clear();
+        }
+
+        private void btnNext_Click(object sender, EventArgs e)
+        {
+            Clear();
+            Next();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -228,7 +342,7 @@ namespace Millionaire.Windows.Question_Editor
 
         private void radFastestFinger_CheckedChanged(object sender, EventArgs e)
         {
-            if(radFastestFinger.Checked)
+            if (radFastestFinger.Checked)
             {
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
@@ -241,7 +355,7 @@ namespace Millionaire.Windows.Question_Editor
 
         private void radRegularQuestion_CheckedChanged(object sender, EventArgs e)
         {
-            if(radRegularQuestion.Checked)
+            if (radRegularQuestion.Checked)
             {
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;
@@ -265,273 +379,9 @@ namespace Millionaire.Windows.Question_Editor
             lblLevel.Text = this.dataOldDatabase.CurrentRow.Cells[7].Value.ToString();
         }
 
-        private void btnSaveAndNext_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd;
-            QEditor.c.Open();
-            string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
-            cmd = new SqlCommand(str, QEditor.c);
-            cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-            cmd.Parameters.AddWithValue("@A", txtA.Text);
-            cmd.Parameters.AddWithValue("@B", txtB.Text);
-            cmd.Parameters.AddWithValue("@C", txtC.Text);
-            cmd.Parameters.AddWithValue("@D", txtD.Text);
-            cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-            cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
-            cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-            cmd.ExecuteNonQuery();
-            QEditor.c.Close();
-
-            newdb.Open();
-            if (lblLevel.Text == "Lvl1")
-            {
-                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl2")
-            {
-                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl3")
-            {
-                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl4")
-            {
-                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            newdb.Close();
-            btnClear.PerformClick();
-            UpdateViews();
-
-            Random rand = new Random();
-
-            string randomtable = "questions_Level1";
-            switch(rand.Next(1, 5))
-            {
-                case 1:
-                    randomtable = "questions_Level1";
-                    break;
-                case 2:
-                    randomtable = "questions_Level2";
-                    break;
-                case 3:
-                    randomtable = "questions_Level3";
-                    break;
-                case 4:
-                    randomtable = "questions_Level4";
-                    break;
-            }
-
-            DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
-
-            newdb.Open();
-            SqlDataReader reader = sql.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while(reader.Read())
-                {
-                    txtQuestion.Text = reader.GetString(1);
-                    txtA.Text = reader.GetString(2);
-                    txtB.Text = reader.GetString(3);
-                    txtC.Text = reader.GetString(4);
-                    txtD.Text = reader.GetString(5);
-                    txtCorrect.Text = reader.GetString(6);
-                    lblID.Text = Convert.ToString(reader.GetInt32(0));
-                    lblLevel.Text = reader.GetString(7);
-                    try { txtNote.Text = reader.GetString(9); } catch { txtNote.Text = ""; }
-                }
-                reader.Close();
-            }
-            newdb.Close();
-    }
-
-        private void btnSkip_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd;
-            string str;
-
-            newdb.Open();
-            if (lblLevel.Text == "Lvl1")
-            {
-                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl2")
-            {
-                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl3")
-            {
-                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl4")
-            {
-                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            newdb.Close();
-            btnClear.PerformClick();
-            UpdateViews();
-        }
-
-        private void btnSkipAndNext_Click(object sender, EventArgs e)
-        {
-            SqlCommand cmd;
-            string str;
-
-            newdb.Open();
-            if (lblLevel.Text == "Lvl1")
-            {
-                str = String.Format(@"UPDATE questions_Level1 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl2")
-            {
-                str = String.Format(@"UPDATE questions_Level2 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl3")
-            {
-                str = String.Format(@"UPDATE questions_Level3 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (lblLevel.Text == "Lvl4")
-            {
-                str = String.Format(@"UPDATE questions_Level4 SET Imported = 'True' WHERE Id = @Id");
-                cmd = new SqlCommand(str, newdb);
-                cmd.Parameters.AddWithValue("@Id", lblID.Text);
-                cmd.ExecuteNonQuery();
-            }
-            newdb.Close();
-            btnClear.PerformClick();
-            UpdateViews();
-
-            Random rand = new Random();
-
-            string randomtable = "questions_Level1";
-            switch (rand.Next(1, 5))
-            {
-                case 1:
-                    randomtable = "questions_Level1";
-                    break;
-                case 2:
-                    randomtable = "questions_Level2";
-                    break;
-                case 3:
-                    randomtable = "questions_Level3";
-                    break;
-                case 4:
-                    randomtable = "questions_Level4";
-                    break;
-            }
-
-            DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
-
-            newdb.Open();
-            SqlDataReader reader = sql.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    txtQuestion.Text = reader.GetString(1);
-                    txtA.Text = reader.GetString(2);
-                    txtB.Text = reader.GetString(3);
-                    txtC.Text = reader.GetString(4);
-                    txtD.Text = reader.GetString(5);
-                    txtCorrect.Text = reader.GetString(6);
-                    lblID.Text = Convert.ToString(reader.GetInt32(0));
-                    lblLevel.Text = reader.GetString(7);
-                    try { txtNote.Text = reader.GetString(9); } catch { txtNote.Text = ""; }
-                }
-                reader.Close();
-            }
-            newdb.Close();
-        }
-
         private void frmQuestionImport_FormClosing(object sender, FormClosingEventArgs e)
         {
             _qe.UpdateDB();
-        }
-
-        private void btnNext_Click(object sender, EventArgs e)
-        {
-            btnClear.PerformClick();
-            UpdateViews();
-
-            Random rand = new Random();
-
-            string randomtable = "questions_Level1";
-            switch (rand.Next(1, 5))
-            {
-                case 1:
-                    randomtable = "questions_Level1";
-                    break;
-                case 2:
-                    randomtable = "questions_Level2";
-                    break;
-                case 3:
-                    randomtable = "questions_Level3";
-                    break;
-                case 4:
-                    randomtable = "questions_Level4";
-                    break;
-            }
-
-            DataSet ds = new DataSet();
-            SqlCommand sql = new SqlCommand($"SELECT TOP 1 * FROM {randomtable} WHERE Imported = 'False' ORDER BY NEWID()", newdb);
-
-            newdb.Open();
-            SqlDataReader reader = sql.ExecuteReader();
-
-            if (reader.HasRows)
-            {
-                while (reader.Read())
-                {
-                    txtQuestion.Text = reader.GetString(1);
-                    txtA.Text = reader.GetString(2);
-                    txtB.Text = reader.GetString(3);
-                    txtC.Text = reader.GetString(4);
-                    txtD.Text = reader.GetString(5);
-                    txtCorrect.Text = reader.GetString(6);
-                    lblID.Text = Convert.ToString(reader.GetInt32(0));
-                    lblLevel.Text = reader.GetString(7);
-                    try { txtNote.Text = reader.GetString(9); } catch { txtNote.Text = ""; }
-                }
-                reader.Close();
-            }
-            newdb.Close();
         }
     }
 }
