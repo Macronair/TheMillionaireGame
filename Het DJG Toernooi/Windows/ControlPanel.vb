@@ -1,25 +1,69 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Threading
 
+''' <summary>
+''' This is the main code class for the control panel!
+'''
+''' Note: This class was created at the very beginning of this project (2017) and also at the time I was bad at ordening my code.
+''' So at certain parts, the code will look (really) messy. Sorry for that.
+''' I will clean this up step by step. I promise. ;)
+''' </summary>
+
 Public Class ControlPanel
-    Dim debug As Boolean = False
 
-    Public Shared intSound As Integer = 0
-    Public Shared snd As New SOUND
-    Public Shared doublell As Integer = 0
+    ''' <summary>
+    ''' Variables
+    ''' </summary>
+    Dim debug As Boolean = False            ' Debug function. At this moment not a very helpful tool, but the feature is here.
+    ' When set to true, the console window will stay open.
 
-    Dim btnLightsDownFA As Boolean = True
+    Public Shared intSound As Integer = 0   ' Not used anymore from version 1.1 and above. So this will be removed soon.
+    Public Shared snd As New SOUND          ' Same story with this.
+    Public Shared doublell As Integer = 0   ' If Double Dip is active, this will indicate for the application which step we are in.
 
+    Dim btnLightsDownFA As Boolean = True   ' For the very first question that is in play for the current game.
+
+    Public Shared answer As String
+
+#Region "Removal candidates"
+    ' This piece of code can be removed very soon.
     Public Sub HaltSound()
         For X = 0 To intSound
             snd.Kill("SOUND" & X)
         Next
     End Sub
 
+    ' I added this sub way back at the beginning of this project as a 'break' instruction.
+    ' When my VB.NET experience was very poor...
+    ' (Maybe this can be removed in the near future?)
     Public Sub blanksub()
 
     End Sub
 
+    ' This can also be removed at the 1.1 release.
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        My.Computer.Audio.Stop()
+        HaltSound()
+    End Sub
+#End Region
+
+    ' When the form loads...
+    Private Sub ControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        TVControlPnl.pnlTotal.Visible = False
+        drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())  ' Load host messages in dropdown menu.
+
+        If Profile.Options.AutoShow_HostScreen = True Then      ' When the auto show option is True in the config file.
+            HostScreen.Show()                                   ' Open the host screen at startup.
+        End If
+        If Profile.Options.AutoShow_GuestScreen = True Then
+            GuestScreen.Show()                                  ' Open the guest screen at startup.
+        End If
+        If Profile.Options.AutoShow_TVScreen = True Then
+            TVControlPnl.Show()                                 ' Open the tv screen at startup.
+        End If
+    End Sub
+
+    ' Collect the host messages that are present in the database.
     Public Shared Function GetHostMessages() As List(Of String)
         Using cmd As New SqlCommand("SELECT Message FROM settings_HostMessages", Data.connectionString)
             Dim messages As New List(Of String)
@@ -35,36 +79,22 @@ Public Class ControlPanel
         End Using
     End Function
 
+    ' When the user changed the current question level by hand.
     Private Sub nmrLevel_ValueChanged(sender As Object, e As EventArgs) Handles nmrLevel.ValueChanged
         Game.ChangeLevel(nmrLevel.Value)
     End Sub
 
+    ' Button to get a new question from the database.
+    ' All the smart bits are in the Question class.
     Private Sub btnNewQuestion_Click(sender As Object, e As EventArgs) Handles btnNewQuestion.Click
-        'Dim q As New Question
-        'q.Generate()
         Question.Generate()
     End Sub
 
-    Private Sub ControlPanel_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        TVControlPnl.pnlTotal.Visible = False
-        drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())
-
-        If Profile.Options.AutoShow_HostScreen = True Then
-            HostScreen.Show()
-        End If
-        If Profile.Options.AutoShow_GuestScreen = True Then
-            GuestScreen.Show()
-        End If
-        If Profile.Options.AutoShow_TVScreen = True Then
-            TVControlPnl.Show()
-        End If
-    End Sub
-
-    Public Shared answer As String
     Private Sub btnA_Click(sender As Object, e As EventArgs) Handles btnA.Click
-        Dim q As New Question
-        Question.UndoAnswer(False)
-        answer = "A"
+        Question.UndoAnswer(False)  ' This is added because otherwise there will be more than one answer selected at once which isn't possible in this game.
+        answer = "A"    ' The answer of the user for the current question is A!
+
+        ' Apply final answer textures
         txtA.BackColor = Color.Yellow
         HostScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtA.ForeColor = Color.Black
@@ -73,17 +103,19 @@ Public Class ControlPanel
         GuestScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtA.ForeColor = Color.Black
 
+        ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
-            LifeLineDouble.FinalAnswer()
+            LifeLineDouble.FinalAnswer()    ' If yes, play the custom final answer cue for double dip.
         Else
-            Question.PlayFinalAnswerCue()
+            Question.PlayFinalAnswerCue()   ' If no, just play the regular one.
         End If
     End Sub
 
     Private Sub btnB_Click(sender As Object, e As EventArgs) Handles btnB.Click
-        Dim q As New Question
-        Question.UndoAnswer(False)
-        answer = "B"
+        Question.UndoAnswer(False)  ' This is added because otherwise there will be more than one answer selected at once which isn't possible in this game.
+        answer = "B"    ' The answer of the user for the current question is B!
+
+        ' Apply final answer textures
         txtB.BackColor = Color.Yellow
         HostScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtB.ForeColor = Color.Black
@@ -91,17 +123,20 @@ Public Class ControlPanel
         TVControlPnl.txtB.ForeColor = Color.Black
         GuestScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtB.ForeColor = Color.Black
+
+        ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
-            LifeLineDouble.FinalAnswer()
+            LifeLineDouble.FinalAnswer()    ' If yes, play the custom final answer cue for double dip.
         Else
-            Question.PlayFinalAnswerCue()
+            Question.PlayFinalAnswerCue()   ' If no, just play the regular one.
         End If
     End Sub
 
     Private Sub btnC_Click(sender As Object, e As EventArgs) Handles btnC.Click
-        Dim q As New Question
-        Question.UndoAnswer(False)
-        answer = "C"
+        Question.UndoAnswer(False)  ' This is added because otherwise there will be more than one answer selected at once which isn't possible in this game.
+        answer = "C"    ' The answer of the user for the current question is C!
+
+        ' Apply final answer textures
         txtC.BackColor = Color.Yellow
         HostScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         HostScreen.txtC.ForeColor = Color.Black
@@ -109,17 +144,20 @@ Public Class ControlPanel
         TVControlPnl.txtC.ForeColor = Color.Black
         GuestScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
         GuestScreen.txtC.ForeColor = Color.Black
+
+        ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
-            LifeLineDouble.FinalAnswer()
+            LifeLineDouble.FinalAnswer()    ' If yes, play the custom final answer cue for double dip.
         Else
-            Question.PlayFinalAnswerCue()
+            Question.PlayFinalAnswerCue()   ' If no, just play the regular one.
         End If
     End Sub
 
     Private Sub btnD_Click(sender As Object, e As EventArgs) Handles btnD.Click
-        Dim q As New Question
-        Question.UndoAnswer(False)
-        answer = "D"
+        Question.UndoAnswer(False)  ' This is added because otherwise there will be more than one answer selected at once which isn't possible in this game.
+        answer = "D"    ' The answer of the user for the current question is D!
+
+        ' Apply final answer textures
         txtD.BackColor = Color.Yellow
         HostScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         HostScreen.txtD.ForeColor = Color.Black
@@ -127,10 +165,12 @@ Public Class ControlPanel
         TVControlPnl.txtD.ForeColor = Color.Black
         GuestScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
         GuestScreen.txtD.ForeColor = Color.Black
+
+        ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
-            LifeLineDouble.FinalAnswer()
+            LifeLineDouble.FinalAnswer()    ' If yes, play the custom final answer cue for double dip.
         Else
-            Question.PlayFinalAnswerCue()
+            Question.PlayFinalAnswerCue()   ' If no, just play the regular one.
         End If
     End Sub
 
@@ -139,16 +179,22 @@ Public Class ControlPanel
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
         If i = 0 Then
             HostScreen.txtExplain.ForeColor = Color.White
+
+            ' If the answer is correct, run code below.
             If answer = lblAnswer.Text Then
+                ' This code will run if the contestant hasn't walked away.
                 If Game.walkaway = False Then
-                    TVControlPnl.tmrStrap.Start()
+                    TVControlPnl.tmrStrap.Start()   ' Start timer that will show the money strap at the interval.
                 End If
-                Question.PlayAnswerRevealCue(True)
-            Else
+
+                Question.PlayAnswerRevealCue(True)  ' Argument True/False is whether answer is right or not.
+            Else    ' Or if it's wrong.
                 Question.PlayAnswerRevealCue(False)
             End If
             i = 1
         ElseIf i = 1 Then
+            ' Reset every texture and needed variables.
+            chkShowQuestion.Checked = False ' <<<--- Replace this to when the money strap show up.
             TVControlPnl.txtA.BackColor = Color.Transparent
             TVControlPnl.txtB.BackColor = Color.Transparent
             TVControlPnl.txtC.BackColor = Color.Transparent
@@ -162,9 +208,10 @@ Public Class ControlPanel
             TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
             TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             TVControlPnl.pnlStrap.Visible = False
-            TVControlPnl.tmrFlash.Stop()
+            TVControlPnl.tmrFlash.Stop()    ' Stop the timer for the money strap.
             i = 2
         ElseIf i = 2 Then
+            ' Clear the previous question.
             HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
             HostScreen.pnlAnswer.BackColor = Color.Black
@@ -190,6 +237,8 @@ Public Class ControlPanel
         End If
     End Sub
 
+#Region "Sound cues"
+    ' Start the show!
     Private Sub btnSndOpening_Click(sender As Object, e As EventArgs) Handles btnSndOpening.Click
         With Sounds.sndGeneral
             .URL = Sounds.SoundsPath + Profile.Options.snd_Opening
@@ -197,15 +246,19 @@ Public Class ControlPanel
         End With
     End Sub
 
+    ' Played when Commercial button is clicked.
     Private Sub btnCommercial_Click(sender As Object, e As EventArgs) Handles btnCommercial.Click
+
+        ' TODO: Stop any other sound when going to the commercial break.
+
         Select Case Game.intoCommercials
-            Case False
+            Case False  ' When going to the commercials or break.
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_CommIn
                     .controls.play()
                 End With
                 Game.intoCommercials = True
-            Case True
+            Case True   ' When returning to the game/program.
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_CommOut
                     .controls.play()
@@ -216,6 +269,7 @@ Public Class ControlPanel
         Timer1.Start()
     End Sub
 
+    ' That's all for today! (Closing theme playing)
     Private Sub btnClosing_Click(sender As Object, e As EventArgs) Handles btnClosing.Click
         With Sounds.sndGeneral
             .URL = Sounds.SoundsPath + Profile.Options.snd_Closing
@@ -223,15 +277,12 @@ Public Class ControlPanel
         End With
         Timer1.Start()
     End Sub
+#End Region
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        My.Computer.Audio.Stop()
-        HaltSound()
-    End Sub
-
+    ' When the lights go down...
     Private Sub btnLightsDown_Click(sender As Object, e As EventArgs) Handles btnLightsDown.Click
         TVControlPnl.picTree.Visible = False
-        Question.PlayLightsDownCue()
+        Question.PlayLightsDownCue()    ' Of course... play the cue.
         Timer1.Start()
         HostScreen.lblExplainRules.ForeColor = Color.Black
     End Sub
@@ -244,17 +295,19 @@ Public Class ControlPanel
         HostScreen.txtWinnings.Text = "Totale Score: " + Game.varCurrent
         TVControlPnl.grpATA.Visible = False
 
+        ' Stop the question music bed.
         Dim stopmusic As New Thread(Sub() Sounds.StopAudio("question", 250))
         stopmusic.Start()
 
+        ' Play the right sound cue.
         Select Case Game.level
             Case < 11
-                With Sounds.sndGeneral
+                With Sounds.sndGeneral  ' When total winnings are between Q1 and 10.
                     .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway1
                     .controls.play()
                 End With
             Case >= 11
-                With Sounds.sndGeneral
+                With Sounds.sndGeneral  ' When total winnings are between Q11 and Q15.
                     .URL = Sounds.SoundsPath + Profile.Options.snd_WalkAway2
                     .controls.play()
                 End With
@@ -270,6 +323,12 @@ Public Class ControlPanel
         TVControlPnl.grpATA.Visible = False
     End Sub
 
+#Region "Lifeline usage"
+    ''' <summary>
+    ''' Lifeline codes and scripts.
+    ''' The 'LifelineManager.Use' sub will be executed. The integer in the argument indicates which button is pressed.
+    ''' With the argument in place. The script knows which lifeline to activate. (Example: Double Dip can be assigned to button 3. So LifelineManager.Use(3) will activate this lifeline.)
+    ''' </summary>
     Private Sub btnLifeline1_Click(sender As Object, e As EventArgs) Handles btnLifeline1.Click
         LifelineManager.Use(1)
     End Sub
@@ -286,6 +345,9 @@ Public Class ControlPanel
         LifelineManager.Use(4)
     End Sub
 
+    ''' <summary>
+    ''' With the checkboxes below the buttons you can manually change the unused lifeline to a used one (and vice versa).
+    ''' </summary>
     Private Sub chkLifeline1_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline1Unused.Click
         If chkLifeline1Unused.Checked = True Then
             btnLifeline1.Enabled = True
@@ -294,6 +356,17 @@ Public Class ControlPanel
         If chkLifeline1Unused.Checked = False Then
             btnLifeline1.Enabled = False
             LifelineManager.EnableLifeline(1, False)
+        End If
+    End Sub
+
+    Private Sub chkLifeline2_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline2Unused.Click
+        If chkLifeline2Unused.Checked = True Then
+            btnLifeline2.Enabled = True
+            LifelineManager.EnableLifeline(2, True)
+        End If
+        If chkLifeline2Unused.Checked = False Then
+            btnLifeline2.Enabled = False
+            LifelineManager.EnableLifeline(2, False)
         End If
     End Sub
 
@@ -318,17 +391,7 @@ Public Class ControlPanel
             LifelineManager.EnableLifeline(4, False)
         End If
     End Sub
-
-    Private Sub chkLifeline2_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline2Unused.Click
-        If chkLifeline2Unused.Checked = True Then
-            btnLifeline2.Enabled = True
-            LifelineManager.EnableLifeline(2, True)
-        End If
-        If chkLifeline2Unused.Checked = False Then
-            btnLifeline2.Enabled = False
-            LifelineManager.EnableLifeline(2, False)
-        End If
-    End Sub
+#End Region
 
     Private Sub btnToHotSeat_Click(sender As Object, e As EventArgs) Handles btnToHotSeat.Click
         User.ToHotSeat()
