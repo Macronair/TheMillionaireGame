@@ -737,4 +737,9 @@ Public Class ControlPanel
     Private Sub FastestFingerFirstToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FastestFingerFirstToolStripMenuItem.Click
         FFFServer.Show()
     End Sub
+
+    Private Sub btnStopAudio_Click(sender As Object, e As EventArgs) Handles btnStopAudio.Click
+        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("all", 0))
+        stopaudio.Start()
+    End Sub
 End Class

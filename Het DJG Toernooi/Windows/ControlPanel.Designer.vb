@@ -127,7 +127,7 @@ Partial Class ControlPanel
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
         Me.btnResetGame = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnStopAudio = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -1142,17 +1142,17 @@ Partial Class ControlPanel
         Me.btnResetGame.Text = "Reset Game"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
-        'Button1
+        'btnStopAudio
         '
-        Me.Button1.BackColor = System.Drawing.Color.Red
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.White
-        Me.Button1.Location = New System.Drawing.Point(55, 550)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(99, 23)
-        Me.Button1.TabIndex = 87
-        Me.Button1.Text = "STOP AUDIO"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.btnStopAudio.BackColor = System.Drawing.Color.Red
+        Me.btnStopAudio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnStopAudio.ForeColor = System.Drawing.Color.White
+        Me.btnStopAudio.Location = New System.Drawing.Point(55, 550)
+        Me.btnStopAudio.Name = "btnStopAudio"
+        Me.btnStopAudio.Size = New System.Drawing.Size(99, 23)
+        Me.btnStopAudio.TabIndex = 87
+        Me.btnStopAudio.Text = "STOP AUDIO"
+        Me.btnStopAudio.UseVisualStyleBackColor = False
         '
         'ControlPanel
         '
@@ -1160,7 +1160,7 @@ Partial Class ControlPanel
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 575)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnStopAudio)
         Me.Controls.Add(Me.btnResetGame)
         Me.Controls.Add(Me.btnUnlockSwitch)
         Me.Controls.Add(Me.grpHostMessages)
@@ -1323,5 +1323,5 @@ Partial Class ControlPanel
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FastestFingerFirstToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnStopAudio As Button
 End Class
