@@ -127,6 +127,7 @@ Partial Class ControlPanel
         Me.drpNextHostMessage = New System.Windows.Forms.ComboBox()
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
         Me.btnResetGame = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -777,26 +778,26 @@ Partial Class ControlPanel
         '
         Me.FastestFingerFirstToolStripMenuItem.Image = CType(resources.GetObject("FastestFingerFirstToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FastestFingerFirstToolStripMenuItem.Name = "FastestFingerFirstToolStripMenuItem"
-        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.FastestFingerFirstToolStripMenuItem.Text = "Fastest Finger First"
         '
         'ShowOptionsToolStripMenuItem
         '
         Me.ShowOptionsToolStripMenuItem.Image = CType(resources.GetObject("ShowOptionsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Options"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(168, 6)
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Image = CType(resources.GetObject("CloseToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'GameToolStripMenuItem
@@ -1141,12 +1142,25 @@ Partial Class ControlPanel
         Me.btnResetGame.Text = "Reset Game"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Red
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.White
+        Me.Button1.Location = New System.Drawing.Point(55, 550)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(99, 23)
+        Me.Button1.TabIndex = 87
+        Me.Button1.Text = "STOP AUDIO"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 575)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btnResetGame)
         Me.Controls.Add(Me.btnUnlockSwitch)
         Me.Controls.Add(Me.grpHostMessages)
@@ -1309,4 +1323,5 @@ Partial Class ControlPanel
     Friend WithEvents ToolStripMenuItem4 As ToolStripSeparator
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FastestFingerFirstToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Button1 As Button
 End Class

@@ -25,6 +25,15 @@ Public Class Sounds
                 sndQuestion.controls.stop()
                 sndFinal.controls.stop()
                 sndAnswer.controls.stop()
+                sndLightsDown.controls.stop()
+                sndGeneralBed.controls.stop()
+                sndLifeline1.controls.stop()
+                sndLifeline2.controls.stop()
+            Case "to_commercial"
+                sndQuestion.controls.stop()
+                sndFinal.controls.stop()
+                sndAnswer.controls.stop()
+                sndLightsDown.controls.stop()
             Case "question"
                 sndQuestion.controls.stop()
             Case "final"

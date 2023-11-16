@@ -250,6 +250,8 @@ Public Class ControlPanel
     Private Sub btnCommercial_Click(sender As Object, e As EventArgs) Handles btnCommercial.Click
 
         ' TODO: Stop any other sound when going to the commercial break.
+        Dim stopaudio As New Thread(Sub() Sounds.StopAudio("to_commercial", 500))
+        stopaudio.Start()
 
         Select Case Game.intoCommercials
             Case False  ' When going to the commercials or break.

@@ -837,7 +837,7 @@ Public Class Question
                 End If
                 If ControlPanel.lblAnswer.Text = "D" Then
                     HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
-                    HostScreen.txtC.ForeColor = Color.Black
+                    HostScreen.txtD.ForeColor = Color.Black
                     GuestScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
                     GuestScreen.txtD.ForeColor = Color.Black
                     ControlPanel.txtD.BackColor = Color.Green
