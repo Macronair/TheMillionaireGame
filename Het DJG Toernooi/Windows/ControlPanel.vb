@@ -238,6 +238,7 @@ Public Class ControlPanel
     End Sub
 
 #Region "Sound cues"
+    ' Start the show!
     Private Sub btnSndOpening_Click(sender As Object, e As EventArgs) Handles btnSndOpening.Click
         With Sounds.sndGeneral
             .URL = Sounds.SoundsPath + Profile.Options.snd_Opening
@@ -245,18 +246,19 @@ Public Class ControlPanel
         End With
     End Sub
 
+    ' Played when Commercial button is clicked.
     Private Sub btnCommercial_Click(sender As Object, e As EventArgs) Handles btnCommercial.Click
 
     ' TODO: Stop any other sound when going to the commercial break.
 
         Select Case Game.intoCommercials
-            Case False
+            Case False  ' When going to the commercials or break.
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_CommIn
                     .controls.play()
                 End With
                 Game.intoCommercials = True
-            Case True
+            Case True   ' When returning to the game/program.
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_CommOut
                     .controls.play()
@@ -267,6 +269,7 @@ Public Class ControlPanel
         Timer1.Start()
     End Sub
 
+    ' That's all for today! (Closing theme playing)
     Private Sub btnClosing_Click(sender As Object, e As EventArgs) Handles btnClosing.Click
         With Sounds.sndGeneral
             .URL = Sounds.SoundsPath + Profile.Options.snd_Closing
@@ -321,6 +324,11 @@ Public Class ControlPanel
     End Sub
 
 #Region "Lifeline usage"
+    ''' <summary>
+    ''' Lifeline codes and scripts.
+    ''' The 'LifelineManager.Use' sub will be executed. The integer in the argument indicates which button is pressed.
+    ''' With the argument in place. The script knows which lifeline to activate. (Example: Double Dip can be assigned to button 3. So LifelineManager.Use(3) will activate this lifeline.)
+    ''' </summary>
     Private Sub btnLifeline1_Click(sender As Object, e As EventArgs) Handles btnLifeline1.Click
         LifelineManager.Use(1)
     End Sub
@@ -337,6 +345,9 @@ Public Class ControlPanel
         LifelineManager.Use(4)
     End Sub
 
+    ''' <summary>
+    ''' With the checkboxes below the buttons you can manually change the unused lifeline to a used one (and vice versa).
+    ''' </summary>
     Private Sub chkLifeline1_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline1Unused.Click
         If chkLifeline1Unused.Checked = True Then
             btnLifeline1.Enabled = True
@@ -345,6 +356,17 @@ Public Class ControlPanel
         If chkLifeline1Unused.Checked = False Then
             btnLifeline1.Enabled = False
             LifelineManager.EnableLifeline(1, False)
+        End If
+    End Sub
+
+    Private Sub chkLifeline2_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline2Unused.Click
+        If chkLifeline2Unused.Checked = True Then
+            btnLifeline2.Enabled = True
+            LifelineManager.EnableLifeline(2, True)
+        End If
+        If chkLifeline2Unused.Checked = False Then
+            btnLifeline2.Enabled = False
+            LifelineManager.EnableLifeline(2, False)
         End If
     End Sub
 
@@ -367,17 +389,6 @@ Public Class ControlPanel
         If chkLifeline4Unused.Checked = False Then
             btnLifeline4.Enabled = False
             LifelineManager.EnableLifeline(4, False)
-        End If
-    End Sub
-
-    Private Sub chkLifeline2_CheckedChanged(sender As Object, e As EventArgs) Handles chkLifeline2Unused.Click
-        If chkLifeline2Unused.Checked = True Then
-            btnLifeline2.Enabled = True
-            LifelineManager.EnableLifeline(2, True)
-        End If
-        If chkLifeline2Unused.Checked = False Then
-            btnLifeline2.Enabled = False
-            LifelineManager.EnableLifeline(2, False)
         End If
     End Sub
 #End Region

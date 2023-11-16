@@ -102,8 +102,9 @@ Like the name of the lifeline already suggest, ask the present host to give his/
 1 - 100
 
 ## Video Demo
+You can watch the demo video of 2023 here below:
 
-[![The Millionaire Game Demo 2021](https://img.youtube.com/vi/hXtrJ1ECPtc/0.jpg)](https://youtu.be/hXtrJ1ECPtc)
+[![The Millionaire Game Demo 2023](https://img.youtube.com/vi/NVtr-75A5mc/0.jpg)](https://youtu.be/NVtr-75A5mc)
 
 ## Screenshots
 ### Main overview:
