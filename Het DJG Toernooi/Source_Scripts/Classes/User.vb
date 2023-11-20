@@ -21,7 +21,7 @@ Public Class User
                 .controls.play()
             End With
 
-            Dim stopmusic As New Thread(Sub() Sounds.StopAudio("all", 720))
+            Dim stopmusic As New Thread(Sub() Sounds.StopAudio("for_lightsdown", 720))
             stopmusic.Start()
             a = 0
         End If
