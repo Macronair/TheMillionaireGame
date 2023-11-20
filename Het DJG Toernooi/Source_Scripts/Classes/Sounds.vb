@@ -51,6 +51,7 @@ Public Class Sounds
                 sndQuestion.controls.stop()
                 sndFinal.controls.stop()
                 sndAnswer.controls.stop()
+                sndGeneral.controls.stop()
                 sndGeneralBed.controls.stop()
             Case "lifeline1"
                 sndLifeline1.controls.stop()
