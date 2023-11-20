@@ -1,9 +1,9 @@
 ﻿Imports System.Threading
 
 Public Class LifeLineDouble
-    Shared dd_Start As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
-    Shared dd_Final As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
-    Shared dd_Wrong As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
+    Public Shared dd_Start As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
+    Public Shared dd_Final As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
+    Public Shared dd_Wrong As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
 
     Public Shared active As Boolean = False
     Public Shared chance As Integer = 2

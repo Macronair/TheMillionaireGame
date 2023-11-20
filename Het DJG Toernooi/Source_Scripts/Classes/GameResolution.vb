@@ -118,7 +118,7 @@
                 TVControlPnl.picLifeline1.Location = New Point(846, 67)
                 TVControlPnl.picLifeline2.Location = New Point(926, 67)
                 TVControlPnl.picLifeline3.Location = New Point(1006, 67)
-                TVControlPnl.picLifeline4.Location = New Point(1671, 67)
+                TVControlPnl.picLifeline4.Location = New Point(1086, 67)
 
                 TVControlPnl.picTree.Size = New Size(1232, 748)
                 TVControlPnl.pnlFFFOrder1.Size = New Size(580, 48)

@@ -29,6 +29,9 @@ Public Class Sounds
                 sndGeneralBed.controls.stop()
                 sndLifeline1.controls.stop()
                 sndLifeline2.controls.stop()
+                LifeLineDouble.dd_Start.controls.stop()
+                LifeLineDouble.dd_Wrong.controls.stop()
+                LifeLineDouble.dd_Final.controls.stop()
             Case "to_commercial"
                 sndQuestion.controls.stop()
                 sndFinal.controls.stop()
