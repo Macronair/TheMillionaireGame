@@ -24,7 +24,6 @@ Partial Class CoreConsole
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.txtConsole = New System.Windows.Forms.TextBox()
-        Me.tmrLoad = New System.Windows.Forms.Timer(Me.components)
         Me.tmrRuntime = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
@@ -42,13 +41,9 @@ Partial Class CoreConsole
         Me.txtConsole.Size = New System.Drawing.Size(955, 443)
         Me.txtConsole.TabIndex = 0
         '
-        'tmrLoad
-        '
-        Me.tmrLoad.Interval = 400
-        '
         'tmrRuntime
         '
-        Me.tmrRuntime.Interval = 500
+        Me.tmrRuntime.Interval = 1000
         '
         'CoreConsole
         '
@@ -68,6 +63,5 @@ Partial Class CoreConsole
     End Sub
 
     Friend WithEvents txtConsole As TextBox
-    Friend WithEvents tmrLoad As Timer
     Friend WithEvents tmrRuntime As Timer
 End Class

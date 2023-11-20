@@ -23,6 +23,7 @@ Partial Class FFFServer
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FFFServer))
         Me.txtReceive = New System.Windows.Forms.TextBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -66,7 +67,6 @@ Partial Class FFFServer
         Me.txtPL2_Name = New System.Windows.Forms.TextBox()
         Me.txtPL1_Answer = New System.Windows.Forms.TextBox()
         Me.txtPL1_Name = New System.Windows.Forms.TextBox()
-        Me.tmrStopSnd1 = New System.Windows.Forms.Timer(Me.components)
         Me.tmrThink = New System.Windows.Forms.Timer(Me.components)
         Me.tmrPoints = New System.Windows.Forms.Timer(Me.components)
         Me.tmrRevealPlayers = New System.Windows.Forms.Timer(Me.components)
@@ -106,7 +106,8 @@ Partial Class FFFServer
         Me.Label3 = New System.Windows.Forms.Label()
         Me.chkDisableWinnerAuto = New System.Windows.Forms.CheckBox()
         Me.chkShowPointsInServerConsole = New System.Windows.Forms.CheckBox()
-        Me.lblTimeElapsed = New System.Windows.Forms.Label()
+        Me.lblTime = New System.Windows.Forms.Label()
+        Me.tmrThreeNotes = New System.Windows.Forms.Timer(Me.components)
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPlayer1.SuspendLayout()
         Me.pnlPlayer2.SuspendLayout()
@@ -578,20 +579,16 @@ Partial Class FFFServer
         Me.txtPL1_Name.TabIndex = 51
         Me.txtPL1_Name.Text = "Player 1"
         '
-        'tmrStopSnd1
-        '
-        '
         'tmrThink
         '
         Me.tmrThink.Interval = 20100
         '
         'tmrPoints
         '
-        Me.tmrPoints.Interval = 10
         '
         'tmrRevealPlayers
         '
-        Me.tmrRevealPlayers.Interval = 50
+        Me.tmrRevealPlayers.Interval = 30
         '
         'tmrFastestPlayer
         '
@@ -987,14 +984,18 @@ Partial Class FFFServer
         Me.chkShowPointsInServerConsole.Text = "Show points in server console"
         Me.chkShowPointsInServerConsole.UseVisualStyleBackColor = True
         '
-        'lblTimeElapsed
+        'lblTime
         '
-        Me.lblTimeElapsed.AutoSize = True
-        Me.lblTimeElapsed.Location = New System.Drawing.Point(455, 355)
-        Me.lblTimeElapsed.Name = "lblTimeElapsed"
-        Me.lblTimeElapsed.Size = New System.Drawing.Size(28, 13)
-        Me.lblTimeElapsed.TabIndex = 111
-        Me.lblTimeElapsed.Text = "0,00"
+        Me.lblTime.AutoSize = True
+        Me.lblTime.Location = New System.Drawing.Point(387, 14)
+        Me.lblTime.Name = "lblTime"
+        Me.lblTime.Size = New System.Drawing.Size(28, 13)
+        Me.lblTime.TabIndex = 111
+        Me.lblTime.Text = "0.00"
+        '
+        'tmrThreeNotes
+        '
+        Me.tmrThreeNotes.Interval = 2000
         '
         'FFFServer
         '
@@ -1002,7 +1003,7 @@ Partial Class FFFServer
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
         Me.ClientSize = New System.Drawing.Size(523, 377)
-        Me.Controls.Add(Me.lblTimeElapsed)
+        Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.chkShowPointsInServerConsole)
         Me.Controls.Add(Me.chkDisableWinnerAuto)
         Me.Controls.Add(Me.Label3)
@@ -1033,6 +1034,7 @@ Partial Class FFFServer
         Me.Controls.Add(Me.TextBox2)
         Me.Controls.Add(Me.txtReceive)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FFFServer"
         Me.Text = "Fastest Finger: Server"
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1100,7 +1102,6 @@ Partial Class FFFServer
     Friend WithEvents txtPL2_Name As TextBox
     Friend WithEvents txtPL1_Answer As TextBox
     Friend WithEvents txtPL1_Name As TextBox
-    Friend WithEvents tmrStopSnd1 As Timer
     Friend WithEvents tmrThink As Timer
     Friend WithEvents tmrPoints As Timer
     Friend WithEvents tmrRevealPlayers As Timer
@@ -1140,5 +1141,6 @@ Partial Class FFFServer
     Friend WithEvents Label3 As Label
     Friend WithEvents chkDisableWinnerAuto As CheckBox
     Friend WithEvents chkShowPointsInServerConsole As CheckBox
-    Friend WithEvents lblTimeElapsed As Label
+    Friend WithEvents lblTime As Label
+    Friend WithEvents tmrThreeNotes As Timer
 End Class

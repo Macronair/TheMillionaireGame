@@ -2,21 +2,33 @@
 
     Public Shared plusone As Integer
 
-    Public Sub LifelineUse1()
+    Public Shared Sub LifelineUse1()
         If plusone = 0 Then
-            TVControlPnl.grpATA.Visible = False
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(20, False, 750)
+            Question.useMusic = False
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Start
+                .controls.play()
             End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("question", 120))
+            stopaudio.Start()
+
             plusone = plusone + 1
-            HostScreen.lblPlusOneUsed.ForeColor = Color.Cyan
-            TVControlPnl.pnlQuestion.Visible = False
-            ControlPanel.Timer1.Start()
+
+            TVControlPnl.grpATA.Visible = False
+            If Profile.Options.S_AutoHideQuestionAtPlusOne = True Then
+                ControlPanel.chkShowQuestion.Checked = False
+            End If
+
+            ControlPanel.txtHostMessages.AppendText("PLUS ONE ACTIVATED." + Environment.NewLine)
+            HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "PLUS ONE ACTIVATED."
         ElseIf plusone = 1 Then
-            My.Computer.Audio.Play(My.Resources.paf_countdown, AudioPlayMode.Background)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_Clock
+                .controls.play()
+            End With
+            Dim stopaudio As New Threading.Thread(Sub() Sounds.StopAudio("lifeline1", 50))
+            stopaudio.Start()
+
             HostScreen.lblTime.Text = "30"
             GuestScreen.lblTime.Text = "30"
             ControlPanel.lblTime.Text = "30"
@@ -24,31 +36,39 @@
             GuestScreen.lblTime.Visible = True
             TVControlPnl.pnlTime.Visible = True
             ControlPanel.lblTime.Visible = True
-            TVControlPnl.pnlQuestion.Visible = True
+            ControlPanel.chkShowQuestion.Checked = True
             plusone = 2
             ControlPanel.Timer2.Start()
             ControlPanel.tmrTime.Start()
         ElseIf plusone = 2 Then
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(22, False, 750)
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_P1_EndEarly
+                .controls.play()
             End With
-            ControlPanel.Timer1.Start()
+            Sounds.sndLifeline2.controls.stop()
+
+            Dim continueaudio As New Threading.Thread(Sub() OffsetBeforeCue())
+            continueaudio.Start()
+
             HostScreen.lblTime.Visible = False
             GuestScreen.lblTime.Visible = False
             ControlPanel.lblTime.Visible = False
             ControlPanel.tmrTime.Stop()
             plusone = 0
             TVControlPnl.lblTime.Visible = False
-            ControlPanel.tmrResume.Start()
-            ControlPanel.chkPlusOne.Checked = False
-            HostScreen.picPO.Image = My.Resources.lifeline_3_used
-            GuestScreen.picPO.Image = My.Resources.lifeline_3_used
-            TVControlPnl.picPO.Image = My.Resources.lifeline_3_used
-            ControlPanel.btnPlusOne.Enabled = False
+            ControlPanel.chkLifeline2Unused.Checked = False
+            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
+            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
+            ControlPanel.btnLifeline2.Enabled = False
+
+            LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
         End If
+    End Sub
+
+    Shared Sub OffsetBeforeCue()
+        Threading.Thread.Sleep(1000)
+        Question.PlayQuestionCue()
     End Sub
 
 End Class

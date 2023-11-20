@@ -36,11 +36,17 @@
     <PublisherName>TeamDJG</PublisherName>
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
-    <ApplicationRevision>2</ApplicationRevision>
-    <ApplicationVersion>1.0.343.0</ApplicationVersion>
+    <ApplicationRevision>2233</ApplicationRevision>
+    <ApplicationVersion>1.1.657.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <AssemblyVersionSettings>
+    </AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>
+    </AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>
+    </AssemblyInfoVersionSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -75,7 +81,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo21.ico</ApplicationIcon>
+    <ApplicationIcon>logo23.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>false</SignManifests>
@@ -124,14 +130,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeNormal.vb" />
     <Compile Include="Source_Scripts\Classes\Question.vb" />
     <Compile Include="Source_Scripts\Classes\User.vb" />
-    <Compile Include="Source_Scripts\Database\Data.vb" />
-    <Compile Include="Source_Scripts\Database\Message.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Data.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Message.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\WinningStrap.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifeLineDouble.vb" />
+    <Compile Include="Source_Scripts\Classes\Sounds.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifelineHost.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -145,17 +158,10 @@
       <DependentUpon>ControlPanel.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Source_Scripts\correct.vb" />
     <Compile Include="Windows\CoreConsole.Designer.vb">
       <DependentUpon>CoreConsole.vb</DependentUpon>
     </Compile>
     <Compile Include="Windows\CoreConsole.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Windows\Database Settings\Database.Designer.vb">
-      <DependentUpon>Database.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Database Settings\Database.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Source_Scripts\Classes\Game\FastestFinger\ClientClass.vb" />
@@ -203,12 +209,6 @@
     <Compile Include="Windows\General\TVControlPnl1080.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\Options\ChangeMoneyStrap.Designer.vb">
-      <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\Options\ChangeMoneyStrap.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Windows\General\TVControlPnl.Designer.vb">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </Compile>
@@ -221,10 +221,22 @@
     <Compile Include="Windows\Options\HostMessages.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Windows\Options\MonitorIdentifier.Designer.vb">
+      <DependentUpon>MonitorIdentifier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\MonitorIdentifier.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\Options\OptionsScreen.Designer.vb">
       <DependentUpon>OptionsScreen.vb</DependentUpon>
     </Compile>
     <Compile Include="Windows\Options\OptionsScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Options\OptionsSelectSound.Designer.vb">
+      <DependentUpon>OptionsSelectSound.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\OptionsSelectSound.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -237,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\CoreConsole.resx">
       <DependentUpon>CoreConsole.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Database Settings\Database.resx">
-      <DependentUpon>Database.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Source_Scripts\Classes\Game\FastestFinger\FFFServer.resx">
       <DependentUpon>FFFServer.vb</DependentUpon>
@@ -259,17 +268,20 @@
     <EmbeddedResource Include="Windows\General\TVControlPnl1080.resx">
       <DependentUpon>TVControlPnl1080.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Windows\Options\ChangeMoneyStrap.resx">
-      <DependentUpon>ChangeMoneyStrap.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl.resx">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\MonitorIdentifier.resx">
+      <DependentUpon>MonitorIdentifier.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\OptionsScreen.resx">
       <DependentUpon>OptionsScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\OptionsSelectSound.resx">
+      <DependentUpon>OptionsSelectSound.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -409,6 +421,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo21.ico" />
+    <Content Include="logo23.ico" />
+    <None Include="Resources\triangle.png" />
+    <None Include="Resources\folder.png" />
+    <None Include="Resources\sound.png" />
+    <None Include="Resources\ll_switch_used.png" />
+    <None Include="Resources\ll_switch_glint.png" />
+    <None Include="Resources\ll_switch.png" />
+    <None Include="Resources\ll_plusone_used.png" />
+    <None Include="Resources\ll_plusone_glint.png" />
+    <None Include="Resources\ll_plusone.png" />
+    <None Include="Resources\ll_phone_used.png" />
+    <None Include="Resources\ll_phone_glint.png" />
+    <None Include="Resources\ll_phone.png" />
+    <None Include="Resources\ll_host_used.png" />
+    <None Include="Resources\ll_host_glint.png" />
+    <None Include="Resources\ll_host.png" />
+    <None Include="Resources\ll_audience_used.png" />
+    <None Include="Resources\ll_audience_glint.png" />
+    <None Include="Resources\ll_audience.png" />
+    <None Include="Resources\ll_5050_used.png" />
+    <None Include="Resources\ll_5050_glint.png" />
+    <None Include="Resources\ll_5050.png" />
+    <None Include="Resources\ll_double_used.png" />
+    <None Include="Resources\ll_double_glint.png" />
     <None Include="Resources\fff_idle_new.png" />
     <None Include="Resources\fff_fastest_new.png" />
     <None Include="Resources\fff_correct_new.png" />
@@ -519,7 +555,14 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SqlServer.SqlLocalDB.15.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2019 Express LocalDB</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Source_Scripts\Skins\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -8,19 +8,19 @@
                 FFFServer.a = 0
                 FFFServer.act = 0
                 FFFServer.fff_points = 0
-                FFFServer.fff_pointsmin = 0
+                FFFServer.fff_timemin = 0
                 FFFServer.firstMan = True
                 PlayerCheck.tie = 0
                 FFFServer.lblSmallestScore.Text = "Smallest Score: 0"
 
-                FFFServer.pl1_points = 9999
-                FFFServer.pl2_points = 9999
-                FFFServer.pl3_points = 9999
-                FFFServer.pl4_points = 9999
-                FFFServer.pl5_points = 9999
-                FFFServer.pl6_points = 9999
-                FFFServer.pl7_points = 9999
-                FFFServer.pl8_points = 9999
+                FFFServer.pl1_time = 9999
+                FFFServer.pl2_time = 9999
+                FFFServer.pl3_time = 9999
+                FFFServer.pl4_time = 9999
+                FFFServer.pl5_time = 9999
+                FFFServer.pl6_time = 9999
+                FFFServer.pl7_time = 9999
+                FFFServer.pl8_time = 9999
                 FFFServer.txtReceive.Clear()
 
                 FFFServer.lblPoints.Text = "0"
@@ -43,10 +43,6 @@
                 FFFServer.txtPL8_Points.Clear()
 
                 HostScreen.pnlAnswer.BackColor = Color.Black
-                HostScreen.lbl5050Used.ForeColor = Color.Black
-                HostScreen.lblSwitchUsed.ForeColor = Color.Black
-                HostScreen.lblPlusOneUsed.ForeColor = Color.Black
-                HostScreen.lblVoteUsed.ForeColor = Color.Black
                 ControlPanel.txtA.BackColor = SystemColors.Control
                 ControlPanel.txtB.BackColor = SystemColors.Control
                 ControlPanel.txtC.BackColor = SystemColors.Control
@@ -56,18 +52,18 @@
                 HostScreen.txtB.ForeColor = Color.White
                 HostScreen.txtC.ForeColor = Color.White
                 HostScreen.txtD.ForeColor = Color.White
-                HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 GuestScreen.txtA.ForeColor = Color.White
                 GuestScreen.txtB.ForeColor = Color.White
                 GuestScreen.txtC.ForeColor = Color.White
                 GuestScreen.txtD.ForeColor = Color.White
-                GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 TVControlPnl.txtA.ForeColor = Color.White
                 TVControlPnl.txtB.ForeColor = Color.White
                 TVControlPnl.txtC.ForeColor = Color.White
@@ -150,13 +146,19 @@
                 TVControlPnl.txtPL8_Name.ForeColor = Color.White
                 TVControlPnl.txtPL8_Points.ForeColor = Color.White
 
-                TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-                TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-                TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+                TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
                 TVControlPnl.tmrFlash.Stop()
-                FFFServer.newQ.newQuestion()
-                My.Computer.Audio.Play(My.Resources.fastest_finger_read_question, AudioPlayMode.Background)
+                Dim q As New QDatabase
+                q.newQuestion()
+
+                With FFFServer.question
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadQuestion
+                    .controls.play()
+                End With
+
                 FFFServer.UpdateList("/clear", True)
             Case 1
                 FFFServer.correctAnswer = ControlPanel.lblAnswer.Text
@@ -166,7 +168,7 @@
                 GuestScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text
                 HostScreen.lblAnswer.Text = ControlPanel.lblAnswer.Text
                 HostScreen.txtExplain.Text = ControlPanel.txtExplain.Text
-                TVControlPnl.pnlQuestion.Visible = True
+                ControlPanel.chkShowQuestion.Checked = True
                 FFFServer.UpdateList("/q1#" + ControlPanel.txtQuestion.Text, True)
         End Select
     End Sub

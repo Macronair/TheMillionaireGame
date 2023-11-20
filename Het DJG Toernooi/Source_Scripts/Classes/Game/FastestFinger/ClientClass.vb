@@ -1,5 +1,5 @@
-﻿Imports System.Net.Sockets
-Imports System.IO
+﻿Imports System.IO
+Imports System.Net.Sockets
 
 Public Class ClientClass
 

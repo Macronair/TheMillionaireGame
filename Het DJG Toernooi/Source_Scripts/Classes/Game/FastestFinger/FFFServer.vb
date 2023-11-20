@@ -1,5 +1,5 @@
-﻿Imports System.Net
-Imports System.IO
+﻿Imports System.IO
+Imports System.Net
 Imports System.Net.Sockets
 
 'Server Side
@@ -12,85 +12,87 @@ Public Class FFFServer
     Dim pClient As ClientClass
 
     'Game instances
-    Public newQ As New QDatabase
     Dim options As New Game
     Public Shared snd As New SOUND
 
     'General game info
     Dim fff_think As Boolean = False                            'Time is started to give the right answer.
     Public fff_points As Integer = 0                            'General point counter for the game.
-    Dim fff_pointsmax As Integer = Integer.MaxValue             'The max value of points that somebody reached
-    Public Shared fff_pointsmin As Integer = Integer.MinValue   'The min value of points that somebody reached
+    Dim fff_timemax As Double = Double.MaxValue             'The max value of points that somebody reached
+    Public Shared fff_timemin As Double = Double.MinValue   'The min value of points that somebody reached
     Public correctAnswer As String                              'The correct answer on the current question
-    Dim time As New Timer With {.Interval = 10}
-    Dim stopwatch As New Stopwatch
 
-    ' Game state variables (not relevant for the FFF results
+    ' Game state variables (not relevant for the FFF results)
     Public act As Integer
     Public i As Integer = 0
     Public a As Integer = 0
     Dim q As Integer = 0
 
+    ' Sound objects
+    Public Shared question As New WMPLib.WindowsMediaPlayer
+    Dim st1 As New WMPLib.WindowsMediaPlayer
+    Dim st2 As New WMPLib.WindowsMediaPlayer
+    Dim order As New WMPLib.WindowsMediaPlayer
+
+    'Timer
+    Private Shared stopwatch As New Stopwatch
+    Private Shared tmr As System.Timers.Timer
+    Private Shared time As String
+
     Public Shared firstMan As Boolean = True    'Checks if the person with the right answer is the first one. If so, this will be set from True to False.
+
+    Public Shared totalContestants As Integer = 8
 
     'Player 1 Info
     Dim pl1_online As Boolean       'Online?
     Dim pl1_name As String          'Name
     Dim pl1_answer As String        'Answer
-    Dim pl1_time As String          'Time
-    Public Shared pl1_points As Integer = 9999
+    Public Shared pl1_time As Double = 9999
 
     'Player 2 Info
     Dim pl2_online As Boolean       'Online?
     Dim pl2_name As String          'Name
     Dim pl2_answer As String        'Answer
-    Dim pl2_time As String          'Time
-    Public Shared pl2_points As Integer = 9999
+    Public Shared pl2_time As Double = 9999
 
     'Player 3 Info
     Dim pl3_online As Boolean       'Online?
     Dim pl3_name As String          'Name
     Dim pl3_answer As String        'Answer
-    Dim pl3_time As String          'Time
-    Public Shared pl3_points As Integer = 9999
+    Public Shared pl3_time As Double = 9999
 
     'Player 4 Info
     Dim pl4_online As Boolean       'Online?
     Dim pl4_name As String          'Name
     Dim pl4_answer As String        'Answer
-    Dim pl4_time As String          'Time
-    Public Shared pl4_points As Integer = 9999
+    Public Shared pl4_time As Double = 9999
 
     'Player 5 Info
     Dim pl5_online As Boolean       'Online?
     Dim pl5_name As String          'Name
     Dim pl5_answer As String        'Answer
-    Dim pl5_time As String          'Time
-    Public Shared pl5_points As Integer = 9999
+    Public Shared pl5_time As Double = 9999
 
     'Player 6 Info
     Dim pl6_online As Boolean       'Online?
     Dim pl6_name As String          'Name
     Dim pl6_answer As String        'Answer
-    Dim pl6_time As String          'Time
-    Public Shared pl6_points As Integer = 9999
+    Public Shared pl6_time As Double = 9999
 
     'Player 7 Info
     Dim pl7_online As Boolean       'Online?
     Dim pl7_name As String          'Name
     Dim pl7_answer As String        'Answer
-    Dim pl7_time As String          'Time
-    Public Shared pl7_points As Integer = 9999
+    Public Shared pl7_time As Double = 9999
 
     'Player 8 Info
     Dim pl8_online As Boolean       'Online?
     Dim pl8_name As String          'Name
     Dim pl8_answer As String        'Answer
-    Dim pl8_time As String          'Time
-    Public Shared pl8_points As Integer = 9999
+    Public Shared pl8_time As Double = 9999
 
     Private Sub frmMain_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Listening = New TcpListener(IPAddress.Any, 3818)
+        Listening = New TcpListener(IPAddress.Any, Profile.Options.FFF_Port)
         Try
             Listening.Start()
             Listening.BeginAcceptTcpClient(New AsyncCallback(AddressOf AcceptClient), Listening)
@@ -110,7 +112,7 @@ Public Class FFFServer
         Else
             txtReceive.Text = str
             If relay Then
-                send(str)
+                Send(str)
             End If
         End If
     End Sub
@@ -162,10 +164,10 @@ Public Class FFFServer
                         txtPL1_Answer.Text = rcvList(1)
                     End If
                     If txtPL1_Answer.Text = correctAnswer Then
-                        pl1_points = fff_points
-                        txtPL1_Points.Text = fff_points
+                        pl1_time = time
+                        txtPL1_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -174,10 +176,10 @@ Public Class FFFServer
                         txtPL2_Answer.Text = rcvList(1)
                     End If
                     If txtPL2_Answer.Text = correctAnswer Then
-                        pl2_points = fff_points
-                        txtPL2_Points.Text = fff_points
+                        pl2_time = time
+                        txtPL2_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -186,10 +188,10 @@ Public Class FFFServer
                         txtPL3_Answer.Text = rcvList(1)
                     End If
                     If txtPL3_Answer.Text = correctAnswer Then
-                        pl3_points = fff_points
-                        txtPL3_Points.Text = fff_points
+                        pl3_time = time
+                        txtPL3_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -198,10 +200,10 @@ Public Class FFFServer
                         txtPL4_Answer.Text = rcvList(1)
                     End If
                     If txtPL4_Answer.Text = correctAnswer Then
-                        pl4_points = fff_points
-                        txtPL4_Points.Text = fff_points
+                        pl4_time = time
+                        txtPL4_Points.Text = lblTime.Text
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -210,10 +212,10 @@ Public Class FFFServer
                         txtPL5_Answer.Text = rcvList(1)
                     End If
                     If txtPL5_Answer.Text = correctAnswer Then
-                        pl5_points = fff_points
-                        txtPL5_Points.Text = fff_points
+                        pl5_time = time
+                        txtPL5_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -222,10 +224,10 @@ Public Class FFFServer
                         txtPL6_Answer.Text = rcvList(1)
                     End If
                     If txtPL6_Answer.Text = correctAnswer Then
-                        pl6_points = fff_points
-                        txtPL6_Points.Text = fff_points
+                        pl6_time = time
+                        txtPL6_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -234,10 +236,10 @@ Public Class FFFServer
                         txtPL7_Answer.Text = rcvList(1)
                     End If
                     If txtPL7_Answer.Text = correctAnswer Then
-                        pl7_points = fff_points
-                        txtPL7_Points.Text = fff_points
+                        pl7_time = time
+                        txtPL7_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -246,10 +248,10 @@ Public Class FFFServer
                         txtPL8_Answer.Text = rcvList(1)
                     End If
                     If txtPL8_Answer.Text = correctAnswer Then
-                        pl8_points = fff_points
-                        txtPL8_Points.Text = fff_points
+                        pl8_time = time
+                        txtPL8_Points.Text = time
                         If firstMan = True Then
-                            fff_pointsmin = fff_points
+                            fff_timemin = time
                             firstMan = False
                         End If
                     End If
@@ -267,12 +269,13 @@ Public Class FFFServer
     End Sub
 
     Private Sub btnStartTime_Click(sender As Object, e As EventArgs) Handles btnStartTime.Click
-        FFFQuestion.Fill()
-        PlayerCheck.Randomizer()
-        txtReceive.Clear()
-        fff_think = True
-        tmrStopSnd1.Start()
-        tmrThink.Start()
+        With st1
+            .URL = Sounds.SoundsPath + Profile.Options.snd_F_ThreeNotes
+            .controls.play()
+        End With
+
+        question.controls.stop()
+
         HostScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
         GuestScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
         TVControlPnl.txtA.Text = "A: " & ControlPanel.txtA.Text
@@ -289,33 +292,34 @@ Public Class FFFServer
         GuestScreen.txtD.Text = "D: " & ControlPanel.txtD.Text
         TVControlPnl.txtD.Text = "D: " & ControlPanel.txtD.Text
         TVControlPnl.txtD.Visible = True
+
+        tmrThreeNotes.Start()
+    End Sub
+
+    Private Sub tmrThreeNotes_Tick(sender As Object, e As EventArgs) Handles tmrThreeNotes.Tick
+        tmr = New System.Timers.Timer(1)
+        AddHandler tmr.Elapsed, AddressOf Handler
+
+        FFFQuestion.Fill()
+        PlayerCheck.Randomizer()
+        txtReceive.Clear()
+        fff_think = True
+
+        tmrThink.Start()
+
         tmrSendAnswers.Start()
 
-        ControlPanel.intSound += 1
+        stopwatch.Start()
+        tmr.Start()
 
-        With snd
-            .Name = "SOUND" & ControlPanel.intSound
-            .Play(43, False, 1000)
-        End With
-        ControlPanel.intSound += 1
-
-        With snd
-            .Name = "SOUND" & ControlPanel.intSound
-            .Play(37, False, 1000)
+        With st2
+            .URL = Sounds.SoundsPath + Profile.Options.snd_F_Thinking
+            .controls.play()
         End With
 
         UpdateList("/unlock", True)
         tmrPoints.Start()
-
-        time.Tag = DateTime.Now
-        AddHandler time.Tick, AddressOf time_Tick
-        time.Start()
-        stopwatch.Start()
-    End Sub
-
-    Private Sub tmrStopSnd1_Tick(sender As Object, e As EventArgs) Handles tmrStopSnd1.Tick
-        My.Computer.Audio.Stop()
-        tmrStopSnd1.Stop()
+        tmrThreeNotes.Stop()
     End Sub
 
     Private Sub tmrThink_Tick(sender As Object, e As EventArgs) Handles tmrThink.Tick
@@ -325,129 +329,77 @@ Public Class FFFServer
         UpdateList("/lock", True)
 
         tmrThink.Stop()
-        time.Stop()
-        stopwatch.Stop()
-        stopwatch.Reset()
         tmrPoints.Stop()
 
-        lblTimeElapsed.Text = 0
+        tmr.Stop()
+        stopwatch.Stop()
+        stopwatch.Reset()
+        time = "0.00"
+
+        lblTime.Text = time
     End Sub
 
     Private Sub tmrPoints_Tick(sender As Object, e As EventArgs) Handles tmrPoints.Tick
         fff_points += 1
         lblPoints.Text = fff_points
-    End Sub
-
-    Private Sub time_Tick(ByVal sender As Object, ByVal e As EventArgs)
-        Dim elapsed As TimeSpan = stopwatch.Elapsed
-        lblTimeElapsed.Text = String.Format("{0:00},{1:00}", elapsed.Seconds, elapsed.Milliseconds)
+        lblTime.Text = time
     End Sub
 
     Private Sub btnReveal_Click(sender As Object, e As EventArgs) Handles btnReveal.Click
-
         Select Case i
             Case 0
-                TVControlPnl.pnlQuestion.Visible = False
+                ControlPanel.chkShowQuestion.Checked = False
                 i = i + 1
             Case 1
-                My.Computer.Audio.Play(My.Resources.fastest_finger_read_answer_order, AudioPlayMode.Background)
+                With st1
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadCorrectOrder
+                    .settings.setMode("Loop", True)
+                    .controls.play()
+                End With
                 i = i + 1
             Case 2
                 TVControlPnl.picTree.BackgroundImage = My.Resources.tree_0
                 TVControlPnl.lblFFFQuestion.Visible = True
-                TVControlPnl.pic50.Visible = False
-                TVControlPnl.picVO.Visible = False
-                TVControlPnl.picPO.Visible = False
-                TVControlPnl.picSW.Visible = False
+                TVControlPnl.picLifeline3.Visible = False
+                TVControlPnl.picLifeline1.Visible = False
+                TVControlPnl.picLifeline2.Visible = False
+                TVControlPnl.picLifeline4.Visible = False
                 TVControlPnl.picTree.Visible = True
                 i = i + 1
             Case 3
                 TVControlPnl.pnlFFFOrder1.Visible = True
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(31, False, 1000)
+                Dim order As New WMPLib.WindowsMediaPlayer
+                With order
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_Order1
+                    .controls.play()
                 End With
                 i = i + 1
             Case 4
                 TVControlPnl.pnlFFFOrder2.Visible = True
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(32, False, 1000)
+                Dim order As New WMPLib.WindowsMediaPlayer
+                With order
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_Order2
+                    .controls.play()
                 End With
                 i = i + 1
             Case 5
                 TVControlPnl.pnlFFFOrder3.Visible = True
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(33, False, 1000)
+                Dim order As New WMPLib.WindowsMediaPlayer
+                With order
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_Order3
+                    .controls.play()
                 End With
                 i = i + 1
             Case 6
                 TVControlPnl.pnlFFFOrder4.Visible = True
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(34, False, 1000)
+                Dim order As New WMPLib.WindowsMediaPlayer
+                With order
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_Order4
+                    .controls.play()
                 End With
                 i = i + 1
         End Select
 
-        'If i = 0 Then
-        '    HostScreen.pnlAnswer.BackColor = Color.LightGray
-        '    If ControlPanel.lblAnswer.Text = "A" Then
-        '        HostScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-        '        GuestScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-        '        ControlPanel.txtA.BackColor = Color.Green
-        '    End If
-        '    If ControlPanel.lblAnswer.Text = "B" Then
-        '        HostScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-        '        GuestScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-        '        ControlPanel.txtB.BackColor = Color.Green
-        '    End If
-        '    If ControlPanel.lblAnswer.Text = "C" Then
-        '        HostScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-        '        GuestScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-        '        ControlPanel.txtC.BackColor = Color.Green
-        '    End If
-        '    If ControlPanel.lblAnswer.Text = "D" Then
-        '        HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-        '        GuestScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-        '        ControlPanel.txtD.BackColor = Color.Green
-        '    End If
-        '    If settingsVar.level = -1 Then
-        '        ControlPanel.intSound += 1
-
-        '        With snd
-        '            .Name = "SOUND" & ControlPanel.intSound
-        '            .Play(32, False, 1000)
-        '        End With
-        '    End If
-        '    i = i + 1
-        '    TVControlPnl.tmrFlash.Start()
-        'Else
-        '    TVControlPnl.txtA.BackColor = Color.Transparent
-        '    TVControlPnl.txtB.BackColor = Color.Transparent
-        '    TVControlPnl.txtC.BackColor = Color.Transparent
-        '    TVControlPnl.txtD.BackColor = Color.Transparent
-        '    TVControlPnl.txtA.ForeColor = Color.White
-        '    TVControlPnl.txtB.ForeColor = Color.White
-        '    TVControlPnl.txtC.ForeColor = Color.White
-        '    TVControlPnl.txtD.ForeColor = Color.White
-        '    TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        '    TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-        '    TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-        '    TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-        '    TVControlPnl.pnlQuestion.Visible = False
-        '    TVControlPnl.pnlStrap.Visible = False
-        '    TVControlPnl.tmrFlash.Stop()
-        'End If
     End Sub
 
     Private Sub btnShowCorrectPlayers_Click(sender As Object, e As EventArgs) Handles btnShowCorrectPlayers.Click
@@ -461,56 +413,54 @@ Public Class FFFServer
             TVControlPnl.pnlFFFOrder2.Visible = False
             TVControlPnl.pnlFFFOrder3.Visible = False
             TVControlPnl.pnlFFFOrder4.Visible = False
-            TVControlPnl.pic50.Visible = False
-            TVControlPnl.picVO.Visible = False
-            TVControlPnl.picPO.Visible = False
-            TVControlPnl.picSW.Visible = False
+            TVControlPnl.picLifeline3.Visible = False
+            TVControlPnl.picLifeline1.Visible = False
+            TVControlPnl.picLifeline2.Visible = False
+            TVControlPnl.picLifeline4.Visible = False
             tmrRevealPlayers.Start()
             If Game.level = -1 Then
-                ControlPanel.intSound += 1
-
-                With snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(35, False, 1000)
+                With st1
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_F_WhoWasCorrect
+                    .settings.setMode("Loop", False)
+                    .controls.play()
                 End With
+                st2.controls.stop()
             End If
-            ControlPanel.Timer1.Start()
             a = a + 1
         ElseIf a = 2 Then
 
-            If fff_pointsmin < 9999 Then
+            If fff_timemin < 9999 Then
 
                 If PlayerCheck.tie = 1 Then
-                    ControlPanel.intSound += 1
-                    With snd
-                        .Name = "SOUND" & ControlPanel.intSound
-                        .Play(44, False, 1000)
+                    With st2
+                        .URL = Sounds.SoundsPath + Profile.Options.snd_F_Winner
+                        .controls.play()
                     End With
-                    Select Case fff_pointsmin
-                        Case pl1_points
+                    Select Case fff_timemin
+                        Case pl1_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL1_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl1_points
-                        Case pl2_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl1_time
+                        Case pl2_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL2_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl2_points
-                        Case pl3_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl2_time
+                        Case pl3_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL3_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl3_points
-                        Case pl4_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl3_time
+                        Case pl4_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL4_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl4_points
-                        Case pl5_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl4_time
+                        Case pl5_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL5_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl5_points
-                        Case pl6_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl5_time
+                        Case pl6_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL6_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl6_points
-                        Case pl7_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl6_time
+                        Case pl7_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL7_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl7_points
-                        Case pl8_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl7_time
+                        Case pl8_time
                             TVControlPnl.lblFFFWinnerName.Text = txtPL8_Name.Text
-                            TVControlPnl.lblFFFWinnerPoints.Text = pl8_points
+                            TVControlPnl.lblFFFWinnerPoints.Text = pl8_time
                     End Select
                     TVControlPnl.pnlFFFWinner.Visible = True
                 End If
@@ -526,43 +476,43 @@ Public Class FFFServer
         ElseIf a = 4 Then
             TVControlPnl.pnlFFFWinner.Visible = False
             If chkDisableWinnerAuto.Checked = True Then
-                Select Case fff_pointsmin
-                    Case pl1_points
+                Select Case fff_timemin
+                    Case pl1_time
                         txtPL1_Name.Text = ""
                         txtPL1_Points.Text = ""
                         txtPL1_Answer.Text = ""
                         chkPL1_Active.Checked = False
-                    Case pl2_points
+                    Case pl2_time
                         txtPL2_Name.Text = ""
                         txtPL2_Points.Text = ""
                         txtPL2_Answer.Text = ""
                         chkPL2_Active.Checked = False
-                    Case pl3_points
+                    Case pl3_time
                         txtPL3_Name.Text = ""
                         txtPL3_Points.Text = ""
                         txtPL3_Answer.Text = ""
                         chkPL3_Active.Checked = False
-                    Case pl4_points
+                    Case pl4_time
                         txtPL4_Name.Text = ""
                         txtPL4_Points.Text = ""
                         txtPL4_Answer.Text = ""
                         chkPL4_Active.Checked = False
-                    Case pl5_points
+                    Case pl5_time
                         txtPL5_Name.Text = ""
                         txtPL5_Points.Text = ""
                         txtPL5_Answer.Text = ""
                         chkPL5_Active.Checked = False
-                    Case pl6_points
+                    Case pl6_time
                         txtPL6_Name.Text = ""
                         txtPL6_Points.Text = ""
                         txtPL6_Answer.Text = ""
                         chkPL6_Active.Checked = False
-                    Case pl7_points
+                    Case pl7_time
                         txtPL7_Name.Text = ""
                         txtPL7_Points.Text = ""
                         txtPL7_Answer.Text = ""
                         chkPL7_Active.Checked = False
-                    Case pl8_points
+                    Case pl8_time
                         txtPL8_Name.Text = ""
                         txtPL8_Points.Text = ""
                         txtPL8_Answer.Text = ""
@@ -632,7 +582,7 @@ Public Class FFFServer
                     TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
                 End If
             Case 8
-                If fff_pointsmin < 9999 Then
+                If fff_timemin < 9999 Then
                     tmrFastestPlayer.Start()
                 End If
                 tmrRevealPlayers.Stop()
@@ -645,84 +595,84 @@ Public Class FFFServer
     Private Sub tmrFastestPlayer_Tick(sender As Object, e As EventArgs) Handles tmrFastestPlayer.Tick
         Select Case flash
             Case 0
-                If pl1_points = fff_pointsmin Then
+                If pl1_time = fff_timemin Then
                     TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL1_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL1_Points.ForeColor = Color.Black
                 End If
-                If pl2_points = fff_pointsmin Then
+                If pl2_time = fff_timemin Then
                     TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL2_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL2_Points.ForeColor = Color.Black
                 End If
-                If pl3_points = fff_pointsmin Then
+                If pl3_time = fff_timemin Then
                     TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL3_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL3_Points.ForeColor = Color.Black
                 End If
-                If pl4_points = fff_pointsmin Then
+                If pl4_time = fff_timemin Then
                     TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL4_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL4_Points.ForeColor = Color.Black
                 End If
-                If pl5_points = fff_pointsmin Then
+                If pl5_time = fff_timemin Then
                     TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL5_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL5_Points.ForeColor = Color.Black
                 End If
-                If pl6_points = fff_pointsmin Then
+                If pl6_time = fff_timemin Then
                     TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL6_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
-                If pl7_points = fff_pointsmin Then
+                If pl7_time = fff_timemin Then
                     TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL7_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
-                If pl8_points = fff_pointsmin Then
+                If pl8_time = fff_timemin Then
                     TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_fastest_new
                     TVControlPnl.txtPL8_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL8_Points.ForeColor = Color.Black
                 End If
                 flash = 1
             Case 1
-                If pl1_points = fff_pointsmin Then
+                If pl1_time = fff_timemin Then
                     TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL1_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL1_Points.ForeColor = Color.Black
                 End If
-                If pl2_points = fff_pointsmin Then
+                If pl2_time = fff_timemin Then
                     TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL2_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL2_Points.ForeColor = Color.Black
                 End If
-                If pl3_points = fff_pointsmin Then
+                If pl3_time = fff_timemin Then
                     TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL3_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL3_Points.ForeColor = Color.Black
                 End If
-                If pl4_points = fff_pointsmin Then
+                If pl4_time = fff_timemin Then
                     TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL4_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL4_Points.ForeColor = Color.Black
                 End If
-                If pl5_points = fff_pointsmin Then
+                If pl5_time = fff_timemin Then
                     TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL5_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL5_Points.ForeColor = Color.Black
                 End If
-                If pl6_points = fff_pointsmin Then
+                If pl6_time = fff_timemin Then
                     TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL6_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
-                If pl7_points = fff_pointsmin Then
+                If pl7_time = fff_timemin Then
                     TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL7_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL6_Points.ForeColor = Color.Black
                 End If
-                If pl8_points = fff_pointsmin Then
+                If pl8_time = fff_timemin Then
                     TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
                     TVControlPnl.txtPL8_Name.ForeColor = Color.Black
                     TVControlPnl.txtPL8_Points.ForeColor = Color.Black
@@ -766,8 +716,6 @@ Public Class FFFServer
     Private Sub btnMeetContestants_Click(sender As Object, e As EventArgs) Handles btnMeetContestants.Click
         PlayerCheck.MeetContestants()
     End Sub
-
-    Public Shared totalContestants As Integer = 8
 
     Private Sub nmrTotalContestants_ValueChanged(sender As Object, e As EventArgs) Handles nmrTotalContestants.ValueChanged
         totalContestants = nmrTotalContestants.Value
@@ -1057,38 +1005,6 @@ Public Class FFFServer
         End If
     End Sub
 
-    Private Sub txtPL1_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL1_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL2_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL2_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL3_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL3_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL4_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL4_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL5_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL5_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL6_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL6_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL7_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL7_Name.TextChanged
-
-    End Sub
-
-    Private Sub txtPL8_Name_TextChanged(sender As Object, e As EventArgs) Handles txtPL8_Name.TextChanged
-
-    End Sub
-
     Private Sub chkShowPointsInServerConsole_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPointsInServerConsole.CheckedChanged
         If chkShowPointsInServerConsole.Checked = True Then
             txtPL1_Answer.ForeColor = Color.White
@@ -1125,5 +1041,11 @@ Public Class FFFServer
             txtPL7_Points.ForeColor = Color.Black
             txtPL8_Points.ForeColor = Color.Black
         End If
+    End Sub
+
+    Private Sub Handler()
+        Dim elapsed As TimeSpan = stopwatch.Elapsed
+
+        time = String.Format("{0:00},{1:00}", elapsed.ToString("%s"), CInt(Math.Round(elapsed.Milliseconds / 10)))
     End Sub
 End Class

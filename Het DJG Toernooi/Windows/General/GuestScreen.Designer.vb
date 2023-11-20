@@ -22,14 +22,15 @@ Partial Class GuestScreen
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.picVO = New System.Windows.Forms.PictureBox()
-        Me.picSW = New System.Windows.Forms.PictureBox()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GuestScreen))
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.txtATAd = New System.Windows.Forms.TextBox()
         Me.txtATAc = New System.Windows.Forms.TextBox()
         Me.txtATAb = New System.Windows.Forms.TextBox()
         Me.txtATAa = New System.Windows.Forms.TextBox()
-        Me.picPO = New System.Windows.Forms.PictureBox()
-        Me.pic50 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.picTree = New System.Windows.Forms.PictureBox()
         Me.pnlD = New System.Windows.Forms.Panel()
@@ -44,10 +45,10 @@ Partial Class GuestScreen
         Me.txtQuestion = New System.Windows.Forms.Label()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.txtWinningStrap = New System.Windows.Forms.Label()
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlD.SuspendLayout()
         Me.pnlB.SuspendLayout()
@@ -57,26 +58,23 @@ Partial Class GuestScreen
         Me.pnlStrap.SuspendLayout()
         Me.SuspendLayout()
         '
-        'picVO
+        'picLifeline2
         '
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
-        Me.picVO.Location = New System.Drawing.Point(680, 11)
-        Me.picVO.Name = "picVO"
-        Me.picVO.Size = New System.Drawing.Size(94, 65)
-        Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picVO.TabIndex = 76
-        Me.picVO.TabStop = False
+        Me.picLifeline2.Location = New System.Drawing.Point(680, 11)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 76
+        Me.picLifeline2.TabStop = False
         '
-        'picSW
+        'picLifeline1
         '
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSW.Location = New System.Drawing.Point(580, 11)
-        Me.picSW.Name = "picSW"
-        Me.picSW.Size = New System.Drawing.Size(94, 65)
-        Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picSW.TabIndex = 70
-        Me.picSW.TabStop = False
-        Me.picSW.Visible = False
+        Me.picLifeline1.Location = New System.Drawing.Point(580, 11)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 70
+        Me.picLifeline1.TabStop = False
         '
         'txtATAd
         '
@@ -130,25 +128,23 @@ Partial Class GuestScreen
         Me.txtATAa.TabIndex = 72
         Me.txtATAa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'picPO
+        'picLifeline3
         '
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
-        Me.picPO.Location = New System.Drawing.Point(780, 11)
-        Me.picPO.Name = "picPO"
-        Me.picPO.Size = New System.Drawing.Size(94, 65)
-        Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPO.TabIndex = 71
-        Me.picPO.TabStop = False
+        Me.picLifeline3.Location = New System.Drawing.Point(780, 11)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 71
+        Me.picLifeline3.TabStop = False
         '
-        'pic50
+        'picLifeline4
         '
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
-        Me.pic50.Location = New System.Drawing.Point(880, 11)
-        Me.pic50.Name = "pic50"
-        Me.pic50.Size = New System.Drawing.Size(94, 65)
-        Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic50.TabIndex = 69
-        Me.pic50.TabStop = False
+        Me.picLifeline4.Location = New System.Drawing.Point(880, 11)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 69
+        Me.picLifeline4.TabStop = False
         '
         'lblTime
         '
@@ -175,7 +171,7 @@ Partial Class GuestScreen
         '
         'pnlD
         '
-        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
         Me.pnlD.Location = New System.Drawing.Point(640, 651)
@@ -192,12 +188,11 @@ Partial Class GuestScreen
         Me.txtD.Name = "txtD"
         Me.txtD.Size = New System.Drawing.Size(476, 46)
         Me.txtD.TabIndex = 19
-        Me.txtD.Text = "D:"
         Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlB
         '
-        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
         Me.pnlB.Location = New System.Drawing.Point(640, 592)
@@ -214,12 +209,11 @@ Partial Class GuestScreen
         Me.txtB.Name = "txtB"
         Me.txtB.Size = New System.Drawing.Size(476, 45)
         Me.txtB.TabIndex = 19
-        Me.txtB.Text = "B:"
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlC
         '
-        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
         Me.pnlC.Location = New System.Drawing.Point(0, 651)
@@ -236,12 +230,11 @@ Partial Class GuestScreen
         Me.txtC.Name = "txtC"
         Me.txtC.Size = New System.Drawing.Size(476, 46)
         Me.txtC.TabIndex = 18
-        Me.txtC.Text = "C:"
         Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlA
         '
-        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
         Me.pnlA.Location = New System.Drawing.Point(0, 592)
@@ -258,12 +251,11 @@ Partial Class GuestScreen
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(476, 45)
         Me.txtA.TabIndex = 17
-        Me.txtA.Text = "A:"
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 492)
@@ -284,7 +276,7 @@ Partial Class GuestScreen
         '
         'pnlStrap
         '
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
         Me.pnlStrap.Location = New System.Drawing.Point(-8, 453)
@@ -315,25 +307,26 @@ Partial Class GuestScreen
         Me.Controls.Add(Me.pnlC)
         Me.Controls.Add(Me.pnlA)
         Me.Controls.Add(Me.picQuestion)
-        Me.Controls.Add(Me.picVO)
-        Me.Controls.Add(Me.picSW)
+        Me.Controls.Add(Me.picLifeline2)
+        Me.Controls.Add(Me.picLifeline1)
         Me.Controls.Add(Me.txtATAd)
         Me.Controls.Add(Me.txtATAc)
         Me.Controls.Add(Me.txtATAb)
         Me.Controls.Add(Me.txtATAa)
-        Me.Controls.Add(Me.picPO)
-        Me.Controls.Add(Me.pic50)
+        Me.Controls.Add(Me.picLifeline3)
+        Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlStrap)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "GuestScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Guest Screen"
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlD.ResumeLayout(False)
         Me.pnlB.ResumeLayout(False)
@@ -345,14 +338,14 @@ Partial Class GuestScreen
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents picVO As PictureBox
-    Friend WithEvents picSW As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents txtATAd As TextBox
     Friend WithEvents txtATAc As TextBox
     Friend WithEvents txtATAb As TextBox
     Friend WithEvents txtATAa As TextBox
-    Friend WithEvents picPO As PictureBox
-    Friend WithEvents pic50 As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents lblTime As Label
     Friend WithEvents picTree As PictureBox
     Friend WithEvents pnlD As Panel

@@ -1,8 +1,14 @@
 ﻿Public Class Game
 
+    Public Shared CurrentProfile As New Profile
+    Public Shared TotalLifelines As Integer
+
     ' Game info variables
     Public Shared gamemode As Integer = 0
     Public Shared level As Integer = 0
+    Public Shared firstQuestion As Boolean = True
+    Public Shared intoCommercials As Boolean = False
+    Public Shared walkaway As Boolean = False
     Public Shared varCurrent As String = "0"
     Public Shared varCorrect As String = "0"
     Public Shared varWrong As String = "0"
@@ -259,28 +265,24 @@
                 SetValues()
                 ControlPanel.btnUnlockSwitch.Text = "RISK MODE OFF"
                 ControlPanel.btnUnlockSwitch.BackColor = Color.Orange
-                ControlPanel.btnSwitch.Enabled = False
-                ControlPanel.chkSwitch.Enabled = False
-                HostScreen.picSW.Visible = False
-                GuestScreen.picSW.Visible = False
-                TVControlPnl.picSW.Visible = False
             Case 1      ' Change to risk mode
                 gamemode = 1
                 SetValues()
-                ControlPanel.intSound += 1
 
-                With ControlPanel.snd
-                    .Name = "SOUND" & ControlPanel.intSound
-                    .Play(9, False, 1000)
+                Dim enable As New WMPLib.WindowsMediaPlayer
+                With enable
+                    .URL = Sounds.SoundsPath + Profile.Options.snd_RiskModeActive
+                    .controls.play()
                 End With
+
                 ControlPanel.btnUnlockSwitch.Text = "RISK MODE ON"
                 ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
-                ControlPanel.btnSwitch.Enabled = True
-                ControlPanel.chkSwitch.Enabled = True
-                HostScreen.picSW.Visible = True
-                GuestScreen.picSW.Visible = True
-                TVControlPnl.picSW.Visible = True
         End Select
+
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
     End Sub
 
     Public Shared Sub SetValues()

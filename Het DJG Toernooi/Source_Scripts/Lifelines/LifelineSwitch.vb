@@ -1,70 +1,68 @@
-﻿Imports System.Drawing
-
-Public Class LifelineSwitch
-    Dim act As Integer = 0
-    Public Sub LifelineUse1()
+﻿Public Class LifelineSwitch
+    Private Shared act As Integer = 0
+    Public Shared Sub LifelineUse1()
         If act = 0 Then
-            TVControlPnl.picLifelineUse.Image = My.Resources.lifeline_2
+            With Sounds.sndLifeline1
+                .URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_Activate
+                .controls.play()
+            End With
+
+            TVControlPnl.picLifelineUse.Image = My.Resources.Resources.ll_switch
             TVControlPnl.picLifelineUse.Visible = True
             TVControlPnl.grpATA.Visible = False
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(9, False, 1000)
-            End With
-            HostScreen.lblSwitchUsed.ForeColor = Color.Cyan
             HostScreen.pnlAnswer.BackColor = Color.LightGray
             act = 1
+
+            ControlPanel.txtHostMessages.AppendText("SWITCH ACTIVATED." + Environment.NewLine)
+            HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "SWITCH ACTIVATED."
         ElseIf act = 1 Then
             Dim cor_seq As New WMPLib.WindowsMediaPlayer
-            cor_seq.URL = "Sounds\stq_reveal_correct_answer.mp3"
+            cor_seq.URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_ShowCorrect
             cor_seq.controls.play()
 
             TVControlPnl.tmrFlash.Start()
             If ControlPanel.lblAnswer.Text = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green
-                HostScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-                GuestScreen.pnlA.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
             End If
             If ControlPanel.lblAnswer.Text = "B" Then
                 ControlPanel.txtB.BackColor = Color.Green
-                HostScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-                GuestScreen.pnlB.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
             End If
             If ControlPanel.lblAnswer.Text = "C" Then
                 ControlPanel.txtC.BackColor = Color.Green
-                HostScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
-                GuestScreen.pnlC.BackgroundImage = My.Resources.Correct_Answer_Fill_l
+                HostScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
             End If
             If ControlPanel.lblAnswer.Text = "D" Then
                 ControlPanel.txtD.BackColor = Color.Green
-                HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
-                HostScreen.pnlD.BackgroundImage = My.Resources.Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
             End If
             act = 2
         ElseIf act = 2 Then
-            ControlPanel.intSound += 1
-
-            With ControlPanel.snd
-                .Name = "SOUND" & ControlPanel.intSound
-                .Play(10, False, 1000)
+            With Sounds.sndLifeline2
+                .URL = Sounds.SoundsPath + Profile.Options.snd_Switch0_Clear
+                .controls.play()
             End With
+
             TVControlPnl.grpATA.Visible = False
-            TVControlPnl.pnlQuestion.Visible = False
+            ControlPanel.chkShowQuestion.Checked = False
             TVControlPnl.tmrFlash.Stop()
-            TVControlPnl.picA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlA.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources.Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources.Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources.Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""
             ControlPanel.txtB.Text = ""
@@ -84,21 +82,18 @@ Public Class LifelineSwitch
             ControlPanel.txtB.BackColor = SystemColors.Control
             ControlPanel.txtC.BackColor = SystemColors.Control
             ControlPanel.txtD.BackColor = SystemColors.Control
-            ControlPanel.btnSwitch.Enabled = False
+            ControlPanel.btnLifeline4.Enabled = False
             act = 0
             Question.act = 0
             reset()
         End If
     End Sub
 
-    Public Sub reset()
+    Private Shared Sub reset()
         TVControlPnl.picLifelineUse.Visible = False
         act = 0
-        HostScreen.picSW.Image = My.Resources.lifeline_2_used
-        GuestScreen.picSW.Image = My.Resources.lifeline_2_used
-        TVControlPnl.picSW.Image = My.Resources.lifeline_2_used
-        ControlPanel.chkSwitch.Checked = False
-        ControlPanel.btnSwitch.Enabled = False
+
+        LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
     End Sub
 
 End Class

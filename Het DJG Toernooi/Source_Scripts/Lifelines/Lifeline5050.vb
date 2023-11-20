@@ -1,8 +1,6 @@
-﻿Imports System.Drawing
+﻿Public Class Lifeline5050
 
-Public Class Lifeline5050
-
-    Public Sub LifelineUse1()
+    Public Shared Sub LifelineUse1()
 
         ControlPanel.txtA.BackColor = Color.Red
         ControlPanel.txtB.BackColor = Color.Red
@@ -20,13 +18,6 @@ Public Class Lifeline5050
         TVControlPnl.txtB.Text = ""
         TVControlPnl.txtC.Text = ""
         TVControlPnl.txtD.Text = ""
-        HostScreen.lbl5050Used.ForeColor = Color.Cyan
-
-        TVControlPnl.pic50.Image = My.Resources.lifeline_1_used
-        HostScreen.pic50.Image = My.Resources.lifeline_1_used
-        GuestScreen.pic50.Image = My.Resources.lifeline_1_used
-        ControlPanel.btn5050.Enabled = False
-        ControlPanel.chk5050.Checked = False
 
         If ControlPanel.lblAnswer.Text = "A" Then
             Dim rnd As New Random
@@ -153,5 +144,15 @@ Public Class Lifeline5050
             ControlPanel.txtD.Text = ""
             ControlPanel.txtD.BackColor = SystemColors.Control
         End If
+
+        LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
+
+        ControlPanel.txtHostMessages.AppendText("50:50 ACTIVATED." + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "50:50 ACTIVATED."
+
+        With Sounds.sndLifeline1
+            .URL = Sounds.SoundsPath + Profile.Options.snd_5050
+            .controls.play()
+        End With
     End Sub
 End Class

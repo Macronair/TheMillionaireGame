@@ -20,12 +20,10 @@ namespace Millionaire.Windows.Question_Editor
         {
             string levelType;
             SqlCommand cmd;
-
-            if (txtLevel.Text == "Level 1 (q1-5)")
+            if (radRegularQuestion.Checked)
             {
-                levelType = "Lvl1";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level1 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
+                string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -33,67 +31,15 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
-            else if (txtLevel.Text == "Level 2 (q6-10)")
+            else if (radFastestFinger.Checked)
             {
-                levelType = "Lvl2";
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level2 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
-                cmd = new SqlCommand(str, QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", levelType);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.ExecuteNonQuery();
-                QEditor.c.Close();
-            }
-            else if (txtLevel.Text == "Level 3 (q11-14)")
-            {
-                levelType = "Lvl3";
-                QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level3 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
-                cmd = new SqlCommand(str, QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", levelType);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.ExecuteNonQuery();
-                QEditor.c.Close();
-            }
-            else if (txtLevel.Text == "Level 4 (q15)")
-            {
-                levelType = "Lvl4";
-                QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level4 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
-                cmd = new SqlCommand(str, QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", levelType);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.ExecuteNonQuery();
-                QEditor.c.Close();
-            }
-            else if (txtLevel.Text == "Fastest Finger Round")
-            {
-                levelType = "Lvl0";
-                QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions_Level0 (Question, A, B, C, D, CorrectAnswer, Type, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Type, @Note)");
+                string str = String.Format(@"INSERT INTO fff_questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -101,15 +47,15 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
-                cmd.Parameters.AddWithValue("@Type", levelType);
+                cmd.Parameters.AddWithValue("@Level", 0);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
             }
             else
             {
-                Console.WriteLine("[{0}] Error while completing operation: Level type is invalid.", DateTime.Now);
-                MessageBox.Show("Level type is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine("[{0}] Error while completing operation: Question type is invalid.", DateTime.Now);
+                MessageBox.Show("Question type is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             _qe.UpdateDB();
@@ -124,7 +70,8 @@ namespace Millionaire.Windows.Question_Editor
             txtC.Text = "";
             txtD.Text = "";
             txtCorrect.Text = "";
-            txtLevel.Text = "";
+            trkQuestionLevel.Value = 1;
+            lblQuestionLevel.Text = "1";
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -135,20 +82,6 @@ namespace Millionaire.Windows.Question_Editor
         private void frmQuestionAdd_Load(object sender, EventArgs e)
         {
 
-        }
-
-        private void txtLevel_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (txtLevel.Text == "Fastest Finger Round")
-            {
-                txtCorrect.Visible = false;
-                pnlFFFAnswer.Visible = true;
-            }
-            else
-            {
-                txtCorrect.Visible = true;
-                pnlFFFAnswer.Visible = false;
-            }
         }
 
         private void btnFFFA_Click(object sender, EventArgs e)
@@ -209,13 +142,61 @@ namespace Millionaire.Windows.Question_Editor
             fff_answer = 0;
             btnReset.Enabled = false;
         }
-    }
 
-    public class Edits
-    {
-        public static void Remove(int Id)
+        private void txtQuestion_TextChanged(object sender, EventArgs e)
         {
+            lblQuestion.Text = txtQuestion.Text;
+        }
 
+        private void txtA_TextChanged(object sender, EventArgs e)
+        {
+            lblA.Text = "A: " + txtA.Text;
+        }
+
+        private void txtB_TextChanged(object sender, EventArgs e)
+        {
+            lblB.Text = "B: " + txtB.Text;
+        }
+
+        private void txtC_TextChanged(object sender, EventArgs e)
+        {
+            lblC.Text = "C: " + txtC.Text;
+        }
+
+        private void txtD_TextChanged(object sender, EventArgs e)
+        {
+            lblD.Text = "D: " + txtD.Text;
+        }
+
+        private void trkQuestionLevel_Scroll(object sender, EventArgs e)
+        {
+            lblQuestionLevel.Text = trkQuestionLevel.Value.ToString();
+        }
+
+        private void radFastestFinger_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radFastestFinger.Checked)
+            {
+                txtCorrect.Visible = false;
+                pnlFFFAnswer.Visible = true;
+
+                trkQuestionLevel.Visible = false;
+                lblQuestionLevel.Visible = false;
+                lblQuestionLevelText.Visible = false;
+            }
+        }
+
+        private void radRegularQuestion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radRegularQuestion.Checked)
+            {
+                txtCorrect.Visible = true;
+                pnlFFFAnswer.Visible = false;
+
+                trkQuestionLevel.Visible = true;
+                lblQuestionLevel.Visible = true;
+                lblQuestionLevelText.Visible = true;
+            }
         }
     }
 }

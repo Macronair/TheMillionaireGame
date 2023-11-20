@@ -6,7 +6,6 @@ namespace Millionaire.Windows.Question_Editor
 {
     public partial class frmEditQuestion : Form
     {
-
         int fff_answer = 0;
 
         private readonly QEditor _qe;
@@ -19,74 +18,36 @@ namespace Millionaire.Windows.Question_Editor
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            int level = Convert.ToInt16(txtLevel.Text);
+
             SqlCommand cmd;
             QEditor.c.Open();
-            if (txtLevel.Text == "Lvl1")
+            if (level == 0)
             {
-                cmd = new SqlCommand("UPDATE questions_Level1 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (txtLevel.Text == "Lvl2")
-            {
-                cmd = new SqlCommand("UPDATE questions_Level2 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (txtLevel.Text == "Lvl3")
-            {
-                cmd = new SqlCommand("UPDATE questions_Level3 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (txtLevel.Text == "Lvl4")
-            {
-                cmd = new SqlCommand("UPDATE questions_Level4 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
-                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
-                cmd.Parameters.AddWithValue("@A", txtA.Text);
-                cmd.Parameters.AddWithValue("@B", txtB.Text);
-                cmd.Parameters.AddWithValue("@C", txtC.Text);
-                cmd.Parameters.AddWithValue("@D", txtD.Text);
-                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
-                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
-            }
-            else if (txtLevel.Text == "Lvl0")
-            {
-                cmd = new SqlCommand("UPDATE questions_Level0 SET Question=@Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Type = @Type,Note = @Note WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE fff_questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Level = @Level,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
-                cmd.Parameters.AddWithValue("@Type", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
+                cmd.Parameters.AddWithValue("@Note", txtNote.Text);
+                cmd.Parameters.AddWithValue("@Id", txtId.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else if (level >= 1)
+            {
+                cmd = new SqlCommand("UPDATE questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Level = @Level,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
+                cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
+                cmd.Parameters.AddWithValue("@A", txtA.Text);
+                cmd.Parameters.AddWithValue("@B", txtB.Text);
+                cmd.Parameters.AddWithValue("@C", txtC.Text);
+                cmd.Parameters.AddWithValue("@D", txtD.Text);
+                cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
+                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
                 cmd.ExecuteNonQuery();
@@ -99,16 +60,24 @@ namespace Millionaire.Windows.Question_Editor
 
         private void frmEditQuestion_Load(object sender, EventArgs e)
         {
-            if (txtLevel.Text == "Lvl0")
+            if (txtLevel.Text == "0")
             {
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
                 btnReset.Enabled = true;
+
+                trkQuestionLevel.Visible = false;
+                lblQuestionLevel.Visible = false;
+                lblQuestionLevelText.Visible = false;
             }
             else
             {
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;
+
+                trkQuestionLevel.Visible = true;
+                lblQuestionLevel.Visible = true;
+                lblQuestionLevelText.Visible = true;
             }
         }
 
@@ -134,7 +103,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 lblAnswer.Text = "";
             }
-            
+
             lblAnswer.Text = lblAnswer.Text + "A";
             btnFFFA.Enabled = false;
             btnReset.Enabled = true;
@@ -198,6 +167,36 @@ namespace Millionaire.Windows.Question_Editor
             {
                 btnSave.Enabled = true;
             }
+        }
+
+        private void txtQuestion_TextChanged(object sender, EventArgs e)
+        {
+            lblQuestion.Text = txtQuestion.Text;
+        }
+
+        private void txtA_TextChanged(object sender, EventArgs e)
+        {
+            lblA.Text = "A: " + txtA.Text;
+        }
+
+        private void txtB_TextChanged(object sender, EventArgs e)
+        {
+            lblB.Text = "B: " + txtB.Text;
+        }
+
+        private void txtC_TextChanged(object sender, EventArgs e)
+        {
+            lblC.Text = "C: " + txtC.Text;
+        }
+
+        private void txtD_TextChanged(object sender, EventArgs e)
+        {
+            lblD.Text = "D: " + txtD.Text;
+        }
+
+        private void trkQuestionLevel_Scroll(object sender, EventArgs e)
+        {
+            lblQuestionLevel.Text = trkQuestionLevel.Value.ToString();
         }
     }
 }

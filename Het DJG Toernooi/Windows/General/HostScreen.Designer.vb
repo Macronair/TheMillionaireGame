@@ -39,13 +39,9 @@ Partial Class HostScreen
         Me.lblQLeft = New System.Windows.Forms.Label()
         Me.pnlAnswer = New System.Windows.Forms.Panel()
         Me.lblAnswer = New System.Windows.Forms.Label()
-        Me.lbl5050Used = New System.Windows.Forms.Label()
-        Me.lblPlusOneUsed = New System.Windows.Forms.Label()
-        Me.lblSwitchUsed = New System.Windows.Forms.Label()
         Me.lblExplainRules = New System.Windows.Forms.Label()
         Me.lblWalkedAway = New System.Windows.Forms.Label()
         Me.lblTime = New System.Windows.Forms.Label()
-        Me.lblVoteUsed = New System.Windows.Forms.Label()
         Me.txtATAd = New System.Windows.Forms.TextBox()
         Me.txtATAc = New System.Windows.Forms.TextBox()
         Me.txtATAb = New System.Windows.Forms.TextBox()
@@ -61,10 +57,10 @@ Partial Class HostScreen
         Me.txtA = New System.Windows.Forms.Label()
         Me.picQuestion = New System.Windows.Forms.Panel()
         Me.txtQuestion = New System.Windows.Forms.Label()
-        Me.picVO = New System.Windows.Forms.PictureBox()
-        Me.picSW = New System.Windows.Forms.PictureBox()
-        Me.picPO = New System.Windows.Forms.PictureBox()
-        Me.pic50 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.picTree = New System.Windows.Forms.PictureBox()
         Me.txtWinnings = New System.Windows.Forms.Label()
         Me.pnlStrap = New System.Windows.Forms.Panel()
@@ -85,10 +81,10 @@ Partial Class HostScreen
         Me.pnlC.SuspendLayout()
         Me.pnlA.SuspendLayout()
         Me.picQuestion.SuspendLayout()
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
         Me.SuspendLayout()
@@ -106,9 +102,9 @@ Partial Class HostScreen
         'picCorrect
         '
         Me.picCorrect.Image = CType(resources.GetObject("picCorrect.Image"), System.Drawing.Image)
-        Me.picCorrect.Location = New System.Drawing.Point(154, 10)
+        Me.picCorrect.Location = New System.Drawing.Point(153, 9)
         Me.picCorrect.Name = "picCorrect"
-        Me.picCorrect.Size = New System.Drawing.Size(34, 31)
+        Me.picCorrect.Size = New System.Drawing.Size(31, 31)
         Me.picCorrect.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picCorrect.TabIndex = 17
         Me.picCorrect.TabStop = False
@@ -137,9 +133,9 @@ Partial Class HostScreen
         'picWrong
         '
         Me.picWrong.Image = CType(resources.GetObject("picWrong.Image"), System.Drawing.Image)
-        Me.picWrong.Location = New System.Drawing.Point(154, 7)
+        Me.picWrong.Location = New System.Drawing.Point(153, 9)
         Me.picWrong.Name = "picWrong"
-        Me.picWrong.Size = New System.Drawing.Size(36, 38)
+        Me.picWrong.Size = New System.Drawing.Size(31, 31)
         Me.picWrong.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picWrong.TabIndex = 19
         Me.picWrong.TabStop = False
@@ -168,9 +164,9 @@ Partial Class HostScreen
         'picCurrent
         '
         Me.picCurrent.Image = CType(resources.GetObject("picCurrent.Image"), System.Drawing.Image)
-        Me.picCurrent.Location = New System.Drawing.Point(161, 10)
+        Me.picCurrent.Location = New System.Drawing.Point(153, 9)
         Me.picCurrent.Name = "picCurrent"
-        Me.picCurrent.Size = New System.Drawing.Size(27, 31)
+        Me.picCurrent.Size = New System.Drawing.Size(31, 31)
         Me.picCurrent.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picCurrent.TabIndex = 18
         Me.picCurrent.TabStop = False
@@ -200,7 +196,7 @@ Partial Class HostScreen
         Me.lblDrop.AutoSize = True
         Me.lblDrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblDrop.ForeColor = System.Drawing.Color.Black
-        Me.lblDrop.Location = New System.Drawing.Point(9, 13)
+        Me.lblDrop.Location = New System.Drawing.Point(9, 12)
         Me.lblDrop.Name = "lblDrop"
         Me.lblDrop.Size = New System.Drawing.Size(25, 25)
         Me.lblDrop.TabIndex = 16
@@ -219,9 +215,9 @@ Partial Class HostScreen
         'picQLeft
         '
         Me.picQLeft.Image = CType(resources.GetObject("picQLeft.Image"), System.Drawing.Image)
-        Me.picQLeft.Location = New System.Drawing.Point(161, 9)
+        Me.picQLeft.Location = New System.Drawing.Point(153, 9)
         Me.picQLeft.Name = "picQLeft"
-        Me.picQLeft.Size = New System.Drawing.Size(27, 31)
+        Me.picQLeft.Size = New System.Drawing.Size(31, 31)
         Me.picQLeft.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picQLeft.TabIndex = 18
         Me.picQLeft.TabStop = False
@@ -231,7 +227,7 @@ Partial Class HostScreen
         Me.lblQLeft.AutoSize = True
         Me.lblQLeft.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblQLeft.ForeColor = System.Drawing.Color.White
-        Me.lblQLeft.Location = New System.Drawing.Point(10, 13)
+        Me.lblQLeft.Location = New System.Drawing.Point(9, 12)
         Me.lblQLeft.Name = "lblQLeft"
         Me.lblQLeft.Size = New System.Drawing.Size(25, 25)
         Me.lblQLeft.TabIndex = 16
@@ -256,39 +252,6 @@ Partial Class HostScreen
         Me.lblAnswer.Size = New System.Drawing.Size(25, 25)
         Me.lblAnswer.TabIndex = 0
         Me.lblAnswer.Text = "1"
-        '
-        'lbl5050Used
-        '
-        Me.lbl5050Used.AutoSize = True
-        Me.lbl5050Used.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl5050Used.ForeColor = System.Drawing.Color.Black
-        Me.lbl5050Used.Location = New System.Drawing.Point(624, 81)
-        Me.lbl5050Used.Name = "lbl5050Used"
-        Me.lbl5050Used.Size = New System.Drawing.Size(147, 24)
-        Me.lbl5050Used.TabIndex = 20
-        Me.lbl5050Used.Text = "50:50 USED"
-        '
-        'lblPlusOneUsed
-        '
-        Me.lblPlusOneUsed.AutoSize = True
-        Me.lblPlusOneUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPlusOneUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblPlusOneUsed.Location = New System.Drawing.Point(659, 103)
-        Me.lblPlusOneUsed.Name = "lblPlusOneUsed"
-        Me.lblPlusOneUsed.Size = New System.Drawing.Size(112, 24)
-        Me.lblPlusOneUsed.TabIndex = 21
-        Me.lblPlusOneUsed.Text = "+1 USED"
-        '
-        'lblSwitchUsed
-        '
-        Me.lblSwitchUsed.AutoSize = True
-        Me.lblSwitchUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSwitchUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblSwitchUsed.Location = New System.Drawing.Point(594, 124)
-        Me.lblSwitchUsed.Name = "lblSwitchUsed"
-        Me.lblSwitchUsed.Size = New System.Drawing.Size(177, 24)
-        Me.lblSwitchUsed.TabIndex = 22
-        Me.lblSwitchUsed.Text = "SWITCH USED"
         '
         'lblExplainRules
         '
@@ -324,17 +287,6 @@ Partial Class HostScreen
         Me.lblTime.Text = "30"
         Me.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.lblTime.Visible = False
-        '
-        'lblVoteUsed
-        '
-        Me.lblVoteUsed.AutoSize = True
-        Me.lblVoteUsed.Font = New System.Drawing.Font("Copperplate Gothic Bold", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblVoteUsed.ForeColor = System.Drawing.Color.Black
-        Me.lblVoteUsed.Location = New System.Drawing.Point(625, 144)
-        Me.lblVoteUsed.Name = "lblVoteUsed"
-        Me.lblVoteUsed.Size = New System.Drawing.Size(145, 24)
-        Me.lblVoteUsed.TabIndex = 33
-        Me.lblVoteUsed.Text = "VOTE USED"
         '
         'txtATAd
         '
@@ -401,7 +353,7 @@ Partial Class HostScreen
         '
         'pnlD
         '
-        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
         Me.pnlD.Location = New System.Drawing.Point(640, 651)
@@ -418,12 +370,11 @@ Partial Class HostScreen
         Me.txtD.Name = "txtD"
         Me.txtD.Size = New System.Drawing.Size(476, 46)
         Me.txtD.TabIndex = 19
-        Me.txtD.Text = "D:"
         Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlB
         '
-        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
         Me.pnlB.Location = New System.Drawing.Point(640, 592)
@@ -436,16 +387,15 @@ Partial Class HostScreen
         Me.txtB.BackColor = System.Drawing.Color.Transparent
         Me.txtB.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtB.ForeColor = System.Drawing.Color.White
-        Me.txtB.Location = New System.Drawing.Point(41, 6)
+        Me.txtB.Location = New System.Drawing.Point(41, 5)
         Me.txtB.Name = "txtB"
-        Me.txtB.Size = New System.Drawing.Size(476, 45)
+        Me.txtB.Size = New System.Drawing.Size(476, 46)
         Me.txtB.TabIndex = 19
-        Me.txtB.Text = "B:"
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlC
         '
-        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
         Me.pnlC.Location = New System.Drawing.Point(0, 651)
@@ -462,12 +412,11 @@ Partial Class HostScreen
         Me.txtC.Name = "txtC"
         Me.txtC.Size = New System.Drawing.Size(476, 46)
         Me.txtC.TabIndex = 18
-        Me.txtC.Text = "C:"
         Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'pnlA
         '
-        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
         Me.pnlA.Location = New System.Drawing.Point(0, 592)
@@ -480,16 +429,15 @@ Partial Class HostScreen
         Me.txtA.BackColor = System.Drawing.Color.Transparent
         Me.txtA.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtA.ForeColor = System.Drawing.Color.White
-        Me.txtA.Location = New System.Drawing.Point(123, 6)
+        Me.txtA.Location = New System.Drawing.Point(122, 5)
         Me.txtA.Name = "txtA"
-        Me.txtA.Size = New System.Drawing.Size(476, 45)
+        Me.txtA.Size = New System.Drawing.Size(476, 46)
         Me.txtA.TabIndex = 17
-        Me.txtA.Text = "A:"
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 492)
@@ -508,46 +456,41 @@ Partial Class HostScreen
         Me.txtQuestion.TabIndex = 13
         Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picVO
+        'picLifeline2
         '
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
-        Me.picVO.Location = New System.Drawing.Point(680, 9)
-        Me.picVO.Name = "picVO"
-        Me.picVO.Size = New System.Drawing.Size(94, 65)
-        Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picVO.TabIndex = 44
-        Me.picVO.TabStop = False
+        Me.picLifeline2.Location = New System.Drawing.Point(680, 9)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 44
+        Me.picLifeline2.TabStop = False
         '
-        'picSW
+        'picLifeline1
         '
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSW.Location = New System.Drawing.Point(580, 9)
-        Me.picSW.Name = "picSW"
-        Me.picSW.Size = New System.Drawing.Size(94, 65)
-        Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picSW.TabIndex = 29
-        Me.picSW.TabStop = False
-        Me.picSW.Visible = False
+        Me.picLifeline1.Location = New System.Drawing.Point(580, 9)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 29
+        Me.picLifeline1.TabStop = False
         '
-        'picPO
+        'picLifeline3
         '
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
-        Me.picPO.Location = New System.Drawing.Point(780, 9)
-        Me.picPO.Name = "picPO"
-        Me.picPO.Size = New System.Drawing.Size(94, 65)
-        Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPO.TabIndex = 30
-        Me.picPO.TabStop = False
+        Me.picLifeline3.Location = New System.Drawing.Point(780, 9)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 30
+        Me.picLifeline3.TabStop = False
         '
-        'pic50
+        'picLifeline4
         '
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
-        Me.pic50.Location = New System.Drawing.Point(880, 9)
-        Me.pic50.Name = "pic50"
-        Me.pic50.Size = New System.Drawing.Size(94, 65)
-        Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic50.TabIndex = 28
-        Me.pic50.TabStop = False
+        Me.picLifeline4.Location = New System.Drawing.Point(880, 9)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(94, 65)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 28
+        Me.picLifeline4.TabStop = False
         '
         'picTree
         '
@@ -571,7 +514,7 @@ Partial Class HostScreen
         '
         'pnlStrap
         '
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
         Me.pnlStrap.Location = New System.Drawing.Point(-8, 492)
@@ -619,21 +562,17 @@ Partial Class HostScreen
         Me.Controls.Add(Me.pnlA)
         Me.Controls.Add(Me.picQuestion)
         Me.Controls.Add(Me.txtExplain)
-        Me.Controls.Add(Me.picVO)
-        Me.Controls.Add(Me.picSW)
+        Me.Controls.Add(Me.picLifeline2)
+        Me.Controls.Add(Me.picLifeline1)
         Me.Controls.Add(Me.txtATAd)
         Me.Controls.Add(Me.txtATAc)
         Me.Controls.Add(Me.txtATAb)
         Me.Controls.Add(Me.txtATAa)
-        Me.Controls.Add(Me.lblVoteUsed)
-        Me.Controls.Add(Me.picPO)
-        Me.Controls.Add(Me.pic50)
+        Me.Controls.Add(Me.picLifeline3)
+        Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblWalkedAway)
         Me.Controls.Add(Me.lblExplainRules)
-        Me.Controls.Add(Me.lblSwitchUsed)
-        Me.Controls.Add(Me.lblPlusOneUsed)
-        Me.Controls.Add(Me.lbl5050Used)
         Me.Controls.Add(Me.pnlAnswer)
         Me.Controls.Add(Me.pnlQLeft)
         Me.Controls.Add(Me.pnlDrop)
@@ -644,6 +583,7 @@ Partial Class HostScreen
         Me.Controls.Add(Me.pnlStrap)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "HostScreen"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Host Screen"
@@ -668,10 +608,10 @@ Partial Class HostScreen
         Me.pnlC.ResumeLayout(False)
         Me.pnlA.ResumeLayout(False)
         Me.picQuestion.ResumeLayout(False)
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
         Me.ResumeLayout(False)
@@ -691,21 +631,17 @@ Partial Class HostScreen
     Friend WithEvents lblQLeft As Label
     Friend WithEvents pnlAnswer As Panel
     Friend WithEvents lblAnswer As Label
-    Friend WithEvents lbl5050Used As Label
-    Friend WithEvents lblPlusOneUsed As Label
-    Friend WithEvents lblSwitchUsed As Label
     Friend WithEvents lblExplainRules As Label
     Friend WithEvents lblWalkedAway As Label
     Friend WithEvents lblTime As Label
-    Friend WithEvents pic50 As PictureBox
-    Friend WithEvents picSW As PictureBox
-    Friend WithEvents picPO As PictureBox
-    Friend WithEvents lblVoteUsed As Label
+    Friend WithEvents picLifeline4 As PictureBox
+    Friend WithEvents picLifeline1 As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
     Friend WithEvents txtATAd As TextBox
     Friend WithEvents txtATAc As TextBox
     Friend WithEvents txtATAb As TextBox
     Friend WithEvents txtATAa As TextBox
-    Friend WithEvents picVO As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
     Friend WithEvents picCorrect As PictureBox
     Friend WithEvents picWrong As PictureBox
     Friend WithEvents picCurrent As PictureBox

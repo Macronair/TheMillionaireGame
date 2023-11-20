@@ -60,10 +60,10 @@ Partial Class TVControlPnl
         Me.txtFFFOrder2 = New System.Windows.Forms.Label()
         Me.pnlFFFOrder1 = New System.Windows.Forms.Panel()
         Me.txtFFFOrder1 = New System.Windows.Forms.Label()
-        Me.picVO = New System.Windows.Forms.PictureBox()
-        Me.picPO = New System.Windows.Forms.PictureBox()
-        Me.picSW = New System.Windows.Forms.PictureBox()
-        Me.pic50 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.lblAmount = New System.Windows.Forms.Label()
         Me.pnlFFFWinner = New System.Windows.Forms.Panel()
@@ -111,10 +111,10 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder3.SuspendLayout()
         Me.pnlFFFOrder2.SuspendLayout()
         Me.pnlFFFOrder1.SuspendLayout()
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
         Me.pnlFFFWinner.SuspendLayout()
         CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -150,7 +150,7 @@ Partial Class TVControlPnl
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_3
+        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_phone
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox1.Name = "PictureBox1"
@@ -233,7 +233,7 @@ Partial Class TVControlPnl
         'pnlTotal
         '
         Me.pnlTotal.Controls.Add(Me.Label1)
-        Me.pnlTotal.Location = New System.Drawing.Point(0, 479)
+        Me.pnlTotal.Location = New System.Drawing.Point(0, 506)
         Me.pnlTotal.Name = "pnlTotal"
         Me.pnlTotal.Size = New System.Drawing.Size(1280, 62)
         Me.pnlTotal.TabIndex = 31
@@ -271,7 +271,7 @@ Partial Class TVControlPnl
         'PictureBox2
         '
         Me.PictureBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.lifeline_4
+        Me.PictureBox2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_audience
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox2.Location = New System.Drawing.Point(13, 62)
         Me.PictureBox2.Name = "PictureBox2"
@@ -296,7 +296,7 @@ Partial Class TVControlPnl
         '
         'picD
         '
-        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.picD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picD.Controls.Add(Me.txtD)
         Me.picD.Location = New System.Drawing.Point(642, 168)
@@ -313,12 +313,11 @@ Partial Class TVControlPnl
         Me.txtD.Name = "txtD"
         Me.txtD.Size = New System.Drawing.Size(476, 46)
         Me.txtD.TabIndex = 19
-        Me.txtD.Text = "D:"
         Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picB
         '
-        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.picB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picB.Controls.Add(Me.txtB)
         Me.picB.Location = New System.Drawing.Point(642, 109)
@@ -335,12 +334,11 @@ Partial Class TVControlPnl
         Me.txtB.Name = "txtB"
         Me.txtB.Size = New System.Drawing.Size(476, 46)
         Me.txtB.TabIndex = 20
-        Me.txtB.Text = "B:"
         Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picC
         '
-        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.picC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picC.Controls.Add(Me.txtC)
         Me.picC.Location = New System.Drawing.Point(0, 168)
@@ -357,12 +355,11 @@ Partial Class TVControlPnl
         Me.txtC.Name = "txtC"
         Me.txtC.Size = New System.Drawing.Size(476, 46)
         Me.txtC.TabIndex = 18
-        Me.txtC.Text = "C:"
         Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picA
         '
-        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_l
+        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
         Me.picA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picA.Controls.Add(Me.txtA)
         Me.picA.Location = New System.Drawing.Point(0, 109)
@@ -379,12 +376,11 @@ Partial Class TVControlPnl
         Me.txtA.Name = "txtA"
         Me.txtA.Size = New System.Drawing.Size(476, 46)
         Me.txtA.TabIndex = 19
-        Me.txtA.Text = "A:"
         Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 9)
@@ -401,7 +397,6 @@ Partial Class TVControlPnl
         Me.txtQuestion.Name = "txtQuestion"
         Me.txtQuestion.Size = New System.Drawing.Size(1016, 82)
         Me.txtQuestion.TabIndex = 13
-        Me.txtQuestion.Text = "txtQuestion" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "txtQuestion"
         Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'picTree
@@ -414,10 +409,10 @@ Partial Class TVControlPnl
         Me.picTree.Controls.Add(Me.pnlFFFOrder3)
         Me.picTree.Controls.Add(Me.pnlFFFOrder2)
         Me.picTree.Controls.Add(Me.pnlFFFOrder1)
-        Me.picTree.Controls.Add(Me.picVO)
-        Me.picTree.Controls.Add(Me.picPO)
-        Me.picTree.Controls.Add(Me.picSW)
-        Me.picTree.Controls.Add(Me.pic50)
+        Me.picTree.Controls.Add(Me.picLifeline1)
+        Me.picTree.Controls.Add(Me.picLifeline2)
+        Me.picTree.Controls.Add(Me.picLifeline4)
+        Me.picTree.Controls.Add(Me.picLifeline3)
         Me.picTree.Location = New System.Drawing.Point(48, -28)
         Me.picTree.Name = "picTree"
         Me.picTree.Size = New System.Drawing.Size(1232, 748)
@@ -437,7 +432,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder4
         '
-        Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder4.Controls.Add(Me.txtFFFOrder4)
         Me.pnlFFFOrder4.Location = New System.Drawing.Point(689, 571)
@@ -459,7 +454,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder3
         '
-        Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder3.Controls.Add(Me.txtFFFOrder3)
         Me.pnlFFFOrder3.Location = New System.Drawing.Point(689, 517)
@@ -481,7 +476,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder2
         '
-        Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder2.Controls.Add(Me.txtFFFOrder2)
         Me.pnlFFFOrder2.Location = New System.Drawing.Point(689, 463)
@@ -503,7 +498,7 @@ Partial Class TVControlPnl
         '
         'pnlFFFOrder1
         '
-        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.Normal_Answer_Fill_r
+        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
         Me.pnlFFFOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlFFFOrder1.Controls.Add(Me.txtFFFOrder1)
         Me.pnlFFFOrder1.Location = New System.Drawing.Point(689, 409)
@@ -523,58 +518,53 @@ Partial Class TVControlPnl
         Me.txtFFFOrder1.Text = "A:"
         Me.txtFFFOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'picVO
+        'picLifeline1
         '
-        Me.picVO.BackColor = System.Drawing.Color.Transparent
-        Me.picVO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_4
-        Me.picVO.Location = New System.Drawing.Point(846, 67)
-        Me.picVO.Name = "picVO"
-        Me.picVO.Size = New System.Drawing.Size(74, 48)
-        Me.picVO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picVO.TabIndex = 3
-        Me.picVO.TabStop = False
+        Me.picLifeline1.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline1.Location = New System.Drawing.Point(846, 67)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 3
+        Me.picLifeline1.TabStop = False
         '
-        'picPO
+        'picLifeline2
         '
-        Me.picPO.BackColor = System.Drawing.Color.Transparent
-        Me.picPO.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_3
-        Me.picPO.Location = New System.Drawing.Point(926, 67)
-        Me.picPO.Name = "picPO"
-        Me.picPO.Size = New System.Drawing.Size(74, 48)
-        Me.picPO.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPO.TabIndex = 2
-        Me.picPO.TabStop = False
+        Me.picLifeline2.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline2.Location = New System.Drawing.Point(926, 67)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 2
+        Me.picLifeline2.TabStop = False
         '
-        'picSW
+        'picLifeline4
         '
-        Me.picSW.BackColor = System.Drawing.Color.Transparent
-        Me.picSW.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
-        Me.picSW.Location = New System.Drawing.Point(1086, 67)
-        Me.picSW.Name = "picSW"
-        Me.picSW.Size = New System.Drawing.Size(74, 48)
-        Me.picSW.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picSW.TabIndex = 1
-        Me.picSW.TabStop = False
-        Me.picSW.Visible = False
+        Me.picLifeline4.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline4.Location = New System.Drawing.Point(1086, 67)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 1
+        Me.picLifeline4.TabStop = False
         '
-        'pic50
+        'picLifeline3
         '
-        Me.pic50.BackColor = System.Drawing.Color.Transparent
-        Me.pic50.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_1
-        Me.pic50.Location = New System.Drawing.Point(1006, 67)
-        Me.pic50.Name = "pic50"
-        Me.pic50.Size = New System.Drawing.Size(74, 48)
-        Me.pic50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.pic50.TabIndex = 0
-        Me.pic50.TabStop = False
+        Me.picLifeline3.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline3.Location = New System.Drawing.Point(1006, 67)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 0
+        Me.picLifeline3.TabStop = False
         '
         'pnlStrap
         '
         Me.pnlStrap.BackColor = System.Drawing.Color.Transparent
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_strap
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlStrap.Controls.Add(Me.lblAmount)
-        Me.pnlStrap.Location = New System.Drawing.Point(0, 546)
+        Me.pnlStrap.Location = New System.Drawing.Point(0, 573)
         Me.pnlStrap.Name = "pnlStrap"
         Me.pnlStrap.Size = New System.Drawing.Size(1280, 83)
         Me.pnlStrap.TabIndex = 28
@@ -589,7 +579,7 @@ Partial Class TVControlPnl
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.Size = New System.Drawing.Size(328, 75)
         Me.lblAmount.TabIndex = 0
-        Me.lblAmount.Text = "200.000"
+        Me.lblAmount.Text = "0"
         Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'pnlFFFWinner
@@ -632,7 +622,7 @@ Partial Class TVControlPnl
         'picLifelineUse
         '
         Me.picLifelineUse.BackColor = System.Drawing.Color.Transparent
-        Me.picLifelineUse.Image = Global.MillionaireGame.My.Resources.Resources.lifeline_2
+        Me.picLifelineUse.Image = Global.MillionaireGame.My.Resources.Resources.ll_switch
         Me.picLifelineUse.Location = New System.Drawing.Point(606, 418)
         Me.picLifelineUse.Name = "picLifelineUse"
         Me.picLifelineUse.Size = New System.Drawing.Size(68, 48)
@@ -950,15 +940,16 @@ Partial Class TVControlPnl
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.pnlFFFPlayers)
         Me.Controls.Add(Me.pnlQuestion)
+        Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
-        Me.Controls.Add(Me.picLifelineUse)
+        Me.Controls.Add(Me.picTree)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "TVControlPnl"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "TV"
@@ -979,10 +970,10 @@ Partial Class TVControlPnl
         Me.pnlFFFOrder3.ResumeLayout(False)
         Me.pnlFFFOrder2.ResumeLayout(False)
         Me.pnlFFFOrder1.ResumeLayout(False)
-        CType(Me.picVO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPO, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picSW, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic50, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
         Me.pnlFFFWinner.ResumeLayout(False)
         Me.pnlFFFWinner.PerformLayout()
@@ -1017,16 +1008,16 @@ Partial Class TVControlPnl
     Friend WithEvents pnlTime As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTime As Label
-    Friend WithEvents pic50 As PictureBox
-    Friend WithEvents picPO As PictureBox
-    Friend WithEvents picSW As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents picLifelineUse As PictureBox
     Friend WithEvents txtQuestion As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents pnlTotal As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents tmrRandomizer As Timer
-    Friend WithEvents picVO As PictureBox
+    Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents lblATA_D As Label
     Friend WithEvents lblATA_B As Label
     Friend WithEvents lblATA_C As Label
