@@ -134,6 +134,7 @@
         picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
         txtD.ForeColor = Color.White
         picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+
         tmrStrap.Stop()
         tmrFlash.Stop()
     End Sub

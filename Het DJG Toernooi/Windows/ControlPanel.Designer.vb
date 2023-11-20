@@ -128,6 +128,7 @@ Partial Class ControlPanel
         Me.btnClearHostMessages = New System.Windows.Forms.Button()
         Me.btnResetGame = New System.Windows.Forms.Button()
         Me.btnStopAudio = New System.Windows.Forms.Button()
+        Me.tmrLifelineUpdate = New System.Windows.Forms.Timer(Me.components)
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -1154,6 +1155,9 @@ Partial Class ControlPanel
         Me.btnStopAudio.Text = "STOP AUDIO"
         Me.btnStopAudio.UseVisualStyleBackColor = False
         '
+        'tmrLifelineUpdate
+        '
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1324,4 +1328,5 @@ Partial Class ControlPanel
     Friend WithEvents CloseToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FastestFingerFirstToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnStopAudio As Button
+    Friend WithEvents tmrLifelineUpdate As Timer
 End Class

@@ -758,8 +758,7 @@ Public Class Question
                 HostScreen.lblQLeft.Text = Game.varQLeft
                 HostScreen.lblWrong.Text = Game.varWrong
                 Question.act = 0
-                UpdateLifelines = New Thread(New ThreadStart(AddressOf LifelinesUpdate))
-                UpdateLifelines.Start()
+                ControlPanel.tmrLifelineUpdate.Start()
             End If
 
         Else        ' On a wrong answer
@@ -854,13 +853,6 @@ Public Class Question
             End If
 
         End If
-    End Sub
-
-    Private Shared Sub LifelinesUpdate()
-        LifelineManager.UnlockLifeline(1)
-        LifelineManager.UnlockLifeline(2)
-        LifelineManager.UnlockLifeline(3)
-        LifelineManager.UnlockLifeline(4)
     End Sub
 
     Public Shared Sub UndoAnswer(ByVal music As Boolean)

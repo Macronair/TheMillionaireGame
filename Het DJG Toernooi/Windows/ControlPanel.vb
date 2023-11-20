@@ -82,6 +82,10 @@ Public Class ControlPanel
     ' When the user changed the current question level by hand.
     Private Sub nmrLevel_ValueChanged(sender As Object, e As EventArgs) Handles nmrLevel.ValueChanged
         Game.ChangeLevel(nmrLevel.Value)
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
     End Sub
 
     ' Button to get a new question from the database.
@@ -741,5 +745,14 @@ Public Class ControlPanel
     Private Sub btnStopAudio_Click(sender As Object, e As EventArgs) Handles btnStopAudio.Click
         Dim stopaudio As New Thread(Sub() Sounds.StopAudio("all", 0))
         stopaudio.Start()
+    End Sub
+
+    Private Sub tmrLifelineUpdate_Tick(sender As Object, e As EventArgs) Handles tmrLifelineUpdate.Tick
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
+
+        tmrLifelineUpdate.Stop()
     End Sub
 End Class
