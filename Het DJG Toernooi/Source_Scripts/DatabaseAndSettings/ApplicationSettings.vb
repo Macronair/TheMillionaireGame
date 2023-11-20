@@ -413,7 +413,7 @@ Public Class Profile
         Options.snd_Lifeline2Ping = "lifeline_2_on.mp3"
         Options.snd_Lifeline3Ping = "lifeline_3_on.mp3"
         Options.snd_Lifeline4Ping = "lifeline_4_on.mp3"
-        Options.snd_RiskModeActive = "lifeline_4_on.mp3"
+        Options.snd_RiskModeActive = "risk_mode.mp3"
         Options.snd_ExplainRules = "game_resume.mp3"
         Options.snd_ToHotSeat = "hello_long.mp3"
         Options.snd_ToHotSeat_LD = "lights_down_classic.mp3"
