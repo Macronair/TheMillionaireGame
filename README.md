@@ -48,58 +48,37 @@ Also there is the option to set when the lifeline(s) become available. These are
 - Risk Mode (When activating Risk Mode, the lifeline becomes available to the contestant)
 
 ### 50:50
-<img src="https://user-images.githubusercontent.com/43847273/134224389-8e6c555d-d539-421f-b2fe-2af17bab13c5.png" alt="drawing" width="100"/>
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/71a05554-885f-45b1-8684-2326e0d825ef" alt="drawing" width="100"/>
+
 Take out two wrong answers and leave one right & wrong answer.
 
-### Plus One / Phone-A-Friend
-<img src="https://user-images.githubusercontent.com/43847273/134224961-a43b1462-3f2b-4575-ac0d-6583f62b37bb.png" alt="drawing" width="100"/>
+### Plus One (Phone-A-Friend)
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/7792b3a8-687d-4057-89a3-86f3fc8f8d8e" alt="drawing" width="100"/>
+
 Ask a friend or other person for help on a question. The contestant has 30 seconds to get an answer.
 
 ### Ask The Audience
-<img src="https://user-images.githubusercontent.com/43847273/134224974-d00f79a1-d538-47be-87fe-27ef6cc720e6.png" alt="drawing" width="100"/>
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/d5be754e-4516-49f1-909c-1b3d77b6e30d" alt="drawing" width="100"/>
+
 Ask the 'virtual' audience for help! (Also possible to set custom results per question in the Question Editor)
 
 ### Switch the Question
-<img src="https://user-images.githubusercontent.com/43847273/134225023-037b27e8-6346-4354-aab7-8e49b6aec46c.png" alt="drawing" width="100"/>
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/b6818568-0b4f-4537-b3a1-1889cc0c16a4" alt="drawing" width="100"/>
+
 When the contestant doesn't like the current question, this lifeline will switch the question for another one on the same level.
 
 ### Double Dip
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/ef1e51ae-95ce-4918-be29-5cf6bb355a3a" alt="drawing" width="100"/>
+
 The contestant gets two chances to give the correct answer. When this lifeline is in use, it is not allowed to walk away.
 
 ### Ask The Host
+<img src="https://github.com/Macronair/TheMillionaireGame/assets/43847273/2f5693a1-9d80-45c4-b5b4-c460f293ba8d" alt="drawing" width="100"/>
+
 Like the name of the lifeline already suggest, ask the present host to give his/her opinion on what the correct answer could be.
 
 ## The Money Tree
-
-**15 - 1.000.000**
-
-14 - 500.000
-
-13 - 250.000
-
-12 - 125.000
-
-11 - 64.000
-
-**10 - 32.000** (When Risk Mode is active, this 2nd safety net is not present)
-
-9 - 16.000
-
-8 - 8.000
-
-7 - 4.000
-
-6 - 2.000
-
-**5 - 1.000**
-
-4 - 750
-
-3 - 500
-
-2 - 250
-
-1 - 100
+![0_tree_0](https://github.com/Macronair/TheMillionaireGame/assets/43847273/d6df607e-3d9a-460f-8142-7b30fcd71640)
 
 ## Video Demo
 You can watch the demo video of 2023 here below:
@@ -108,18 +87,17 @@ You can watch the demo video of 2023 here below:
 
 ## Screenshots
 ### Main overview:
-![Screenshot_1](https://user-images.githubusercontent.com/43847273/134223822-951c5603-050c-4ac0-b000-b3dbf171fa77.png)
+![Schermafbeelding 2023-11-21 224448](https://github.com/Macronair/TheMillionaireGame/assets/43847273/db4cb661-eb36-4cb5-a0cc-332b02385b24)
 ### Options Menu:
+![Schermafbeelding 2023-11-21 224557](https://github.com/Macronair/TheMillionaireGame/assets/43847273/323c4648-3d5b-408c-ac8b-80807dd42794)
 ### Editing the sound cues:
+![Schermafbeelding 2023-11-21 224658](https://github.com/Macronair/TheMillionaireGame/assets/43847273/38b9ecf5-1919-48ad-a354-23008be36af5)
 ### Questions Editor:
-![Screenshot_2](https://user-images.githubusercontent.com/43847273/134223880-4fc9cb37-6084-4744-a260-1d227abfecdf.png)
+![Schermafbeelding 2023-11-21 224805](https://github.com/Macronair/TheMillionaireGame/assets/43847273/71c96aed-3a8e-4b25-bc7e-849704ca0330)
 ### A virtual Fastest Finger First session:
-![Screenshot_3](https://user-images.githubusercontent.com/43847273/134223890-5ec9aff8-88d1-4bbb-afa4-15bbcdd32c25.png)
+![Schermafbeelding 2023-11-21 224958](https://github.com/Macronair/TheMillionaireGame/assets/43847273/a72fba3f-65b8-4975-bede-92500a3dc4fc)
 ### The Fastest FInger First client program:
-### Rules in the middle of a game:
-![Screenshot_4](https://user-images.githubusercontent.com/43847273/134223902-15be2d30-4a35-4ec6-932a-36aa8f8b51fe.png)
-### Contestant winning 32.000:
-![Screenshot_5](https://user-images.githubusercontent.com/43847273/134223910-30d1e2ab-83e9-456f-98f1-a01d477be1b2.png)
+![Schermafbeelding 2023-11-21 225043](https://github.com/Macronair/TheMillionaireGame/assets/43847273/0f539ca6-704b-4598-8868-79b9e05978be)
 
 ## Where to download it?
 You can download one of the releases: 
