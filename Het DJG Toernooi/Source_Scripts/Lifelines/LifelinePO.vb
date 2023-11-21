@@ -55,7 +55,7 @@
             ControlPanel.lblTime.Visible = False
             ControlPanel.tmrTime.Stop()
             plusone = 0
-            TVControlPnl.lblTime.Visible = False
+            TVControlPnl.pnlTime.Visible = False
             ControlPanel.chkLifeline2Unused.Checked = False
             HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
             GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
