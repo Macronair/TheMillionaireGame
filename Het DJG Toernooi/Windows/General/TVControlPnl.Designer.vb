@@ -237,6 +237,7 @@ Partial Class TVControlPnl
         Me.pnlTotal.Name = "pnlTotal"
         Me.pnlTotal.Size = New System.Drawing.Size(1280, 62)
         Me.pnlTotal.TabIndex = 31
+        Me.pnlTotal.Visible = False
         '
         'Label1
         '
@@ -939,13 +940,13 @@ Partial Class TVControlPnl
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.pnlQuestion)
-        Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.pnlFFFPlayers)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog

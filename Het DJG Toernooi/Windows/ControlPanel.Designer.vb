@@ -65,7 +65,6 @@ Partial Class ControlPanel
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTime = New System.Windows.Forms.Label()
         Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
-        Me.tmrResume = New System.Windows.Forms.Timer(Me.components)
         Me.tmrRules = New System.Windows.Forms.Timer(Me.components)
         Me.grpRules = New System.Windows.Forms.GroupBox()
         Me.btnLL4 = New System.Windows.Forms.Button()
@@ -573,10 +572,6 @@ Partial Class ControlPanel
         'tmrTime
         '
         Me.tmrTime.Interval = 1000
-        '
-        'tmrResume
-        '
-        Me.tmrResume.Interval = 900
         '
         'tmrRules
         '
@@ -1268,7 +1263,6 @@ Partial Class ControlPanel
     Friend WithEvents Timer2 As Timer
     Friend WithEvents lblTime As Label
     Friend WithEvents tmrTime As Timer
-    Friend WithEvents tmrResume As Timer
     Friend WithEvents tmrRules As Timer
     Friend WithEvents grpRules As GroupBox
     Friend WithEvents btnRules As Button

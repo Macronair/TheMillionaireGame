@@ -566,9 +566,7 @@ Public Class Question
                 HostScreen.lblQLeft.Text = Game.varQLeft
                 HostScreen.lblWrong.Text = Game.varWrong
                 Question.act = 0
-                ControlPanel.tmrLifelineUpdate.Start()
             End If
-
         Else        ' On a wrong answer
             If LifeLineDouble.chance = 0 Then
                 LifeLineDouble.active = False
@@ -780,7 +778,7 @@ Public Class Question
                 End If
 
                 If StartBedAfterDD = True Then
-                    If Game.level < 4 Then
+                    If Game.level < 5 Then
                         With Sounds.sndQuestion
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q1to5Bed
                             .settings.setMode("Loop", True)
