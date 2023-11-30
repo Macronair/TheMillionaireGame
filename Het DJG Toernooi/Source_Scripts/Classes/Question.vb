@@ -690,30 +690,35 @@ Public Class Question
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 6
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q6Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 7
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q7Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 8
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q8Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 9
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q9Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 10
                         Sounds.sndQuestion.controls.stop()
                         If Game.gamemode = 0 Then
@@ -727,36 +732,42 @@ Public Class Question
                                 .controls.play()
                             End With
                         End If
+                        useMusic = False
                     Case 11
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q11Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 12
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q12Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 13
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q13Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 14
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q14Correct
                             .controls.play()
                         End With
+                        useMusic = False
                     Case 15
                         Sounds.sndQuestion.controls.stop()
                         With Sounds.sndAnswer
                             .URL = Sounds.SoundsPath + Profile.Options.snd_Q15Correct
                             .controls.play()
                         End With
+                        useMusic = False
                 End Select
                 If Game.level > 5 Then
                     Dim stopaudio As New Thread(Sub() Sounds.StopAudio("final", 300))
@@ -855,6 +866,7 @@ Public Class Question
                                 .controls.play()
                             End With
                     End Select
+                    useMusic = False
                 End If
 
                 If Game.level < 5 Then
