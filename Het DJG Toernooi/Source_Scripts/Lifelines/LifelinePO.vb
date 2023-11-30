@@ -32,6 +32,7 @@
             HostScreen.lblTime.Text = "30"
             GuestScreen.lblTime.Text = "30"
             ControlPanel.lblTime.Text = "30"
+            TVControlPnl.lblTime.Text = "30"
             HostScreen.lblTime.Visible = True
             GuestScreen.lblTime.Visible = True
             TVControlPnl.pnlTime.Visible = True
@@ -46,27 +47,22 @@
                 .controls.play()
             End With
             Sounds.sndLifeline2.controls.stop()
-
             Dim continueaudio As New Threading.Thread(Sub() OffsetBeforeCue())
             continueaudio.Start()
 
+            TVControlPnl.pnlTime.Visible = False
             HostScreen.lblTime.Visible = False
             GuestScreen.lblTime.Visible = False
             ControlPanel.lblTime.Visible = False
+
             ControlPanel.tmrTime.Stop()
             plusone = 0
-            TVControlPnl.lblTime.Visible = False
-            ControlPanel.chkLifeline2Unused.Checked = False
-            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
-            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
-            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
-            ControlPanel.btnLifeline2.Enabled = False
 
             LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
         End If
     End Sub
 
-    Shared Sub OffsetBeforeCue()
+    Public Shared Sub OffsetBeforeCue()
         Threading.Thread.Sleep(1000)
         Question.PlayQuestionCue()
     End Sub

@@ -461,25 +461,18 @@ Public Class ControlPanel
             lblTime.Visible = False
             tmrTime.Stop()
             LifelinePO.plusone = 0
-            tmrResume.Start()
-            chkLifeline2Unused.Checked = False
-            HostScreen.picLifeline3.Image = My.Resources.ll_phone_used
-            GuestScreen.picLifeline3.Image = My.Resources.ll_phone_used
-            TVControlPnl.picLifeline2.Image = My.Resources.ll_phone_used
-            btnLifeline2.Enabled = False
+            Dim continueaudio As New Threading.Thread(Sub() LifelinePO.OffsetBeforeCue())
+            continueaudio.Start()
+
+            TVControlPnl.pnlTime.Visible = False
+            HostScreen.lblTime.Visible = False
+            GuestScreen.lblTime.Visible = False
+            lblTime.Visible = False
+
+            LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
         End If
     End Sub
 
-    Private Sub tmrResume_Tick(sender As Object, e As EventArgs) Handles tmrResume.Tick
-        Question.PlayQuestionCue()
-        TVControlPnl.lblTime.Visible = True
-        TVControlPnl.lblTime.Text = "30"
-        lblTime.Text = "30"
-        GuestScreen.lblTime.Text = "30"
-        HostScreen.lblTime.Text = "30"
-        TVControlPnl.pnlTime.Visible = False
-        tmrResume.Stop()
-    End Sub
 
     Private Sub tmrRules_Tick(sender As Object, e As EventArgs) Handles tmrRules.Tick
         Game.SetValues()

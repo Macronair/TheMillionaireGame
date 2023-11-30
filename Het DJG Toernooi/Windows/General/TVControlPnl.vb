@@ -135,6 +135,8 @@
         txtD.ForeColor = Color.White
         picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
 
+        ControlPanel.tmrLifelineUpdate.Start()
+
         tmrStrap.Stop()
         tmrFlash.Stop()
     End Sub

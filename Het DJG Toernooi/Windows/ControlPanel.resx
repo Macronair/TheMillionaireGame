@@ -126,9 +126,6 @@
   <metadata name="tmrTime.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>195, 17</value>
   </metadata>
-  <metadata name="tmrResume.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>292, 17</value>
-  </metadata>
   <metadata name="tmrRules.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>406, 17</value>
   </metadata>
@@ -142,7 +139,7 @@
   <data name="FastestFingerFirstToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAArwAAANICAYAAAAlzjz4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAA3UFJREFUeF7s3XegHFXdh/FJ772SQAgh9EBISOi99957R3oNvXcQQfG1ooBiQwQE
+        DQAACw0B7QfALAAA3UFJREFUeF7s3XegHFXdh/FJ772SQAgh9EBISOi99957R3oNvXcQQfG1ooBiQwQE
         QUEFARUbTQSVXqT3ToBw933O3V2y997fTfbc2ZmdM/P946PkJLtzzmyZJze7M1GpVBIRERERyS1zUERE
         REQkL8xBEREREZG8MAdFRERERPLCHBQRERERyQtzUEREREQkL8xBEREREZG8MAdFRERERPLCHBQRERER
         yQtzUEREREQkL8xBEREREZG8MAdFRERERPLCHBQRERERyQtzUEREREQkL8xBEREREZG8MAdFRERERPLC
@@ -8009,7 +8006,7 @@
   <data name="ChangeBackgroundColorTVToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAgAAAAIACAYAAAD0eNT6AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DwAACw8BkvkDpQAAliNJREFUeF7t/Qm8dEdZ7Y/zdvc5553fzCEBQkJCGGUIYbgBRQEBURwYFATUi8og
+        DQAACw0B7QfALAAAliNJREFUeF7t/Qm8dEdZ7Y/zdvc5553fzCEBQkJCGGUIYbgBRQEBURwYFATUi8og
         4CyoPxVEvagXQQZFROUyiSDgwOAAiBOKgqIyyVXgMiPzEJIASf7/tdrVmz3U3rue2tXdu/s86/P5fpLT
         VWtV17Orap9z3j7d17jLXb56F+yAa6SIPvmZs8DzIkWf/J6XIPrk97wE0Se/5yWIPvk9L0H0ye95CaJP
         /rQ8U+ea6JM/bfCa6JPf8xJEn/yelyD65Pe8BNEnv+cliD75PS9B9MnvebEydS6JPg2WPnhJ9MnveQmi

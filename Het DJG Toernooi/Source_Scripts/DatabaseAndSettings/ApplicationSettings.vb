@@ -441,7 +441,7 @@ Public Class Profile
         Options.snd_ATA_Voting = "ata_vote.mp3"
         Options.snd_ATA_End = "ata_end.mp3"
         Options.snd_P1_Start = "paf_start.mp3"
-        Options.snd_P1_Clock = "pad_clock.mp3"
+        Options.snd_P1_Clock = "paf_countdown.mp3"
         Options.snd_P1_EndEarly = "paf_end_call_early.mp3"
         Options.snd_Double_1stAnswer = "doubledip_start.mp3"
         Options.snd_Double_1stFinal = "doubledip_final1.mp3"
