@@ -13,6 +13,7 @@ When you get the error above (see screenshot), it means that no connection could
 >
 > You can install this using the included installer in the .zip folder, or you can find it in the README.md page/file from this repo.
 
+---
 ### Service 'SQL Server VSS Failed to start' error when installing SQL LocalDB
 ![VSSService](https://github.com/Macronair/TheMillionaireGame/assets/43847273/5eeeef8e-5f2e-4780-bd28-f9e810bc54a6)
 
