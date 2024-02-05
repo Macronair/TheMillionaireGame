@@ -32,6 +32,7 @@ Public Class User
         Game.level = 0
         ControlPanel.nmrLevel.Value = 0
         Game.SetValues()
+        Question.useMusic = False
         Game.walkaway = False
 
         ControlPanel.chkShowQuestion.Checked = False
