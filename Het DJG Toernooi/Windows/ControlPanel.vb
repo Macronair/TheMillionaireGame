@@ -25,6 +25,8 @@ Public Class ControlPanel
 
     Public Shared answer As String
 
+    Dim lifeline_bling As Integer           ' Variable is used to keep track which lifeline is pinged the most recent. Will change if one of the four buttons is pressed.
+
 #Region "Removal candidates"
     ' This piece of code can be removed very soon.
     Public Sub HaltSound()
@@ -506,6 +508,8 @@ Public Class ControlPanel
     Dim ping4 As New WMPLib.WindowsMediaPlayer
 
     Private Sub btnLL1_Click(sender As Object, e As EventArgs) Handles btnLL1.Click
+        lifeline_bling = 1
+
         btnLifeline1.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         HostScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
@@ -516,9 +520,16 @@ Public Class ControlPanel
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline1Ping
             .controls.play()
         End With
+
+        btnLL1.Enabled = False
+        btnLL2.Enabled = False
+        btnLL3.Enabled = False
+        btnLL4.Enabled = False
     End Sub
 
     Private Sub btnLL2_Click(sender As Object, e As EventArgs) Handles btnLL2.Click
+        lifeline_bling = 2
+
         btnLifeline2.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         HostScreen.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
@@ -529,9 +540,16 @@ Public Class ControlPanel
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline2Ping
             .controls.play()
         End With
+
+        btnLL1.Enabled = False
+        btnLL2.Enabled = False
+        btnLL3.Enabled = False
+        btnLL4.Enabled = False
     End Sub
 
     Private Sub btnLL3_Click(sender As Object, e As EventArgs) Handles btnLL3.Click
+        lifeline_bling = 3
+
         btnLifeline3.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         HostScreen.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
@@ -542,9 +560,16 @@ Public Class ControlPanel
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline3Ping
             .controls.play()
         End With
+
+        btnLL1.Enabled = False
+        btnLL2.Enabled = False
+        btnLL3.Enabled = False
+        btnLL4.Enabled = False
     End Sub
 
     Private Sub btnLL4_Click(sender As Object, e As EventArgs) Handles btnLL4.Click
+        lifeline_bling = 4
+
         btnLifeline4.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         HostScreen.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
@@ -555,6 +580,11 @@ Public Class ControlPanel
             .URL = Sounds.SoundsPath + Profile.Options.snd_Lifeline4Ping
             .controls.play()
         End With
+
+        btnLL1.Enabled = False
+        btnLL2.Enabled = False
+        btnLL3.Enabled = False
+        btnLL4.Enabled = False
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnTreePr.Click
@@ -633,25 +663,33 @@ Public Class ControlPanel
     End Sub
 
     Private Sub tmrLifelineBling_Tick(sender As Object, e As EventArgs) Handles tmrLifelineBling.Tick
-        btnLifeline1.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+        Select Case lifeline_bling
+            Case 1
+                btnLifeline1.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+                HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+                GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+                TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+            Case 2
+                btnLifeline2.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+                HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+                GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+                TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+            Case 3
+                btnLifeline3.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+                HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+                GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+                TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+            Case 4
+                btnLifeline4.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+                HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+                GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+                TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+        End Select
 
-        btnLifeline2.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-
-        btnLifeline3.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-
-        btnLifeline4.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-        HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-        GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-        TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
         tmrLifelineBling.Stop()
     End Sub
 
