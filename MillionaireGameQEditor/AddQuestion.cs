@@ -23,7 +23,8 @@ namespace Millionaire.Windows.Question_Editor
             if (radRegularQuestion.Checked)
             {
                 QEditor.c.Open();
-                string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
+                string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
+VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty, @LevelRange)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
@@ -31,7 +32,34 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
+                if(radDiffSpecific.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
+                    cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                    cmd.Parameters.AddWithValue("@LevelRange", "");
+                }
+                else if(radDiffRange.Checked == true)
+                {
+                    cmd.Parameters.AddWithValue("@Level", "");
+                    cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
+                    if (cmbQuestionRange.Text.StartsWith("Lvl1"))
+                    {
+                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
+                    }
+                    else if(cmbQuestionRange.Text.StartsWith("Lvl2"))
+                    {
+                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
+                    }
+                    else if (cmbQuestionRange.Text.StartsWith("Lvl3"))
+                    {
+                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl3");
+                    }
+                    else if (cmbQuestionRange.Text.StartsWith("Lvl4"))
+                    {
+                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl4");
+                    }
+                }
+
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.ExecuteNonQuery();
                 QEditor.c.Close();
@@ -180,9 +208,7 @@ namespace Millionaire.Windows.Question_Editor
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
 
-                trkQuestionLevel.Visible = false;
-                lblQuestionLevel.Visible = false;
-                lblQuestionLevelText.Visible = false;
+                grpDifficulty.Visible = false;
             }
         }
 
@@ -193,9 +219,31 @@ namespace Millionaire.Windows.Question_Editor
                 txtCorrect.Visible = true;
                 pnlFFFAnswer.Visible = false;
 
-                trkQuestionLevel.Visible = true;
-                lblQuestionLevel.Visible = true;
+                grpDifficulty.Visible = true;
+            }
+        }
+
+        private void radDiffSpecific_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radDiffSpecific.Checked)
+            {
+                trkQuestionLevel.Enabled = true;
                 lblQuestionLevelText.Visible = true;
+                lblQuestionLevel.Visible = true;
+
+                cmbQuestionRange.Enabled = false;
+            }
+        }
+
+        private void radDiffRange_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radDiffRange.Checked)
+            {
+                trkQuestionLevel.Enabled = false;
+                lblQuestionLevelText.Visible = false;
+                lblQuestionLevel.Visible = false;
+
+                cmbQuestionRange.Enabled = true;
             }
         }
     }

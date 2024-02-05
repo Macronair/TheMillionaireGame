@@ -98,7 +98,7 @@
                 TVControlPnl.txtC.Size = New Size(476, 46)
                 TVControlPnl.txtD.Size = New Size(476, 46)
 
-                TVControlPnl.txtQuestion.Font = New Font(TVControlPnl.txtQuestion.Font.FontFamily, 20)
+                TVControlPnl.txtQuestion.Font = New Font(TVControlPnl.txtQuestion.Font.FontFamily, 18)
                 TVControlPnl.txtA.Font = New Font(TVControlPnl.txtA.Font.FontFamily, 24)
                 TVControlPnl.txtB.Font = New Font(TVControlPnl.txtB.Font.FontFamily, 24)
                 TVControlPnl.txtC.Font = New Font(TVControlPnl.txtC.Font.FontFamily, 24)

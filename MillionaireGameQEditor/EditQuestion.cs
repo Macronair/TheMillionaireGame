@@ -31,7 +31,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
-                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                cmd.Parameters.AddWithValue("@Level", 0);
                 cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
@@ -39,14 +39,42 @@ namespace Millionaire.Windows.Question_Editor
             }
             else if (level >= 1)
             {
-                cmd = new SqlCommand("UPDATE questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Level = @Level,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
+                cmd = new SqlCommand("UPDATE questions SET Question = @Question,A = @A,B = @B,C = @C,D = @D,CorrectAnswer = @Correct,Difficulty_Type = @DType,Level = @Level,LevelRange = @LevelRange,Used = @Used,Note = @Note WHERE Id = @Id", QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);
                 cmd.Parameters.AddWithValue("@B", txtB.Text);
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                cmd.Parameters.AddWithValue("@Level", txtLevel.Text);
+                if (radDiffRange.Checked)
+                {
+                    cmd.Parameters.AddWithValue("@Level", "");
+                    cmd.Parameters.AddWithValue("@DType", "Range");
+                    switch (cmbQuestionRange.SelectedIndex)
+                    {
+                        case 0:
+                            cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
+                            break;
+                        case 1:
+                            cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
+                            break;
+                        case 2:
+                            cmd.Parameters.AddWithValue("@LevelRange", "Lvl3");
+                            break;
+                        case 3:
+                            cmd.Parameters.AddWithValue("@LevelRange", "Lvl4");
+                            break;
+                        default:
+                            cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
+                            break;
+                    }
+                }
+                else if(radDiffSpecific.Checked)
+                {
+                    cmd.Parameters.AddWithValue("@Level", trkQuestionLevel.Value);
+                    cmd.Parameters.AddWithValue("@DType", "Specific");
+                    cmd.Parameters.AddWithValue("@LevelRange", "");
+                }
                 cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
@@ -60,24 +88,23 @@ namespace Millionaire.Windows.Question_Editor
 
         private void frmEditQuestion_Load(object sender, EventArgs e)
         {
-            if (txtLevel.Text == "0")
+            if (Convert.ToInt16(txtLevel.Text) > 0)
+            {
+                txtCorrect.Visible = true;
+                pnlFFFAnswer.Visible = false;
+                btnReset.Enabled = false;
+
+                grpDifficulty.Visible = true;
+
+                lblQuestionLevel.Text = trkQuestionLevel.Value.ToString();
+            }
+            else
             {
                 txtCorrect.Visible = false;
                 pnlFFFAnswer.Visible = true;
                 btnReset.Enabled = true;
 
-                trkQuestionLevel.Visible = false;
-                lblQuestionLevel.Visible = false;
-                lblQuestionLevelText.Visible = false;
-            }
-            else
-            {
-                txtCorrect.Visible = true;
-                pnlFFFAnswer.Visible = false;
-
-                trkQuestionLevel.Visible = true;
-                lblQuestionLevel.Visible = true;
-                lblQuestionLevelText.Visible = true;
+                grpDifficulty.Visible = false;
             }
         }
 
@@ -192,6 +219,80 @@ namespace Millionaire.Windows.Question_Editor
         private void txtD_TextChanged(object sender, EventArgs e)
         {
             lblD.Text = "D: " + txtD.Text;
+        }
+
+        private void radDiffSpecific_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radDiffSpecific.Checked)
+            {
+                trkQuestionLevel.Enabled = true;
+                lblQuestionLevelText.Visible = true;
+                lblQuestionLevel.Visible = true;
+
+                cmbQuestionRange.Enabled = false;
+
+                if (cmbQuestionRange.SelectedIndex == 0)
+                {
+                    if (!(trkQuestionLevel.Value >= 1 && trkQuestionLevel.Value <= 5))
+                    {
+                        trkQuestionLevel.Value = 1;
+                        lblQuestionLevel.Text = "1";
+                    }
+                }
+                else if (cmbQuestionRange.SelectedIndex == 1)
+                {
+                    if (!(trkQuestionLevel.Value >= 6 && trkQuestionLevel.Value <= 10))
+                    {
+                        trkQuestionLevel.Value = 6;
+                        lblQuestionLevel.Text = "6";
+                    }
+                }
+                else if (cmbQuestionRange.SelectedIndex == 2)
+                {
+                    if (!(trkQuestionLevel.Value >= 11 && trkQuestionLevel.Value <= 14))
+                    {
+                        trkQuestionLevel.Value = 11;
+                        lblQuestionLevel.Text = "11";
+                    }
+                }
+                else if (cmbQuestionRange.SelectedIndex == 3)
+                {
+                    if (trkQuestionLevel.Value != 15)
+                    {
+                        trkQuestionLevel.Value = 15;
+                        lblQuestionLevel.Text = "15";
+                    }
+                }
+            }
+        }
+
+        private void radDiffRange_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radDiffRange.Checked)
+            {
+                trkQuestionLevel.Enabled = false;
+                lblQuestionLevelText.Visible = false;
+                lblQuestionLevel.Visible = false;
+
+                cmbQuestionRange.Enabled = true;
+
+                if(trkQuestionLevel.Value >= 1 && trkQuestionLevel.Value <= 5)
+                {
+                    cmbQuestionRange.SelectedIndex = 0;
+                }
+                else if (trkQuestionLevel.Value >= 6 && trkQuestionLevel.Value <= 10)
+                {
+                    cmbQuestionRange.SelectedIndex = 1;
+                }
+                else if (trkQuestionLevel.Value >= 11 && trkQuestionLevel.Value <= 14)
+                {
+                    cmbQuestionRange.SelectedIndex = 2;
+                }
+                else if (trkQuestionLevel.Value == 15)
+                {
+                    cmbQuestionRange.SelectedIndex = 3;
+                }
+            }
         }
 
         private void trkQuestionLevel_Scroll(object sender, EventArgs e)

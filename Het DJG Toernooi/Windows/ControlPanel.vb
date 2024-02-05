@@ -219,6 +219,7 @@ Public Class ControlPanel
             HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
             HostScreen.pnlAnswer.BackColor = Color.Black
+            HostScreen.txtExplain.Text = ""
             HostScreen.txtQuestion.Text = ""
             HostScreen.txtA.Text = ""
             HostScreen.txtB.Text = ""
@@ -228,6 +229,10 @@ Public Class ControlPanel
             HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
             HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.txtATAa.Text = ""
+            HostScreen.txtATAb.Text = ""
+            HostScreen.txtATAc.Text = ""
+            HostScreen.txtATAd.Text = ""
             GuestScreen.txtQuestion.Text = ""
             GuestScreen.txtA.Text = ""
             GuestScreen.txtB.Text = ""
@@ -237,6 +242,10 @@ Public Class ControlPanel
             GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
             GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
             GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.txtATAa.Text = ""
+            GuestScreen.txtATAb.Text = ""
+            GuestScreen.txtATAc.Text = ""
+            GuestScreen.txtATAd.Text = ""
             i = 0
         End If
     End Sub
@@ -401,6 +410,7 @@ Public Class ControlPanel
 
     Private Sub btnToHotSeat_Click(sender As Object, e As EventArgs) Handles btnToHotSeat.Click
         User.ToHotSeat()
+        wa = 0  ' Bye Bye sequence reset
     End Sub
 
     Dim wa As Integer = 0
@@ -725,6 +735,7 @@ Public Class ControlPanel
 
     Private Sub btnResetGame_Click(sender As Object, e As EventArgs) Handles btnResetGame.Click
         User.ResetGame()
+        wa = 0  ' Bye Bye sequence reset
     End Sub
 
     Private Sub CloseToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CloseToolStripMenuItem.Click

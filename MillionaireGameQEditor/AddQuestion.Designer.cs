@@ -70,6 +70,10 @@
             this.grpQuestionType = new System.Windows.Forms.GroupBox();
             this.radFastestFinger = new System.Windows.Forms.RadioButton();
             this.radRegularQuestion = new System.Windows.Forms.RadioButton();
+            this.grpDifficulty = new System.Windows.Forms.GroupBox();
+            this.cmbQuestionRange = new System.Windows.Forms.ComboBox();
+            this.radDiffRange = new System.Windows.Forms.RadioButton();
+            this.radDiffSpecific = new System.Windows.Forms.RadioButton();
             this.pnlFFFAnswer.SuspendLayout();
             this.pnlD.SuspendLayout();
             this.pnlB.SuspendLayout();
@@ -78,6 +82,7 @@
             this.picQuestion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).BeginInit();
             this.grpQuestionType.SuspendLayout();
+            this.grpDifficulty.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtQuestion
@@ -445,12 +450,12 @@
             // 
             // trkQuestionLevel
             // 
-            this.trkQuestionLevel.Location = new System.Drawing.Point(614, 57);
+            this.trkQuestionLevel.Location = new System.Drawing.Point(133, 7);
             this.trkQuestionLevel.Maximum = 15;
             this.trkQuestionLevel.Minimum = 1;
             this.trkQuestionLevel.Name = "trkQuestionLevel";
             this.trkQuestionLevel.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.trkQuestionLevel.Size = new System.Drawing.Size(45, 237);
+            this.trkQuestionLevel.Size = new System.Drawing.Size(45, 224);
             this.trkQuestionLevel.TabIndex = 94;
             this.trkQuestionLevel.Value = 1;
             this.trkQuestionLevel.Scroll += new System.EventHandler(this.trkQuestionLevel_Scroll);
@@ -458,7 +463,7 @@
             // lblQuestionLevelText
             // 
             this.lblQuestionLevelText.AutoSize = true;
-            this.lblQuestionLevelText.Location = new System.Drawing.Point(478, 274);
+            this.lblQuestionLevelText.Location = new System.Drawing.Point(46, 189);
             this.lblQuestionLevelText.Name = "lblQuestionLevelText";
             this.lblQuestionLevelText.Size = new System.Drawing.Size(81, 13);
             this.lblQuestionLevelText.TabIndex = 95;
@@ -468,7 +473,7 @@
             // 
             this.lblQuestionLevel.AutoSize = true;
             this.lblQuestionLevel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuestionLevel.Location = new System.Drawing.Point(584, 274);
+            this.lblQuestionLevel.Location = new System.Drawing.Point(109, 202);
             this.lblQuestionLevel.Name = "lblQuestionLevel";
             this.lblQuestionLevel.Size = new System.Drawing.Size(18, 20);
             this.lblQuestionLevel.TabIndex = 96;
@@ -510,15 +515,66 @@
             this.radRegularQuestion.UseVisualStyleBackColor = true;
             this.radRegularQuestion.CheckedChanged += new System.EventHandler(this.radRegularQuestion_CheckedChanged);
             // 
+            // grpDifficulty
+            // 
+            this.grpDifficulty.Controls.Add(this.cmbQuestionRange);
+            this.grpDifficulty.Controls.Add(this.radDiffRange);
+            this.grpDifficulty.Controls.Add(this.lblQuestionLevelText);
+            this.grpDifficulty.Controls.Add(this.lblQuestionLevel);
+            this.grpDifficulty.Controls.Add(this.radDiffSpecific);
+            this.grpDifficulty.Controls.Add(this.trkQuestionLevel);
+            this.grpDifficulty.Location = new System.Drawing.Point(614, 57);
+            this.grpDifficulty.Name = "grpDifficulty";
+            this.grpDifficulty.Size = new System.Drawing.Size(184, 237);
+            this.grpDifficulty.TabIndex = 98;
+            this.grpDifficulty.TabStop = false;
+            this.grpDifficulty.Text = "Difficulty";
+            // 
+            // cmbQuestionRange
+            // 
+            this.cmbQuestionRange.Enabled = false;
+            this.cmbQuestionRange.FormattingEnabled = true;
+            this.cmbQuestionRange.Items.AddRange(new object[] {
+            "Lvl1: Question 1 - 5",
+            "Lvl2: Question 6 - 10",
+            "Lvl3: Question 11 - 14",
+            "Lvl4: Question 15"});
+            this.cmbQuestionRange.Location = new System.Drawing.Point(6, 65);
+            this.cmbQuestionRange.Name = "cmbQuestionRange";
+            this.cmbQuestionRange.Size = new System.Drawing.Size(121, 21);
+            this.cmbQuestionRange.TabIndex = 2;
+            // 
+            // radDiffRange
+            // 
+            this.radDiffRange.AutoSize = true;
+            this.radDiffRange.Location = new System.Drawing.Point(6, 42);
+            this.radDiffRange.Name = "radDiffRange";
+            this.radDiffRange.Size = new System.Drawing.Size(57, 17);
+            this.radDiffRange.TabIndex = 1;
+            this.radDiffRange.Text = "Range";
+            this.radDiffRange.UseVisualStyleBackColor = true;
+            this.radDiffRange.CheckedChanged += new System.EventHandler(this.radDiffRange_CheckedChanged);
+            // 
+            // radDiffSpecific
+            // 
+            this.radDiffSpecific.AutoSize = true;
+            this.radDiffSpecific.Checked = true;
+            this.radDiffSpecific.Location = new System.Drawing.Point(6, 19);
+            this.radDiffSpecific.Name = "radDiffSpecific";
+            this.radDiffSpecific.Size = new System.Drawing.Size(63, 17);
+            this.radDiffSpecific.TabIndex = 0;
+            this.radDiffSpecific.TabStop = true;
+            this.radDiffSpecific.Text = "Specific";
+            this.radDiffSpecific.UseVisualStyleBackColor = true;
+            this.radDiffSpecific.CheckedChanged += new System.EventHandler(this.radDiffSpecific_CheckedChanged);
+            // 
             // frmQuestionAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1275, 528);
+            this.Controls.Add(this.grpDifficulty);
             this.Controls.Add(this.grpQuestionType);
-            this.Controls.Add(this.lblQuestionLevel);
-            this.Controls.Add(this.lblQuestionLevelText);
-            this.Controls.Add(this.trkQuestionLevel);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.pnlD);
             this.Controls.Add(this.pnlB);
@@ -557,6 +613,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.trkQuestionLevel)).EndInit();
             this.grpQuestionType.ResumeLayout(false);
             this.grpQuestionType.PerformLayout();
+            this.grpDifficulty.ResumeLayout(false);
+            this.grpDifficulty.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -605,5 +663,9 @@
         private System.Windows.Forms.GroupBox grpQuestionType;
         private System.Windows.Forms.RadioButton radFastestFinger;
         private System.Windows.Forms.RadioButton radRegularQuestion;
+        private System.Windows.Forms.GroupBox grpDifficulty;
+        private System.Windows.Forms.RadioButton radDiffRange;
+        private System.Windows.Forms.RadioButton radDiffSpecific;
+        private System.Windows.Forms.ComboBox cmbQuestionRange;
     }
 }

@@ -208,68 +208,58 @@ Public Class PlayerCheck
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL3_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 3
                 If FFFServer.pnlPlayer4.Visible = True Then
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL4_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 4
                 If FFFServer.pnlPlayer5.Visible = True Then
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL5_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 5
                 If FFFServer.pnlPlayer6.Visible = True Then
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL6_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 6
                 If FFFServer.pnlPlayer7.Visible = True Then
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL7_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 7
                 If FFFServer.pnlPlayer8.Visible = True Then
                     TVControlPnl.lblAmount.Text = FFFServer.txtPL8_Name.Text
                     intmeet = intmeet + 1
                 Else
-                    intmeet = 0
-                    TVControlPnl.pnlStrap.Visible = False
-                    TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                    TVControlPnl.lblAmount.Text = "0"
+                    ResetFont()
                 End If
             Case 8
-                intmeet = 0
-                TVControlPnl.pnlStrap.Visible = False
-                TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
-                TVControlPnl.lblAmount.Text = "0"
+                ResetFont()
         End Select
 
+    End Sub
+
+    Private Shared Sub ResetFont()
+        TVControlPnl.pnlStrap.Visible = False
+        If GameResolution.CurrentRes = 720 Then
+            TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 36)
+        ElseIf GameResolution.CurrentRes = 1080 Then
+            TVControlPnl.lblAmount.Font = New Font("Copperplate Gothic Bold", 54)
+        End If
+        intmeet = 0
+        TVControlPnl.lblAmount.Text = "0"
     End Sub
 
     Private Shared Sub MeetContestantAudioSeq()

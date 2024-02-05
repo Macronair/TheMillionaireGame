@@ -1048,4 +1048,13 @@ Public Class FFFServer
 
         time = String.Format("{0:00},{1:00}", elapsed.ToString("%s"), CInt(Math.Round(elapsed.Milliseconds / 10)))
     End Sub
+
+    Private Sub FFFServer_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
+        Me.Hide()
+        If e.CloseReason = CloseReason.UserClosing Then
+            e.Cancel = True     ' Cancel the event if the user has done that.
+        Else
+            e.Cancel = False    ' If the user hasn't closed the form, then the event won't be canceled.
+        End If
+    End Sub
 End Class
