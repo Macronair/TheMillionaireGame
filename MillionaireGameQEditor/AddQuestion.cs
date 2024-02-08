@@ -24,7 +24,7 @@ namespace Millionaire.Windows.Question_Editor
             {
                 QEditor.c.Open();
                 string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
-VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty, @LevelRange)");
+VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @LevelRange)");
                 cmd = new SqlCommand(str, QEditor.c);
                 cmd.Parameters.AddWithValue("@Question", txtQuestion.Text);
                 cmd.Parameters.AddWithValue("@A", txtA.Text);

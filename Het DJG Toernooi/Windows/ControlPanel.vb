@@ -612,6 +612,8 @@ Public Class ControlPanel
             TVControlPnl.picTree.Visible = False
             TVControlPnl.pnlTotal.Visible = False
             TVControlPnl.pnlStrap.Visible = False
+
+            chkShowTotalScore.Checked = False
         End If
         If chkShowQuestion.Checked = False Then
             TVControlPnl.pnlQuestion.Visible = False
@@ -624,6 +626,8 @@ Public Class ControlPanel
             TVControlPnl.picTree.Visible = False
             TVControlPnl.pnlTotal.Visible = True
             TVControlPnl.pnlStrap.Visible = True
+
+            chkShowQuestion.Checked = False
         End If
         If chkShowTotalScore.Checked = False Then
             TVControlPnl.pnlTotal.Visible = False
