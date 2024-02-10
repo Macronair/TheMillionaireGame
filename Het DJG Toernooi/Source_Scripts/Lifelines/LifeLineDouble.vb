@@ -10,8 +10,6 @@ Public Class LifeLineDouble
 
     Public Shared Sub LifelineUse1()
         active = True
-        ControlPanel.Timer1.Start()
-        ControlPanel.Timer2.Start()
         dd_Start.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stAnswer
         TVControlPnl.picLifelineUse.Image = My.Resources.ll_double
         TVControlPnl.picLifelineUse.Visible = True

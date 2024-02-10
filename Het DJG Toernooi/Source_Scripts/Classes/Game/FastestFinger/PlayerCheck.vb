@@ -263,24 +263,25 @@ Public Class PlayerCheck
     End Sub
 
     Private Shared Sub MeetContestantAudioSeq()
-        Dim meet As WMPLib.WindowsMediaPlayer = New WMPLib.WindowsMediaPlayer
+        Sounds.fff_meet = New WMPLib.WindowsMediaPlayer
+
         Select Case FFFServer.totalContestants
             Case 2
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_2.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_2.mp3"
             Case 3
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_3.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_3.mp3"
             Case 4
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_4.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_4.mp3"
             Case 5
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_5.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_5.mp3"
             Case 6
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_6.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_6.mp3"
             Case 7
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_7.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_7.mp3"
             Case 8
-                meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_8.mp3"
+                Sounds.fff_meet.URL = Application.StartupPath + "\Sounds\fastest_finger_contestants_8.mp3"
         End Select
-        meet.controls.play()
+        Sounds.fff_meet.controls.play()
     End Sub
 
 End Class

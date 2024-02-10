@@ -282,8 +282,6 @@ Public Class ControlPanel
                 End With
                 Game.intoCommercials = False
         End Select
-
-        Timer1.Start()
     End Sub
 
     ' That's all for today! (Closing theme playing)
@@ -292,7 +290,6 @@ Public Class ControlPanel
             .URL = Sounds.SoundsPath + Profile.Options.snd_Closing
             .controls.play()
         End With
-        Timer1.Start()
     End Sub
 #End Region
 
@@ -300,13 +297,11 @@ Public Class ControlPanel
     Private Sub btnLightsDown_Click(sender As Object, e As EventArgs) Handles btnLightsDown.Click
         TVControlPnl.picTree.Visible = False
         Question.PlayLightsDownCue()    ' Of course... play the cue.
-        Timer1.Start()
         HostScreen.lblExplainRules.ForeColor = Color.Black
     End Sub
 
     Private Sub btnWalk_Click(sender As Object, e As EventArgs) Handles btnWalk.Click
         HostScreen.txtExplain.ForeColor = Color.White
-        Timer1.Start()
         HostScreen.pnlAnswer.BackColor = Color.LightGray
         Game.walkaway = True
         HostScreen.txtWinnings.Text = "Totale Score: " + Game.varCurrent
@@ -438,12 +433,6 @@ Public Class ControlPanel
         End If
     End Sub
 
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        My.Computer.Audio.Stop()
-        Timer1.Stop()
-        Question.useMusic = False
-    End Sub
-
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles chkCorrectAnswer.CheckedChanged
         If chkCorrectAnswer.Checked = True Then
             lblAnswer.Visible = True
@@ -451,11 +440,6 @@ Public Class ControlPanel
         If chkCorrectAnswer.Checked = False Then
             lblAnswer.Visible = False
         End If
-    End Sub
-
-    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
-        HaltSound()
-        Timer2.Stop()
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs)
@@ -800,5 +784,9 @@ Public Class ControlPanel
         LifelineManager.UnlockLifeline(4)
 
         tmrLifelineUpdate.Stop()
+    End Sub
+
+    Private Sub ControlPanel_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+
     End Sub
 End Class

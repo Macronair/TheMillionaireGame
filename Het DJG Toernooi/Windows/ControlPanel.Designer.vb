@@ -60,9 +60,7 @@ Partial Class ControlPanel
         Me.chkUsed = New System.Windows.Forms.CheckBox()
         Me.btnToHotSeat = New System.Windows.Forms.Button()
         Me.btnQuit = New System.Windows.Forms.Button()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.chkCorrectAnswer = New System.Windows.Forms.CheckBox()
-        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.lblTime = New System.Windows.Forms.Label()
         Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
         Me.tmrRules = New System.Windows.Forms.Timer(Me.components)
@@ -540,10 +538,6 @@ Partial Class ControlPanel
         Me.btnQuit.Text = "Bye Bye"
         Me.btnQuit.UseVisualStyleBackColor = False
         '
-        'Timer1
-        '
-        Me.Timer1.Interval = 700
-        '
         'chkCorrectAnswer
         '
         Me.chkCorrectAnswer.AutoSize = True
@@ -553,10 +547,6 @@ Partial Class ControlPanel
         Me.chkCorrectAnswer.TabIndex = 52
         Me.chkCorrectAnswer.Text = "Show Correct"
         Me.chkCorrectAnswer.UseVisualStyleBackColor = True
-        '
-        'Timer2
-        '
-        Me.Timer2.Interval = 300
         '
         'lblTime
         '
@@ -1152,6 +1142,7 @@ Partial Class ControlPanel
         '
         'tmrLifelineUpdate
         '
+        Me.tmrLifelineUpdate.Interval = 500
         '
         'ControlPanel
         '
@@ -1197,6 +1188,7 @@ Partial Class ControlPanel
         Me.Controls.Add(Me.grpRules)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
         Me.Name = "ControlPanel"
@@ -1257,10 +1249,8 @@ Partial Class ControlPanel
     Friend WithEvents chkUsed As CheckBox
     Friend WithEvents btnToHotSeat As Button
     Friend WithEvents btnQuit As Button
-    Friend WithEvents Timer1 As Timer
     Friend WithEvents chkCorrectAnswer As CheckBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Timer2 As Timer
     Friend WithEvents lblTime As Label
     Friend WithEvents tmrTime As Timer
     Friend WithEvents tmrRules As Timer

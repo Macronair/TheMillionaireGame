@@ -28,12 +28,6 @@ Public Class FFFServer
     Public a As Integer = 0
     Dim q As Integer = 0
 
-    ' Sound objects
-    Public Shared question As New WMPLib.WindowsMediaPlayer
-    Dim st1 As New WMPLib.WindowsMediaPlayer
-    Dim st2 As New WMPLib.WindowsMediaPlayer
-    Dim order As New WMPLib.WindowsMediaPlayer
-
     'Timer
     Private Shared stopwatch As New Stopwatch
     Private Shared tmr As System.Timers.Timer
@@ -269,12 +263,12 @@ Public Class FFFServer
     End Sub
 
     Private Sub btnStartTime_Click(sender As Object, e As EventArgs) Handles btnStartTime.Click
-        With st1
+        With Sounds.fff_st1
             .URL = Sounds.SoundsPath + Profile.Options.snd_F_ThreeNotes
             .controls.play()
         End With
 
-        question.controls.stop()
+        Sounds.fff_question.controls.stop()
 
         HostScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
         GuestScreen.txtA.Text = "A: " & ControlPanel.txtA.Text
@@ -312,7 +306,7 @@ Public Class FFFServer
         stopwatch.Start()
         tmr.Start()
 
-        With st2
+        With Sounds.fff_st2
             .URL = Sounds.SoundsPath + Profile.Options.snd_F_Thinking
             .controls.play()
         End With
@@ -351,7 +345,7 @@ Public Class FFFServer
                 ControlPanel.chkShowQuestion.Checked = False
                 i = i + 1
             Case 1
-                With st1
+                With Sounds.fff_st1
                     .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadCorrectOrder
                     .settings.setMode("Loop", True)
                     .controls.play()
@@ -419,12 +413,12 @@ Public Class FFFServer
             TVControlPnl.picLifeline4.Visible = False
             tmrRevealPlayers.Start()
             If Game.level = -1 Then
-                With st1
+                With Sounds.fff_st1
                     .URL = Sounds.SoundsPath + Profile.Options.snd_F_WhoWasCorrect
                     .settings.setMode("Loop", False)
                     .controls.play()
                 End With
-                st2.controls.stop()
+                Sounds.fff_st2.controls.stop()
             End If
             a = a + 1
         ElseIf a = 2 Then
@@ -432,7 +426,7 @@ Public Class FFFServer
             If fff_timemin < 9999 Then
 
                 If PlayerCheck.tie = 1 Then
-                    With st2
+                    With Sounds.fff_st2
                         .URL = Sounds.SoundsPath + Profile.Options.snd_F_Winner
                         .controls.play()
                     End With

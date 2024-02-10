@@ -15,6 +15,12 @@ Public Class Sounds
     Public Shared sndLifeline1 As New WindowsMediaPlayer()
     Public Shared sndLifeline2 As New WindowsMediaPlayer()
 
+    Public Shared fff_question As New WindowsMediaPlayer
+    Public Shared fff_st1 As New WindowsMediaPlayer
+    Public Shared fff_st2 As New WindowsMediaPlayer
+    Public Shared fff_order As New WindowsMediaPlayer
+    Public Shared fff_meet As WindowsMediaPlayer
+
     Public Shared Sub StopAudio(ByVal source As String, ByVal delayInMiliseconds As Integer)
         If delayInMiliseconds > 0 Then
             Thread.Sleep(delayInMiliseconds)
@@ -32,6 +38,11 @@ Public Class Sounds
                 LifeLineDouble.dd_Start.controls.stop()
                 LifeLineDouble.dd_Wrong.controls.stop()
                 LifeLineDouble.dd_Final.controls.stop()
+                Try
+                    fff_meet.controls.stop()
+                    fff_question.controls.stop()
+                Catch ex As Exception
+                End Try
             Case "to_commercial"
                 sndQuestion.controls.stop()
                 sndFinal.controls.stop()

@@ -615,7 +615,6 @@ Public Class Question
                     ControlPanel.txtD.Text = ""
                     ControlPanel.txtD.BackColor = Color.Silver
                 End If
-                ControlPanel.Timer2.Stop()
             Else
                 LifeLineDouble.chance = 2
                 TVControlPnl.tmrFlash.Start()
@@ -653,7 +652,6 @@ Public Class Question
                     TVControlPnl.lblAmount.Text = "" & Game.varWrong
                     HostScreen.txtWinnings.Text = "Total Score: " + Game.varWrong
                 Else
-                    ControlPanel.Timer2.Start()
                     TVControlPnl.lblAmount.Text = "" & Game.varCurrent
                 End If
 

@@ -39,7 +39,6 @@
             ControlPanel.lblTime.Visible = True
             ControlPanel.chkShowQuestion.Checked = True
             plusone = 2
-            ControlPanel.Timer2.Start()
             ControlPanel.tmrTime.Start()
         ElseIf plusone = 2 Then
             With Sounds.sndLifeline1
