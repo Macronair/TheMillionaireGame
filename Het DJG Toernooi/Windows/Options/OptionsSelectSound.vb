@@ -21,6 +21,8 @@ Public Class OptionsSelectSound
         rootNode.ImageIndex = 0
         treeSelectSound.Nodes.Add(rootNode)
 
+        treeSelectSound.SelectedImageIndex = 2
+
         ' Roep een hulpprogramma aan om de inhoud van de map toe te voegen aan de TreeView.
         AddDirectoriesAndFiles(rootNode, rootPath)
     End Sub
@@ -41,7 +43,7 @@ Public Class OptionsSelectSound
             Dim files As String() = Directory.GetFiles(loc)
             For Each file As String In files
                 ' Voeg het bestand toe aan de TreeView.
-                If file.Contains(".mp3") Or file.Contains(".wav") Then
+                If file.Contains(".mp3") Or file.Contains(".wav") Or file.Contains(".flac") Then
                     Dim fileNode As TreeNode = New TreeNode(Path.GetFileName(file))
                     fileNode.ImageIndex = 1
                     parentNode.Nodes.Add(fileNode)
@@ -59,11 +61,10 @@ Public Class OptionsSelectSound
         path = path.Replace("Sounds\", "")
 
         txtSelectedFile.Text = path
-        treeSelectSound.SelectedImageIndex = 2
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Then
+        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Or txtSelectedFile.Text.EndsWith(".flac") Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
         Else
             MessageBox.Show("Please select a valid .mp3 or .wav file.", "Cannot use this type.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
@@ -75,7 +76,7 @@ Public Class OptionsSelectSound
     End Sub
 
     Private Sub treeSelectSound_MouseDoubleClick(sender As Object, e As MouseEventArgs) Handles treeSelectSound.MouseDoubleClick
-        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Then
+        If txtSelectedFile.Text.EndsWith(".mp3") Or txtSelectedFile.Text.EndsWith(".wav") Or txtSelectedFile.Text.EndsWith(".mpeg") Or txtSelectedFile.Text.EndsWith(".flac") Then
             Me.DialogResult = Windows.Forms.DialogResult.OK
         Else
             MessageBox.Show("Please select a valid .mp3 or .wav file.", "Cannot use this type.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
