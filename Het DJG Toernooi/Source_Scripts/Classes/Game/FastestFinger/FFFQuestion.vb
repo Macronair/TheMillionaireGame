@@ -154,7 +154,7 @@
                 Dim q As New QDatabase
                 q.newQuestion()
 
-                With FFFServer.question
+                With Sounds.fff_question
                     .URL = Sounds.SoundsPath + Profile.Options.snd_F_ReadQuestion
                     .controls.play()
                 End With

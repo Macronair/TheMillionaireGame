@@ -50,6 +50,7 @@ Public Class User
         LifelineManager.UnlockLifeline(4)
 
         LifelineHost.used = False
+        HostScreen.lblAnswer.Visible = True
 
         ControlPanel.txtQuestion.Text = ""
         ControlPanel.txtA.Text = ""

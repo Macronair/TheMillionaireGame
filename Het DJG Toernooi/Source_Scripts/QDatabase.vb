@@ -52,17 +52,34 @@ Public Class QDatabase
             End Try
         End If
 
-        'Haalt een vraag uit de database (100 - 1.000 pt)
         If Game.level >= 0 Then
             Dim ds As New DataSet
             Dim sqlupdate As String
-            sql = $"SELECT TOP 1 * FROM questions WHERE Used = 'False' AND Level = {Game.level + 1} ORDER BY NEWID()"
+
+            Dim rangelevel As String
+            If Game.level >= 1 And Game.level <= 5 Then
+                rangelevel = "Lvl1"
+            ElseIf Game.level >= 6 And Game.level <= 10 Then
+                rangelevel = "Lvl2"
+            ElseIf Game.level >= 11 And Game.level <= 14 Then
+                rangelevel = "Lvl3"
+            ElseIf Game.level = 15 Then
+                rangelevel = "Lvl4"
+            End If
+            sql = $"
+SELECT TOP 1 * FROM
+(
+	SELECT Id,Question,A,B,C,D,CorrectAnswer,Difficulty_Type,Level,LevelRange,Note,Used FROM questions WHERE Used = 'False' AND Level = {Game.level + 1} AND Difficulty_Type = 'Specific'
+	UNION ALL
+	SELECT Id,Question,A,B,C,D,CorrectAnswer,Difficulty_Type,Level,LevelRange,Note,Used FROM questions WHERE Used = 'False' AND LevelRange = '{rangelevel}' AND Difficulty_Type = 'Range'
+) A ORDER BY NEWID()"
+
             da = New SqlDataAdapter(sql, Data.connectionString)
             da.Fill(ds, "question")
             MaxRows = ds.Tables("question").Rows.Count
 
             If MaxRows > 0 Then
-                ControlPanel.chkUsed.Checked = ds.Tables("question").Rows(0).Item(8)
+                ControlPanel.chkUsed.Checked = ds.Tables("question").Rows(0).Item(11)
                 If ControlPanel.chkUsed.Checked = True Then
                     newQuestion()
                 Else
@@ -73,7 +90,7 @@ Public Class QDatabase
                     ControlPanel.txtD.Text = ds.Tables("question").Rows(0).Item(5)
                     ControlPanel.lblAnswer.Text = ds.Tables("question").Rows(0).Item(6)
                     ControlPanel.txtID.Text = ds.Tables("question").Rows(0).Item(0)
-                    ControlPanel.txtExplain.Text = ds.Tables("question").Rows(0).Item(9).ToString()
+                    ControlPanel.txtExplain.Text = ds.Tables("question").Rows(0).Item(10).ToString()
 
                     sqlupdate = "UPDATE questions SET Used='True' WHERE Id = " & ControlPanel.txtID.Text
                     Dim cmd As SqlCommand = New SqlCommand(sqlupdate, Data.connectionString)

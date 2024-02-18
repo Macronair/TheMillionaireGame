@@ -112,6 +112,7 @@
             this.dtLevel1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellClick);
             this.dtLevel1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel1_CellDoubleClick);
             this.dtLevel1.SelectionChanged += new System.EventHandler(this.dtLevel1_SelectionChanged);
+            this.dtLevel1.Sorted += new System.EventHandler(this.dtLevel1_Sorted);
             // 
             // tbLevel0
             // 
@@ -141,6 +142,7 @@
             this.dtLevel0.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel0_CellClick);
             this.dtLevel0.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtLevel0_CellDoubleClick);
             this.dtLevel0.SelectionChanged += new System.EventHandler(this.dtLevel0_SelectionChanged);
+            this.dtLevel0.Sorted += new System.EventHandler(this.dtLevel0_Sorted);
             // 
             // tsTools
             // 
@@ -251,14 +253,14 @@
             this.tsmenuQuestionEdit,
             this.tsmenuQuestionRemove});
             this.tsmenuQuestion.Name = "tsmenuQuestion";
-            this.tsmenuQuestion.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestion.Size = new System.Drawing.Size(122, 22);
             this.tsmenuQuestion.Text = "Question";
             // 
             // tsmenuQuestionCreate
             // 
             this.tsmenuQuestionCreate.Image = global::MillionaireGameQEditor.Properties.Resources.add;
             this.tsmenuQuestionCreate.Name = "tsmenuQuestionCreate";
-            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionCreate.Size = new System.Drawing.Size(117, 22);
             this.tsmenuQuestionCreate.Text = "Add";
             this.tsmenuQuestionCreate.Click += new System.EventHandler(this.tsmenuQuestionCreate_Click);
             // 
@@ -266,7 +268,7 @@
             // 
             this.tsmenuQuestionEdit.Image = global::MillionaireGameQEditor.Properties.Resources.edit;
             this.tsmenuQuestionEdit.Name = "tsmenuQuestionEdit";
-            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionEdit.Size = new System.Drawing.Size(117, 22);
             this.tsmenuQuestionEdit.Text = "Edit";
             this.tsmenuQuestionEdit.Click += new System.EventHandler(this.tsmenuQuestionEdit_Click);
             // 
@@ -274,7 +276,7 @@
             // 
             this.tsmenuQuestionRemove.Image = global::MillionaireGameQEditor.Properties.Resources.remove;
             this.tsmenuQuestionRemove.Name = "tsmenuQuestionRemove";
-            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(180, 22);
+            this.tsmenuQuestionRemove.Size = new System.Drawing.Size(117, 22);
             this.tsmenuQuestionRemove.Text = "Remove";
             this.tsmenuQuestionRemove.Click += new System.EventHandler(this.tsmenuQuestionRemove_Click);
             // 

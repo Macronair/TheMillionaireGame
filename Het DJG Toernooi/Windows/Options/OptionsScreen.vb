@@ -333,6 +333,10 @@ Public Class OptionsScreen
 
         MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub
+
+    Private Sub btnClose_Click(sender As Object, e As EventArgs) Handles btnClose.Click
+        Me.Close()
+    End Sub
 #End Region
 
 #Region "Screen Settings"

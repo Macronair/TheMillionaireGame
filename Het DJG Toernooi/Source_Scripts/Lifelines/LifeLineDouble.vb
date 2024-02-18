@@ -10,8 +10,6 @@ Public Class LifeLineDouble
 
     Public Shared Sub LifelineUse1()
         active = True
-        ControlPanel.Timer1.Start()
-        ControlPanel.Timer2.Start()
         dd_Start.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stAnswer
         TVControlPnl.picLifelineUse.Image = My.Resources.ll_double
         TVControlPnl.picLifelineUse.Visible = True
@@ -33,7 +31,11 @@ Public Class LifeLineDouble
         stopmusic1.Start()
         Select Case chance
             Case 2
-                HostScreen.lblAnswer.Visible = False
+                If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
+                    HostScreen.lblAnswer.Visible = True
+                Else
+                    HostScreen.lblAnswer.Visible = False
+                End If
                 dd_Final.URL = Sounds.SoundsPath + Profile.Options.snd_Double_1stFinal
                 chance = 1
             Case 1
@@ -70,7 +72,7 @@ Public Class LifeLineDouble
     End Sub
 
     Public Shared Sub StopCue2()
-        Threading.Thread.Sleep(150)
+        Threading.Thread.Sleep(400)
         dd_Final.controls.stop()
     End Sub
 End Class

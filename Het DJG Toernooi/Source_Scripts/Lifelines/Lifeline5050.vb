@@ -26,7 +26,7 @@
             HostScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
             TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
             GuestScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
-            rndint = rnd.Next(0, 2)
+            rndint = rnd.Next(0, 3)
             If rndint = 0 Then
                 ControlPanel.txtB.BackColor = SystemColors.Control
                 TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
@@ -53,7 +53,7 @@
             HostScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
             GuestScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
-            rndint = rnd.Next(0, 2)
+            rndint = rnd.Next(0, 3)
             If rndint = 0 Then
                 ControlPanel.txtA.BackColor = SystemColors.Control
                 TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
@@ -80,7 +80,7 @@
             HostScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             TVControlPnl.txtC.Text = "C: " + ControlPanel.txtC.Text
             GuestScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
-            rndint = rnd.Next(0, 2)
+            rndint = rnd.Next(0, 3)
             If rndint = 0 Then
                 ControlPanel.txtA.BackColor = SystemColors.Control
                 TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
@@ -107,7 +107,7 @@
             HostScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
             TVControlPnl.txtD.Text = "D: " + ControlPanel.txtD.Text
             GuestScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
-            rndint = rnd.Next(0, 2)
+            rndint = rnd.Next(0, 3)
             If rndint = 0 Then
                 ControlPanel.txtB.BackColor = SystemColors.Control
                 TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
