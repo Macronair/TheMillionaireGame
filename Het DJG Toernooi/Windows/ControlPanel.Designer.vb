@@ -248,6 +248,7 @@ Partial Class ControlPanel
         Me.nmrLevel.Location = New System.Drawing.Point(142, 97)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
+        Me.nmrLevel.ReadOnly = True
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
         Me.nmrLevel.TabIndex = 16
         '

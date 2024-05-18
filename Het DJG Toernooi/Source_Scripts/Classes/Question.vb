@@ -506,7 +506,9 @@ Public Class Question
                 Dim trStopDD As Threading.Thread = New Threading.Thread(AddressOf LifeLineDouble.StopCue2)
                 trStopDD.Start()
                 LifeLineDouble.active = False
-                StartBedAfterDD = True
+                If Game.level < 4 Then
+                    StartBedAfterDD = True
+                End If
             End If
 
             TVControlPnl.tmrFlash.Start()

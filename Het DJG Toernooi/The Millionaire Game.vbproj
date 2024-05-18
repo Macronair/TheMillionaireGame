@@ -43,7 +43,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.755.0</ApplicationVersion>
+    <ApplicationVersion>1.1.768.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -132,6 +132,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
+    <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />
@@ -216,6 +217,12 @@
     <Compile Include="Windows\General\TVControlPnl.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Windows\General\TVControlPnl720.Designer.vb">
+      <DependentUpon>TVControlPnl720.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\General\TVControlPnl720.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\Options\HostMessages.Designer.vb">
       <DependentUpon>HostMessages.vb</DependentUpon>
     </Compile>
@@ -271,6 +278,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl.resx">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\General\TVControlPnl720.resx">
+      <DependentUpon>TVControlPnl720.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
@@ -423,6 +433,23 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
+    <None Include="Resources\mg_tree_all.png" />
+    <None Include="Resources\mg_tree_15.png" />
+    <None Include="Resources\mg_tree_14.png" />
+    <None Include="Resources\mg_tree_13.png" />
+    <None Include="Resources\mg_tree_12.png" />
+    <None Include="Resources\mg_tree_11.png" />
+    <None Include="Resources\mg_tree_10.png" />
+    <None Include="Resources\mg_tree_09.png" />
+    <None Include="Resources\mg_tree_08.png" />
+    <None Include="Resources\mg_tree_07.png" />
+    <None Include="Resources\mg_tree_06.png" />
+    <None Include="Resources\mg_tree_05.png" />
+    <None Include="Resources\mg_tree_04.png" />
+    <None Include="Resources\mg_tree_03.png" />
+    <None Include="Resources\mg_tree_02.png" />
+    <None Include="Resources\mg_tree_01.png" />
+    <None Include="Resources\mg_tree_00.png" />
     <None Include="Resources\triangle.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\sound.png" />

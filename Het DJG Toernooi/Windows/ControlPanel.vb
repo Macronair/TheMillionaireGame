@@ -63,6 +63,8 @@ Public Class ControlPanel
         If Profile.Options.AutoShow_TVScreen = True Then
             TVControlPnl.Show()                                 ' Open the tv screen at startup.
         End If
+
+        TVControlPnl720.Show()
     End Sub
 
     ' Collect the host messages that are present in the database.
@@ -88,6 +90,8 @@ Public Class ControlPanel
         LifelineManager.UnlockLifeline(2)
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
+
+        TVControlPnl720.ChangeTreeLevel(nmrLevel.Value)
     End Sub
 
     ' Button to get a new question from the database.
@@ -787,6 +791,11 @@ Public Class ControlPanel
     End Sub
 
     Private Sub ControlPanel_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        Dim key As Keys = e.KeyCode
+        If e.Alt = True And key = Keys.F4 Then
 
+        End If
+
+        Hotkey.Press(e.KeyCode, e.Control, e.Alt)
     End Sub
 End Class
