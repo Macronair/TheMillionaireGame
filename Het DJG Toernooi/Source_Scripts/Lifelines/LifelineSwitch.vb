@@ -23,23 +23,23 @@
             TVControlPnl.tmrFlash.Start()
             If ControlPanel.lblAnswer.Text = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green
-                HostScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
-                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(6)
+                GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(6)
             End If
             If ControlPanel.lblAnswer.Text = "B" Then
                 ControlPanel.txtB.BackColor = Color.Green
-                HostScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
-                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(7)
+                GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(7)
             End If
             If ControlPanel.lblAnswer.Text = "C" Then
                 ControlPanel.txtC.BackColor = Color.Green
-                HostScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
-                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(6)
+                GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(6)
             End If
             If ControlPanel.lblAnswer.Text = "D" Then
                 ControlPanel.txtD.BackColor = Color.Green
-                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
-                HostScreen.pnlD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(7)
+                HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(7)
             End If
             act = 2
         ElseIf act = 2 Then
@@ -51,18 +51,18 @@
             TVControlPnl.grpATA.Visible = False
             ControlPanel.chkShowQuestion.Checked = False
             TVControlPnl.tmrFlash.Stop()
-            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = QuestionStrap.GetTexture(2)
+            TVControlPnl.picB.BackgroundImage = QuestionStrap.GetTexture(3)
+            TVControlPnl.picC.BackgroundImage = QuestionStrap.GetTexture(2)
+            TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(3)
+            GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+            GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+            GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+            GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
+            HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+            HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+            HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+            HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
             ControlPanel.txtQuestion.Text = ""
             ControlPanel.txtA.Text = ""
             ControlPanel.txtB.Text = ""

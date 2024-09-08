@@ -588,7 +588,7 @@ Partial Class FFFServer
         '
         'tmrRevealPlayers
         '
-        Me.tmrRevealPlayers.Interval = 30
+        Me.tmrRevealPlayers.Interval = 60
         '
         'tmrFastestPlayer
         '

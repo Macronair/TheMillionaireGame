@@ -72,11 +72,30 @@ Public Class OptionsScreen
                 radStrapYellow.Checked = True
                 WinningStrapTexture = 0
             Case 1
-                radStrapGreen.Checked = True
+                radStrapBlackW.Checked = True
                 WinningStrapTexture = 1
             Case 2
-                radStrapBlack.Checked = True
+                radStrapBlackG.Checked = True
                 WinningStrapTexture = 2
+        End Select
+
+        QuestionTexture = Profile.Options.QuestionsTexture
+        picQuestionTexture.Image = QuestionStrap.GetTexture(1)
+        picNormalAnswer.Image = QuestionStrap.GetTexture(3)
+        picFinalAnswer.Image = QuestionStrap.GetTexture(5)
+        picCorrectAnswer.Image = QuestionStrap.GetTexture(7)
+
+        Select Case Profile.Options.QuestionsTexture
+            Case 0
+                cmbQuestionTextures.SelectedIndex = 0
+            Case 1
+                cmbQuestionTextures.SelectedIndex = 1
+            Case 2
+                cmbQuestionTextures.SelectedIndex = 2
+            Case 3
+                cmbQuestionTextures.SelectedIndex = 3
+            Case 4
+                cmbQuestionTextures.SelectedIndex = 4
         End Select
 
         UpdateHostMessagesList()
@@ -238,6 +257,47 @@ Public Class OptionsScreen
         txtSndQ13Wrong.Text = Profile.Options.snd_Q13Wrong
         txtSndQ14Wrong.Text = Profile.Options.snd_Q14Wrong
         txtSndQ15Wrong.Text = Profile.Options.snd_Q15Wrong
+
+        nmr_TR_01.Value = MoneyTreeSettings.TreeData.Level_01_Value
+        nmr_TR_02.Value = MoneyTreeSettings.TreeData.Level_02_Value
+        nmr_TR_03.Value = MoneyTreeSettings.TreeData.Level_03_Value
+        nmr_TR_04.Value = MoneyTreeSettings.TreeData.Level_04_Value
+        nmr_TR_05.Value = MoneyTreeSettings.TreeData.Level_05_Value
+        nmr_TR_06.Value = MoneyTreeSettings.TreeData.Level_06_Value
+        nmr_TR_07.Value = MoneyTreeSettings.TreeData.Level_07_Value
+        nmr_TR_08.Value = MoneyTreeSettings.TreeData.Level_08_Value
+        nmr_TR_09.Value = MoneyTreeSettings.TreeData.Level_09_Value
+        nmr_TR_10.Value = MoneyTreeSettings.TreeData.Level_10_Value
+        nmr_TR_11.Value = MoneyTreeSettings.TreeData.Level_11_Value
+        nmr_TR_12.Value = MoneyTreeSettings.TreeData.Level_12_Value
+        nmr_TR_13.Value = MoneyTreeSettings.TreeData.Level_13_Value
+        nmr_TR_14.Value = MoneyTreeSettings.TreeData.Level_14_Value
+        nmr_TR_15.Value = MoneyTreeSettings.TreeData.Level_15_Value
+        trk_TRs1.Value = MoneyTreeSettings.TreeData.SafeNet_01
+        trk_TRs2.Value = MoneyTreeSettings.TreeData.SafeNet_02
+        lbl_TRs1.Text = MoneyTreeSettings.TreeData.SafeNet_01
+        lbl_TRs2.Text = MoneyTreeSettings.TreeData.SafeNet_02
+        Select Case MoneyTreeSettings.TreeData.SafeNet_Risk
+            Case 1
+                rad_TRr1.Checked = True
+                rad_TRr2.Checked = False
+            Case 2
+                rad_TRr2.Checked = True
+                rad_TRr1.Checked = False
+        End Select
+        Select Case MoneyTreeSettings.TreeData.Currency
+            Case "€"
+                rad_CUR_Euro.Checked = True
+            Case "$"
+                rad_CUR_Dollar.Checked = True
+            Case "£"
+                rad_CUR_Pound.Checked = True
+            Case "¥"
+                rad_CUR_Yen.Checked = True
+            Case Else
+                rad_CUR_Other.Checked = True
+                txt_CUR_Other.Text = MoneyTreeSettings.TreeData.Currency
+        End Select
     End Sub
 
 #Region "Sounds"
@@ -295,9 +355,13 @@ Public Class OptionsScreen
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        Game.CurrentTree.SaveSettings()
+        Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+        QuestionStrap.LoadTextures()
+        MoneyTreeCore.GenerateImages()
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
@@ -316,9 +380,13 @@ Public Class OptionsScreen
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        Game.CurrentTree.SaveSettings()
+        Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+        QuestionStrap.LoadTextures()
+        MoneyTreeCore.GenerateImages()
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
@@ -533,17 +601,49 @@ Public Class OptionsScreen
         End If
     End Sub
 
-    Private Sub radStrapGreen_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapGreen.CheckedChanged
-        If radStrapGreen.Checked Then
+    Private Sub radStrapBlackW_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackW.CheckedChanged
+        If radStrapBlackW.Checked Then
             WinningStrapTexture = 1
             picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
     End Sub
 
-    Private Sub radStrapBlack_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlack.CheckedChanged
-        If radStrapBlack.Checked Then
+    Private Sub radStrapBlackG_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackG.CheckedChanged
+        If radStrapBlackG.Checked Then
             WinningStrapTexture = 2
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapBlackB_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackB.CheckedChanged
+        If radStrapBlackB.Checked Then
+            WinningStrapTexture = 3
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapBlue_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlue.CheckedChanged
+        If radStrapBlue.Checked Then
+            WinningStrapTexture = 4
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapPurple_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapPurple.CheckedChanged
+        If radStrapPurple.Checked Then
+            WinningStrapTexture = 5
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapMillionaireOrig_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapMillionaireOrig.CheckedChanged
+        If radStrapMillionaireOrig.Checked Then
+            WinningStrapTexture = 6
             picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
@@ -645,6 +745,18 @@ Public Class OptionsScreen
         dtMessages.Columns("Id").Visible = False
         dtMessages.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Data.connectionString.Close()
+    End Sub
+
+#End Region
+
+#Region "Question Textures"
+    Private Sub cmbQuestionTextures_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbQuestionTextures.SelectedIndexChanged
+        QuestionTexture = cmbQuestionTextures.SelectedIndex
+
+        picQuestionTexture.Image = QuestionStrap.GetTexture(1, QuestionTexture)
+        picNormalAnswer.Image = QuestionStrap.GetTexture(3, QuestionTexture)
+        picFinalAnswer.Image = QuestionStrap.GetTexture(5, QuestionTexture)
+        picCorrectAnswer.Image = QuestionStrap.GetTexture(7, QuestionTexture)
     End Sub
 #End Region
 End Class

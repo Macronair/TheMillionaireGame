@@ -197,22 +197,10 @@ Public Class Profile
             Options.Lifeline3_available = loadedvalues.Lifeline3_available
             Options.Lifeline4_available = loadedvalues.Lifeline4_available
 
-            TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
             ControlPanel.btnLifeline1.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
             ControlPanel.btnLifeline2.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
             ControlPanel.btnLifeline3.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
             ControlPanel.btnLifeline4.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
-            HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
-            GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
 
             Options.WinningStrapTexture = loadedvalues.WinningStrapTexture
             Options.QuestionsTexture = loadedvalues.QuestionsTexture

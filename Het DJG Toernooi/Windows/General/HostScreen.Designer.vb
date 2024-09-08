@@ -47,6 +47,8 @@ Partial Class HostScreen
         Me.txtATAb = New System.Windows.Forms.TextBox()
         Me.txtATAa = New System.Windows.Forms.TextBox()
         Me.txtExplain = New System.Windows.Forms.Label()
+        Me.txtWinnings = New System.Windows.Forms.Label()
+        Me.lblHostMsg = New System.Windows.Forms.TextBox()
         Me.pnlD = New System.Windows.Forms.Panel()
         Me.txtD = New System.Windows.Forms.Label()
         Me.pnlB = New System.Windows.Forms.Panel()
@@ -57,15 +59,13 @@ Partial Class HostScreen
         Me.txtA = New System.Windows.Forms.Label()
         Me.picQuestion = New System.Windows.Forms.Panel()
         Me.txtQuestion = New System.Windows.Forms.Label()
-        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.picTree = New System.Windows.Forms.PictureBox()
-        Me.txtWinnings = New System.Windows.Forms.Label()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.txtWinningStrap = New System.Windows.Forms.Label()
-        Me.lblHostMsg = New System.Windows.Forms.TextBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
         Me.pnlCorrect.SuspendLayout()
         CType(Me.picCorrect, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlWrong.SuspendLayout()
@@ -81,12 +81,12 @@ Partial Class HostScreen
         Me.pnlC.SuspendLayout()
         Me.pnlA.SuspendLayout()
         Me.picQuestion.SuspendLayout()
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlCorrect
@@ -237,7 +237,7 @@ Partial Class HostScreen
         '
         Me.pnlAnswer.BackColor = System.Drawing.Color.Black
         Me.pnlAnswer.Controls.Add(Me.lblAnswer)
-        Me.pnlAnswer.Location = New System.Drawing.Point(924, 442)
+        Me.pnlAnswer.Location = New System.Drawing.Point(880, 440)
         Me.pnlAnswer.Name = "pnlAnswer"
         Me.pnlAnswer.Size = New System.Drawing.Size(47, 46)
         Me.pnlAnswer.TabIndex = 17
@@ -280,7 +280,7 @@ Partial Class HostScreen
         Me.lblTime.AutoSize = True
         Me.lblTime.Font = New System.Drawing.Font("Copperplate Gothic Bold", 72.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblTime.ForeColor = System.Drawing.Color.White
-        Me.lblTime.Location = New System.Drawing.Point(793, 284)
+        Me.lblTime.Location = New System.Drawing.Point(750, 320)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(181, 107)
         Me.lblTime.TabIndex = 27
@@ -294,10 +294,10 @@ Partial Class HostScreen
         Me.txtATAd.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtATAd.Font = New System.Drawing.Font("Copperplate Gothic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtATAd.ForeColor = System.Drawing.Color.White
-        Me.txtATAd.Location = New System.Drawing.Point(776, 204)
+        Me.txtATAd.Location = New System.Drawing.Point(760, 206)
         Me.txtATAd.Name = "txtATAd"
         Me.txtATAd.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtATAd.Size = New System.Drawing.Size(182, 36)
+        Me.txtATAd.Size = New System.Drawing.Size(170, 36)
         Me.txtATAd.TabIndex = 43
         Me.txtATAd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -307,10 +307,10 @@ Partial Class HostScreen
         Me.txtATAc.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtATAc.Font = New System.Drawing.Font("Copperplate Gothic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtATAc.ForeColor = System.Drawing.Color.White
-        Me.txtATAc.Location = New System.Drawing.Point(776, 162)
+        Me.txtATAc.Location = New System.Drawing.Point(760, 164)
         Me.txtATAc.Name = "txtATAc"
         Me.txtATAc.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtATAc.Size = New System.Drawing.Size(182, 36)
+        Me.txtATAc.Size = New System.Drawing.Size(170, 36)
         Me.txtATAc.TabIndex = 42
         Me.txtATAc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -320,10 +320,10 @@ Partial Class HostScreen
         Me.txtATAb.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtATAb.Font = New System.Drawing.Font("Copperplate Gothic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtATAb.ForeColor = System.Drawing.Color.White
-        Me.txtATAb.Location = New System.Drawing.Point(776, 120)
+        Me.txtATAb.Location = New System.Drawing.Point(760, 122)
         Me.txtATAb.Name = "txtATAb"
         Me.txtATAb.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtATAb.Size = New System.Drawing.Size(182, 36)
+        Me.txtATAb.Size = New System.Drawing.Size(170, 36)
         Me.txtATAb.TabIndex = 41
         Me.txtATAb.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -333,10 +333,10 @@ Partial Class HostScreen
         Me.txtATAa.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtATAa.Font = New System.Drawing.Font("Copperplate Gothic Bold", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtATAa.ForeColor = System.Drawing.Color.White
-        Me.txtATAa.Location = New System.Drawing.Point(776, 78)
+        Me.txtATAa.Location = New System.Drawing.Point(760, 80)
         Me.txtATAa.Name = "txtATAa"
         Me.txtATAa.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.txtATAa.Size = New System.Drawing.Size(182, 36)
+        Me.txtATAa.Size = New System.Drawing.Size(170, 36)
         Me.txtATAa.TabIndex = 40
         Me.txtATAa.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -351,9 +351,33 @@ Partial Class HostScreen
         Me.txtExplain.Size = New System.Drawing.Size(746, 155)
         Me.txtExplain.TabIndex = 61
         '
+        'txtWinnings
+        '
+        Me.txtWinnings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtWinnings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.txtWinnings.Location = New System.Drawing.Point(206, 115)
+        Me.txtWinnings.Name = "txtWinnings"
+        Me.txtWinnings.Size = New System.Drawing.Size(288, 46)
+        Me.txtWinnings.TabIndex = 67
+        Me.txtWinnings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lblHostMsg
+        '
+        Me.lblHostMsg.BackColor = System.Drawing.Color.Black
+        Me.lblHostMsg.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.lblHostMsg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.lblHostMsg.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.lblHostMsg.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHostMsg.ForeColor = System.Drawing.Color.DarkOrange
+        Me.lblHostMsg.Location = New System.Drawing.Point(12, 169)
+        Me.lblHostMsg.Multiline = True
+        Me.lblHostMsg.Name = "lblHostMsg"
+        Me.lblHostMsg.Size = New System.Drawing.Size(746, 161)
+        Me.lblHostMsg.TabIndex = 70
+        '
         'pnlD
         '
-        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
+        Me.pnlD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.pnlD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlD.Controls.Add(Me.txtD)
         Me.pnlD.Location = New System.Drawing.Point(640, 651)
@@ -374,7 +398,7 @@ Partial Class HostScreen
         '
         'pnlB
         '
-        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
+        Me.pnlB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.pnlB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlB.Controls.Add(Me.txtB)
         Me.pnlB.Location = New System.Drawing.Point(640, 592)
@@ -395,7 +419,7 @@ Partial Class HostScreen
         '
         'pnlC
         '
-        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
+        Me.pnlC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
         Me.pnlC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlC.Controls.Add(Me.txtC)
         Me.pnlC.Location = New System.Drawing.Point(0, 651)
@@ -416,7 +440,7 @@ Partial Class HostScreen
         '
         'pnlA
         '
-        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
+        Me.pnlA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
         Me.pnlA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlA.Controls.Add(Me.txtA)
         Me.pnlA.Location = New System.Drawing.Point(0, 592)
@@ -437,7 +461,7 @@ Partial Class HostScreen
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Question_Strap
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 492)
@@ -456,66 +480,21 @@ Partial Class HostScreen
         Me.txtQuestion.TabIndex = 13
         Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picLifeline2
-        '
-        Me.picLifeline2.Location = New System.Drawing.Point(680, 9)
-        Me.picLifeline2.Name = "picLifeline2"
-        Me.picLifeline2.Size = New System.Drawing.Size(94, 65)
-        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline2.TabIndex = 44
-        Me.picLifeline2.TabStop = False
-        '
-        'picLifeline1
-        '
-        Me.picLifeline1.Location = New System.Drawing.Point(580, 9)
-        Me.picLifeline1.Name = "picLifeline1"
-        Me.picLifeline1.Size = New System.Drawing.Size(94, 65)
-        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline1.TabIndex = 29
-        Me.picLifeline1.TabStop = False
-        '
-        'picLifeline3
-        '
-        Me.picLifeline3.Location = New System.Drawing.Point(780, 9)
-        Me.picLifeline3.Name = "picLifeline3"
-        Me.picLifeline3.Size = New System.Drawing.Size(94, 65)
-        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline3.TabIndex = 30
-        Me.picLifeline3.TabStop = False
-        '
-        'picLifeline4
-        '
-        Me.picLifeline4.Location = New System.Drawing.Point(880, 9)
-        Me.picLifeline4.Name = "picLifeline4"
-        Me.picLifeline4.Size = New System.Drawing.Size(94, 65)
-        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline4.TabIndex = 28
-        Me.picLifeline4.TabStop = False
-        '
         'picTree
         '
-        Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._0_tree_0
-        Me.picTree.Location = New System.Drawing.Point(367, -51)
+        Me.picTree.BackColor = System.Drawing.Color.Transparent
+        Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._01_Tree
+        Me.picTree.Location = New System.Drawing.Point(367, 0)
         Me.picTree.Name = "picTree"
-        Me.picTree.Size = New System.Drawing.Size(921, 540)
+        Me.picTree.Size = New System.Drawing.Size(920, 490)
         Me.picTree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTree.TabIndex = 12
         Me.picTree.TabStop = False
         '
-        'txtWinnings
-        '
-        Me.txtWinnings.Font = New System.Drawing.Font("Calibri", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtWinnings.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.txtWinnings.Location = New System.Drawing.Point(206, 115)
-        Me.txtWinnings.Name = "txtWinnings"
-        Me.txtWinnings.Size = New System.Drawing.Size(288, 46)
-        Me.txtWinnings.TabIndex = 67
-        Me.txtWinnings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'pnlStrap
         '
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
-        Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.WinStrap_01
+        Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
         Me.pnlStrap.Location = New System.Drawing.Point(-8, 492)
         Me.pnlStrap.Name = "pnlStrap"
@@ -527,26 +506,56 @@ Partial Class HostScreen
         '
         Me.txtWinningStrap.BackColor = System.Drawing.Color.Transparent
         Me.txtWinningStrap.Font = New System.Drawing.Font("Copperplate Gothic Bold", 38.0!)
-        Me.txtWinningStrap.Location = New System.Drawing.Point(415, 84)
+        Me.txtWinningStrap.Location = New System.Drawing.Point(423, 84)
         Me.txtWinningStrap.Name = "txtWinningStrap"
         Me.txtWinningStrap.Size = New System.Drawing.Size(451, 55)
         Me.txtWinningStrap.TabIndex = 0
         Me.txtWinningStrap.Text = "1.000.000"
         Me.txtWinningStrap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lblHostMsg
+        'picLifeline1
         '
-        Me.lblHostMsg.BackColor = System.Drawing.Color.Black
-        Me.lblHostMsg.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.lblHostMsg.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.lblHostMsg.Cursor = System.Windows.Forms.Cursors.Arrow
-        Me.lblHostMsg.Font = New System.Drawing.Font("Calibri", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHostMsg.ForeColor = System.Drawing.Color.DarkOrange
-        Me.lblHostMsg.Location = New System.Drawing.Point(12, 169)
-        Me.lblHostMsg.Multiline = True
-        Me.lblHostMsg.Name = "lblHostMsg"
-        Me.lblHostMsg.Size = New System.Drawing.Size(746, 161)
-        Me.lblHostMsg.TabIndex = 70
+        Me.picLifeline1.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline1.Location = New System.Drawing.Point(566, 12)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(86, 52)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 71
+        Me.picLifeline1.TabStop = False
+        '
+        'picLifeline2
+        '
+        Me.picLifeline2.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline2.Location = New System.Drawing.Point(658, 12)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(86, 52)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 72
+        Me.picLifeline2.TabStop = False
+        '
+        'picLifeline3
+        '
+        Me.picLifeline3.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline3.Location = New System.Drawing.Point(750, 12)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(86, 52)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 73
+        Me.picLifeline3.TabStop = False
+        '
+        'picLifeline4
+        '
+        Me.picLifeline4.BackColor = System.Drawing.Color.Transparent
+        Me.picLifeline4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLifeline4.Location = New System.Drawing.Point(841, 12)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(86, 52)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 74
+        Me.picLifeline4.TabStop = False
         '
         'HostScreen
         '
@@ -554,22 +563,22 @@ Partial Class HostScreen
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.picLifeline4)
+        Me.Controls.Add(Me.picLifeline3)
+        Me.Controls.Add(Me.picLifeline2)
+        Me.Controls.Add(Me.picLifeline1)
+        Me.Controls.Add(Me.picQuestion)
+        Me.Controls.Add(Me.txtATAd)
+        Me.Controls.Add(Me.txtATAc)
+        Me.Controls.Add(Me.txtATAb)
+        Me.Controls.Add(Me.txtATAa)
         Me.Controls.Add(Me.lblHostMsg)
         Me.Controls.Add(Me.txtWinnings)
         Me.Controls.Add(Me.pnlD)
         Me.Controls.Add(Me.pnlB)
         Me.Controls.Add(Me.pnlC)
         Me.Controls.Add(Me.pnlA)
-        Me.Controls.Add(Me.picQuestion)
         Me.Controls.Add(Me.txtExplain)
-        Me.Controls.Add(Me.picLifeline2)
-        Me.Controls.Add(Me.picLifeline1)
-        Me.Controls.Add(Me.txtATAd)
-        Me.Controls.Add(Me.txtATAc)
-        Me.Controls.Add(Me.txtATAb)
-        Me.Controls.Add(Me.txtATAa)
-        Me.Controls.Add(Me.picLifeline3)
-        Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.lblWalkedAway)
         Me.Controls.Add(Me.lblExplainRules)
@@ -608,12 +617,12 @@ Partial Class HostScreen
         Me.pnlC.ResumeLayout(False)
         Me.pnlA.ResumeLayout(False)
         Me.picQuestion.ResumeLayout(False)
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -634,14 +643,10 @@ Partial Class HostScreen
     Friend WithEvents lblExplainRules As Label
     Friend WithEvents lblWalkedAway As Label
     Friend WithEvents lblTime As Label
-    Friend WithEvents picLifeline4 As PictureBox
-    Friend WithEvents picLifeline1 As PictureBox
-    Friend WithEvents picLifeline3 As PictureBox
     Friend WithEvents txtATAd As TextBox
     Friend WithEvents txtATAc As TextBox
     Friend WithEvents txtATAb As TextBox
     Friend WithEvents txtATAa As TextBox
-    Friend WithEvents picLifeline2 As PictureBox
     Friend WithEvents picCorrect As PictureBox
     Friend WithEvents picWrong As PictureBox
     Friend WithEvents picCurrent As PictureBox
@@ -661,4 +666,8 @@ Partial Class HostScreen
     Friend WithEvents pnlStrap As Panel
     Friend WithEvents txtWinningStrap As Label
     Friend WithEvents lblHostMsg As TextBox
+    Friend WithEvents picLifeline1 As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents picLifeline4 As PictureBox
 End Class

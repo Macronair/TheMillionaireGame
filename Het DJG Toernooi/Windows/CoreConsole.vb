@@ -40,6 +40,7 @@ Public Class CoreConsole
         '' LOADING OF THE CONFIG.YML FILE ''
         LogMsgDate("Loading configuration...")
         Game.CurrentProfile.LoadSettings()      ' Load values of the config.yml file
+        Game.CurrentTree.LoadSettings()         ' Load values of the tree.yml file
 
         Monitor.Detect()                        ' Detect all available monitors on the machine. Used for the Options menu.
 
@@ -60,6 +61,10 @@ Public Class CoreConsole
         LifelineManager.UnlockLifeline(4)           ' Activate Lifeline 4 (if enabled).
 
         Thread.Sleep(250)   ' Again... a short break.
+
+        LogMsgDate("Loading textures...")
+        QuestionStrap.LoadTextures()
+        MoneyTreeCore.GenerateImages()
 
         '' THE DATABASE ''
         LogMsgDate("Checking database...")

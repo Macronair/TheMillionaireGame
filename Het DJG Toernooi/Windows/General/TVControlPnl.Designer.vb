@@ -50,27 +50,13 @@ Partial Class TVControlPnl
         Me.txtA = New System.Windows.Forms.Label()
         Me.picQuestion = New System.Windows.Forms.Panel()
         Me.txtQuestion = New System.Windows.Forms.Label()
-        Me.picTree = New System.Windows.Forms.Panel()
-        Me.lblFFFQuestion = New System.Windows.Forms.Label()
-        Me.pnlFFFOrder4 = New System.Windows.Forms.Panel()
-        Me.txtFFFOrder4 = New System.Windows.Forms.Label()
-        Me.pnlFFFOrder3 = New System.Windows.Forms.Panel()
-        Me.txtFFFOrder3 = New System.Windows.Forms.Label()
-        Me.pnlFFFOrder2 = New System.Windows.Forms.Panel()
-        Me.txtFFFOrder2 = New System.Windows.Forms.Label()
-        Me.pnlFFFOrder1 = New System.Windows.Forms.Panel()
-        Me.txtFFFOrder1 = New System.Windows.Forms.Label()
-        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
-        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.pnlStrap = New System.Windows.Forms.Panel()
         Me.lblAmount = New System.Windows.Forms.Label()
-        Me.pnlFFFWinner = New System.Windows.Forms.Panel()
-        Me.lblFFFWinnerPoints = New System.Windows.Forms.Label()
-        Me.lblFFFWinnerName = New System.Windows.Forms.Label()
         Me.picLifelineUse = New System.Windows.Forms.PictureBox()
         Me.pnlFFFPlayers = New System.Windows.Forms.Panel()
+        Me.pnlPL2 = New System.Windows.Forms.Panel()
+        Me.txtPL2_Points = New System.Windows.Forms.Label()
+        Me.txtPL2_Name = New System.Windows.Forms.Label()
         Me.pnlPL8 = New System.Windows.Forms.Panel()
         Me.txtPL8_Points = New System.Windows.Forms.Label()
         Me.txtPL8_Name = New System.Windows.Forms.Label()
@@ -89,12 +75,26 @@ Partial Class TVControlPnl
         Me.pnlPL3 = New System.Windows.Forms.Panel()
         Me.txtPL3_Points = New System.Windows.Forms.Label()
         Me.txtPL3_Name = New System.Windows.Forms.Label()
-        Me.pnlPL2 = New System.Windows.Forms.Panel()
-        Me.txtPL2_Points = New System.Windows.Forms.Label()
-        Me.txtPL2_Name = New System.Windows.Forms.Label()
         Me.pnlPL1 = New System.Windows.Forms.Panel()
         Me.txtPL1_Points = New System.Windows.Forms.Label()
         Me.txtPL1_Name = New System.Windows.Forms.Label()
+        Me.pnlFFFWinner = New System.Windows.Forms.Panel()
+        Me.lblFFFWinnerPoints = New System.Windows.Forms.Label()
+        Me.lblFFFWinnerName = New System.Windows.Forms.Label()
+        Me.picTree = New MillionaireGame.MPanel()
+        Me.pnlFFFOrder4 = New System.Windows.Forms.Panel()
+        Me.txtFFFOrder4 = New System.Windows.Forms.Label()
+        Me.lblFFFQuestion = New System.Windows.Forms.Label()
+        Me.pnlFFFOrder3 = New System.Windows.Forms.Panel()
+        Me.txtFFFOrder3 = New System.Windows.Forms.Label()
+        Me.picLifeline4 = New System.Windows.Forms.PictureBox()
+        Me.pnlFFFOrder2 = New System.Windows.Forms.Panel()
+        Me.txtFFFOrder2 = New System.Windows.Forms.Label()
+        Me.picLifeline3 = New System.Windows.Forms.PictureBox()
+        Me.pnlFFFOrder1 = New System.Windows.Forms.Panel()
+        Me.txtFFFOrder1 = New System.Windows.Forms.Label()
+        Me.picLifeline2 = New System.Windows.Forms.PictureBox()
+        Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.pnlTime.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlTotal.SuspendLayout()
@@ -106,36 +106,36 @@ Partial Class TVControlPnl
         Me.picC.SuspendLayout()
         Me.picA.SuspendLayout()
         Me.picQuestion.SuspendLayout()
-        Me.picTree.SuspendLayout()
-        Me.pnlFFFOrder4.SuspendLayout()
-        Me.pnlFFFOrder3.SuspendLayout()
-        Me.pnlFFFOrder2.SuspendLayout()
-        Me.pnlFFFOrder1.SuspendLayout()
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlStrap.SuspendLayout()
-        Me.pnlFFFWinner.SuspendLayout()
         CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlFFFPlayers.SuspendLayout()
+        Me.pnlPL2.SuspendLayout()
         Me.pnlPL8.SuspendLayout()
         Me.pnlPL7.SuspendLayout()
         Me.pnlPL6.SuspendLayout()
         Me.pnlPL5.SuspendLayout()
         Me.pnlPL4.SuspendLayout()
         Me.pnlPL3.SuspendLayout()
-        Me.pnlPL2.SuspendLayout()
         Me.pnlPL1.SuspendLayout()
+        Me.pnlFFFWinner.SuspendLayout()
+        Me.picTree.SuspendLayout()
+        Me.pnlFFFOrder4.SuspendLayout()
+        Me.pnlFFFOrder3.SuspendLayout()
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFFFOrder2.SuspendLayout()
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnlFFFOrder1.SuspendLayout()
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tmrFlash
         '
-        Me.tmrFlash.Interval = 175
+        Me.tmrFlash.Interval = 190
         '
         'tmrStrap
         '
-        Me.tmrStrap.Interval = 1250
+        Me.tmrStrap.Interval = 1350
         '
         'pnlTime
         '
@@ -297,7 +297,7 @@ Partial Class TVControlPnl
         '
         'picD
         '
-        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
+        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.picD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picD.Controls.Add(Me.txtD)
         Me.picD.Location = New System.Drawing.Point(642, 168)
@@ -318,7 +318,7 @@ Partial Class TVControlPnl
         '
         'picB
         '
-        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
+        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.picB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picB.Controls.Add(Me.txtB)
         Me.picB.Location = New System.Drawing.Point(642, 109)
@@ -339,7 +339,7 @@ Partial Class TVControlPnl
         '
         'picC
         '
-        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
+        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
         Me.picC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picC.Controls.Add(Me.txtC)
         Me.picC.Location = New System.Drawing.Point(0, 168)
@@ -360,7 +360,7 @@ Partial Class TVControlPnl
         '
         'picA
         '
-        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_l
+        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
         Me.picA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picA.Controls.Add(Me.txtA)
         Me.picA.Location = New System.Drawing.Point(0, 109)
@@ -381,7 +381,7 @@ Partial Class TVControlPnl
         '
         'picQuestion
         '
-        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Large_Strap_Fill
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Question_Strap
         Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picQuestion.Controls.Add(Me.txtQuestion)
         Me.picQuestion.Location = New System.Drawing.Point(0, 9)
@@ -400,169 +400,10 @@ Partial Class TVControlPnl
         Me.txtQuestion.TabIndex = 13
         Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'picTree
-        '
-        Me.picTree.BackColor = System.Drawing.Color.Transparent
-        Me.picTree.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_tree_0
-        Me.picTree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.picTree.Controls.Add(Me.lblFFFQuestion)
-        Me.picTree.Controls.Add(Me.pnlFFFOrder4)
-        Me.picTree.Controls.Add(Me.pnlFFFOrder3)
-        Me.picTree.Controls.Add(Me.pnlFFFOrder2)
-        Me.picTree.Controls.Add(Me.pnlFFFOrder1)
-        Me.picTree.Controls.Add(Me.picLifeline1)
-        Me.picTree.Controls.Add(Me.picLifeline2)
-        Me.picTree.Controls.Add(Me.picLifeline4)
-        Me.picTree.Controls.Add(Me.picLifeline3)
-        Me.picTree.Location = New System.Drawing.Point(48, -28)
-        Me.picTree.Name = "picTree"
-        Me.picTree.Size = New System.Drawing.Size(1232, 748)
-        Me.picTree.TabIndex = 29
-        Me.picTree.Visible = False
-        '
-        'lblFFFQuestion
-        '
-        Me.lblFFFQuestion.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFFFQuestion.ForeColor = System.Drawing.Color.White
-        Me.lblFFFQuestion.Location = New System.Drawing.Point(831, 98)
-        Me.lblFFFQuestion.Name = "lblFFFQuestion"
-        Me.lblFFFQuestion.Size = New System.Drawing.Size(367, 272)
-        Me.lblFFFQuestion.TabIndex = 7
-        Me.lblFFFQuestion.Text = "Zet de volgende BN'ers op volgorde van hun leeftijd en begin bij de jongste."
-        Me.lblFFFQuestion.Visible = False
-        '
-        'pnlFFFOrder4
-        '
-        Me.pnlFFFOrder4.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
-        Me.pnlFFFOrder4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlFFFOrder4.Controls.Add(Me.txtFFFOrder4)
-        Me.pnlFFFOrder4.Location = New System.Drawing.Point(689, 571)
-        Me.pnlFFFOrder4.Name = "pnlFFFOrder4"
-        Me.pnlFFFOrder4.Size = New System.Drawing.Size(580, 48)
-        Me.pnlFFFOrder4.TabIndex = 6
-        Me.pnlFFFOrder4.Visible = False
-        '
-        'txtFFFOrder4
-        '
-        Me.txtFFFOrder4.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFFFOrder4.ForeColor = System.Drawing.Color.White
-        Me.txtFFFOrder4.Location = New System.Drawing.Point(33, 0)
-        Me.txtFFFOrder4.Name = "txtFFFOrder4"
-        Me.txtFFFOrder4.Size = New System.Drawing.Size(438, 48)
-        Me.txtFFFOrder4.TabIndex = 3
-        Me.txtFFFOrder4.Text = "D:"
-        Me.txtFFFOrder4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'pnlFFFOrder3
-        '
-        Me.pnlFFFOrder3.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
-        Me.pnlFFFOrder3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlFFFOrder3.Controls.Add(Me.txtFFFOrder3)
-        Me.pnlFFFOrder3.Location = New System.Drawing.Point(689, 517)
-        Me.pnlFFFOrder3.Name = "pnlFFFOrder3"
-        Me.pnlFFFOrder3.Size = New System.Drawing.Size(580, 48)
-        Me.pnlFFFOrder3.TabIndex = 5
-        Me.pnlFFFOrder3.Visible = False
-        '
-        'txtFFFOrder3
-        '
-        Me.txtFFFOrder3.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFFFOrder3.ForeColor = System.Drawing.Color.White
-        Me.txtFFFOrder3.Location = New System.Drawing.Point(33, 0)
-        Me.txtFFFOrder3.Name = "txtFFFOrder3"
-        Me.txtFFFOrder3.Size = New System.Drawing.Size(438, 48)
-        Me.txtFFFOrder3.TabIndex = 2
-        Me.txtFFFOrder3.Text = "C:"
-        Me.txtFFFOrder3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'pnlFFFOrder2
-        '
-        Me.pnlFFFOrder2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
-        Me.pnlFFFOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlFFFOrder2.Controls.Add(Me.txtFFFOrder2)
-        Me.pnlFFFOrder2.Location = New System.Drawing.Point(689, 463)
-        Me.pnlFFFOrder2.Name = "pnlFFFOrder2"
-        Me.pnlFFFOrder2.Size = New System.Drawing.Size(580, 48)
-        Me.pnlFFFOrder2.TabIndex = 5
-        Me.pnlFFFOrder2.Visible = False
-        '
-        'txtFFFOrder2
-        '
-        Me.txtFFFOrder2.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFFFOrder2.ForeColor = System.Drawing.Color.White
-        Me.txtFFFOrder2.Location = New System.Drawing.Point(33, 0)
-        Me.txtFFFOrder2.Name = "txtFFFOrder2"
-        Me.txtFFFOrder2.Size = New System.Drawing.Size(438, 48)
-        Me.txtFFFOrder2.TabIndex = 1
-        Me.txtFFFOrder2.Text = "B:"
-        Me.txtFFFOrder2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'pnlFFFOrder1
-        '
-        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._0_Normal_Answer_Fill_r
-        Me.pnlFFFOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlFFFOrder1.Controls.Add(Me.txtFFFOrder1)
-        Me.pnlFFFOrder1.Location = New System.Drawing.Point(689, 409)
-        Me.pnlFFFOrder1.Name = "pnlFFFOrder1"
-        Me.pnlFFFOrder1.Size = New System.Drawing.Size(580, 48)
-        Me.pnlFFFOrder1.TabIndex = 4
-        Me.pnlFFFOrder1.Visible = False
-        '
-        'txtFFFOrder1
-        '
-        Me.txtFFFOrder1.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtFFFOrder1.ForeColor = System.Drawing.Color.White
-        Me.txtFFFOrder1.Location = New System.Drawing.Point(33, 0)
-        Me.txtFFFOrder1.Name = "txtFFFOrder1"
-        Me.txtFFFOrder1.Size = New System.Drawing.Size(438, 48)
-        Me.txtFFFOrder1.TabIndex = 0
-        Me.txtFFFOrder1.Text = "A:"
-        Me.txtFFFOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'picLifeline1
-        '
-        Me.picLifeline1.BackColor = System.Drawing.Color.Transparent
-        Me.picLifeline1.Location = New System.Drawing.Point(846, 67)
-        Me.picLifeline1.Name = "picLifeline1"
-        Me.picLifeline1.Size = New System.Drawing.Size(74, 48)
-        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline1.TabIndex = 3
-        Me.picLifeline1.TabStop = False
-        '
-        'picLifeline2
-        '
-        Me.picLifeline2.BackColor = System.Drawing.Color.Transparent
-        Me.picLifeline2.Location = New System.Drawing.Point(926, 67)
-        Me.picLifeline2.Name = "picLifeline2"
-        Me.picLifeline2.Size = New System.Drawing.Size(74, 48)
-        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline2.TabIndex = 2
-        Me.picLifeline2.TabStop = False
-        '
-        'picLifeline4
-        '
-        Me.picLifeline4.BackColor = System.Drawing.Color.Transparent
-        Me.picLifeline4.Location = New System.Drawing.Point(1086, 67)
-        Me.picLifeline4.Name = "picLifeline4"
-        Me.picLifeline4.Size = New System.Drawing.Size(74, 48)
-        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline4.TabIndex = 1
-        Me.picLifeline4.TabStop = False
-        '
-        'picLifeline3
-        '
-        Me.picLifeline3.BackColor = System.Drawing.Color.Transparent
-        Me.picLifeline3.Location = New System.Drawing.Point(1006, 67)
-        Me.picLifeline3.Name = "picLifeline3"
-        Me.picLifeline3.Size = New System.Drawing.Size(74, 48)
-        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picLifeline3.TabIndex = 0
-        Me.picLifeline3.TabStop = False
-        '
         'pnlStrap
         '
         Me.pnlStrap.BackColor = System.Drawing.Color.Transparent
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.winning_0
+        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.WinStrap_02
         Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.pnlStrap.Controls.Add(Me.lblAmount)
         Me.pnlStrap.Location = New System.Drawing.Point(0, 573)
@@ -575,50 +416,13 @@ Partial Class TVControlPnl
         '
         Me.lblAmount.BackColor = System.Drawing.Color.Transparent
         Me.lblAmount.Font = New System.Drawing.Font("Copperplate Gothic Bold", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAmount.ForeColor = System.Drawing.Color.Black
+        Me.lblAmount.ForeColor = System.Drawing.Color.Transparent
         Me.lblAmount.Location = New System.Drawing.Point(476, 5)
         Me.lblAmount.Name = "lblAmount"
         Me.lblAmount.Size = New System.Drawing.Size(328, 75)
         Me.lblAmount.TabIndex = 0
         Me.lblAmount.Text = "0"
         Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'pnlFFFWinner
-        '
-        Me.pnlFFFWinner.BackColor = System.Drawing.Color.Transparent
-        Me.pnlFFFWinner.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.fff_fastest_new
-        Me.pnlFFFWinner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pnlFFFWinner.Controls.Add(Me.lblFFFWinnerPoints)
-        Me.pnlFFFWinner.Controls.Add(Me.lblFFFWinnerName)
-        Me.pnlFFFWinner.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.pnlFFFWinner.Location = New System.Drawing.Point(0, 569)
-        Me.pnlFFFWinner.Name = "pnlFFFWinner"
-        Me.pnlFFFWinner.Size = New System.Drawing.Size(1280, 57)
-        Me.pnlFFFWinner.TabIndex = 34
-        Me.pnlFFFWinner.Visible = False
-        '
-        'lblFFFWinnerPoints
-        '
-        Me.lblFFFWinnerPoints.BackColor = System.Drawing.Color.Transparent
-        Me.lblFFFWinnerPoints.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFFFWinnerPoints.ForeColor = System.Drawing.Color.Black
-        Me.lblFFFWinnerPoints.Location = New System.Drawing.Point(789, 10)
-        Me.lblFFFWinnerPoints.Name = "lblFFFWinnerPoints"
-        Me.lblFFFWinnerPoints.Size = New System.Drawing.Size(111, 36)
-        Me.lblFFFWinnerPoints.TabIndex = 9
-        Me.lblFFFWinnerPoints.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'lblFFFWinnerName
-        '
-        Me.lblFFFWinnerName.AutoSize = True
-        Me.lblFFFWinnerName.BackColor = System.Drawing.Color.Transparent
-        Me.lblFFFWinnerName.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblFFFWinnerName.ForeColor = System.Drawing.Color.Black
-        Me.lblFFFWinnerName.Location = New System.Drawing.Point(381, 10)
-        Me.lblFFFWinnerName.Name = "lblFFFWinnerName"
-        Me.lblFFFWinnerName.Size = New System.Drawing.Size(168, 36)
-        Me.lblFFFWinnerName.TabIndex = 8
-        Me.lblFFFWinnerName.Text = "Player Name"
         '
         'picLifelineUse
         '
@@ -636,13 +440,13 @@ Partial Class TVControlPnl
         '
         Me.pnlFFFPlayers.BackgroundImage = CType(resources.GetObject("pnlFFFPlayers.BackgroundImage"), System.Drawing.Image)
         Me.pnlFFFPlayers.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlFFFPlayers.Controls.Add(Me.pnlPL2)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL8)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL7)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL6)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL5)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL4)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL3)
-        Me.pnlFFFPlayers.Controls.Add(Me.pnlPL2)
         Me.pnlFFFPlayers.Controls.Add(Me.pnlPL1)
         Me.pnlFFFPlayers.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnlFFFPlayers.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
@@ -651,6 +455,41 @@ Partial Class TVControlPnl
         Me.pnlFFFPlayers.Size = New System.Drawing.Size(1280, 720)
         Me.pnlFFFPlayers.TabIndex = 33
         Me.pnlFFFPlayers.Visible = False
+        '
+        'pnlPL2
+        '
+        Me.pnlPL2.BackColor = System.Drawing.Color.Transparent
+        Me.pnlPL2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.fff_idle_new
+        Me.pnlPL2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pnlPL2.Controls.Add(Me.txtPL2_Points)
+        Me.pnlPL2.Controls.Add(Me.txtPL2_Name)
+        Me.pnlPL2.Location = New System.Drawing.Point(0, 182)
+        Me.pnlPL2.Name = "pnlPL2"
+        Me.pnlPL2.Size = New System.Drawing.Size(1280, 51)
+        Me.pnlPL2.TabIndex = 2
+        '
+        'txtPL2_Points
+        '
+        Me.txtPL2_Points.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.txtPL2_Points.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPL2_Points.ForeColor = System.Drawing.Color.White
+        Me.txtPL2_Points.Location = New System.Drawing.Point(783, 8)
+        Me.txtPL2_Points.Name = "txtPL2_Points"
+        Me.txtPL2_Points.Size = New System.Drawing.Size(105, 33)
+        Me.txtPL2_Points.TabIndex = 1
+        Me.txtPL2_Points.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'txtPL2_Name
+        '
+        Me.txtPL2_Name.AutoSize = True
+        Me.txtPL2_Name.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.txtPL2_Name.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPL2_Name.ForeColor = System.Drawing.Color.White
+        Me.txtPL2_Name.Location = New System.Drawing.Point(379, 8)
+        Me.txtPL2_Name.Name = "txtPL2_Name"
+        Me.txtPL2_Name.Size = New System.Drawing.Size(106, 33)
+        Me.txtPL2_Name.TabIndex = 0
+        Me.txtPL2_Name.Text = "Player 2"
         '
         'pnlPL8
         '
@@ -862,41 +701,6 @@ Partial Class TVControlPnl
         Me.txtPL3_Name.TabIndex = 0
         Me.txtPL3_Name.Text = "Player 3"
         '
-        'pnlPL2
-        '
-        Me.pnlPL2.BackColor = System.Drawing.Color.Transparent
-        Me.pnlPL2.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.fff_idle_new
-        Me.pnlPL2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pnlPL2.Controls.Add(Me.txtPL2_Points)
-        Me.pnlPL2.Controls.Add(Me.txtPL2_Name)
-        Me.pnlPL2.Location = New System.Drawing.Point(0, 182)
-        Me.pnlPL2.Name = "pnlPL2"
-        Me.pnlPL2.Size = New System.Drawing.Size(1280, 51)
-        Me.pnlPL2.TabIndex = 2
-        '
-        'txtPL2_Points
-        '
-        Me.txtPL2_Points.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtPL2_Points.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPL2_Points.ForeColor = System.Drawing.Color.White
-        Me.txtPL2_Points.Location = New System.Drawing.Point(783, 8)
-        Me.txtPL2_Points.Name = "txtPL2_Points"
-        Me.txtPL2_Points.Size = New System.Drawing.Size(105, 33)
-        Me.txtPL2_Points.TabIndex = 1
-        Me.txtPL2_Points.TextAlign = System.Drawing.ContentAlignment.TopRight
-        '
-        'txtPL2_Name
-        '
-        Me.txtPL2_Name.AutoSize = True
-        Me.txtPL2_Name.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.txtPL2_Name.Font = New System.Drawing.Font("Calibri", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPL2_Name.ForeColor = System.Drawing.Color.White
-        Me.txtPL2_Name.Location = New System.Drawing.Point(379, 8)
-        Me.txtPL2_Name.Name = "txtPL2_Name"
-        Me.txtPL2_Name.Size = New System.Drawing.Size(106, 33)
-        Me.txtPL2_Name.TabIndex = 0
-        Me.txtPL2_Name.Text = "Player 2"
-        '
         'pnlPL1
         '
         Me.pnlPL1.BackColor = System.Drawing.Color.Transparent
@@ -932,6 +736,202 @@ Partial Class TVControlPnl
         Me.txtPL1_Name.TabIndex = 0
         Me.txtPL1_Name.Text = "Player 1"
         '
+        'pnlFFFWinner
+        '
+        Me.pnlFFFWinner.BackColor = System.Drawing.Color.Transparent
+        Me.pnlFFFWinner.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.fff_fastest_new
+        Me.pnlFFFWinner.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.pnlFFFWinner.Controls.Add(Me.lblFFFWinnerPoints)
+        Me.pnlFFFWinner.Controls.Add(Me.lblFFFWinnerName)
+        Me.pnlFFFWinner.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.pnlFFFWinner.Location = New System.Drawing.Point(0, 569)
+        Me.pnlFFFWinner.Name = "pnlFFFWinner"
+        Me.pnlFFFWinner.Size = New System.Drawing.Size(1280, 57)
+        Me.pnlFFFWinner.TabIndex = 34
+        Me.pnlFFFWinner.Visible = False
+        '
+        'lblFFFWinnerPoints
+        '
+        Me.lblFFFWinnerPoints.BackColor = System.Drawing.Color.Transparent
+        Me.lblFFFWinnerPoints.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFFFWinnerPoints.ForeColor = System.Drawing.Color.Black
+        Me.lblFFFWinnerPoints.Location = New System.Drawing.Point(789, 10)
+        Me.lblFFFWinnerPoints.Name = "lblFFFWinnerPoints"
+        Me.lblFFFWinnerPoints.Size = New System.Drawing.Size(111, 36)
+        Me.lblFFFWinnerPoints.TabIndex = 9
+        Me.lblFFFWinnerPoints.TextAlign = System.Drawing.ContentAlignment.TopRight
+        '
+        'lblFFFWinnerName
+        '
+        Me.lblFFFWinnerName.AutoSize = True
+        Me.lblFFFWinnerName.BackColor = System.Drawing.Color.Transparent
+        Me.lblFFFWinnerName.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFFFWinnerName.ForeColor = System.Drawing.Color.Black
+        Me.lblFFFWinnerName.Location = New System.Drawing.Point(381, 10)
+        Me.lblFFFWinnerName.Name = "lblFFFWinnerName"
+        Me.lblFFFWinnerName.Size = New System.Drawing.Size(168, 36)
+        Me.lblFFFWinnerName.TabIndex = 8
+        Me.lblFFFWinnerName.Text = "Player Name"
+        '
+        'picTree
+        '
+        Me.picTree.BackColor = System.Drawing.Color.Transparent
+        Me.picTree.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._02_Tree
+        Me.picTree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picTree.Controls.Add(Me.pnlFFFOrder4)
+        Me.picTree.Controls.Add(Me.lblFFFQuestion)
+        Me.picTree.Controls.Add(Me.pnlFFFOrder3)
+        Me.picTree.Controls.Add(Me.picLifeline4)
+        Me.picTree.Controls.Add(Me.pnlFFFOrder2)
+        Me.picTree.Controls.Add(Me.picLifeline3)
+        Me.picTree.Controls.Add(Me.pnlFFFOrder1)
+        Me.picTree.Controls.Add(Me.picLifeline2)
+        Me.picTree.Controls.Add(Me.picLifeline1)
+        Me.picTree.Location = New System.Drawing.Point(28, 0)
+        Me.picTree.Name = "picTree"
+        Me.picTree.Size = New System.Drawing.Size(1252, 720)
+        Me.picTree.TabIndex = 30
+        Me.picTree.Visible = False
+        '
+        'pnlFFFOrder4
+        '
+        Me.pnlFFFOrder4.BackgroundImage = CType(resources.GetObject("pnlFFFOrder4.BackgroundImage"), System.Drawing.Image)
+        Me.pnlFFFOrder4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlFFFOrder4.Controls.Add(Me.txtFFFOrder4)
+        Me.pnlFFFOrder4.Location = New System.Drawing.Point(689, 571)
+        Me.pnlFFFOrder4.Name = "pnlFFFOrder4"
+        Me.pnlFFFOrder4.Size = New System.Drawing.Size(580, 48)
+        Me.pnlFFFOrder4.TabIndex = 6
+        Me.pnlFFFOrder4.Visible = False
+        '
+        'txtFFFOrder4
+        '
+        Me.txtFFFOrder4.BackColor = System.Drawing.Color.Transparent
+        Me.txtFFFOrder4.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFFFOrder4.ForeColor = System.Drawing.Color.White
+        Me.txtFFFOrder4.Location = New System.Drawing.Point(33, 0)
+        Me.txtFFFOrder4.Name = "txtFFFOrder4"
+        Me.txtFFFOrder4.Size = New System.Drawing.Size(438, 48)
+        Me.txtFFFOrder4.TabIndex = 3
+        Me.txtFFFOrder4.Text = "D:"
+        Me.txtFFFOrder4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lblFFFQuestion
+        '
+        Me.lblFFFQuestion.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblFFFQuestion.ForeColor = System.Drawing.Color.White
+        Me.lblFFFQuestion.Location = New System.Drawing.Point(831, 98)
+        Me.lblFFFQuestion.Name = "lblFFFQuestion"
+        Me.lblFFFQuestion.Size = New System.Drawing.Size(367, 272)
+        Me.lblFFFQuestion.TabIndex = 7
+        Me.lblFFFQuestion.Text = "Zet de volgende BN'ers op volgorde van hun leeftijd en begin bij de jongste."
+        Me.lblFFFQuestion.Visible = False
+        '
+        'pnlFFFOrder3
+        '
+        Me.pnlFFFOrder3.BackgroundImage = CType(resources.GetObject("pnlFFFOrder3.BackgroundImage"), System.Drawing.Image)
+        Me.pnlFFFOrder3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlFFFOrder3.Controls.Add(Me.txtFFFOrder3)
+        Me.pnlFFFOrder3.Location = New System.Drawing.Point(689, 517)
+        Me.pnlFFFOrder3.Name = "pnlFFFOrder3"
+        Me.pnlFFFOrder3.Size = New System.Drawing.Size(580, 48)
+        Me.pnlFFFOrder3.TabIndex = 5
+        Me.pnlFFFOrder3.Visible = False
+        '
+        'txtFFFOrder3
+        '
+        Me.txtFFFOrder3.BackColor = System.Drawing.Color.Transparent
+        Me.txtFFFOrder3.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFFFOrder3.ForeColor = System.Drawing.Color.White
+        Me.txtFFFOrder3.Location = New System.Drawing.Point(33, 0)
+        Me.txtFFFOrder3.Name = "txtFFFOrder3"
+        Me.txtFFFOrder3.Size = New System.Drawing.Size(438, 48)
+        Me.txtFFFOrder3.TabIndex = 2
+        Me.txtFFFOrder3.Text = "C:"
+        Me.txtFFFOrder3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picLifeline4
+        '
+        Me.picLifeline4.Location = New System.Drawing.Point(1092, 36)
+        Me.picLifeline4.Name = "picLifeline4"
+        Me.picLifeline4.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline4.TabIndex = 3
+        Me.picLifeline4.TabStop = False
+        '
+        'pnlFFFOrder2
+        '
+        Me.pnlFFFOrder2.BackgroundImage = CType(resources.GetObject("pnlFFFOrder2.BackgroundImage"), System.Drawing.Image)
+        Me.pnlFFFOrder2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlFFFOrder2.Controls.Add(Me.txtFFFOrder2)
+        Me.pnlFFFOrder2.Location = New System.Drawing.Point(689, 463)
+        Me.pnlFFFOrder2.Name = "pnlFFFOrder2"
+        Me.pnlFFFOrder2.Size = New System.Drawing.Size(580, 48)
+        Me.pnlFFFOrder2.TabIndex = 5
+        Me.pnlFFFOrder2.Visible = False
+        '
+        'txtFFFOrder2
+        '
+        Me.txtFFFOrder2.BackColor = System.Drawing.Color.Transparent
+        Me.txtFFFOrder2.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFFFOrder2.ForeColor = System.Drawing.Color.White
+        Me.txtFFFOrder2.Location = New System.Drawing.Point(33, 0)
+        Me.txtFFFOrder2.Name = "txtFFFOrder2"
+        Me.txtFFFOrder2.Size = New System.Drawing.Size(438, 48)
+        Me.txtFFFOrder2.TabIndex = 1
+        Me.txtFFFOrder2.Text = "B:"
+        Me.txtFFFOrder2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picLifeline3
+        '
+        Me.picLifeline3.Location = New System.Drawing.Point(1010, 36)
+        Me.picLifeline3.Name = "picLifeline3"
+        Me.picLifeline3.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline3.TabIndex = 2
+        Me.picLifeline3.TabStop = False
+        '
+        'pnlFFFOrder1
+        '
+        Me.pnlFFFOrder1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
+        Me.pnlFFFOrder1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.pnlFFFOrder1.Controls.Add(Me.txtFFFOrder1)
+        Me.pnlFFFOrder1.Location = New System.Drawing.Point(689, 409)
+        Me.pnlFFFOrder1.Name = "pnlFFFOrder1"
+        Me.pnlFFFOrder1.Size = New System.Drawing.Size(580, 48)
+        Me.pnlFFFOrder1.TabIndex = 4
+        Me.pnlFFFOrder1.Visible = False
+        '
+        'txtFFFOrder1
+        '
+        Me.txtFFFOrder1.BackColor = System.Drawing.Color.Transparent
+        Me.txtFFFOrder1.Font = New System.Drawing.Font("Calibri", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtFFFOrder1.ForeColor = System.Drawing.Color.White
+        Me.txtFFFOrder1.Location = New System.Drawing.Point(33, 0)
+        Me.txtFFFOrder1.Name = "txtFFFOrder1"
+        Me.txtFFFOrder1.Size = New System.Drawing.Size(438, 48)
+        Me.txtFFFOrder1.TabIndex = 0
+        Me.txtFFFOrder1.Text = "A:"
+        Me.txtFFFOrder1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picLifeline2
+        '
+        Me.picLifeline2.Location = New System.Drawing.Point(928, 36)
+        Me.picLifeline2.Name = "picLifeline2"
+        Me.picLifeline2.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline2.TabIndex = 1
+        Me.picLifeline2.TabStop = False
+        '
+        'picLifeline1
+        '
+        Me.picLifeline1.Location = New System.Drawing.Point(846, 36)
+        Me.picLifeline1.Name = "picLifeline1"
+        Me.picLifeline1.Size = New System.Drawing.Size(74, 48)
+        Me.picLifeline1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picLifeline1.TabIndex = 0
+        Me.picLifeline1.TabStop = False
+        '
         'TVControlPnl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -940,14 +940,14 @@ Partial Class TVControlPnl
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.pnlFFFPlayers)
+        Me.Controls.Add(Me.grpATA)
+        Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
-        Me.Controls.Add(Me.grpATA)
-        Me.Controls.Add(Me.pnlTime)
-        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.picLifelineUse)
+        Me.Controls.Add(Me.picTree)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -966,20 +966,11 @@ Partial Class TVControlPnl
         Me.picC.ResumeLayout(False)
         Me.picA.ResumeLayout(False)
         Me.picQuestion.ResumeLayout(False)
-        Me.picTree.ResumeLayout(False)
-        Me.pnlFFFOrder4.ResumeLayout(False)
-        Me.pnlFFFOrder3.ResumeLayout(False)
-        Me.pnlFFFOrder2.ResumeLayout(False)
-        Me.pnlFFFOrder1.ResumeLayout(False)
-        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlStrap.ResumeLayout(False)
-        Me.pnlFFFWinner.ResumeLayout(False)
-        Me.pnlFFFWinner.PerformLayout()
         CType(Me.picLifelineUse, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnlFFFPlayers.ResumeLayout(False)
+        Me.pnlPL2.ResumeLayout(False)
+        Me.pnlPL2.PerformLayout()
         Me.pnlPL8.ResumeLayout(False)
         Me.pnlPL8.PerformLayout()
         Me.pnlPL7.ResumeLayout(False)
@@ -992,10 +983,19 @@ Partial Class TVControlPnl
         Me.pnlPL4.PerformLayout()
         Me.pnlPL3.ResumeLayout(False)
         Me.pnlPL3.PerformLayout()
-        Me.pnlPL2.ResumeLayout(False)
-        Me.pnlPL2.PerformLayout()
         Me.pnlPL1.ResumeLayout(False)
         Me.pnlPL1.PerformLayout()
+        Me.pnlFFFWinner.ResumeLayout(False)
+        Me.pnlFFFWinner.PerformLayout()
+        Me.picTree.ResumeLayout(False)
+        Me.pnlFFFOrder4.ResumeLayout(False)
+        Me.pnlFFFOrder3.ResumeLayout(False)
+        CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFFFOrder2.ResumeLayout(False)
+        CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnlFFFOrder1.ResumeLayout(False)
+        CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1005,20 +1005,15 @@ Partial Class TVControlPnl
     Friend WithEvents tmrStrap As Timer
     Friend WithEvents pnlStrap As Panel
     Friend WithEvents lblAmount As Label
-    Friend WithEvents picTree As Panel
     Friend WithEvents pnlTime As Panel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents lblTime As Label
-    Friend WithEvents picLifeline3 As PictureBox
-    Friend WithEvents picLifeline2 As PictureBox
-    Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents picLifelineUse As PictureBox
     Friend WithEvents txtQuestion As Label
     Friend WithEvents ImageList1 As ImageList
     Friend WithEvents pnlTotal As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents tmrRandomizer As Timer
-    Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents lblATA_D As Label
     Friend WithEvents lblATA_B As Label
     Friend WithEvents lblATA_C As Label
@@ -1071,4 +1066,9 @@ Partial Class TVControlPnl
     Friend WithEvents pnlPL2 As Panel
     Friend WithEvents txtPL2_Points As Label
     Friend WithEvents txtPL2_Name As Label
+    Public WithEvents picTree As MPanel
+    Friend WithEvents picLifeline1 As PictureBox
+    Friend WithEvents picLifeline4 As PictureBox
+    Friend WithEvents picLifeline3 As PictureBox
+    Friend WithEvents picLifeline2 As PictureBox
 End Class

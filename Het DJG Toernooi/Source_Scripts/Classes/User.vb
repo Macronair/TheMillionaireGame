@@ -29,7 +29,7 @@ Public Class User
 
     Public Shared Sub ResetGame()
         Game.firstQuestion = True
-        Game.level = 0
+        Game.ChangeLevel(0)
         ControlPanel.nmrLevel.Value = 0
         Game.SetValues()
         Question.useMusic = False
@@ -48,6 +48,9 @@ Public Class User
         LifelineManager.UnlockLifeline(2)
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
+
+        Dim treeimages As Threading.Thread = New Threading.Thread(AddressOf MoneyTreeCore.GenerateImages)
+        treeimages.Start()
 
         LifelineHost.used = False
         HostScreen.lblAnswer.Visible = True
@@ -109,18 +112,18 @@ Public Class User
         HostScreen.txtB.ForeColor = Color.White
         HostScreen.txtC.ForeColor = Color.White
         HostScreen.txtD.ForeColor = Color.White
-        HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-        HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+        HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+        HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+        HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
         GuestScreen.txtA.ForeColor = Color.White
         GuestScreen.txtB.ForeColor = Color.White
         GuestScreen.txtC.ForeColor = Color.White
         GuestScreen.txtD.ForeColor = Color.White
-        GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-        GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+        GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+        GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+        GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
         HostScreen.lblWalkedAway.ForeColor = Color.Black
 
         ControlPanel.lblATA_A.Text = "A: 0"

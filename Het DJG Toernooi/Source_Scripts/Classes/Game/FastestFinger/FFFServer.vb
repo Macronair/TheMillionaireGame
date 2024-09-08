@@ -352,12 +352,7 @@ Public Class FFFServer
                 End With
                 i = i + 1
             Case 2
-                TVControlPnl.picTree.BackgroundImage = My.Resources.tree_0
                 TVControlPnl.lblFFFQuestion.Visible = True
-                TVControlPnl.picLifeline3.Visible = False
-                TVControlPnl.picLifeline1.Visible = False
-                TVControlPnl.picLifeline2.Visible = False
-                TVControlPnl.picLifeline4.Visible = False
                 TVControlPnl.picTree.Visible = True
                 i = i + 1
             Case 3
@@ -407,10 +402,6 @@ Public Class FFFServer
             TVControlPnl.pnlFFFOrder2.Visible = False
             TVControlPnl.pnlFFFOrder3.Visible = False
             TVControlPnl.pnlFFFOrder4.Visible = False
-            TVControlPnl.picLifeline3.Visible = False
-            TVControlPnl.picLifeline1.Visible = False
-            TVControlPnl.picLifeline2.Visible = False
-            TVControlPnl.picLifeline4.Visible = False
             tmrRevealPlayers.Start()
             If Game.level = -1 Then
                 With Sounds.fff_st1
@@ -422,7 +413,6 @@ Public Class FFFServer
             End If
             a = a + 1
         ElseIf a = 2 Then
-
             If fff_timemin < 9999 Then
 
                 If PlayerCheck.tie = 1 Then
@@ -468,6 +458,8 @@ Public Class FFFServer
             TVControlPnl.pnlFFFPlayers.Visible = False
             a = 4
         ElseIf a = 4 Then
+            Game.ChangeLevel(0)
+
             TVControlPnl.pnlFFFWinner.Visible = False
             If chkDisableWinnerAuto.Checked = True Then
                 Select Case fff_timemin

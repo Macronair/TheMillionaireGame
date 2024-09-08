@@ -210,7 +210,6 @@ Partial Class TVControlPnl1080
         '
         Me.picTree.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._0_tree_0
         Me.picTree.Location = New System.Drawing.Point(537, -97)
         Me.picTree.Name = "picTree"
         Me.picTree.Size = New System.Drawing.Size(1383, 810)
