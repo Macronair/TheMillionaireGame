@@ -483,10 +483,10 @@ Partial Class HostScreen
         'picTree
         '
         Me.picTree.BackColor = System.Drawing.Color.Transparent
-        Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._01_Tree
-        Me.picTree.Location = New System.Drawing.Point(367, 0)
+        Me.picTree.Image = CType(resources.GetObject("picTree.Image"), System.Drawing.Image)
+        Me.picTree.Location = New System.Drawing.Point(367, -50)
         Me.picTree.Name = "picTree"
-        Me.picTree.Size = New System.Drawing.Size(920, 490)
+        Me.picTree.Size = New System.Drawing.Size(920, 540)
         Me.picTree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTree.TabIndex = 12
         Me.picTree.TabStop = False

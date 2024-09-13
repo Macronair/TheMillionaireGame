@@ -4,7 +4,7 @@
     Dim strstep As Integer = 0
 
     Private Sub tmrFlash_Tick(sender As Object, e As EventArgs) Handles tmrFlash.Tick
-        If strstep <= 2 Then
+        If strstep <= 3 Then
             If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
                 If ControlPanel.lblAnswer.Text = "A" Then
                     If i = 0 Then

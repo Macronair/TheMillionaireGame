@@ -69,7 +69,7 @@ namespace Millionaire.Windows.Question_Editor
                             break;
                     }
                 }
-                else if(radDiffSpecific.Checked)
+                else if (radDiffSpecific.Checked)
                 {
                     cmd.Parameters.AddWithValue("@Level", trkQuestionLevel.Value);
                     cmd.Parameters.AddWithValue("@DType", "Specific");
@@ -276,7 +276,7 @@ namespace Millionaire.Windows.Question_Editor
 
                 cmbQuestionRange.Enabled = true;
 
-                if(trkQuestionLevel.Value >= 1 && trkQuestionLevel.Value <= 5)
+                if (trkQuestionLevel.Value >= 1 && trkQuestionLevel.Value <= 5)
                 {
                     cmbQuestionRange.SelectedIndex = 0;
                 }

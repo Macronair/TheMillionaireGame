@@ -77,6 +77,18 @@ Public Class OptionsScreen
             Case 2
                 radStrapBlackG.Checked = True
                 WinningStrapTexture = 2
+            Case 3
+                radStrapBlackB.Checked = True
+                WinningStrapTexture = 3
+            Case 4
+                radStrapBlue.Checked = True
+                WinningStrapTexture = 4
+            Case 5
+                radStrapPurple.Checked = True
+                WinningStrapTexture = 5
+            Case 6
+                radStrapMillionaireOrig.Checked = True
+                WinningStrapTexture = 6
         End Select
 
         QuestionTexture = Profile.Options.QuestionsTexture
@@ -328,7 +340,7 @@ Public Class OptionsScreen
     txtSndWalkAway1.MouseDoubleClick, txtSndToHotSeatLD.MouseDoubleClick, txtSndToHotSeat.MouseDoubleClick, txtSndSwitchShowCorrect.MouseDoubleClick,
     txtSndSwitchClear.MouseDoubleClick, txtSndSwitchActivate.MouseDoubleClick, txtSndRiskModeActivate.MouseDoubleClick, txtSndP1Start.MouseDoubleClick,
     txtSndP1EndEarly.MouseDoubleClick, txtSndP1Clock.MouseDoubleClick, txtSndOpening.MouseDoubleClick, txtSndLifeline4Ping.MouseDoubleClick,
-    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick,
+    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick, txtSndRandomContestant.MouseDoubleClick,
     txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
     txtSndFReadQuestion.MouseDoubleClick, txtSndFReadCorrectOrder.MouseDoubleClick, txtSndFOrder4.MouseDoubleClick, txtSndFOrder3.MouseDoubleClick,
     txtSndFOrder2.MouseDoubleClick, txtSndFOrder1.MouseDoubleClick, txtSndFMeet8.MouseDoubleClick, txtSndFMeet7.MouseDoubleClick, txtSndFMeet6.MouseDoubleClick,
@@ -362,6 +374,14 @@ Public Class OptionsScreen
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
+        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+
+        TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
@@ -387,6 +407,14 @@ Public Class OptionsScreen
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
+        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+
+        TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)

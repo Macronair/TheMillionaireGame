@@ -1,7 +1,6 @@
-﻿Imports System.Xml
+﻿Imports System.IO
+Imports System.Xml
 Imports System.Xml.Serialization
-Imports Microsoft.Office.Interop.Excel
-Imports System.IO
 
 Public Class TreeInfo
     Public Property SafeNet_01 As Integer

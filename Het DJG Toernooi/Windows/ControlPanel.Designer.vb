@@ -520,11 +520,11 @@ Partial Class ControlPanel
         Me.btnToHotSeat.BackColor = System.Drawing.Color.Tomato
         Me.btnToHotSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnToHotSeat.ForeColor = System.Drawing.Color.Black
-        Me.btnToHotSeat.Location = New System.Drawing.Point(89, 52)
+        Me.btnToHotSeat.Location = New System.Drawing.Point(89, 78)
         Me.btnToHotSeat.Name = "btnToHotSeat"
-        Me.btnToHotSeat.Size = New System.Drawing.Size(86, 22)
+        Me.btnToHotSeat.Size = New System.Drawing.Size(135, 22)
         Me.btnToHotSeat.TabIndex = 49
-        Me.btnToHotSeat.Text = "To Hot Seat"
+        Me.btnToHotSeat.Text = "Reset + Hot Seat"
         Me.btnToHotSeat.UseVisualStyleBackColor = False
         '
         'btnQuit
@@ -1124,9 +1124,9 @@ Partial Class ControlPanel
         Me.btnResetGame.ForeColor = System.Drawing.Color.White
         Me.btnResetGame.Location = New System.Drawing.Point(89, 27)
         Me.btnResetGame.Name = "btnResetGame"
-        Me.btnResetGame.Size = New System.Drawing.Size(86, 22)
+        Me.btnResetGame.Size = New System.Drawing.Size(135, 22)
         Me.btnResetGame.TabIndex = 86
-        Me.btnResetGame.Text = "Reset Game"
+        Me.btnResetGame.Text = "Reset"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
         'btnStopAudio

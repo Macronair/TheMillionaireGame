@@ -131,11 +131,11 @@ Partial Class TVControlPnl
         '
         'tmrFlash
         '
-        Me.tmrFlash.Interval = 190
+        Me.tmrFlash.Interval = 200
         '
         'tmrStrap
         '
-        Me.tmrStrap.Interval = 1350
+        Me.tmrStrap.Interval = 1250
         '
         'pnlTime
         '
@@ -417,9 +417,9 @@ Partial Class TVControlPnl
         Me.lblAmount.BackColor = System.Drawing.Color.Transparent
         Me.lblAmount.Font = New System.Drawing.Font("Copperplate Gothic Bold", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblAmount.ForeColor = System.Drawing.Color.Transparent
-        Me.lblAmount.Location = New System.Drawing.Point(476, 5)
+        Me.lblAmount.Location = New System.Drawing.Point(424, 4)
         Me.lblAmount.Name = "lblAmount"
-        Me.lblAmount.Size = New System.Drawing.Size(328, 75)
+        Me.lblAmount.Size = New System.Drawing.Size(432, 75)
         Me.lblAmount.TabIndex = 0
         Me.lblAmount.Text = "0"
         Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -776,7 +776,7 @@ Partial Class TVControlPnl
         'picTree
         '
         Me.picTree.BackColor = System.Drawing.Color.Transparent
-        Me.picTree.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._02_Tree
+        Me.picTree.BackgroundImage = CType(resources.GetObject("picTree.BackgroundImage"), System.Drawing.Image)
         Me.picTree.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.picTree.Controls.Add(Me.pnlFFFOrder4)
         Me.picTree.Controls.Add(Me.lblFFFQuestion)
@@ -942,12 +942,12 @@ Partial Class TVControlPnl
         Me.Controls.Add(Me.pnlFFFPlayers)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
-        Me.Controls.Add(Me.pnlQuestion)
-        Me.Controls.Add(Me.pnlFFFWinner)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.picLifelineUse)
         Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlQuestion)
+        Me.Controls.Add(Me.pnlFFFWinner)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)

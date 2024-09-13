@@ -579,93 +579,181 @@ Public Class FFFServer
     Dim flash As Integer = 0
 
     Private Sub tmrFastestPlayer_Tick(sender As Object, e As EventArgs) Handles tmrFastestPlayer.Tick
-        Select Case flash
-            Case 0
-                If pl1_time = fff_timemin Then
-                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL1_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL1_Points.ForeColor = Color.Black
-                End If
-                If pl2_time = fff_timemin Then
-                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL2_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL2_Points.ForeColor = Color.Black
-                End If
-                If pl3_time = fff_timemin Then
-                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL3_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL3_Points.ForeColor = Color.Black
-                End If
-                If pl4_time = fff_timemin Then
-                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL4_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL4_Points.ForeColor = Color.Black
-                End If
-                If pl5_time = fff_timemin Then
-                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL5_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL5_Points.ForeColor = Color.Black
-                End If
-                If pl6_time = fff_timemin Then
-                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL6_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
-                End If
-                If pl7_time = fff_timemin Then
-                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL7_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
-                End If
-                If pl8_time = fff_timemin Then
-                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_fastest_new
-                    TVControlPnl.txtPL8_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL8_Points.ForeColor = Color.Black
-                End If
-                flash = 1
-            Case 1
-                If pl1_time = fff_timemin Then
-                    TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL1_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL1_Points.ForeColor = Color.Black
-                End If
-                If pl2_time = fff_timemin Then
-                    TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL2_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL2_Points.ForeColor = Color.Black
-                End If
-                If pl3_time = fff_timemin Then
-                    TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL3_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL3_Points.ForeColor = Color.Black
-                End If
-                If pl4_time = fff_timemin Then
-                    TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL4_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL4_Points.ForeColor = Color.Black
-                End If
-                If pl5_time = fff_timemin Then
-                    TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL5_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL5_Points.ForeColor = Color.Black
-                End If
-                If pl6_time = fff_timemin Then
-                    TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL6_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
-                End If
-                If pl7_time = fff_timemin Then
-                    TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL7_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL6_Points.ForeColor = Color.Black
-                End If
-                If pl8_time = fff_timemin Then
-                    TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
-                    TVControlPnl.txtPL8_Name.ForeColor = Color.Black
-                    TVControlPnl.txtPL8_Points.ForeColor = Color.Black
-                End If
-                flash = 0
-        End Select
-
+        If RandomContestant.PickingRandomContestant = True Then
+            Select Case flash
+                Case 0
+                    If RandomContestant.pickedContestant = 1 Then
+                        TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL1_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 2 Then
+                        TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL2_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 3 Then
+                        TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL3_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 4 Then
+                        TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL4_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 5 Then
+                        TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL5_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 6 Then
+                        TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 7 Then
+                        TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 8 Then
+                        TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL8_Points.ForeColor = Color.Black
+                    End If
+                    flash = 1
+                Case 1
+                    If RandomContestant.pickedContestant = 1 Then
+                        TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL1_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 2 Then
+                        TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL2_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 3 Then
+                        TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL3_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 4 Then
+                        TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL4_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 5 Then
+                        TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL5_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 6 Then
+                        TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 7 Then
+                        TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If RandomContestant.pickedContestant = 8 Then
+                        TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL8_Points.ForeColor = Color.Black
+                    End If
+                    flash = 0
+            End Select
+        Else
+            Select Case flash
+                Case 0
+                    If pl1_time = fff_timemin Then
+                        TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL1_Points.ForeColor = Color.Black
+                    End If
+                    If pl2_time = fff_timemin Then
+                        TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL2_Points.ForeColor = Color.Black
+                    End If
+                    If pl3_time = fff_timemin Then
+                        TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL3_Points.ForeColor = Color.Black
+                    End If
+                    If pl4_time = fff_timemin Then
+                        TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL4_Points.ForeColor = Color.Black
+                    End If
+                    If pl5_time = fff_timemin Then
+                        TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL5_Points.ForeColor = Color.Black
+                    End If
+                    If pl6_time = fff_timemin Then
+                        TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If pl7_time = fff_timemin Then
+                        TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If pl8_time = fff_timemin Then
+                        TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_fastest_new
+                        TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL8_Points.ForeColor = Color.Black
+                    End If
+                    flash = 1
+                Case 1
+                    If pl1_time = fff_timemin Then
+                        TVControlPnl.pnlPL1.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL1_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL1_Points.ForeColor = Color.Black
+                    End If
+                    If pl2_time = fff_timemin Then
+                        TVControlPnl.pnlPL2.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL2_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL2_Points.ForeColor = Color.Black
+                    End If
+                    If pl3_time = fff_timemin Then
+                        TVControlPnl.pnlPL3.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL3_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL3_Points.ForeColor = Color.Black
+                    End If
+                    If pl4_time = fff_timemin Then
+                        TVControlPnl.pnlPL4.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL4_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL4_Points.ForeColor = Color.Black
+                    End If
+                    If pl5_time = fff_timemin Then
+                        TVControlPnl.pnlPL5.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL5_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL5_Points.ForeColor = Color.Black
+                    End If
+                    If pl6_time = fff_timemin Then
+                        TVControlPnl.pnlPL6.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL6_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If pl7_time = fff_timemin Then
+                        TVControlPnl.pnlPL7.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL7_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL6_Points.ForeColor = Color.Black
+                    End If
+                    If pl8_time = fff_timemin Then
+                        TVControlPnl.pnlPL8.BackgroundImage = My.Resources.fff_correct_new
+                        TVControlPnl.txtPL8_Name.ForeColor = Color.Black
+                        TVControlPnl.txtPL8_Points.ForeColor = Color.Black
+                    End If
+                    flash = 0
+            End Select
+        End If
     End Sub
 
     Private Sub tmrSendAnswers_Tick(sender As Object, e As EventArgs) Handles tmrSendAnswers.Tick
@@ -1042,5 +1130,21 @@ Public Class FFFServer
         Else
             e.Cancel = False    ' If the user hasn't closed the form, then the event won't be canceled.
         End If
+    End Sub
+
+    Private Sub tmr_RND_Roll_Tick(sender As Object, e As EventArgs) Handles tmr_RND_Roll.Tick
+        RandomContestant.Roll()
+    End Sub
+
+    Private Sub tmr_RND_RollTime_Tick(sender As Object, e As EventArgs) Handles tmr_RND_RollTime.Tick
+        tmr_RND_Roll.Stop()
+        RandomContestant.SelectContestant()
+        tmr_RND_RollTime.Stop()
+        tmrFastestPlayer.Start()
+        btnPickRandomContestant.Enabled = True
+    End Sub
+
+    Private Sub btnPickRandomContestant_Click(sender As Object, e As EventArgs) Handles btnPickRandomContestant.Click
+        RandomContestant.Sequence()
     End Sub
 End Class

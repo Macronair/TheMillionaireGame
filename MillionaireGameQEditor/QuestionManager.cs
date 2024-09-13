@@ -60,19 +60,20 @@ namespace Millionaire
 
                 difficulty = row.Cells[7].Value.ToString();
 
-                switch(difficulty)
+                switch (difficulty)
                 {
                     case "Range":
                         row.Cells[7].Style.BackColor = Color.Plum;
                         row.Cells[8].Style.ForeColor = Color.LightGray;
 
-                        switch(row.Cells[9].Value.ToString())
+                        switch (row.Cells[9].Value.ToString())
                         {
                             case "Lvl1": row.Cells[9].Style.BackColor = Color.PaleGreen; break;
                             case "Lvl2": row.Cells[9].Style.BackColor = Color.LightSkyBlue; break;
                             case "Lvl3": row.Cells[9].Style.BackColor = Color.Gold; break;
                             case "Lvl4": row.Cells[9].Style.BackColor = Color.LightCoral; break;
-                        } break;
+                        }
+                        break;
                     case "Specific":
                         row.Cells[7].Style.BackColor = Color.Aquamarine;
                         row.Cells[9].Style.ForeColor = Color.LightGray;

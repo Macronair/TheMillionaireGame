@@ -174,12 +174,12 @@
 
                 ' Winning Strap
                 TVControlPnl.pnlStrap.Location = New Point(0, 573)
-                TVControlPnl.lblAmount.Location = New Point(476, 5)
+                TVControlPnl.lblAmount.Location = New Point(424, 4)
                 TVControlPnl.pnlTotal.Location = New Point(0, 506)
                 TVControlPnl.Label1.Location = New Point(473, 6)
 
                 TVControlPnl.pnlStrap.Size = New Size(1280, 83)
-                TVControlPnl.lblAmount.Size = New Size(328, 75)
+                TVControlPnl.lblAmount.Size = New Size(432, 75)
                 TVControlPnl.pnlTotal.Size = New Size(1280, 62)
                 TVControlPnl.Label1.Size = New Size(335, 53)
 
@@ -231,13 +231,13 @@
                 HostScreen.txtD.Size = New Size(476, 46)
 
                 'Tree
-                HostScreen.picTree.Location = New Point(367, 0)
+                HostScreen.picTree.Location = New Point(367, -50)
                 HostScreen.picLifeline1.Location = New Point(566, 12)
                 HostScreen.picLifeline2.Location = New Point(658, 12)
                 HostScreen.picLifeline3.Location = New Point(750, 12)
                 HostScreen.picLifeline4.Location = New Point(842, 12)
 
-                HostScreen.picTree.Size = New Size(920, 490)
+                HostScreen.picTree.Size = New Size(920, 540)
                 HostScreen.picLifeline1.Size = New Size(86, 52)
                 HostScreen.picLifeline2.Size = New Size(86, 52)
                 HostScreen.picLifeline3.Size = New Size(86, 52)
@@ -361,13 +361,13 @@
                 GuestScreen.txtD.Size = New Size(476, 46)
 
                 'Tree
-                GuestScreen.picTree.Location = New Point(367, 0)
+                GuestScreen.picTree.Location = New Point(367, -50)
                 GuestScreen.picLifeline1.Location = New Point(566, 12)
                 GuestScreen.picLifeline2.Location = New Point(658, 12)
                 GuestScreen.picLifeline3.Location = New Point(750, 12)
                 GuestScreen.picLifeline4.Location = New Point(842, 12)
 
-                GuestScreen.picTree.Size = New Size(920, 490)
+                GuestScreen.picTree.Size = New Size(920, 540)
                 GuestScreen.picLifeline1.Size = New Size(86, 52)
                 GuestScreen.picLifeline2.Size = New Size(86, 52)
                 GuestScreen.picLifeline3.Size = New Size(86, 52)
@@ -500,10 +500,10 @@
 
                 ' Money Tree / FFF Answers
                 TVControlPnl.picTree.Location = New Point(0, 0)
-                TVControlPnl.pnlFFFOrder1.Location = New Point(978, 560)
-                TVControlPnl.pnlFFFOrder2.Location = New Point(978, 635)
-                TVControlPnl.pnlFFFOrder3.Location = New Point(978, 710)
-                TVControlPnl.pnlFFFOrder4.Location = New Point(978, 785)
+                TVControlPnl.pnlFFFOrder1.Location = New Point(1050, 560)
+                TVControlPnl.pnlFFFOrder2.Location = New Point(1050, 635)
+                TVControlPnl.pnlFFFOrder3.Location = New Point(1050, 710)
+                TVControlPnl.pnlFFFOrder4.Location = New Point(1050, 785)
                 TVControlPnl.txtFFFOrder1.Location = New Point(33, 0)
                 TVControlPnl.txtFFFOrder2.Location = New Point(33, 0)
                 TVControlPnl.txtFFFOrder3.Location = New Point(33, 0)
@@ -572,12 +572,12 @@
 
                 ' Winning Strap
                 TVControlPnl.pnlStrap.Location = New Point(0, 862)
-                TVControlPnl.lblAmount.Location = New Point(714, 5)
-                TVControlPnl.pnlTotal.Location = New Point(0, 783)
+                TVControlPnl.lblAmount.Location = New Point(628, 6)
+                TVControlPnl.pnlTotal.Location = New Point(0, 778)
                 TVControlPnl.Label1.Location = New Point(708, 2)
 
                 TVControlPnl.pnlStrap.Size = New Size(1920, 126)
-                TVControlPnl.lblAmount.Size = New Size(492, 114)
+                TVControlPnl.lblAmount.Size = New Size(648, 112)
                 TVControlPnl.pnlTotal.Size = New Size(1920, 81)
                 TVControlPnl.Label1.Size = New Size(504, 81)
 
@@ -629,13 +629,13 @@
                 HostScreen.txtD.Size = New Size(714, 69)
 
                 'Tree
-                HostScreen.picTree.Location = New Point(550, 0)
+                HostScreen.picTree.Location = New Point(550, -75)
                 HostScreen.picLifeline1.Location = New Point(849, 18)
                 HostScreen.picLifeline2.Location = New Point(987, 18)
                 HostScreen.picLifeline3.Location = New Point(1125, 18)
                 HostScreen.picLifeline4.Location = New Point(1263, 18)
 
-                HostScreen.picTree.Size = New Size(1380, 735)
+                HostScreen.picTree.Size = New Size(1380, 810)
                 HostScreen.picLifeline1.Size = New Size(129, 78)
                 HostScreen.picLifeline2.Size = New Size(129, 78)
                 HostScreen.picLifeline3.Size = New Size(129, 78)
@@ -759,13 +759,13 @@
                 GuestScreen.txtD.Size = New Size(714, 69)
 
                 'Tree
-                GuestScreen.picTree.Location = New Point(550, 0)
+                GuestScreen.picTree.Location = New Point(550, -75)
                 GuestScreen.picLifeline1.Location = New Point(849, 18)
                 GuestScreen.picLifeline2.Location = New Point(987, 18)
                 GuestScreen.picLifeline3.Location = New Point(1125, 18)
                 GuestScreen.picLifeline4.Location = New Point(1263, 18)
 
-                GuestScreen.picTree.Size = New Size(1380, 735)
+                GuestScreen.picTree.Size = New Size(1380, 810)
                 GuestScreen.picLifeline1.Size = New Size(129, 78)
                 GuestScreen.picLifeline2.Size = New Size(129, 78)
                 GuestScreen.picLifeline3.Size = New Size(129, 78)

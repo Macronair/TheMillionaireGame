@@ -354,6 +354,23 @@ Partial Class OptionsScreen
         Me.txtSndQ1to5LD = New System.Windows.Forms.TextBox()
         Me.Label43 = New System.Windows.Forms.Label()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.Label149 = New System.Windows.Forms.Label()
+        Me.Label150 = New System.Windows.Forms.Label()
+        Me.Label151 = New System.Windows.Forms.Label()
+        Me.Label146 = New System.Windows.Forms.Label()
+        Me.Label147 = New System.Windows.Forms.Label()
+        Me.Label148 = New System.Windows.Forms.Label()
+        Me.Label143 = New System.Windows.Forms.Label()
+        Me.Label144 = New System.Windows.Forms.Label()
+        Me.Label145 = New System.Windows.Forms.Label()
+        Me.Label140 = New System.Windows.Forms.Label()
+        Me.Label141 = New System.Windows.Forms.Label()
+        Me.Label142 = New System.Windows.Forms.Label()
+        Me.Label139 = New System.Windows.Forms.Label()
+        Me.Label138 = New System.Windows.Forms.Label()
+        Me.Label137 = New System.Windows.Forms.Label()
+        Me.Label127 = New System.Windows.Forms.Label()
+        Me.chkOwnSafetyNet = New System.Windows.Forms.CheckBox()
         Me.rad_TRr2 = New System.Windows.Forms.RadioButton()
         Me.rad_TRr1 = New System.Windows.Forms.RadioButton()
         Me.lbl_TRs2 = New System.Windows.Forms.Label()
@@ -391,6 +408,8 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
+        Me.txtSndRandomContestant = New System.Windows.Forms.TextBox()
+        Me.Label152 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -1464,6 +1483,8 @@ Partial Class OptionsScreen
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtSndRandomContestant)
+        Me.TabPage2.Controls.Add(Me.Label152)
         Me.TabPage2.Controls.Add(Me.txtSndHostEnd)
         Me.TabPage2.Controls.Add(Me.Label119)
         Me.TabPage2.Controls.Add(Me.txtSndHostStart)
@@ -3918,6 +3939,23 @@ Partial Class OptionsScreen
         '
         'TabPage5
         '
+        Me.TabPage5.Controls.Add(Me.Label149)
+        Me.TabPage5.Controls.Add(Me.Label150)
+        Me.TabPage5.Controls.Add(Me.Label151)
+        Me.TabPage5.Controls.Add(Me.Label146)
+        Me.TabPage5.Controls.Add(Me.Label147)
+        Me.TabPage5.Controls.Add(Me.Label148)
+        Me.TabPage5.Controls.Add(Me.Label143)
+        Me.TabPage5.Controls.Add(Me.Label144)
+        Me.TabPage5.Controls.Add(Me.Label145)
+        Me.TabPage5.Controls.Add(Me.Label140)
+        Me.TabPage5.Controls.Add(Me.Label141)
+        Me.TabPage5.Controls.Add(Me.Label142)
+        Me.TabPage5.Controls.Add(Me.Label139)
+        Me.TabPage5.Controls.Add(Me.Label138)
+        Me.TabPage5.Controls.Add(Me.Label137)
+        Me.TabPage5.Controls.Add(Me.Label127)
+        Me.TabPage5.Controls.Add(Me.chkOwnSafetyNet)
         Me.TabPage5.Controls.Add(Me.rad_TRr2)
         Me.TabPage5.Controls.Add(Me.rad_TRr1)
         Me.TabPage5.Controls.Add(Me.lbl_TRs2)
@@ -3954,11 +3992,166 @@ Partial Class OptionsScreen
         Me.TabPage5.Text = "Money Tree"
         Me.TabPage5.UseVisualStyleBackColor = True
         '
+        'Label149
+        '
+        Me.Label149.AutoSize = True
+        Me.Label149.Location = New System.Drawing.Point(211, 428)
+        Me.Label149.Name = "Label149"
+        Me.Label149.Size = New System.Drawing.Size(17, 16)
+        Me.Label149.TabIndex = 86
+        Me.Label149.Text = "1."
+        '
+        'Label150
+        '
+        Me.Label150.AutoSize = True
+        Me.Label150.Location = New System.Drawing.Point(211, 400)
+        Me.Label150.Name = "Label150"
+        Me.Label150.Size = New System.Drawing.Size(17, 16)
+        Me.Label150.TabIndex = 85
+        Me.Label150.Text = "2."
+        '
+        'Label151
+        '
+        Me.Label151.AutoSize = True
+        Me.Label151.Location = New System.Drawing.Point(211, 372)
+        Me.Label151.Name = "Label151"
+        Me.Label151.Size = New System.Drawing.Size(17, 16)
+        Me.Label151.TabIndex = 84
+        Me.Label151.Text = "3."
+        '
+        'Label146
+        '
+        Me.Label146.AutoSize = True
+        Me.Label146.Location = New System.Drawing.Point(211, 344)
+        Me.Label146.Name = "Label146"
+        Me.Label146.Size = New System.Drawing.Size(17, 16)
+        Me.Label146.TabIndex = 83
+        Me.Label146.Text = "4."
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.Location = New System.Drawing.Point(211, 316)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(17, 16)
+        Me.Label147.TabIndex = 82
+        Me.Label147.Text = "5."
+        '
+        'Label148
+        '
+        Me.Label148.AutoSize = True
+        Me.Label148.Location = New System.Drawing.Point(211, 288)
+        Me.Label148.Name = "Label148"
+        Me.Label148.Size = New System.Drawing.Size(17, 16)
+        Me.Label148.TabIndex = 81
+        Me.Label148.Text = "6."
+        '
+        'Label143
+        '
+        Me.Label143.AutoSize = True
+        Me.Label143.Location = New System.Drawing.Point(211, 260)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(17, 16)
+        Me.Label143.TabIndex = 80
+        Me.Label143.Text = "7."
+        '
+        'Label144
+        '
+        Me.Label144.AutoSize = True
+        Me.Label144.Location = New System.Drawing.Point(211, 232)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(17, 16)
+        Me.Label144.TabIndex = 79
+        Me.Label144.Text = "8."
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.Location = New System.Drawing.Point(211, 204)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(17, 16)
+        Me.Label145.TabIndex = 78
+        Me.Label145.Text = "9."
+        '
+        'Label140
+        '
+        Me.Label140.AutoSize = True
+        Me.Label140.Location = New System.Drawing.Point(211, 176)
+        Me.Label140.Name = "Label140"
+        Me.Label140.Size = New System.Drawing.Size(24, 16)
+        Me.Label140.TabIndex = 77
+        Me.Label140.Text = "10."
+        '
+        'Label141
+        '
+        Me.Label141.AutoSize = True
+        Me.Label141.Location = New System.Drawing.Point(211, 148)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(24, 16)
+        Me.Label141.TabIndex = 76
+        Me.Label141.Text = "11."
+        '
+        'Label142
+        '
+        Me.Label142.AutoSize = True
+        Me.Label142.Location = New System.Drawing.Point(211, 120)
+        Me.Label142.Name = "Label142"
+        Me.Label142.Size = New System.Drawing.Size(24, 16)
+        Me.Label142.TabIndex = 75
+        Me.Label142.Text = "12."
+        '
+        'Label139
+        '
+        Me.Label139.AutoSize = True
+        Me.Label139.Location = New System.Drawing.Point(211, 92)
+        Me.Label139.Name = "Label139"
+        Me.Label139.Size = New System.Drawing.Size(24, 16)
+        Me.Label139.TabIndex = 74
+        Me.Label139.Text = "13."
+        '
+        'Label138
+        '
+        Me.Label138.AutoSize = True
+        Me.Label138.Location = New System.Drawing.Point(211, 64)
+        Me.Label138.Name = "Label138"
+        Me.Label138.Size = New System.Drawing.Size(24, 16)
+        Me.Label138.TabIndex = 73
+        Me.Label138.Text = "14."
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Location = New System.Drawing.Point(211, 36)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(24, 16)
+        Me.Label137.TabIndex = 72
+        Me.Label137.Text = "15."
+        '
+        'Label127
+        '
+        Me.Label127.AutoSize = True
+        Me.Label127.ForeColor = System.Drawing.Color.DarkRed
+        Me.Label127.Location = New System.Drawing.Point(44, 488)
+        Me.Label127.Name = "Label127"
+        Me.Label127.Size = New System.Drawing.Size(374, 16)
+        Me.Label127.TabIndex = 71
+        Me.Label127.Text = "Info: Risk Mode will not be available when enabling this option!"
+        '
+        'chkOwnSafetyNet
+        '
+        Me.chkOwnSafetyNet.AutoSize = True
+        Me.chkOwnSafetyNet.Location = New System.Drawing.Point(12, 465)
+        Me.chkOwnSafetyNet.Name = "chkOwnSafetyNet"
+        Me.chkOwnSafetyNet.Size = New System.Drawing.Size(388, 20)
+        Me.chkOwnSafetyNet.TabIndex = 70
+        Me.chkOwnSafetyNet.Text = "Let contestant choose their own safety net (Available from Q5)"
+        Me.chkOwnSafetyNet.UseVisualStyleBackColor = True
+        '
         'rad_TRr2
         '
         Me.rad_TRr2.AutoSize = True
         Me.rad_TRr2.Checked = True
-        Me.rad_TRr2.Location = New System.Drawing.Point(544, 253)
+        Me.rad_TRr2.Location = New System.Drawing.Point(427, 174)
         Me.rad_TRr2.Name = "rad_TRr2"
         Me.rad_TRr2.Size = New System.Drawing.Size(94, 20)
         Me.rad_TRr2.TabIndex = 69
@@ -3969,7 +4162,7 @@ Partial Class OptionsScreen
         'rad_TRr1
         '
         Me.rad_TRr1.AutoSize = True
-        Me.rad_TRr1.Location = New System.Drawing.Point(544, 235)
+        Me.rad_TRr1.Location = New System.Drawing.Point(427, 314)
         Me.rad_TRr1.Name = "rad_TRr1"
         Me.rad_TRr1.Size = New System.Drawing.Size(94, 20)
         Me.rad_TRr1.TabIndex = 68
@@ -3979,24 +4172,26 @@ Partial Class OptionsScreen
         'lbl_TRs2
         '
         Me.lbl_TRs2.AutoSize = True
-        Me.lbl_TRs2.Location = New System.Drawing.Point(404, 469)
+        Me.lbl_TRs2.Location = New System.Drawing.Point(915, 466)
         Me.lbl_TRs2.Name = "lbl_TRs2"
         Me.lbl_TRs2.Size = New System.Drawing.Size(14, 16)
         Me.lbl_TRs2.TabIndex = 67
         Me.lbl_TRs2.Text = "1"
+        Me.lbl_TRs2.Visible = False
         '
         'lbl_TRs1
         '
         Me.lbl_TRs1.AutoSize = True
-        Me.lbl_TRs1.Location = New System.Drawing.Point(343, 469)
+        Me.lbl_TRs1.Location = New System.Drawing.Point(854, 466)
         Me.lbl_TRs1.Name = "lbl_TRs1"
         Me.lbl_TRs1.Size = New System.Drawing.Size(14, 16)
         Me.lbl_TRs1.TabIndex = 66
         Me.lbl_TRs1.Text = "1"
+        Me.lbl_TRs1.Visible = False
         '
         'trk_TRs2
         '
-        Me.trk_TRs2.Location = New System.Drawing.Point(407, 51)
+        Me.trk_TRs2.Location = New System.Drawing.Point(918, 48)
         Me.trk_TRs2.Maximum = 15
         Me.trk_TRs2.Minimum = 1
         Me.trk_TRs2.Name = "trk_TRs2"
@@ -4004,10 +4199,11 @@ Partial Class OptionsScreen
         Me.trk_TRs2.Size = New System.Drawing.Size(45, 415)
         Me.trk_TRs2.TabIndex = 64
         Me.trk_TRs2.Value = 1
+        Me.trk_TRs2.Visible = False
         '
         'trk_TRs1
         '
-        Me.trk_TRs1.Location = New System.Drawing.Point(346, 51)
+        Me.trk_TRs1.Location = New System.Drawing.Point(857, 48)
         Me.trk_TRs1.Maximum = 15
         Me.trk_TRs1.Minimum = 1
         Me.trk_TRs1.Name = "trk_TRs1"
@@ -4015,6 +4211,7 @@ Partial Class OptionsScreen
         Me.trk_TRs1.Size = New System.Drawing.Size(45, 415)
         Me.trk_TRs1.TabIndex = 63
         Me.trk_TRs1.Value = 1
+        Me.trk_TRs1.Visible = False
         '
         'GroupBox4
         '
@@ -4024,7 +4221,7 @@ Partial Class OptionsScreen
         Me.GroupBox4.Controls.Add(Me.rad_CUR_Pound)
         Me.GroupBox4.Controls.Add(Me.rad_CUR_Dollar)
         Me.GroupBox4.Controls.Add(Me.rad_CUR_Euro)
-        Me.GroupBox4.Location = New System.Drawing.Point(486, 53)
+        Me.GroupBox4.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(199, 165)
         Me.GroupBox4.TabIndex = 62
@@ -4101,182 +4298,205 @@ Partial Class OptionsScreen
         'Label131
         '
         Me.Label131.AutoSize = True
-        Me.Label131.Location = New System.Drawing.Point(483, 221)
+        Me.Label131.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label131.Location = New System.Drawing.Point(424, 136)
         Me.Label131.Name = "Label131"
-        Me.Label131.Size = New System.Drawing.Size(42, 32)
+        Me.Label131.Size = New System.Drawing.Size(90, 32)
         Me.Label131.TabIndex = 61
-        Me.Label131.Text = "Risk" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Mode"
+        Me.Label131.Text = "Risk Mode" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Safety offer:"
         '
         'Label130
         '
         Me.Label130.AutoSize = True
-        Me.Label130.Location = New System.Drawing.Point(404, 34)
+        Me.Label130.Location = New System.Drawing.Point(915, 31)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(14, 16)
         Me.Label130.TabIndex = 45
         Me.Label130.Text = "2"
+        Me.Label130.Visible = False
         '
         'Label129
         '
         Me.Label129.AutoSize = True
-        Me.Label129.Location = New System.Drawing.Point(343, 34)
+        Me.Label129.Location = New System.Drawing.Point(854, 31)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(14, 16)
         Me.Label129.TabIndex = 44
         Me.Label129.Text = "1"
+        Me.Label129.Visible = False
         '
         'Label128
         '
         Me.Label128.AutoSize = True
-        Me.Label128.Location = New System.Drawing.Point(343, 18)
+        Me.Label128.Location = New System.Drawing.Point(854, 15)
         Me.Label128.Name = "Label128"
         Me.Label128.Size = New System.Drawing.Size(66, 16)
         Me.Label128.TabIndex = 43
         Me.Label128.Text = "Safety net"
+        Me.Label128.Visible = False
         '
         'Label126
         '
         Me.Label126.AutoSize = True
-        Me.Label126.Location = New System.Drawing.Point(128, 33)
+        Me.Label126.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label126.Location = New System.Drawing.Point(248, 15)
         Me.Label126.Name = "Label126"
-        Me.Label126.Size = New System.Drawing.Size(98, 16)
+        Me.Label126.Size = New System.Drawing.Size(112, 16)
         Me.Label126.TabIndex = 41
         Me.Label126.Text = "Question Value"
         '
         'nmr_TR_01
         '
         Me.nmr_TR_01.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_01.Location = New System.Drawing.Point(131, 443)
-        Me.nmr_TR_01.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_01.Location = New System.Drawing.Point(251, 426)
+        Me.nmr_TR_01.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_01.Name = "nmr_TR_01"
         Me.nmr_TR_01.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_01.TabIndex = 29
+        Me.nmr_TR_01.ThousandsSeparator = True
         '
         'nmr_TR_02
         '
         Me.nmr_TR_02.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_02.Location = New System.Drawing.Point(131, 415)
-        Me.nmr_TR_02.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_02.Location = New System.Drawing.Point(251, 398)
+        Me.nmr_TR_02.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_02.Name = "nmr_TR_02"
         Me.nmr_TR_02.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_02.TabIndex = 28
+        Me.nmr_TR_02.ThousandsSeparator = True
         '
         'nmr_TR_03
         '
         Me.nmr_TR_03.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_03.Location = New System.Drawing.Point(131, 387)
-        Me.nmr_TR_03.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_03.Location = New System.Drawing.Point(251, 370)
+        Me.nmr_TR_03.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_03.Name = "nmr_TR_03"
         Me.nmr_TR_03.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_03.TabIndex = 27
+        Me.nmr_TR_03.ThousandsSeparator = True
         '
         'nmr_TR_04
         '
         Me.nmr_TR_04.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_04.Location = New System.Drawing.Point(131, 359)
-        Me.nmr_TR_04.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_04.Location = New System.Drawing.Point(251, 342)
+        Me.nmr_TR_04.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_04.Name = "nmr_TR_04"
         Me.nmr_TR_04.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_04.TabIndex = 26
+        Me.nmr_TR_04.ThousandsSeparator = True
         '
         'nmr_TR_05
         '
+        Me.nmr_TR_05.BackColor = System.Drawing.Color.Salmon
         Me.nmr_TR_05.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_05.Location = New System.Drawing.Point(131, 331)
-        Me.nmr_TR_05.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_05.Location = New System.Drawing.Point(251, 314)
+        Me.nmr_TR_05.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_05.Name = "nmr_TR_05"
         Me.nmr_TR_05.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_05.TabIndex = 25
+        Me.nmr_TR_05.ThousandsSeparator = True
         '
         'nmr_TR_06
         '
         Me.nmr_TR_06.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_06.Location = New System.Drawing.Point(131, 303)
-        Me.nmr_TR_06.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_06.Location = New System.Drawing.Point(251, 286)
+        Me.nmr_TR_06.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_06.Name = "nmr_TR_06"
         Me.nmr_TR_06.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_06.TabIndex = 24
+        Me.nmr_TR_06.ThousandsSeparator = True
         '
         'nmr_TR_07
         '
         Me.nmr_TR_07.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_07.Location = New System.Drawing.Point(131, 275)
-        Me.nmr_TR_07.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_07.Location = New System.Drawing.Point(251, 258)
+        Me.nmr_TR_07.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_07.Name = "nmr_TR_07"
         Me.nmr_TR_07.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_07.TabIndex = 23
+        Me.nmr_TR_07.ThousandsSeparator = True
         '
         'nmr_TR_08
         '
         Me.nmr_TR_08.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_08.Location = New System.Drawing.Point(131, 247)
-        Me.nmr_TR_08.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_08.Location = New System.Drawing.Point(251, 230)
+        Me.nmr_TR_08.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_08.Name = "nmr_TR_08"
         Me.nmr_TR_08.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_08.TabIndex = 22
+        Me.nmr_TR_08.ThousandsSeparator = True
         '
         'nmr_TR_09
         '
         Me.nmr_TR_09.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_09.Location = New System.Drawing.Point(131, 219)
-        Me.nmr_TR_09.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_09.Location = New System.Drawing.Point(251, 202)
+        Me.nmr_TR_09.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_09.Name = "nmr_TR_09"
         Me.nmr_TR_09.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_09.TabIndex = 21
+        Me.nmr_TR_09.ThousandsSeparator = True
         '
         'nmr_TR_10
         '
+        Me.nmr_TR_10.BackColor = System.Drawing.Color.Salmon
         Me.nmr_TR_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_10.Location = New System.Drawing.Point(131, 191)
-        Me.nmr_TR_10.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_10.Location = New System.Drawing.Point(251, 174)
+        Me.nmr_TR_10.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_10.Name = "nmr_TR_10"
         Me.nmr_TR_10.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_10.TabIndex = 20
+        Me.nmr_TR_10.ThousandsSeparator = True
         '
         'nmr_TR_11
         '
         Me.nmr_TR_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_11.Location = New System.Drawing.Point(131, 163)
-        Me.nmr_TR_11.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_11.Location = New System.Drawing.Point(251, 146)
+        Me.nmr_TR_11.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_11.Name = "nmr_TR_11"
         Me.nmr_TR_11.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_11.TabIndex = 19
+        Me.nmr_TR_11.ThousandsSeparator = True
         '
         'nmr_TR_12
         '
         Me.nmr_TR_12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_12.Location = New System.Drawing.Point(131, 135)
-        Me.nmr_TR_12.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_12.Location = New System.Drawing.Point(251, 118)
+        Me.nmr_TR_12.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_12.Name = "nmr_TR_12"
         Me.nmr_TR_12.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_12.TabIndex = 18
+        Me.nmr_TR_12.ThousandsSeparator = True
         '
         'nmr_TR_13
         '
         Me.nmr_TR_13.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_13.Location = New System.Drawing.Point(131, 107)
-        Me.nmr_TR_13.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_13.Location = New System.Drawing.Point(251, 90)
+        Me.nmr_TR_13.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_13.Name = "nmr_TR_13"
         Me.nmr_TR_13.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_13.TabIndex = 17
+        Me.nmr_TR_13.ThousandsSeparator = True
         '
         'nmr_TR_14
         '
         Me.nmr_TR_14.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_14.Location = New System.Drawing.Point(131, 79)
-        Me.nmr_TR_14.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_14.Location = New System.Drawing.Point(251, 62)
+        Me.nmr_TR_14.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_14.Name = "nmr_TR_14"
         Me.nmr_TR_14.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_14.TabIndex = 16
+        Me.nmr_TR_14.ThousandsSeparator = True
         '
         'nmr_TR_15
         '
+        Me.nmr_TR_15.BackColor = System.Drawing.Color.Salmon
         Me.nmr_TR_15.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.nmr_TR_15.Location = New System.Drawing.Point(131, 51)
-        Me.nmr_TR_15.Maximum = New Decimal(New Integer() {100000000, 0, 0, 0})
+        Me.nmr_TR_15.Location = New System.Drawing.Point(251, 34)
+        Me.nmr_TR_15.Maximum = New Decimal(New Integer() {99999999, 0, 0, 0})
         Me.nmr_TR_15.Name = "nmr_TR_15"
         Me.nmr_TR_15.Size = New System.Drawing.Size(167, 22)
         Me.nmr_TR_15.TabIndex = 15
+        Me.nmr_TR_15.ThousandsSeparator = True
         '
         'btnSaveClose
         '
@@ -4309,6 +4529,24 @@ Partial Class OptionsScreen
         'tmrEnableIdentifyButton
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
+        '
+        'txtSndRandomContestant
+        '
+        Me.txtSndRandomContestant.Location = New System.Drawing.Point(763, 370)
+        Me.txtSndRandomContestant.Name = "txtSndRandomContestant"
+        Me.txtSndRandomContestant.ReadOnly = True
+        Me.txtSndRandomContestant.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndRandomContestant.TabIndex = 145
+        '
+        'Label152
+        '
+        Me.Label152.AutoSize = True
+        Me.Label152.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label152.Location = New System.Drawing.Point(620, 373)
+        Me.Label152.Name = "Label152"
+        Me.Label152.Size = New System.Drawing.Size(125, 16)
+        Me.Label152.TabIndex = 144
+        Me.Label152.Text = "Random Contestant"
         '
         'OptionsScreen
         '
@@ -4755,4 +4993,23 @@ Partial Class OptionsScreen
     Friend WithEvents radStrapPurple As RadioButton
     Friend WithEvents radStrapBlue As RadioButton
     Friend WithEvents radStrapBlackB As RadioButton
+    Friend WithEvents Label127 As Label
+    Friend WithEvents chkOwnSafetyNet As CheckBox
+    Friend WithEvents Label149 As Label
+    Friend WithEvents Label150 As Label
+    Friend WithEvents Label151 As Label
+    Friend WithEvents Label146 As Label
+    Friend WithEvents Label147 As Label
+    Friend WithEvents Label148 As Label
+    Friend WithEvents Label143 As Label
+    Friend WithEvents Label144 As Label
+    Friend WithEvents Label145 As Label
+    Friend WithEvents Label140 As Label
+    Friend WithEvents Label141 As Label
+    Friend WithEvents Label142 As Label
+    Friend WithEvents Label139 As Label
+    Friend WithEvents Label138 As Label
+    Friend WithEvents Label137 As Label
+    Friend WithEvents txtSndRandomContestant As TextBox
+    Friend WithEvents Label152 As Label
 End Class

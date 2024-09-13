@@ -108,6 +108,9 @@ Partial Class FFFServer
         Me.chkShowPointsInServerConsole = New System.Windows.Forms.CheckBox()
         Me.lblTime = New System.Windows.Forms.Label()
         Me.tmrThreeNotes = New System.Windows.Forms.Timer(Me.components)
+        Me.tmr_RND_Roll = New System.Windows.Forms.Timer(Me.components)
+        Me.tmr_RND_RollTime = New System.Windows.Forms.Timer(Me.components)
+        Me.btnPickRandomContestant = New System.Windows.Forms.Button()
         CType(Me.nmrTotalContestants, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlPlayer1.SuspendLayout()
         Me.pnlPlayer2.SuspendLayout()
@@ -377,7 +380,7 @@ Partial Class FFFServer
         Me.lblPoints.AutoSize = True
         Me.lblPoints.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblPoints.ForeColor = System.Drawing.Color.Black
-        Me.lblPoints.Location = New System.Drawing.Point(277, 5)
+        Me.lblPoints.Location = New System.Drawing.Point(487, 2)
         Me.lblPoints.Name = "lblPoints"
         Me.lblPoints.Size = New System.Drawing.Size(24, 25)
         Me.lblPoints.TabIndex = 69
@@ -690,9 +693,9 @@ Partial Class FFFServer
         '
         Me.btnRandomize.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.btnRandomize.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnRandomize.Location = New System.Drawing.Point(234, 271)
+        Me.btnRandomize.Location = New System.Drawing.Point(282, 271)
         Me.btnRandomize.Name = "btnRandomize"
-        Me.btnRandomize.Size = New System.Drawing.Size(110, 27)
+        Me.btnRandomize.Size = New System.Drawing.Size(110, 29)
         Me.btnRandomize.TabIndex = 99
         Me.btnRandomize.Text = "Randomize Points"
         Me.btnRandomize.UseVisualStyleBackColor = False
@@ -965,7 +968,7 @@ Partial Class FFFServer
         Me.chkDisableWinnerAuto.AutoSize = True
         Me.chkDisableWinnerAuto.Checked = True
         Me.chkDisableWinnerAuto.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkDisableWinnerAuto.Location = New System.Drawing.Point(234, 316)
+        Me.chkDisableWinnerAuto.Location = New System.Drawing.Point(31, 372)
         Me.chkDisableWinnerAuto.Name = "chkDisableWinnerAuto"
         Me.chkDisableWinnerAuto.Size = New System.Drawing.Size(199, 17)
         Me.chkDisableWinnerAuto.TabIndex = 109
@@ -977,7 +980,7 @@ Partial Class FFFServer
         Me.chkShowPointsInServerConsole.AutoSize = True
         Me.chkShowPointsInServerConsole.Checked = True
         Me.chkShowPointsInServerConsole.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.chkShowPointsInServerConsole.Location = New System.Drawing.Point(234, 334)
+        Me.chkShowPointsInServerConsole.Location = New System.Drawing.Point(31, 390)
         Me.chkShowPointsInServerConsole.Name = "chkShowPointsInServerConsole"
         Me.chkShowPointsInServerConsole.Size = New System.Drawing.Size(167, 17)
         Me.chkShowPointsInServerConsole.TabIndex = 110
@@ -987,7 +990,7 @@ Partial Class FFFServer
         'lblTime
         '
         Me.lblTime.AutoSize = True
-        Me.lblTime.Location = New System.Drawing.Point(387, 14)
+        Me.lblTime.Location = New System.Drawing.Point(280, 11)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(28, 13)
         Me.lblTime.TabIndex = 111
@@ -997,12 +1000,32 @@ Partial Class FFFServer
         '
         Me.tmrThreeNotes.Interval = 2000
         '
+        'tmr_RND_Roll
+        '
+        Me.tmr_RND_Roll.Interval = 80
+        '
+        'tmr_RND_RollTime
+        '
+        Me.tmr_RND_RollTime.Interval = 5100
+        '
+        'btnPickRandomContestant
+        '
+        Me.btnPickRandomContestant.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.btnPickRandomContestant.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnPickRandomContestant.Location = New System.Drawing.Point(283, 316)
+        Me.btnPickRandomContestant.Name = "btnPickRandomContestant"
+        Me.btnPickRandomContestant.Size = New System.Drawing.Size(109, 50)
+        Me.btnPickRandomContestant.TabIndex = 112
+        Me.btnPickRandomContestant.Text = "Pick Random Contestant"
+        Me.btnPickRandomContestant.UseVisualStyleBackColor = False
+        '
         'FFFServer
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkGray
-        Me.ClientSize = New System.Drawing.Size(523, 377)
+        Me.ClientSize = New System.Drawing.Size(519, 415)
+        Me.Controls.Add(Me.btnPickRandomContestant)
         Me.Controls.Add(Me.lblTime)
         Me.Controls.Add(Me.chkShowPointsInServerConsole)
         Me.Controls.Add(Me.chkDisableWinnerAuto)
@@ -1143,4 +1166,7 @@ Partial Class FFFServer
     Friend WithEvents chkShowPointsInServerConsole As CheckBox
     Friend WithEvents lblTime As Label
     Friend WithEvents tmrThreeNotes As Timer
+    Friend WithEvents tmr_RND_Roll As Timer
+    Friend WithEvents tmr_RND_RollTime As Timer
+    Friend WithEvents btnPickRandomContestant As Button
 End Class

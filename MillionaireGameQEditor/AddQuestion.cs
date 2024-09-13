@@ -32,13 +32,13 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                 cmd.Parameters.AddWithValue("@C", txtC.Text);
                 cmd.Parameters.AddWithValue("@D", txtD.Text);
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
-                if(radDiffSpecific.Checked == true)
+                if (radDiffSpecific.Checked == true)
                 {
                     cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
                     cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
                     cmd.Parameters.AddWithValue("@LevelRange", "");
                 }
-                else if(radDiffRange.Checked == true)
+                else if (radDiffRange.Checked == true)
                 {
                     cmd.Parameters.AddWithValue("@Level", "");
                     cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
@@ -46,7 +46,7 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                     {
                         cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
                     }
-                    else if(cmbQuestionRange.Text.StartsWith("Lvl2"))
+                    else if (cmbQuestionRange.Text.StartsWith("Lvl2"))
                     {
                         cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
                     }

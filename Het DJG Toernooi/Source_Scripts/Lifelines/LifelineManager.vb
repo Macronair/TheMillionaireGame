@@ -1,6 +1,4 @@
-﻿Imports System.Threading
-
-Public Class LifelineManager
+﻿Public Class LifelineManager
 
     Public Shared CurrentActive As Integer = 0
     Public Shared Lifeline1_Used As Boolean = False

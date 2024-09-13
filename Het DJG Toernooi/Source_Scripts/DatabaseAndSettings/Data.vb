@@ -94,10 +94,12 @@ Public Class Data
     Public Shared Sub CheckTables()
         'SQL Commands for checks
         Dim cmd_s_HostMessages As String = "SELECT * FROM sys.tables WHERE name = 'settings_HostMessages'"
+        Dim cmd_s_Contestants As String = "SELECT * FROM sys.tables WHERE name = 'settings_Contestants'"
         Dim cmd_q_fffquestions As String = "SELECT * FROM sys.tables WHERE name = 'fff_questions'"
         Dim cmd_q_questions As String = "SELECT * FROM sys.tables WHERE name = 'questions'"
 
         Dim te_s_HostMessages As Boolean = False
+        Dim te_s_Contestants As Boolean = False
         Dim te_q_Level0 As Boolean = False
         Dim te_q_Level1 As Boolean = False
 
@@ -113,6 +115,20 @@ Public Class Data
             If te_s_HostMessages = False Then
                 CoreConsole.LogMsgDate("Table cannot be found.")
                 CreateTables(101)
+            End If
+        Catch ex As Exception
+            CoreConsole.LogMsgDate("Error when checking database < settings_HostMessages >: " + Environment.NewLine + ex.Message)
+        End Try
+        Try
+            CoreConsole.LogMsgDate("Checking table 'settings_Contestants'...")
+            Using sqlCmd As SqlCommand = New SqlCommand(cmd_s_Contestants, connectionString)
+                Using reader As SqlDataReader = sqlCmd.ExecuteReader
+                    te_s_Contestants = reader.HasRows
+                End Using
+            End Using
+            If te_s_Contestants = False Then
+                CoreConsole.LogMsgDate("Table cannot be found.")
+                CreateTables(102)
             End If
         Catch ex As Exception
             CoreConsole.LogMsgDate("Error when checking database < settings_HostMessages >: " + Environment.NewLine + ex.Message)
@@ -176,6 +192,7 @@ Public Class Data
         CoreConsole.LogMsgDate("> Fastest Finger Questions = " + te_q_Level0.ToString())
         CoreConsole.LogMsgDate("> Regular Questions        = " + te_q_Level1.ToString())
         CoreConsole.LogMsgDate("> Host Messages            = " + te_s_HostMessages.ToString())
+        CoreConsole.LogMsgDate("> Contestants              = " + te_s_Contestants.ToString())
         CoreConsole.LogMsgDate("=====================================")
         CoreConsole.LogMsg("")
 
@@ -252,6 +269,28 @@ Public Class Data
             Case 101
                 CoreConsole.LogMsgLineDate("Creating table 'settings_HostMessages'...")
                 table = "CREATE TABLE [dbo].[settings_HostMessages] ([Id] INT IDENTITY (1,1) NOT NULL, [Message] NVARCHAR(MAX) NOT NULL, PRIMARY KEY CLUSTERED ([Id] ASC))"
+                Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
+                Try
+                    cmd.ExecuteNonQuery()
+                    CoreConsole.LogMsg("Success!")
+                Catch ex As Exception
+                    CoreConsole.LogMsg("<")
+                    CoreConsole.LogMsgDate("Error when creating table: " + Environment.NewLine + ex.Message)
+                End Try
+            Case 102
+                CoreConsole.LogMsgLineDate("Creating table 'settings_Contestants'...")
+                table = "CREATE TABLE [dbo].[settings_Contestants] 
+([Id] INT IDENTITY (1,1) NOT NULL, 
+[FirstName] NVARCHAR(255) NOT NULL,
+[LastName] NVARCHAR(255) NOT NULL, 
+[DisplayName] NVARCHAR(255) NOT NULL, 
+[City] NVARCHAR(255) NULL, 
+[DateOfBirth] DATE NULL, 
+[JobTitle] NVARCHAR(255) NULL, 
+[Interests] NVARCHAR(MAX) NULL, 
+[Family] NVARCHAR(MAX) NULL, 
+[Picture] NVARCHAR(MAX) NULL, 
+PRIMARY KEY CLUSTERED ([Id] ASC))"
                 Dim cmd As SqlCommand = New SqlCommand(table, connectionString)
                 Try
                     cmd.ExecuteNonQuery()

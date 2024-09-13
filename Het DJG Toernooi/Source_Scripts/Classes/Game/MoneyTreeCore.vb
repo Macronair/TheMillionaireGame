@@ -1,8 +1,7 @@
-﻿Imports System.Reflection
-
-Public Class MoneyTreeCore
+﻿Public Class MoneyTreeCore
 
     Public Shared tree_img(15) As Bitmap
+    Public Shared tree_imgrisk(15) As Bitmap
     Public Shared lifelines(5) As Bitmap
     Shared ll(3) As Image
 
@@ -45,7 +44,7 @@ Public Class MoneyTreeCore
         Dim level As Integer = 0
         Dim position As Integer = 1
 
-        ' Generate the actual images
+        ' Generate NORMAL tree images
         Do
             Dim lvl As Image = GetPosImage(level)
             tree_img(level) = New Bitmap(1280, 720)
@@ -81,7 +80,58 @@ Public Class MoneyTreeCore
                 g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
                 position = position + 1
             Loop Until position = 16
+            position = 1
+            level = level + 1
+        Loop Until level = 16
+        level = 0
 
+        Dim ignoresafetylevel As Integer
+        If MoneyTreeSettings.TreeData.SafeNet_Risk = 1 Then
+            ignoresafetylevel = 5
+        ElseIf MoneyTreeSettings.TreeData.SafeNet_Risk = 2 Then
+            ignoresafetylevel = 10
+        End If
+
+        ' Generate RISK tree images
+        Do
+            Dim lvl As Image = GetPosImage(level)
+            tree_imgrisk(level) = New Bitmap(1280, 720)
+            Dim g As Graphics = Graphics.FromImage(tree_imgrisk(level))
+
+            g.DrawImage(bg, bg_pos_x, bg_pos_y, bg_size_x, bg_size_y)
+            If lvl Is Nothing Then
+
+            Else
+                g.DrawImage(lvl, lvl_pos_x, lvl_pos_y, lvl_size_x, lvl_size_y)
+            End If
+
+            ' Generate money values in images
+            Do
+                Dim font As New Font("Copperplate Gothic Bold", 24, FontStyle.Bold)
+                Dim textColor As Brush
+
+                If IsSafetyNet(position) = True Then
+                    textColor = Brushes.White
+                Else
+                    textColor = Brushes.Gold
+                End If
+
+                If ignoresafetylevel = position Then
+                    textColor = Brushes.Gold
+                End If
+
+                If position = 15 Then
+                    textColor = Brushes.White
+                End If
+
+                If level = position Then
+                    textColor = Brushes.Black
+                End If
+
+                g.DrawString(position, font, textColor, qno_pos_X(position), money_pos_Y(position))
+                g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+                position = position + 1
+            Loop Until position = 16
             position = 1
             level = level + 1
         Loop Until level = 16
@@ -107,7 +157,7 @@ Public Class MoneyTreeCore
             Case 1
                 Return My.Resources._02_Tree
             Case 2
-                Return My.Resources._01_Tree
+                Return My.Resources._04_Tree
             Case 3
                 Return My.Resources._02_Tree
             Case 4

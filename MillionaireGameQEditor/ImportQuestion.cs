@@ -85,7 +85,7 @@ namespace Millionaire.Windows.Question_Editor
             }
 
             DataSet ds = new DataSet();
-            
+
             newdb.Open();
             SqlDataReader reader = sql.ExecuteReader();
             while (reader.Read())

@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
     <Compile Include="Source_Scripts\Classes\Game\MoneyTreeCore.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\RandomContestant.vb" />
     <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\MoneyTreeSettings.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\QuestionStrap.vb" />
@@ -229,12 +230,6 @@
     <Compile Include="Windows\General\TVControlPnl720.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Windows\General\TV_Test1080.Designer.vb">
-      <DependentUpon>TV_Test1080.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\General\TV_Test1080.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Windows\Options\HostMessages.Designer.vb">
       <DependentUpon>HostMessages.vb</DependentUpon>
     </Compile>
@@ -293,9 +288,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl720.resx">
       <DependentUpon>TVControlPnl720.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Windows\General\TV_Test1080.resx">
-      <DependentUpon>TV_Test1080.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
@@ -448,6 +440,10 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
+    <None Include="Resources\04_Tree.png" />
+    <None Include="Resources\03_Tree.png" />
+    <None Include="Resources\02_Tree.png" />
+    <None Include="Resources\01_Tree.png" />
     <None Include="Resources\WinStrap_01.png" />
     <None Include="Resources\WinStrap_02.png" />
     <None Include="Resources\WinStrap_03.png" />
@@ -455,9 +451,6 @@
     <None Include="Resources\WinStrap_05.png" />
     <None Include="Resources\WinStrap_06.png" />
     <None Include="Resources\WinStrap_07.png" />
-    <None Include="Resources\01_Tree.png" />
-    <None Include="Resources\02_Tree.png" />
-    <None Include="Resources\03_Tree.png" />
     <None Include="Resources\999_Tree_01.png" />
     <None Include="Resources\999_Tree_02.png" />
     <None Include="Resources\999_Tree_03.png" />

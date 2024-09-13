@@ -78,6 +78,7 @@ Public Class AppSettings
     Public Property snd_F_Order4 As String
     Public Property snd_F_WhoWasCorrect As String
     Public Property snd_F_Winner As String
+    Public Property snd_RandomContestantPicking As String
     Public Property snd_ATA_Start As String
     Public Property snd_ATA_Voting As String
     Public Property snd_ATA_End As String
@@ -258,6 +259,7 @@ Public Class Profile
             Options.snd_F_Order4 = loadedvalues.snd_F_Order4
             Options.snd_F_WhoWasCorrect = loadedvalues.snd_F_WhoWasCorrect
             Options.snd_F_Winner = loadedvalues.snd_F_Winner
+            Options.snd_RandomContestantPicking = loadedvalues.snd_RandomContestantPicking
             Options.snd_ATA_Start = loadedvalues.snd_ATA_Start
             Options.snd_ATA_Voting = loadedvalues.snd_ATA_Voting
             Options.snd_ATA_End = loadedvalues.snd_ATA_End
@@ -425,6 +427,7 @@ Public Class Profile
         Options.snd_F_Order4 = "fastest_finger_answer_correct_4.mp3"
         Options.snd_F_WhoWasCorrect = "fastest_finger_reveal_times.mp3"
         Options.snd_F_Winner = "fastest_finger_winner.mp3"
+        Options.snd_RandomContestantPicking = "pick_random_contestant.mp3"
         Options.snd_ATA_Start = "ata_start.mp3"
         Options.snd_ATA_Voting = "ata_vote.mp3"
         Options.snd_ATA_End = "ata_end.mp3"
@@ -590,6 +593,7 @@ Public Class Profile
         Options.snd_F_Order4 = OptionsScreen.txtSndFOrder4.Text
         Options.snd_F_WhoWasCorrect = OptionsScreen.txtSndFWhoWasCorrect.Text
         Options.snd_F_Winner = OptionsScreen.txtSndFWinner.Text
+        Options.snd_RandomContestantPicking = OptionsScreen.txtSndRandomContestant.Text
         Options.snd_ATA_Start = OptionsScreen.txtSndATAStart.Text
         Options.snd_ATA_Voting = OptionsScreen.txtSndATAVoting.Text
         Options.snd_ATA_End = OptionsScreen.txtSndATAEnd.Text
