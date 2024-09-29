@@ -24,22 +24,30 @@
             If ControlPanel.lblAnswer.Text = "A" Then
                 ControlPanel.txtA.BackColor = Color.Green
                 HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(6)
+                HostScreen.txtA.ForeColor = Color.Black
                 GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(6)
+                GuestScreen.txtA.ForeColor = Color.Black
             End If
             If ControlPanel.lblAnswer.Text = "B" Then
                 ControlPanel.txtB.BackColor = Color.Green
                 HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(7)
+                HostScreen.txtB.ForeColor = Color.Black
                 GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(7)
+                GuestScreen.txtB.ForeColor = Color.Black
             End If
             If ControlPanel.lblAnswer.Text = "C" Then
                 ControlPanel.txtC.BackColor = Color.Green
                 HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(6)
+                HostScreen.txtC.ForeColor = Color.Black
                 GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(6)
+                GuestScreen.txtC.ForeColor = Color.Black
             End If
             If ControlPanel.lblAnswer.Text = "D" Then
                 ControlPanel.txtD.BackColor = Color.Green
                 HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(7)
+                HostScreen.txtD.ForeColor = Color.Black
                 HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(7)
+                GuestScreen.txtD.ForeColor = Color.Black
             End If
             act = 2
         ElseIf act = 2 Then

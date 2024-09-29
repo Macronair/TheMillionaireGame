@@ -117,7 +117,12 @@
         strstep = 0
 
         Game.ChangeLevel(Game.level)
-        lblAmount.Text = MoneyTreeSettings.TreeData.Currency + Game.varCurrent
+        If MoneyTreeSettings.TreeData.CurrencyAtSuffix = True Then
+            lblAmount.Text = Game.varCurrent + MoneyTreeSettings.TreeData.Currency
+        Else
+            lblAmount.Text = MoneyTreeSettings.TreeData.Currency + Game.varCurrent
+        End If
+
         HostScreen.txtWinningStrap.Text = lblAmount.Text
         GuestScreen.txtWinningStrap.Text = lblAmount.Text
 
@@ -150,5 +155,17 @@
     Private Sub TVControlPnl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+    End Sub
+
+    Dim fna As Integer = 1
+    Private Sub tmrAnimateFreeSafeNet_Tick(sender As Object, e As EventArgs) Handles tmrAnimateFreeSafeNet.Tick
+        Select Case fna
+            Case 1
+                picTree.BackgroundImage = MoneyTreeCore.tree_imgrisk(Game.level)
+                fna = 2
+            Case 2
+                picTree.BackgroundImage = MoneyTreeCore.tree_imgnet2
+                fna = 1
+        End Select
     End Sub
 End Class

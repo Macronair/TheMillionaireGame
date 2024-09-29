@@ -34,6 +34,7 @@ Public Class AppSettings
     Public Property S_AutoHideQuestionAtPlusOne As Boolean
     Public Property S_AutoShowTotalWinnings As Boolean
     Public Property S_AutoHideQuestionAtWalkAway As Boolean
+    Public Property S_HideAnswerInControlPanelAtNewQ As Boolean
 
     Public Property FFF_Port As Integer
 
@@ -79,6 +80,7 @@ Public Class AppSettings
     Public Property snd_F_WhoWasCorrect As String
     Public Property snd_F_Winner As String
     Public Property snd_RandomContestantPicking As String
+    Public Property snd_SetSafetyNet As String
     Public Property snd_ATA_Start As String
     Public Property snd_ATA_Voting As String
     Public Property snd_ATA_End As String
@@ -224,6 +226,7 @@ Public Class Profile
             Options.S_AutoHideQuestionAtPlusOne = loadedvalues.S_AutoHideQuestionAtPlusOne
             Options.S_AutoShowTotalWinnings = loadedvalues.S_AutoShowTotalWinnings
             Options.S_AutoHideQuestionAtWalkAway = loadedvalues.S_AutoHideQuestionAtWalkAway
+            Options.S_HideAnswerInControlPanelAtNewQ = loadedvalues.S_HideAnswerInControlPanelAtNewQ
 
             Options.FFF_Port = loadedvalues.FFF_Port
 
@@ -260,6 +263,7 @@ Public Class Profile
             Options.snd_F_WhoWasCorrect = loadedvalues.snd_F_WhoWasCorrect
             Options.snd_F_Winner = loadedvalues.snd_F_Winner
             Options.snd_RandomContestantPicking = loadedvalues.snd_RandomContestantPicking
+            Options.snd_SetSafetyNet = loadedvalues.snd_SetSafetyNet
             Options.snd_ATA_Start = loadedvalues.snd_ATA_Start
             Options.snd_ATA_Voting = loadedvalues.snd_ATA_Voting
             Options.snd_ATA_End = loadedvalues.snd_ATA_End
@@ -392,6 +396,7 @@ Public Class Profile
         Options.S_AutoHideQuestionAtPlusOne = True
         Options.S_AutoShowTotalWinnings = True
         Options.S_AutoHideQuestionAtWalkAway = True
+        Options.S_HideAnswerInControlPanelAtNewQ = False
 
         Options.FFF_Port = 3818
 
@@ -428,6 +433,7 @@ Public Class Profile
         Options.snd_F_WhoWasCorrect = "fastest_finger_reveal_times.mp3"
         Options.snd_F_Winner = "fastest_finger_winner.mp3"
         Options.snd_RandomContestantPicking = "pick_random_contestant.mp3"
+        Options.snd_SetSafetyNet = "set_safety_net.mp3"
         Options.snd_ATA_Start = "ata_start.mp3"
         Options.snd_ATA_Voting = "ata_vote.mp3"
         Options.snd_ATA_End = "ata_end.mp3"
@@ -558,6 +564,7 @@ Public Class Profile
         Options.S_AutoHideQuestionAtPlusOne = OptionsScreen.chkAutoHideQuestionAtPlusOne.Checked
         Options.S_AutoShowTotalWinnings = OptionsScreen.chkAutoShowTotalWinnings.Checked
         Options.S_AutoHideQuestionAtWalkAway = OptionsScreen.chkAutoHideQuestionAtWalkAway.Checked
+        Options.S_HideAnswerInControlPanelAtNewQ = OptionsScreen.chkHideAnswerOnControlPanelWhenNewQuestion.Checked
 
         Options.FFF_Port = OptionsScreen.nmrFFFPortNumber.Value
 
@@ -594,6 +601,7 @@ Public Class Profile
         Options.snd_F_WhoWasCorrect = OptionsScreen.txtSndFWhoWasCorrect.Text
         Options.snd_F_Winner = OptionsScreen.txtSndFWinner.Text
         Options.snd_RandomContestantPicking = OptionsScreen.txtSndRandomContestant.Text
+        Options.snd_SetSafetyNet = OptionsScreen.txtSndSetSafetyNet.Text
         Options.snd_ATA_Start = OptionsScreen.txtSndATAStart.Text
         Options.snd_ATA_Voting = OptionsScreen.txtSndATAVoting.Text
         Options.snd_ATA_End = OptionsScreen.txtSndATAEnd.Text

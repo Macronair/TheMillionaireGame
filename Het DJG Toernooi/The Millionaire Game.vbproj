@@ -15,19 +15,16 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ShouldCreateLogs>True</ShouldCreateLogs>
     <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
     <UpdatePackageVersion>False</UpdatePackageVersion>
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>AssemblyVersion</InheritWinAppVersionFrom>
     <TargetFrameworkProfile />
-    <AssemblyVersionSettings>
-    </AssemblyVersionSettings>
-    <AssemblyFileVersionSettings>
-    </AssemblyFileVersionSettings>
-    <AssemblyInfoVersionSettings>
-    </AssemblyInfoVersionSettings>
+    <AssemblyVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyInfoVersionSettings>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -43,7 +40,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.814.0</ApplicationVersion>
+    <ApplicationVersion>1.2.0.896</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -135,6 +132,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\GameModes\modeFree.vb" />
     <Compile Include="Source_Scripts\Classes\Game\MoneyTreeCore.vb" />
     <Compile Include="Source_Scripts\Classes\Game\RandomContestant.vb" />
     <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
@@ -440,9 +438,9 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
+    <None Include="Resources\02_Tree.png" />
     <None Include="Resources\04_Tree.png" />
     <None Include="Resources\03_Tree.png" />
-    <None Include="Resources\02_Tree.png" />
     <None Include="Resources\01_Tree.png" />
     <None Include="Resources\WinStrap_01.png" />
     <None Include="Resources\WinStrap_02.png" />

@@ -296,6 +296,7 @@ Partial Class HostScreen
         Me.txtATAd.ForeColor = System.Drawing.Color.White
         Me.txtATAd.Location = New System.Drawing.Point(760, 206)
         Me.txtATAd.Name = "txtATAd"
+        Me.txtATAd.ReadOnly = True
         Me.txtATAd.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtATAd.Size = New System.Drawing.Size(170, 36)
         Me.txtATAd.TabIndex = 43
@@ -309,6 +310,7 @@ Partial Class HostScreen
         Me.txtATAc.ForeColor = System.Drawing.Color.White
         Me.txtATAc.Location = New System.Drawing.Point(760, 164)
         Me.txtATAc.Name = "txtATAc"
+        Me.txtATAc.ReadOnly = True
         Me.txtATAc.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtATAc.Size = New System.Drawing.Size(170, 36)
         Me.txtATAc.TabIndex = 42
@@ -322,6 +324,7 @@ Partial Class HostScreen
         Me.txtATAb.ForeColor = System.Drawing.Color.White
         Me.txtATAb.Location = New System.Drawing.Point(760, 122)
         Me.txtATAb.Name = "txtATAb"
+        Me.txtATAb.ReadOnly = True
         Me.txtATAb.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtATAb.Size = New System.Drawing.Size(170, 36)
         Me.txtATAb.TabIndex = 41
@@ -335,6 +338,7 @@ Partial Class HostScreen
         Me.txtATAa.ForeColor = System.Drawing.Color.White
         Me.txtATAa.Location = New System.Drawing.Point(760, 80)
         Me.txtATAa.Name = "txtATAa"
+        Me.txtATAa.ReadOnly = True
         Me.txtATAa.RightToLeft = System.Windows.Forms.RightToLeft.Yes
         Me.txtATAa.Size = New System.Drawing.Size(170, 36)
         Me.txtATAa.TabIndex = 40
@@ -372,6 +376,7 @@ Partial Class HostScreen
         Me.lblHostMsg.Location = New System.Drawing.Point(12, 169)
         Me.lblHostMsg.Multiline = True
         Me.lblHostMsg.Name = "lblHostMsg"
+        Me.lblHostMsg.ReadOnly = True
         Me.lblHostMsg.Size = New System.Drawing.Size(746, 161)
         Me.lblHostMsg.TabIndex = 70
         '

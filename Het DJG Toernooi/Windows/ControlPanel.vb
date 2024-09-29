@@ -54,19 +54,18 @@ Public Class ControlPanel
         TVControlPnl.pnlTotal.Visible = False
         drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())  ' Load host messages in dropdown menu.
 
-        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
+        Game.ChangeLevel(0)
+
         TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
         TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
         TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
         TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
 
-        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
         HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
         HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
         HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
         HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
 
-        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
         HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
         HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
         HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
@@ -665,7 +664,7 @@ Public Class ControlPanel
         GuestScreen.Show()
     End Sub
 
-    Private Sub btnUnlockSwitch_Click(sender As Object, e As EventArgs) Handles btnUnlockSwitch.Click
+    Private Sub btnUnlockSwitch_Click(sender As Object, e As EventArgs) Handles btnActivateRiskMode.Click
         Select Case Game.gamemode
             Case 0
                 Game.ChangeMode(1)
@@ -817,5 +816,31 @@ Public Class ControlPanel
         End If
 
         Hotkey.Press(e.KeyCode, e.Control, e.Alt)
+    End Sub
+
+    Private Sub btnSet2ndSafeNet_Click(sender As Object, e As EventArgs) Handles btnSet2ndSafeNet.Click
+        Game.freeSafetyNetSet = True
+        Game.freeSafetyNetAt = Game.level + 1
+        TVControlPnl.tmrAnimateFreeSafeNet.Stop()
+
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_imgnet2
+        HostScreen.picTree.Image = MoneyTreeCore.tree_imgnet2
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_imgnet2
+
+        Dim tr As Thread = New Thread(New ThreadStart(AddressOf SetSafetyNet))
+        tr.Start()
+    End Sub
+
+    Private Sub SetSafetyNet()
+        Dim enable As New WMPLib.WindowsMediaPlayer
+        With enable
+            .URL = Sounds.SoundsPath + Profile.Options.snd_SetSafetyNet
+            .controls.play()
+        End With
+
+        MoneyTreeCore.GenerateImages()
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
+        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
     End Sub
 End Class

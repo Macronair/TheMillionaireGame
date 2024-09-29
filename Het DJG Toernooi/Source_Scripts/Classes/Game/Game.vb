@@ -11,6 +11,10 @@
     Public Shared intoCommercials As Boolean = False
     Public Shared walkaway As Boolean = False
     Public Shared showTree As Boolean = False
+
+    Public Shared freeSafetyNetSet As Boolean = False
+    Public Shared freeSafetyNetAt As Integer = 0
+
     Public Shared varCurrent As String = "0"
     Public Shared varCorrect As String = "0"
     Public Shared varWrong As String = "0"
@@ -101,8 +105,8 @@
             Case 0      ' Change to normal mode
                 gamemode = 0
                 SetValues()
-                ControlPanel.btnUnlockSwitch.Text = "RISK MODE OFF"
-                ControlPanel.btnUnlockSwitch.BackColor = Color.Orange
+                ControlPanel.btnActivateRiskMode.Text = "RISK MODE OFF"
+                ControlPanel.btnActivateRiskMode.BackColor = Color.Orange
             Case 1      ' Change to risk mode
                 gamemode = 1
                 SetValues()
@@ -113,8 +117,8 @@
                     .controls.play()
                 End With
 
-                ControlPanel.btnUnlockSwitch.Text = "RISK MODE ON"
-                ControlPanel.btnUnlockSwitch.BackColor = Color.DarkGreen
+                ControlPanel.btnActivateRiskMode.Text = "RISK MODE ON"
+                ControlPanel.btnActivateRiskMode.BackColor = Color.DarkGreen
         End Select
 
         LifelineManager.UnlockLifeline(1)
@@ -128,12 +132,16 @@
         'Based on gamemode
         ' 0 = Normal Mode
         ' 1 = Risk Mode
-        Select Case gamemode
-            Case 0
-                modeNormal.getInfo()
-            Case 1
-                modeRisk.getInfo()
-        End Select
+        If MoneyTreeSettings.TreeData.SafeNet_FreeMode = True Then
+            modeFree.getInfo()
+        Else
+            Select Case gamemode
+                Case 0
+                    modeNormal.getInfo()
+                Case 1
+                    modeRisk.getInfo()
+            End Select
+        End If
 
     End Sub
 

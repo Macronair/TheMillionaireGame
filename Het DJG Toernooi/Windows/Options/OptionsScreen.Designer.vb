@@ -118,6 +118,10 @@ Partial Class OptionsScreen
         Me.btnResetQuestionsAll = New System.Windows.Forms.Button()
         Me.btnDeleteMessage = New System.Windows.Forms.Button()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.txtSndSetSafetyNet = New System.Windows.Forms.TextBox()
+        Me.Label153 = New System.Windows.Forms.Label()
+        Me.txtSndRandomContestant = New System.Windows.Forms.TextBox()
+        Me.Label152 = New System.Windows.Forms.Label()
         Me.txtSndHostEnd = New System.Windows.Forms.TextBox()
         Me.Label119 = New System.Windows.Forms.Label()
         Me.txtSndHostStart = New System.Windows.Forms.TextBox()
@@ -404,12 +408,15 @@ Partial Class OptionsScreen
         Me.nmr_TR_13 = New System.Windows.Forms.NumericUpDown()
         Me.nmr_TR_14 = New System.Windows.Forms.NumericUpDown()
         Me.nmr_TR_15 = New System.Windows.Forms.NumericUpDown()
+        Me.grpCurrencyPosition = New System.Windows.Forms.GroupBox()
+        Me.radCPosRight = New System.Windows.Forms.RadioButton()
+        Me.radCPosLeft = New System.Windows.Forms.RadioButton()
+        Me.Label154 = New System.Windows.Forms.Label()
         Me.btnSaveClose = New System.Windows.Forms.Button()
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.txtSndRandomContestant = New System.Windows.Forms.TextBox()
-        Me.Label152 = New System.Windows.Forms.Label()
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion = New System.Windows.Forms.CheckBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -455,6 +462,7 @@ Partial Class OptionsScreen
         CType(Me.nmr_TR_13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmr_TR_14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.nmr_TR_15, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.grpCurrencyPosition.SuspendLayout()
         Me.SuspendLayout()
         '
         'tabOptions
@@ -473,6 +481,7 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.chkHideAnswerOnControlPanelWhenNewQuestion)
         Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.nmrFFFPortNumber)
         Me.TabPage1.Controls.Add(Me.Label121)
@@ -639,7 +648,7 @@ Partial Class OptionsScreen
         'chkAutoHideQuestionAtPlusOne
         '
         Me.chkAutoHideQuestionAtPlusOne.AutoSize = True
-        Me.chkAutoHideQuestionAtPlusOne.Location = New System.Drawing.Point(628, 79)
+        Me.chkAutoHideQuestionAtPlusOne.Location = New System.Drawing.Point(628, 87)
         Me.chkAutoHideQuestionAtPlusOne.Name = "chkAutoHideQuestionAtPlusOne"
         Me.chkAutoHideQuestionAtPlusOne.Size = New System.Drawing.Size(339, 20)
         Me.chkAutoHideQuestionAtPlusOne.TabIndex = 6
@@ -1483,6 +1492,8 @@ Partial Class OptionsScreen
         '
         'TabPage2
         '
+        Me.TabPage2.Controls.Add(Me.txtSndSetSafetyNet)
+        Me.TabPage2.Controls.Add(Me.Label153)
         Me.TabPage2.Controls.Add(Me.txtSndRandomContestant)
         Me.TabPage2.Controls.Add(Me.Label152)
         Me.TabPage2.Controls.Add(Me.txtSndHostEnd)
@@ -1592,6 +1603,42 @@ Partial Class OptionsScreen
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Sounds (Regular)"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'txtSndSetSafetyNet
+        '
+        Me.txtSndSetSafetyNet.Location = New System.Drawing.Point(763, 428)
+        Me.txtSndSetSafetyNet.Name = "txtSndSetSafetyNet"
+        Me.txtSndSetSafetyNet.ReadOnly = True
+        Me.txtSndSetSafetyNet.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndSetSafetyNet.TabIndex = 147
+        '
+        'Label153
+        '
+        Me.Label153.AutoSize = True
+        Me.Label153.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label153.Location = New System.Drawing.Point(620, 431)
+        Me.Label153.Name = "Label153"
+        Me.Label153.Size = New System.Drawing.Size(92, 16)
+        Me.Label153.TabIndex = 146
+        Me.Label153.Text = "Set Safety Net"
+        '
+        'txtSndRandomContestant
+        '
+        Me.txtSndRandomContestant.Location = New System.Drawing.Point(763, 370)
+        Me.txtSndRandomContestant.Name = "txtSndRandomContestant"
+        Me.txtSndRandomContestant.ReadOnly = True
+        Me.txtSndRandomContestant.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndRandomContestant.TabIndex = 145
+        '
+        'Label152
+        '
+        Me.Label152.AutoSize = True
+        Me.Label152.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label152.Location = New System.Drawing.Point(620, 373)
+        Me.Label152.Name = "Label152"
+        Me.Label152.Size = New System.Drawing.Size(125, 16)
+        Me.Label152.TabIndex = 144
+        Me.Label152.Text = "Random Contestant"
         '
         'txtSndHostEnd
         '
@@ -2776,7 +2823,7 @@ Partial Class OptionsScreen
         'txtSndQ10RCorrect
         '
         Me.txtSndQ10RCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSndQ10RCorrect.Location = New System.Drawing.Point(865, 421)
+        Me.txtSndQ10RCorrect.Location = New System.Drawing.Point(865, 249)
         Me.txtSndQ10RCorrect.Name = "txtSndQ10RCorrect"
         Me.txtSndQ10RCorrect.ReadOnly = True
         Me.txtSndQ10RCorrect.Size = New System.Drawing.Size(127, 22)
@@ -2786,11 +2833,11 @@ Partial Class OptionsScreen
         '
         Me.Label106.AutoSize = True
         Me.Label106.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label106.Location = New System.Drawing.Point(778, 424)
+        Me.Label106.Location = New System.Drawing.Point(778, 252)
         Me.Label106.Name = "Label106"
-        Me.Label106.Size = New System.Drawing.Size(80, 32)
+        Me.Label106.Size = New System.Drawing.Size(77, 16)
         Me.Label106.TabIndex = 306
-        Me.Label106.Text = "Q10 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "(Risk Mode)"
+        Me.Label106.Text = "Q10 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'txtSndQ15Wrong
         '
@@ -3080,7 +3127,7 @@ Partial Class OptionsScreen
         'txtSndQ10Correct
         '
         Me.txtSndQ10Correct.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSndQ10Correct.Location = New System.Drawing.Point(865, 249)
+        Me.txtSndQ10Correct.Location = New System.Drawing.Point(865, 454)
         Me.txtSndQ10Correct.Name = "txtSndQ10Correct"
         Me.txtSndQ10Correct.ReadOnly = True
         Me.txtSndQ10Correct.Size = New System.Drawing.Size(127, 22)
@@ -3090,11 +3137,11 @@ Partial Class OptionsScreen
         '
         Me.Label87.AutoSize = True
         Me.Label87.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label87.Location = New System.Drawing.Point(778, 252)
+        Me.Label87.Location = New System.Drawing.Point(709, 457)
         Me.Label87.Name = "Label87"
-        Me.Label87.Size = New System.Drawing.Size(77, 16)
+        Me.Label87.Size = New System.Drawing.Size(150, 16)
         Me.Label87.TabIndex = 258
-        Me.Label87.Text = "Q10 Correct"
+        Me.Label87.Text = "2nd SafetyNet Reached"
         '
         'txtSndQ9Correct
         '
@@ -3745,7 +3792,7 @@ Partial Class OptionsScreen
         'txtSndQ5Correct
         '
         Me.txtSndQ5Correct.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSndQ5Correct.Location = New System.Drawing.Point(865, 116)
+        Me.txtSndQ5Correct.Location = New System.Drawing.Point(865, 426)
         Me.txtSndQ5Correct.Name = "txtSndQ5Correct"
         Me.txtSndQ5Correct.ReadOnly = True
         Me.txtSndQ5Correct.Size = New System.Drawing.Size(127, 22)
@@ -3755,11 +3802,11 @@ Partial Class OptionsScreen
         '
         Me.Label52.AutoSize = True
         Me.Label52.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label52.Location = New System.Drawing.Point(778, 119)
+        Me.Label52.Location = New System.Drawing.Point(709, 429)
         Me.Label52.Name = "Label52"
-        Me.Label52.Size = New System.Drawing.Size(70, 16)
+        Me.Label52.Size = New System.Drawing.Size(148, 16)
         Me.Label52.TabIndex = 153
-        Me.Label52.Text = "Q5 Correct"
+        Me.Label52.Text = "1st Safety Net Reached"
         '
         'txtSndQ5Final
         '
@@ -3983,6 +4030,7 @@ Partial Class OptionsScreen
         Me.TabPage5.Controls.Add(Me.nmr_TR_13)
         Me.TabPage5.Controls.Add(Me.nmr_TR_14)
         Me.TabPage5.Controls.Add(Me.nmr_TR_15)
+        Me.TabPage5.Controls.Add(Me.grpCurrencyPosition)
         Me.TabPage5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TabPage5.Location = New System.Drawing.Point(4, 29)
         Me.TabPage5.Name = "TabPage5"
@@ -4223,14 +4271,14 @@ Partial Class OptionsScreen
         Me.GroupBox4.Controls.Add(Me.rad_CUR_Euro)
         Me.GroupBox4.Location = New System.Drawing.Point(6, 6)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(199, 165)
+        Me.GroupBox4.Size = New System.Drawing.Size(199, 134)
         Me.GroupBox4.TabIndex = 62
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Currency"
         '
         'txt_CUR_Other
         '
-        Me.txt_CUR_Other.Location = New System.Drawing.Point(93, 132)
+        Me.txt_CUR_Other.Location = New System.Drawing.Point(93, 96)
         Me.txt_CUR_Other.Name = "txt_CUR_Other"
         Me.txt_CUR_Other.Size = New System.Drawing.Size(71, 22)
         Me.txt_CUR_Other.TabIndex = 5
@@ -4239,7 +4287,7 @@ Partial Class OptionsScreen
         '
         Me.rad_CUR_Other.AutoSize = True
         Me.rad_CUR_Other.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rad_CUR_Other.Location = New System.Drawing.Point(6, 127)
+        Me.rad_CUR_Other.Location = New System.Drawing.Point(6, 91)
         Me.rad_CUR_Other.Name = "rad_CUR_Other"
         Me.rad_CUR_Other.Size = New System.Drawing.Size(89, 29)
         Me.rad_CUR_Other.TabIndex = 4
@@ -4251,7 +4299,7 @@ Partial Class OptionsScreen
         '
         Me.rad_CUR_Yen.AutoSize = True
         Me.rad_CUR_Yen.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rad_CUR_Yen.Location = New System.Drawing.Point(6, 101)
+        Me.rad_CUR_Yen.Location = New System.Drawing.Point(54, 56)
         Me.rad_CUR_Yen.Name = "rad_CUR_Yen"
         Me.rad_CUR_Yen.Size = New System.Drawing.Size(42, 29)
         Me.rad_CUR_Yen.TabIndex = 3
@@ -4263,7 +4311,7 @@ Partial Class OptionsScreen
         '
         Me.rad_CUR_Pound.AutoSize = True
         Me.rad_CUR_Pound.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rad_CUR_Pound.Location = New System.Drawing.Point(6, 75)
+        Me.rad_CUR_Pound.Location = New System.Drawing.Point(6, 56)
         Me.rad_CUR_Pound.Name = "rad_CUR_Pound"
         Me.rad_CUR_Pound.Size = New System.Drawing.Size(42, 29)
         Me.rad_CUR_Pound.TabIndex = 2
@@ -4275,7 +4323,7 @@ Partial Class OptionsScreen
         '
         Me.rad_CUR_Dollar.AutoSize = True
         Me.rad_CUR_Dollar.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.rad_CUR_Dollar.Location = New System.Drawing.Point(6, 48)
+        Me.rad_CUR_Dollar.Location = New System.Drawing.Point(54, 21)
         Me.rad_CUR_Dollar.Name = "rad_CUR_Dollar"
         Me.rad_CUR_Dollar.Size = New System.Drawing.Size(42, 29)
         Me.rad_CUR_Dollar.TabIndex = 1
@@ -4498,6 +4546,48 @@ Partial Class OptionsScreen
         Me.nmr_TR_15.TabIndex = 15
         Me.nmr_TR_15.ThousandsSeparator = True
         '
+        'grpCurrencyPosition
+        '
+        Me.grpCurrencyPosition.Controls.Add(Me.radCPosRight)
+        Me.grpCurrencyPosition.Controls.Add(Me.radCPosLeft)
+        Me.grpCurrencyPosition.Controls.Add(Me.Label154)
+        Me.grpCurrencyPosition.Location = New System.Drawing.Point(6, 132)
+        Me.grpCurrencyPosition.Name = "grpCurrencyPosition"
+        Me.grpCurrencyPosition.Size = New System.Drawing.Size(199, 64)
+        Me.grpCurrencyPosition.TabIndex = 87
+        Me.grpCurrencyPosition.TabStop = False
+        '
+        'radCPosRight
+        '
+        Me.radCPosRight.AutoSize = True
+        Me.radCPosRight.Location = New System.Drawing.Point(73, 35)
+        Me.radCPosRight.Name = "radCPosRight"
+        Me.radCPosRight.Size = New System.Drawing.Size(56, 20)
+        Me.radCPosRight.TabIndex = 2
+        Me.radCPosRight.Text = "Right"
+        Me.radCPosRight.UseVisualStyleBackColor = True
+        '
+        'radCPosLeft
+        '
+        Me.radCPosLeft.AutoSize = True
+        Me.radCPosLeft.Checked = True
+        Me.radCPosLeft.Location = New System.Drawing.Point(9, 35)
+        Me.radCPosLeft.Name = "radCPosLeft"
+        Me.radCPosLeft.Size = New System.Drawing.Size(46, 20)
+        Me.radCPosLeft.TabIndex = 1
+        Me.radCPosLeft.TabStop = True
+        Me.radCPosLeft.Text = "Left"
+        Me.radCPosLeft.UseVisualStyleBackColor = True
+        '
+        'Label154
+        '
+        Me.Label154.AutoSize = True
+        Me.Label154.Location = New System.Drawing.Point(6, 16)
+        Me.Label154.Name = "Label154"
+        Me.Label154.Size = New System.Drawing.Size(113, 16)
+        Me.Label154.TabIndex = 0
+        Me.Label154.Text = "Currency position:"
+        '
         'btnSaveClose
         '
         Me.btnSaveClose.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -4530,23 +4620,15 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'txtSndRandomContestant
+        'chkHideAnswerOnControlPanelWhenNewQuestion
         '
-        Me.txtSndRandomContestant.Location = New System.Drawing.Point(763, 370)
-        Me.txtSndRandomContestant.Name = "txtSndRandomContestant"
-        Me.txtSndRandomContestant.ReadOnly = True
-        Me.txtSndRandomContestant.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndRandomContestant.TabIndex = 145
-        '
-        'Label152
-        '
-        Me.Label152.AutoSize = True
-        Me.Label152.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label152.Location = New System.Drawing.Point(620, 373)
-        Me.Label152.Name = "Label152"
-        Me.Label152.Size = New System.Drawing.Size(125, 16)
-        Me.Label152.TabIndex = 144
-        Me.Label152.Text = "Random Contestant"
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.AutoSize = True
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Location = New System.Drawing.Point(628, 56)
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Name = "chkHideAnswerOnControlPanelWhenNewQuestion"
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Size = New System.Drawing.Size(366, 20)
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.TabIndex = 11
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Text = "Hide answer in control panel when new question is shown."
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.UseVisualStyleBackColor = True
         '
         'OptionsScreen
         '
@@ -4622,6 +4704,8 @@ Partial Class OptionsScreen
         CType(Me.nmr_TR_13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmr_TR_14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.nmr_TR_15, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.grpCurrencyPosition.ResumeLayout(False)
+        Me.grpCurrencyPosition.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -5012,4 +5096,11 @@ Partial Class OptionsScreen
     Friend WithEvents Label137 As Label
     Friend WithEvents txtSndRandomContestant As TextBox
     Friend WithEvents Label152 As Label
+    Friend WithEvents txtSndSetSafetyNet As TextBox
+    Friend WithEvents Label153 As Label
+    Friend WithEvents grpCurrencyPosition As GroupBox
+    Friend WithEvents Label154 As Label
+    Friend WithEvents radCPosRight As RadioButton
+    Friend WithEvents radCPosLeft As RadioButton
+    Friend WithEvents chkHideAnswerOnControlPanelWhenNewQuestion As CheckBox
 End Class

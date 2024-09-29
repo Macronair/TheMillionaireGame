@@ -81,6 +81,7 @@ Partial Class TVControlPnl
         Me.pnlFFFWinner = New System.Windows.Forms.Panel()
         Me.lblFFFWinnerPoints = New System.Windows.Forms.Label()
         Me.lblFFFWinnerName = New System.Windows.Forms.Label()
+        Me.tmrAnimateFreeSafeNet = New System.Windows.Forms.Timer(Me.components)
         Me.picTree = New MillionaireGame.MPanel()
         Me.pnlFFFOrder4 = New System.Windows.Forms.Panel()
         Me.txtFFFOrder4 = New System.Windows.Forms.Label()
@@ -773,6 +774,10 @@ Partial Class TVControlPnl
         Me.lblFFFWinnerName.TabIndex = 8
         Me.lblFFFWinnerName.Text = "Player Name"
         '
+        'tmrAnimateFreeSafeNet
+        '
+        Me.tmrAnimateFreeSafeNet.Interval = 500
+        '
         'picTree
         '
         Me.picTree.BackColor = System.Drawing.Color.Transparent
@@ -1071,4 +1076,5 @@ Partial Class TVControlPnl
     Friend WithEvents picLifeline4 As PictureBox
     Friend WithEvents picLifeline3 As PictureBox
     Friend WithEvents picLifeline2 As PictureBox
+    Friend WithEvents tmrAnimateFreeSafeNet As Timer
 End Class

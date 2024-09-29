@@ -2,8 +2,7 @@
 
     Public Shared tree_img(15) As Bitmap
     Public Shared tree_imgrisk(15) As Bitmap
-    Public Shared lifelines(5) As Bitmap
-    Shared ll(3) As Image
+    Public Shared tree_imgnet2 As Bitmap
 
     Dim bg_pos_X As Integer
     Dim bg_pos_Y As Integer
@@ -14,13 +13,6 @@
     Dim tree_pos_Y As Integer
     Dim tree_size_X As Integer
     Dim tree_size_Y As Integer
-
-    Shared ll_size As Integer() = New Integer() {75, 50}
-    Shared lltree_loc As Integer() = New Integer() {860, 30}
-    Shared ll1_loc As Integer() = New Integer() {0, 0}
-    Shared ll2_loc As Integer() = New Integer() {80, 0}
-    Shared ll3_loc As Integer() = New Integer() {160, 0}
-    Shared ll4_loc As Integer() = New Integer() {240, 0}
 
     Shared money_pos_X As Integer
     Shared money_pos_Y As Integer()
@@ -62,11 +54,22 @@
                 Dim font As New Font("Copperplate Gothic Bold", 24, FontStyle.Bold)
                 Dim textColor As Brush
 
-                If IsSafetyNet(position) = True Then
-                    textColor = Brushes.White
-                Else
-                    textColor = Brushes.Gold
-                End If
+                Select Case MoneyTreeSettings.TreeData.SafeNet_FreeMode
+                    Case True
+                        If position = 5 Then
+                            textColor = Brushes.White
+                        ElseIf position = Game.freeSafetyNetAt Then
+                            textColor = Brushes.White
+                        Else
+                            textColor = Brushes.Gold
+                        End If
+                    Case False
+                        If IsSafetyNet(position) = True Then
+                            textColor = Brushes.White
+                        Else
+                            textColor = Brushes.Gold
+                        End If
+                End Select
 
                 If position = 15 Then
                     textColor = Brushes.White
@@ -77,7 +80,12 @@
                 End If
 
                 g.DrawString(position, font, textColor, qno_pos_X(position), money_pos_Y(position))
-                g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+                Select Case MoneyTreeSettings.TreeData.CurrencyAtSuffix
+                    Case True
+                        g.DrawString(GetMoneyValue(position) & MoneyTreeSettings.TreeData.Currency, font, textColor, money_pos_X, money_pos_Y(position))
+                    Case False
+                        g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+                End Select
                 position = position + 1
             Loop Until position = 16
             position = 1
@@ -129,7 +137,12 @@
                 End If
 
                 g.DrawString(position, font, textColor, qno_pos_X(position), money_pos_Y(position))
-                g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+                Select Case MoneyTreeSettings.TreeData.CurrencyAtSuffix
+                    Case True
+                        g.DrawString(GetMoneyValue(position) & MoneyTreeSettings.TreeData.Currency, font, textColor, money_pos_X, money_pos_Y(position))
+                    Case False
+                        g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+                End Select
                 position = position + 1
             Loop Until position = 16
             position = 1
@@ -138,16 +151,72 @@
         level = 0
     End Sub
 
+    Public Shared Sub GeneratePossibleSafeNetImage(ByVal currentlevel As Integer)
+        SetPositionsAndSizes()
+
+        Dim bg As Image = GetTreeImage()
+
+        Dim bg_pos_x As Integer = 0
+        Dim bg_pos_y As Integer = 0
+        Dim bg_size_x As Integer = 1280
+        Dim bg_size_y As Integer = 720
+
+        Dim lvl_pos_x As Integer = 815
+        Dim lvl_pos_y As Integer = 100
+        Dim lvl_size_x As Integer = 399
+        Dim lvl_size_y As Integer = 599
+
+        Dim level As Integer = currentlevel
+        Dim position As Integer = 1
+
+        Dim lvl As Image = GetPosImage(level)
+        tree_imgnet2 = New Bitmap(1280, 720)
+        Dim g As Graphics = Graphics.FromImage(tree_imgnet2)
+
+        g.DrawImage(bg, bg_pos_x, bg_pos_y, bg_size_x, bg_size_y)
+        If lvl Is Nothing Then
+
+        Else
+            g.DrawImage(lvl, lvl_pos_x, lvl_pos_y, lvl_size_x, lvl_size_y)
+        End If
+
+        ' Generate money values in image
+        Do
+            Dim font As New Font("Copperplate Gothic Bold", 24, FontStyle.Bold)
+            Dim textColor As Brush
+            If position = 15 Then
+                textColor = Brushes.White
+            ElseIf position = 5 Then
+                textColor = Brushes.White
+            Else
+                textColor = Brushes.Gold
+            End If
+
+            If position = currentlevel + 1 Then
+                textColor = Brushes.White
+            End If
+
+            If level = position Then
+                textColor = Brushes.Black
+            End If
+
+            g.DrawString(position, font, textColor, qno_pos_X(position), money_pos_Y(position))
+            Select Case MoneyTreeSettings.TreeData.CurrencyAtSuffix
+                Case True
+                    g.DrawString(GetMoneyValue(position) & MoneyTreeSettings.TreeData.Currency, font, textColor, money_pos_X, money_pos_Y(position))
+                Case False
+                    g.DrawString(MoneyTreeSettings.TreeData.Currency & GetMoneyValue(position), font, textColor, money_pos_X, money_pos_Y(position))
+            End Select
+
+            position = position + 1
+        Loop Until position = 16
+        position = 1
+    End Sub
+
     Private Shared Sub SetPositionsAndSizes()
         money_pos_X = 910
         money_pos_Y = New Integer() {0, 662, 622, 582, 542, 502, 462, 422, 382, 342, 302, 262, 222, 182, 142, 102}
         qno_pos_X = New Integer() {0, 855, 855, 855, 855, 855, 855, 855, 855, 855, 832, 832, 832, 832, 832, 832}
-
-        ll_size = New Integer() {75, 50}
-        ll1_loc = New Integer() {860, 30}
-        ll2_loc = New Integer() {940, 30}
-        ll3_loc = New Integer() {1020, 30}
-        ll4_loc = New Integer() {1100, 30}
     End Sub
 
     Public Shared Function GetTreeImage() As Image

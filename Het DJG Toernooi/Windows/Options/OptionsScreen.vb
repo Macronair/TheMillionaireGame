@@ -130,6 +130,7 @@ Public Class OptionsScreen
         chkAutoHideQuestionAtPlusOne.Checked = Profile.Options.S_AutoHideQuestionAtPlusOne
         chkAutoShowTotalWinnings.Checked = Profile.Options.S_AutoShowTotalWinnings
         chkAutoHideQuestionAtWalkAway.Checked = Profile.Options.S_AutoHideQuestionAtWalkAway
+        chkHideAnswerOnControlPanelWhenNewQuestion.Checked = Profile.Options.S_HideAnswerInControlPanelAtNewQ
 
         nmrFFFPortNumber.Value = Profile.Options.FFF_Port
 
@@ -169,6 +170,8 @@ Public Class OptionsScreen
         txtSndFOrder4.Text = Profile.Options.snd_F_Order4
         txtSndFWhoWasCorrect.Text = Profile.Options.snd_F_WhoWasCorrect
         txtSndFWinner.Text = Profile.Options.snd_F_Winner
+        txtSndRandomContestant.Text = Profile.Options.snd_RandomContestantPicking
+        txtSndSetSafetyNet.Text = Profile.Options.snd_SetSafetyNet
 
         txtSndATAStart.Text = Profile.Options.snd_ATA_Start
         txtSndATAVoting.Text = Profile.Options.snd_ATA_Voting
@@ -310,6 +313,13 @@ Public Class OptionsScreen
                 rad_CUR_Other.Checked = True
                 txt_CUR_Other.Text = MoneyTreeSettings.TreeData.Currency
         End Select
+        Select Case MoneyTreeSettings.TreeData.CurrencyAtSuffix
+            Case True
+                radCPosRight.Checked = True
+            Case False
+                radCPosLeft.Checked = True
+        End Select
+        chkOwnSafetyNet.Checked = MoneyTreeSettings.TreeData.SafeNet_FreeMode
     End Sub
 
 #Region "Sounds"
@@ -340,8 +350,8 @@ Public Class OptionsScreen
     txtSndWalkAway1.MouseDoubleClick, txtSndToHotSeatLD.MouseDoubleClick, txtSndToHotSeat.MouseDoubleClick, txtSndSwitchShowCorrect.MouseDoubleClick,
     txtSndSwitchClear.MouseDoubleClick, txtSndSwitchActivate.MouseDoubleClick, txtSndRiskModeActivate.MouseDoubleClick, txtSndP1Start.MouseDoubleClick,
     txtSndP1EndEarly.MouseDoubleClick, txtSndP1Clock.MouseDoubleClick, txtSndOpening.MouseDoubleClick, txtSndLifeline4Ping.MouseDoubleClick,
-    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick, txtSndRandomContestant.MouseDoubleClick,
-    txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
+    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick, txtSndSetSafetyNet.MouseDoubleClick,
+    txtSndRandomContestant.MouseDoubleClick, txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
     txtSndFReadQuestion.MouseDoubleClick, txtSndFReadCorrectOrder.MouseDoubleClick, txtSndFOrder4.MouseDoubleClick, txtSndFOrder3.MouseDoubleClick,
     txtSndFOrder2.MouseDoubleClick, txtSndFOrder1.MouseDoubleClick, txtSndFMeet8.MouseDoubleClick, txtSndFMeet7.MouseDoubleClick, txtSndFMeet6.MouseDoubleClick,
     txtSndFMeet5.MouseDoubleClick, txtSndFMeet4.MouseDoubleClick, txtSndFMeet3.MouseDoubleClick, txtSndFMeet2.MouseDoubleClick, txtSndExplainRules.MouseDoubleClick,
@@ -374,9 +384,6 @@ Public Class OptionsScreen
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()
-        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
-        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
-        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
 
         TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
         TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
@@ -390,6 +397,8 @@ Public Class OptionsScreen
 
         Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
+
+        Game.ChangeLevel(Game.level)
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
@@ -407,9 +416,6 @@ Public Class OptionsScreen
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()
-        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
-        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
-        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
 
         TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
         TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
@@ -423,6 +429,8 @@ Public Class OptionsScreen
 
         Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
+
+        Game.ChangeLevel(Game.level)
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())

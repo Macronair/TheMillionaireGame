@@ -6,6 +6,7 @@ Public Class TreeInfo
     Public Property SafeNet_01 As Integer
     Public Property SafeNet_02 As Integer
     Public Property SafeNet_Risk As Integer
+    Public Property SafeNet_FreeMode As Boolean
 
     Public Property Currency As String
     Public Property CurrencyAtSuffix As Boolean
@@ -44,6 +45,7 @@ Public Class MoneyTreeSettings
             TreeData.SafeNet_01 = loadedvalues.SafeNet_01
             TreeData.SafeNet_02 = loadedvalues.SafeNet_02
             TreeData.SafeNet_Risk = loadedvalues.SafeNet_Risk
+            TreeData.SafeNet_FreeMode = loadedvalues.SafeNet_FreeMode
 
             TreeData.Currency = loadedvalues.Currency
             TreeData.CurrencyAtSuffix = loadedvalues.CurrencyAtSuffix
@@ -66,6 +68,15 @@ Public Class MoneyTreeSettings
         Else
 
         End If
+
+        Select Case TreeData.SafeNet_FreeMode
+            Case True
+                ControlPanel.btnSet2ndSafeNet.Visible = True
+                ControlPanel.btnActivateRiskMode.Visible = False
+            Case False
+                ControlPanel.btnSet2ndSafeNet.Visible = False
+                ControlPanel.btnActivateRiskMode.Visible = True
+        End Select
     End Sub
 
     Public Sub SaveSettings()
@@ -75,6 +86,12 @@ Public Class MoneyTreeSettings
             TreeData.SafeNet_Risk = 1
         ElseIf OptionsScreen.rad_TRr2.Checked Then
             TreeData.SafeNet_Risk = 2
+        End If
+        TreeData.SafeNet_FreeMode = OptionsScreen.chkOwnSafetyNet.Checked
+        If OptionsScreen.radCPosLeft.Checked Then
+            TreeData.CurrencyAtSuffix = False
+        ElseIf OptionsScreen.radCPosRight.Created Then
+            TreeData.CurrencyAtSuffix = True
         End If
 
         If OptionsScreen.rad_CUR_Euro.Checked Then
@@ -112,6 +129,7 @@ Public Class MoneyTreeSettings
         TreeData.SafeNet_01 = 5
         TreeData.SafeNet_02 = 10
         TreeData.SafeNet_Risk = 2
+        TreeData.SafeNet_FreeMode = False
 
         TreeData.Currency = ""
         TreeData.CurrencyAtSuffix = False

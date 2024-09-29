@@ -48,7 +48,7 @@
             Case Keys.Delete
                 ControlPanel.btnResetGame.PerformClick()
             Case Keys.R
-                ControlPanel.btnUnlockSwitch.PerformClick()
+                ControlPanel.btnActivateRiskMode.PerformClick()
             Case Keys.Home
                 If TVControlPnl.picTree.Visible = True Then
                     ControlPanel.btnHideTree.PerformClick()

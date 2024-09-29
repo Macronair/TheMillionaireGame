@@ -81,10 +81,10 @@
                 TVControlPnl.picB.Location = New Point(642, 109)
                 TVControlPnl.picC.Location = New Point(0, 168)
                 TVControlPnl.picD.Location = New Point(642, 168)
-                TVControlPnl.txtA.Location = New Point(122, 5)
-                TVControlPnl.txtB.Location = New Point(40, 5)
-                TVControlPnl.txtC.Location = New Point(122, 5)
-                TVControlPnl.txtD.Location = New Point(40, 5)
+                TVControlPnl.txtA.Location = New Point(122, 4)
+                TVControlPnl.txtB.Location = New Point(40, 4)
+                TVControlPnl.txtC.Location = New Point(122, 4)
+                TVControlPnl.txtD.Location = New Point(40, 4)
 
                 TVControlPnl.pnlQuestion.Size = New Size(1280, 229)
                 TVControlPnl.picQuestion.Size = New Size(1280, 93)
@@ -492,7 +492,7 @@
                 TVControlPnl.txtC.Size = New Size(714, 69)
                 TVControlPnl.txtD.Size = New Size(714, 69)
 
-                TVControlPnl.txtQuestion.Font = New Font(TVControlPnl.txtQuestion.Font.FontFamily, 32)
+                TVControlPnl.txtQuestion.Font = New Font(TVControlPnl.txtQuestion.Font.FontFamily, 30)
                 TVControlPnl.txtA.Font = New Font(TVControlPnl.txtA.Font.FontFamily, 34)
                 TVControlPnl.txtB.Font = New Font(TVControlPnl.txtB.Font.FontFamily, 34)
                 TVControlPnl.txtC.Font = New Font(TVControlPnl.txtC.Font.FontFamily, 34)
@@ -572,7 +572,7 @@
 
                 ' Winning Strap
                 TVControlPnl.pnlStrap.Location = New Point(0, 862)
-                TVControlPnl.lblAmount.Location = New Point(628, 6)
+                TVControlPnl.lblAmount.Location = New Point(636, 7)
                 TVControlPnl.pnlTotal.Location = New Point(0, 778)
                 TVControlPnl.Label1.Location = New Point(708, 2)
 
