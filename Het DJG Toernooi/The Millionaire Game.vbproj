@@ -40,7 +40,7 @@
     <SuiteName>Het TeamDJG Toernooi</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.0.896</ApplicationVersion>
+    <ApplicationVersion>1.2.0.897</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -136,6 +136,7 @@
     <Compile Include="Source_Scripts\Classes\Game\MoneyTreeCore.vb" />
     <Compile Include="Source_Scripts\Classes\Game\RandomContestant.vb" />
     <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\HotkeySettings.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\MoneyTreeSettings.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\QuestionStrap.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />

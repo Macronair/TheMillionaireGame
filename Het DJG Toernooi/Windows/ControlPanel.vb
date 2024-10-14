@@ -815,7 +815,8 @@ Public Class ControlPanel
 
         End If
 
-        Hotkey.Press(e.KeyCode, e.Control, e.Alt)
+        ' Work still in construction
+        'Hotkey.Press(e.KeyCode, e.Control, e.Alt)
     End Sub
 
     Private Sub btnSet2ndSafeNet_Click(sender As Object, e As EventArgs) Handles btnSet2ndSafeNet.Click
