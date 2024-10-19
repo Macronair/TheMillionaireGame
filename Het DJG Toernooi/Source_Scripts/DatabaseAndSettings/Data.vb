@@ -3,7 +3,7 @@ Imports System.IO
 
 Public Class Data
 
-    Public Shared connectionString As New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30"))
+    Public Shared connectionString As New SqlConnection(String.Format(""))
 
     Public Shared OldTablesPresent = False              ' This will switch to True if there is an old tablename found.
     Public Shared AutoTransferQuestions As Boolean = False        ' If the user chooses to open the Question Editor after creating new database tables after detecting old tables.
@@ -11,34 +11,45 @@ Public Class Data
 
     Public Shared scanOldTables As Boolean = True
 
+    Public Shared Sub OpenSettings()
+        Select Case SQLLogin.ShowDialog()
+            Case DialogResult.OK
+                CheckDatabase()
+            Case DialogResult.Cancel
+                Application.Exit()
+        End Select
+    End Sub
+
     Public Shared Sub CheckDatabase()
+
+        If SQLSettings.SQLInfo.UseRemoteServer = True Then
+            CoreConsole.LogMsgDate("SQL Mode = Remote")
+            connectionString = New SqlConnection(String.Format("Server={0},{1};User Id={2};Password={3}",
+                                                               SQLSettings.SQLInfo.rSQL_Server, SQLSettings.SQLInfo.rSQL_Port,
+                                                               SQLSettings.SQLInfo.rSQL_Login, SQLSettings.SQLInfo.rSQL_Password))
+        ElseIf SQLSettings.SQLInfo.UseRemoteServer = False Then
+            CoreConsole.LogMsgDate("SQL Mode = Local")
+            connectionString = New SqlConnection(String.Format("Server=(LocalDB)\MSSQLLocalDB;Integrated Security=true"))
+        End If
 
         Dim dbPath As String = Application.StartupPath
 
         Dim nameToCreate As String = "dbMillionaire"        ' Name of the database
 
-        ' Message to the console to show the database location
-        CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
-
         ' Check if database file exists
-        If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then   ' If file does not exist, then create it.
-            CoreConsole.LogMsgDate("Database not found. Trying to create new file...")      ' Letting the user know.
-
-            ' Open SQL Connection
-            connectionString.Open()
+        If SQLSettings.SQLInfo.UseRemoteServer = True Then
+            CoreConsole.LogMsgDate($"Connecting to {SQLSettings.SQLInfo.rSQL_Server} | Port {SQLSettings.SQLInfo.rSQL_Port} ...")
+            Try
+                connectionString.Open()
+            Catch ex As Exception
+                MessageBox.Show("Error when connecting to database." + vbNewLine + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Application.Exit()
+            End Try
 
             Try
                 Dim str1 As String = "DROP DATABASE " + nameToCreate
 
-                Dim str2 As String = "CREATE DATABASE " + nameToCreate + " ON PRIMARY " +
-                            "(NAME = " + nameToCreate + "_Data, " +
-                            "FILENAME = '" + dbPath + "\\" + nameToCreate + ".mdf', " +
-                            "SIZE = 4MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
-                            "LOG ON (NAME = " + nameToCreate + "_Log, " +
-                            "FILENAME = '" + dbPath + "\\" + nameToCreate + ".ldf', " +
-                            "SIZE = 1MB, " +
-                            "MAXSIZE = 5MB, " +
-                            "FILEGROWTH = 10%)"
+                Dim str2 As String = "CREATE DATABASE " + nameToCreate
 
                 Dim cmdRemove As New SqlCommand(str1, connectionString)
                 Dim cmdCreate As New SqlCommand(str2, connectionString)
@@ -60,8 +71,9 @@ Public Class Data
             End Try
 
             ' Change the connection string to the newly created file
-            connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
-
+            connectionString = New SqlConnection(String.Format("Server={0},{1};Database={2};User Id={3};Password={4}",
+                                                               SQLSettings.SQLInfo.rSQL_Server, SQLSettings.SQLInfo.rSQL_Port, SQLSettings.SQLInfo.rSQL_Database,
+                                                               SQLSettings.SQLInfo.rSQL_Login, SQLSettings.SQLInfo.rSQL_Password))
             connectionString.Open()
             DropTables("fff_questions")
             DropTables("questions")
@@ -75,19 +87,78 @@ Public Class Data
             connectionString.Close()
 
         Else
-            connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
+            ' Message to the console to show the database location
+            CoreConsole.LogMsgDate("Database location: " + dbPath + "\" + nameToCreate + ".mdf")
 
-            Try
+            ' Check if database file exists
+            If File.Exists(dbPath + "\" + nameToCreate + ".mdf") = False Then   ' If file does not exist, then create it.
+                CoreConsole.LogMsgDate("Database not found. Trying to create new file...")      ' Letting the user know.
+
+                ' Open SQL Connection
                 connectionString.Open()
-                CoreConsole.LogMsgDate("Succesfully connected to local database.")
-                CoreConsole.LogMsgDate("Starting Database table check.")
-                CheckTables()
-            Catch ex As Exception
-                CoreConsole.LogMsgDate("An error occured while loading the database:")
-                CoreConsole.LogMsg(ex.Message)
-            Finally
+
+                Try
+                    Dim str1 As String = "DROP DATABASE " + nameToCreate
+
+                    Dim str2 As String = "CREATE DATABASE " + nameToCreate + " ON PRIMARY " +
+                                "(NAME = " + nameToCreate + "_Data, " +
+                                "FILENAME = '" + dbPath + "\\" + nameToCreate + ".mdf', " +
+                                "SIZE = 4MB, MAXSIZE = 10MB, FILEGROWTH = 10%) " +
+                                "LOG ON (NAME = " + nameToCreate + "_Log, " +
+                                "FILENAME = '" + dbPath + "\\" + nameToCreate + ".ldf', " +
+                                "SIZE = 1MB, " +
+                                "MAXSIZE = 5MB, " +
+                                "FILEGROWTH = 10%)"
+
+                    Dim cmdRemove As New SqlCommand(str1, connectionString)
+                    Dim cmdCreate As New SqlCommand(str2, connectionString)
+
+                    Try
+                        cmdRemove.ExecuteNonQuery()
+                    Catch ex As Exception
+                        CoreConsole.LogMsgDate("Unable to remove database, because it probably doesn't exist. Resuming with database creation.")
+                    Finally
+                        cmdCreate.ExecuteNonQuery()
+                        CoreConsole.LogMsgDate("Database '" + nameToCreate + "' was created successfully")
+                    End Try
+
+                Catch ex As Exception
+                    CoreConsole.LogMsgDate("Error when creating database:")
+                    CoreConsole.LogMsg(ex.Message)
+                Finally
+                    connectionString.Close()
+                End Try
+
+                ' Change the connection string to the newly created file
+                connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
+
+                connectionString.Open()
+                DropTables("fff_questions")
+                DropTables("questions")
+                DropTables("settings_HostMessages")
+
+                CreateTables(0)
+                CreateTables(1)
+                CreateTables(101)
+
+                'CheckTables()
                 connectionString.Close()
-            End Try
+
+            Else
+                connectionString = New SqlConnection(String.Format("Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", dbPath, nameToCreate))
+
+                Try
+                    connectionString.Open()
+                    CoreConsole.LogMsgDate("Succesfully connected to local database.")
+                    CoreConsole.LogMsgDate("Starting Database table check.")
+                    CheckTables()
+                Catch ex As Exception
+                    CoreConsole.LogMsgDate("An error occured while loading the database:")
+                    CoreConsole.LogMsg(ex.Message)
+                Finally
+                    connectionString.Close()
+                End Try
+            End If
         End If
     End Sub
 

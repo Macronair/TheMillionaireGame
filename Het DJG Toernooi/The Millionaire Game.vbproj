@@ -35,13 +35,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ProductName>Het TeamDJG Toernooi</ProductName>
-    <PublisherName>TeamDJG</PublisherName>
-    <SuiteName>Het TeamDJG Toernooi</SuiteName>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>The Millionaire Game</ProductName>
+    <PublisherName>Macronair</PublisherName>
+    <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.0.897</ApplicationVersion>
+    <ApplicationVersion>1.2.0.910</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -153,6 +155,7 @@
     <Compile Include="Source_Scripts\Lifelines\LifelineHost.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
+    <Compile Include="Source_Scripts\SQLInfo.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -253,6 +256,12 @@
     <Compile Include="Windows\Options\OptionsSelectSound.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Windows\Options\SQLLogin.Designer.vb">
+      <DependentUpon>SQLLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\SQLLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Windows\About\About.resx">
@@ -299,6 +308,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\OptionsSelectSound.resx">
       <DependentUpon>OptionsSelectSound.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\SQLLogin.resx">
+      <DependentUpon>SQLLogin.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -644,6 +656,18 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Windows\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="logo21.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

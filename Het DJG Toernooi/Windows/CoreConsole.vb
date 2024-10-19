@@ -41,6 +41,7 @@ Public Class CoreConsole
         LogMsgDate("Loading configuration...")
         Game.CurrentProfile.LoadSettings()      ' Load values of the config.yml file
         Game.CurrentTree.LoadSettings()         ' Load values of the tree.yml file
+        Game.CurrentDatabase.LoadSettings()     ' Load values of the sql.xml file
 
         Monitor.Detect()                        ' Detect all available monitors on the machine. Used for the Options menu.
 
@@ -67,9 +68,9 @@ Public Class CoreConsole
         MoneyTreeCore.GenerateImages()
 
         '' THE DATABASE ''
-        LogMsgDate("Checking database...")
+        LogMsgDate("Loading database settings...")
         Try
-            Data.CheckDatabase()                    ' Check if all required conditions for the database are met. If not, correct it. (more info in Data.vb class)
+            Data.OpenSettings()                    ' Check if all required conditions for the database are met. If not, correct it. (more info in Data.vb class)
         Catch ex As Exception           ' OOPS! Something is wrong.
             tmrRuntime.Stop()                       ' Just to be sure, stop the Runtime check timer.
             Me.Hide()                               ' Hide the console window.

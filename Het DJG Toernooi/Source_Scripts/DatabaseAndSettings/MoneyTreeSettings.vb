@@ -36,7 +36,7 @@ Public Class MoneyTreeSettings
     Public Sub LoadSettings()
         If Not File.Exists(filePath) Then
             System.Threading.Thread.Sleep(100)
-            SaveFefaultSettings()
+            SaveDefaultSettings()
         End If
 
         Dim loadedvalues As TreeInfo = DeserializeFromXml(filePath)
@@ -125,7 +125,7 @@ Public Class MoneyTreeSettings
         SerializeToXml(TreeData, filePath)
     End Sub
 
-    Private Sub SaveFefaultSettings()
+    Private Sub SaveDefaultSettings()
         TreeData.SafeNet_01 = 5
         TreeData.SafeNet_02 = 10
         TreeData.SafeNet_Risk = 2

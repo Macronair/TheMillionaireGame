@@ -2,6 +2,7 @@
 
     Public Shared CurrentProfile As New Profile
     Public Shared CurrentTree As New MoneyTreeSettings
+    Public Shared CurrentDatabase As New SQLSettings
     Public Shared TotalLifelines As Integer
 
     ' Game info variables
