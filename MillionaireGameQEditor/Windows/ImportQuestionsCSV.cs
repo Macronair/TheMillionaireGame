@@ -69,7 +69,7 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
             }
             if (chkFFFQuestions.Checked)
             {
-                using (StreamReader readFFFQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
+                using (StreamReader readFFFQ = new StreamReader(txtFFFQuestionsFileLoc.Text))
                 {
                     while (!readFFFQ.EndOfStream)
                     {
