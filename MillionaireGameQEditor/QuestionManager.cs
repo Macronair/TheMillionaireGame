@@ -1,5 +1,6 @@
 ﻿using Millionaire.Windows.Question_Editor;
 using MillionaireGameQEditor;
+using MillionaireGameQEditor.Windows;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -587,6 +588,18 @@ namespace Millionaire
                     row.DefaultCellStyle.BackColor = Color.LightGray;
                 }
             }
+        }
+
+        private void toCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuestionsExportCSV frmQuestionsExportCSV = new frmQuestionsExportCSV();
+            frmQuestionsExportCSV.Show();
+        }
+
+        private void fromCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuestionsImportCSV frmQuestionsImportCSV = new frmQuestionsImportCSV();
+            frmQuestionsImportCSV.Show();
         }
     }
 }
