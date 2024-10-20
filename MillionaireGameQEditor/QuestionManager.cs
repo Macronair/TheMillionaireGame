@@ -19,9 +19,8 @@ namespace Millionaire
         ListSortDirection order1;
         bool sorted1 = false;
 
-        public static SqlConnection c = new SqlConnection
-                    (String.Format
-                    (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+        public static SqlConnection c;
+        public static SQLSettings sqlsettings = new SQLSettings();
 
         public QEditor()
         {
@@ -275,6 +274,22 @@ namespace Millionaire
 
         private void QEditor_Load(object sender, EventArgs e)
         {
+            sqlsettings.LoadSettings();
+
+            if (SQLSettings.SQLInfo.UseRemoteServer == true)
+            {
+                c = new SqlConnection
+                    (String.Format("Server={0},{1};Database={2};User Id={3};Password={4}",
+                    SQLSettings.SQLInfo.rSQL_Server, SQLSettings.SQLInfo.rSQL_Port, SQLSettings.SQLInfo.rSQL_Database,
+                    SQLSettings.SQLInfo.rSQL_Login, SQLSettings.SQLInfo.rSQL_Password));
+            }
+            else
+            {
+                c = new SqlConnection
+                    (String.Format
+                    (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+            }
+
             UpdateDB();
             #region Autosize columns
             dtLevel1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; // ID

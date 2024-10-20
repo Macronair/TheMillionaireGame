@@ -1,14 +1,7 @@
 ﻿using Millionaire;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MillionaireGameQEditor.Windows
@@ -27,7 +20,7 @@ namespace MillionaireGameQEditor.Windows
 
             QEditor.c.Open();
 
-            if(chkRegularQuestions.Checked)
+            if (chkRegularQuestions.Checked)
             {
                 using (StreamReader readRegularQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
                 {
@@ -38,8 +31,15 @@ namespace MillionaireGameQEditor.Windows
                         {
                             var values = line.Split(';');
 
-                            values[1] = values[1].ToString()
-                                .Replace("%[NL]%", Environment.NewLine);
+                            for (int i = 0; i < values.Length; i++)
+                            {
+                                if (values[i] != null)
+                                {
+                                    // Vervang line breaks met een placeholder (bijv. [NEWLINE])
+                                    values[i] = values[i].ToString()
+                                                        .Replace("%[NL]%", Environment.NewLine);
+                                }
+                            }
 
                             string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
 VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @LevelRange)");
@@ -50,17 +50,24 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                             cmd.Parameters.AddWithValue("@C", values[4]);
                             cmd.Parameters.AddWithValue("@D", values[5]);
                             cmd.Parameters.AddWithValue("@Correct", values[6]);
-                            cmd.Parameters.AddWithValue("@Level", values[7]);
-                            cmd.Parameters.AddWithValue("@Note", values[8]);
-                            cmd.Parameters.AddWithValue("@Difficulty_Type", values[9]);
-                            cmd.Parameters.AddWithValue("@LevelRange", values[10]);
+                            if(values[7] != "0")
+                            {
+                                cmd.Parameters.AddWithValue("@Level", values[7]);
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@Level", 1);
+                            }
+                            cmd.Parameters.AddWithValue("@Note", values[9]);
+                            cmd.Parameters.AddWithValue("@Difficulty_Type", values[10]);
+                            cmd.Parameters.AddWithValue("@LevelRange", values[11]);
                             cmd.ExecuteNonQuery();
                         }
                         r_linenumber++;
                     }
                 }
             }
-            if(chkFFFQuestions.Checked)
+            if (chkFFFQuestions.Checked)
             {
                 using (StreamReader readFFFQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
                 {
@@ -71,8 +78,15 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                         {
                             var values = line.Split(';');
 
-                            values[1] = values[1].ToString()
-                                .Replace("%[NL]%", Environment.NewLine);
+                            for (int i = 0; i < values.Length; i++)
+                            {
+                                if (values[i] != null)
+                                {
+                                    // Vervang line breaks met een placeholder (bijv. [NEWLINE])
+                                    values[i] = values[i].ToString()
+                                                        .Replace("%[NL]%", Environment.NewLine);
+                                }
+                            }
 
                             string str = String.Format(@"INSERT INTO fff_questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
                             SqlCommand cmd = new SqlCommand(str, QEditor.c);

@@ -155,7 +155,7 @@
     <Compile Include="Source_Scripts\Lifelines\LifelineHost.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
-    <Compile Include="Source_Scripts\SQLInfo.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\SQLInfo.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -211,7 +211,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source_Scripts\QDatabase.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\QDatabase.vb" />
     <Compile Include="Source_Scripts\Classes\Game\Game.vb" />
     <Compile Include="Source_Scripts\Sound Engine\SOUND.vb" />
     <Compile Include="Windows\General\TVControlPnl1080.Designer.vb">

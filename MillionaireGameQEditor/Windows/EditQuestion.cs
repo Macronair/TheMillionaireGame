@@ -48,7 +48,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 if (radDiffRange.Checked)
                 {
-                    cmd.Parameters.AddWithValue("@Level", "");
+                    cmd.Parameters.AddWithValue("@Level", "1");
                     cmd.Parameters.AddWithValue("@DType", "Range");
                     switch (cmbQuestionRange.SelectedIndex)
                     {
