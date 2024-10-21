@@ -111,7 +111,10 @@ You can download one of the releases:
 !
 
 ## Some other useful guides
-- Writing questions in Excel/CSV + bulk import in application
+- Setting up and using a networked SQL Server.
+- Back-up and restore questions.
+- Migrating questions to other database.
+- Writing questions in Excel/CSV + bulk import in application.
 
 ## Other versions / forks.
 When I was inactive for a while, I noticed on Github that forks were created from this repository.
