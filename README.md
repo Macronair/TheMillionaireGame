@@ -15,18 +15,24 @@ There will be new features in the future to play around with. But there are a lo
 - TV/Livestream screen.
 - Fastest Finger First (+ online features) (Windows only).
 - Risk Mode (2nd safety net disabled & extra lifeline(s) can be activated).
-- Compatible with Microsoft SQL Server (Local only).
+- Free Safety Net Mode (2nd safety net can be placed anywhere after the 5th question).
+- Compatible with Microsoft SQL Server (Local & Networked).
 - Easy to use Questions Editor.
 
 New features, releases, suggestions and issues will be documented in this GitHub repository.
 
+## Software Requirements
+To run the Millionaire Game, you also need to install the following software:
+- Microsoft SQL Server Express (2019 or later).
+
 ## How to install and use?
 - Download the latest (or other) release and extract the zip file to the desired folder.
-- Run MillionaireGame.exe
-- When you launch it for the first time, the database file will be created automatically for you.
+- When you want to run the database locally on your computer, you also need to install SQL Server Express.
+- Run MillionaireGame.exe located in the downloaded zip archive.
+- When you launch it for the first time, you can choose where your database is going to be and the application will make the database itself + the tables automatically for you.
 - If you used an older version of the Millionaire Game, you need to transfer the questions to a new database table. A message box will notify you if this is the case.
-- Tweak some settings to what you like (don't forget adding questions if you don't have them already)
-- You are ready to go! Have fun!
+- Tweak some settings to what you like (don't forget adding questions if you don't have them already). Therefore, you can also use the import tool in the Questions Editor.
+- You are ready to go! Have fun playing Millionaire!
 
 ## Extra information
 To use the online features of Fastest Finger First, you need to setup the following:
@@ -103,6 +109,12 @@ You can watch the demo video of 2023 here below:
 You can download one of the releases: 
 [here](https://github.com/Maerciez/TheMillionaireGame/releases)
 !
+
+## Some other useful guides
+- Setting up and using a networked SQL Server.
+- Back-up and restore questions.
+- Migrating questions to other database.
+- Writing questions in Excel/CSV + bulk import in application.
 
 ## Other versions / forks.
 When I was inactive for a while, I noticed on Github that forks were created from this repository.
