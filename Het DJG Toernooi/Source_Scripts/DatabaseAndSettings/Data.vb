@@ -12,12 +12,16 @@ Public Class Data
     Public Shared scanOldTables As Boolean = True
 
     Public Shared Sub OpenSettings()
-        Select Case SQLLogin.ShowDialog()
-            Case DialogResult.OK
-                CheckDatabase()
-            Case DialogResult.Cancel
-                Application.Exit()
-        End Select
+        If SQLSettings.SQLInfo.HideAtStart = True Then
+            CheckDatabase()
+        Else
+            Select Case SQLLogin.ShowDialog()
+                Case DialogResult.OK
+                    CheckDatabase()
+                Case DialogResult.Cancel
+                    Application.Exit()
+            End Select
+        End If
     End Sub
 
     Public Shared Sub CheckDatabase()
