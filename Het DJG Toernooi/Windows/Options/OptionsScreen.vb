@@ -794,5 +794,31 @@ Public Class OptionsScreen
         picFinalAnswer.Image = QuestionStrap.GetTexture(5, QuestionTexture)
         picCorrectAnswer.Image = QuestionStrap.GetTexture(7, QuestionTexture)
     End Sub
+
+    Private Sub btnReconnectToSQL_Click(sender As Object, e As EventArgs) Handles btnReconnectToSQL.Click
+        Try
+            Data.connectionString.Close()
+        Catch ex As Exception
+
+        End Try
+
+        Select Case SQLLogin.ShowDialog()
+            Case DialogResult.OK
+                CoreConsole.Show()
+                Try
+                    Data.CheckDatabase()
+                    MessageBox.Show("Connection established succesfully!", "(Re)connect to SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show("Error when reconnecting to database:" + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    Data.connectionString.Close()
+                End Try
+                CoreConsole.Hide()
+            Case DialogResult.Cancel
+                'Nothing
+            Case Else
+                'Nothing
+        End Select
+    End Sub
 #End Region
 End Class

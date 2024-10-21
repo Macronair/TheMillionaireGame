@@ -26,6 +26,7 @@ Partial Class OptionsScreen
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(OptionsScreen))
         Me.tabOptions = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion = New System.Windows.Forms.CheckBox()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label136 = New System.Windows.Forms.Label()
         Me.Label135 = New System.Windows.Forms.Label()
@@ -416,7 +417,7 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion = New System.Windows.Forms.CheckBox()
+        Me.btnReconnectToSQL = New System.Windows.Forms.Button()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -501,6 +502,16 @@ Partial Class OptionsScreen
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'chkHideAnswerOnControlPanelWhenNewQuestion
+        '
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.AutoSize = True
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Location = New System.Drawing.Point(628, 56)
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Name = "chkHideAnswerOnControlPanelWhenNewQuestion"
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Size = New System.Drawing.Size(366, 20)
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.TabIndex = 11
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Text = "Hide answer in control panel when new question is shown."
+        Me.chkHideAnswerOnControlPanelWhenNewQuestion.UseVisualStyleBackColor = True
         '
         'GroupBox5
         '
@@ -1396,6 +1407,7 @@ Partial Class OptionsScreen
         '
         'TabPage3
         '
+        Me.TabPage3.Controls.Add(Me.btnReconnectToSQL)
         Me.TabPage3.Controls.Add(Me.Label122)
         Me.TabPage3.Controls.Add(Me.dtMessages)
         Me.TabPage3.Controls.Add(Me.btnAdd)
@@ -1416,7 +1428,7 @@ Partial Class OptionsScreen
         'Label122
         '
         Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(250, 12)
+        Me.Label122.Location = New System.Drawing.Point(250, 67)
         Me.Label122.Name = "Label122"
         Me.Label122.Size = New System.Drawing.Size(105, 16)
         Me.Label122.TabIndex = 10
@@ -1428,7 +1440,7 @@ Partial Class OptionsScreen
         Me.dtMessages.AllowUserToDeleteRows = False
         Me.dtMessages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtMessages.ColumnHeadersVisible = False
-        Me.dtMessages.Location = New System.Drawing.Point(253, 60)
+        Me.dtMessages.Location = New System.Drawing.Point(253, 115)
         Me.dtMessages.Name = "dtMessages"
         Me.dtMessages.ReadOnly = True
         Me.dtMessages.RowHeadersVisible = False
@@ -1438,7 +1450,7 @@ Partial Class OptionsScreen
         '
         'btnAdd
         '
-        Me.btnAdd.Location = New System.Drawing.Point(652, 29)
+        Me.btnAdd.Location = New System.Drawing.Point(652, 84)
         Me.btnAdd.Name = "btnAdd"
         Me.btnAdd.Size = New System.Drawing.Size(56, 30)
         Me.btnAdd.TabIndex = 7
@@ -1448,14 +1460,14 @@ Partial Class OptionsScreen
         'txtNewHostMessage
         '
         Me.txtNewHostMessage.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtNewHostMessage.Location = New System.Drawing.Point(253, 31)
+        Me.txtNewHostMessage.Location = New System.Drawing.Point(253, 86)
         Me.txtNewHostMessage.Name = "txtNewHostMessage"
         Me.txtNewHostMessage.Size = New System.Drawing.Size(393, 26)
         Me.txtNewHostMessage.TabIndex = 6
         '
         'btnRemoveAllHostMessages
         '
-        Me.btnRemoveAllHostMessages.Location = New System.Drawing.Point(6, 95)
+        Me.btnRemoveAllHostMessages.Location = New System.Drawing.Point(6, 150)
         Me.btnRemoveAllHostMessages.Name = "btnRemoveAllHostMessages"
         Me.btnRemoveAllHostMessages.Size = New System.Drawing.Size(238, 28)
         Me.btnRemoveAllHostMessages.TabIndex = 2
@@ -1464,7 +1476,7 @@ Partial Class OptionsScreen
         '
         'btnResetQuestionsFFF
         '
-        Me.btnResetQuestionsFFF.Location = New System.Drawing.Point(6, 40)
+        Me.btnResetQuestionsFFF.Location = New System.Drawing.Point(6, 95)
         Me.btnResetQuestionsFFF.Name = "btnResetQuestionsFFF"
         Me.btnResetQuestionsFFF.Size = New System.Drawing.Size(238, 28)
         Me.btnResetQuestionsFFF.TabIndex = 1
@@ -1473,7 +1485,7 @@ Partial Class OptionsScreen
         '
         'btnResetQuestionsAll
         '
-        Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 6)
+        Me.btnResetQuestionsAll.Location = New System.Drawing.Point(6, 61)
         Me.btnResetQuestionsAll.Name = "btnResetQuestionsAll"
         Me.btnResetQuestionsAll.Size = New System.Drawing.Size(238, 28)
         Me.btnResetQuestionsAll.TabIndex = 0
@@ -1484,7 +1496,7 @@ Partial Class OptionsScreen
         '
         Me.btnDeleteMessage.BackgroundImage = CType(resources.GetObject("btnDeleteMessage.BackgroundImage"), System.Drawing.Image)
         Me.btnDeleteMessage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btnDeleteMessage.Location = New System.Drawing.Point(711, 29)
+        Me.btnDeleteMessage.Location = New System.Drawing.Point(711, 84)
         Me.btnDeleteMessage.Name = "btnDeleteMessage"
         Me.btnDeleteMessage.Size = New System.Drawing.Size(56, 30)
         Me.btnDeleteMessage.TabIndex = 8
@@ -4620,15 +4632,14 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'chkHideAnswerOnControlPanelWhenNewQuestion
+        'btnReconnectToSQL
         '
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.AutoSize = True
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Location = New System.Drawing.Point(628, 56)
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Name = "chkHideAnswerOnControlPanelWhenNewQuestion"
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Size = New System.Drawing.Size(366, 20)
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.TabIndex = 11
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.Text = "Hide answer in control panel when new question is shown."
-        Me.chkHideAnswerOnControlPanelWhenNewQuestion.UseVisualStyleBackColor = True
+        Me.btnReconnectToSQL.Location = New System.Drawing.Point(6, 6)
+        Me.btnReconnectToSQL.Name = "btnReconnectToSQL"
+        Me.btnReconnectToSQL.Size = New System.Drawing.Size(238, 28)
+        Me.btnReconnectToSQL.TabIndex = 11
+        Me.btnReconnectToSQL.Text = "(Re)connect to SQL Server"
+        Me.btnReconnectToSQL.UseVisualStyleBackColor = True
         '
         'OptionsScreen
         '
@@ -5103,4 +5114,5 @@ Partial Class OptionsScreen
     Friend WithEvents radCPosRight As RadioButton
     Friend WithEvents radCPosLeft As RadioButton
     Friend WithEvents chkHideAnswerOnControlPanelWhenNewQuestion As CheckBox
+    Friend WithEvents btnReconnectToSQL As Button
 End Class
