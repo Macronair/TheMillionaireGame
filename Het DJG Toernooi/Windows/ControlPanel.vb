@@ -131,6 +131,7 @@ Public Class ControlPanel
         TVControlPnl.txtA.ForeColor = Color.Black
         GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(4)
         GuestScreen.txtA.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on A.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -152,6 +153,7 @@ Public Class ControlPanel
         TVControlPnl.txtB.ForeColor = Color.Black
         GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(5)
         GuestScreen.txtB.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on B.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -173,6 +175,7 @@ Public Class ControlPanel
         TVControlPnl.txtC.ForeColor = Color.Black
         GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(4)
         GuestScreen.txtC.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on C.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -194,6 +197,7 @@ Public Class ControlPanel
         TVControlPnl.txtD.ForeColor = Color.Black
         GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(5)
         GuestScreen.txtD.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[INFO] Final Answer set on D.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -215,9 +219,12 @@ Public Class ControlPanel
                 If Game.walkaway = False Then
                     TVControlPnl.tmrStrap.Start()   ' Start timer that will show the money strap at the interval.
                 End If
+                CoreConsole.LogMsgDate("[INFO] Correct answer for question = " + lblAnswer.Text)
 
                 Question.PlayAnswerRevealCue(True)  ' Argument True/False is whether answer is right or not.
             Else    ' Or if it's wrong.
+                CoreConsole.LogMsgDate("[INFO] Answer" + answer + " is wrong! Correct answer for question = " + lblAnswer.Text)
+
                 Question.PlayAnswerRevealCue(False)
             End If
             i = 1

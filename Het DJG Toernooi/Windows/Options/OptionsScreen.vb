@@ -249,6 +249,7 @@ Public Class OptionsScreen
 
         txtSndQ1to4Correct.Text = Profile.Options.snd_Q1to4Correct
         txtSndQ5Correct.Text = Profile.Options.snd_Q5Correct
+        txtSndQ5RCorrect.Text = Profile.Options.snd_Q5Correct_R
         txtSndQ6Correct.Text = Profile.Options.snd_Q6Correct
         txtSndQ7Correct.Text = Profile.Options.snd_Q7Correct
         txtSndQ8Correct.Text = Profile.Options.snd_Q8Correct
@@ -338,7 +339,7 @@ Public Class OptionsScreen
     txtSndQ9Final.MouseDoubleClick, txtSndQ9Correct.MouseDoubleClick, txtSndQ9Bed.MouseDoubleClick, txtSndQ8Wrong.MouseDoubleClick, txtSndQ8LD.MouseDoubleClick,
     txtSndQ8Final.MouseDoubleClick, txtSndQ8Correct.MouseDoubleClick, txtSndQ8Bed.MouseDoubleClick, txtSndQ7Wrong.MouseDoubleClick, txtSndQ7LD.MouseDoubleClick,
     txtSndQ7Final.MouseDoubleClick, txtSndQ7Correct.MouseDoubleClick, txtSndQ7Bed.MouseDoubleClick, txtSndQ6Wrong.MouseDoubleClick, txtSndQ6LD.MouseDoubleClick,
-    txtSndQ6Final.MouseDoubleClick, txtSndQ6Correct.MouseDoubleClick, txtSndQ6Bed.MouseDoubleClick, txtSndQ5Final.MouseDoubleClick, txtSndQ5Correct.MouseDoubleClick,
+    txtSndQ6Final.MouseDoubleClick, txtSndQ6Correct.MouseDoubleClick, txtSndQ6Bed.MouseDoubleClick, txtSndQ5Final.MouseDoubleClick, txtSndQ5Correct.MouseDoubleClick, txtSndQ5RCorrect.MouseDoubleClick,
     txtSndQ4Final.MouseDoubleClick, txtSndQ3Final.MouseDoubleClick, txtSndQ2Final.MouseDoubleClick, txtSndQ1to5Wrong.MouseDoubleClick, txtSndQ1to5LD.MouseDoubleClick,
     txtSndQ1to5Bed.MouseDoubleClick, txtSndQ1to4Correct.MouseDoubleClick, txtSndQ1Final.MouseDoubleClick, txtSndQ15Wrong.MouseDoubleClick, txtSndQ15LD.MouseDoubleClick,
     txtSndQ15Final.MouseDoubleClick, txtSndQ15Correct.MouseDoubleClick, txtSndQ15Bed.MouseDoubleClick, txtSndQ14Wrong.MouseDoubleClick, txtSndQ14LD.MouseDoubleClick,

@@ -743,10 +743,24 @@ Public Class Question
                     .controls.play()
                 End With
             Case 5
-                With Sounds.sndAnswer
-                    .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Correct
-                    .controls.play()
-                End With
+                If Game.gamemode = 0 Then
+                    With Sounds.sndAnswer
+                        .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Correct
+                        .controls.play()
+                    End With
+                ElseIf Game.gamemode = 1 Then
+                    If MoneyTreeSettings.TreeData.SafeNet_Risk = 1 Then
+                        With Sounds.sndAnswer
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Correct_R
+                            .controls.play()
+                        End With
+                    Else
+                        With Sounds.sndAnswer
+                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q5Correct
+                            .controls.play()
+                        End With
+                    End If
+                End If
                 useMusic = False
             Case 6
                 Sounds.sndQuestion.controls.stop()
@@ -785,10 +799,17 @@ Public Class Question
                             .controls.play()
                         End With
                     ElseIf Game.gamemode = 1 Then
-                        With Sounds.sndAnswer
-                            .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct_R
-                            .controls.play()
-                        End With
+                        If MoneyTreeSettings.TreeData.SafeNet_Risk = 2 Then
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct_R
+                                .controls.play()
+                            End With
+                        Else
+                            With Sounds.sndAnswer
+                                .URL = Sounds.SoundsPath + Profile.Options.snd_Q10Correct
+                                .controls.play()
+                            End With
+                        End If
                     End If
                 Else
                     With Sounds.sndAnswer

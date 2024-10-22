@@ -43,7 +43,20 @@ Public Class QDatabase
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
                 End If
+
+                CoreConsole.LogMsg("-----------------------------")
+                CoreConsole.LogMsgDate("[INFO] New FFF Question:")
+                CoreConsole.LogMsg("  > QID         = " + ControlPanel.txtID.Text)
+                CoreConsole.LogMsg("  > Question    = " + ControlPanel.txtQuestion.Text)
+                CoreConsole.LogMsg("  > Answer A    = " + ControlPanel.txtA.Text)
+                CoreConsole.LogMsg("  > Answer B    = " + ControlPanel.txtB.Text)
+                CoreConsole.LogMsg("  > Answer C    = " + ControlPanel.txtC.Text)
+                CoreConsole.LogMsg("  > Answer D    = " + ControlPanel.txtD.Text)
+                CoreConsole.LogMsg("  > Correct     = " + ControlPanel.lblAnswer.Text)
+                CoreConsole.LogMsg("-----------------------------")
             Catch ex As Exception
+                CoreConsole.LogMsgDate("[ERROR] Cannot load FFF question:")
+                CoreConsole.LogMsg(ex.Message)
                 MessageBox.Show("Error when loading FFF question: " + Environment.NewLine + ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Question.act = 0
                 ControlPanel.i = 0
@@ -97,7 +110,21 @@ SELECT TOP 1 * FROM
                     cmd.ExecuteNonQuery()
                     cmd.Dispose()
                 End If
+
+                CoreConsole.LogMsg("-----------------------------")
+                CoreConsole.LogMsgDate("[INFO] New Question:")
+                CoreConsole.LogMsg("  > QID         = " + ControlPanel.txtID.Text)
+                CoreConsole.LogMsg("  > Question    = " + ControlPanel.txtQuestion.Text)
+                CoreConsole.LogMsg("  > Answer A    = " + ControlPanel.txtA.Text)
+                CoreConsole.LogMsg("  > Answer B    = " + ControlPanel.txtB.Text)
+                CoreConsole.LogMsg("  > Answer C    = " + ControlPanel.txtC.Text)
+                CoreConsole.LogMsg("  > Answer D    = " + ControlPanel.txtD.Text)
+                CoreConsole.LogMsg("  > Correct     = " + ControlPanel.lblAnswer.Text)
+                CoreConsole.LogMsg("-----------------------------")
+                CoreConsole.LogMsg($"Level: {Game.level} | Q Value: {Game.varCorrect} | Guaranteed: {Game.varWrong} |")
+                CoreConsole.LogMsg("-----------------------------")
             Else
+                CoreConsole.LogMsgDate("[ERROR] No more questions available. Make sure not all questions are used already.")
                 MessageBox.Show("There are no questions available", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Question.act = 0
                 My.Computer.Audio.Stop()

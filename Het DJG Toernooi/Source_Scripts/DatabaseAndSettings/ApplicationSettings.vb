@@ -151,6 +151,7 @@ Public Class AppSettings
 
     Public Property snd_Q1to4Correct As String
     Public Property snd_Q5Correct As String
+    Public Property snd_Q5Correct_R As String
     Public Property snd_Q6Correct As String
     Public Property snd_Q7Correct As String
     Public Property snd_Q8Correct As String
@@ -335,6 +336,7 @@ Public Class Profile
 
             Options.snd_Q1to4Correct = loadedvalues.snd_Q1to4Correct
             Options.snd_Q5Correct = loadedvalues.snd_Q5Correct
+            Options.snd_Q5Correct_R = loadedvalues.snd_Q5Correct_R
             Options.snd_Q6Correct = loadedvalues.snd_Q6Correct
             Options.snd_Q7Correct = loadedvalues.snd_Q7Correct
             Options.snd_Q8Correct = loadedvalues.snd_Q8Correct
@@ -504,6 +506,7 @@ Public Class Profile
 
         Options.snd_Q1to4Correct = "q1_to_q4_correct.mp3"
         Options.snd_Q5Correct = "q5_correct.mp3"
+        Options.snd_Q5Correct_R = "q5_correct_2.mp3"
         Options.snd_Q6Correct = "q6_correct.mp3"
         Options.snd_Q7Correct = "q7_correct.mp3"
         Options.snd_Q8Correct = "q8_correct.mp3"
@@ -673,6 +676,7 @@ Public Class Profile
 
         Options.snd_Q1to4Correct = OptionsScreen.txtSndQ1to4Correct.Text
         Options.snd_Q5Correct = OptionsScreen.txtSndQ5Correct.Text
+        Options.snd_Q5Correct_R = OptionsScreen.txtSndQ5RCorrect.Text
         Options.snd_Q6Correct = OptionsScreen.txtSndQ6Correct.Text
         Options.snd_Q7Correct = OptionsScreen.txtSndQ7Correct.Text
         Options.snd_Q8Correct = OptionsScreen.txtSndQ8Correct.Text

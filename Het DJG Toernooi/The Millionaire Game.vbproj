@@ -41,7 +41,7 @@
     <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.0.914</ApplicationVersion>
+    <ApplicationVersion>1.2.0.918</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -451,9 +451,9 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
-    <None Include="Resources\02_Tree.png" />
     <None Include="Resources\04_Tree.png" />
     <None Include="Resources\03_Tree.png" />
+    <None Include="Resources\02_Tree.png" />
     <None Include="Resources\01_Tree.png" />
     <None Include="Resources\WinStrap_01.png" />
     <None Include="Resources\WinStrap_02.png" />

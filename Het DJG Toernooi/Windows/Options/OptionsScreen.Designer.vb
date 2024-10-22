@@ -110,6 +110,7 @@ Partial Class OptionsScreen
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.cmbLifeline1 = New System.Windows.Forms.ComboBox()
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.btnReconnectToSQL = New System.Windows.Forms.Button()
         Me.Label122 = New System.Windows.Forms.Label()
         Me.dtMessages = New System.Windows.Forms.DataGridView()
         Me.btnAdd = New System.Windows.Forms.Button()
@@ -417,7 +418,8 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.btnReconnectToSQL = New System.Windows.Forms.Button()
+        Me.txtSndQ5RCorrect = New System.Windows.Forms.TextBox()
+        Me.Label155 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -1424,6 +1426,15 @@ Partial Class OptionsScreen
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Database"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'btnReconnectToSQL
+        '
+        Me.btnReconnectToSQL.Location = New System.Drawing.Point(6, 6)
+        Me.btnReconnectToSQL.Name = "btnReconnectToSQL"
+        Me.btnReconnectToSQL.Size = New System.Drawing.Size(238, 28)
+        Me.btnReconnectToSQL.TabIndex = 11
+        Me.btnReconnectToSQL.Text = "(Re)connect to SQL Server"
+        Me.btnReconnectToSQL.UseVisualStyleBackColor = True
         '
         'Label122
         '
@@ -2548,6 +2559,8 @@ Partial Class OptionsScreen
         '
         'TabPage4
         '
+        Me.TabPage4.Controls.Add(Me.txtSndQ5RCorrect)
+        Me.TabPage4.Controls.Add(Me.Label155)
         Me.TabPage4.Controls.Add(Me.PictureBox1)
         Me.TabPage4.Controls.Add(Me.Label123)
         Me.TabPage4.Controls.Add(Me.chkSndStopQ15LD)
@@ -4632,14 +4645,24 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
-        'btnReconnectToSQL
+        'txtSndQ5RCorrect
         '
-        Me.btnReconnectToSQL.Location = New System.Drawing.Point(6, 6)
-        Me.btnReconnectToSQL.Name = "btnReconnectToSQL"
-        Me.btnReconnectToSQL.Size = New System.Drawing.Size(238, 28)
-        Me.btnReconnectToSQL.TabIndex = 11
-        Me.btnReconnectToSQL.Text = "(Re)connect to SQL Server"
-        Me.btnReconnectToSQL.UseVisualStyleBackColor = True
+        Me.txtSndQ5RCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSndQ5RCorrect.Location = New System.Drawing.Point(865, 116)
+        Me.txtSndQ5RCorrect.Name = "txtSndQ5RCorrect"
+        Me.txtSndQ5RCorrect.ReadOnly = True
+        Me.txtSndQ5RCorrect.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndQ5RCorrect.TabIndex = 323
+        '
+        'Label155
+        '
+        Me.Label155.AutoSize = True
+        Me.Label155.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label155.Location = New System.Drawing.Point(778, 119)
+        Me.Label155.Name = "Label155"
+        Me.Label155.Size = New System.Drawing.Size(70, 16)
+        Me.Label155.TabIndex = 322
+        Me.Label155.Text = "Q5 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'OptionsScreen
         '
@@ -5115,4 +5138,6 @@ Partial Class OptionsScreen
     Friend WithEvents radCPosLeft As RadioButton
     Friend WithEvents chkHideAnswerOnControlPanelWhenNewQuestion As CheckBox
     Friend WithEvents btnReconnectToSQL As Button
+    Friend WithEvents txtSndQ5RCorrect As TextBox
+    Friend WithEvents Label155 As Label
 End Class
