@@ -1,14 +1,24 @@
 ![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
 
 # The Millionaire Game
-A custom game controller software like WWTBAM.
+Welcome to The Millionaire Game! A self-written application based on the popular TV-show 'Who Wants to be a Millionaire'.
 
 ## Introduction
-This project began in the summer of 2017 for a YouTube series called 'Het DJG Toernooi' (The DJG Tournament). After couple of livestreams and video's, the project discontinued in late 2018.
-
+This project began in the summer of 2017 for a YouTube series/project. Then with the project name 'Het DJG Toernooi' (The DJG Tournament) which was partly based on the name of the channel.
+Because we wanted it to be a lot easier to control and play, the idea came to write a application around it to take care of the questions, music and graphics. With the exception of the music and sound, everything else was self designed (which was looking a bit poor and simple)
+But after acouple of livestreams and video's, the project discontinued in late 2018 and developement on the application was halted.
 
 But when the COVID-19 reached the rest of the world in 2020, I restarted this project with a new name called 'The Millionaire Game' and decided to put the source code on GitHub to help other people making their own quiz game with this program.
 This software can be used to run your own Who Wants To Be A Millionaire games. For example at home, on Discord with friends or on a Youtube video/livestream.
+
+Keep in mind that this is not a traditional PC-game, but more a simulator or a game controller. A minimun of 2 people are required to use this correctly (1 host which will ask the questions & 1 contestant which gives the answers).
+The recommended way to play it is as follows:
+- a minimum of 1 computer or laptop (which is capable of connecting multiple monitors)
+- 3 or 4 monitors (1 for the control panel, 1 for the host screen, 1 for the contestant screen and 1 for the TV/Audience screen)
+- 1 person that controls the software via the Control Panel
+- 1 host/quizmaster
+- 1 contestants (or more if you also want to play Fastest Finger First or pick a random contestant by the computer)
+
 There will be new features in the future to play around with. But there are a lot of elements that you can use:
 - Max. 4 lifelines (customizable).
 - Host and Contestant screen.
