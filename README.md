@@ -115,6 +115,7 @@ You can download one of the releases:
 - Back-up and restore questions.
 - Migrating questions to other database.
 - Writing questions in Excel/CSV + bulk import in application.
+- Using Fastest Finger First
 
 ## Other versions / forks.
 When I was inactive for a while, I noticed on Github that forks were created from this repository.
