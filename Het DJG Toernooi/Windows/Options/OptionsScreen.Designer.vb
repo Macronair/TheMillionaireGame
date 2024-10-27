@@ -224,6 +224,8 @@ Partial Class OptionsScreen
         Me.txtSndOpening = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
+        Me.txtSndQ5RCorrect = New System.Windows.Forms.TextBox()
+        Me.Label155 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Label123 = New System.Windows.Forms.Label()
         Me.chkSndStopQ15LD = New System.Windows.Forms.CheckBox()
@@ -418,8 +420,6 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
-        Me.txtSndQ5RCorrect = New System.Windows.Forms.TextBox()
-        Me.Label155 = New System.Windows.Forms.Label()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -1105,7 +1105,7 @@ Partial Class OptionsScreen
         '
         Me.cmbLifeline4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLifeline4.FormattingEnabled = True
-        Me.cmbLifeline4.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline4.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "phone_a_friend", "switch", "double_dip", "ask_host"})
         Me.cmbLifeline4.Location = New System.Drawing.Point(6, 87)
         Me.cmbLifeline4.Name = "cmbLifeline4"
         Me.cmbLifeline4.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1197,7 +1197,7 @@ Partial Class OptionsScreen
         '
         Me.cmbLifeline3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLifeline3.FormattingEnabled = True
-        Me.cmbLifeline3.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline3.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "phone_a_friend", "switch", "double_dip", "ask_host"})
         Me.cmbLifeline3.Location = New System.Drawing.Point(6, 87)
         Me.cmbLifeline3.Name = "cmbLifeline3"
         Me.cmbLifeline3.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1289,7 +1289,7 @@ Partial Class OptionsScreen
         '
         Me.cmbLifeline2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLifeline2.FormattingEnabled = True
-        Me.cmbLifeline2.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline2.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "phone_a_friend", "switch", "double_dip", "ask_host"})
         Me.cmbLifeline2.Location = New System.Drawing.Point(6, 87)
         Me.cmbLifeline2.Name = "cmbLifeline2"
         Me.cmbLifeline2.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -1400,7 +1400,7 @@ Partial Class OptionsScreen
         '
         Me.cmbLifeline1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLifeline1.FormattingEnabled = True
-        Me.cmbLifeline1.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "switch", "double_dip", "ask_host"})
+        Me.cmbLifeline1.Items.AddRange(New Object() {"ask_audience", "50_50", "plus_one", "phone_a_friend", "switch", "double_dip", "ask_host"})
         Me.cmbLifeline1.Location = New System.Drawing.Point(6, 87)
         Me.cmbLifeline1.Name = "cmbLifeline1"
         Me.cmbLifeline1.RightToLeft = System.Windows.Forms.RightToLeft.No
@@ -2703,6 +2703,25 @@ Partial Class OptionsScreen
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "Sounds (Questions)"
         Me.TabPage4.UseVisualStyleBackColor = True
+        '
+        'txtSndQ5RCorrect
+        '
+        Me.txtSndQ5RCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtSndQ5RCorrect.Location = New System.Drawing.Point(865, 116)
+        Me.txtSndQ5RCorrect.Name = "txtSndQ5RCorrect"
+        Me.txtSndQ5RCorrect.ReadOnly = True
+        Me.txtSndQ5RCorrect.Size = New System.Drawing.Size(127, 22)
+        Me.txtSndQ5RCorrect.TabIndex = 323
+        '
+        'Label155
+        '
+        Me.Label155.AutoSize = True
+        Me.Label155.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label155.Location = New System.Drawing.Point(778, 119)
+        Me.Label155.Name = "Label155"
+        Me.Label155.Size = New System.Drawing.Size(70, 16)
+        Me.Label155.TabIndex = 322
+        Me.Label155.Text = "Q5 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'PictureBox1
         '
@@ -4644,25 +4663,6 @@ Partial Class OptionsScreen
         'tmrEnableIdentifyButton
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
-        '
-        'txtSndQ5RCorrect
-        '
-        Me.txtSndQ5RCorrect.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtSndQ5RCorrect.Location = New System.Drawing.Point(865, 116)
-        Me.txtSndQ5RCorrect.Name = "txtSndQ5RCorrect"
-        Me.txtSndQ5RCorrect.ReadOnly = True
-        Me.txtSndQ5RCorrect.Size = New System.Drawing.Size(127, 22)
-        Me.txtSndQ5RCorrect.TabIndex = 323
-        '
-        'Label155
-        '
-        Me.Label155.AutoSize = True
-        Me.Label155.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label155.Location = New System.Drawing.Point(778, 119)
-        Me.Label155.Name = "Label155"
-        Me.Label155.Size = New System.Drawing.Size(70, 16)
-        Me.Label155.TabIndex = 322
-        Me.Label155.Text = "Q5 Correct" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'OptionsScreen
         '

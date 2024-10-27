@@ -2,6 +2,7 @@
 using System;
 using System.Data.SqlClient;
 using System.IO;
+using System.Runtime.Remoting.Contexts;
 using System.Windows.Forms;
 
 namespace MillionaireGameQEditor.Windows
@@ -17,96 +18,135 @@ namespace MillionaireGameQEditor.Windows
         {
             var r_linenumber = 0;
             var fff_linenumber = 0;
+            var errorcount = 0;
 
             QEditor.c.Open();
 
             if (chkRegularQuestions.Checked)
             {
-                using (StreamReader readRegularQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
+                try
                 {
-                    while (!readRegularQ.EndOfStream)
+                    using (StreamReader readRegularQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
                     {
-                        var line = readRegularQ.ReadLine();
-                        if (r_linenumber != 0)
+                        while (!readRegularQ.EndOfStream)
                         {
-                            var values = line.Split(';');
-
-                            for (int i = 0; i < values.Length; i++)
+                            var line = readRegularQ.ReadLine();
+                            if (r_linenumber != 0)
                             {
-                                if (values[i] != null)
+                                var values = line.Split(';');
+
+                                for (int i = 0; i < values.Length; i++)
                                 {
-                                    // Vervang line breaks met een placeholder (bijv. [NEWLINE])
-                                    values[i] = values[i].ToString()
-                                                        .Replace("%[NL]%", Environment.NewLine);
+                                    if (values[i] != null)
+                                    {
+                                        // Vervang line breaks met een placeholder (bijv. [NEWLINE])
+                                        values[i] = values[i].ToString()
+                                                            .Replace("%[NL]%", Environment.NewLine);
+                                    }
                                 }
-                            }
 
-                            string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
+                                string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
 VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @LevelRange)");
-                            SqlCommand cmd = new SqlCommand(str, QEditor.c);
-                            cmd.Parameters.AddWithValue("@Question", values[1]);
-                            cmd.Parameters.AddWithValue("@A", values[2]);
-                            cmd.Parameters.AddWithValue("@B", values[3]);
-                            cmd.Parameters.AddWithValue("@C", values[4]);
-                            cmd.Parameters.AddWithValue("@D", values[5]);
-                            cmd.Parameters.AddWithValue("@Correct", values[6]);
-                            if(values[7] != "0")
-                            {
-                                cmd.Parameters.AddWithValue("@Level", values[7]);
+                                SqlCommand cmd = new SqlCommand(str, QEditor.c);
+                                cmd.Parameters.AddWithValue("@Question", values[1]);
+                                cmd.Parameters.AddWithValue("@A", values[2]);
+                                cmd.Parameters.AddWithValue("@B", values[3]);
+                                cmd.Parameters.AddWithValue("@C", values[4]);
+                                cmd.Parameters.AddWithValue("@D", values[5]);
+                                cmd.Parameters.AddWithValue("@Correct", values[6]);
+                                if (values[7] != "0")
+                                {
+                                    cmd.Parameters.AddWithValue("@Level", values[7]);
+                                }
+                                else
+                                {
+                                    cmd.Parameters.AddWithValue("@Level", 1);
+                                }
+                                cmd.Parameters.AddWithValue("@Note", values[9]);
+                                cmd.Parameters.AddWithValue("@Difficulty_Type", values[10]);
+                                cmd.Parameters.AddWithValue("@LevelRange", values[11]);
+                                cmd.ExecuteNonQuery();
                             }
-                            else
-                            {
-                                cmd.Parameters.AddWithValue("@Level", 1);
-                            }
-                            cmd.Parameters.AddWithValue("@Note", values[9]);
-                            cmd.Parameters.AddWithValue("@Difficulty_Type", values[10]);
-                            cmd.Parameters.AddWithValue("@LevelRange", values[11]);
-                            cmd.ExecuteNonQuery();
+                            r_linenumber++;
                         }
-                        r_linenumber++;
                     }
+                }
+                catch (Exception ex)
+                {
+                    errorcount++;
+                    MessageBox.Show("Something went wrong when importing the regular questions:" + Environment.NewLine + ex.Message, "Import from CSV", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             if (chkFFFQuestions.Checked)
             {
-                using (StreamReader readFFFQ = new StreamReader(txtFFFQuestionsFileLoc.Text))
+                try
                 {
-                    while (!readFFFQ.EndOfStream)
+                    using (StreamReader readFFFQ = new StreamReader(txtFFFQuestionsFileLoc.Text))
                     {
-                        var line = readFFFQ.ReadLine();
-                        if (fff_linenumber != 0)
+                        while (!readFFFQ.EndOfStream)
                         {
-                            var values = line.Split(';');
-
-                            for (int i = 0; i < values.Length; i++)
+                            var line = readFFFQ.ReadLine();
+                            if (fff_linenumber != 0)
                             {
-                                if (values[i] != null)
-                                {
-                                    // Vervang line breaks met een placeholder (bijv. [NEWLINE])
-                                    values[i] = values[i].ToString()
-                                                        .Replace("%[NL]%", Environment.NewLine);
-                                }
-                            }
+                                var values = line.Split(';');
 
-                            string str = String.Format(@"INSERT INTO fff_questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
-                            SqlCommand cmd = new SqlCommand(str, QEditor.c);
-                            cmd.Parameters.AddWithValue("@Question", values[1]);
-                            cmd.Parameters.AddWithValue("@A", values[2]);
-                            cmd.Parameters.AddWithValue("@B", values[3]);
-                            cmd.Parameters.AddWithValue("@C", values[4]);
-                            cmd.Parameters.AddWithValue("@D", values[5]);
-                            cmd.Parameters.AddWithValue("@Correct", values[6]);
-                            cmd.Parameters.AddWithValue("@Level", values[7]);
-                            cmd.Parameters.AddWithValue("@Note", values[8]);
-                            cmd.ExecuteNonQuery();
+                                for (int i = 0; i < values.Length; i++)
+                                {
+                                    if (values[i] != null)
+                                    {
+                                        // Vervang line breaks met een placeholder (bijv. [NEWLINE])
+                                        values[i] = values[i].ToString()
+                                                            .Replace("%[NL]%", Environment.NewLine);
+                                    }
+                                }
+
+                                string str = String.Format(@"INSERT INTO fff_questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
+                                SqlCommand cmd = new SqlCommand(str, QEditor.c);
+                                cmd.Parameters.AddWithValue("@Question", values[1]);
+                                cmd.Parameters.AddWithValue("@A", values[2]);
+                                cmd.Parameters.AddWithValue("@B", values[3]);
+                                cmd.Parameters.AddWithValue("@C", values[4]);
+                                cmd.Parameters.AddWithValue("@D", values[5]);
+                                cmd.Parameters.AddWithValue("@Correct", values[6]);
+                                cmd.Parameters.AddWithValue("@Level", values[7]);
+                                cmd.Parameters.AddWithValue("@Note", values[8]);
+                                cmd.ExecuteNonQuery();
+                            }
+                            fff_linenumber++;
                         }
-                        fff_linenumber++;
                     }
+                }
+                catch (Exception ex)
+                {
+                    errorcount++;
+                    MessageBox.Show("Something went wrong when importing the FFF questions:" + Environment.NewLine + ex.Message, "Import from CSV", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
             QEditor.c.Close();
-            MessageBox.Show(r_linenumber - 1 + " regular questions & " + fff_linenumber + " fastest finger questions succesfully imported.", "Import from CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            if (r_linenumber > 1)
+            {
+                r_linenumber = r_linenumber - 1;
+            }
+            if (fff_linenumber > 1)
+            {
+                fff_linenumber = fff_linenumber - 1;
+            }
+
+            if(errorcount == 0)
+            {
+                MessageBox.Show(r_linenumber + " regular questions & " + fff_linenumber + " fastest finger questions succesfully imported.", "Import from CSV", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                QEditor q = new QEditor();
+                q.UpdateDB();
+                errorcount = 0;
+                this.Close();
+            }
+            else
+            {
+                errorcount = 0;
+                // Keep window open.
+            }
         }
 
         private void frmQuestionsImportCSV_Load(object sender, EventArgs e)

@@ -8,6 +8,18 @@
             radSQLRemote.Checked = True
         End If
 
+        If SQLSettings.SQLInfo.UseLocalDB = True Then
+            chkUseLocalDB.Checked = True
+        Else
+            chkUseLocalDB.Checked = False
+        End If
+
+        If SQLSettings.SQLInfo.HideAtStart = True Then
+            chkHideAtStart.Checked = True
+        Else
+            chkHideAtStart.Checked = False
+        End If
+
         txtSQLR_ServerInstance.Text = SQLSettings.SQLInfo.rSQL_Server
         txtSQLR_Port.Value = SQLSettings.SQLInfo.rSQL_Port
         txtSQLR_Database.Text = SQLSettings.SQLInfo.rSQL_Database

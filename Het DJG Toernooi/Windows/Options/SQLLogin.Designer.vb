@@ -44,6 +44,7 @@ Partial Class SQLLogin
         Me.btnCancel = New System.Windows.Forms.Button()
         Me.chkHideAtStart = New System.Windows.Forms.CheckBox()
         Me.btnTest = New System.Windows.Forms.Button()
+        Me.chkUseLocalDB = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpSQLRemote.SuspendLayout()
@@ -255,11 +256,22 @@ Partial Class SQLLogin
         Me.btnTest.Text = "Test"
         Me.btnTest.UseVisualStyleBackColor = True
         '
+        'chkUseLocalDB
+        '
+        Me.chkUseLocalDB.AutoSize = True
+        Me.chkUseLocalDB.Location = New System.Drawing.Point(123, 120)
+        Me.chkUseLocalDB.Name = "chkUseLocalDB"
+        Me.chkUseLocalDB.Size = New System.Drawing.Size(196, 17)
+        Me.chkUseLocalDB.TabIndex = 9
+        Me.chkUseLocalDB.Text = "Use LocalDB (developing purposes)"
+        Me.chkUseLocalDB.UseVisualStyleBackColor = True
+        '
         'SQLLogin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(488, 386)
+        Me.Controls.Add(Me.chkUseLocalDB)
         Me.Controls.Add(Me.btnTest)
         Me.Controls.Add(Me.chkHideAtStart)
         Me.Controls.Add(Me.btnCancel)
@@ -305,4 +317,5 @@ Partial Class SQLLogin
     Friend WithEvents btnCancel As Button
     Friend WithEvents chkHideAtStart As CheckBox
     Friend WithEvents btnTest As Button
+    Friend WithEvents chkUseLocalDB As CheckBox
 End Class

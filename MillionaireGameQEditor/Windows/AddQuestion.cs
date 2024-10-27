@@ -34,13 +34,13 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 if (radDiffSpecific.Checked == true)
                 {
-                    cmd.Parameters.AddWithValue("@Level", lblQuestionLevel.Text);
+                    cmd.Parameters.AddWithValue("@Level", trkQuestionLevel.Value);
                     cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
                     cmd.Parameters.AddWithValue("@LevelRange", "");
                 }
                 else if (radDiffRange.Checked == true)
                 {
-                    cmd.Parameters.AddWithValue("@Level", "");
+                    cmd.Parameters.AddWithValue("@Level", trkQuestionLevel.Value);
                     cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
                     if (cmbQuestionRange.Text.StartsWith("Lvl1"))
                     {
@@ -61,8 +61,20 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                 }
 
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.ExecuteNonQuery();
-                QEditor.c.Close();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when adding question to the database: " + Environment.NewLine + ex.Message, "Add question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    QEditor.c.Close();
+                }
+
+
             }
             else if (radFastestFinger.Checked)
             {
@@ -77,8 +89,18 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                 cmd.Parameters.AddWithValue("@Correct", lblAnswer.Text);
                 cmd.Parameters.AddWithValue("@Level", 0);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
-                cmd.ExecuteNonQuery();
-                QEditor.c.Close();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when adding question to the database: " + Environment.NewLine + ex.Message, "Add question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    QEditor.c.Close();
+                }
             }
             else
             {

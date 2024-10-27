@@ -520,6 +520,8 @@ Public Class OptionsScreen
                 picLifeline1.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline1.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline1.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline1.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -537,6 +539,8 @@ Public Class OptionsScreen
                 picLifeline2.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline2.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline2.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline2.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -554,6 +558,8 @@ Public Class OptionsScreen
                 picLifeline3.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline3.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline3.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline3.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -571,6 +577,8 @@ Public Class OptionsScreen
                 picLifeline4.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline4.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline4.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline4.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"

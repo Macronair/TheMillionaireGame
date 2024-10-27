@@ -285,9 +285,15 @@ namespace Millionaire
             }
             else
             {
-                c = new SqlConnection
-                    (String.Format
-                    (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+                if(SQLSettings.SQLInfo.UseLocalDB)
+                {
+                    c = new SqlConnection(String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+                }
+                else
+                {
+                    c = new SqlConnection(String.Format(@"Server=localhost\SQLEXPRESS;Database={0};Trusted_Connection=true", "dbMillionaire"));
+                }
+
             }
 
             UpdateDB();

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Xml;
 using System.Xml.Serialization;
@@ -8,6 +9,8 @@ namespace Millionaire
     public class SQLInfo
     {
         public bool UseRemoteServer { get; set; }
+        public bool UseLocalDB { get; set; }
+        public string lSQL_Instance {  get; set; }
         public string rSQL_Server { get; set; }
         public int rSQL_Port { get; set; }
         public string rSQL_Database { get; set; }
@@ -34,6 +37,8 @@ namespace Millionaire
             if (loadedvalues != null)
             {
                 SQLInfo.UseRemoteServer = loadedvalues.UseRemoteServer;
+                SQLInfo.UseLocalDB = loadedvalues.UseLocalDB;
+                SQLInfo.lSQL_Instance = loadedvalues.lSQL_Instance;
                 SQLInfo.rSQL_Server = loadedvalues.rSQL_Server;
                 SQLInfo.rSQL_Port = loadedvalues.rSQL_Port;
                 SQLInfo.rSQL_Database = loadedvalues.rSQL_Database;
@@ -67,6 +72,8 @@ namespace Millionaire
         private void SaveDefaultSettings()
         {
             SQLInfo.UseRemoteServer = false;
+            SQLInfo.UseLocalDB = false;
+            SQLInfo.lSQL_Instance = "SQLEXPRESS";
             SQLInfo.rSQL_Server = "";
             SQLInfo.rSQL_Port = 1433;
             SQLInfo.rSQL_Database = "";

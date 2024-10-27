@@ -136,7 +136,7 @@ Partial Class TVControlPnl
         '
         'tmrStrap
         '
-        Me.tmrStrap.Interval = 1250
+        Me.tmrStrap.Interval = 1150
         '
         'pnlTime
         '
@@ -151,7 +151,7 @@ Partial Class TVControlPnl
         'PictureBox1
         '
         Me.PictureBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_plusone
+        Me.PictureBox1.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.ll_timer
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(13, 13)
         Me.PictureBox1.Name = "PictureBox1"
@@ -945,12 +945,12 @@ Partial Class TVControlPnl
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
         Me.Controls.Add(Me.pnlFFFPlayers)
+        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.picLifelineUse)
-        Me.Controls.Add(Me.picTree)
         Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlFFFWinner)
         Me.DoubleBuffered = True

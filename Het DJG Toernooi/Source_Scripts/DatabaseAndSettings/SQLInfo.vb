@@ -4,6 +4,8 @@ Imports System.Xml.Serialization
 
 Public Class SQLInfo
     Public Property UseRemoteServer As Boolean
+    Public Property UseLocalDB As Boolean
+    Public Property lSQL_Instance As String
     Public Property rSQL_Server As String
     Public Property rSQL_Port As Integer
     Public Property rSQL_Database As String
@@ -27,6 +29,8 @@ Public Class SQLSettings
 
         If loadedvalues IsNot Nothing Then
             SQLInfo.UseRemoteServer = loadedvalues.UseRemoteServer
+            SQLInfo.UseLocalDB = loadedvalues.UseLocalDB
+            SQLInfo.lSQL_Instance = loadedvalues.lSQL_Instance
             SQLInfo.rSQL_Server = loadedvalues.rSQL_Server
             SQLInfo.rSQL_Port = loadedvalues.rSQL_Port
             SQLInfo.rSQL_Database = loadedvalues.rSQL_Database
@@ -45,6 +49,13 @@ Public Class SQLSettings
             SQLInfo.UseRemoteServer = True
         End If
 
+        If SQLLogin.chkUseLocalDB.Checked = True Then
+            SQLInfo.UseLocalDB = True
+        Else
+            SQLInfo.UseLocalDB = False
+        End If
+
+        SQLInfo.lSQL_Instance = SQLInfo.lSQL_Instance
         SQLInfo.rSQL_Server = SQLLogin.txtSQLR_ServerInstance.Text
         SQLInfo.rSQL_Port = SQLLogin.txtSQLR_Port.Value
         SQLInfo.rSQL_Database = SQLLogin.txtSQLR_Database.Text
@@ -58,6 +69,8 @@ Public Class SQLSettings
 
     Private Sub SaveDefaultSettings()
         SQLInfo.UseRemoteServer = False
+        SQLInfo.UseLocalDB = False
+        SQLInfo.lSQL_Instance = "SQLEXPRESS"
 
         SQLInfo.rSQL_Server = ""
         SQLInfo.rSQL_Port = 3306

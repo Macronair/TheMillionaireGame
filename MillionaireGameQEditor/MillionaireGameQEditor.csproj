@@ -7,7 +7,7 @@
     <ProjectGuid>{E03DCCF3-F14A-411B-85F8-ED3438207B1F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MillionaireGameQEditor</RootNamespace>
-    <AssemblyName>MillionaireGameQEditor</AssemblyName>
+    <AssemblyName>QEDIT</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -31,6 +31,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo23.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -188,6 +191,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\skipandnext.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo23.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

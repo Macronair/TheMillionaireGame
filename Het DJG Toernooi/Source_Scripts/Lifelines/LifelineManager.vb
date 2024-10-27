@@ -24,6 +24,8 @@
                         Lifeline5050.LifelineUse1()
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
+                    Case "phone_a_friend"
+                        LifelinePO.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
@@ -38,6 +40,8 @@
                     Case "50_50"
                         Lifeline5050.LifelineUse1()
                     Case "plus_one"
+                        LifelinePO.LifelineUse1()
+                    Case "phone_a_friend"
                         LifelinePO.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
@@ -54,6 +58,8 @@
                         Lifeline5050.LifelineUse1()
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
+                    Case "phone_a_friend"
+                        LifelinePO.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
@@ -68,6 +74,8 @@
                     Case "50_50"
                         Lifeline5050.LifelineUse1()
                     Case "plus_one"
+                        LifelinePO.LifelineUse1()
+                    Case "phone_a_friend"
                         LifelinePO.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
@@ -140,6 +148,8 @@
 
                 If Lifeline1_Used = True Then
                     EnableLifeline(1, False)
+                Else
+                    EnableLifeline(1, True)
                 End If
             Case 2
                 ControlPanel.btnLifeline2.Enabled = False
@@ -198,6 +208,8 @@
                 End If
                 If Lifeline2_Used = True Then
                     EnableLifeline(2, False)
+                Else
+                    EnableLifeline(2, True)
                 End If
             Case 3
                 ControlPanel.btnLifeline3.Enabled = False
@@ -256,6 +268,8 @@
                 End If
                 If Lifeline3_Used = True Then
                     EnableLifeline(3, False)
+                Else
+                    EnableLifeline(3, True)
                 End If
             Case 4
                 ControlPanel.btnLifeline4.Enabled = False
@@ -314,6 +328,8 @@
                 End If
                 If Lifeline4_Used = True Then
                     EnableLifeline(4, False)
+                Else
+                    EnableLifeline(4, True)
                 End If
         End Select
     End Sub
@@ -413,6 +429,8 @@
                 Return My.Resources.ll_5050
             Case "plus_one"
                 Return My.Resources.ll_plusone
+            Case "phone_a_friend"
+                Return My.Resources.ll_phone
             Case "switch"
                 Return My.Resources.ll_switch
             Case "double_dip"
@@ -431,6 +449,8 @@
                 Return My.Resources.ll_5050_bling
             Case "plus_one"
                 Return My.Resources.ll_plusone_bling
+            Case "phone_a_friend"
+                Return My.Resources.ll_phone_bling
             Case "switch"
                 Return My.Resources.ll_switch_bling
             Case "double_dip"
@@ -450,6 +470,8 @@
                 Return My.Resources.ll_5050_used
             Case "plus_one"
                 Return My.Resources.ll_plusone_used
+            Case "phone_a_friend"
+                Return My.Resources.ll_phone_used
             Case "switch"
                 Return My.Resources.ll_switch_used
             Case "double_dip"

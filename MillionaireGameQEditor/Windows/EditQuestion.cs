@@ -35,7 +35,19 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("[{0}] Database EDIT operation completed succesfully!", DateTime.Now);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when editing question to the database: " + Environment.NewLine + ex.Message, "Edit question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    QEditor.c.Close();
+                }
             }
             else if (level >= 1)
             {
@@ -48,7 +60,7 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Correct", txtCorrect.Text);
                 if (radDiffRange.Checked)
                 {
-                    cmd.Parameters.AddWithValue("@Level", "1");
+                    cmd.Parameters.AddWithValue("@Level", trkQuestionLevel.Text);
                     cmd.Parameters.AddWithValue("@DType", "Range");
                     switch (cmbQuestionRange.SelectedIndex)
                     {
@@ -78,12 +90,22 @@ namespace Millionaire.Windows.Question_Editor
                 cmd.Parameters.AddWithValue("@Used", chkQuestionUsed.Checked);
                 cmd.Parameters.AddWithValue("@Note", txtNote.Text);
                 cmd.Parameters.AddWithValue("@Id", txtId.Text);
-                cmd.ExecuteNonQuery();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    Console.WriteLine("[{0}] Database EDIT operation completed succesfully!", DateTime.Now);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error when editing question to the database: " + Environment.NewLine + ex.Message, "Edit question", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                finally
+                {
+                    QEditor.c.Close();
+                }
             }
-            QEditor.c.Close();
             this._qe.UpdateDB();
             this.Close();
-            Console.WriteLine("[{0}] Database EDIT operation completed succesfully!", DateTime.Now);
         }
 
         private void frmEditQuestion_Load(object sender, EventArgs e)
