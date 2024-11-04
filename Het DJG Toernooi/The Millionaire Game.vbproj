@@ -41,7 +41,7 @@
     <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.0.932</ApplicationVersion>
+    <ApplicationVersion>1.2.0.940</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -140,6 +140,7 @@
     <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\HotkeySettings.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\MoneyTreeSettings.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\PlayerBackground.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\QuestionStrap.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
@@ -451,6 +452,10 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
+    <None Include="Resources\05_FFF.png" />
+    <None Include="Resources\04_FFF.png" />
+    <None Include="Resources\02_FFF.png" />
+    <None Include="Resources\01_FFF.png" />
     <None Include="Resources\ll_timer.png" />
     <None Include="Resources\04_Tree.png" />
     <None Include="Resources\03_Tree.png" />

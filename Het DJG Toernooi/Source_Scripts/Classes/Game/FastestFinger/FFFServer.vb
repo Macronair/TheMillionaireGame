@@ -393,7 +393,7 @@ Public Class FFFServer
 
     Private Sub btnShowCorrectPlayers_Click(sender As Object, e As EventArgs) Handles btnShowCorrectPlayers.Click
         If a = 0 Then
-            TVControlPnl.pnlFFFPlayers.Visible = True
+            ControlPanel.chkShowPlayerList.Checked = True
             TVControlPnl.picTree.Visible = False
             a = a + 1
         ElseIf a = 1 Then
@@ -449,13 +449,13 @@ Public Class FFFServer
                     TVControlPnl.pnlFFFWinner.Visible = True
                 End If
             Else
-                TVControlPnl.pnlFFFPlayers.Visible = False
+                ControlPanel.chkShowPlayerList.Checked = False
                 TVControlPnl.pnlFFFWinner.Visible = False
             End If
             a = a + 1
         ElseIf a = 3 Then
             tmrFastestPlayer.Stop()
-            TVControlPnl.pnlFFFPlayers.Visible = False
+            ControlPanel.chkShowPlayerList.Checked = False
             a = 4
         ElseIf a = 4 Then
             Game.ChangeLevel(0)

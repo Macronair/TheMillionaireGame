@@ -132,11 +132,11 @@ Partial Class TVControlPnl
         '
         'tmrFlash
         '
-        Me.tmrFlash.Interval = 200
+        Me.tmrFlash.Interval = 175
         '
         'tmrStrap
         '
-        Me.tmrStrap.Interval = 1150
+        Me.tmrStrap.Interval = 1000
         '
         'pnlTime
         '

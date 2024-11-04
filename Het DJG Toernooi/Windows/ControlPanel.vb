@@ -76,6 +76,7 @@ Public Class ControlPanel
         TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
         TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
 
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
 
         If Profile.Options.AutoShow_HostScreen = True Then      ' When the auto show option is True in the config file.
             HostScreen.Show()                                   ' Open the host screen at startup.
@@ -850,5 +851,14 @@ Public Class ControlPanel
         TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
         HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
         GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+    End Sub
+
+    Private Sub chkShowPlayerList_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPlayerList.CheckedChanged
+        If chkShowPlayerList.Checked = True Then
+            TVControlPnl.pnlFFFPlayers.Visible = True
+        End If
+        If chkShowPlayerList.Checked = False Then
+            TVControlPnl.pnlFFFPlayers.Visible = False
+        End If
     End Sub
 End Class

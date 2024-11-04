@@ -127,6 +127,7 @@ Partial Class ControlPanel
         Me.btnStopAudio = New System.Windows.Forms.Button()
         Me.tmrLifelineUpdate = New System.Windows.Forms.Timer(Me.components)
         Me.btnSet2ndSafeNet = New System.Windows.Forms.Button()
+        Me.chkShowPlayerList = New System.Windows.Forms.CheckBox()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -1044,6 +1045,7 @@ Partial Class ControlPanel
         '
         'grpTV
         '
+        Me.grpTV.Controls.Add(Me.chkShowPlayerList)
         Me.grpTV.Controls.Add(Me.chkShowTotalScore)
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
         Me.grpTV.Location = New System.Drawing.Point(342, 516)
@@ -1156,6 +1158,16 @@ Partial Class ControlPanel
         Me.btnSet2ndSafeNet.TabIndex = 88
         Me.btnSet2ndSafeNet.Text = "SET 2nd SAFE NET"
         Me.btnSet2ndSafeNet.UseVisualStyleBackColor = False
+        '
+        'chkShowPlayerList
+        '
+        Me.chkShowPlayerList.AutoSize = True
+        Me.chkShowPlayerList.Location = New System.Drawing.Point(122, 13)
+        Me.chkShowPlayerList.Name = "chkShowPlayerList"
+        Me.chkShowPlayerList.Size = New System.Drawing.Size(125, 17)
+        Me.chkShowPlayerList.TabIndex = 2
+        Me.chkShowPlayerList.Text = "Show FFF Player List"
+        Me.chkShowPlayerList.UseVisualStyleBackColor = True
         '
         'ControlPanel
         '
@@ -1328,4 +1340,5 @@ Partial Class ControlPanel
     Friend WithEvents btnStopAudio As Button
     Friend WithEvents tmrLifelineUpdate As Timer
     Friend WithEvents btnSet2ndSafeNet As Button
+    Friend WithEvents chkShowPlayerList As CheckBox
 End Class

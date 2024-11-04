@@ -48,12 +48,12 @@ namespace MillionaireGameQEditor.Windows
                                 string str = String.Format(@"INSERT INTO questions (Question, A, B, C, D, CorrectAnswer, Level, Note, Difficulty_Type, LevelRange) 
 VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @LevelRange)");
                                 SqlCommand cmd = new SqlCommand(str, QEditor.c);
-                                cmd.Parameters.AddWithValue("@Question", values[1]);
-                                cmd.Parameters.AddWithValue("@A", values[2]);
-                                cmd.Parameters.AddWithValue("@B", values[3]);
-                                cmd.Parameters.AddWithValue("@C", values[4]);
-                                cmd.Parameters.AddWithValue("@D", values[5]);
-                                cmd.Parameters.AddWithValue("@Correct", values[6]);
+                                cmd.Parameters.AddWithValue("@Question", values[0]);
+                                cmd.Parameters.AddWithValue("@A", values[1]);
+                                cmd.Parameters.AddWithValue("@B", values[2]);
+                                cmd.Parameters.AddWithValue("@C", values[3]);
+                                cmd.Parameters.AddWithValue("@D", values[4]);
+                                cmd.Parameters.AddWithValue("@Correct", values[5]);
                                 if (values[7] != "0")
                                 {
                                     cmd.Parameters.AddWithValue("@Level", values[7]);
@@ -63,8 +63,44 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                                     cmd.Parameters.AddWithValue("@Level", 1);
                                 }
                                 cmd.Parameters.AddWithValue("@Note", values[9]);
-                                cmd.Parameters.AddWithValue("@Difficulty_Type", values[10]);
-                                cmd.Parameters.AddWithValue("@LevelRange", values[11]);
+                                switch(values[6])
+                                {
+                                    case "1":
+                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                        break;
+                                    case "2":
+                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
+                                        break;
+                                    case "Specific":
+                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                        break;
+                                    case "Range":
+                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
+                                        break;
+                                    default:
+                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                        break;
+                                }
+
+                                switch(values[8])
+                                {
+                                    case "1":
+                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
+                                        break;
+                                    case "2":
+                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
+                                        break;
+                                    case "3":
+                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl3");
+                                        break;
+                                    case "4":
+                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl4");
+                                        break;
+                                    default:
+                                        cmd.Parameters.AddWithValue("@LevelRange", "");
+                                        break;
+                                }
+
                                 cmd.ExecuteNonQuery();
                             }
                             r_linenumber++;
@@ -102,14 +138,14 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
 
                                 string str = String.Format(@"INSERT INTO fff_questions (Question, A, B, C, D, CorrectAnswer, Level, Note) VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note)");
                                 SqlCommand cmd = new SqlCommand(str, QEditor.c);
-                                cmd.Parameters.AddWithValue("@Question", values[1]);
-                                cmd.Parameters.AddWithValue("@A", values[2]);
-                                cmd.Parameters.AddWithValue("@B", values[3]);
-                                cmd.Parameters.AddWithValue("@C", values[4]);
-                                cmd.Parameters.AddWithValue("@D", values[5]);
-                                cmd.Parameters.AddWithValue("@Correct", values[6]);
-                                cmd.Parameters.AddWithValue("@Level", values[7]);
-                                cmd.Parameters.AddWithValue("@Note", values[8]);
+                                cmd.Parameters.AddWithValue("@Question", values[0]);
+                                cmd.Parameters.AddWithValue("@A", values[1]);
+                                cmd.Parameters.AddWithValue("@B", values[2]);
+                                cmd.Parameters.AddWithValue("@C", values[3]);
+                                cmd.Parameters.AddWithValue("@D", values[4]);
+                                cmd.Parameters.AddWithValue("@Correct", values[5]);
+                                cmd.Parameters.AddWithValue("@Level", "0");
+                                cmd.Parameters.AddWithValue("@Note", values[6]);
                                 cmd.ExecuteNonQuery();
                             }
                             fff_linenumber++;

@@ -1,6 +1,7 @@
 ﻿using Millionaire;
 using System;
 using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Windows.Forms;
 
@@ -17,8 +18,8 @@ namespace MillionaireGameQEditor.Windows
         {
             QEditor.c.Open();
 
-            SqlCommand sqlRegularQ = new SqlCommand("SELECT * FROM questions", QEditor.c);
-            SqlCommand sqlFFFQ = new SqlCommand("SELECT * FROM fff_questions", QEditor.c);
+            SqlCommand sqlRegularQ = new SqlCommand("SELECT Question,A,B,C,D,CorrectAnswer,Difficulty_Type,Level,LevelRange,Note FROM questions", QEditor.c);
+            SqlCommand sqlFFFQ = new SqlCommand("SELECT Question,A,B,C,D,CorrectAnswer,Note FROM fff_questions", QEditor.c);
 
             if (chkRegularQuestions.Checked)
             {
@@ -45,6 +46,34 @@ namespace MillionaireGameQEditor.Windows
                                                 .Replace("\r\n", "%[NL]%")
                                                 .Replace("\n", "%[NL]%")
                                                 .Replace("\r", "%[NL]%");
+                        }
+
+                        switch (outputRegularQ[6])
+                        {
+                            case "Specific":
+                                outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Specific", "1");
+                                break;
+                            case "Range":
+                                outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Range", "2");
+                                break;
+                        }
+
+                        switch (outputRegularQ[8])
+                        {
+                            case "Lvl1":
+                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl1", "1");
+                                break;
+                            case "Lvl2":
+                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl2", "2");
+                                break;
+                            case "Lvl3":
+                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl3", "3");
+                                break;
+                            case "Lvl4":
+                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl4", "4");
+                                break;
+                            default:
+                                break;
                         }
                     }
 

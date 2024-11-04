@@ -382,6 +382,7 @@ Public Class OptionsScreen
         Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()
@@ -414,6 +415,7 @@ Public Class OptionsScreen
         Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
         QuestionStrap.LoadTextures()
         MoneyTreeCore.GenerateImages()

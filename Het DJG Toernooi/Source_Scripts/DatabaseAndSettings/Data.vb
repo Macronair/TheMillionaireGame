@@ -104,6 +104,7 @@ Public Class Data
                     CreateTables(0)
                     CreateTables(1)
                     CreateTables(101)
+                    CreateTables(102)
 
                     connectionString.Close()
                 Case True
@@ -182,6 +183,7 @@ Public Class Data
                         CreateTables(0)
                         CreateTables(1)
                         CreateTables(101)
+                        CreateTables(102)
 
                         'CheckTables()
                         connectionString.Close()
@@ -258,6 +260,7 @@ Public Class Data
                             CreateTables(0)
                             CreateTables(1)
                             CreateTables(101)
+                            CreateTables(102)
 
                             connectionString.Close()
                         Case True
