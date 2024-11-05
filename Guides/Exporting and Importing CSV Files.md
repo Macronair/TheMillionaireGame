@@ -10,10 +10,16 @@ To export, follow the steps below...
 	- This is possible via The Millionaire Game app: *Game > Questions Editor*
 	- Or open the QEDIT.exe file directly to open the Editor.
 - In the menu bar, click on 'Actions' > 'Export Questions' > 'To CSV...'
+
+  ![Schermafbeelding 2024-11-04 222557](https://github.com/user-attachments/assets/965fff9a-06b6-48cb-b696-8b5bb9ff1616)
+
 - A new window will popup. There you can select which type of questions you want to export.
 	- If 'Regular Questions' is selected, all the questions that is made for the real game will be exported to the specified location.
 	- If 'Fastest Finger First Questions' is selected, all the questions from the Fastest Finger First mode will be exported to the specified location.
 	- When both checked, it will create two files (1 for Regular, 1 for Fastest Finger questions).
+
+![Schermafbeelding 2024-11-04 222416](https://github.com/user-attachments/assets/2d339869-9095-4dc4-b9be-9b852d991b83)
+
 - When you are ready, click 'Export'.
 	- If the export tool didn't report any errors, then this action had ran succesfully.
 	- But when there is an error message, check all the options and try it again. Otherwise report this issue in the Github repository of The Millionaire Game.
@@ -26,10 +32,16 @@ To import, follow these steps below...
 	- This is possible via The Millionaire Game app: *Game > Questions Editor*
 	- Or open the QEDIT.exe file directly to open the Editor.
 - In the menu bar, click on 'Actions' > 'Import Questions' > 'To CSV...'
+
+![Schermafbeelding 2024-11-04 222543](https://github.com/user-attachments/assets/5091fcab-8c7c-4f95-8e91-d0da8acf2fd7)
+
 - A new window will popup. There you can select which type of questions you want to import.
 	- If 'Regular Questions' is selected, all the questions that is made for the real game will be exported from the specified location.
 	- If 'Fastest Finger First Questions' is selected, all the questions from the Fastest Finger First mode will be exported from the specified location.
 	- When both checked, it will check on both files (1 for Regular, 1 for Fastest Finger questions).
+
+![Schermafbeelding 2024-11-04 222510](https://github.com/user-attachments/assets/c86e0892-68d0-4bb7-b212-7c142b666054)
+
 - When everything is ready, click 'Import'.
 	- If everything imports correctly, then a message will pop up telling that the questions imported succesfully.
 	- Otherwise you get an error message. If that's the case, check the import settings, CSV files and folder/file permissions. When that is all right, then let it know us in the Github repository of The Millionaire Game.
@@ -67,10 +79,10 @@ More info about the information that you need to fill in:
 `<LevelRange>` = Type in the desired level range for the question.
 **For example: When you set this to `2`, then it can be in play from question 6 to 10!**
 **Use following options:  
- -`1`(Question 1-5)**
- -`2`(Question 6-10)**
- -`3`(Question 11-14)**
-  -`4`(Question 15)**
+ `1` (Question 1-5)**
+  **-`2` (Question 6-10)**
+  **-`3` (Question 11-14)**
+   **-`4` (Question 15)**
 
 `<Note>` = Here you can insert notes or some info about the question/answer for the host. (Not required)
 
