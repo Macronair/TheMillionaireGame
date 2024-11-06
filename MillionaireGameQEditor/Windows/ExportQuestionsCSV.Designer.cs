@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.grpRegularQuestions = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtRegularQuestionsFileLoc = new System.Windows.Forms.TextBox();
+            this.btnRegularQuestionsBrowse = new System.Windows.Forms.Button();
             this.grpFFFQuestions = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtFFFQuestionsFileLoc = new System.Windows.Forms.TextBox();
+            this.btnFFFQuestionsBrowse = new System.Windows.Forms.Button();
             this.chkRegularQuestions = new System.Windows.Forms.CheckBox();
             this.chkFFFQuestions = new System.Windows.Forms.CheckBox();
             this.btnExport = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnRegularQuestionsBrowse = new System.Windows.Forms.Button();
-            this.btnFFFQuestionsBrowse = new System.Windows.Forms.Button();
-            this.txtRegularQuestionsFileLoc = new System.Windows.Forms.TextBox();
-            this.txtFFFQuestionsFileLoc = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.grpRegularQuestions.SuspendLayout();
             this.grpFFFQuestions.SuspendLayout();
             this.SuspendLayout();
@@ -57,6 +57,32 @@
             this.grpRegularQuestions.TabStop = false;
             this.grpRegularQuestions.Text = "Regular Questions - Export Settings";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(20, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "File location:";
+            // 
+            // txtRegularQuestionsFileLoc
+            // 
+            this.txtRegularQuestionsFileLoc.Location = new System.Drawing.Point(92, 21);
+            this.txtRegularQuestionsFileLoc.Name = "txtRegularQuestionsFileLoc";
+            this.txtRegularQuestionsFileLoc.Size = new System.Drawing.Size(270, 20);
+            this.txtRegularQuestionsFileLoc.TabIndex = 1;
+            // 
+            // btnRegularQuestionsBrowse
+            // 
+            this.btnRegularQuestionsBrowse.Location = new System.Drawing.Point(368, 19);
+            this.btnRegularQuestionsBrowse.Name = "btnRegularQuestionsBrowse";
+            this.btnRegularQuestionsBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnRegularQuestionsBrowse.TabIndex = 0;
+            this.btnRegularQuestionsBrowse.Text = "Browse...";
+            this.btnRegularQuestionsBrowse.UseVisualStyleBackColor = true;
+            this.btnRegularQuestionsBrowse.Click += new System.EventHandler(this.btnRegularQuestionsBrowse_Click);
+            // 
             // grpFFFQuestions
             // 
             this.grpFFFQuestions.Controls.Add(this.label2);
@@ -69,6 +95,32 @@
             this.grpFFFQuestions.TabIndex = 1;
             this.grpFFFQuestions.TabStop = false;
             this.grpFFFQuestions.Text = "Fastest Finger First Questions - Export Settings";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(20, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "File location:";
+            // 
+            // txtFFFQuestionsFileLoc
+            // 
+            this.txtFFFQuestionsFileLoc.Location = new System.Drawing.Point(92, 21);
+            this.txtFFFQuestionsFileLoc.Name = "txtFFFQuestionsFileLoc";
+            this.txtFFFQuestionsFileLoc.Size = new System.Drawing.Size(270, 20);
+            this.txtFFFQuestionsFileLoc.TabIndex = 2;
+            // 
+            // btnFFFQuestionsBrowse
+            // 
+            this.btnFFFQuestionsBrowse.Location = new System.Drawing.Point(368, 19);
+            this.btnFFFQuestionsBrowse.Name = "btnFFFQuestionsBrowse";
+            this.btnFFFQuestionsBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnFFFQuestionsBrowse.TabIndex = 1;
+            this.btnFFFQuestionsBrowse.Text = "Browse...";
+            this.btnFFFQuestionsBrowse.UseVisualStyleBackColor = true;
+            this.btnFFFQuestionsBrowse.Click += new System.EventHandler(this.btnFFFQuestionsBrowse_Click);
             // 
             // chkRegularQuestions
             // 
@@ -112,58 +164,6 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // btnRegularQuestionsBrowse
-            // 
-            this.btnRegularQuestionsBrowse.Location = new System.Drawing.Point(368, 19);
-            this.btnRegularQuestionsBrowse.Name = "btnRegularQuestionsBrowse";
-            this.btnRegularQuestionsBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnRegularQuestionsBrowse.TabIndex = 0;
-            this.btnRegularQuestionsBrowse.Text = "Browse...";
-            this.btnRegularQuestionsBrowse.UseVisualStyleBackColor = true;
-            this.btnRegularQuestionsBrowse.Click += new System.EventHandler(this.btnRegularQuestionsBrowse_Click);
-            // 
-            // btnFFFQuestionsBrowse
-            // 
-            this.btnFFFQuestionsBrowse.Location = new System.Drawing.Point(368, 19);
-            this.btnFFFQuestionsBrowse.Name = "btnFFFQuestionsBrowse";
-            this.btnFFFQuestionsBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnFFFQuestionsBrowse.TabIndex = 1;
-            this.btnFFFQuestionsBrowse.Text = "Browse...";
-            this.btnFFFQuestionsBrowse.UseVisualStyleBackColor = true;
-            this.btnFFFQuestionsBrowse.Click += new System.EventHandler(this.btnFFFQuestionsBrowse_Click);
-            // 
-            // txtRegularQuestionsFileLoc
-            // 
-            this.txtRegularQuestionsFileLoc.Location = new System.Drawing.Point(92, 21);
-            this.txtRegularQuestionsFileLoc.Name = "txtRegularQuestionsFileLoc";
-            this.txtRegularQuestionsFileLoc.Size = new System.Drawing.Size(270, 20);
-            this.txtRegularQuestionsFileLoc.TabIndex = 1;
-            // 
-            // txtFFFQuestionsFileLoc
-            // 
-            this.txtFFFQuestionsFileLoc.Location = new System.Drawing.Point(92, 21);
-            this.txtFFFQuestionsFileLoc.Name = "txtFFFQuestionsFileLoc";
-            this.txtFFFQuestionsFileLoc.Size = new System.Drawing.Size(270, 20);
-            this.txtFFFQuestionsFileLoc.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "File location:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(20, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "File location:";
-            // 
             // frmQuestionsExportCSV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,6 +177,8 @@
             this.Controls.Add(this.grpRegularQuestions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuestionsExportCSV";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Export questions to CSV file";
             this.Load += new System.EventHandler(this.ExportQuestionsCSV_Load);
             this.grpRegularQuestions.ResumeLayout(false);

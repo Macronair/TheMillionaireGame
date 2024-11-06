@@ -865,6 +865,8 @@
             this.Controls.Add(this.trkQuestionLevel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuestionImport";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Import question";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmQuestionImport_FormClosing);
             this.Load += new System.EventHandler(this.frmQuestionAdd_Load);

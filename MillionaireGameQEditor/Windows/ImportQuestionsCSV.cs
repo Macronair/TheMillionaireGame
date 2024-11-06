@@ -20,10 +20,17 @@ namespace MillionaireGameQEditor.Windows
             var fff_linenumber = 0;
             var errorcount = 0;
 
+            var tres_regular = -1;
+            var tres_fff = -1;
+
             QEditor.c.Open();
 
             if (chkRegularQuestions.Checked)
             {
+                if(chkRegularSkipFirstLine.Checked)
+                {
+                    tres_regular = 0;
+                }
                 try
                 {
                     using (StreamReader readRegularQ = new StreamReader(txtRegularQuestionsFileLoc.Text))
@@ -31,7 +38,7 @@ namespace MillionaireGameQEditor.Windows
                         while (!readRegularQ.EndOfStream)
                         {
                             var line = readRegularQ.ReadLine();
-                            if (r_linenumber != 0)
+                            if (r_linenumber != tres_regular)
                             {
                                 var values = line.Split(';');
 
@@ -115,6 +122,10 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
             }
             if (chkFFFQuestions.Checked)
             {
+                if (chkFFFSkipFirstLine.Checked)
+                {
+                    tres_fff = 0;
+                }
                 try
                 {
                     using (StreamReader readFFFQ = new StreamReader(txtFFFQuestionsFileLoc.Text))
@@ -122,7 +133,7 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                         while (!readFFFQ.EndOfStream)
                         {
                             var line = readFFFQ.ReadLine();
-                            if (fff_linenumber != 0)
+                            if (fff_linenumber != tres_fff)
                             {
                                 var values = line.Split(';');
 

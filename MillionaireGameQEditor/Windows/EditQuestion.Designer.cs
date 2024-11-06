@@ -607,6 +607,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmEditQuestion";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Edit question";
             this.Load += new System.EventHandler(this.frmEditQuestion_Load);
             this.pnlFFFAnswer.ResumeLayout(false);

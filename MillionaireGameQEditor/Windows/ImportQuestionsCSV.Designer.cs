@@ -31,10 +31,12 @@
             this.chkFFFQuestions = new System.Windows.Forms.CheckBox();
             this.chkRegularQuestions = new System.Windows.Forms.CheckBox();
             this.grpFFFQuestions = new System.Windows.Forms.GroupBox();
+            this.chkFFFSkipFirstLine = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtFFFQuestionsFileLoc = new System.Windows.Forms.TextBox();
             this.btnFFFQuestionsBrowse = new System.Windows.Forms.Button();
             this.grpRegularQuestions = new System.Windows.Forms.GroupBox();
+            this.chkRegularSkipFirstLine = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtRegularQuestionsFileLoc = new System.Windows.Forms.TextBox();
             this.btnRegularQuestionsBrowse = new System.Windows.Forms.Button();
@@ -68,6 +70,7 @@
             // 
             // grpFFFQuestions
             // 
+            this.grpFFFQuestions.Controls.Add(this.chkFFFSkipFirstLine);
             this.grpFFFQuestions.Controls.Add(this.label2);
             this.grpFFFQuestions.Controls.Add(this.txtFFFQuestionsFileLoc);
             this.grpFFFQuestions.Controls.Add(this.btnFFFQuestionsBrowse);
@@ -78,6 +81,16 @@
             this.grpFFFQuestions.TabIndex = 5;
             this.grpFFFQuestions.TabStop = false;
             this.grpFFFQuestions.Text = "Fastest Finger First Questions - Export Settings";
+            // 
+            // chkFFFSkipFirstLine
+            // 
+            this.chkFFFSkipFirstLine.AutoSize = true;
+            this.chkFFFSkipFirstLine.Location = new System.Drawing.Point(23, 47);
+            this.chkFFFSkipFirstLine.Name = "chkFFFSkipFirstLine";
+            this.chkFFFSkipFirstLine.Size = new System.Drawing.Size(200, 17);
+            this.chkFFFSkipFirstLine.TabIndex = 11;
+            this.chkFFFSkipFirstLine.Text = "Contains titles/headers (skip first line)";
+            this.chkFFFSkipFirstLine.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -107,6 +120,7 @@
             // 
             // grpRegularQuestions
             // 
+            this.grpRegularQuestions.Controls.Add(this.chkRegularSkipFirstLine);
             this.grpRegularQuestions.Controls.Add(this.label1);
             this.grpRegularQuestions.Controls.Add(this.txtRegularQuestionsFileLoc);
             this.grpRegularQuestions.Controls.Add(this.btnRegularQuestionsBrowse);
@@ -117,6 +131,16 @@
             this.grpRegularQuestions.TabIndex = 4;
             this.grpRegularQuestions.TabStop = false;
             this.grpRegularQuestions.Text = "Regular Questions - Export Settings";
+            // 
+            // chkRegularSkipFirstLine
+            // 
+            this.chkRegularSkipFirstLine.AutoSize = true;
+            this.chkRegularSkipFirstLine.Location = new System.Drawing.Point(23, 47);
+            this.chkRegularSkipFirstLine.Name = "chkRegularSkipFirstLine";
+            this.chkRegularSkipFirstLine.Size = new System.Drawing.Size(200, 17);
+            this.chkRegularSkipFirstLine.TabIndex = 10;
+            this.chkRegularSkipFirstLine.Text = "Contains titles/headers (skip first line)";
+            this.chkRegularSkipFirstLine.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -177,6 +201,8 @@
             this.Controls.Add(this.grpRegularQuestions);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuestionsImportCSV";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Import questions from CSV file";
             this.Load += new System.EventHandler(this.frmQuestionsImportCSV_Load);
             this.grpFFFQuestions.ResumeLayout(false);
@@ -202,5 +228,7 @@
         private System.Windows.Forms.Button btnRegularQuestionsBrowse;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.CheckBox chkFFFSkipFirstLine;
+        private System.Windows.Forms.CheckBox chkRegularSkipFirstLine;
     }
 }

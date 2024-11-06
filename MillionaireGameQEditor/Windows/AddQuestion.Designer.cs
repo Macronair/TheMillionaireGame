@@ -601,6 +601,8 @@
             this.Controls.Add(this.txtQuestion);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmQuestionAdd";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.Text = "Add question";
             this.Load += new System.EventHandler(this.frmQuestionAdd_Load);
             this.pnlFFFAnswer.ResumeLayout(false);
