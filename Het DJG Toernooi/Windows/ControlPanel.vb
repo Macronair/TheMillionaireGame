@@ -861,4 +861,5 @@ Public Class ControlPanel
             TVControlPnl.pnlFFFPlayers.Visible = False
         End If
     End Sub
+
 End Class

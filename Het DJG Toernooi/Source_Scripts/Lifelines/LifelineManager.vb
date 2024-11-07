@@ -144,12 +144,10 @@
                                 Lifeline1_Active = True
                             End If
                     End Select
-                End If
 
-                If Lifeline1_Used = True Then
-                    EnableLifeline(1, False)
-                Else
-                    EnableLifeline(1, True)
+                    If Lifeline1_Used = True Then
+                        EnableLifeline(1, False)
+                    End If
                 End If
             Case 2
                 ControlPanel.btnLifeline2.Enabled = False
@@ -205,11 +203,10 @@
                                 Lifeline2_Active = True
                             End If
                     End Select
-                End If
-                If Lifeline2_Used = True Then
-                    EnableLifeline(2, False)
-                Else
-                    EnableLifeline(2, True)
+
+                    If Lifeline2_Used = True Then
+                        EnableLifeline(2, False)
+                    End If
                 End If
             Case 3
                 ControlPanel.btnLifeline3.Enabled = False
@@ -265,11 +262,10 @@
                                 Lifeline3_Active = True
                             End If
                     End Select
-                End If
-                If Lifeline3_Used = True Then
-                    EnableLifeline(3, False)
-                Else
-                    EnableLifeline(3, True)
+
+                    If Lifeline3_Used = True Then
+                        EnableLifeline(3, False)
+                    End If
                 End If
             Case 4
                 ControlPanel.btnLifeline4.Enabled = False
@@ -280,6 +276,11 @@
                 GuestScreen.picLifeline4.Visible = False
 
                 Lifeline4_Active = False
+
+                If Lifeline4_Used = True Then
+                    EnableLifeline(4, False)
+                End If
+
                 If Profile.Options.TotalLifelines = 4 Then
                     Select Case Profile.Options.Lifeline4_available
                         Case 0
@@ -325,11 +326,7 @@
                                 Lifeline4_Active = True
                             End If
                     End Select
-                End If
-                If Lifeline4_Used = True Then
-                    EnableLifeline(4, False)
-                Else
-                    EnableLifeline(4, True)
+
                 End If
         End Select
     End Sub
@@ -338,7 +335,6 @@
         If enable = True Then
             Select Case LifelineNumber
                 Case 1
-                    ControlPanel.btnLifeline1.BackgroundImage = Nothing
                     ControlPanel.btnLifeline1.Enabled = True
                     ControlPanel.btnLifeline1.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline1)
                     TVControlPnl.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
@@ -348,7 +344,6 @@
                     ControlPanel.chkLifeline1Unused.Checked = True
                     ControlPanel.btnLL1.Enabled = True
                 Case 2
-                    ControlPanel.btnLifeline2.BackgroundImage = Nothing
                     ControlPanel.btnLifeline2.Enabled = True
                     ControlPanel.btnLifeline2.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline2)
                     TVControlPnl.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
@@ -358,7 +353,6 @@
                     ControlPanel.chkLifeline2Unused.Checked = True
                     ControlPanel.btnLL2.Enabled = True
                 Case 3
-                    ControlPanel.btnLifeline3.BackgroundImage = Nothing
                     ControlPanel.btnLifeline3.Enabled = True
                     ControlPanel.btnLifeline3.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline3)
                     TVControlPnl.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
@@ -368,7 +362,6 @@
                     ControlPanel.chkLifeline3Unused.Checked = True
                     ControlPanel.btnLL3.Enabled = True
                 Case 4
-                    ControlPanel.btnLifeline4.BackgroundImage = Nothing
                     ControlPanel.btnLifeline4.Enabled = True
                     ControlPanel.btnLifeline4.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline4)
                     TVControlPnl.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
