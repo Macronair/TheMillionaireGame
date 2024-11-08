@@ -1,4 +1,4 @@
-![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
+![millionairebanner](https://github.com/user-attachments/assets/7cce2260-9a8b-4752-9fd8-060e4ee42450)
 
 # The Millionaire Game
 Welcome to The Millionaire Game! A self-written application based on the popular TV-show 'Who Wants to be a Millionaire'.
@@ -93,11 +93,12 @@ The contestant gets two chances to give the correct answer. When this lifeline i
 
 Like the name of the lifeline already suggest, ask the present host to give his/her opinion on what the correct answer could be.
 
-## The Money Tree
-![0_tree_0](https://github.com/Macronair/TheMillionaireGame/assets/43847273/d6df607e-3d9a-460f-8142-7b30fcd71640)
-
 ## Video Demo
-You can watch the demo video of 2023 here below:
+The new demo video is coming soon on my channel:
+
+<img src="https://github.com/user-attachments/assets/cb300932-c31a-42f7-b915-85bd55e2d491" alt="drawing" width="500"/>
+
+You can watch the demo video of 2023 (version 1.1) here below:
 
 [![The Millionaire Game Demo 2023](https://img.youtube.com/vi/NVtr-75A5mc/0.jpg)](https://youtu.be/NVtr-75A5mc)
 
