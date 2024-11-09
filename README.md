@@ -103,6 +103,9 @@ You can watch the demo video of 2023 (version 1.1) here below:
 [![The Millionaire Game Demo 2023](https://img.youtube.com/vi/NVtr-75A5mc/0.jpg)](https://youtu.be/NVtr-75A5mc)
 
 ## Screenshots
+Screenshots below are from version 1.1!
+New screenshots wil come shortly. ;)
+
 ### Main overview:
 ![Schermafbeelding 2023-11-21 224448](https://github.com/Macronair/TheMillionaireGame/assets/43847273/db4cb661-eb36-4cb5-a0cc-332b02385b24)
 ### Options Menu:
