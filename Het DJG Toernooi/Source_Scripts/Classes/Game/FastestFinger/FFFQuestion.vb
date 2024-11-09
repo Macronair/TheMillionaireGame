@@ -52,18 +52,18 @@
                 HostScreen.txtB.ForeColor = Color.White
                 HostScreen.txtC.ForeColor = Color.White
                 HostScreen.txtD.ForeColor = Color.White
-                HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-                HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+                HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+                HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+                HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
                 GuestScreen.txtA.ForeColor = Color.White
                 GuestScreen.txtB.ForeColor = Color.White
                 GuestScreen.txtC.ForeColor = Color.White
                 GuestScreen.txtD.ForeColor = Color.White
-                GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-                GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+                GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+                GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+                GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
                 TVControlPnl.txtA.ForeColor = Color.White
                 TVControlPnl.txtB.ForeColor = Color.White
                 TVControlPnl.txtC.ForeColor = Color.White
@@ -97,6 +97,12 @@
                 GuestScreen.txtB.Text = ""
                 GuestScreen.txtC.Text = ""
                 GuestScreen.txtD.Text = ""
+
+                TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.GetTreeImage()
+                TVControlPnl.picLifeline1.Visible = False
+                TVControlPnl.picLifeline2.Visible = False
+                TVControlPnl.picLifeline3.Visible = False
+                TVControlPnl.picLifeline4.Visible = False
 
                 TVControlPnl.txtPL1_Name.Text = FFFServer.txtPL1_Name.Text
                 TVControlPnl.txtPL1_Points.Text = ""
@@ -146,10 +152,10 @@
                 TVControlPnl.txtPL8_Name.ForeColor = Color.White
                 TVControlPnl.txtPL8_Points.ForeColor = Color.White
 
-                TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-                TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-                TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                TVControlPnl.picA.BackgroundImage = QuestionStrap.GetTexture(2)
+                TVControlPnl.picB.BackgroundImage = QuestionStrap.GetTexture(3)
+                TVControlPnl.picC.BackgroundImage = QuestionStrap.GetTexture(2)
+                TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(3)
                 TVControlPnl.tmrFlash.Stop()
                 Dim q As New QDatabase
                 q.newQuestion()

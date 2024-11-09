@@ -1,8 +1,7 @@
-﻿using Millionaire;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace MillionaireGameQEditor
+namespace Millionaire
 {
     static class Program
     {

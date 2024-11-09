@@ -1,5 +1,6 @@
 ﻿using Millionaire.Windows.Question_Editor;
 using MillionaireGameQEditor;
+using MillionaireGameQEditor.Windows;
 using System;
 using System.ComponentModel;
 using System.Data;
@@ -18,9 +19,8 @@ namespace Millionaire
         ListSortDirection order1;
         bool sorted1 = false;
 
-        public static SqlConnection c = new SqlConnection
-                    (String.Format
-                    (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+        public static SqlConnection c;
+        public static SQLSettings sqlsettings = new SQLSettings();
 
         public QEditor()
         {
@@ -60,19 +60,20 @@ namespace Millionaire
 
                 difficulty = row.Cells[7].Value.ToString();
 
-                switch(difficulty)
+                switch (difficulty)
                 {
                     case "Range":
                         row.Cells[7].Style.BackColor = Color.Plum;
                         row.Cells[8].Style.ForeColor = Color.LightGray;
 
-                        switch(row.Cells[9].Value.ToString())
+                        switch (row.Cells[9].Value.ToString())
                         {
                             case "Lvl1": row.Cells[9].Style.BackColor = Color.PaleGreen; break;
                             case "Lvl2": row.Cells[9].Style.BackColor = Color.LightSkyBlue; break;
                             case "Lvl3": row.Cells[9].Style.BackColor = Color.Gold; break;
                             case "Lvl4": row.Cells[9].Style.BackColor = Color.LightCoral; break;
-                        } break;
+                        }
+                        break;
                     case "Specific":
                         row.Cells[7].Style.BackColor = Color.Aquamarine;
                         row.Cells[9].Style.ForeColor = Color.LightGray;
@@ -273,6 +274,28 @@ namespace Millionaire
 
         private void QEditor_Load(object sender, EventArgs e)
         {
+            sqlsettings.LoadSettings();
+
+            if (SQLSettings.SQLInfo.UseRemoteServer == true)
+            {
+                c = new SqlConnection
+                    (String.Format("Server={0},{1};Database={2};User Id={3};Password={4}",
+                    SQLSettings.SQLInfo.rSQL_Server, SQLSettings.SQLInfo.rSQL_Port, SQLSettings.SQLInfo.rSQL_Database,
+                    SQLSettings.SQLInfo.rSQL_Login, SQLSettings.SQLInfo.rSQL_Password));
+            }
+            else
+            {
+                if(SQLSettings.SQLInfo.UseLocalDB)
+                {
+                    c = new SqlConnection(String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={0}\{1}.mdf;Integrated Security=True;Connect Timeout=30", Application.StartupPath, "dbMillionaire"));
+                }
+                else
+                {
+                    c = new SqlConnection(String.Format(@"Server=localhost\SQLEXPRESS;Database={0};Trusted_Connection=true", "dbMillionaire"));
+                }
+
+            }
+
             UpdateDB();
             #region Autosize columns
             dtLevel1.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells; // ID
@@ -586,6 +609,18 @@ namespace Millionaire
                     row.DefaultCellStyle.BackColor = Color.LightGray;
                 }
             }
+        }
+
+        private void toCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuestionsExportCSV frmQuestionsExportCSV = new frmQuestionsExportCSV();
+            frmQuestionsExportCSV.Show();
+        }
+
+        private void fromCSVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmQuestionsImportCSV frmQuestionsImportCSV = new frmQuestionsImportCSV();
+            frmQuestionsImportCSV.Show();
         }
     }
 }

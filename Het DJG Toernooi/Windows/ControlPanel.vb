@@ -54,6 +54,30 @@ Public Class ControlPanel
         TVControlPnl.pnlTotal.Visible = False
         drpNextHostMessage.Items.AddRange(GetHostMessages().ToArray())  ' Load host messages in dropdown menu.
 
+        Game.ChangeLevel(0)
+
+        TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+        TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+        TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+        TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+
+        HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+        HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+        HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+        HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+
+        HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+        HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+        HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+        HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+
+        TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
+
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
+
         If Profile.Options.AutoShow_HostScreen = True Then      ' When the auto show option is True in the config file.
             HostScreen.Show()                                   ' Open the host screen at startup.
         End If
@@ -102,12 +126,13 @@ Public Class ControlPanel
 
         ' Apply final answer textures
         txtA.BackColor = Color.Yellow
-        HostScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(4)
         HostScreen.txtA.ForeColor = Color.Black
-        TVControlPnl.picA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        TVControlPnl.picA.BackgroundImage = QuestionStrap.GetTexture(4)
         TVControlPnl.txtA.ForeColor = Color.Black
-        GuestScreen.pnlA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(4)
         GuestScreen.txtA.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on A.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -123,12 +148,13 @@ Public Class ControlPanel
 
         ' Apply final answer textures
         txtB.BackColor = Color.Yellow
-        HostScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(5)
         HostScreen.txtB.ForeColor = Color.Black
-        TVControlPnl.picB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        TVControlPnl.picB.BackgroundImage = QuestionStrap.GetTexture(5)
         TVControlPnl.txtB.ForeColor = Color.Black
-        GuestScreen.pnlB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(5)
         GuestScreen.txtB.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on B.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -144,12 +170,13 @@ Public Class ControlPanel
 
         ' Apply final answer textures
         txtC.BackColor = Color.Yellow
-        HostScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(4)
         HostScreen.txtC.ForeColor = Color.Black
-        TVControlPnl.picC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        TVControlPnl.picC.BackgroundImage = QuestionStrap.GetTexture(4)
         TVControlPnl.txtC.ForeColor = Color.Black
-        GuestScreen.pnlC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+        GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(4)
         GuestScreen.txtC.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[Info] Final Answer set on C.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -165,12 +192,13 @@ Public Class ControlPanel
 
         ' Apply final answer textures
         txtD.BackColor = Color.Yellow
-        HostScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(5)
         HostScreen.txtD.ForeColor = Color.Black
-        TVControlPnl.picD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(5)
         TVControlPnl.txtD.ForeColor = Color.Black
-        GuestScreen.pnlD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+        GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(5)
         GuestScreen.txtD.ForeColor = Color.Black
+        CoreConsole.LogMsgDate("[INFO] Final Answer set on D.")
 
         ' The sound cues. First check if the double dip lifeline is in use.        
         If LifeLineDouble.active = True Then
@@ -192,9 +220,12 @@ Public Class ControlPanel
                 If Game.walkaway = False Then
                     TVControlPnl.tmrStrap.Start()   ' Start timer that will show the money strap at the interval.
                 End If
+                CoreConsole.LogMsgDate("[INFO] Correct answer for question = " + lblAnswer.Text)
 
                 Question.PlayAnswerRevealCue(True)  ' Argument True/False is whether answer is right or not.
             Else    ' Or if it's wrong.
+                CoreConsole.LogMsgDate("[INFO] Answer" + answer + " is wrong! Correct answer for question = " + lblAnswer.Text)
+
                 Question.PlayAnswerRevealCue(False)
             End If
             i = 1
@@ -209,10 +240,10 @@ Public Class ControlPanel
             TVControlPnl.txtB.ForeColor = Color.White
             TVControlPnl.txtC.ForeColor = Color.White
             TVControlPnl.txtD.ForeColor = Color.White
-            TVControlPnl.picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            TVControlPnl.picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            TVControlPnl.picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            TVControlPnl.picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            TVControlPnl.picA.BackgroundImage = QuestionStrap.GetTexture(2)
+            TVControlPnl.picB.BackgroundImage = QuestionStrap.GetTexture(3)
+            TVControlPnl.picC.BackgroundImage = QuestionStrap.GetTexture(2)
+            TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(3)
             TVControlPnl.pnlStrap.Visible = False
             TVControlPnl.tmrFlash.Stop()    ' Stop the timer for the money strap.
             i = 2
@@ -227,10 +258,10 @@ Public Class ControlPanel
             HostScreen.txtB.Text = ""
             HostScreen.txtC.Text = ""
             HostScreen.txtD.Text = ""
-            HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+            HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+            HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+            HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
             HostScreen.txtATAa.Text = ""
             HostScreen.txtATAb.Text = ""
             HostScreen.txtATAc.Text = ""
@@ -240,10 +271,10 @@ Public Class ControlPanel
             GuestScreen.txtB.Text = ""
             GuestScreen.txtC.Text = ""
             GuestScreen.txtD.Text = ""
-            GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-            GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-            GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+            GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+            GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+            GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+            GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
             GuestScreen.txtATAa.Text = ""
             GuestScreen.txtATAb.Text = ""
             GuestScreen.txtATAc.Text = ""
@@ -304,7 +335,7 @@ Public Class ControlPanel
         HostScreen.txtExplain.ForeColor = Color.White
         HostScreen.pnlAnswer.BackColor = Color.LightGray
         Game.walkaway = True
-        HostScreen.txtWinnings.Text = "Totale Score: " + Game.varCurrent
+        HostScreen.txtWinnings.Text = "Total Score: " + Game.varCurrent
         TVControlPnl.grpATA.Visible = False
 
         ' Stop the question music bed.
@@ -326,7 +357,7 @@ Public Class ControlPanel
         End Select
 
         HostScreen.lblWalkedAway.ForeColor = Color.White
-        TVControlPnl.lblAmount.Text = "" & Game.varCurrent
+        TVControlPnl.lblAmount.Text = MoneyTreeSettings.TreeData.Currency & Game.varCurrent
 
         If Profile.Options.S_AutoHideQuestionAtWalkAway = True Then
             chkShowQuestion.Checked = False
@@ -495,9 +526,9 @@ Public Class ControlPanel
         lifeline_bling = 1
 
         btnLifeline1.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
+        TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         HostScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
-        TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline1)
         tmrLifelineBling.Start()
 
         With ping1
@@ -515,9 +546,9 @@ Public Class ControlPanel
         lifeline_bling = 2
 
         btnLifeline2.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
+        TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         HostScreen.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
-        TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline2)
         tmrLifelineBling.Start()
 
         With ping2
@@ -535,9 +566,9 @@ Public Class ControlPanel
         lifeline_bling = 3
 
         btnLifeline3.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
+        TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         HostScreen.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
-        TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline3)
         tmrLifelineBling.Start()
 
         With ping3
@@ -555,9 +586,9 @@ Public Class ControlPanel
         lifeline_bling = 4
 
         btnLifeline4.BackgroundImage = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
+        TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         HostScreen.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
-        TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineBlingImage(Profile.Options.Lifeline4)
         tmrLifelineBling.Start()
 
         With ping4
@@ -641,7 +672,7 @@ Public Class ControlPanel
         GuestScreen.Show()
     End Sub
 
-    Private Sub btnUnlockSwitch_Click(sender As Object, e As EventArgs) Handles btnUnlockSwitch.Click
+    Private Sub btnUnlockSwitch_Click(sender As Object, e As EventArgs) Handles btnActivateRiskMode.Click
         Select Case Game.gamemode
             Case 0
                 Game.ChangeMode(1)
@@ -654,24 +685,24 @@ Public Class ControlPanel
         Select Case lifeline_bling
             Case 1
                 btnLifeline1.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
+                TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
                 HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
                 GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-                TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
             Case 2
                 btnLifeline2.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
+                TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
                 HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
                 GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-                TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
             Case 3
                 btnLifeline3.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
+                TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
                 HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
                 GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-                TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
             Case 4
                 btnLifeline4.BackgroundImage = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+                TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
                 HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
                 GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-                TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
         End Select
 
         LifelineManager.UnlockLifeline(1)
@@ -787,6 +818,48 @@ Public Class ControlPanel
     End Sub
 
     Private Sub ControlPanel_KeyDown(sender As Object, e As KeyEventArgs) Handles MyBase.KeyDown
+        Dim key As Keys = e.KeyCode
+        If e.Alt = True And key = Keys.F4 Then
 
+        End If
+
+        ' Work still in construction
+        'Hotkey.Press(e.KeyCode, e.Control, e.Alt)
     End Sub
+
+    Private Sub btnSet2ndSafeNet_Click(sender As Object, e As EventArgs) Handles btnSet2ndSafeNet.Click
+        Game.freeSafetyNetSet = True
+        Game.freeSafetyNetAt = Game.level + 1
+        TVControlPnl.tmrAnimateFreeSafeNet.Stop()
+
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_imgnet2
+        HostScreen.picTree.Image = MoneyTreeCore.tree_imgnet2
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_imgnet2
+
+        Dim tr As Thread = New Thread(New ThreadStart(AddressOf SetSafetyNet))
+        tr.Start()
+    End Sub
+
+    Private Sub SetSafetyNet()
+        Dim enable As New WMPLib.WindowsMediaPlayer
+        With enable
+            .URL = Sounds.SoundsPath + Profile.Options.snd_SetSafetyNet
+            .controls.play()
+        End With
+
+        MoneyTreeCore.GenerateImages()
+        TVControlPnl.picTree.BackgroundImage = MoneyTreeCore.tree_img(Game.level)
+        HostScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+        GuestScreen.picTree.Image = MoneyTreeCore.tree_img(Game.level)
+    End Sub
+
+    Private Sub chkShowPlayerList_CheckedChanged(sender As Object, e As EventArgs) Handles chkShowPlayerList.CheckedChanged
+        If chkShowPlayerList.Checked = True Then
+            TVControlPnl.pnlFFFPlayers.Visible = True
+        End If
+        If chkShowPlayerList.Checked = False Then
+            TVControlPnl.pnlFFFPlayers.Visible = False
+        End If
+    End Sub
+
 End Class

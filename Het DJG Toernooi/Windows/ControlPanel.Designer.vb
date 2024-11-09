@@ -74,7 +74,7 @@ Partial Class ControlPanel
         Me.btnLL1 = New System.Windows.Forms.Button()
         Me.btnRules = New System.Windows.Forms.Button()
         Me.btnTreePr = New System.Windows.Forms.Button()
-        Me.btnUnlockSwitch = New System.Windows.Forms.Button()
+        Me.btnActivateRiskMode = New System.Windows.Forms.Button()
         Me.chkShowQuestion = New System.Windows.Forms.CheckBox()
         Me.clrBGColor = New System.Windows.Forms.ColorDialog()
         Me.txtExplain = New System.Windows.Forms.TextBox()
@@ -116,6 +116,7 @@ Partial Class ControlPanel
         Me.grpMain = New System.Windows.Forms.GroupBox()
         Me.btnUndo = New System.Windows.Forms.Button()
         Me.grpTV = New System.Windows.Forms.GroupBox()
+        Me.chkShowPlayerList = New System.Windows.Forms.CheckBox()
         Me.chkShowTotalScore = New System.Windows.Forms.CheckBox()
         Me.tmrLifelineBling = New System.Windows.Forms.Timer(Me.components)
         Me.txtHostMessages = New System.Windows.Forms.RichTextBox()
@@ -126,6 +127,7 @@ Partial Class ControlPanel
         Me.btnResetGame = New System.Windows.Forms.Button()
         Me.btnStopAudio = New System.Windows.Forms.Button()
         Me.tmrLifelineUpdate = New System.Windows.Forms.Timer(Me.components)
+        Me.btnSet2ndSafeNet = New System.Windows.Forms.Button()
         CType(Me.nmrLevel, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grpRules.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -248,6 +250,7 @@ Partial Class ControlPanel
         Me.nmrLevel.Location = New System.Drawing.Point(142, 97)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
+        Me.nmrLevel.ReadOnly = True
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
         Me.nmrLevel.TabIndex = 16
         '
@@ -519,11 +522,11 @@ Partial Class ControlPanel
         Me.btnToHotSeat.BackColor = System.Drawing.Color.Tomato
         Me.btnToHotSeat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnToHotSeat.ForeColor = System.Drawing.Color.Black
-        Me.btnToHotSeat.Location = New System.Drawing.Point(89, 52)
+        Me.btnToHotSeat.Location = New System.Drawing.Point(89, 78)
         Me.btnToHotSeat.Name = "btnToHotSeat"
-        Me.btnToHotSeat.Size = New System.Drawing.Size(86, 22)
+        Me.btnToHotSeat.Size = New System.Drawing.Size(135, 22)
         Me.btnToHotSeat.TabIndex = 49
-        Me.btnToHotSeat.Text = "To Hot Seat"
+        Me.btnToHotSeat.Text = "Reset + Hot Seat"
         Me.btnToHotSeat.UseVisualStyleBackColor = False
         '
         'btnQuit
@@ -688,17 +691,17 @@ Partial Class ControlPanel
         Me.btnTreePr.Text = "PROG. ANIM"
         Me.btnTreePr.UseVisualStyleBackColor = False
         '
-        'btnUnlockSwitch
+        'btnActivateRiskMode
         '
-        Me.btnUnlockSwitch.BackColor = System.Drawing.Color.Orange
-        Me.btnUnlockSwitch.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnUnlockSwitch.ForeColor = System.Drawing.Color.Black
-        Me.btnUnlockSwitch.Location = New System.Drawing.Point(197, 113)
-        Me.btnUnlockSwitch.Name = "btnUnlockSwitch"
-        Me.btnUnlockSwitch.Size = New System.Drawing.Size(101, 22)
-        Me.btnUnlockSwitch.TabIndex = 8
-        Me.btnUnlockSwitch.Text = "RISK MODE OFF"
-        Me.btnUnlockSwitch.UseVisualStyleBackColor = False
+        Me.btnActivateRiskMode.BackColor = System.Drawing.Color.Orange
+        Me.btnActivateRiskMode.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnActivateRiskMode.ForeColor = System.Drawing.Color.Black
+        Me.btnActivateRiskMode.Location = New System.Drawing.Point(11, 113)
+        Me.btnActivateRiskMode.Name = "btnActivateRiskMode"
+        Me.btnActivateRiskMode.Size = New System.Drawing.Size(101, 22)
+        Me.btnActivateRiskMode.TabIndex = 8
+        Me.btnActivateRiskMode.Text = "RISK MODE OFF"
+        Me.btnActivateRiskMode.UseVisualStyleBackColor = False
         '
         'chkShowQuestion
         '
@@ -1042,6 +1045,7 @@ Partial Class ControlPanel
         '
         'grpTV
         '
+        Me.grpTV.Controls.Add(Me.chkShowPlayerList)
         Me.grpTV.Controls.Add(Me.chkShowTotalScore)
         Me.grpTV.Controls.Add(Me.chkShowQuestion)
         Me.grpTV.Location = New System.Drawing.Point(342, 516)
@@ -1050,6 +1054,16 @@ Partial Class ControlPanel
         Me.grpTV.TabIndex = 78
         Me.grpTV.TabStop = False
         Me.grpTV.Text = "TV"
+        '
+        'chkShowPlayerList
+        '
+        Me.chkShowPlayerList.AutoSize = True
+        Me.chkShowPlayerList.Location = New System.Drawing.Point(122, 13)
+        Me.chkShowPlayerList.Name = "chkShowPlayerList"
+        Me.chkShowPlayerList.Size = New System.Drawing.Size(125, 17)
+        Me.chkShowPlayerList.TabIndex = 2
+        Me.chkShowPlayerList.Text = "Show FFF Player List"
+        Me.chkShowPlayerList.UseVisualStyleBackColor = True
         '
         'chkShowTotalScore
         '
@@ -1123,9 +1137,9 @@ Partial Class ControlPanel
         Me.btnResetGame.ForeColor = System.Drawing.Color.White
         Me.btnResetGame.Location = New System.Drawing.Point(89, 27)
         Me.btnResetGame.Name = "btnResetGame"
-        Me.btnResetGame.Size = New System.Drawing.Size(86, 22)
+        Me.btnResetGame.Size = New System.Drawing.Size(135, 22)
         Me.btnResetGame.TabIndex = 86
-        Me.btnResetGame.Text = "Reset Game"
+        Me.btnResetGame.Text = "Reset"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
         'btnStopAudio
@@ -1144,15 +1158,27 @@ Partial Class ControlPanel
         '
         Me.tmrLifelineUpdate.Interval = 500
         '
+        'btnSet2ndSafeNet
+        '
+        Me.btnSet2ndSafeNet.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.btnSet2ndSafeNet.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSet2ndSafeNet.Location = New System.Drawing.Point(118, 113)
+        Me.btnSet2ndSafeNet.Name = "btnSet2ndSafeNet"
+        Me.btnSet2ndSafeNet.Size = New System.Drawing.Size(123, 22)
+        Me.btnSet2ndSafeNet.TabIndex = 88
+        Me.btnSet2ndSafeNet.Text = "SET 2nd SAFE NET"
+        Me.btnSet2ndSafeNet.UseVisualStyleBackColor = False
+        '
         'ControlPanel
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(633, 575)
+        Me.Controls.Add(Me.btnSet2ndSafeNet)
         Me.Controls.Add(Me.btnStopAudio)
         Me.Controls.Add(Me.btnResetGame)
-        Me.Controls.Add(Me.btnUnlockSwitch)
+        Me.Controls.Add(Me.btnActivateRiskMode)
         Me.Controls.Add(Me.grpHostMessages)
         Me.Controls.Add(Me.btnToHotSeat)
         Me.Controls.Add(Me.grpTV)
@@ -1280,7 +1306,7 @@ Partial Class ControlPanel
     Friend WithEvents grpMain As GroupBox
     Friend WithEvents grpTV As GroupBox
     Friend WithEvents btnLL4 As Button
-    Friend WithEvents btnUnlockSwitch As Button
+    Friend WithEvents btnActivateRiskMode As Button
     Friend WithEvents grpATAInfo As GroupBox
     Friend WithEvents lblATA_D As Label
     Friend WithEvents lblATA_C As Label
@@ -1313,4 +1339,6 @@ Partial Class ControlPanel
     Friend WithEvents FastestFingerFirstToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents btnStopAudio As Button
     Friend WithEvents tmrLifelineUpdate As Timer
+    Friend WithEvents btnSet2ndSafeNet As Button
+    Friend WithEvents chkShowPlayerList As CheckBox
 End Class

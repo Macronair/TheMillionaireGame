@@ -15,19 +15,16 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <ShouldCreateLogs>True</ShouldCreateLogs>
     <AdvancedSettingsExpanded>False</AdvancedSettingsExpanded>
-    <UpdateAssemblyVersion>False</UpdateAssemblyVersion>
-    <UpdateAssemblyFileVersion>False</UpdateAssemblyFileVersion>
-    <UpdateAssemblyInfoVersion>False</UpdateAssemblyInfoVersion>
+    <UpdateAssemblyVersion>True</UpdateAssemblyVersion>
+    <UpdateAssemblyFileVersion>True</UpdateAssemblyFileVersion>
+    <UpdateAssemblyInfoVersion>True</UpdateAssemblyInfoVersion>
     <UpdatePackageVersion>False</UpdatePackageVersion>
     <AssemblyInfoVersionType>SettingsVersion</AssemblyInfoVersionType>
     <InheritWinAppVersionFrom>AssemblyVersion</InheritWinAppVersionFrom>
     <TargetFrameworkProfile />
-    <AssemblyVersionSettings>
-    </AssemblyVersionSettings>
-    <AssemblyFileVersionSettings>
-    </AssemblyFileVersionSettings>
-    <AssemblyInfoVersionSettings>
-    </AssemblyInfoVersionSettings>
+    <AssemblyVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyVersionSettings>
+    <AssemblyFileVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyFileVersionSettings>
+    <AssemblyInfoVersionSettings>None.None.NoneWithAutoReset.Increment</AssemblyInfoVersionSettings>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -38,13 +35,15 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ProductName>Het TeamDJG Toernooi</ProductName>
-    <PublisherName>TeamDJG</PublisherName>
-    <SuiteName>Het TeamDJG Toernooi</SuiteName>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>The Millionaire Game</ProductName>
+    <PublisherName>Macronair</PublisherName>
+    <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.1.753.0</ApplicationVersion>
+    <ApplicationVersion>1.2.0.946</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -131,7 +130,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Source_Scripts\Classes\Controls\MPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Source_Scripts\Classes\Game\FastestFinger\Time.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\GameModes\modeFree.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\MoneyTreeCore.vb" />
+    <Compile Include="Source_Scripts\Classes\Game\RandomContestant.vb" />
+    <Compile Include="Source_Scripts\Classes\Hotkey.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\HotkeySettings.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\MoneyTreeSettings.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\PlayerBackground.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\Textures\QuestionStrap.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\ApplicationSettings.vb" />
     <Compile Include="Source_Scripts\Classes\GameResolution.vb" />
     <Compile Include="Source_Scripts\Classes\Game\GameModes\modeRisk.vb" />
@@ -146,6 +156,7 @@
     <Compile Include="Source_Scripts\Lifelines\LifelineHost.vb" />
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\SQLInfo.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -201,7 +212,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Source_Scripts\QDatabase.vb" />
+    <Compile Include="Source_Scripts\DatabaseAndSettings\QDatabase.vb" />
     <Compile Include="Source_Scripts\Classes\Game\Game.vb" />
     <Compile Include="Source_Scripts\Sound Engine\SOUND.vb" />
     <Compile Include="Windows\General\TVControlPnl1080.Designer.vb">
@@ -214,6 +225,12 @@
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </Compile>
     <Compile Include="Windows\General\TVControlPnl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\General\TVControlPnl720.Designer.vb">
+      <DependentUpon>TVControlPnl720.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\General\TVControlPnl720.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Windows\Options\HostMessages.Designer.vb">
@@ -238,6 +255,12 @@
       <DependentUpon>OptionsSelectSound.vb</DependentUpon>
     </Compile>
     <Compile Include="Windows\Options\OptionsSelectSound.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Windows\Options\SQLLogin.Designer.vb">
+      <DependentUpon>SQLLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Options\SQLLogin.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -272,6 +295,9 @@
     <EmbeddedResource Include="Windows\General\TVControlPnl.resx">
       <DependentUpon>TVControlPnl.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Windows\General\TVControlPnl720.resx">
+      <DependentUpon>TVControlPnl720.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\HostMessages.resx">
       <DependentUpon>HostMessages.vb</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +309,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\Options\OptionsSelectSound.resx">
       <DependentUpon>OptionsSelectSound.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\Options\SQLLogin.resx">
+      <DependentUpon>SQLLogin.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -423,6 +452,91 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
+    <None Include="Resources\05_FFF.png" />
+    <None Include="Resources\04_FFF.png" />
+    <None Include="Resources\02_FFF.png" />
+    <None Include="Resources\01_FFF.png" />
+    <None Include="Resources\ll_timer.png" />
+    <None Include="Resources\04_Tree.png" />
+    <None Include="Resources\03_Tree.png" />
+    <None Include="Resources\02_Tree.png" />
+    <None Include="Resources\01_Tree.png" />
+    <None Include="Resources\WinStrap_01.png" />
+    <None Include="Resources\WinStrap_02.png" />
+    <None Include="Resources\WinStrap_03.png" />
+    <None Include="Resources\WinStrap_04.png" />
+    <None Include="Resources\WinStrap_05.png" />
+    <None Include="Resources\WinStrap_06.png" />
+    <None Include="Resources\WinStrap_07.png" />
+    <None Include="Resources\999_Tree_01.png" />
+    <None Include="Resources\999_Tree_02.png" />
+    <None Include="Resources\999_Tree_03.png" />
+    <None Include="Resources\999_Tree_04.png" />
+    <None Include="Resources\999_Tree_05.png" />
+    <None Include="Resources\999_Tree_06.png" />
+    <None Include="Resources\999_Tree_07.png" />
+    <None Include="Resources\999_Tree_08.png" />
+    <None Include="Resources\999_Tree_09.png" />
+    <None Include="Resources\999_Tree_10.png" />
+    <None Include="Resources\999_Tree_11.png" />
+    <None Include="Resources\999_Tree_12.png" />
+    <None Include="Resources\999_Tree_13.png" />
+    <None Include="Resources\999_Tree_14.png" />
+    <None Include="Resources\999_Tree_15.png" />
+    <None Include="Resources\999_Tree_All.png" />
+    <None Include="Resources\05_Answer_R_Correct.png" />
+    <None Include="Resources\05_Answer_L_Correct.png" />
+    <None Include="Resources\05_Question_Strap.png" />
+    <None Include="Resources\05_Answer_R_Normal.png" />
+    <None Include="Resources\05_Answer_R_Final.png" />
+    <None Include="Resources\05_Answer_L_Normal.png" />
+    <None Include="Resources\05_Answer_L_Final.png" />
+    <None Include="Resources\04_Question_Strap.png" />
+    <None Include="Resources\04_Answer_R_Normal.png" />
+    <None Include="Resources\04_Answer_R_Final.png" />
+    <None Include="Resources\04_Answer_R_Correct.png" />
+    <None Include="Resources\04_Answer_L_Normal.png" />
+    <None Include="Resources\04_Answer_L_Final.png" />
+    <None Include="Resources\04_Answer_L_Correct.png" />
+    <None Include="Resources\03_Question_Strap.png" />
+    <None Include="Resources\03_Answer_R_Normal.png" />
+    <None Include="Resources\03_Answer_R_Final.png" />
+    <None Include="Resources\03_Answer_R_Correct.png" />
+    <None Include="Resources\03_Answer_L_Normal.png" />
+    <None Include="Resources\03_Answer_L_Final.png" />
+    <None Include="Resources\03_Answer_L_Correct.png" />
+    <None Include="Resources\02_Question_Strap.png" />
+    <None Include="Resources\02_Answer_R_Normal.png" />
+    <None Include="Resources\02_Answer_R_Final.png" />
+    <None Include="Resources\02_Answer_R_Correct.png" />
+    <None Include="Resources\02_Answer_L_Normal.png" />
+    <None Include="Resources\02_Answer_L_Final.png" />
+    <None Include="Resources\02_Answer_L_Correct.png" />
+    <None Include="Resources\01_Question_Strap.png" />
+    <None Include="Resources\01_Answer_R_Normal.png" />
+    <None Include="Resources\01_Answer_R_Final.png" />
+    <None Include="Resources\01_Answer_R_Correct.png" />
+    <None Include="Resources\01_Answer_L_Normal.png" />
+    <None Include="Resources\01_Answer_L_Final.png" />
+    <None Include="Resources\01_Answer_L_Correct.png" />
+    <None Include="Resources\Question_Strap.png" />
+    <None Include="Resources\mg_tree_all.png" />
+    <None Include="Resources\mg_tree_15.png" />
+    <None Include="Resources\mg_tree_14.png" />
+    <None Include="Resources\mg_tree_13.png" />
+    <None Include="Resources\mg_tree_12.png" />
+    <None Include="Resources\mg_tree_11.png" />
+    <None Include="Resources\mg_tree_10.png" />
+    <None Include="Resources\mg_tree_09.png" />
+    <None Include="Resources\mg_tree_08.png" />
+    <None Include="Resources\mg_tree_07.png" />
+    <None Include="Resources\mg_tree_06.png" />
+    <None Include="Resources\mg_tree_05.png" />
+    <None Include="Resources\mg_tree_04.png" />
+    <None Include="Resources\mg_tree_03.png" />
+    <None Include="Resources\mg_tree_02.png" />
+    <None Include="Resources\mg_tree_01.png" />
+    <None Include="Resources\mg_tree_00.png" />
     <None Include="Resources\triangle.png" />
     <None Include="Resources\folder.png" />
     <None Include="Resources\sound.png" />
@@ -470,22 +584,6 @@
     <None Include="Resources\1_tree_2.png" />
     <None Include="Resources\1_tree_1.png" />
     <None Include="Resources\1_tree_0.png" />
-    <None Include="Resources\0_tree_15.png" />
-    <None Include="Resources\0_tree_14.png" />
-    <None Include="Resources\0_tree_13.png" />
-    <None Include="Resources\0_tree_12.png" />
-    <None Include="Resources\0_tree_11.png" />
-    <None Include="Resources\0_tree_10.png" />
-    <None Include="Resources\0_tree_9.png" />
-    <None Include="Resources\0_tree_8.png" />
-    <None Include="Resources\0_tree_7.png" />
-    <None Include="Resources\0_tree_6.png" />
-    <None Include="Resources\0_tree_5.png" />
-    <None Include="Resources\0_tree_4.png" />
-    <None Include="Resources\0_tree_3.png" />
-    <None Include="Resources\0_tree_2.png" />
-    <None Include="Resources\0_tree_1.png" />
-    <None Include="Resources\0_tree_0.png" />
     <None Include="Resources\36973.png" />
     <None Include="Resources\tree_0.png" />
     <None Include="Resources\newtree.png" />
@@ -563,7 +661,19 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Source_Scripts\Skins\" />
+    <Folder Include="Windows\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="logo21.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Auto</PublishState>
+      <IncludeHash>False</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

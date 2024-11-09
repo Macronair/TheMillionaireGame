@@ -4,12 +4,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MillionaireGameQEditor")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("The Millionaire Game Questions Editor")]
+[assembly: AssemblyDescription("The Millionaire Game Questions Editor")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MillionaireGameQEditor")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyProduct("The Millionaire Game Questions Editor")]
+[assembly: AssemblyCopyright("Copyright ©  2024")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -31,7 +31,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.183.2233")]
-[assembly: AssemblyFileVersion("1.0.183.2233")]
+[assembly: AssemblyVersion("1.0.187.2233")]
+[assembly: AssemblyFileVersion("1.0.187.2233")]
 
-[assembly: AssemblyInformationalVersion("0.0.120.2233")]
+[assembly: AssemblyInformationalVersion("0.0.124.2233")]

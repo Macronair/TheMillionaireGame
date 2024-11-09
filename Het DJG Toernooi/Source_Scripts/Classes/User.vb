@@ -4,6 +4,35 @@ Public Class User
 
     Public Shared a As Integer = 0
     Shared snd As New SOUND
+    Shared generateimg As Windows.Forms.Timer
+
+    Public Sub New()
+
+    End Sub
+
+    Shared Sub GenerateIMG_Tick()
+        MoneyTreeCore.GenerateImages()
+
+        LifelineManager.CurrentActive = 0
+        LifelineManager.EnableLifeline(1, True)
+        LifelineManager.EnableLifeline(2, True)
+        LifelineManager.EnableLifeline(3, True)
+        LifelineManager.EnableLifeline(4, True)
+
+        LifelineManager.UnlockLifeline(1)
+        LifelineManager.UnlockLifeline(2)
+        LifelineManager.UnlockLifeline(3)
+        LifelineManager.UnlockLifeline(4)
+
+        LifelineHost.used = False
+
+        If MoneyTreeSettings.TreeData.SafeNet_FreeMode = False Then
+            Game.ChangeMode(0)
+        End If
+
+        Game.ChangeLevel(0)
+        generateimg.Stop()
+    End Sub
 
     Public Shared Sub ToHotSeat()
         If a = 0 Then
@@ -28,28 +57,22 @@ Public Class User
     End Sub
 
     Public Shared Sub ResetGame()
+        generateimg = New Windows.Forms.Timer()
+        generateimg.Interval = 500 'Timer will trigger one second after start
+        AddHandler generateimg.Tick, AddressOf GenerateIMG_Tick 'Timer will call this sub when done
+        generateimg.Start()
+
         Game.firstQuestion = True
-        Game.level = 0
         ControlPanel.nmrLevel.Value = 0
         Game.SetValues()
         Question.useMusic = False
         Game.walkaway = False
+        Game.freeSafetyNetSet = False
+        Game.freeSafetyNetAt = 0
 
         ControlPanel.chkShowQuestion.Checked = False
         ControlPanel.chkShowTotalScore.Checked = False
 
-        LifelineManager.CurrentActive = 0
-        LifelineManager.EnableLifeline(1, True)
-        LifelineManager.EnableLifeline(2, True)
-        LifelineManager.EnableLifeline(3, True)
-        LifelineManager.EnableLifeline(4, True)
-
-        LifelineManager.UnlockLifeline(1)
-        LifelineManager.UnlockLifeline(2)
-        LifelineManager.UnlockLifeline(3)
-        LifelineManager.UnlockLifeline(4)
-
-        LifelineHost.used = False
         HostScreen.lblAnswer.Visible = True
 
         ControlPanel.txtQuestion.Text = ""
@@ -109,18 +132,18 @@ Public Class User
         HostScreen.txtB.ForeColor = Color.White
         HostScreen.txtC.ForeColor = Color.White
         HostScreen.txtD.ForeColor = Color.White
-        HostScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        HostScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-        HostScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        HostScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+        HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+        HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+        HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
         GuestScreen.txtA.ForeColor = Color.White
         GuestScreen.txtB.ForeColor = Color.White
         GuestScreen.txtC.ForeColor = Color.White
         GuestScreen.txtD.ForeColor = Color.White
-        GuestScreen.pnlA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        GuestScreen.pnlB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
-        GuestScreen.pnlC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
-        GuestScreen.pnlD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        GuestScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(2)
+        GuestScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(3)
+        GuestScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(2)
+        GuestScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(3)
         HostScreen.lblWalkedAway.ForeColor = Color.Black
 
         ControlPanel.lblATA_A.Text = "A: 0"
@@ -139,8 +162,6 @@ Public Class User
         GuestScreen.txtATAb.Text = ""
         GuestScreen.txtATAc.Text = ""
         GuestScreen.txtATAd.Text = ""
-
-        Game.ChangeMode(0)
         Game.walkaway = False
         Question.act = 0
     End Sub

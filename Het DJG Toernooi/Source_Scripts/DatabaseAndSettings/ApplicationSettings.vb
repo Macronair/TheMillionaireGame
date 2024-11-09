@@ -34,6 +34,7 @@ Public Class AppSettings
     Public Property S_AutoHideQuestionAtPlusOne As Boolean
     Public Property S_AutoShowTotalWinnings As Boolean
     Public Property S_AutoHideQuestionAtWalkAway As Boolean
+    Public Property S_HideAnswerInControlPanelAtNewQ As Boolean
 
     Public Property FFF_Port As Integer
 
@@ -78,6 +79,8 @@ Public Class AppSettings
     Public Property snd_F_Order4 As String
     Public Property snd_F_WhoWasCorrect As String
     Public Property snd_F_Winner As String
+    Public Property snd_RandomContestantPicking As String
+    Public Property snd_SetSafetyNet As String
     Public Property snd_ATA_Start As String
     Public Property snd_ATA_Voting As String
     Public Property snd_ATA_End As String
@@ -148,6 +151,7 @@ Public Class AppSettings
 
     Public Property snd_Q1to4Correct As String
     Public Property snd_Q5Correct As String
+    Public Property snd_Q5Correct_R As String
     Public Property snd_Q6Correct As String
     Public Property snd_Q7Correct As String
     Public Property snd_Q8Correct As String
@@ -197,22 +201,10 @@ Public Class Profile
             Options.Lifeline3_available = loadedvalues.Lifeline3_available
             Options.Lifeline4_available = loadedvalues.Lifeline4_available
 
-            TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
             ControlPanel.btnLifeline1.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
             ControlPanel.btnLifeline2.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
             ControlPanel.btnLifeline3.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
             ControlPanel.btnLifeline4.BackgroundImage = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
-            HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
-            GuestScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline1)
-            GuestScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline2)
-            GuestScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline3)
-            GuestScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(loadedvalues.Lifeline4)
 
             Options.WinningStrapTexture = loadedvalues.WinningStrapTexture
             Options.QuestionsTexture = loadedvalues.QuestionsTexture
@@ -235,6 +227,7 @@ Public Class Profile
             Options.S_AutoHideQuestionAtPlusOne = loadedvalues.S_AutoHideQuestionAtPlusOne
             Options.S_AutoShowTotalWinnings = loadedvalues.S_AutoShowTotalWinnings
             Options.S_AutoHideQuestionAtWalkAway = loadedvalues.S_AutoHideQuestionAtWalkAway
+            Options.S_HideAnswerInControlPanelAtNewQ = loadedvalues.S_HideAnswerInControlPanelAtNewQ
 
             Options.FFF_Port = loadedvalues.FFF_Port
 
@@ -270,6 +263,8 @@ Public Class Profile
             Options.snd_F_Order4 = loadedvalues.snd_F_Order4
             Options.snd_F_WhoWasCorrect = loadedvalues.snd_F_WhoWasCorrect
             Options.snd_F_Winner = loadedvalues.snd_F_Winner
+            Options.snd_RandomContestantPicking = loadedvalues.snd_RandomContestantPicking
+            Options.snd_SetSafetyNet = loadedvalues.snd_SetSafetyNet
             Options.snd_ATA_Start = loadedvalues.snd_ATA_Start
             Options.snd_ATA_Voting = loadedvalues.snd_ATA_Voting
             Options.snd_ATA_End = loadedvalues.snd_ATA_End
@@ -341,6 +336,7 @@ Public Class Profile
 
             Options.snd_Q1to4Correct = loadedvalues.snd_Q1to4Correct
             Options.snd_Q5Correct = loadedvalues.snd_Q5Correct
+            Options.snd_Q5Correct_R = loadedvalues.snd_Q5Correct_R
             Options.snd_Q6Correct = loadedvalues.snd_Q6Correct
             Options.snd_Q7Correct = loadedvalues.snd_Q7Correct
             Options.snd_Q8Correct = loadedvalues.snd_Q8Correct
@@ -402,6 +398,7 @@ Public Class Profile
         Options.S_AutoHideQuestionAtPlusOne = True
         Options.S_AutoShowTotalWinnings = True
         Options.S_AutoHideQuestionAtWalkAway = True
+        Options.S_HideAnswerInControlPanelAtNewQ = False
 
         Options.FFF_Port = 3818
 
@@ -437,6 +434,8 @@ Public Class Profile
         Options.snd_F_Order4 = "fastest_finger_answer_correct_4.mp3"
         Options.snd_F_WhoWasCorrect = "fastest_finger_reveal_times.mp3"
         Options.snd_F_Winner = "fastest_finger_winner.mp3"
+        Options.snd_RandomContestantPicking = "pick_random_contestant.mp3"
+        Options.snd_SetSafetyNet = "set_safety_net.mp3"
         Options.snd_ATA_Start = "ata_start.mp3"
         Options.snd_ATA_Voting = "ata_vote.mp3"
         Options.snd_ATA_End = "ata_end.mp3"
@@ -507,6 +506,7 @@ Public Class Profile
 
         Options.snd_Q1to4Correct = "q1_to_q4_correct.mp3"
         Options.snd_Q5Correct = "q5_correct.mp3"
+        Options.snd_Q5Correct_R = "q5_correct_2.mp3"
         Options.snd_Q6Correct = "q6_correct.mp3"
         Options.snd_Q7Correct = "q7_correct.mp3"
         Options.snd_Q8Correct = "q8_correct.mp3"
@@ -567,6 +567,7 @@ Public Class Profile
         Options.S_AutoHideQuestionAtPlusOne = OptionsScreen.chkAutoHideQuestionAtPlusOne.Checked
         Options.S_AutoShowTotalWinnings = OptionsScreen.chkAutoShowTotalWinnings.Checked
         Options.S_AutoHideQuestionAtWalkAway = OptionsScreen.chkAutoHideQuestionAtWalkAway.Checked
+        Options.S_HideAnswerInControlPanelAtNewQ = OptionsScreen.chkHideAnswerOnControlPanelWhenNewQuestion.Checked
 
         Options.FFF_Port = OptionsScreen.nmrFFFPortNumber.Value
 
@@ -602,6 +603,8 @@ Public Class Profile
         Options.snd_F_Order4 = OptionsScreen.txtSndFOrder4.Text
         Options.snd_F_WhoWasCorrect = OptionsScreen.txtSndFWhoWasCorrect.Text
         Options.snd_F_Winner = OptionsScreen.txtSndFWinner.Text
+        Options.snd_RandomContestantPicking = OptionsScreen.txtSndRandomContestant.Text
+        Options.snd_SetSafetyNet = OptionsScreen.txtSndSetSafetyNet.Text
         Options.snd_ATA_Start = OptionsScreen.txtSndATAStart.Text
         Options.snd_ATA_Voting = OptionsScreen.txtSndATAVoting.Text
         Options.snd_ATA_End = OptionsScreen.txtSndATAEnd.Text
@@ -673,6 +676,7 @@ Public Class Profile
 
         Options.snd_Q1to4Correct = OptionsScreen.txtSndQ1to4Correct.Text
         Options.snd_Q5Correct = OptionsScreen.txtSndQ5Correct.Text
+        Options.snd_Q5Correct_R = OptionsScreen.txtSndQ5RCorrect.Text
         Options.snd_Q6Correct = OptionsScreen.txtSndQ6Correct.Text
         Options.snd_Q7Correct = OptionsScreen.txtSndQ7Correct.Text
         Options.snd_Q8Correct = OptionsScreen.txtSndQ8Correct.Text

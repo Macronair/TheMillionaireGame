@@ -58,6 +58,9 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.importQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fromOldDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fromCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportQuestionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toCSVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuControls = new System.Windows.Forms.MenuStrip();
             this.tbLevel.SuspendLayout();
             this.tbLevel1.SuspendLayout();
@@ -285,7 +288,8 @@
             this.tsmenuActions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resetUsedQuestionsToolStripMenuItem,
             this.toolStripMenuItem2,
-            this.importQuestionsToolStripMenuItem});
+            this.importQuestionsToolStripMenuItem,
+            this.exportQuestionsToolStripMenuItem});
             this.tsmenuActions.Name = "tsmenuActions";
             this.tsmenuActions.Size = new System.Drawing.Size(59, 20);
             this.tsmenuActions.Text = "Actions";
@@ -329,7 +333,8 @@
             // importQuestionsToolStripMenuItem
             // 
             this.importQuestionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fromOldDatabaseToolStripMenuItem});
+            this.fromOldDatabaseToolStripMenuItem,
+            this.fromCSVToolStripMenuItem});
             this.importQuestionsToolStripMenuItem.Name = "importQuestionsToolStripMenuItem";
             this.importQuestionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
             this.importQuestionsToolStripMenuItem.Text = "Import Questions";
@@ -340,6 +345,28 @@
             this.fromOldDatabaseToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.fromOldDatabaseToolStripMenuItem.Text = "From old database...";
             this.fromOldDatabaseToolStripMenuItem.Click += new System.EventHandler(this.fromOldDatabaseToolStripMenuItem_Click);
+            // 
+            // fromCSVToolStripMenuItem
+            // 
+            this.fromCSVToolStripMenuItem.Name = "fromCSVToolStripMenuItem";
+            this.fromCSVToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.fromCSVToolStripMenuItem.Text = "From CSV...";
+            this.fromCSVToolStripMenuItem.Click += new System.EventHandler(this.fromCSVToolStripMenuItem_Click);
+            // 
+            // exportQuestionsToolStripMenuItem
+            // 
+            this.exportQuestionsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toCSVToolStripMenuItem});
+            this.exportQuestionsToolStripMenuItem.Name = "exportQuestionsToolStripMenuItem";
+            this.exportQuestionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.exportQuestionsToolStripMenuItem.Text = "Export Questions";
+            // 
+            // toCSVToolStripMenuItem
+            // 
+            this.toCSVToolStripMenuItem.Name = "toCSVToolStripMenuItem";
+            this.toCSVToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.toCSVToolStripMenuItem.Text = "To CSV...";
+            this.toCSVToolStripMenuItem.Click += new System.EventHandler(this.toCSVToolStripMenuItem_Click);
             // 
             // menuControls
             // 
@@ -413,5 +440,8 @@
         private System.Windows.Forms.ToolStripMenuItem importQuestionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem fromOldDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem atLevelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportQuestionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem toCSVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem fromCSVToolStripMenuItem;
     }
 }

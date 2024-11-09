@@ -1,32 +1,48 @@
-![millionairebanner](https://user-images.githubusercontent.com/43847273/134223706-0bd26069-d8a0-475b-a918-f151a401b819.png)
+![millionairebanner](https://github.com/user-attachments/assets/7cce2260-9a8b-4752-9fd8-060e4ee42450)
 
 # The Millionaire Game
-A custom game controller software like WWTBAM.
+Welcome to The Millionaire Game! A self-written application based on the popular TV-show 'Who Wants to be a Millionaire'.
 
 ## Introduction
-This project began in the summer of 2017 for a YouTube series called 'Het DJG Toernooi' (The DJG Tournament). After couple of livestreams and video's, the project discontinued in late 2018.
-
+This project began in the summer of 2017 for a YouTube series/project. Then with the project name 'Het DJG Toernooi' (The DJG Tournament) which was partly based on the name of the channel.
+Because we wanted it to be a lot easier to control and play, the idea came to write a application around it to take care of the questions, music and graphics. With the exception of the music and sound, everything else was self designed (which was looking a bit poor and simple)
+But after acouple of livestreams and video's, the project discontinued in late 2018 and developement on the application was halted.
 
 But when the COVID-19 reached the rest of the world in 2020, I restarted this project with a new name called 'The Millionaire Game' and decided to put the source code on GitHub to help other people making their own quiz game with this program.
 This software can be used to run your own Who Wants To Be A Millionaire games. For example at home, on Discord with friends or on a Youtube video/livestream.
+
+Keep in mind that this is not a traditional PC-game, but more a simulator or a game controller. A minimun of 2 people are required to use this correctly (1 host which will ask the questions & 1 contestant which gives the answers).
+The recommended way to play it is as follows:
+- a minimum of 1 computer or laptop (which is capable of connecting multiple monitors)
+- 3 or 4 monitors (1 for the control panel, 1 for the host screen, 1 for the contestant screen and 1 for the TV/Audience screen)
+- 1 person that controls the software via the Control Panel
+- 1 host/quizmaster
+- 1 contestants (or more if you also want to play Fastest Finger First or pick a random contestant by the computer)
+
 There will be new features in the future to play around with. But there are a lot of elements that you can use:
 - Max. 4 lifelines (customizable).
 - Host and Contestant screen.
 - TV/Livestream screen.
 - Fastest Finger First (+ online features) (Windows only).
 - Risk Mode (2nd safety net disabled & extra lifeline(s) can be activated).
-- Compatible with Microsoft SQL Server (Local only).
+- Free Safety Net Mode (2nd safety net can be placed anywhere after the 5th question).
+- Compatible with Microsoft SQL Server (Local & Networked).
 - Easy to use Questions Editor.
 
 New features, releases, suggestions and issues will be documented in this GitHub repository.
 
+## Software Requirements
+To run the Millionaire Game, you also need to install the following software:
+- Microsoft SQL Server Express (2019 or later).
+
 ## How to install and use?
 - Download the latest (or other) release and extract the zip file to the desired folder.
-- Run MillionaireGame.exe
-- When you launch it for the first time, the database file will be created automatically for you.
+- When you want to run the database locally on your computer, you also need to install SQL Server Express.
+- Run MillionaireGame.exe located in the downloaded zip archive.
+- When you launch it for the first time, you can choose where your database is going to be and the application will make the database itself + the tables automatically for you.
 - If you used an older version of the Millionaire Game, you need to transfer the questions to a new database table. A message box will notify you if this is the case.
-- Tweak some settings to what you like (don't forget adding questions if you don't have them already)
-- You are ready to go! Have fun!
+- Tweak some settings to what you like (don't forget adding questions if you don't have them already). Therefore, you can also use the import tool in the Questions Editor.
+- You are ready to go! Have fun playing Millionaire!
 
 ## Extra information
 To use the online features of Fastest Finger First, you need to setup the following:
@@ -77,11 +93,12 @@ The contestant gets two chances to give the correct answer. When this lifeline i
 
 Like the name of the lifeline already suggest, ask the present host to give his/her opinion on what the correct answer could be.
 
-## The Money Tree
-![0_tree_0](https://github.com/Macronair/TheMillionaireGame/assets/43847273/d6df607e-3d9a-460f-8142-7b30fcd71640)
-
 ## Video Demo
-You can watch the demo video of 2023 here below:
+The new demo video is coming soon on my channel:
+
+<img src="https://github.com/user-attachments/assets/cb300932-c31a-42f7-b915-85bd55e2d491" alt="drawing" width="500"/>
+
+You can watch the demo video of 2023 (version 1.1) here below:
 
 [![The Millionaire Game Demo 2023](https://img.youtube.com/vi/NVtr-75A5mc/0.jpg)](https://youtu.be/NVtr-75A5mc)
 
@@ -103,6 +120,13 @@ You can watch the demo video of 2023 here below:
 You can download one of the releases: 
 [here](https://github.com/Maerciez/TheMillionaireGame/releases)
 !
+
+## Some other useful guides
+- Setting up and using a networked SQL Server.
+- Back-up and restore questions.
+- Migrating questions to other database.
+- Writing questions in Excel/CSV + bulk import in application.
+- Using Fastest Finger First
 
 ## Other versions / forks.
 When I was inactive for a while, I noticed on Github that forks were created from this repository.

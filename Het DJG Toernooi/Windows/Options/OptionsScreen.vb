@@ -72,11 +72,42 @@ Public Class OptionsScreen
                 radStrapYellow.Checked = True
                 WinningStrapTexture = 0
             Case 1
-                radStrapGreen.Checked = True
+                radStrapBlackW.Checked = True
                 WinningStrapTexture = 1
             Case 2
-                radStrapBlack.Checked = True
+                radStrapBlackG.Checked = True
                 WinningStrapTexture = 2
+            Case 3
+                radStrapBlackB.Checked = True
+                WinningStrapTexture = 3
+            Case 4
+                radStrapBlue.Checked = True
+                WinningStrapTexture = 4
+            Case 5
+                radStrapPurple.Checked = True
+                WinningStrapTexture = 5
+            Case 6
+                radStrapMillionaireOrig.Checked = True
+                WinningStrapTexture = 6
+        End Select
+
+        QuestionTexture = Profile.Options.QuestionsTexture
+        picQuestionTexture.Image = QuestionStrap.GetTexture(1)
+        picNormalAnswer.Image = QuestionStrap.GetTexture(3)
+        picFinalAnswer.Image = QuestionStrap.GetTexture(5)
+        picCorrectAnswer.Image = QuestionStrap.GetTexture(7)
+
+        Select Case Profile.Options.QuestionsTexture
+            Case 0
+                cmbQuestionTextures.SelectedIndex = 0
+            Case 1
+                cmbQuestionTextures.SelectedIndex = 1
+            Case 2
+                cmbQuestionTextures.SelectedIndex = 2
+            Case 3
+                cmbQuestionTextures.SelectedIndex = 3
+            Case 4
+                cmbQuestionTextures.SelectedIndex = 4
         End Select
 
         UpdateHostMessagesList()
@@ -99,6 +130,7 @@ Public Class OptionsScreen
         chkAutoHideQuestionAtPlusOne.Checked = Profile.Options.S_AutoHideQuestionAtPlusOne
         chkAutoShowTotalWinnings.Checked = Profile.Options.S_AutoShowTotalWinnings
         chkAutoHideQuestionAtWalkAway.Checked = Profile.Options.S_AutoHideQuestionAtWalkAway
+        chkHideAnswerOnControlPanelWhenNewQuestion.Checked = Profile.Options.S_HideAnswerInControlPanelAtNewQ
 
         nmrFFFPortNumber.Value = Profile.Options.FFF_Port
 
@@ -138,6 +170,8 @@ Public Class OptionsScreen
         txtSndFOrder4.Text = Profile.Options.snd_F_Order4
         txtSndFWhoWasCorrect.Text = Profile.Options.snd_F_WhoWasCorrect
         txtSndFWinner.Text = Profile.Options.snd_F_Winner
+        txtSndRandomContestant.Text = Profile.Options.snd_RandomContestantPicking
+        txtSndSetSafetyNet.Text = Profile.Options.snd_SetSafetyNet
 
         txtSndATAStart.Text = Profile.Options.snd_ATA_Start
         txtSndATAVoting.Text = Profile.Options.snd_ATA_Voting
@@ -215,6 +249,7 @@ Public Class OptionsScreen
 
         txtSndQ1to4Correct.Text = Profile.Options.snd_Q1to4Correct
         txtSndQ5Correct.Text = Profile.Options.snd_Q5Correct
+        txtSndQ5RCorrect.Text = Profile.Options.snd_Q5Correct_R
         txtSndQ6Correct.Text = Profile.Options.snd_Q6Correct
         txtSndQ7Correct.Text = Profile.Options.snd_Q7Correct
         txtSndQ8Correct.Text = Profile.Options.snd_Q8Correct
@@ -238,6 +273,54 @@ Public Class OptionsScreen
         txtSndQ13Wrong.Text = Profile.Options.snd_Q13Wrong
         txtSndQ14Wrong.Text = Profile.Options.snd_Q14Wrong
         txtSndQ15Wrong.Text = Profile.Options.snd_Q15Wrong
+
+        nmr_TR_01.Value = MoneyTreeSettings.TreeData.Level_01_Value
+        nmr_TR_02.Value = MoneyTreeSettings.TreeData.Level_02_Value
+        nmr_TR_03.Value = MoneyTreeSettings.TreeData.Level_03_Value
+        nmr_TR_04.Value = MoneyTreeSettings.TreeData.Level_04_Value
+        nmr_TR_05.Value = MoneyTreeSettings.TreeData.Level_05_Value
+        nmr_TR_06.Value = MoneyTreeSettings.TreeData.Level_06_Value
+        nmr_TR_07.Value = MoneyTreeSettings.TreeData.Level_07_Value
+        nmr_TR_08.Value = MoneyTreeSettings.TreeData.Level_08_Value
+        nmr_TR_09.Value = MoneyTreeSettings.TreeData.Level_09_Value
+        nmr_TR_10.Value = MoneyTreeSettings.TreeData.Level_10_Value
+        nmr_TR_11.Value = MoneyTreeSettings.TreeData.Level_11_Value
+        nmr_TR_12.Value = MoneyTreeSettings.TreeData.Level_12_Value
+        nmr_TR_13.Value = MoneyTreeSettings.TreeData.Level_13_Value
+        nmr_TR_14.Value = MoneyTreeSettings.TreeData.Level_14_Value
+        nmr_TR_15.Value = MoneyTreeSettings.TreeData.Level_15_Value
+        trk_TRs1.Value = MoneyTreeSettings.TreeData.SafeNet_01
+        trk_TRs2.Value = MoneyTreeSettings.TreeData.SafeNet_02
+        lbl_TRs1.Text = MoneyTreeSettings.TreeData.SafeNet_01
+        lbl_TRs2.Text = MoneyTreeSettings.TreeData.SafeNet_02
+        Select Case MoneyTreeSettings.TreeData.SafeNet_Risk
+            Case 1
+                rad_TRr1.Checked = True
+                rad_TRr2.Checked = False
+            Case 2
+                rad_TRr2.Checked = True
+                rad_TRr1.Checked = False
+        End Select
+        Select Case MoneyTreeSettings.TreeData.Currency
+            Case "€"
+                rad_CUR_Euro.Checked = True
+            Case "$"
+                rad_CUR_Dollar.Checked = True
+            Case "£"
+                rad_CUR_Pound.Checked = True
+            Case "¥"
+                rad_CUR_Yen.Checked = True
+            Case Else
+                rad_CUR_Other.Checked = True
+                txt_CUR_Other.Text = MoneyTreeSettings.TreeData.Currency
+        End Select
+        Select Case MoneyTreeSettings.TreeData.CurrencyAtSuffix
+            Case True
+                radCPosRight.Checked = True
+            Case False
+                radCPosLeft.Checked = True
+        End Select
+        chkOwnSafetyNet.Checked = MoneyTreeSettings.TreeData.SafeNet_FreeMode
     End Sub
 
 #Region "Sounds"
@@ -256,7 +339,7 @@ Public Class OptionsScreen
     txtSndQ9Final.MouseDoubleClick, txtSndQ9Correct.MouseDoubleClick, txtSndQ9Bed.MouseDoubleClick, txtSndQ8Wrong.MouseDoubleClick, txtSndQ8LD.MouseDoubleClick,
     txtSndQ8Final.MouseDoubleClick, txtSndQ8Correct.MouseDoubleClick, txtSndQ8Bed.MouseDoubleClick, txtSndQ7Wrong.MouseDoubleClick, txtSndQ7LD.MouseDoubleClick,
     txtSndQ7Final.MouseDoubleClick, txtSndQ7Correct.MouseDoubleClick, txtSndQ7Bed.MouseDoubleClick, txtSndQ6Wrong.MouseDoubleClick, txtSndQ6LD.MouseDoubleClick,
-    txtSndQ6Final.MouseDoubleClick, txtSndQ6Correct.MouseDoubleClick, txtSndQ6Bed.MouseDoubleClick, txtSndQ5Final.MouseDoubleClick, txtSndQ5Correct.MouseDoubleClick,
+    txtSndQ6Final.MouseDoubleClick, txtSndQ6Correct.MouseDoubleClick, txtSndQ6Bed.MouseDoubleClick, txtSndQ5Final.MouseDoubleClick, txtSndQ5Correct.MouseDoubleClick, txtSndQ5RCorrect.MouseDoubleClick,
     txtSndQ4Final.MouseDoubleClick, txtSndQ3Final.MouseDoubleClick, txtSndQ2Final.MouseDoubleClick, txtSndQ1to5Wrong.MouseDoubleClick, txtSndQ1to5LD.MouseDoubleClick,
     txtSndQ1to5Bed.MouseDoubleClick, txtSndQ1to4Correct.MouseDoubleClick, txtSndQ1Final.MouseDoubleClick, txtSndQ15Wrong.MouseDoubleClick, txtSndQ15LD.MouseDoubleClick,
     txtSndQ15Final.MouseDoubleClick, txtSndQ15Correct.MouseDoubleClick, txtSndQ15Bed.MouseDoubleClick, txtSndQ14Wrong.MouseDoubleClick, txtSndQ14LD.MouseDoubleClick,
@@ -268,8 +351,8 @@ Public Class OptionsScreen
     txtSndWalkAway1.MouseDoubleClick, txtSndToHotSeatLD.MouseDoubleClick, txtSndToHotSeat.MouseDoubleClick, txtSndSwitchShowCorrect.MouseDoubleClick,
     txtSndSwitchClear.MouseDoubleClick, txtSndSwitchActivate.MouseDoubleClick, txtSndRiskModeActivate.MouseDoubleClick, txtSndP1Start.MouseDoubleClick,
     txtSndP1EndEarly.MouseDoubleClick, txtSndP1Clock.MouseDoubleClick, txtSndOpening.MouseDoubleClick, txtSndLifeline4Ping.MouseDoubleClick,
-    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick,
-    txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
+    txtSndLifeline3Ping.MouseDoubleClick, txtSndLifeline2Ping.MouseDoubleClick, txtSndLifeline1Ping.MouseDoubleClick, txtSndGameOver.MouseDoubleClick, txtSndSetSafetyNet.MouseDoubleClick,
+    txtSndRandomContestant.MouseDoubleClick, txtSndFWinner.MouseDoubleClick, txtSndFWhoWasCorrect.MouseDoubleClick, txtSndFThreeNotes.MouseDoubleClick, txtSndFThinking.MouseDoubleClick,
     txtSndFReadQuestion.MouseDoubleClick, txtSndFReadCorrectOrder.MouseDoubleClick, txtSndFOrder4.MouseDoubleClick, txtSndFOrder3.MouseDoubleClick,
     txtSndFOrder2.MouseDoubleClick, txtSndFOrder1.MouseDoubleClick, txtSndFMeet8.MouseDoubleClick, txtSndFMeet7.MouseDoubleClick, txtSndFMeet6.MouseDoubleClick,
     txtSndFMeet5.MouseDoubleClick, txtSndFMeet4.MouseDoubleClick, txtSndFMeet3.MouseDoubleClick, txtSndFMeet2.MouseDoubleClick, txtSndExplainRules.MouseDoubleClick,
@@ -295,9 +378,19 @@ Public Class OptionsScreen
     Private Sub btnSaveClose_Click(sender As Object, e As EventArgs) Handles btnSaveClose.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        Game.CurrentTree.SaveSettings()
+        Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+        QuestionStrap.LoadTextures()
+        MoneyTreeCore.GenerateImages()
+
+        TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
@@ -306,6 +399,8 @@ Public Class OptionsScreen
 
         Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
+
+        Game.ChangeLevel(Game.level)
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
@@ -316,9 +411,19 @@ Public Class OptionsScreen
     Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
         Game.CurrentProfile.SaveSettings()
         Game.CurrentProfile.LoadSettings()
+        Game.CurrentTree.SaveSettings()
+        Game.CurrentTree.LoadSettings()
 
         TVControlPnl.pnlStrap.BackgroundImage = WinningStrap.GetTexture()
+        TVControlPnl.pnlFFFPlayers.BackgroundImage = PlayerBackground.GetTexture()
         TVControlPnl.lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+        QuestionStrap.LoadTextures()
+        MoneyTreeCore.GenerateImages()
+
+        TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder3.BackgroundImage = QuestionStrap.GetTexture(3)
+        TVControlPnl.pnlFFFOrder4.BackgroundImage = QuestionStrap.GetTexture(3)
 
         LifelineManager.UnlockLifeline(1)
         LifelineManager.UnlockLifeline(2)
@@ -327,6 +432,8 @@ Public Class OptionsScreen
 
         Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
+
+        Game.ChangeLevel(Game.level)
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
@@ -415,6 +522,8 @@ Public Class OptionsScreen
                 picLifeline1.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline1.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline1.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline1.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -432,6 +541,8 @@ Public Class OptionsScreen
                 picLifeline2.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline2.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline2.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline2.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -449,6 +560,8 @@ Public Class OptionsScreen
                 picLifeline3.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline3.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline3.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline3.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -466,6 +579,8 @@ Public Class OptionsScreen
                 picLifeline4.BackgroundImage = My.Resources.ll_5050
             Case "plus_one"
                 picLifeline4.BackgroundImage = My.Resources.ll_plusone
+            Case "phone_a_friend"
+                picLifeline4.BackgroundImage = My.Resources.ll_phone
             Case "switch"
                 picLifeline4.BackgroundImage = My.Resources.ll_switch
             Case "double_dip"
@@ -533,17 +648,49 @@ Public Class OptionsScreen
         End If
     End Sub
 
-    Private Sub radStrapGreen_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapGreen.CheckedChanged
-        If radStrapGreen.Checked Then
+    Private Sub radStrapBlackW_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackW.CheckedChanged
+        If radStrapBlackW.Checked Then
             WinningStrapTexture = 1
             picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
     End Sub
 
-    Private Sub radStrapBlack_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlack.CheckedChanged
-        If radStrapBlack.Checked Then
+    Private Sub radStrapBlackG_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackG.CheckedChanged
+        If radStrapBlackG.Checked Then
             WinningStrapTexture = 2
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapBlackB_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlackB.CheckedChanged
+        If radStrapBlackB.Checked Then
+            WinningStrapTexture = 3
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapBlue_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapBlue.CheckedChanged
+        If radStrapBlue.Checked Then
+            WinningStrapTexture = 4
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapPurple_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapPurple.CheckedChanged
+        If radStrapPurple.Checked Then
+            WinningStrapTexture = 5
+            picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
+            lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
+        End If
+    End Sub
+
+    Private Sub radStrapMillionaireOrig_CheckedChanged(sender As Object, e As EventArgs) Handles radStrapMillionaireOrig.CheckedChanged
+        If radStrapMillionaireOrig.Checked Then
+            WinningStrapTexture = 6
             picWinningStrapTexture.BackgroundImage = WinningStrap.GetTexture(WinningStrapTexture)
             lblWinningStrapTexture.ForeColor = WinningStrap.GetTextureFontColor(WinningStrapTexture)
         End If
@@ -645,6 +792,44 @@ Public Class OptionsScreen
         dtMessages.Columns("Id").Visible = False
         dtMessages.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
         Data.connectionString.Close()
+    End Sub
+
+#End Region
+
+#Region "Question Textures"
+    Private Sub cmbQuestionTextures_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbQuestionTextures.SelectedIndexChanged
+        QuestionTexture = cmbQuestionTextures.SelectedIndex
+
+        picQuestionTexture.Image = QuestionStrap.GetTexture(1, QuestionTexture)
+        picNormalAnswer.Image = QuestionStrap.GetTexture(3, QuestionTexture)
+        picFinalAnswer.Image = QuestionStrap.GetTexture(5, QuestionTexture)
+        picCorrectAnswer.Image = QuestionStrap.GetTexture(7, QuestionTexture)
+    End Sub
+
+    Private Sub btnReconnectToSQL_Click(sender As Object, e As EventArgs) Handles btnReconnectToSQL.Click
+        Try
+            Data.connectionString.Close()
+        Catch ex As Exception
+
+        End Try
+
+        Select Case SQLLogin.ShowDialog()
+            Case DialogResult.OK
+                CoreConsole.Show()
+                Try
+                    Data.CheckDatabase()
+                    MessageBox.Show("Connection established succesfully!", "(Re)connect to SQL Server", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Catch ex As Exception
+                    MessageBox.Show("Error when reconnecting to database:" + vbNewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Finally
+                    Data.connectionString.Close()
+                End Try
+                CoreConsole.Hide()
+            Case DialogResult.Cancel
+                'Nothing
+            Case Else
+                'Nothing
+        End Select
     End Sub
 #End Region
 End Class

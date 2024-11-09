@@ -8,48 +8,48 @@
             If ControlPanel.answer = ControlPanel.lblAnswer.Text Then
                 If ControlPanel.lblAnswer.Text = "A" Then
                     If i = 0 Then
-                        picA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                        picA.BackgroundImage = QuestionStrap.GetTexture(6)
                         i = 1
                     ElseIf i = 1 Then
-                        picA.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+                        picA.BackgroundImage = QuestionStrap.GetTexture(4)
                         i = 0
                     End If
                 End If
                 If ControlPanel.lblAnswer.Text = "B" Then
                     If i = 0 Then
-                        picB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                        picB.BackgroundImage = QuestionStrap.GetTexture(7)
                         i = 1
                     ElseIf i = 1 Then
-                        picB.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+                        picB.BackgroundImage = QuestionStrap.GetTexture(5)
                         i = 0
                     End If
                 End If
                 If ControlPanel.lblAnswer.Text = "C" Then
                     If i = 0 Then
-                        picC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                        picC.BackgroundImage = QuestionStrap.GetTexture(6)
                         i = 1
                     ElseIf i = 1 Then
-                        picC.BackgroundImage = My.Resources._0_Final_Answer_Fill_l
+                        picC.BackgroundImage = QuestionStrap.GetTexture(4)
                         i = 0
                     End If
                 End If
                 If ControlPanel.lblAnswer.Text = "D" Then
                     If i = 0 Then
-                        picD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                        picD.BackgroundImage = QuestionStrap.GetTexture(7)
                         i = 1
                     ElseIf i = 1 Then
-                        picD.BackgroundImage = My.Resources._0_Final_Answer_Fill_r
+                        picD.BackgroundImage = QuestionStrap.GetTexture(5)
                         i = 0
                     End If
                 End If
             Else
                 If ControlPanel.lblAnswer.Text = "A" Then
                     If i = 0 Then
-                        picA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                        picA.BackgroundImage = QuestionStrap.GetTexture(6)
                         txtA.ForeColor = Color.Black
                         i = 1
                     ElseIf i = 1 Then
-                        picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                        picA.BackgroundImage = QuestionStrap.GetTexture(2)
                         txtA.ForeColor = Color.White
                         i = 0
                     End If
@@ -57,10 +57,10 @@
                 If ControlPanel.lblAnswer.Text = "B" Then
                     If i = 0 Then
                         i = 1
-                        picB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                        picB.BackgroundImage = QuestionStrap.GetTexture(7)
                         txtB.ForeColor = Color.Black
                     ElseIf i = 1 Then
-                        picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                        picB.BackgroundImage = QuestionStrap.GetTexture(3)
                         txtB.ForeColor = Color.White
                         i = 0
                     End If
@@ -68,10 +68,10 @@
                 If ControlPanel.lblAnswer.Text = "C" Then
                     If i = 0 Then
                         i = 1
-                        picC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                        picC.BackgroundImage = QuestionStrap.GetTexture(6)
                         txtC.ForeColor = Color.Black
                     ElseIf i = 1 Then
-                        picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+                        picC.BackgroundImage = QuestionStrap.GetTexture(2)
                         txtC.ForeColor = Color.White
                         i = 0
                     End If
@@ -79,10 +79,10 @@
                 If ControlPanel.lblAnswer.Text = "D" Then
                     If i = 0 Then
                         i = 1
-                        picD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                        picD.BackgroundImage = QuestionStrap.GetTexture(7)
                         txtD.ForeColor = Color.Black
                     ElseIf i = 1 Then
-                        picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+                        picD.BackgroundImage = QuestionStrap.GetTexture(3)
                         txtD.ForeColor = Color.White
                         i = 0
                     End If
@@ -92,19 +92,19 @@
         Else
             If ControlPanel.lblAnswer.Text = "A" Then
                 txtA.ForeColor = Color.Black
-                picA.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                picA.BackgroundImage = QuestionStrap.GetTexture(6)
             End If
             If ControlPanel.lblAnswer.Text = "B" Then
                 txtB.ForeColor = Color.Black
-                picB.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                picB.BackgroundImage = QuestionStrap.GetTexture(7)
             End If
             If ControlPanel.lblAnswer.Text = "C" Then
                 txtC.ForeColor = Color.Black
-                picC.BackgroundImage = My.Resources._0_Correct_Answer_Fill_l
+                picC.BackgroundImage = QuestionStrap.GetTexture(6)
             End If
             If ControlPanel.lblAnswer.Text = "D" Then
                 txtD.ForeColor = Color.Black
-                picD.BackgroundImage = My.Resources._0_Correct_Answer_Fill_r
+                picD.BackgroundImage = QuestionStrap.GetTexture(7)
             End If
             strstep = 0
             tmrFlash.Stop()
@@ -115,15 +115,17 @@
     Private Sub tmrStrap_Tick(sender As Object, e As EventArgs) Handles tmrStrap.Tick
         i = 0
         strstep = 0
-        If Game.level = 15 Then
-            lblAmount.Text = "1.000.000"
-            HostScreen.txtWinningStrap.Text = lblAmount.Text
-            GuestScreen.txtWinningStrap.Text = lblAmount.Text
+
+        Game.ChangeLevel(Game.level)
+        If MoneyTreeSettings.TreeData.CurrencyAtSuffix = True Then
+            lblAmount.Text = Game.varCurrent + MoneyTreeSettings.TreeData.Currency
         Else
-            lblAmount.Text = "" + ControlPanel.txtCurrent.Text
-            HostScreen.txtWinningStrap.Text = lblAmount.Text
-            GuestScreen.txtWinningStrap.Text = lblAmount.Text
+            lblAmount.Text = MoneyTreeSettings.TreeData.Currency + Game.varCurrent
         End If
+
+        HostScreen.txtWinningStrap.Text = lblAmount.Text
+        GuestScreen.txtWinningStrap.Text = lblAmount.Text
+
         ControlPanel.chkShowQuestion.Checked = False
         pnlStrap.Visible = True
         txtA.ForeColor = Color.White
@@ -153,5 +155,17 @@
     Private Sub TVControlPnl_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         pnlStrap.BackgroundImage = WinningStrap.GetTexture()
         lblAmount.ForeColor = WinningStrap.GetTextureFontColor()
+    End Sub
+
+    Dim fna As Integer = 1
+    Private Sub tmrAnimateFreeSafeNet_Tick(sender As Object, e As EventArgs) Handles tmrAnimateFreeSafeNet.Tick
+        Select Case fna
+            Case 1
+                picTree.BackgroundImage = MoneyTreeCore.tree_imgrisk(Game.level)
+                fna = 2
+            Case 2
+                picTree.BackgroundImage = MoneyTreeCore.tree_imgnet2
+                fna = 1
+        End Select
     End Sub
 End Class
