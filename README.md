@@ -96,7 +96,7 @@ Like the name of the lifeline already suggest, ask the present host to give his/
 ## Video Demo
 The new demo video is coming soon on my channel:
 
-<img src="https://github.com/user-attachments/assets/cb300932-c31a-42f7-b915-85bd55e2d491" alt="drawing" width="500"/>
+[![The Millionaire Game Demo 2024](https://img.youtube.com/vi/jj5qvg3xTR0/0.jpg)](https://youtu.be/jj5qvg3xTR0)
 
 You can watch the demo video of 2023 (version 1.1) here below:
 
