@@ -128,8 +128,6 @@ You can download one of the releases:
 The guides below hasn't been written yet.
 
 - Setting up and using a networked SQL Server.
-- Back-up and restore questions.
-- Migrating questions to other database.
 - [Import/Export questions with CSV files](https://github.com/Macronair/TheMillionaireGame/blob/master/Guides/Exporting%20and%20Importing%20CSV%20Files.md)
 - Using Fastest Finger First
 
