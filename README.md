@@ -98,24 +98,26 @@ The new demo video is coming soon on my channel:
 
 [![The Millionaire Game Demo 2024](https://img.youtube.com/vi/jj5qvg3xTR0/0.jpg)](https://youtu.be/jj5qvg3xTR0)
 
-You can watch the demo video of 2023 (version 1.1) here below:
-
-[![The Millionaire Game Demo 2023](https://img.youtube.com/vi/NVtr-75A5mc/0.jpg)](https://youtu.be/NVtr-75A5mc)
-
 ## Screenshots
 Screenshots below are from version 1.1!
 New screenshots wil come shortly. ;)
 
 ### Main overview:
-![Schermafbeelding 2023-11-21 224448](https://github.com/Macronair/TheMillionaireGame/assets/43847273/db4cb661-eb36-4cb5-a0cc-332b02385b24)
+![Schermafbeelding 2024-11-26 154703](https://github.com/user-attachments/assets/55c6f566-1108-4ef7-b83c-b76854255f43)
 ### Options Menu:
-![Schermafbeelding 2023-11-21 224557](https://github.com/Macronair/TheMillionaireGame/assets/43847273/323c4648-3d5b-408c-ac8b-80807dd42794)
+![Schermafbeelding 2024-11-26 154730](https://github.com/user-attachments/assets/e3aa6314-f8a7-4890-9a7d-4703356e3e74)
 ### Editing the sound cues:
-![Schermafbeelding 2023-11-21 224658](https://github.com/Macronair/TheMillionaireGame/assets/43847273/38b9ecf5-1919-48ad-a354-23008be36af5)
+![Schermafbeelding 2024-11-26 154846](https://github.com/user-attachments/assets/66eb7051-c3d0-41db-8404-27deeca35e62)
+### Money Tree settings:
+![Schermafbeelding 2024-11-26 154750](https://github.com/user-attachments/assets/b3c98427-0052-46ee-8ab6-3aad389db938)
+### Connect to your own SQL server:
+![Schermafbeelding 2024-11-26 154917](https://github.com/user-attachments/assets/68c1e0ed-ed3e-4b74-a8c2-b1b374d52cd0)
 ### Questions Editor:
 ![Schermafbeelding 2023-11-21 224805](https://github.com/Macronair/TheMillionaireGame/assets/43847273/71c96aed-3a8e-4b25-bc7e-849704ca0330)
 ### A virtual Fastest Finger First session:
-![Schermafbeelding 2023-11-21 224958](https://github.com/Macronair/TheMillionaireGame/assets/43847273/a72fba3f-65b8-4975-bede-92500a3dc4fc)
+![Schermafbeelding 2024-11-26 155440](https://github.com/user-attachments/assets/f46dce82-f3cd-44e8-b811-1031b93cccc1)
+### Picking a random contestant from the list:
+![Schermafbeelding 2024-11-26 155222](https://github.com/user-attachments/assets/33e74c3f-429d-4da4-8027-9936c6fdbce5)
 ### The Fastest FInger First client program:
 ![Schermafbeelding 2023-11-21 225043](https://github.com/Macronair/TheMillionaireGame/assets/43847273/0f539ca6-704b-4598-8868-79b9e05978be)
 
