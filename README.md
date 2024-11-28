@@ -4,8 +4,8 @@
 Welcome to The Millionaire Game! A self-written application based on the popular TV-show 'Who Wants to be a Millionaire'.
 
 ## Introduction
-This project began in the summer of 2017 for a YouTube series/project. Then with the project name 'Het DJG Toernooi' (The DJG Tournament) which was partly based on the name of the channel.
-Because we wanted it to be a lot easier to control and play, the idea came to write a application around it to take care of the questions, music and graphics. With the exception of the music and sound, everything else was self designed (which was looking a bit poor and simple)
+This project began in the summer of 2017 for a YouTube series/project.
+Because we wanted the series/game to be a lot easier to control and play, the idea came to write a application around it to take care of the questions, music and graphics. With the exception of the music and sound, everything else was self designed (which was looking a bit poor and simple)
 But after acouple of livestreams and video's, the project discontinued in late 2018 and developement on the application was halted.
 
 But when the COVID-19 reached the rest of the world in 2020, I restarted this project with a new name called 'The Millionaire Game' and decided to put the source code on GitHub to help other people making their own quiz game with this program.
