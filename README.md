@@ -26,7 +26,7 @@ There will be new features in the future to play around with. But there are a lo
 - Fastest Finger First (+ online features) (Windows only).
 - Risk Mode (2nd safety net disabled & extra lifeline(s) can be activated).
 - Free Safety Net Mode (2nd safety net can be placed anywhere after the 5th question).
-- Compatible with Microsoft SQL Server (Local & Networked).
+- Compatible with Microsoft SQL Server (Local & Remote).
 - Easy to use Questions Editor.
 
 New features, releases, suggestions and issues will be documented in this GitHub repository.
