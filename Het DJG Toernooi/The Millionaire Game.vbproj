@@ -157,6 +157,7 @@
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\SQLInfo.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifelinePhone.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
