@@ -118,14 +118,22 @@
                 Dim font As New Font("Copperplate Gothic Bold", 24, FontStyle.Bold)
                 Dim textColor As Brush
 
-                If IsSafetyNet(position) = True Then
-                    textColor = Brushes.White
-                Else
-                    textColor = Brushes.Gold
+                textColor = Brushes.Gold
+
+                If MoneyTreeSettings.TreeData.SafeNet_FreeMode = False Then
+                    If IsSafetyNet(position) = True Then
+                        textColor = Brushes.White
+                    End If
                 End If
 
-                If ignoresafetylevel = position Then
-                    textColor = Brushes.Gold
+                If MoneyTreeSettings.TreeData.SafeNet_FreeMode = True Then
+                    If position = 5 Then
+                        textColor = Brushes.White
+                    End If
+                Else
+                    If ignoresafetylevel = position Then
+                        textColor = Brushes.Gold
+                    End If
                 End If
 
                 If position = 15 Then
