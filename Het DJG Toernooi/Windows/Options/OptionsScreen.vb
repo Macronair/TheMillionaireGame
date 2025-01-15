@@ -398,7 +398,6 @@ Public Class OptionsScreen
         LifelineManager.UnlockLifeline(4)
 
         Monitor.ApplyScreenSettings()
-        Monitor.ApplyScreenSettings()
 
         Game.ChangeLevel(Game.level)
 

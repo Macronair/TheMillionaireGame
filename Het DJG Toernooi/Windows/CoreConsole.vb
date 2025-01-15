@@ -84,7 +84,6 @@ Public Class CoreConsole
         LogMsgDate("Lauching controller...")
 
         Monitor.ApplyScreenSettings()   ' Apply current screen settings
-        Monitor.ApplyScreenSettings()   ' Apply this again... otherwise some fonts will be glitched out for some reason.
 
         isRunning = True                ' Change main control panel running state to True.
         Me.Hide()                       ' Hide this console window.

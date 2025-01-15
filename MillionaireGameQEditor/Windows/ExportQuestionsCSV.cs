@@ -48,33 +48,33 @@ namespace MillionaireGameQEditor.Windows
                                                 .Replace("\r", "%[NL]%");
                         }
 
-                        switch (outputRegularQ[6])
-                        {
-                            case "Specific":
-                                outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Specific", "1");
-                                break;
-                            case "Range":
-                                outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Range", "2");
-                                break;
-                        }
+                        //switch (outputRegularQ[6])
+                        //{
+                        //    case "Specific":
+                        //        outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Specific", "1");
+                        //        break;
+                        //    case "Range":
+                        //        outputRegularQ[6] = outputRegularQ[6].ToString().Replace("Range", "2");
+                        //        break;
+                        //}
 
-                        switch (outputRegularQ[8])
-                        {
-                            case "Lvl1":
-                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl1", "1");
-                                break;
-                            case "Lvl2":
-                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl2", "2");
-                                break;
-                            case "Lvl3":
-                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl3", "3");
-                                break;
-                            case "Lvl4":
-                                outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl4", "4");
-                                break;
-                            default:
-                                break;
-                        }
+                        //switch (outputRegularQ[8])
+                        //{
+                        //    case "Lvl1":
+                        //        outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl1", "1");
+                        //        break;
+                        //    case "Lvl2":
+                        //        outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl2", "2");
+                        //        break;
+                        //    case "Lvl3":
+                        //        outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl3", "3");
+                        //        break;
+                        //    case "Lvl4":
+                        //        outputRegularQ[8] = outputRegularQ[8].ToString().Replace("Lvl4", "4");
+                        //        break;
+                        //    default:
+                        //        break;
+                        //}
                     }
 
                     // Schrijf de aangepaste waarden naar het bestand

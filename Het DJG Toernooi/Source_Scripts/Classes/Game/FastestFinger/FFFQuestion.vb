@@ -180,7 +180,13 @@
     End Sub
 
     Public Shared Sub Fill()
-        Dim answer As String = FFFServer.correctAnswer
+        Dim answer As String
+        Try
+            answer = FFFServer.correctAnswer
+        Catch ex As Exception
+            answer = ControlPanel.lblAnswer.Text
+            CoreConsole.LogMsgDate("[FFF] Cannot get correct order from main source. Using secondary.")
+        End Try
 
         Dim order1 As String
         Dim order2 As String

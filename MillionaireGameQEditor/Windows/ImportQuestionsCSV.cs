@@ -70,43 +70,46 @@ VALUES(@Question, @A, @B, @C, @D, @Correct, @Level, @Note, @Difficulty_Type, @Le
                                     cmd.Parameters.AddWithValue("@Level", 1);
                                 }
                                 cmd.Parameters.AddWithValue("@Note", values[9]);
-                                switch(values[6])
-                                {
-                                    case "1":
-                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
-                                        break;
-                                    case "2":
-                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
-                                        break;
-                                    case "Specific":
-                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
-                                        break;
-                                    case "Range":
-                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
-                                        break;
-                                    default:
-                                        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
-                                        break;
-                                }
 
-                                switch(values[8])
-                                {
-                                    case "1":
-                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
-                                        break;
-                                    case "2":
-                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
-                                        break;
-                                    case "3":
-                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl3");
-                                        break;
-                                    case "4":
-                                        cmd.Parameters.AddWithValue("@LevelRange", "Lvl4");
-                                        break;
-                                    default:
-                                        cmd.Parameters.AddWithValue("@LevelRange", "");
-                                        break;
-                                }
+                                cmd.Parameters.AddWithValue("@Difficulty_Type", values[6]);
+                                //switch(values[6])
+                                //{
+                                //    case "1":
+                                //        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                //        break;
+                                //    case "2":
+                                //        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
+                                //        break;
+                                //    case "Specific":
+                                //        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                //        break;
+                                //    case "Range":
+                                //        cmd.Parameters.AddWithValue("@Difficulty_Type", "Range");
+                                //        break;
+                                //    default:
+                                //        cmd.Parameters.AddWithValue("@Difficulty_Type", "Specific");
+                                //        break;
+                                //}
+
+                                cmd.Parameters.AddWithValue("@LevelRange", values[8]);
+                                //switch(values[8])
+                                //{
+                                //    case "1":
+                                //        cmd.Parameters.AddWithValue("@LevelRange", "Lvl1");
+                                //        break;
+                                //    case "2":
+                                //        cmd.Parameters.AddWithValue("@LevelRange", "Lvl2");
+                                //        break;
+                                //    case "3":
+                                //        cmd.Parameters.AddWithValue("@LevelRange", "Lvl3");
+                                //        break;
+                                //    case "4":
+                                //        cmd.Parameters.AddWithValue("@LevelRange", "Lvl4");
+                                //        break;
+                                //    default:
+                                //        cmd.Parameters.AddWithValue("@LevelRange", "");
+                                //        break;
+                                //}
 
                                 cmd.ExecuteNonQuery();
                             }
