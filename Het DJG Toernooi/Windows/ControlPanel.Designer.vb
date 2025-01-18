@@ -149,7 +149,7 @@ Partial Class ControlPanel
         Me.txtQuestion.Name = "txtQuestion"
         Me.txtQuestion.ReadOnly = True
         Me.txtQuestion.Size = New System.Drawing.Size(598, 47)
-        Me.txtQuestion.TabIndex = 1
+        Me.txtQuestion.TabIndex = 36
         Me.txtQuestion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'txtA
@@ -162,7 +162,7 @@ Partial Class ControlPanel
         Me.txtA.Name = "txtA"
         Me.txtA.ReadOnly = True
         Me.txtA.Size = New System.Drawing.Size(219, 26)
-        Me.txtA.TabIndex = 2
+        Me.txtA.TabIndex = 38
         '
         'txtC
         '
@@ -174,7 +174,7 @@ Partial Class ControlPanel
         Me.txtC.Name = "txtC"
         Me.txtC.ReadOnly = True
         Me.txtC.Size = New System.Drawing.Size(219, 26)
-        Me.txtC.TabIndex = 4
+        Me.txtC.TabIndex = 42
         '
         'txtD
         '
@@ -186,7 +186,7 @@ Partial Class ControlPanel
         Me.txtD.Name = "txtD"
         Me.txtD.ReadOnly = True
         Me.txtD.Size = New System.Drawing.Size(219, 26)
-        Me.txtD.TabIndex = 5
+        Me.txtD.TabIndex = 44
         '
         'txtB
         '
@@ -198,7 +198,7 @@ Partial Class ControlPanel
         Me.txtB.Name = "txtB"
         Me.txtB.ReadOnly = True
         Me.txtB.Size = New System.Drawing.Size(219, 26)
-        Me.txtB.TabIndex = 2
+        Me.txtB.TabIndex = 40
         '
         'btnSndOpening
         '
@@ -208,7 +208,7 @@ Partial Class ControlPanel
         Me.btnSndOpening.Location = New System.Drawing.Point(11, 27)
         Me.btnSndOpening.Name = "btnSndOpening"
         Me.btnSndOpening.Size = New System.Drawing.Size(75, 22)
-        Me.btnSndOpening.TabIndex = 10
+        Me.btnSndOpening.TabIndex = 1
         Me.btnSndOpening.Text = "Opening"
         Me.btnSndOpening.UseVisualStyleBackColor = False
         '
@@ -220,7 +220,7 @@ Partial Class ControlPanel
         Me.btnLightsDown.Location = New System.Drawing.Point(11, 15)
         Me.btnLightsDown.Name = "btnLightsDown"
         Me.btnLightsDown.Size = New System.Drawing.Size(78, 27)
-        Me.btnLightsDown.TabIndex = 13
+        Me.btnLightsDown.TabIndex = 28
         Me.btnLightsDown.Text = "Lights Down"
         Me.btnLightsDown.UseVisualStyleBackColor = False
         '
@@ -232,7 +232,7 @@ Partial Class ControlPanel
         Me.btnNewQuestion.Location = New System.Drawing.Point(11, 46)
         Me.btnNewQuestion.Name = "btnNewQuestion"
         Me.btnNewQuestion.Size = New System.Drawing.Size(158, 27)
-        Me.btnNewQuestion.TabIndex = 14
+        Me.btnNewQuestion.TabIndex = 30
         Me.btnNewQuestion.Text = "Question"
         Me.btnNewQuestion.UseVisualStyleBackColor = False
         '
@@ -252,7 +252,7 @@ Partial Class ControlPanel
         Me.nmrLevel.Name = "nmrLevel"
         Me.nmrLevel.ReadOnly = True
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
-        Me.nmrLevel.TabIndex = 16
+        Me.nmrLevel.TabIndex = 32
         '
         'btnReveal
         '
@@ -261,7 +261,7 @@ Partial Class ControlPanel
         Me.btnReveal.Location = New System.Drawing.Point(91, 15)
         Me.btnReveal.Name = "btnReveal"
         Me.btnReveal.Size = New System.Drawing.Size(78, 27)
-        Me.btnReveal.TabIndex = 17
+        Me.btnReveal.TabIndex = 29
         Me.btnReveal.Text = "Reveal"
         Me.btnReveal.UseVisualStyleBackColor = False
         '
@@ -273,7 +273,7 @@ Partial Class ControlPanel
         Me.btnWalk.Location = New System.Drawing.Point(219, 15)
         Me.btnWalk.Name = "btnWalk"
         Me.btnWalk.Size = New System.Drawing.Size(78, 27)
-        Me.btnWalk.TabIndex = 18
+        Me.btnWalk.TabIndex = 33
         Me.btnWalk.Text = "Walk Away"
         Me.btnWalk.UseVisualStyleBackColor = False
         '
@@ -285,7 +285,7 @@ Partial Class ControlPanel
         Me.btnCommercial.Location = New System.Drawing.Point(11, 52)
         Me.btnCommercial.Name = "btnCommercial"
         Me.btnCommercial.Size = New System.Drawing.Size(75, 23)
-        Me.btnCommercial.TabIndex = 19
+        Me.btnCommercial.TabIndex = 2
         Me.btnCommercial.Text = "Commercials"
         Me.btnCommercial.UseVisualStyleBackColor = False
         '
@@ -297,7 +297,7 @@ Partial Class ControlPanel
         Me.btnClosing.Location = New System.Drawing.Point(11, 78)
         Me.btnClosing.Name = "btnClosing"
         Me.btnClosing.Size = New System.Drawing.Size(75, 23)
-        Me.btnClosing.TabIndex = 21
+        Me.btnClosing.TabIndex = 3
         Me.btnClosing.Text = "Closing"
         Me.btnClosing.UseVisualStyleBackColor = False
         '
@@ -309,7 +309,7 @@ Partial Class ControlPanel
         Me.txtCorrect.Name = "txtCorrect"
         Me.txtCorrect.ReadOnly = True
         Me.txtCorrect.Size = New System.Drawing.Size(78, 20)
-        Me.txtCorrect.TabIndex = 22
+        Me.txtCorrect.TabIndex = 0
         Me.txtCorrect.Text = "100"
         '
         'txtWrong
@@ -321,7 +321,7 @@ Partial Class ControlPanel
         Me.txtWrong.Name = "txtWrong"
         Me.txtWrong.ReadOnly = True
         Me.txtWrong.Size = New System.Drawing.Size(78, 20)
-        Me.txtWrong.TabIndex = 23
+        Me.txtWrong.TabIndex = 0
         Me.txtWrong.Text = "0"
         '
         'txtCurrent
@@ -332,7 +332,7 @@ Partial Class ControlPanel
         Me.txtCurrent.Name = "txtCurrent"
         Me.txtCurrent.ReadOnly = True
         Me.txtCurrent.Size = New System.Drawing.Size(78, 20)
-        Me.txtCurrent.TabIndex = 24
+        Me.txtCurrent.TabIndex = 0
         Me.txtCurrent.Text = "0"
         '
         'txtDrop
@@ -343,7 +343,7 @@ Partial Class ControlPanel
         Me.txtDrop.Name = "txtDrop"
         Me.txtDrop.ReadOnly = True
         Me.txtDrop.Size = New System.Drawing.Size(78, 20)
-        Me.txtDrop.TabIndex = 25
+        Me.txtDrop.TabIndex = 0
         Me.txtDrop.Text = "0"
         '
         'txtQLeft
@@ -355,7 +355,7 @@ Partial Class ControlPanel
         Me.txtQLeft.Name = "txtQLeft"
         Me.txtQLeft.ReadOnly = True
         Me.txtQLeft.Size = New System.Drawing.Size(78, 20)
-        Me.txtQLeft.TabIndex = 26
+        Me.txtQLeft.TabIndex = 0
         Me.txtQLeft.Text = "15"
         '
         'Label2
@@ -422,7 +422,7 @@ Partial Class ControlPanel
         Me.btnA.Location = New System.Drawing.Point(20, 321)
         Me.btnA.Name = "btnA"
         Me.btnA.Size = New System.Drawing.Size(71, 26)
-        Me.btnA.TabIndex = 34
+        Me.btnA.TabIndex = 37
         Me.btnA.Text = "A"
         Me.btnA.UseVisualStyleBackColor = False
         '
@@ -434,7 +434,7 @@ Partial Class ControlPanel
         Me.btnB.Location = New System.Drawing.Point(547, 321)
         Me.btnB.Name = "btnB"
         Me.btnB.Size = New System.Drawing.Size(71, 26)
-        Me.btnB.TabIndex = 35
+        Me.btnB.TabIndex = 39
         Me.btnB.Text = "B"
         Me.btnB.UseVisualStyleBackColor = False
         '
@@ -446,7 +446,7 @@ Partial Class ControlPanel
         Me.btnC.Location = New System.Drawing.Point(20, 353)
         Me.btnC.Name = "btnC"
         Me.btnC.Size = New System.Drawing.Size(71, 26)
-        Me.btnC.TabIndex = 36
+        Me.btnC.TabIndex = 41
         Me.btnC.Text = "C"
         Me.btnC.UseVisualStyleBackColor = False
         '
@@ -458,7 +458,7 @@ Partial Class ControlPanel
         Me.btnD.Location = New System.Drawing.Point(547, 353)
         Me.btnD.Name = "btnD"
         Me.btnD.Size = New System.Drawing.Size(71, 26)
-        Me.btnD.TabIndex = 37
+        Me.btnD.TabIndex = 43
         Me.btnD.Text = "D"
         Me.btnD.UseVisualStyleBackColor = False
         '
@@ -470,7 +470,7 @@ Partial Class ControlPanel
         Me.chkLifeline3Unused.Location = New System.Drawing.Point(150, 55)
         Me.chkLifeline3Unused.Name = "chkLifeline3Unused"
         Me.chkLifeline3Unused.Size = New System.Drawing.Size(63, 17)
-        Me.chkLifeline3Unused.TabIndex = 39
+        Me.chkLifeline3Unused.TabIndex = 23
         Me.chkLifeline3Unused.Text = "Unused"
         Me.chkLifeline3Unused.UseVisualStyleBackColor = True
         '
@@ -482,7 +482,7 @@ Partial Class ControlPanel
         Me.chkLifeline2Unused.Location = New System.Drawing.Point(80, 55)
         Me.chkLifeline2Unused.Name = "chkLifeline2Unused"
         Me.chkLifeline2Unused.Size = New System.Drawing.Size(63, 17)
-        Me.chkLifeline2Unused.TabIndex = 40
+        Me.chkLifeline2Unused.TabIndex = 22
         Me.chkLifeline2Unused.Text = "Unused"
         Me.chkLifeline2Unused.UseVisualStyleBackColor = True
         '
@@ -494,7 +494,7 @@ Partial Class ControlPanel
         Me.chkLifeline4Unused.Location = New System.Drawing.Point(218, 55)
         Me.chkLifeline4Unused.Name = "chkLifeline4Unused"
         Me.chkLifeline4Unused.Size = New System.Drawing.Size(63, 17)
-        Me.chkLifeline4Unused.TabIndex = 41
+        Me.chkLifeline4Unused.TabIndex = 24
         Me.chkLifeline4Unused.Text = "Unused"
         Me.chkLifeline4Unused.UseVisualStyleBackColor = True
         '
@@ -505,7 +505,7 @@ Partial Class ControlPanel
         Me.txtID.Name = "txtID"
         Me.txtID.ReadOnly = True
         Me.txtID.Size = New System.Drawing.Size(28, 20)
-        Me.txtID.TabIndex = 47
+        Me.txtID.TabIndex = 0
         '
         'chkUsed
         '
@@ -514,7 +514,7 @@ Partial Class ControlPanel
         Me.chkUsed.Location = New System.Drawing.Point(34, 556)
         Me.chkUsed.Name = "chkUsed"
         Me.chkUsed.Size = New System.Drawing.Size(15, 14)
-        Me.chkUsed.TabIndex = 48
+        Me.chkUsed.TabIndex = 0
         Me.chkUsed.UseVisualStyleBackColor = True
         '
         'btnToHotSeat
@@ -525,7 +525,7 @@ Partial Class ControlPanel
         Me.btnToHotSeat.Location = New System.Drawing.Point(89, 78)
         Me.btnToHotSeat.Name = "btnToHotSeat"
         Me.btnToHotSeat.Size = New System.Drawing.Size(135, 22)
-        Me.btnToHotSeat.TabIndex = 49
+        Me.btnToHotSeat.TabIndex = 5
         Me.btnToHotSeat.Text = "Reset + Hot Seat"
         Me.btnToHotSeat.UseVisualStyleBackColor = False
         '
@@ -537,7 +537,7 @@ Partial Class ControlPanel
         Me.btnQuit.Location = New System.Drawing.Point(219, 46)
         Me.btnQuit.Name = "btnQuit"
         Me.btnQuit.Size = New System.Drawing.Size(78, 27)
-        Me.btnQuit.TabIndex = 50
+        Me.btnQuit.TabIndex = 34
         Me.btnQuit.Text = "Bye Bye"
         Me.btnQuit.UseVisualStyleBackColor = False
         '
@@ -547,7 +547,7 @@ Partial Class ControlPanel
         Me.chkCorrectAnswer.Location = New System.Drawing.Point(11, 79)
         Me.chkCorrectAnswer.Name = "chkCorrectAnswer"
         Me.chkCorrectAnswer.Size = New System.Drawing.Size(90, 17)
-        Me.chkCorrectAnswer.TabIndex = 52
+        Me.chkCorrectAnswer.TabIndex = 31
         Me.chkCorrectAnswer.Text = "Show Correct"
         Me.chkCorrectAnswer.UseVisualStyleBackColor = True
         '
@@ -558,7 +558,7 @@ Partial Class ControlPanel
         Me.lblTime.Location = New System.Drawing.Point(112, 72)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(46, 26)
-        Me.lblTime.TabIndex = 56
+        Me.lblTime.TabIndex = 26
         Me.lblTime.Text = "30"
         Me.lblTime.Visible = False
         '
@@ -584,7 +584,7 @@ Partial Class ControlPanel
         Me.grpRules.Location = New System.Drawing.Point(301, 24)
         Me.grpRules.Name = "grpRules"
         Me.grpRules.Size = New System.Drawing.Size(332, 86)
-        Me.grpRules.TabIndex = 57
+        Me.grpRules.TabIndex = 8
         Me.grpRules.TabStop = False
         Me.grpRules.Text = "Money Tree"
         '
@@ -596,7 +596,7 @@ Partial Class ControlPanel
         Me.btnLL4.Location = New System.Drawing.Point(278, 15)
         Me.btnLL4.Name = "btnLL4"
         Me.btnLL4.Size = New System.Drawing.Size(46, 42)
-        Me.btnLL4.TabIndex = 9
+        Me.btnLL4.TabIndex = 13
         Me.btnLL4.Text = "LL4 PING"
         Me.btnLL4.UseVisualStyleBackColor = False
         '
@@ -607,7 +607,7 @@ Partial Class ControlPanel
         Me.btnHideTree.Location = New System.Drawing.Point(64, 15)
         Me.btnHideTree.Name = "btnHideTree"
         Me.btnHideTree.Size = New System.Drawing.Size(54, 42)
-        Me.btnHideTree.TabIndex = 7
+        Me.btnHideTree.TabIndex = 9
         Me.btnHideTree.Text = "Hide"
         Me.btnHideTree.UseVisualStyleBackColor = False
         '
@@ -618,7 +618,7 @@ Partial Class ControlPanel
         Me.btnShowTree.Location = New System.Drawing.Point(8, 15)
         Me.btnShowTree.Name = "btnShowTree"
         Me.btnShowTree.Size = New System.Drawing.Size(54, 42)
-        Me.btnShowTree.TabIndex = 6
+        Me.btnShowTree.TabIndex = 8
         Me.btnShowTree.Text = "Show"
         Me.btnShowTree.UseVisualStyleBackColor = False
         '
@@ -629,7 +629,7 @@ Partial Class ControlPanel
         Me.btnTreeReset.Location = New System.Drawing.Point(234, 60)
         Me.btnTreeReset.Name = "btnTreeReset"
         Me.btnTreeReset.Size = New System.Drawing.Size(88, 23)
-        Me.btnTreeReset.TabIndex = 5
+        Me.btnTreeReset.TabIndex = 16
         Me.btnTreeReset.Text = "RESET TREE"
         Me.btnTreeReset.UseVisualStyleBackColor = False
         '
@@ -641,7 +641,7 @@ Partial Class ControlPanel
         Me.btnLL3.Location = New System.Drawing.Point(230, 15)
         Me.btnLL3.Name = "btnLL3"
         Me.btnLL3.Size = New System.Drawing.Size(46, 42)
-        Me.btnLL3.TabIndex = 4
+        Me.btnLL3.TabIndex = 12
         Me.btnLL3.Text = "LL3 PING"
         Me.btnLL3.UseVisualStyleBackColor = False
         '
@@ -653,7 +653,7 @@ Partial Class ControlPanel
         Me.btnLL2.Location = New System.Drawing.Point(183, 15)
         Me.btnLL2.Name = "btnLL2"
         Me.btnLL2.Size = New System.Drawing.Size(46, 42)
-        Me.btnLL2.TabIndex = 3
+        Me.btnLL2.TabIndex = 11
         Me.btnLL2.Text = "LL2 PING"
         Me.btnLL2.UseVisualStyleBackColor = False
         '
@@ -665,7 +665,7 @@ Partial Class ControlPanel
         Me.btnLL1.Location = New System.Drawing.Point(135, 15)
         Me.btnLL1.Name = "btnLL1"
         Me.btnLL1.Size = New System.Drawing.Size(46, 42)
-        Me.btnLL1.TabIndex = 2
+        Me.btnLL1.TabIndex = 10
         Me.btnLL1.Text = "LL1 PING"
         Me.btnLL1.UseVisualStyleBackColor = False
         '
@@ -676,7 +676,7 @@ Partial Class ControlPanel
         Me.btnRules.Location = New System.Drawing.Point(46, 60)
         Me.btnRules.Name = "btnRules"
         Me.btnRules.Size = New System.Drawing.Size(88, 23)
-        Me.btnRules.TabIndex = 1
+        Me.btnRules.TabIndex = 14
         Me.btnRules.Text = "Explain Rules"
         Me.btnRules.UseVisualStyleBackColor = False
         '
@@ -687,7 +687,7 @@ Partial Class ControlPanel
         Me.btnTreePr.Location = New System.Drawing.Point(140, 60)
         Me.btnTreePr.Name = "btnTreePr"
         Me.btnTreePr.Size = New System.Drawing.Size(88, 23)
-        Me.btnTreePr.TabIndex = 0
+        Me.btnTreePr.TabIndex = 15
         Me.btnTreePr.Text = "PROG. ANIM"
         Me.btnTreePr.UseVisualStyleBackColor = False
         '
@@ -699,7 +699,7 @@ Partial Class ControlPanel
         Me.btnActivateRiskMode.Location = New System.Drawing.Point(11, 113)
         Me.btnActivateRiskMode.Name = "btnActivateRiskMode"
         Me.btnActivateRiskMode.Size = New System.Drawing.Size(101, 22)
-        Me.btnActivateRiskMode.TabIndex = 8
+        Me.btnActivateRiskMode.TabIndex = 6
         Me.btnActivateRiskMode.Text = "RISK MODE OFF"
         Me.btnActivateRiskMode.UseVisualStyleBackColor = False
         '
@@ -709,7 +709,7 @@ Partial Class ControlPanel
         Me.chkShowQuestion.Location = New System.Drawing.Point(6, 13)
         Me.chkShowQuestion.Name = "chkShowQuestion"
         Me.chkShowQuestion.Size = New System.Drawing.Size(98, 17)
-        Me.chkShowQuestion.TabIndex = 0
+        Me.chkShowQuestion.TabIndex = 47
         Me.chkShowQuestion.Text = "Show Question"
         Me.chkShowQuestion.UseVisualStyleBackColor = True
         '
@@ -723,7 +723,7 @@ Partial Class ControlPanel
         Me.txtExplain.Name = "txtExplain"
         Me.txtExplain.ReadOnly = True
         Me.txtExplain.Size = New System.Drawing.Size(249, 66)
-        Me.txtExplain.TabIndex = 60
+        Me.txtExplain.TabIndex = 0
         '
         'Label8
         '
@@ -743,7 +743,7 @@ Partial Class ControlPanel
         Me.chkLifeline1Unused.Location = New System.Drawing.Point(10, 55)
         Me.chkLifeline1Unused.Name = "chkLifeline1Unused"
         Me.chkLifeline1Unused.Size = New System.Drawing.Size(63, 17)
-        Me.chkLifeline1Unused.TabIndex = 71
+        Me.chkLifeline1Unused.TabIndex = 21
         Me.chkLifeline1Unused.Text = "Unused"
         Me.chkLifeline1Unused.UseVisualStyleBackColor = True
         '
@@ -767,26 +767,26 @@ Partial Class ControlPanel
         '
         Me.FastestFingerFirstToolStripMenuItem.Image = CType(resources.GetObject("FastestFingerFirstToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FastestFingerFirstToolStripMenuItem.Name = "FastestFingerFirstToolStripMenuItem"
-        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.FastestFingerFirstToolStripMenuItem.Text = "Fastest Finger First"
         '
         'ShowOptionsToolStripMenuItem
         '
         Me.ShowOptionsToolStripMenuItem.Image = CType(resources.GetObject("ShowOptionsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Options"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(168, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Image = CType(resources.GetObject("CloseToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'GameToolStripMenuItem
@@ -800,19 +800,19 @@ Partial Class ControlPanel
         '
         Me.QuestionsEditorToolStripMenuItem.Image = CType(resources.GetObject("QuestionsEditorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
         Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         Me.ProfileEditorToolStripMenuItem.Visible = False
         '
@@ -929,7 +929,7 @@ Partial Class ControlPanel
         Me.btnLifeline3.Location = New System.Drawing.Point(150, 13)
         Me.btnLifeline3.Name = "btnLifeline3"
         Me.btnLifeline3.Size = New System.Drawing.Size(65, 42)
-        Me.btnLifeline3.TabIndex = 42
+        Me.btnLifeline3.TabIndex = 19
         Me.btnLifeline3.UseVisualStyleBackColor = False
         '
         'btnLifeline2
@@ -939,7 +939,7 @@ Partial Class ControlPanel
         Me.btnLifeline2.Location = New System.Drawing.Point(80, 13)
         Me.btnLifeline2.Name = "btnLifeline2"
         Me.btnLifeline2.Size = New System.Drawing.Size(65, 42)
-        Me.btnLifeline2.TabIndex = 44
+        Me.btnLifeline2.TabIndex = 18
         Me.btnLifeline2.UseVisualStyleBackColor = False
         '
         'btnLifeline1
@@ -949,7 +949,7 @@ Partial Class ControlPanel
         Me.btnLifeline1.Location = New System.Drawing.Point(10, 13)
         Me.btnLifeline1.Name = "btnLifeline1"
         Me.btnLifeline1.Size = New System.Drawing.Size(65, 42)
-        Me.btnLifeline1.TabIndex = 72
+        Me.btnLifeline1.TabIndex = 17
         Me.btnLifeline1.UseVisualStyleBackColor = False
         '
         'grpATAInfo
@@ -961,7 +961,7 @@ Partial Class ControlPanel
         Me.grpATAInfo.Location = New System.Drawing.Point(6, 69)
         Me.grpATAInfo.Name = "grpATAInfo"
         Me.grpATAInfo.Size = New System.Drawing.Size(104, 48)
-        Me.grpATAInfo.TabIndex = 79
+        Me.grpATAInfo.TabIndex = 25
         Me.grpATAInfo.TabStop = False
         Me.grpATAInfo.Text = "ATA"
         '
@@ -1008,7 +1008,7 @@ Partial Class ControlPanel
         Me.btnLifeline4.Location = New System.Drawing.Point(219, 13)
         Me.btnLifeline4.Name = "btnLifeline4"
         Me.btnLifeline4.Size = New System.Drawing.Size(65, 42)
-        Me.btnLifeline4.TabIndex = 43
+        Me.btnLifeline4.TabIndex = 20
         Me.btnLifeline4.UseVisualStyleBackColor = False
         '
         'grpMain
@@ -1026,7 +1026,7 @@ Partial Class ControlPanel
         Me.grpMain.Location = New System.Drawing.Point(310, 113)
         Me.grpMain.Name = "grpMain"
         Me.grpMain.Size = New System.Drawing.Size(308, 131)
-        Me.grpMain.TabIndex = 76
+        Me.grpMain.TabIndex = 27
         Me.grpMain.TabStop = False
         Me.grpMain.Text = "Main"
         '
@@ -1040,7 +1040,7 @@ Partial Class ControlPanel
         Me.btnUndo.Location = New System.Drawing.Point(219, 94)
         Me.btnUndo.Name = "btnUndo"
         Me.btnUndo.Size = New System.Drawing.Size(78, 26)
-        Me.btnUndo.TabIndex = 81
+        Me.btnUndo.TabIndex = 35
         Me.btnUndo.UseVisualStyleBackColor = False
         '
         'grpTV
@@ -1061,7 +1061,7 @@ Partial Class ControlPanel
         Me.chkShowPlayerList.Location = New System.Drawing.Point(122, 13)
         Me.chkShowPlayerList.Name = "chkShowPlayerList"
         Me.chkShowPlayerList.Size = New System.Drawing.Size(125, 17)
-        Me.chkShowPlayerList.TabIndex = 2
+        Me.chkShowPlayerList.TabIndex = 48
         Me.chkShowPlayerList.Text = "Show FFF Player List"
         Me.chkShowPlayerList.UseVisualStyleBackColor = True
         '
@@ -1071,7 +1071,7 @@ Partial Class ControlPanel
         Me.chkShowTotalScore.Location = New System.Drawing.Point(6, 30)
         Me.chkShowTotalScore.Name = "chkShowTotalScore"
         Me.chkShowTotalScore.Size = New System.Drawing.Size(111, 17)
-        Me.chkShowTotalScore.TabIndex = 1
+        Me.chkShowTotalScore.TabIndex = 49
         Me.chkShowTotalScore.Text = "Show Total Score"
         Me.chkShowTotalScore.UseVisualStyleBackColor = True
         '
@@ -1088,7 +1088,7 @@ Partial Class ControlPanel
         Me.txtHostMessages.Name = "txtHostMessages"
         Me.txtHostMessages.ReadOnly = True
         Me.txtHostMessages.Size = New System.Drawing.Size(290, 102)
-        Me.txtHostMessages.TabIndex = 83
+        Me.txtHostMessages.TabIndex = 0
         Me.txtHostMessages.Text = ""
         '
         'btnSendToHost
@@ -1096,7 +1096,7 @@ Partial Class ControlPanel
         Me.btnSendToHost.Location = New System.Drawing.Point(240, 124)
         Me.btnSendToHost.Name = "btnSendToHost"
         Me.btnSendToHost.Size = New System.Drawing.Size(60, 35)
-        Me.btnSendToHost.TabIndex = 84
+        Me.btnSendToHost.TabIndex = 45
         Me.btnSendToHost.Text = "Send to Host"
         Me.btnSendToHost.UseVisualStyleBackColor = True
         '
@@ -1119,14 +1119,14 @@ Partial Class ControlPanel
         Me.drpNextHostMessage.Location = New System.Drawing.Point(67, 137)
         Me.drpNextHostMessage.Name = "drpNextHostMessage"
         Me.drpNextHostMessage.Size = New System.Drawing.Size(172, 21)
-        Me.drpNextHostMessage.TabIndex = 86
+        Me.drpNextHostMessage.TabIndex = 44
         '
         'btnClearHostMessages
         '
         Me.btnClearHostMessages.Location = New System.Drawing.Point(1, 124)
         Me.btnClearHostMessages.Name = "btnClearHostMessages"
         Me.btnClearHostMessages.Size = New System.Drawing.Size(65, 35)
-        Me.btnClearHostMessages.TabIndex = 85
+        Me.btnClearHostMessages.TabIndex = 46
         Me.btnClearHostMessages.Text = "Clear Messages"
         Me.btnClearHostMessages.UseVisualStyleBackColor = True
         '
@@ -1138,7 +1138,7 @@ Partial Class ControlPanel
         Me.btnResetGame.Location = New System.Drawing.Point(89, 27)
         Me.btnResetGame.Name = "btnResetGame"
         Me.btnResetGame.Size = New System.Drawing.Size(135, 22)
-        Me.btnResetGame.TabIndex = 86
+        Me.btnResetGame.TabIndex = 4
         Me.btnResetGame.Text = "Reset"
         Me.btnResetGame.UseVisualStyleBackColor = False
         '
@@ -1150,7 +1150,7 @@ Partial Class ControlPanel
         Me.btnStopAudio.Location = New System.Drawing.Point(55, 550)
         Me.btnStopAudio.Name = "btnStopAudio"
         Me.btnStopAudio.Size = New System.Drawing.Size(99, 23)
-        Me.btnStopAudio.TabIndex = 87
+        Me.btnStopAudio.TabIndex = 50
         Me.btnStopAudio.Text = "STOP AUDIO"
         Me.btnStopAudio.UseVisualStyleBackColor = False
         '
@@ -1165,7 +1165,7 @@ Partial Class ControlPanel
         Me.btnSet2ndSafeNet.Location = New System.Drawing.Point(118, 113)
         Me.btnSet2ndSafeNet.Name = "btnSet2ndSafeNet"
         Me.btnSet2ndSafeNet.Size = New System.Drawing.Size(123, 22)
-        Me.btnSet2ndSafeNet.TabIndex = 88
+        Me.btnSet2ndSafeNet.TabIndex = 7
         Me.btnSet2ndSafeNet.Text = "SET 2nd SAFE NET"
         Me.btnSet2ndSafeNet.UseVisualStyleBackColor = False
         '
