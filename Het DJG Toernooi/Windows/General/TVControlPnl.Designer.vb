@@ -301,7 +301,7 @@ Partial Class TVControlPnl
         Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.picD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picD.Controls.Add(Me.txtD)
-        Me.picD.Location = New System.Drawing.Point(642, 168)
+        Me.picD.Location = New System.Drawing.Point(640, 168)
         Me.picD.Name = "picD"
         Me.picD.Size = New System.Drawing.Size(641, 57)
         Me.picD.TabIndex = 37
@@ -322,7 +322,7 @@ Partial Class TVControlPnl
         Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
         Me.picB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.picB.Controls.Add(Me.txtB)
-        Me.picB.Location = New System.Drawing.Point(642, 109)
+        Me.picB.Location = New System.Drawing.Point(640, 109)
         Me.picB.Name = "picB"
         Me.picB.Size = New System.Drawing.Size(641, 57)
         Me.picB.TabIndex = 36
@@ -944,15 +944,15 @@ Partial Class TVControlPnl
         Me.BackColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1280, 720)
-        Me.Controls.Add(Me.pnlFFFPlayers)
-        Me.Controls.Add(Me.picTree)
+        Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.grpATA)
         Me.Controls.Add(Me.pnlTime)
         Me.Controls.Add(Me.pnlTotal)
         Me.Controls.Add(Me.pnlStrap)
         Me.Controls.Add(Me.picLifelineUse)
-        Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.pnlFFFWinner)
+        Me.Controls.Add(Me.pnlFFFPlayers)
+        Me.Controls.Add(Me.picTree)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
