@@ -70,13 +70,13 @@ Public Class QDatabase
             Dim sqlupdate As String
 
             Dim rangelevel As String
-            If Game.level >= 1 And Game.level <= 5 Then
+            If Game.level >= 0 And Game.level <= 4 Then
                 rangelevel = "Lvl1"
-            ElseIf Game.level >= 6 And Game.level <= 10 Then
+            ElseIf Game.level >= 5 And Game.level <= 9 Then
                 rangelevel = "Lvl2"
-            ElseIf Game.level >= 11 And Game.level <= 14 Then
+            ElseIf Game.level >= 10 And Game.level <= 13 Then
                 rangelevel = "Lvl3"
-            ElseIf Game.level = 15 Then
+            ElseIf Game.level = 14 Then
                 rangelevel = "Lvl4"
             End If
             sql = $"
