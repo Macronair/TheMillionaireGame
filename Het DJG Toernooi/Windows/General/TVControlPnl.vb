@@ -129,13 +129,13 @@
         ControlPanel.chkShowQuestion.Checked = False
         pnlStrap.Visible = True
         txtA.ForeColor = Color.White
-        picA.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        picA.BackgroundImage = QuestionStrap.GetTexture(2)
         txtB.ForeColor = Color.White
-        picB.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        picB.BackgroundImage = QuestionStrap.GetTexture(3)
         txtC.ForeColor = Color.White
-        picC.BackgroundImage = My.Resources._0_Normal_Answer_Fill_l
+        picC.BackgroundImage = QuestionStrap.GetTexture(2)
         txtD.ForeColor = Color.White
-        picD.BackgroundImage = My.Resources._0_Normal_Answer_Fill_r
+        picD.BackgroundImage = QuestionStrap.GetTexture(3)
 
         ControlPanel.tmrLifelineUpdate.Start()
 
