@@ -124,7 +124,9 @@ New screenshots wil come shortly. ;)
 ## Support The Millionaire Game!
 You can support this project by making a donation! (It is not required to use the app, but it would be really nice of course)
 
-<img src="https://github.com/user-attachments/assets/2e2202b1-ce3d-4ea9-8dc6-0557a16013dc" alt="https:/www.paypal.com/donate/?hosted_button_id=ZB7DTXMPXDJX8" width="200">
+<a href="https://www.paypal.com/donate/?hosted_button_id=ZB7DTXMPXDJX8">
+<img src="https://github.com/user-attachments/assets/2e2202b1-ce3d-4ea9-8dc6-0557a16013dc" width="200" />
+</a>
 
 ## Where to download it?
 You can download one of the releases: 
