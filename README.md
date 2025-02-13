@@ -121,6 +121,11 @@ New screenshots wil come shortly. ;)
 ### The Fastest FInger First client program:
 ![Schermafbeelding 2023-11-21 225043](https://github.com/Macronair/TheMillionaireGame/assets/43847273/0f539ca6-704b-4598-8868-79b9e05978be)
 
+## Support The Millionaire Game!
+You can support this project by making a donation! (It is not required to use the app, but it would be really nice of course)
+
+<img src="https://github.com/user-attachments/assets/2e2202b1-ce3d-4ea9-8dc6-0557a16013dc" alt="https:/www.paypal.com/donate/?hosted_button_id=ZB7DTXMPXDJX8" width="200">
+
 ## Where to download it?
 You can download one of the releases: 
 [here](https://github.com/Maerciez/TheMillionaireGame/releases)
