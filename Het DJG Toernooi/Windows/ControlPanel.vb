@@ -502,9 +502,15 @@ Public Class ControlPanel
 
 
     Private Sub tmrRules_Tick(sender As Object, e As EventArgs) Handles tmrRules.Tick
-        Game.SetValues()
-        Game.level = Game.level + 1
-        If Game.level > 15 Then
+        If Game.level <= 15 Then
+            Game.SetValues()
+            Game.level = Game.level + 1
+            If Game.level > 15 Then
+                tmrRules.Stop()
+            End If
+        Else
+            Game.level = 0
+            Game.SetValues()
             tmrRules.Stop()
         End If
     End Sub

@@ -250,7 +250,6 @@ Partial Class ControlPanel
         Me.nmrLevel.Location = New System.Drawing.Point(142, 97)
         Me.nmrLevel.Maximum = New Decimal(New Integer() {15, 0, 0, 0})
         Me.nmrLevel.Name = "nmrLevel"
-        Me.nmrLevel.ReadOnly = True
         Me.nmrLevel.Size = New System.Drawing.Size(39, 20)
         Me.nmrLevel.TabIndex = 32
         '
@@ -767,26 +766,26 @@ Partial Class ControlPanel
         '
         Me.FastestFingerFirstToolStripMenuItem.Image = CType(resources.GetObject("FastestFingerFirstToolStripMenuItem.Image"), System.Drawing.Image)
         Me.FastestFingerFirstToolStripMenuItem.Name = "FastestFingerFirstToolStripMenuItem"
-        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.FastestFingerFirstToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.FastestFingerFirstToolStripMenuItem.Text = "Fastest Finger First"
         '
         'ShowOptionsToolStripMenuItem
         '
         Me.ShowOptionsToolStripMenuItem.Image = CType(resources.GetObject("ShowOptionsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ShowOptionsToolStripMenuItem.Name = "ShowOptionsToolStripMenuItem"
-        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ShowOptionsToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.ShowOptionsToolStripMenuItem.Text = "Options"
         '
         'ToolStripMenuItem4
         '
         Me.ToolStripMenuItem4.Name = "ToolStripMenuItem4"
-        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem4.Size = New System.Drawing.Size(168, 6)
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Image = CType(resources.GetObject("CloseToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'GameToolStripMenuItem
@@ -800,19 +799,19 @@ Partial Class ControlPanel
         '
         Me.QuestionsEditorToolStripMenuItem.Image = CType(resources.GetObject("QuestionsEditorToolStripMenuItem.Image"), System.Drawing.Image)
         Me.QuestionsEditorToolStripMenuItem.Name = "QuestionsEditorToolStripMenuItem"
-        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuestionsEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.QuestionsEditorToolStripMenuItem.Text = "Questions Editor"
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(158, 6)
         Me.ToolStripMenuItem1.Visible = False
         '
         'ProfileEditorToolStripMenuItem
         '
         Me.ProfileEditorToolStripMenuItem.Name = "ProfileEditorToolStripMenuItem"
-        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ProfileEditorToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
         Me.ProfileEditorToolStripMenuItem.Text = "Profile Editor"
         Me.ProfileEditorToolStripMenuItem.Visible = False
         '
@@ -827,53 +826,53 @@ Partial Class ControlPanel
         '
         Me.HostScreenToolStripMenuItem.Image = CType(resources.GetObject("HostScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.HostScreenToolStripMenuItem.Name = "HostScreenToolStripMenuItem"
-        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.HostScreenToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.HostScreenToolStripMenuItem.Text = "Host Screen"
         '
         'GuestScreenToolStripMenuItem
         '
         Me.GuestScreenToolStripMenuItem.Image = CType(resources.GetObject("GuestScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.GuestScreenToolStripMenuItem.Name = "GuestScreenToolStripMenuItem"
-        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.GuestScreenToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.GuestScreenToolStripMenuItem.Text = "Guest Screen"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(233, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(234, 6)
         '
         'TVScreenToolStripMenuItem
         '
         Me.TVScreenToolStripMenuItem.Image = CType(resources.GetObject("TVScreenToolStripMenuItem.Image"), System.Drawing.Image)
         Me.TVScreenToolStripMenuItem.Name = "TVScreenToolStripMenuItem"
-        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.TVScreenToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.TVScreenToolStripMenuItem.Text = "TV Screen"
         '
         'ChangeBackgroundColorTVToolStripMenuItem
         '
         Me.ChangeBackgroundColorTVToolStripMenuItem.Image = CType(resources.GetObject("ChangeBackgroundColorTVToolStripMenuItem.Image"), System.Drawing.Image)
         Me.ChangeBackgroundColorTVToolStripMenuItem.Name = "ChangeBackgroundColorTVToolStripMenuItem"
-        Me.ChangeBackgroundColorTVToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.ChangeBackgroundColorTVToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.ChangeBackgroundColorTVToolStripMenuItem.Text = "Change background color (TV)"
         '
         'ChangeQuestionFontToolStripMenuItem
         '
         Me.ChangeQuestionFontToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.X720720pToolStripMenuItem, Me.X10801080pToolStripMenuItem})
         Me.ChangeQuestionFontToolStripMenuItem.Name = "ChangeQuestionFontToolStripMenuItem"
-        Me.ChangeQuestionFontToolStripMenuItem.Size = New System.Drawing.Size(236, 22)
+        Me.ChangeQuestionFontToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.ChangeQuestionFontToolStripMenuItem.Text = "Change resolutions"
         Me.ChangeQuestionFontToolStripMenuItem.Visible = False
         '
         'X720720pToolStripMenuItem
         '
         Me.X720720pToolStripMenuItem.Name = "X720720pToolStripMenuItem"
-        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.X720720pToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.X720720pToolStripMenuItem.Text = "1280 x 720 (720p)"
         '
         'X10801080pToolStripMenuItem
         '
         Me.X10801080pToolStripMenuItem.Name = "X10801080pToolStripMenuItem"
-        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
+        Me.X10801080pToolStripMenuItem.Size = New System.Drawing.Size(175, 22)
         Me.X10801080pToolStripMenuItem.Text = "1920 x 1080 (1080p)"
         '
         'OptionsToolStripMenuItem
