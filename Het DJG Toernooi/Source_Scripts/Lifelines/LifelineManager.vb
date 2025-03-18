@@ -25,7 +25,7 @@
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
                     Case "phone_a_friend"
-                        LifelinePO.LifelineUse1()
+                        LifelinePhone.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
@@ -42,7 +42,7 @@
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
                     Case "phone_a_friend"
-                        LifelinePO.LifelineUse1()
+                        LifelinePhone.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
@@ -59,7 +59,7 @@
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
                     Case "phone_a_friend"
-                        LifelinePO.LifelineUse1()
+                        LifelinePhone.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
@@ -76,7 +76,7 @@
                     Case "plus_one"
                         LifelinePO.LifelineUse1()
                     Case "phone_a_friend"
-                        LifelinePO.LifelineUse1()
+                        LifelinePhone.LifelineUse1()
                     Case "switch"
                         LifelineSwitch.LifelineUse1()
                     Case "double_dip"
