@@ -35,6 +35,7 @@ Public Class AppSettings
     Public Property S_AutoShowTotalWinnings As Boolean
     Public Property S_AutoHideQuestionAtWalkAway As Boolean
     Public Property S_HideAnswerInControlPanelAtNewQ As Boolean
+    Public Property S_ATAisAlwaysCorrect As Boolean
 
     Public Property FFF_Port As Integer
 
@@ -228,6 +229,7 @@ Public Class Profile
             Options.S_AutoShowTotalWinnings = loadedvalues.S_AutoShowTotalWinnings
             Options.S_AutoHideQuestionAtWalkAway = loadedvalues.S_AutoHideQuestionAtWalkAway
             Options.S_HideAnswerInControlPanelAtNewQ = loadedvalues.S_HideAnswerInControlPanelAtNewQ
+            Options.S_ATAisAlwaysCorrect = loadedvalues.S_ATAisAlwaysCorrect
 
             Options.FFF_Port = loadedvalues.FFF_Port
 
@@ -399,6 +401,7 @@ Public Class Profile
         Options.S_AutoShowTotalWinnings = True
         Options.S_AutoHideQuestionAtWalkAway = True
         Options.S_HideAnswerInControlPanelAtNewQ = False
+        Options.S_ATAisAlwaysCorrect = False
 
         Options.FFF_Port = 3818
 
@@ -568,6 +571,7 @@ Public Class Profile
         Options.S_AutoShowTotalWinnings = OptionsScreen.chkAutoShowTotalWinnings.Checked
         Options.S_AutoHideQuestionAtWalkAway = OptionsScreen.chkAutoHideQuestionAtWalkAway.Checked
         Options.S_HideAnswerInControlPanelAtNewQ = OptionsScreen.chkHideAnswerOnControlPanelWhenNewQuestion.Checked
+        Options.S_ATAisAlwaysCorrect = OptionsScreen.chkATAisAlwaysCorrect.Checked
 
         Options.FFF_Port = OptionsScreen.nmrFFFPortNumber.Value
 

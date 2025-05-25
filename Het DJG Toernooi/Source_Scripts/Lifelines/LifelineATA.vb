@@ -48,80 +48,89 @@
 
                     Dim choosewronganswer As Boolean = False
 
-                    If random.Next(1, 31) <= 4 Then
-                        choosewronganswer = True
+                    If Profile.Options.S_ATAisAlwaysCorrect = True Then
+                        If random.Next(1, 31) <= 4 Then
+                            choosewronganswer = True
+                        End If
                     End If
+
                     If choosewronganswer = True Then
-                        Dim fakeanswer As Integer = random.Next(1, 5)
-                        Select Case fakeanswer
-                            Case 1
+                            Dim fakeanswer As Integer = random.Next(1, 5)
+                            Select Case fakeanswer
+                                Case 1
+                                    amountA = random.Next(40, 60)
+                                Case 2
+                                    amountB = random.Next(40, 60)
+                                Case 3
+                                    amountC = random.Next(40, 60)
+                                Case 4
+                                    amountD = random.Next(40, 60)
+                            End Select
+                        Else
+                            If ControlPanel.lblAnswer.Text = "A" Then
                                 amountA = random.Next(40, 60)
-                            Case 2
+                            ElseIf ControlPanel.lblAnswer.Text = "B" Then
                                 amountB = random.Next(40, 60)
-                            Case 3
+                            ElseIf ControlPanel.lblAnswer.Text = "C" Then
                                 amountC = random.Next(40, 60)
-                            Case 4
+                            ElseIf ControlPanel.lblAnswer.Text = "D" Then
                                 amountD = random.Next(40, 60)
-                        End Select
-                    Else
-                        If ControlPanel.lblAnswer.Text = "A" Then
-                            amountA = random.Next(40, 60)
-                        ElseIf ControlPanel.lblAnswer.Text = "B" Then
-                            amountB = random.Next(40, 60)
-                        ElseIf ControlPanel.lblAnswer.Text = "C" Then
-                            amountC = random.Next(40, 60)
-                        ElseIf ControlPanel.lblAnswer.Text = "D" Then
-                            amountD = random.Next(40, 60)
+                            End If
+                        End If
+
+                    ElseIf Game.level >= 5 And Game.level <= 9 Then
+
+                        amountA = random.Next(5, 20)
+                        amountB = random.Next(5, 20)
+                        amountC = random.Next(5, 20)
+                        amountD = random.Next(5, 20)
+
+                        Dim choosewronganswer As Boolean = False
+
+                    If Profile.Options.S_ATAisAlwaysCorrect = True Then
+                        If random.Next(1, 31) <= 8 Then
+                            choosewronganswer = True
                         End If
                     End If
 
-                ElseIf Game.level >= 5 And Game.level <= 9 Then
-
-                    amountA = random.Next(5, 20)
-                    amountB = random.Next(5, 20)
-                    amountC = random.Next(5, 20)
-                    amountD = random.Next(5, 20)
-
-                    Dim choosewronganswer As Boolean = False
-
-                    If random.Next(1, 31) <= 8 Then
-                        choosewronganswer = True
-                    End If
                     If choosewronganswer = True Then
-                        Dim fakeanswer As Integer = random.Next(1, 5)
-                        Select Case fakeanswer
-                            Case 1
-                                amountA = random.Next(25, 65)
-                            Case 2
-                                amountB = random.Next(25, 65)
-                            Case 3
-                                amountC = random.Next(25, 65)
-                            Case 4
-                                amountD = random.Next(25, 65)
-                        End Select
-                    Else
-                        If ControlPanel.lblAnswer.Text = "A" Then
-                            amountA = random.Next(23, 65)
-                        ElseIf ControlPanel.lblAnswer.Text = "B" Then
-                            amountB = random.Next(23, 65)
-                        ElseIf ControlPanel.lblAnswer.Text = "C" Then
-                            amountC = random.Next(23, 65)
-                        ElseIf ControlPanel.lblAnswer.Text = "D" Then
-                            amountD = random.Next(23, 65)
+                            Dim fakeanswer As Integer = random.Next(1, 5)
+                            Select Case fakeanswer
+                                Case 1
+                                    amountA = random.Next(25, 65)
+                                Case 2
+                                    amountB = random.Next(25, 65)
+                                Case 3
+                                    amountC = random.Next(25, 65)
+                                Case 4
+                                    amountD = random.Next(25, 65)
+                            End Select
+                        Else
+                            If ControlPanel.lblAnswer.Text = "A" Then
+                                amountA = random.Next(23, 65)
+                            ElseIf ControlPanel.lblAnswer.Text = "B" Then
+                                amountB = random.Next(23, 65)
+                            ElseIf ControlPanel.lblAnswer.Text = "C" Then
+                                amountC = random.Next(23, 65)
+                            ElseIf ControlPanel.lblAnswer.Text = "D" Then
+                                amountD = random.Next(23, 65)
+                            End If
                         End If
-                    End If
 
-                ElseIf Game.level >= 10 Then
-                    amountA = random.Next(20, 35)
+                    ElseIf Game.level >= 10 Then
+                        amountA = random.Next(20, 35)
                     amountB = random.Next(20, 35)
                     amountC = random.Next(20, 35)
                     amountD = random.Next(20, 35)
 
                     Dim choosewronganswer As Boolean = False
 
-                    If random.Next(1, 31) <= 10 Then
-                        choosewronganswer = True
+                    If Profile.Options.S_ATAisAlwaysCorrect = True Then
+                        If random.Next(1, 31) <= 10 Then
+                            choosewronganswer = True
+                        End If
                     End If
+
                     If choosewronganswer = True Then
                         Dim fakeanswer As Integer = random.Next(1, 5)
                         Select Case fakeanswer

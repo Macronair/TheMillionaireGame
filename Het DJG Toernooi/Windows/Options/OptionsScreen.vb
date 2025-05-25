@@ -131,6 +131,7 @@ Public Class OptionsScreen
         chkAutoShowTotalWinnings.Checked = Profile.Options.S_AutoShowTotalWinnings
         chkAutoHideQuestionAtWalkAway.Checked = Profile.Options.S_AutoHideQuestionAtWalkAway
         chkHideAnswerOnControlPanelWhenNewQuestion.Checked = Profile.Options.S_HideAnswerInControlPanelAtNewQ
+        chkATAisAlwaysCorrect.Checked = Profile.Options.S_ATAisAlwaysCorrect
 
         nmrFFFPortNumber.Value = Profile.Options.FFF_Port
 
