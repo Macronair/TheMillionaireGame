@@ -55,12 +55,12 @@ Public Class QDatabase
                 CoreConsole.LogMsg("  > Correct     = " + ControlPanel.lblAnswer.Text)
                 CoreConsole.LogMsg("-----------------------------")
             Catch ex As Exception
+                Sounds.fff_question.controls.stop()
                 CoreConsole.LogMsgDate("[ERROR] Cannot load FFF question:")
                 CoreConsole.LogMsg(ex.Message)
                 MessageBox.Show("Error when loading FFF question: " + Environment.NewLine + ex.Message, "An error occured", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Question.act = 0
                 ControlPanel.i = 0
-                My.Computer.Audio.Stop()
                 Question.useMusic = False
             End Try
         End If
@@ -70,13 +70,13 @@ Public Class QDatabase
             Dim sqlupdate As String
 
             Dim rangelevel As String
-            If Game.level >= 1 And Game.level <= 5 Then
+            If Game.level >= 0 And Game.level <= 4 Then
                 rangelevel = "Lvl1"
-            ElseIf Game.level >= 6 And Game.level <= 10 Then
+            ElseIf Game.level >= 5 And Game.level <= 9 Then
                 rangelevel = "Lvl2"
-            ElseIf Game.level >= 11 And Game.level <= 14 Then
+            ElseIf Game.level >= 10 And Game.level <= 13 Then
                 rangelevel = "Lvl3"
-            ElseIf Game.level = 15 Then
+            ElseIf Game.level = 14 Then
                 rangelevel = "Lvl4"
             End If
             sql = $"
@@ -124,10 +124,10 @@ SELECT TOP 1 * FROM
                 CoreConsole.LogMsg($"Level: {Game.level} | Q Value: {Game.varCorrect} | Guaranteed: {Game.varWrong} |")
                 CoreConsole.LogMsg("-----------------------------")
             Else
+                Sounds.sndQuestion.controls.stop()
                 CoreConsole.LogMsgDate("[ERROR] No more questions available. Make sure not all questions are used already.")
                 MessageBox.Show("There are no questions available", "Failed to load question", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Question.act = 0
-                My.Computer.Audio.Stop()
                 Question.useMusic = False
             End If
         End If

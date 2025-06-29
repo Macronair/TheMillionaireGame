@@ -41,7 +41,7 @@
     <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.0.946</ApplicationVersion>
+    <ApplicationVersion>1.2.0.976</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -157,6 +157,7 @@
     <Compile Include="Source_Scripts\Lifelines\LifelineManager.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\Screens_Views\Monitor.vb" />
     <Compile Include="Source_Scripts\DatabaseAndSettings\SQLInfo.vb" />
+    <Compile Include="Source_Scripts\Lifelines\LifelinePhone.vb" />
     <Compile Include="Windows\About\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>

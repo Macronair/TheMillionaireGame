@@ -420,6 +420,7 @@ Partial Class OptionsScreen
         Me.btnSave = New System.Windows.Forms.Button()
         Me.btnClose = New System.Windows.Forms.Button()
         Me.tmrEnableIdentifyButton = New System.Windows.Forms.Timer(Me.components)
+        Me.chkATAisAlwaysCorrect = New System.Windows.Forms.CheckBox()
         Me.tabOptions.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
@@ -484,6 +485,7 @@ Partial Class OptionsScreen
         '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.chkATAisAlwaysCorrect)
         Me.TabPage1.Controls.Add(Me.chkHideAnswerOnControlPanelWhenNewQuestion)
         Me.TabPage1.Controls.Add(Me.GroupBox5)
         Me.TabPage1.Controls.Add(Me.nmrFFFPortNumber)
@@ -631,7 +633,7 @@ Partial Class OptionsScreen
         '
         'nmrFFFPortNumber
         '
-        Me.nmrFFFPortNumber.Location = New System.Drawing.Point(744, 181)
+        Me.nmrFFFPortNumber.Location = New System.Drawing.Point(744, 196)
         Me.nmrFFFPortNumber.Maximum = New Decimal(New Integer() {65535, 0, 0, 0})
         Me.nmrFFFPortNumber.Minimum = New Decimal(New Integer() {1024, 0, 0, 0})
         Me.nmrFFFPortNumber.Name = "nmrFFFPortNumber"
@@ -642,7 +644,7 @@ Partial Class OptionsScreen
         'Label121
         '
         Me.Label121.AutoSize = True
-        Me.Label121.Location = New System.Drawing.Point(625, 183)
+        Me.Label121.Location = New System.Drawing.Point(625, 198)
         Me.Label121.Name = "Label121"
         Me.Label121.Size = New System.Drawing.Size(113, 16)
         Me.Label121.TabIndex = 8
@@ -4664,6 +4666,16 @@ Partial Class OptionsScreen
         '
         Me.tmrEnableIdentifyButton.Interval = 3000
         '
+        'chkATAisAlwaysCorrect
+        '
+        Me.chkATAisAlwaysCorrect.AutoSize = True
+        Me.chkATAisAlwaysCorrect.Location = New System.Drawing.Point(628, 167)
+        Me.chkATAisAlwaysCorrect.Name = "chkATAisAlwaysCorrect"
+        Me.chkATAisAlwaysCorrect.Size = New System.Drawing.Size(232, 20)
+        Me.chkATAisAlwaysCorrect.TabIndex = 12
+        Me.chkATAisAlwaysCorrect.Text = "Ask the Audience is always correct"
+        Me.chkATAisAlwaysCorrect.UseVisualStyleBackColor = True
+        '
         'OptionsScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -5140,4 +5152,5 @@ Partial Class OptionsScreen
     Friend WithEvents btnReconnectToSQL As Button
     Friend WithEvents txtSndQ5RCorrect As TextBox
     Friend WithEvents Label155 As Label
+    Friend WithEvents chkATAisAlwaysCorrect As CheckBox
 End Class

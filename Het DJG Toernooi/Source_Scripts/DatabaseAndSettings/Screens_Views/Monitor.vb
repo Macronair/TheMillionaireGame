@@ -51,8 +51,16 @@
 
         ' Full Screen?
         If Profile.Options.FullScreen_HostScreen_Enable = True Then
-            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_HostScreen_Monitor)
-
+            Dim scr As Screen
+            Try
+                scr = Screen.AllScreens(Profile.Options.FullScreen_HostScreen_Monitor)
+            Catch ex As Exception
+                scr = Screen.AllScreens(0)
+                CoreConsole.LogMsgDate($"[Error] The preferred monitor ({Profile.Options.FullScreen_TVScreen_Monitor}) is not found on your system. 
+The 'Host Screen' window is now temporary moved to the default monitor (0). 
+Please re-install the monitor that is set in the Options screen or update the monitor settings.")
+            End Try
+            HostScreen.WindowState = FormWindowState.Normal
             HostScreen.FormBorderStyle = FormBorderStyle.None
             HostScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             HostScreen.WindowState = FormWindowState.Maximized
@@ -62,8 +70,17 @@
         End If
 
         If Profile.Options.FullScreen_GuestScreen_Enable = True Then
-            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_GuestScreen_Monitor)
+            Dim scr As Screen
+            Try
+                scr = Screen.AllScreens(Profile.Options.FullScreen_GuestScreen_Monitor)
+            Catch ex As Exception
+                scr = Screen.AllScreens(0)
+                CoreConsole.LogMsgDate($"[Error] The preferred monitor ({Profile.Options.FullScreen_TVScreen_Monitor}) is not found on your system. 
+The 'Guest Screen' window is now temporary moved to the default monitor (0). 
+Please re-install the monitor that is set in the Options screen or update the monitor settings.")
+            End Try
 
+            GuestScreen.WindowState = FormWindowState.Normal
             GuestScreen.FormBorderStyle = FormBorderStyle.None
             GuestScreen.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             GuestScreen.WindowState = FormWindowState.Maximized
@@ -73,8 +90,16 @@
         End If
 
         If Profile.Options.FullScreen_TVScreen_Enable = True Then
-            Dim scr = Screen.AllScreens(Profile.Options.FullScreen_TVScreen_Monitor)
-
+            Dim scr As Screen
+            Try
+                scr = Screen.AllScreens(Profile.Options.FullScreen_TVScreen_Monitor)
+            Catch ex As Exception
+                scr = Screen.AllScreens(0)
+                CoreConsole.LogMsgDate($"[Error] The preferred monitor ({Profile.Options.FullScreen_TVScreen_Monitor}) is not found on your system. 
+The 'TV Screen' window is now temporary moved to the default monitor (0). 
+Please re-install the monitor that is set in the Options screen or update the monitor settings.")
+            End Try
+            TVControlPnl.WindowState = FormWindowState.Normal
             TVControlPnl.FormBorderStyle = FormBorderStyle.None
             TVControlPnl.Location = Point.Add(scr.Bounds.Location, New Size(0, 0))
             TVControlPnl.WindowState = FormWindowState.Maximized

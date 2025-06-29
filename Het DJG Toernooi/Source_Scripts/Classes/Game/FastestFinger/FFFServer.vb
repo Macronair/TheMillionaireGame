@@ -255,6 +255,7 @@ Public Class FFFServer
 
     Private Sub btnGenQuestion_Click(sender As Object, e As EventArgs) Handles btnGenQuestion.Click
         If q = 0 Then
+            CoreConsole.LogMsgDate("[FFF] Started new session. Getting new quesion...")
             FFFQuestion.GetQuestion(0)
             q = 1
         ElseIf q = 1 Then

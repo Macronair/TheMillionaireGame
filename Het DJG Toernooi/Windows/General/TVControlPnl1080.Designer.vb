@@ -58,8 +58,17 @@ Partial Class TVControlPnl1080
         Me.lblWalkedAway = New System.Windows.Forms.Label()
         Me.lblExplainRules = New System.Windows.Forms.Label()
         Me.txtWinnings = New System.Windows.Forms.Label()
-        Me.pnlStrap = New System.Windows.Forms.Panel()
-        Me.lblAmount = New System.Windows.Forms.Label()
+        Me.pnlQuestion = New System.Windows.Forms.Panel()
+        Me.picD = New System.Windows.Forms.Panel()
+        Me.txtD = New System.Windows.Forms.Label()
+        Me.picB = New System.Windows.Forms.Panel()
+        Me.txtB = New System.Windows.Forms.Label()
+        Me.picC = New System.Windows.Forms.Panel()
+        Me.txtC = New System.Windows.Forms.Label()
+        Me.picA = New System.Windows.Forms.Panel()
+        Me.txtA = New System.Windows.Forms.Label()
+        Me.picQuestion = New System.Windows.Forms.Panel()
+        Me.txtQuestion = New System.Windows.Forms.Label()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picVO, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picSW, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,7 +84,12 @@ Partial Class TVControlPnl1080
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlStrap.SuspendLayout()
+        Me.pnlQuestion.SuspendLayout()
+        Me.picD.SuspendLayout()
+        Me.picB.SuspendLayout()
+        Me.picC.SuspendLayout()
+        Me.picA.SuspendLayout()
+        Me.picQuestion.SuspendLayout()
         Me.SuspendLayout()
         '
         'picTree
@@ -468,36 +482,133 @@ Partial Class TVControlPnl1080
         Me.txtWinnings.Text = "rgresgdfds"
         Me.txtWinnings.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'pnlStrap
+        'pnlQuestion
         '
-        Me.pnlStrap.BackColor = System.Drawing.Color.Transparent
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.WinStrap_02
-        Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.pnlStrap.Controls.Add(Me.lblAmount)
-        Me.pnlStrap.Location = New System.Drawing.Point(0, 848)
-        Me.pnlStrap.Name = "pnlStrap"
-        Me.pnlStrap.Size = New System.Drawing.Size(1920, 126)
-        Me.pnlStrap.TabIndex = 97
-        Me.pnlStrap.Visible = False
+        Me.pnlQuestion.BackColor = System.Drawing.SystemColors.Highlight
+        Me.pnlQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.pnlQuestion.Controls.Add(Me.picD)
+        Me.pnlQuestion.Controls.Add(Me.picB)
+        Me.pnlQuestion.Controls.Add(Me.picC)
+        Me.pnlQuestion.Controls.Add(Me.picA)
+        Me.pnlQuestion.Controls.Add(Me.picQuestion)
+        Me.pnlQuestion.Location = New System.Drawing.Point(0, 710)
+        Me.pnlQuestion.Name = "pnlQuestion"
+        Me.pnlQuestion.Size = New System.Drawing.Size(1920, 345)
+        Me.pnlQuestion.TabIndex = 97
+        Me.pnlQuestion.Visible = False
         '
-        'lblAmount
+        'picD
         '
-        Me.lblAmount.BackColor = System.Drawing.Color.Transparent
-        Me.lblAmount.Font = New System.Drawing.Font("Copperplate Gothic Bold", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAmount.ForeColor = System.Drawing.Color.Transparent
-        Me.lblAmount.Location = New System.Drawing.Point(636, 4)
-        Me.lblAmount.Name = "lblAmount"
-        Me.lblAmount.Size = New System.Drawing.Size(648, 112)
-        Me.lblAmount.TabIndex = 0
-        Me.lblAmount.Text = "0"
-        Me.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.picD.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
+        Me.picD.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picD.Controls.Add(Me.txtD)
+        Me.picD.Location = New System.Drawing.Point(960, 239)
+        Me.picD.Name = "picD"
+        Me.picD.Size = New System.Drawing.Size(963, 87)
+        Me.picD.TabIndex = 37
+        '
+        'txtD
+        '
+        Me.txtD.BackColor = System.Drawing.Color.Transparent
+        Me.txtD.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtD.ForeColor = System.Drawing.Color.White
+        Me.txtD.Location = New System.Drawing.Point(40, 5)
+        Me.txtD.Name = "txtD"
+        Me.txtD.Size = New System.Drawing.Size(476, 46)
+        Me.txtD.TabIndex = 19
+        Me.txtD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picB
+        '
+        Me.picB.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_R_Normal
+        Me.picB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picB.Controls.Add(Me.txtB)
+        Me.picB.Location = New System.Drawing.Point(960, 153)
+        Me.picB.Name = "picB"
+        Me.picB.Size = New System.Drawing.Size(963, 87)
+        Me.picB.TabIndex = 36
+        '
+        'txtB
+        '
+        Me.txtB.BackColor = System.Drawing.Color.Transparent
+        Me.txtB.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtB.ForeColor = System.Drawing.Color.White
+        Me.txtB.Location = New System.Drawing.Point(40, 5)
+        Me.txtB.Name = "txtB"
+        Me.txtB.Size = New System.Drawing.Size(476, 46)
+        Me.txtB.TabIndex = 20
+        Me.txtB.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picC
+        '
+        Me.picC.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
+        Me.picC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picC.Controls.Add(Me.txtC)
+        Me.picC.Location = New System.Drawing.Point(-2, 239)
+        Me.picC.Name = "picC"
+        Me.picC.Size = New System.Drawing.Size(963, 87)
+        Me.picC.TabIndex = 35
+        '
+        'txtC
+        '
+        Me.txtC.BackColor = System.Drawing.Color.Transparent
+        Me.txtC.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtC.ForeColor = System.Drawing.Color.White
+        Me.txtC.Location = New System.Drawing.Point(122, 5)
+        Me.txtC.Name = "txtC"
+        Me.txtC.Size = New System.Drawing.Size(476, 46)
+        Me.txtC.TabIndex = 18
+        Me.txtC.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picA
+        '
+        Me.picA.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Answer_L_Normal
+        Me.picA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picA.Controls.Add(Me.txtA)
+        Me.picA.Location = New System.Drawing.Point(-2, 153)
+        Me.picA.Name = "picA"
+        Me.picA.Size = New System.Drawing.Size(963, 87)
+        Me.picA.TabIndex = 34
+        '
+        'txtA
+        '
+        Me.txtA.BackColor = System.Drawing.Color.Transparent
+        Me.txtA.Font = New System.Drawing.Font("Calibri", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtA.ForeColor = System.Drawing.Color.White
+        Me.txtA.Location = New System.Drawing.Point(122, 5)
+        Me.txtA.Name = "txtA"
+        Me.txtA.Size = New System.Drawing.Size(476, 46)
+        Me.txtA.TabIndex = 19
+        Me.txtA.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'picQuestion
+        '
+        Me.picQuestion.BackgroundImage = Global.MillionaireGame.My.Resources.Resources._01_Question_Strap
+        Me.picQuestion.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.picQuestion.Controls.Add(Me.txtQuestion)
+        Me.picQuestion.Location = New System.Drawing.Point(0, 9)
+        Me.picQuestion.Name = "picQuestion"
+        Me.picQuestion.Size = New System.Drawing.Size(1920, 141)
+        Me.picQuestion.TabIndex = 38
+        '
+        'txtQuestion
+        '
+        Me.txtQuestion.BackColor = System.Drawing.Color.Transparent
+        Me.txtQuestion.Font = New System.Drawing.Font("Calibri", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtQuestion.ForeColor = System.Drawing.Color.White
+        Me.txtQuestion.Location = New System.Drawing.Point(132, 4)
+        Me.txtQuestion.Name = "txtQuestion"
+        Me.txtQuestion.Size = New System.Drawing.Size(1016, 82)
+        Me.txtQuestion.TabIndex = 13
+        Me.txtQuestion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'TVControlPnl1080
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ControlDark
         Me.ClientSize = New System.Drawing.Size(1920, 1061)
-        Me.Controls.Add(Me.pnlStrap)
+        Me.Controls.Add(Me.pnlQuestion)
         Me.Controls.Add(Me.txtWinnings)
         Me.Controls.Add(Me.lblWalkedAway)
         Me.Controls.Add(Me.lblExplainRules)
@@ -547,7 +658,12 @@ Partial Class TVControlPnl1080
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlStrap.ResumeLayout(False)
+        Me.pnlQuestion.ResumeLayout(False)
+        Me.picD.ResumeLayout(False)
+        Me.picB.ResumeLayout(False)
+        Me.picC.ResumeLayout(False)
+        Me.picA.ResumeLayout(False)
+        Me.picQuestion.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -587,6 +703,15 @@ Partial Class TVControlPnl1080
     Friend WithEvents lblWalkedAway As Label
     Friend WithEvents lblExplainRules As Label
     Friend WithEvents txtWinnings As Label
-    Friend WithEvents pnlStrap As Panel
-    Friend WithEvents lblAmount As Label
+    Friend WithEvents pnlQuestion As Panel
+    Friend WithEvents picD As Panel
+    Friend WithEvents txtD As Label
+    Friend WithEvents picB As Panel
+    Friend WithEvents txtB As Label
+    Friend WithEvents picC As Panel
+    Friend WithEvents txtC As Label
+    Friend WithEvents picA As Panel
+    Friend WithEvents txtA As Label
+    Friend WithEvents picQuestion As Panel
+    Friend WithEvents txtQuestion As Label
 End Class
