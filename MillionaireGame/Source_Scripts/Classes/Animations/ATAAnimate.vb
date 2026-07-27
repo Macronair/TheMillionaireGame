@@ -8,6 +8,7 @@
     Public Shared marginBottomPercent As Double = 0.4  ' 20% below
 
     Public Shared Sub SlideIn()
+        TVControlPnl.pnlATAGraph.Visible = True
         targetX = TVControlPnl.ClientSize.Width - TVControlPnl.pnlATAGraph.Width - 100
         slidingIn = True
         TVControlPnl.tmr_Anim_ATA.Start()

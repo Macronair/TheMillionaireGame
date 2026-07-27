@@ -124,10 +124,10 @@ Public Class User
         HostScreen.pnlAnswer.BackColor = Color.Black
         HostScreen.txtExplain.ForeColor = Color.Black
 
-        ControlPanel.txtA.BackColor = Color.Silver
-        ControlPanel.txtB.BackColor = Color.Silver
-        ControlPanel.txtC.BackColor = Color.Silver
-        ControlPanel.txtD.BackColor = Color.Silver
+        ControlPanel.txtA.BackColor = Color.Black
+        ControlPanel.txtB.BackColor = Color.Black
+        ControlPanel.txtC.BackColor = Color.Black
+        ControlPanel.txtD.BackColor = Color.Black
         HostScreen.txtA.ForeColor = Color.White
         HostScreen.txtB.ForeColor = Color.White
         HostScreen.txtC.ForeColor = Color.White

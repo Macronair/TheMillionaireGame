@@ -499,7 +499,7 @@
                 TVControlPnl.txtD.Font = New Font(TVControlPnl.txtD.Font.FontFamily, 34)
 
                 ' Money Tree / FFF Answers
-                TVControlPnl.picTree.Location = New Point(0, 0)
+                TVControlPnl.picTree.Location = New Point(0, -10)
                 TVControlPnl.pnlFFFOrder1.Location = New Point(1050, 560)
                 TVControlPnl.pnlFFFOrder2.Location = New Point(1050, 635)
                 TVControlPnl.pnlFFFOrder3.Location = New Point(1050, 710)
@@ -600,12 +600,12 @@
                 HostScreen.Size = New Size(1936, 1100)
 
                 'Question
-                HostScreen.picQuestion.Location = New Point(0, 735)
+                HostScreen.picQuestion.Location = New Point(0, 725)
                 HostScreen.txtQuestion.Location = New Point(198, 8)
-                HostScreen.pnlA.Location = New Point(-2, 883)
-                HostScreen.pnlB.Location = New Point(960, 883)
-                HostScreen.pnlC.Location = New Point(-2, 975)
-                HostScreen.pnlD.Location = New Point(960, 975)
+                HostScreen.pnlA.Location = New Point(-2, 873)
+                HostScreen.pnlB.Location = New Point(960, 873)
+                HostScreen.pnlC.Location = New Point(-2, 965)
+                HostScreen.pnlD.Location = New Point(960, 965)
                 HostScreen.txtA.Location = New Point(185, 7)
                 HostScreen.txtB.Location = New Point(60, 7)
                 HostScreen.txtC.Location = New Point(185, 7)
@@ -730,12 +730,12 @@
                 GuestScreen.Size = New Size(1936, 1100)
 
                 'Question
-                GuestScreen.picQuestion.Location = New Point(0, 735)
+                GuestScreen.picQuestion.Location = New Point(0, 725)
                 GuestScreen.txtQuestion.Location = New Point(198, 8)
-                GuestScreen.pnlA.Location = New Point(-2, 883)
-                GuestScreen.pnlB.Location = New Point(960, 883)
-                GuestScreen.pnlC.Location = New Point(-2, 975)
-                GuestScreen.pnlD.Location = New Point(960, 975)
+                GuestScreen.pnlA.Location = New Point(-2, 873)
+                GuestScreen.pnlB.Location = New Point(960, 873)
+                GuestScreen.pnlC.Location = New Point(-2, 965)
+                GuestScreen.pnlD.Location = New Point(960, 965)
                 GuestScreen.txtA.Location = New Point(185, 7)
                 GuestScreen.txtB.Location = New Point(60, 7)
                 GuestScreen.txtC.Location = New Point(185, 7)

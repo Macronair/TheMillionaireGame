@@ -1,11 +1,6 @@
 ﻿Public Class Lifeline5050
 
     Public Shared Sub LifelineUse1()
-
-        ControlPanel.txtA.BackColor = Color.Red
-        ControlPanel.txtB.BackColor = Color.Red
-        ControlPanel.txtC.BackColor = Color.Red
-        ControlPanel.txtD.BackColor = Color.Red
         HostScreen.txtA.Text = ""
         HostScreen.txtB.Text = ""
         HostScreen.txtC.Text = ""
@@ -22,25 +17,21 @@
         If ControlPanel.lblAnswer.Text = "A" Then
             Dim rnd As New Random
             Dim rndint As Integer
-            ControlPanel.txtA.BackColor = SystemColors.Control
             HostScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
             TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
             GuestScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
             rndint = rnd.Next(0, 3)
             If rndint = 0 Then
-                ControlPanel.txtB.BackColor = SystemColors.Control
                 TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
                 HostScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
                 GuestScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             End If
             If rndint = 1 Then
-                ControlPanel.txtC.BackColor = SystemColors.Control
                 TVControlPnl.txtC.Text = "C: " + ControlPanel.txtC.Text
                 HostScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
                 GuestScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             End If
             If rndint = 2 Then
-                ControlPanel.txtD.BackColor = SystemColors.Control
                 TVControlPnl.txtD.Text = "D: " + ControlPanel.txtD.Text
                 HostScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
                 GuestScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
@@ -49,25 +40,21 @@
         If ControlPanel.lblAnswer.Text = "B" Then
             Dim rnd As New Random
             Dim rndint As Integer
-            ControlPanel.txtB.BackColor = SystemColors.Control
             HostScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
             GuestScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             rndint = rnd.Next(0, 3)
             If rndint = 0 Then
-                ControlPanel.txtA.BackColor = SystemColors.Control
                 TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
                 HostScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
                 GuestScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
             End If
             If rndint = 1 Then
-                ControlPanel.txtC.BackColor = SystemColors.Control
                 TVControlPnl.txtC.Text = "C: " + ControlPanel.txtC.Text
                 HostScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
                 GuestScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             End If
             If rndint = 2 Then
-                ControlPanel.txtD.BackColor = SystemColors.Control
                 TVControlPnl.txtD.Text = "D: " + ControlPanel.txtD.Text
                 HostScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
                 GuestScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
@@ -76,25 +63,21 @@
         If ControlPanel.lblAnswer.Text = "C" Then
             Dim rnd As New Random
             Dim rndint As Integer
-            ControlPanel.txtC.BackColor = SystemColors.Control
             HostScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             TVControlPnl.txtC.Text = "C: " + ControlPanel.txtC.Text
             GuestScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             rndint = rnd.Next(0, 3)
             If rndint = 0 Then
-                ControlPanel.txtA.BackColor = SystemColors.Control
                 TVControlPnl.txtA.Text = "A: " + ControlPanel.txtA.Text
                 HostScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
                 GuestScreen.txtA.Text = "A: " + ControlPanel.txtA.Text
             End If
             If rndint = 1 Then
-                ControlPanel.txtB.BackColor = SystemColors.Control
                 TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
                 HostScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
                 GuestScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             End If
             If rndint = 2 Then
-                ControlPanel.txtD.BackColor = SystemColors.Control
                 TVControlPnl.txtD.Text = "D: " + ControlPanel.txtD.Text
                 HostScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
                 GuestScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
@@ -103,52 +86,31 @@
         If ControlPanel.lblAnswer.Text = "D" Then
             Dim rnd As New Random
             Dim rndint As Integer
-            ControlPanel.txtD.BackColor = SystemColors.Control
             HostScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
             TVControlPnl.txtD.Text = "D: " + ControlPanel.txtD.Text
             GuestScreen.txtD.Text = "D: " + ControlPanel.txtD.Text
             rndint = rnd.Next(0, 3)
             If rndint = 0 Then
-                ControlPanel.txtB.BackColor = SystemColors.Control
                 TVControlPnl.txtB.Text = "B: " + ControlPanel.txtB.Text
                 HostScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
                 GuestScreen.txtB.Text = "B: " + ControlPanel.txtB.Text
             End If
             If rndint = 1 Then
-                ControlPanel.txtC.BackColor = SystemColors.Control
                 TVControlPnl.txtC.Text = "C: " + ControlPanel.txtC.Text
                 HostScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
                 GuestScreen.txtC.Text = "C: " + ControlPanel.txtC.Text
             End If
             If rndint = 2 Then
-                ControlPanel.txtA.BackColor = SystemColors.Control
                 TVControlPnl.txtA.Text = "D: " + ControlPanel.txtA.Text
                 HostScreen.txtA.Text = "D: " + ControlPanel.txtA.Text
                 GuestScreen.txtA.Text = "D: " + ControlPanel.txtA.Text
             End If
         End If
 
-        If ControlPanel.txtA.BackColor = Color.Red Then
-            ControlPanel.txtA.Text = ""
-            ControlPanel.txtA.BackColor = SystemColors.Control
-        End If
-        If ControlPanel.txtB.BackColor = Color.Red Then
-            ControlPanel.txtB.Text = ""
-            ControlPanel.txtB.BackColor = SystemColors.Control
-        End If
-        If ControlPanel.txtC.BackColor = Color.Red Then
-            ControlPanel.txtC.Text = ""
-            ControlPanel.txtC.BackColor = SystemColors.Control
-        End If
-        If ControlPanel.txtD.BackColor = Color.Red Then
-            ControlPanel.txtD.Text = ""
-            ControlPanel.txtD.BackColor = SystemColors.Control
-        End If
-
         LifelineManager.EnableLifeline(LifelineManager.CurrentActive, False)
 
-        ControlPanel.txtHostMessages.AppendText("50:50 ACTIVATED." + Environment.NewLine)
-        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "50:50 ACTIVATED."
+        ControlPanel.txtHostMessages.AppendText("50:50 ACTIVATED" + Environment.NewLine)
+        HostScreen.lblHostMsg.Text = HostScreen.lblHostMsg.Text + Environment.NewLine + "50:50 ACTIVATED"
 
         With Sounds.sndLifeline1
             .URL = Sounds.SoundsPath + Profile.Options.snd_5050

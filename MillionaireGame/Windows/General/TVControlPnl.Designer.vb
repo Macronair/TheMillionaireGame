@@ -794,6 +794,7 @@ Partial Class TVControlPnl
         Me.pnlATAGraph.Name = "pnlATAGraph"
         Me.pnlATAGraph.Size = New System.Drawing.Size(284, 361)
         Me.pnlATAGraph.TabIndex = 35
+        Me.pnlATAGraph.Visible = False
         '
         'picTree
         '

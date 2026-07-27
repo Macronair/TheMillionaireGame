@@ -97,7 +97,6 @@ Public Class Questions
             TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(3)
             TVControlPnl.picTree.Visible = False
             TVControlPnl.pnlStrap.Visible = False
-            HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
             ControlPanel.chkShowQuestion.Checked = True
             act = 2
@@ -105,8 +104,7 @@ Public Class Questions
         If act = 0 Then
             act = 1
             If ControlPanel.listQuestionStack.Items.Count > 0 Then
-                newQ.getQuestion(Convert.ToInt16(ControlPanel.listQuestionStack.Items(0).Text))
-                ControlPanel.listQuestionStack.Items.RemoveAt(0)
+                newQ.getQuestion(Convert.ToInt16(ControlPanel.listQuestionStack.Items(Game.level).SubItems(1).Text))
             Else
                 newQ.getQuestion()
             End If
@@ -131,10 +129,14 @@ Public Class Questions
             LifelineATA.ResetAudienceChart()
 
             ControlPanel.answer = ""
-            ControlPanel.txtA.BackColor = Color.Silver
-            ControlPanel.txtB.BackColor = Color.Silver
-            ControlPanel.txtC.BackColor = Color.Silver
-            ControlPanel.txtD.BackColor = Color.Silver
+            ControlPanel.txtA.BackColor = Color.Black
+            ControlPanel.txtB.BackColor = Color.Black
+            ControlPanel.txtC.BackColor = Color.Black
+            ControlPanel.txtD.BackColor = Color.Black
+            ControlPanel.txtA.ForeColor = Color.White
+            ControlPanel.txtB.ForeColor = Color.White
+            ControlPanel.txtC.ForeColor = Color.White
+            ControlPanel.txtD.ForeColor = Color.White
             HostScreen.txtA.ForeColor = Color.White
             HostScreen.txtB.ForeColor = Color.White
             HostScreen.txtC.ForeColor = Color.White
@@ -188,9 +190,7 @@ Public Class Questions
             TVControlPnl.txtC.Visible = False
             TVControlPnl.txtD.Visible = False
             HostScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text
-
             TVControlPnl.txtQuestion.Text = ControlPanel.txtQuestion.Text
-
             GuestScreen.txtQuestion.Text = ControlPanel.txtQuestion.Text
             HostScreen.lblAnswer.Text = ControlPanel.lblAnswer.Text
             HostScreen.txtExplain.Text = ControlPanel.txtExplain.Text
@@ -205,8 +205,9 @@ Public Class Questions
 
         With ControlPanel.listQuestionStack.Columns
             .Clear()
+            .Add("#", 40)
             .Add("QID", 40)
-            .Add("Category", 100)
+            .Add("Category", 75)
             .Add("Question", 200)
             .Add("A", 100)
             .Add("B", 100)
@@ -244,7 +245,8 @@ Public Class Questions
 
             If MaxRows > 0 Then
                 Dim row As DataRow = dsstack.Tables("question").Rows(0)
-                Dim item As New ListViewItem(row("Id").ToString())
+                Dim item As New ListViewItem(level)
+                item.SubItems.Add(row("Id").ToString())
                 item.SubItems.Add(row("QuestionCategory").ToString())
                 item.SubItems.Add(row("Question").ToString())
                 item.SubItems.Add(row("A").ToString())
@@ -1099,10 +1101,14 @@ Public Class Questions
             PlayQuestionCue()
         End If
         ControlPanel.i = 0
-        ControlPanel.txtA.BackColor = Color.Silver
-        ControlPanel.txtB.BackColor = Color.Silver
-        ControlPanel.txtC.BackColor = Color.Silver
-        ControlPanel.txtD.BackColor = Color.Silver
+        ControlPanel.txtA.BackColor = Color.Black
+        ControlPanel.txtB.BackColor = Color.Black
+        ControlPanel.txtC.BackColor = Color.Black
+        ControlPanel.txtD.BackColor = Color.Black
+        ControlPanel.txtA.ForeColor = Color.White
+        ControlPanel.txtB.ForeColor = Color.White
+        ControlPanel.txtC.ForeColor = Color.White
+        ControlPanel.txtD.ForeColor = Color.White
 
         HostScreen.txtExplain.BackColor = Color.Black
         HostScreen.pnlAnswer.BackColor = Color.Black

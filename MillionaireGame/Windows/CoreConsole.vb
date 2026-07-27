@@ -18,20 +18,6 @@ Public Class CoreConsole
 
     ' This sub below checks at a specific interval if the boolean above is still true.
     Private Sub tmrRuntime_Tick(sender As Object, e As EventArgs) Handles tmrRuntime.Tick
-        If ControlPanelRunning = False Then   ' When Control Panel is closed, then do the following:
-            tmrRuntime.Stop()       ' - Stops this timer.
-
-            ' Kill the WebService process if it is still running.
-            Dim procToKill As Process = Process.GetProcessById(WebServicePID)
-            Try
-                procToKill.Kill()
-            Catch ex As Exception
-                MessageBox.Show("Error when trying to kill the WebService process: " + Environment.NewLine + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
-
-            Me.Close()              ' - Kill application completely.
-        End If
-
         Dim p As Process = Nothing
 
         ' Check if the WebService process is still running. If not, then restart it.
@@ -50,6 +36,23 @@ Public Class CoreConsole
         If Not WebServiceRunning Then
             RunWebService()
         End If
+
+        If ControlPanelRunning = False Then   ' When Control Panel is closed, then do the following:
+            LogMsgDate("[INFO] Main console has been closed by the user.")
+            tmrRuntime.Stop()       ' - Stops this timer.
+            Me.Show()   ' Show the console window again, because the control panel is closed.
+
+            ' Kill the WebService process if it is still running.
+            Dim procToKill As Process = Process.GetProcessById(WebServicePID)
+            Try
+                procToKill.Kill()
+                LogMsgDate("[INFO] WebService process has been terminated.")
+            Catch ex As Exception
+                LogMsgDate("[ERROR] Could not terminate WebService: " + ex.Message)
+            End Try
+
+            Me.Close()              ' - Kill application completely.
+        End If
     End Sub
 
     ' Start the whole 
@@ -59,7 +62,9 @@ Public Class CoreConsole
 
     ' The beginning of the application.
     Private Sub StartSeq()
-        Me.Enabled = True       ' Enable.. Me? (Not sure anymore why this is added. ;D)
+
+        Me.Hide()                       ' Hide this console window.
+        SplashScreen.Show()             ' Show the splash screen window.
 
         '' APPLICATION, VERSION, CREATOR INFO ''
         LogMsg(String.Format("The Millionaire Game [Version {0}].", Application.ProductVersion))
@@ -122,9 +127,9 @@ Public Class CoreConsole
         Monitor.ApplyScreenSettings()   ' Apply current screen settings
 
         ControlPanelRunning = True                ' Change main control panel running state to True.
-        Me.Hide()                       ' Hide this console window.
         ControlPanel.Show()             ' Show main control panel.
 
+        SplashScreen.Close()
         tmrRuntime.Start()              ' Start the runtime timer (see code at the top).
     End Sub
 
@@ -144,6 +149,7 @@ Public Class CoreConsole
 
         Dim startInfo As New ProcessStartInfo(exePath)
         startInfo.WindowStyle = ProcessWindowStyle.Hidden
+        startInfo.WorkingDirectory = Path.Combine(baseDir, "WebService") ' Set working directory to the WebService folder
 
         Dim p As Process = Process.Start(startInfo)
 
@@ -182,9 +188,6 @@ Public Class CoreConsole
                 e.Cancel = True     ' Cancel the event if the user has done that.
             Else
                 e.Cancel = False    ' If the user hasn't closed the form, then the event won't be canceled.
-                ' Kill the WebService process if it is still running.
-                Dim procToKill As Process = Process.GetProcessById(WebServicePID)
-                procToKill.Kill()
             End If
         End If
     End Sub

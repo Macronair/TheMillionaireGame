@@ -39,20 +39,7 @@ Public Class ControlPanel
 
         Game.ChangeLevel(0)
 
-        TVControlPnl.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        TVControlPnl.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        TVControlPnl.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        TVControlPnl.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-
-        HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
-
-        HostScreen.picLifeline1.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline1)
-        HostScreen.picLifeline2.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline2)
-        HostScreen.picLifeline3.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline3)
-        HostScreen.picLifeline4.Image = LifelineManager.GetLifelineImage(Profile.Options.Lifeline4)
+        LifelineManager.RefreshLifelineImages()  ' Refresh the lifeline images on the control panel, host screen, guest screen and tv screen.
 
         TVControlPnl.pnlFFFOrder1.BackgroundImage = QuestionStrap.GetTexture(3)
         TVControlPnl.pnlFFFOrder2.BackgroundImage = QuestionStrap.GetTexture(3)
@@ -70,14 +57,6 @@ Public Class ControlPanel
         If Profile.Options.AutoShow_TVScreen = True Then
             TVControlPnl.Show()                                 ' Open the tv screen at startup.
         End If
-
-        'If Not Process.GetProcessesByName("MillionaireGame - TV").Any() Then
-        '    Try
-        '        Process.Start("MillionaireGame - TV.exe")
-        '    Catch ex As Exception
-        '        MessageBox.Show("Cannot load TV Screen: " & ex.Message)
-        '    End Try
-        'End If
     End Sub
 
     ' Collect the host messages that are present in the database.
@@ -117,7 +96,8 @@ Public Class ControlPanel
         NetHub.ATA_CloseVoting()
 
         ' Apply final answer textures
-        txtA.BackColor = Color.Yellow
+        txtA.BackColor = Color.Gold
+        txtA.ForeColor = Color.Black
         HostScreen.pnlA.BackgroundImage = QuestionStrap.GetTexture(4)
         HostScreen.txtA.ForeColor = Color.Black
         TVControlPnl.picA.BackgroundImage = QuestionStrap.GetTexture(4)
@@ -140,7 +120,8 @@ Public Class ControlPanel
         NetHub.ATA_CloseVoting()
 
         ' Apply final answer textures
-        txtB.BackColor = Color.Yellow
+        txtB.BackColor = Color.Gold
+        txtB.ForeColor = Color.Black
         HostScreen.pnlB.BackgroundImage = QuestionStrap.GetTexture(5)
         HostScreen.txtB.ForeColor = Color.Black
         TVControlPnl.picB.BackgroundImage = QuestionStrap.GetTexture(5)
@@ -163,7 +144,8 @@ Public Class ControlPanel
         NetHub.ATA_CloseVoting()
 
         ' Apply final answer textures
-        txtC.BackColor = Color.Yellow
+        txtC.BackColor = Color.Gold
+        txtC.ForeColor = Color.Black
         HostScreen.pnlC.BackgroundImage = QuestionStrap.GetTexture(4)
         HostScreen.txtC.ForeColor = Color.Black
         TVControlPnl.picC.BackgroundImage = QuestionStrap.GetTexture(4)
@@ -186,7 +168,8 @@ Public Class ControlPanel
         NetHub.ATA_CloseVoting()
 
         ' Apply final answer textures
-        txtD.BackColor = Color.Yellow
+        txtD.BackColor = Color.Gold
+        txtD.ForeColor = Color.Black
         HostScreen.pnlD.BackgroundImage = QuestionStrap.GetTexture(5)
         HostScreen.txtD.ForeColor = Color.Black
         TVControlPnl.picD.BackgroundImage = QuestionStrap.GetTexture(5)
@@ -244,7 +227,6 @@ Public Class ControlPanel
             i = 2
         ElseIf i = 2 Then
             ' Clear the previous question.
-            HostScreen.pnlStrap.Visible = False
             GuestScreen.pnlStrap.Visible = False
             HostScreen.pnlAnswer.BackColor = Color.Black
             HostScreen.txtExplain.Text = ""
@@ -302,12 +284,20 @@ Public Class ControlPanel
                     .controls.play()
                 End With
                 Game.intoCommercials = True
+
+                Game.logoOverlayVisible = True
+                HostScreen.picLogoOverlay.Visible = True
+                GuestScreen.picLogoOverlay.Visible = True
             Case True   ' When returning to the game/program.
                 With Sounds.sndGeneral
                     .URL = Sounds.SoundsPath + Profile.Options.snd_CommOut
                     .controls.play()
                 End With
                 Game.intoCommercials = False
+
+                Game.logoOverlayVisible = False
+                HostScreen.picLogoOverlay.Visible = False
+                GuestScreen.picLogoOverlay.Visible = False
         End Select
     End Sub
 
@@ -326,7 +316,7 @@ Public Class ControlPanel
         Questions.PlayLightsDownCue()    ' Of course... play the cue.
         HostScreen.lblExplainRules.ForeColor = Color.Black
         btnLightsDown.Text = "Lights Down"
-        btnLightsDown.BackColor = Color.DimGray
+        btnLightsDown.BackColor = Color.Black
     End Sub
 
     Private Sub btnWalk_Click(sender As Object, e As EventArgs) Handles btnWalk.Click
@@ -866,6 +856,27 @@ Public Class ControlPanel
 
     Private Sub btnGenerateNewStack_Click(sender As Object, e As EventArgs) Handles btnGenerateNewStack.Click
         Questions.GetNewStack()
+        ' Show the following colors for the levels in the question stack list:
+        For i As Integer = 0 To listQuestionStack.Items.Count - 1
+            Try
+                Dim item = listQuestionStack.Items(i)
+                If (i + 1) < Game.level + 1 Then
+                    ' Level already played
+                    item.BackColor = Color.FromArgb(64, 64, 64)
+                    item.ForeColor = Color.DarkGray
+                ElseIf (i + 1) = Game.level + 1 Then
+                    ' Current level
+                    item.BackColor = Color.Gold
+                    item.ForeColor = Color.Black
+                Else
+                    ' Level not yet played
+                    item.BackColor = Color.FromArgb(64, 64, 64)
+                    item.ForeColor = Color.White
+                End If
+            Catch ex As Exception
+
+            End Try
+        Next
     End Sub
 
     Private Sub FastestFingerFirstNewToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FastestFingerFirstNewToolStripMenuItem.Click
@@ -905,5 +916,18 @@ Public Class ControlPanel
             tmrLightsDownTrigger.Stop()
         End If
 
+    End Sub
+
+    Private Sub btnToggleOverlay_Click(sender As Object, e As EventArgs) Handles btnToggleOverlay.Click
+        Select Case Game.logoOverlayVisible
+            Case True
+                Game.logoOverlayVisible = False
+                HostScreen.picLogoOverlay.Visible = False
+                GuestScreen.picLogoOverlay.Visible = False
+            Case False
+                Game.logoOverlayVisible = True
+                HostScreen.picLogoOverlay.Visible = True
+                GuestScreen.picLogoOverlay.Visible = True
+        End Select
     End Sub
 End Class

@@ -60,12 +60,11 @@ Partial Class HostScreen
         Me.picQuestion = New System.Windows.Forms.Panel()
         Me.txtQuestion = New System.Windows.Forms.Label()
         Me.picTree = New System.Windows.Forms.PictureBox()
-        Me.pnlStrap = New System.Windows.Forms.Panel()
-        Me.txtWinningStrap = New System.Windows.Forms.Label()
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
         Me.picLifeline2 = New System.Windows.Forms.PictureBox()
         Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.picLifeline4 = New System.Windows.Forms.PictureBox()
+        Me.picLogoOverlay = New System.Windows.Forms.PictureBox()
         Me.pnlCorrect.SuspendLayout()
         CType(Me.picCorrect, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlWrong.SuspendLayout()
@@ -82,11 +81,11 @@ Partial Class HostScreen
         Me.pnlA.SuspendLayout()
         Me.picQuestion.SuspendLayout()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlStrap.SuspendLayout()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogoOverlay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnlCorrect
@@ -488,35 +487,13 @@ Partial Class HostScreen
         'picTree
         '
         Me.picTree.BackColor = System.Drawing.Color.Transparent
-        Me.picTree.Image = CType(resources.GetObject("picTree.Image"), System.Drawing.Image)
+        Me.picTree.Image = Global.MillionaireGame.My.Resources.Resources._01_Tree
         Me.picTree.Location = New System.Drawing.Point(367, -50)
         Me.picTree.Name = "picTree"
         Me.picTree.Size = New System.Drawing.Size(920, 540)
         Me.picTree.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.picTree.TabIndex = 12
         Me.picTree.TabStop = False
-        '
-        'pnlStrap
-        '
-        Me.pnlStrap.BackgroundImage = Global.MillionaireGame.My.Resources.Resources.WinStrap_01
-        Me.pnlStrap.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.pnlStrap.Controls.Add(Me.txtWinningStrap)
-        Me.pnlStrap.Location = New System.Drawing.Point(-8, 492)
-        Me.pnlStrap.Name = "pnlStrap"
-        Me.pnlStrap.Size = New System.Drawing.Size(1296, 225)
-        Me.pnlStrap.TabIndex = 68
-        Me.pnlStrap.Visible = False
-        '
-        'txtWinningStrap
-        '
-        Me.txtWinningStrap.BackColor = System.Drawing.Color.Transparent
-        Me.txtWinningStrap.Font = New System.Drawing.Font("Copperplate Gothic Bold", 38.0!)
-        Me.txtWinningStrap.Location = New System.Drawing.Point(423, 84)
-        Me.txtWinningStrap.Name = "txtWinningStrap"
-        Me.txtWinningStrap.Size = New System.Drawing.Size(451, 55)
-        Me.txtWinningStrap.TabIndex = 0
-        Me.txtWinningStrap.Text = "1.000.000"
-        Me.txtWinningStrap.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'picLifeline1
         '
@@ -562,12 +539,27 @@ Partial Class HostScreen
         Me.picLifeline4.TabIndex = 74
         Me.picLifeline4.TabStop = False
         '
+        'picLogoOverlay
+        '
+        Me.picLogoOverlay.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogoOverlay.BackgroundImage = CType(resources.GetObject("picLogoOverlay.BackgroundImage"), System.Drawing.Image)
+        Me.picLogoOverlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLogoOverlay.Location = New System.Drawing.Point(0, -2)
+        Me.picLogoOverlay.Name = "picLogoOverlay"
+        Me.picLogoOverlay.Size = New System.Drawing.Size(1280, 724)
+        Me.picLogoOverlay.TabIndex = 75
+        Me.picLogoOverlay.TabStop = False
+        Me.picLogoOverlay.Visible = False
+        '
         'HostScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.picLogoOverlay)
         Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.picLifeline3)
         Me.Controls.Add(Me.picLifeline2)
@@ -594,7 +586,6 @@ Partial Class HostScreen
         Me.Controls.Add(Me.pnlWrong)
         Me.Controls.Add(Me.pnlCorrect)
         Me.Controls.Add(Me.picTree)
-        Me.Controls.Add(Me.pnlStrap)
         Me.ForeColor = System.Drawing.SystemColors.ControlText
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -623,11 +614,11 @@ Partial Class HostScreen
         Me.pnlA.ResumeLayout(False)
         Me.picQuestion.ResumeLayout(False)
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlStrap.ResumeLayout(False)
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLifeline4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogoOverlay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -668,11 +659,10 @@ Partial Class HostScreen
     Friend WithEvents picQuestion As Panel
     Friend WithEvents txtQuestion As Label
     Friend WithEvents txtWinnings As Label
-    Friend WithEvents pnlStrap As Panel
-    Friend WithEvents txtWinningStrap As Label
     Friend WithEvents lblHostMsg As TextBox
     Friend WithEvents picLifeline1 As PictureBox
     Friend WithEvents picLifeline2 As PictureBox
     Friend WithEvents picLifeline3 As PictureBox
     Friend WithEvents picLifeline4 As PictureBox
+    Friend WithEvents picLogoOverlay As PictureBox
 End Class

@@ -14,6 +14,7 @@
     Public Shared showTree As Boolean = False
 
     Public Shared lightsdownInterval As Integer = -1
+    Public Shared logoOverlayVisible As Boolean = False
 
     Public Shared freeSafetyNetSet As Boolean = False
     Public Shared freeSafetyNetAt As Integer = 0
@@ -34,82 +35,126 @@
     Dim intSound As Integer = 0
 
     Public Shared Sub ChangeLevel(ByVal newLvl As Integer)
-        If newLvl = 0 Then
-            Game.level = 0
-            ControlPanel.nmrLevel.Value = 0
-        End If
-        If newLvl = 1 Then
-            Game.level = 1
-            ControlPanel.nmrLevel.Value = 1
-        End If
-        If newLvl = 2 Then
-            Game.level = 2
-            ControlPanel.nmrLevel.Value = 2
-        End If
-        If newLvl = 3 Then
-            Game.level = newLvl
-            ControlPanel.nmrLevel.Value = 3
-        End If
-        If newLvl = 4 Then
-            Game.level = 4
-            ControlPanel.nmrLevel.Value = 4
-        End If
-        If newLvl = 5 Then
-            Game.level = 5
-            ControlPanel.nmrLevel.Value = 5
-        End If
-        If newLvl = 6 Then
-            Game.level = 6
-            ControlPanel.nmrLevel.Value = 6
-        End If
-        If newLvl = 7 Then
-            Game.level = 7
-            ControlPanel.nmrLevel.Value = 7
-        End If
-        If newLvl = 8 Then
-            Game.level = 8
-            ControlPanel.nmrLevel.Value = 8
-        End If
-        If newLvl = 9 Then
-            Game.level = 9
-            ControlPanel.nmrLevel.Value = 9
-        End If
-        If newLvl = 10 Then
-            Game.level = 10
-            ControlPanel.nmrLevel.Value = 10
-        End If
-        If newLvl = 11 Then
-            Game.level = 11
-            ControlPanel.nmrLevel.Value = 11
-        End If
-        If newLvl = 12 Then
-            Game.level = 12
-            ControlPanel.nmrLevel.Value = 12
-        End If
-        If newLvl = 13 Then
-            Game.level = 13
-            ControlPanel.nmrLevel.Value = 13
-        End If
-        If newLvl = 14 Then
-            Game.level = 14
-            ControlPanel.nmrLevel.Value = 14
-        End If
-        If newLvl = 15 Then
-            Game.level = 15
-            ControlPanel.nmrLevel.Value = 15
-        End If
+        If newLvl < 0 Then newLvl = 0
+        If newLvl > 15 Then newLvl = 15
+
+        Game.level = newLvl
+        ControlPanel.nmrLevel.Value = newLvl
+
+        ' Show the following colors for the levels in the question stack list:
+        For i As Integer = 0 To ControlPanel.listQuestionStack.Items.Count - 1
+            Try
+                Dim item = ControlPanel.listQuestionStack.Items(i)
+                If (i + 1) < Game.level + 1 Then
+                    ' Level already played
+                    item.BackColor = Color.FromArgb(64, 64, 64)
+                    item.ForeColor = Color.DarkGray
+                ElseIf (i + 1) = Game.level + 1 Then
+                    ' Current level
+                    item.BackColor = Color.Gold
+                    item.ForeColor = Color.Black
+                Else
+                    ' Level not yet played
+                    item.BackColor = Color.FromArgb(64, 64, 64)
+                    item.ForeColor = Color.White
+                End If
+            Catch ex As Exception
+
+            End Try
+        Next
 
         Game.SetValues()
+
         ControlPanel.txtCorrect.Text = Game.varCorrect
         ControlPanel.txtCurrent.Text = Game.varCurrent
         ControlPanel.txtDrop.Text = Game.varDrop
         ControlPanel.txtQLeft.Text = Game.varQLeft
         ControlPanel.txtWrong.Text = Game.varWrong
+
         HostScreen.lblCorrect.Text = Game.varCorrect
         HostScreen.lblCurrent.Text = Game.varCurrent
         HostScreen.lblDrop.Text = Game.varDrop
         HostScreen.lblQLeft.Text = Game.varQLeft
         HostScreen.lblWrong.Text = Game.varWrong
+
+        'If newLvl = 0 Then
+        '    Game.level = 0
+        '    ControlPanel.nmrLevel.Value = 0
+        'End If
+        'If newLvl = 1 Then
+        '    Game.level = 1
+        '    ControlPanel.nmrLevel.Value = 1
+        'End If
+        'If newLvl = 2 Then
+        '    Game.level = 2
+        '    ControlPanel.nmrLevel.Value = 2
+        'End If
+        'If newLvl = 3 Then
+        '    Game.level = newLvl
+        '    ControlPanel.nmrLevel.Value = 3
+        'End If
+        'If newLvl = 4 Then
+        '    Game.level = 4
+        '    ControlPanel.nmrLevel.Value = 4
+        'End If
+        'If newLvl = 5 Then
+        '    Game.level = 5
+        '    ControlPanel.nmrLevel.Value = 5
+        'End If
+        'If newLvl = 6 Then
+        '    Game.level = 6
+        '    ControlPanel.nmrLevel.Value = 6
+        'End If
+        'If newLvl = 7 Then
+        '    Game.level = 7
+        '    ControlPanel.nmrLevel.Value = 7
+        'End If
+        'If newLvl = 8 Then
+        '    Game.level = 8
+        '    ControlPanel.nmrLevel.Value = 8
+        'End If
+        'If newLvl = 9 Then
+        '    Game.level = 9
+        '    ControlPanel.nmrLevel.Value = 9
+        'End If
+        'If newLvl = 10 Then
+        '    Game.level = 10
+        '    ControlPanel.nmrLevel.Value = 10
+        'End If
+        'If newLvl = 11 Then
+        '    Game.level = 11
+        '    ControlPanel.nmrLevel.Value = 11
+        'End If
+        'If newLvl = 12 Then
+        '    Game.level = 12
+        '    ControlPanel.nmrLevel.Value = 12
+        'End If
+        'If newLvl = 13 Then
+        '    Game.level = 13
+        '    ControlPanel.nmrLevel.Value = 13
+        'End If
+        'If newLvl = 14 Then
+        '    Game.level = 14
+        '    ControlPanel.nmrLevel.Value = 14
+        'End If
+        'If newLvl = 15 Then
+        '    Game.level = 15
+        '    ControlPanel.nmrLevel.Value = 15
+        'End If
+
+
+
+        'Game.SetValues()
+        'ControlPanel.txtCorrect.Text = Game.varCorrect
+        'ControlPanel.txtCurrent.Text = Game.varCurrent
+        'ControlPanel.txtDrop.Text = Game.varDrop
+        'ControlPanel.txtQLeft.Text = Game.varQLeft
+        'ControlPanel.txtWrong.Text = Game.varWrong
+        'HostScreen.lblCorrect.Text = Game.varCorrect
+        'HostScreen.lblCurrent.Text = Game.varCurrent
+        'HostScreen.lblDrop.Text = Game.varDrop
+        'HostScreen.lblQLeft.Text = Game.varQLeft
+        'HostScreen.lblWrong.Text = Game.varWrong
     End Sub
 
     Public Shared Sub ChangeMode(ByVal newmode As Integer)

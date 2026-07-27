@@ -195,9 +195,6 @@
             lblAmount.Text = MoneyTreeSettings.TreeData.Currency + Game.varCurrent
         End If
 
-        HostScreen.txtWinningStrap.Text = lblAmount.Text
-        GuestScreen.txtWinningStrap.Text = lblAmount.Text
-
         ControlPanel.chkShowQuestion.Checked = False
         pnlStrap.Visible = True
         txtA.ForeColor = Color.White
@@ -271,6 +268,7 @@
             pnlATAGraph.Left += ATAAnimate.slideSpeed
             If pnlATAGraph.Left >= ATAAnimate.targetX Then
                 pnlATAGraph.Left = ATAAnimate.targetX
+                pnlATAGraph.Visible = False
                 tmr_Anim_ATA.Stop()
             End If
         End If

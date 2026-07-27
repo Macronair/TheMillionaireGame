@@ -43,7 +43,7 @@
     <SuiteName>The Millionaire Game</SuiteName>
     <AutorunEnabled>true</AutorunEnabled>
     <ApplicationRevision>2233</ApplicationRevision>
-    <ApplicationVersion>1.2.1.1167</ApplicationVersion>
+    <ApplicationVersion>1.2.1.1207</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -359,6 +359,12 @@
     <Compile Include="Source_Scripts\DatabaseAndSettings\QDatabase.vb" />
     <Compile Include="Source_Scripts\Classes\Game\Game.vb" />
     <Compile Include="Source_Scripts\Sound Engine\SOUND.vb" />
+    <Compile Include="Windows\General\SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\General\SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Windows\General\TVControlPnl1080.Designer.vb">
       <DependentUpon>TVControlPnl1080.vb</DependentUpon>
     </Compile>
@@ -435,6 +441,9 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Windows\General\SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Windows\General\TVControlPnl1080.resx">
       <DependentUpon>TVControlPnl1080.vb</DependentUpon>
@@ -600,46 +609,123 @@
   <ItemGroup>
     <Content Include="logo21.ico" />
     <Content Include="logo23.ico" />
-    <None Include="Resources\00_ATA.png" />
-    <None Include="Resources\05_FFF.png" />
-    <None Include="Resources\04_FFF.png" />
-    <None Include="Resources\02_FFF.png" />
-    <None Include="Resources\01_FFF.png" />
-    <None Include="Resources\ll_timer.png" />
-    <None Include="Resources\04_Tree.png" />
+    <None Include="Resources\04_LL_Phone_select.png" />
+    <None Include="Resources\04_LL_Host_select.png" />
+    <None Include="Resources\04_LL_Double_select.png" />
+    <None Include="Resources\05_LL_Switch_select.png" />
+    <None Include="Resources\05_LL_Phone_select.png" />
+    <None Include="Resources\05_LL_Host_select.png" />
+    <None Include="Resources\05_LL_Double_select.png" />
+    <None Include="Resources\04_LL_Switch_select.png" />
+    <None Include="Resources\05_LL_Plus_used.png" />
+    <None Include="Resources\05_LL_Plus_select.png" />
+    <None Include="Resources\05_LL_Plus.png" />
+    <None Include="Resources\05_LL_Phone_used.png" />
+    <None Include="Resources\05_LL_Phone.png" />
+    <None Include="Resources\05_LL_Host_used.png" />
+    <None Include="Resources\05_LL_Host.png" />
+    <None Include="Resources\05_LL_Double_used.png" />
+    <None Include="Resources\05_LL_Double.png" />
+    <None Include="Resources\05_LL_Audience_used.png" />
+    <None Include="Resources\05_LL_Audience_select.png" />
+    <None Include="Resources\05_LL_Audience.png" />
+    <None Include="Resources\05_LL_5050_used.png" />
+    <None Include="Resources\05_LL_5050_select.png" />
+    <None Include="Resources\05_LL_5050.png" />
+    <None Include="Resources\05_LL_Switch_used.png" />
+    <None Include="Resources\05_LL_Switch.png" />
+    <None Include="Resources\04_LL_Audience_select.png" />
+    <None Include="Resources\04_LL_Audience.png" />
+    <None Include="Resources\04_LL_5050_used.png" />
+    <None Include="Resources\04_LL_5050_select.png" />
+    <None Include="Resources\04_LL_5050.png" />
+    <None Include="Resources\04_LL_Switch_used.png" />
+    <None Include="Resources\04_LL_Switch.png" />
+    <None Include="Resources\04_LL_Plus_used.png" />
+    <None Include="Resources\04_LL_Plus_select.png" />
+    <None Include="Resources\04_LL_Plus.png" />
+    <None Include="Resources\04_LL_Phone_used.png" />
+    <None Include="Resources\04_LL_Phone.png" />
+    <None Include="Resources\04_LL_Host_used.png" />
+    <None Include="Resources\04_LL_Host.png" />
+    <None Include="Resources\04_LL_Double_used.png" />
+    <None Include="Resources\04_LL_Double.png" />
+    <None Include="Resources\04_LL_Audience_used.png" />
+    <None Include="Resources\03_LL_Plus_used.png" />
+    <None Include="Resources\03_LL_Plus_select.png" />
+    <None Include="Resources\03_LL_Plus.png" />
+    <None Include="Resources\03_LL_Phone_used.png" />
+    <None Include="Resources\03_LL_Phone_select.png" />
+    <None Include="Resources\03_LL_Phone.png" />
+    <None Include="Resources\03_LL_Host_used.png" />
+    <None Include="Resources\03_LL_Host_select.png" />
+    <None Include="Resources\03_LL_Host.png" />
+    <None Include="Resources\03_LL_Double_used.png" />
+    <None Include="Resources\03_LL_Double_select.png" />
+    <None Include="Resources\03_LL_Double.png" />
+    <None Include="Resources\03_LL_Audience_used.png" />
+    <None Include="Resources\03_LL_Audience_select.png" />
+    <None Include="Resources\03_LL_Audience.png" />
+    <None Include="Resources\03_LL_5050_used.png" />
+    <None Include="Resources\03_LL_5050_select.png" />
+    <None Include="Resources\03_LL_5050.png" />
+    <None Include="Resources\03_LL_Switch_used.png" />
+    <None Include="Resources\03_LL_Switch_select.png" />
+    <None Include="Resources\03_LL_Switch.png" />
+    <None Include="Resources\02_LL_5050_select.png" />
+    <None Include="Resources\02_LL_5050.png" />
+    <None Include="Resources\02_LL_Switch_used.png" />
+    <None Include="Resources\02_LL_Switch_select.png" />
+    <None Include="Resources\02_LL_Switch.png" />
+    <None Include="Resources\02_LL_Plus_used.png" />
+    <None Include="Resources\02_LL_Plus_select.png" />
+    <None Include="Resources\02_LL_Plus.png" />
+    <None Include="Resources\02_LL_Phone_used.png" />
+    <None Include="Resources\02_LL_Phone_select.png" />
+    <None Include="Resources\02_LL_Phone.png" />
+    <None Include="Resources\02_LL_Host_used.png" />
+    <None Include="Resources\02_LL_Host_select.png" />
+    <None Include="Resources\02_LL_Host.png" />
+    <None Include="Resources\02_LL_Double_used.png" />
+    <None Include="Resources\02_LL_Double_select.png" />
+    <None Include="Resources\02_LL_Double.png" />
+    <None Include="Resources\02_LL_Audience_used.png" />
+    <None Include="Resources\02_LL_Audience_select.png" />
+    <None Include="Resources\02_LL_Audience.png" />
+    <None Include="Resources\02_LL_5050_used.png" />
+    <None Include="Resources\01_LL_Host.png" />
+    <None Include="Resources\01_LL_Double_used.png" />
+    <None Include="Resources\01_LL_Double_select.png" />
+    <None Include="Resources\01_LL_Double.png" />
+    <None Include="Resources\01_LL_Audience_used.png" />
+    <None Include="Resources\01_LL_Audience_select.png" />
+    <None Include="Resources\01_LL_Audience.png" />
+    <None Include="Resources\01_LL_5050_used.png" />
+    <None Include="Resources\01_LL_5050_select.png" />
+    <None Include="Resources\01_LL_5050.png" />
+    <None Include="Resources\01_LL_Switch_used.png" />
+    <None Include="Resources\01_LL_Switch_select.png" />
+    <None Include="Resources\01_LL_Switch.png" />
+    <None Include="Resources\01_LL_Plus_used.png" />
+    <None Include="Resources\01_LL_Plus_select.png" />
+    <None Include="Resources\01_LL_Plus.png" />
+    <None Include="Resources\01_LL_Phone_used.png" />
+    <None Include="Resources\01_LL_Phone_select.png" />
+    <None Include="Resources\01_LL_Phone.png" />
+    <None Include="Resources\01_LL_Host_used.png" />
+    <None Include="Resources\01_LL_Host_select.png" />
     <None Include="Resources\03_Tree.png" />
+    <None Include="Resources\04_Tree.png" />
     <None Include="Resources\02_Tree.png" />
     <None Include="Resources\01_Tree.png" />
-    <None Include="Resources\WinStrap_01.png" />
-    <None Include="Resources\WinStrap_02.png" />
-    <None Include="Resources\WinStrap_03.png" />
-    <None Include="Resources\WinStrap_04.png" />
-    <None Include="Resources\WinStrap_05.png" />
-    <None Include="Resources\WinStrap_06.png" />
-    <None Include="Resources\WinStrap_07.png" />
-    <None Include="Resources\999_Tree_01.png" />
-    <None Include="Resources\999_Tree_02.png" />
-    <None Include="Resources\999_Tree_03.png" />
-    <None Include="Resources\999_Tree_04.png" />
-    <None Include="Resources\999_Tree_05.png" />
-    <None Include="Resources\999_Tree_06.png" />
-    <None Include="Resources\999_Tree_07.png" />
-    <None Include="Resources\999_Tree_08.png" />
-    <None Include="Resources\999_Tree_09.png" />
-    <None Include="Resources\999_Tree_10.png" />
-    <None Include="Resources\999_Tree_11.png" />
-    <None Include="Resources\999_Tree_12.png" />
-    <None Include="Resources\999_Tree_13.png" />
-    <None Include="Resources\999_Tree_14.png" />
-    <None Include="Resources\999_Tree_15.png" />
-    <None Include="Resources\999_Tree_All.png" />
-    <None Include="Resources\05_Answer_R_Correct.png" />
-    <None Include="Resources\05_Answer_L_Correct.png" />
+    <None Include="Resources\05_Tree.png" />
     <None Include="Resources\05_Question_Strap.png" />
     <None Include="Resources\05_Answer_R_Normal.png" />
     <None Include="Resources\05_Answer_R_Final.png" />
+    <None Include="Resources\05_Answer_R_Correct.png" />
     <None Include="Resources\05_Answer_L_Normal.png" />
     <None Include="Resources\05_Answer_L_Final.png" />
+    <None Include="Resources\05_Answer_L_Correct.png" />
     <None Include="Resources\04_Question_Strap.png" />
     <None Include="Resources\04_Answer_R_Normal.png" />
     <None Include="Resources\04_Answer_R_Final.png" />
@@ -668,6 +754,35 @@
     <None Include="Resources\01_Answer_L_Normal.png" />
     <None Include="Resources\01_Answer_L_Final.png" />
     <None Include="Resources\01_Answer_L_Correct.png" />
+    <None Include="Resources\00_ATA.png" />
+    <None Include="Resources\05_FFF.png" />
+    <None Include="Resources\04_FFF.png" />
+    <None Include="Resources\02_FFF.png" />
+    <None Include="Resources\01_FFF.png" />
+    <None Include="Resources\ll_timer.png" />
+    <None Include="Resources\WinStrap_01.png" />
+    <None Include="Resources\WinStrap_02.png" />
+    <None Include="Resources\WinStrap_03.png" />
+    <None Include="Resources\WinStrap_04.png" />
+    <None Include="Resources\WinStrap_05.png" />
+    <None Include="Resources\WinStrap_06.png" />
+    <None Include="Resources\WinStrap_07.png" />
+    <None Include="Resources\999_Tree_01.png" />
+    <None Include="Resources\999_Tree_02.png" />
+    <None Include="Resources\999_Tree_03.png" />
+    <None Include="Resources\999_Tree_04.png" />
+    <None Include="Resources\999_Tree_05.png" />
+    <None Include="Resources\999_Tree_06.png" />
+    <None Include="Resources\999_Tree_07.png" />
+    <None Include="Resources\999_Tree_08.png" />
+    <None Include="Resources\999_Tree_09.png" />
+    <None Include="Resources\999_Tree_10.png" />
+    <None Include="Resources\999_Tree_11.png" />
+    <None Include="Resources\999_Tree_12.png" />
+    <None Include="Resources\999_Tree_13.png" />
+    <None Include="Resources\999_Tree_14.png" />
+    <None Include="Resources\999_Tree_15.png" />
+    <None Include="Resources\999_Tree_All.png" />
     <None Include="Resources\Question_Strap.png" />
     <None Include="Resources\mg_tree_all.png" />
     <None Include="Resources\mg_tree_15.png" />

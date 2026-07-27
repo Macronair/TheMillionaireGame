@@ -398,6 +398,8 @@ Public Class OptionsScreen
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
 
+        LifelineManager.RefreshLifelineImages()
+
         Monitor.ApplyScreenSettings()
 
         LifelineATA.ResizeATAGraph()
@@ -413,6 +415,8 @@ Public Class OptionsScreen
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
+
+        ATAAnimate.SlideOut()
 
         Me.Close()
     End Sub
@@ -439,6 +443,8 @@ Public Class OptionsScreen
         LifelineManager.UnlockLifeline(3)
         LifelineManager.UnlockLifeline(4)
 
+        LifelineManager.RefreshLifelineImages()
+
         Monitor.ApplyScreenSettings()
         Monitor.ApplyScreenSettings()
 
@@ -455,6 +461,8 @@ Public Class OptionsScreen
 
         ControlPanel.drpNextHostMessage.Items.Clear()
         ControlPanel.drpNextHostMessage.Items.AddRange(ControlPanel.GetHostMessages().ToArray())
+
+        ATAAnimate.SlideOut()
 
         MessageBox.Show("Settings saved succesfully!", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information)
     End Sub

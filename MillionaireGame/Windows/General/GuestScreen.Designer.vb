@@ -45,6 +45,7 @@ Partial Class GuestScreen
         Me.picLifeline3 = New System.Windows.Forms.PictureBox()
         Me.picLifeline2 = New System.Windows.Forms.PictureBox()
         Me.picLifeline1 = New System.Windows.Forms.PictureBox()
+        Me.picLogoOverlay = New System.Windows.Forms.PictureBox()
         CType(Me.picTree, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlD.SuspendLayout()
         Me.pnlB.SuspendLayout()
@@ -56,6 +57,7 @@ Partial Class GuestScreen
         CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.picLogoOverlay, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtATAd
@@ -304,12 +306,27 @@ Partial Class GuestScreen
         Me.picLifeline1.TabIndex = 83
         Me.picLifeline1.TabStop = False
         '
+        'picLogoOverlay
+        '
+        Me.picLogoOverlay.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.picLogoOverlay.BackgroundImage = CType(resources.GetObject("picLogoOverlay.BackgroundImage"), System.Drawing.Image)
+        Me.picLogoOverlay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.picLogoOverlay.Location = New System.Drawing.Point(0, -2)
+        Me.picLogoOverlay.Name = "picLogoOverlay"
+        Me.picLogoOverlay.Size = New System.Drawing.Size(1280, 724)
+        Me.picLogoOverlay.TabIndex = 87
+        Me.picLogoOverlay.TabStop = False
+        Me.picLogoOverlay.Visible = False
+        '
         'GuestScreen
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1280, 720)
+        Me.Controls.Add(Me.picLogoOverlay)
         Me.Controls.Add(Me.picLifeline4)
         Me.Controls.Add(Me.picLifeline3)
         Me.Controls.Add(Me.picLifeline2)
@@ -342,6 +359,7 @@ Partial Class GuestScreen
         CType(Me.picLifeline3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLifeline2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picLifeline1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.picLogoOverlay, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -368,4 +386,5 @@ Partial Class GuestScreen
     Friend WithEvents picLifeline3 As PictureBox
     Friend WithEvents picLifeline2 As PictureBox
     Friend WithEvents picLifeline1 As PictureBox
+    Friend WithEvents picLogoOverlay As PictureBox
 End Class

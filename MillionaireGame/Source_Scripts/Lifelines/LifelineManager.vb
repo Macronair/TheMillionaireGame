@@ -414,42 +414,251 @@
 
     End Sub
 
+    Public Shared Sub RefreshLifelineImages()
+        Select Case Lifeline1_Used
+            Case True
+                TVControlPnl.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                ControlPanel.btnLifeline1.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                HostScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+                GuestScreen.picLifeline1.Image = GetLifelineUsedImage(Profile.Options.Lifeline1)
+            Case False
+                TVControlPnl.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                ControlPanel.btnLifeline1.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline1)
+                HostScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+                GuestScreen.picLifeline1.Image = GetLifelineImage(Profile.Options.Lifeline1)
+        End Select
+
+        Select Case Lifeline2_Used
+            Case True
+                TVControlPnl.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                ControlPanel.btnLifeline2.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                HostScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+                GuestScreen.picLifeline2.Image = GetLifelineUsedImage(Profile.Options.Lifeline2)
+            Case False
+                TVControlPnl.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                ControlPanel.btnLifeline2.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline2)
+                HostScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+                GuestScreen.picLifeline2.Image = GetLifelineImage(Profile.Options.Lifeline2)
+        End Select
+
+        Select Case Lifeline3_Used
+            Case True
+                TVControlPnl.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                ControlPanel.btnLifeline3.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                HostScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+                GuestScreen.picLifeline3.Image = GetLifelineUsedImage(Profile.Options.Lifeline3)
+            Case False
+                TVControlPnl.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                ControlPanel.btnLifeline3.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline3)
+                HostScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+                GuestScreen.picLifeline3.Image = GetLifelineImage(Profile.Options.Lifeline3)
+        End Select
+
+        Select Case Lifeline4_Used
+            Case True
+                TVControlPnl.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                ControlPanel.btnLifeline4.BackgroundImage = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                HostScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+                GuestScreen.picLifeline4.Image = GetLifelineUsedImage(Profile.Options.Lifeline4)
+            Case False
+                TVControlPnl.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+                ControlPanel.btnLifeline4.BackgroundImage = GetLifelineImage(Profile.Options.Lifeline4)
+                HostScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+                GuestScreen.picLifeline4.Image = GetLifelineImage(Profile.Options.Lifeline4)
+        End Select
+    End Sub
+
     Public Shared Function GetLifelineImage(Lifeline As String)
         Select Case Lifeline
             Case "ask_audience"
-                Return My.Resources.ll_audience
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Audience
+                    Case 1
+                        Return My.Resources._02_LL_Audience
+                    Case 2
+                        Return My.Resources._03_LL_Audience
+                    Case 3
+                        Return My.Resources._04_LL_Audience
+                    Case 4
+                        Return My.Resources._05_LL_Audience
+                End Select
             Case "50_50"
-                Return My.Resources.ll_5050
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_5050
+                    Case 1
+                        Return My.Resources._02_LL_5050
+                    Case 2
+                        Return My.Resources._03_LL_5050
+                    Case 3
+                        Return My.Resources._04_LL_5050
+                    Case 4
+                        Return My.Resources._05_LL_5050
+                End Select
             Case "plus_one"
-                Return My.Resources.ll_plusone
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Plus
+                    Case 1
+                        Return My.Resources._02_LL_Plus
+                    Case 2
+                        Return My.Resources._03_LL_Plus
+                    Case 3
+                        Return My.Resources._04_LL_Plus
+                    Case 4
+                        Return My.Resources._05_LL_Plus
+                End Select
             Case "phone_a_friend"
-                Return My.Resources.ll_phone
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Phone
+                    Case 1
+                        Return My.Resources._02_LL_Phone
+                    Case 2
+                        Return My.Resources._03_LL_Phone
+                    Case 3
+                        Return My.Resources._04_LL_Phone
+                    Case 4
+                        Return My.Resources._05_LL_Phone
+                End Select
             Case "switch"
-                Return My.Resources.ll_switch
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Switch
+                    Case 1
+                        Return My.Resources._02_LL_Switch
+                    Case 2
+                        Return My.Resources._03_LL_Switch
+                    Case 3
+                        Return My.Resources._04_LL_Switch
+                    Case 4
+                        Return My.Resources._05_LL_Switch
+                End Select
             Case "double_dip"
-                Return My.Resources.ll_double
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Double
+                    Case 1
+                        Return My.Resources._02_LL_Double
+                    Case 2
+                        Return My.Resources._03_LL_Double
+                    Case 3
+                        Return My.Resources._04_LL_Double
+                    Case 4
+                        Return My.Resources._05_LL_Double
+                End Select
             Case "ask_host"
-                Return My.Resources.ll_host
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Host
+                    Case 1
+                        Return My.Resources._02_LL_Host
+                    Case 2
+                        Return My.Resources._03_LL_Host
+                    Case 3
+                        Return My.Resources._04_LL_Host
+                    Case 4
+                        Return My.Resources._05_LL_Host
+                End Select
         End Select
+
         Return vbNull
     End Function
 
     Public Shared Function GetLifelineBlingImage(Lifeline As String)
         Select Case Lifeline
             Case "ask_audience"
-                Return My.Resources.ll_audience_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Audience_select
+                    Case 1
+                        Return My.Resources._02_LL_Audience_select
+                    Case 2
+                        Return My.Resources._03_LL_Audience_select
+                    Case 3
+                        Return My.Resources._04_LL_Audience_select
+                    Case 4
+                        Return My.Resources._05_LL_Audience_select
+                End Select
             Case "50_50"
-                Return My.Resources.ll_5050_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_5050_select
+                    Case 1
+                        Return My.Resources._02_LL_5050_select
+                    Case 2
+                        Return My.Resources._03_LL_5050_select
+                    Case 3
+                        Return My.Resources._04_LL_5050_select
+                    Case 4
+                        Return My.Resources._05_LL_5050_select
+                End Select
             Case "plus_one"
-                Return My.Resources.ll_plusone_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Plus_select
+                    Case 1
+                        Return My.Resources._02_LL_Plus_select
+                    Case 2
+                        Return My.Resources._03_LL_Plus_select
+                    Case 3
+                        Return My.Resources._04_LL_Plus_select
+                    Case 4
+                        Return My.Resources._05_LL_Plus_select
+                End Select
             Case "phone_a_friend"
-                Return My.Resources.ll_phone_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Phone_select
+                    Case 1
+                        Return My.Resources._02_LL_Phone_select
+                    Case 2
+                        Return My.Resources._03_LL_Phone_select
+                    Case 3
+                        Return My.Resources._04_LL_Phone_select
+                    Case 4
+                        Return My.Resources._05_LL_Phone_select
+                End Select
             Case "switch"
-                Return My.Resources.ll_switch_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Switch_select
+                    Case 1
+                        Return My.Resources._02_LL_Switch_select
+                    Case 2
+                        Return My.Resources._03_LL_Switch_select
+                    Case 3
+                        Return My.Resources._04_LL_Switch_select
+                    Case 4
+                        Return My.Resources._05_LL_Switch_select
+                End Select
             Case "double_dip"
-                Return My.Resources.ll_double_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Double_select
+                    Case 1
+                        Return My.Resources._02_LL_Double_select
+                    Case 2
+                        Return My.Resources._03_LL_Double_select
+                    Case 3
+                        Return My.Resources._04_LL_Double_select
+                    Case 4
+                        Return My.Resources._05_LL_Double_select
+                End Select
             Case "ask_host"
-                Return My.Resources.ll_host_bling
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Host_select
+                    Case 1
+                        Return My.Resources._02_LL_Host_select
+                    Case 2
+                        Return My.Resources._03_LL_Host_select
+                    Case 3
+                        Return My.Resources._04_LL_Host_select
+                    Case 4
+                        Return My.Resources._05_LL_Host_select
+                End Select
         End Select
 
         Return vbNull
@@ -458,19 +667,96 @@
     Public Shared Function GetLifelineUsedImage(Lifeline As String)
         Select Case Lifeline
             Case "ask_audience"
-                Return My.Resources.ll_audience_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Audience_used
+                    Case 1
+                        Return My.Resources._02_LL_Audience_used
+                    Case 2
+                        Return My.Resources._03_LL_Audience_used
+                    Case 3
+                        Return My.Resources._04_LL_Audience_used
+                    Case 4
+                        Return My.Resources._05_LL_Audience_used
+                End Select
             Case "50_50"
-                Return My.Resources.ll_5050_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_5050_used
+                    Case 1
+                        Return My.Resources._02_LL_5050_used
+                    Case 2
+                        Return My.Resources._03_LL_5050_used
+                    Case 3
+                        Return My.Resources._04_LL_5050_used
+                    Case 4
+                        Return My.Resources._05_LL_5050_used
+                End Select
             Case "plus_one"
-                Return My.Resources.ll_plusone_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Plus_used
+                    Case 1
+                        Return My.Resources._02_LL_Plus_used
+                    Case 2
+                        Return My.Resources._03_LL_Plus_used
+                    Case 3
+                        Return My.Resources._04_LL_Plus_used
+                    Case 4
+                        Return My.Resources._05_LL_Plus_used
+                End Select
             Case "phone_a_friend"
-                Return My.Resources.ll_phone_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Phone_used
+                    Case 1
+                        Return My.Resources._02_LL_Phone_used
+                    Case 2
+                        Return My.Resources._03_LL_Phone_used
+                    Case 3
+                        Return My.Resources._04_LL_Phone_used
+                    Case 4
+                        Return My.Resources._05_LL_Phone_used
+                End Select
             Case "switch"
-                Return My.Resources.ll_switch_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Switch_used
+                    Case 1
+                        Return My.Resources._02_LL_Switch_used
+                    Case 2
+                        Return My.Resources._03_LL_Switch_used
+                    Case 3
+                        Return My.Resources._04_LL_Switch_used
+                    Case 4
+                        Return My.Resources._05_LL_Switch_used
+                End Select
             Case "double_dip"
-                Return My.Resources.ll_double_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Double_used
+                    Case 1
+                        Return My.Resources._02_LL_Double_used
+                    Case 2
+                        Return My.Resources._03_LL_Double_used
+                    Case 3
+                        Return My.Resources._04_LL_Double_used
+                    Case 4
+                        Return My.Resources._05_LL_Double_used
+                End Select
             Case "ask_host"
-                Return My.Resources.ll_host_used
+                Select Case Profile.Options.QuestionsTexture
+                    Case 0
+                        Return My.Resources._01_LL_Host_used
+                    Case 1
+                        Return My.Resources._02_LL_Host_used
+                    Case 2
+                        Return My.Resources._03_LL_Host_used
+                    Case 3
+                        Return My.Resources._04_LL_Host_used
+                    Case 4
+                        Return My.Resources._05_LL_Host_used
+                End Select
         End Select
 
         Return vbNull
